@@ -2,6 +2,9 @@ import React from "react";
 import Piece1 from "../Assets/Pieces/Piece1.png";
 import Piece2 from "../Assets/Pieces/Piece2.png";
 import ditielogo from "../Assets/PropertyImages/ditielogo.png";
+import jug from "../Assets/PropertyImages/jug.png";
+import homeLink from "../Assets/PropertyImages/homeLink.png";
+import mopAyi from "../Assets/PropertyImages/mopAyi.png";
 import "./Styles/Board.css";
 
 export const Board = ({ counterP1, counterP2, properties }) => {
@@ -39,6 +42,19 @@ export const Board = ({ counterP1, counterP2, properties }) => {
             {counterP2 === 39 ? (
               <img className="piece two" src={Piece2} alt="p2 game piece" />
             ) : null}
+            <div className="left-rr-container">
+              <div>
+                <h3 className="left-rr agent">Agent Fee</h3>
+              </div>
+              <div className="logo-cont">
+                <img
+                  className="subway-logo-left agent"
+                  src={homeLink}
+                  alt="subway-logo"
+                />
+              </div>
+              <p className="left-rr-price agent">Pay 75rmb</p>
+            </div>
           </div>
           <div id="38" className="left-space">
             <div className="left-main">
@@ -206,6 +222,12 @@ export const Board = ({ counterP1, counterP2, properties }) => {
             {counterP2 === 5 ? (
               <img className="piece two" src={Piece2} alt="p2 game piece" />
             ) : null}
+            <div className="top-rr-container tax">
+              <div>
+                <h3 className="top-rr">RENEW VISA</h3>
+                <p className="top-rr instructions">Pay 10% or $200</p>
+              </div>
+            </div>
           </div>
           <div id="6" className="top-space">
             {counterP1 === 6 ? (
@@ -286,14 +308,14 @@ export const Board = ({ counterP1, counterP2, properties }) => {
         </div>
         <div className="middle">
           <div className="title-cont">
-            <h2 className="board-title">Monopoly</h2>
+            <h2 className="board-title">LAOWAI MONOPOLY</h2>
           </div>
           <div className="card-container">
             <div className="card">
-              <h4 className="card-title">Community Chest</h4>
+              <h4 className="card-title">Guanxi</h4>
             </div>
             <div className="card">
-              <h4 className="card-title">Chance</h4>
+              <h4 className="card-title">Yunqi</h4>
             </div>
           </div>
         </div>
@@ -320,6 +342,19 @@ export const Board = ({ counterP1, counterP2, properties }) => {
             {counterP2 === 29 ? (
               <img className="piece two" src={Piece2} alt="p2 game piece" />
             ) : null}
+            <div className="bottom-rr-container">
+              <div>
+                <h3 className="bottom-rr">Ayi</h3>
+              </div>
+              <div className="logo-cont">
+                <img
+                  className="subway-logo-bottom"
+                  src={mopAyi}
+                  alt="subway-logo"
+                />
+              </div>
+              <p className="bottom-rr-price">150rmb</p>
+            </div>
           </div>
           <div id="28" className="bottom-space">
             <div className="bottom-main">
@@ -459,6 +494,19 @@ export const Board = ({ counterP1, counterP2, properties }) => {
             {counterP2 === 13 ? (
               <img className="piece two" src={Piece2} alt="p2 game piece" />
             ) : null}
+            <div className="right-rr-container">
+              <div>
+                <h3 className="right-rr water">Water Delivery</h3>
+              </div>
+              <div className="logo-cont">
+                <img
+                  className="subway-logo-right jug"
+                  src={jug}
+                  alt="water-jug"
+                />
+              </div>
+              <p className="right-rr-price water">150rmb</p>
+            </div>
           </div>
           <div id="14" className="right-space">
             <div className="right-main">
