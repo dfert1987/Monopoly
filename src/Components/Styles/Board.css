@@ -670,3 +670,25 @@
   padding-top: 0;
   padding-bottom: 0.5em;
 }
+
+.top-rr.instructions {
+  font-size: 11px;
+  padding-bottom: 1em;
+}
+
+.left-rr.agent {
+  width: 4em;
+  margin: auto;
+  padding-bottom: 0;
+  /* padding-top: 2.25em; */
+}
+
+.left-rr-price.agent {
+  margin-top: 0;
+  padding-bottom: 5em;
+  padding-top: 0;
+}
+
+.subway-logo-left.agent {
+  width: 3em;
+}
