@@ -30,7 +30,7 @@
 
 .middle {
   flex-direction: row;
-  height: 62.5%;
+  height: 62.83%;
 }
 
 .bottom-row {
@@ -655,5 +655,18 @@
 .bottom-rr-price {
   margin: 0;
   font-size: 11px;
+  padding-bottom: 0.5em;
+}
+
+.right-rr.water {
+  font-size: 12px;
+  margin: auto;
+  width: 4em;
+  padding-top: 0.5em;
+  text-align: center;
+}
+
+.right-rr-price.water {
+  padding-top: 0;
   padding-bottom: 0.5em;
 }

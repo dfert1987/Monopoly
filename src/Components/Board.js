@@ -2,6 +2,7 @@ import React from "react";
 import Piece1 from "../Assets/Pieces/Piece1.png";
 import Piece2 from "../Assets/Pieces/Piece2.png";
 import ditielogo from "../Assets/PropertyImages/ditielogo.png";
+import jug from "../Assets/PropertyImages/jug.png";
 import "./Styles/Board.css";
 
 export const Board = ({ counterP1, counterP2, properties }) => {
@@ -459,6 +460,19 @@ export const Board = ({ counterP1, counterP2, properties }) => {
             {counterP2 === 13 ? (
               <img className="piece two" src={Piece2} alt="p2 game piece" />
             ) : null}
+            <div className="right-rr-container">
+              <div>
+                <h3 className="right-rr water">Water Delivery</h3>
+              </div>
+              <div className="logo-cont">
+                <img
+                  className="subway-logo-right jug"
+                  src={jug}
+                  alt="water-jug"
+                />
+              </div>
+              <p className="right-rr-price water">150rmb</p>
+            </div>
           </div>
           <div id="14" className="right-space">
             <div className="right-main">
