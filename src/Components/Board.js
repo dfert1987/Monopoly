@@ -286,7 +286,7 @@ export const Board = ({ counterP1, counterP2, properties }) => {
         </div>
         <div className="middle">
           <div className="title-cont">
-            <h2 className="board-title">Monopoly</h2>
+            <h2 className="board-title">LAOWAI MONOPOLY</h2>
           </div>
           <div className="card-container">
             <div className="card">
