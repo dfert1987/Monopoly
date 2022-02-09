@@ -3,6 +3,7 @@ import Piece1 from "../Assets/Pieces/Piece1.png";
 import Piece2 from "../Assets/Pieces/Piece2.png";
 import ditielogo from "../Assets/PropertyImages/ditielogo.png";
 import jug from "../Assets/PropertyImages/jug.png";
+import mopAyi from "../Assets/PropertyImages/mopAyi.png";
 import "./Styles/Board.css";
 
 export const Board = ({ counterP1, counterP2, properties }) => {
@@ -321,6 +322,19 @@ export const Board = ({ counterP1, counterP2, properties }) => {
             {counterP2 === 29 ? (
               <img className="piece two" src={Piece2} alt="p2 game piece" />
             ) : null}
+            <div className="bottom-rr-container">
+              <div>
+                <h3 className="bottom-rr">Ayi</h3>
+              </div>
+              <div className="logo-cont">
+                <img
+                  className="subway-logo-bottom"
+                  src={mopAyi}
+                  alt="subway-logo"
+                />
+              </div>
+              <p className="bottom-rr-price">150rmb</p>
+            </div>
           </div>
           <div id="28" className="bottom-space">
             <div className="bottom-main">

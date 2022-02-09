@@ -13,6 +13,7 @@ export const Utilities = [
     image: require("../PropertyImages/space-jug.jpeg"),
   },
   {
+    Number: 29,
     Name: "Ayi Services",
     Price: 150,
     rent: 4,
