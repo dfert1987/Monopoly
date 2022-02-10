@@ -315,7 +315,7 @@ export const Board = ({ counterP1, counterP2, properties }) => {
               <h4 className="card-title">Guanxi</h4>
             </div>
             <div className="card">
-              <h4 className="card-title">Yunqi</h4>
+              <h4 className="card-title">???</h4>
             </div>
           </div>
         </div>
