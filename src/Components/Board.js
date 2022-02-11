@@ -7,6 +7,7 @@ import homeLink from "../Assets/PropertyImages/homeLink.png";
 import mopAyi from "../Assets/PropertyImages/mopAyi.png";
 import guanxi from "../Assets/PropertyImages/guanxi.png";
 import luck from "../Assets/PropertyImages/luck.png";
+import longArrow from "../Assets/PropertyImages/longArrow.png";
 import "./Styles/Board.css";
 
 export const Board = ({ counterP1, counterP2, properties }) => {
@@ -20,6 +21,17 @@ export const Board = ({ counterP1, counterP2, properties }) => {
           {counterP2 === 1 ? (
             <img className="piece two" src={Piece2} alt="p2 game piece" />
           ) : null}
+          <div className="go-container">
+            <img src={longArrow} alt="go-arrow" className="go-arrow" />
+            <div className="all-go">
+              <h1 className="go">GO</h1>
+              <div className="go-text-container">
+                <span className="go-instructions">COLLECT</span>
+                <span className="go-instructions">$200 SALARY</span>
+                <span className="go-instructions">AS YOU PASS</span>
+              </div>
+            </div>
+          </div>
         </div>
         <div className="left-spaces">
           <div id="40" className="left-space">
