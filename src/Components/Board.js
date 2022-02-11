@@ -5,6 +5,8 @@ import ditielogo from "../Assets/PropertyImages/ditielogo.png";
 import jug from "../Assets/PropertyImages/jug.png";
 import homeLink from "../Assets/PropertyImages/homeLink.png";
 import mopAyi from "../Assets/PropertyImages/mopAyi.png";
+import guanxi from "../Assets/PropertyImages/guanxi.png";
+import luck from "../Assets/PropertyImages/luck.png";
 import "./Styles/Board.css";
 
 export const Board = ({ counterP1, counterP2, properties }) => {
@@ -78,6 +80,18 @@ export const Board = ({ counterP1, counterP2, properties }) => {
             {counterP2 === 37 ? (
               <img className="piece two" src={Piece2} alt="p2 game piece" />
             ) : null}
+            <div className="left-rr-container luck">
+              <div>
+                <h3 className="left-rr">Fu Yuan</h3>
+                <div className="logo-cont">
+                  <img
+                    className="subway-logo-left luck"
+                    src={luck}
+                    alt="luck-logo"
+                  />
+                </div>
+              </div>
+            </div>
           </div>
           <div id="36" className="left-space">
             {counterP1 === 36 ? (
@@ -126,6 +140,18 @@ export const Board = ({ counterP1, counterP2, properties }) => {
             {counterP2 === 34 ? (
               <img className="piece two" src={Piece2} alt="p2 game piece" />
             ) : null}
+            <div className="left-rr-container guanxi">
+              <div>
+                <h3 className="left-rr">Guanxi</h3>
+                <div className="logo-cont">
+                  <img
+                    className="subway-logo-left guanxi"
+                    src={guanxi}
+                    alt="guanxi-logo"
+                  />
+                </div>
+              </div>
+            </div>
           </div>
           <div id="33" className="left-space">
             <div className="left-main">
@@ -199,6 +225,18 @@ export const Board = ({ counterP1, counterP2, properties }) => {
             {counterP2 === 3 ? (
               <img className="piece two" src={Piece2} alt="p2 game piece" />
             ) : null}
+            <div className="top-rr-container guanxi">
+              <div>
+                <h3 className="top-rr">Guanxi</h3>
+                <div className="logo-cont">
+                  <img
+                    className="subway-logo-top guanxi"
+                    src={guanxi}
+                    alt="guanxi-logo"
+                  />
+                </div>
+              </div>
+            </div>
           </div>
           <div id="4" className="top-space">
             <div className="top-main">
@@ -273,6 +311,18 @@ export const Board = ({ counterP1, counterP2, properties }) => {
             {counterP2 === 8 ? (
               <img className="piece two" src={Piece2} alt="p2 game piece" />
             ) : null}
+            <div className="top-rr-container luck">
+              <div>
+                <h3 className="top-rr">Fu Yuan</h3>
+                <div className="logo-cont">
+                  <img
+                    className="subway-logo-top luck"
+                    src={luck}
+                    alt="luck-logo"
+                  />
+                </div>
+              </div>
+            </div>
           </div>
           <div id="9" className="top-space">
             <div className="top-main">
@@ -444,6 +494,18 @@ export const Board = ({ counterP1, counterP2, properties }) => {
             {counterP2 === 23 ? (
               <img className="piece two" src={Piece2} alt="p2 game piece" />
             ) : null}
+            <div className="bottom-rr-container luck">
+              <div>
+                <h3 className="bottom-rr">Fu Yuan</h3>
+                <div className="logo-cont">
+                  <img
+                    className="subway-logo-bottom luck"
+                    src={luck}
+                    alt="luck-logo"
+                  />
+                </div>
+              </div>
+            </div>
           </div>
           <div id="22" className="right">
             <div className="bottom-main">
@@ -593,6 +655,18 @@ export const Board = ({ counterP1, counterP2, properties }) => {
             {counterP2 === 18 ? (
               <img className="piece two" src={Piece2} alt="p2 game piece" />
             ) : null}
+            <div className="right-rr-container guanxi">
+              <div>
+                <h3 className="right-rr">Guanxi</h3>
+                <div className="logo-cont">
+                  <img
+                    className="subway-logo-right guanxi"
+                    src={guanxi}
+                    alt="guanxi-logo"
+                  />
+                </div>
+              </div>
+            </div>
           </div>
           <div id="19" className="right-space">
             <div className="right-main">

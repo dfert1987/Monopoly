@@ -152,4 +152,12 @@ export const Yunqi = [
     amt: 50,
     space: 0,
   },
+  {
+    Number: 20,
+    Text: "Beer Festival!",
+    Instruction: "Head to Great Leap",
+    Type: "Advance",
+    amt: 0,
+    space: 35,
+  },
 ];
