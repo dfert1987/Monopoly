@@ -124,7 +124,7 @@ export const Yunqi = [
     Text: "Traffic Jam",
     Instruction:
       "Advance to nearest Subway. If unowned you may purchase. If owned pay owner double",
-    Type: "subway",
+    Type: "Nearest",
     amt: 0,
     space: 0,
   },
@@ -142,6 +142,14 @@ export const Yunqi = [
     Instruction: "Earn $100",
     Type: "Receive",
     amt: 0,
+    space: 0,
+  },
+  {
+    Number: 19,
+    Text: "Lose Bank of China Debit Card",
+    Instruction: "Pay $50 for replacement",
+    Type: "Pay",
+    amt: 50,
     space: 0,
   },
 ];
