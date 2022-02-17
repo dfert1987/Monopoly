@@ -548,6 +548,8 @@ export const Board = ({ counterP1, counterP2, properties, p1Jail, p2Jail }) => {
       <div className="right-column">
         <div className="right-corner-top">
           <div id="11" className="just-visiting-top">
+            <p className="visiting">Visiting</p>
+
             {counterP1 === 11 ? (
               <img src={Piece1} className="piece" alt="p1 game piece" />
             ) : null}
@@ -563,8 +565,11 @@ export const Board = ({ counterP1, counterP2, properties, p1Jail, p2Jail }) => {
               {p2Jail ? (
                 <img className="piece two" src={Piece2} alt="p2 game piece" />
               ) : null}
+              <p className="jail-text">Back Home</p>
             </div>
-            <div className="just-visiting-right"></div>
+            <div className="just-visiting-right">
+              <p className="just">Just</p>
+            </div>
           </div>
         </div>
         <div className="right-spaces">

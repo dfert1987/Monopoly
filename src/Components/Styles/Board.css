@@ -87,6 +87,10 @@
 }
 
 .jail {
+  background-image: url("../../Assets/PropertyImages/deported.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
   border-right: 2px solid black;
   border-top: 2px solid black;
   width: 78%;
@@ -792,4 +796,36 @@
   font-weight: bold;
   margin-top: 0.15em;
   padding-left: 0.1em;
+}
+
+.just {
+  text-align: center;
+  -moz-transform: rotate(270deg); /* FF3.5+ */
+  -o-transform: rotate(270deg); /* Opera 10.5 */
+  -webkit-transform: rotate(270deg);
+  position: relative;
+  right: 0.25em;
+  top: 1em;
+}
+
+.visiting {
+  text-align: center;
+  -moz-transform: rotate(180deg); /* FF3.5+ */
+  -o-transform: rotate(180deg); /* Opera 10.5 */
+  -webkit-transform: rotate(180deg);
+  position: relative;
+  bottom: 0.75em;
+  right: 0.25em;
+}
+
+.jail-text {
+  font-size: 12px;
+  font-weight: bold;
+  text-align: center;
+  -moz-transform: rotate(270deg); /* FF3.5+ */
+  -o-transform: rotate(270deg); /* Opera 10.5 */
+  -webkit-transform: rotate(270deg);
+  position: relative;
+  top: 1.5em;
+  left: 3em;
 }
