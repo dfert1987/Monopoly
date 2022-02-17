@@ -10,6 +10,9 @@ import luck from "../Assets/PropertyImages/luck.png";
 import longArrow from "../Assets/PropertyImages/longArrow.png";
 import hutongbathroom from "../Assets/PropertyImages/hutongbathroom.png";
 import police from "../Assets/PropertyImages/gotojailguy.png";
+import guanxiCard from "../Assets/Cards/Guanxi/guanxicard.png";
+import fuYuanCard from "../Assets/Cards/Yunqi/fuyuancards.png";
+
 import "./Styles/Board.css";
 
 export const Board = ({ counterP1, counterP2, properties, p1Jail, p2Jail }) => {
@@ -382,11 +385,9 @@ export const Board = ({ counterP1, counterP2, properties, p1Jail, p2Jail }) => {
             <h2 className="board-title">LAOWAI MONOPOLY</h2>
           </div>
           <div className="card-container">
+            <img src={guanxiCard} alt="Guanxi Cards" className="card" />
             <div className="card">
-              <h4 className="card-title">Guanxi</h4>
-            </div>
-            <div className="card">
-              <h4 className="card-title">???</h4>
+              <img src={fuYuanCard} alt="Fu Yuan Cards" className="card" />
             </div>
           </div>
         </div>

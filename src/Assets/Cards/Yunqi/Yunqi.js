@@ -160,4 +160,12 @@ export const Yunqi = [
     amt: 0,
     space: 35,
   },
+  {
+    Number: 21,
+    Text: "No pictures on menu!",
+    Instruction: "Order tripe or something, and Go Back 6 Spaces.",
+    Type: "Back",
+    amt: 6,
+    space: 0,
+  },
 ];

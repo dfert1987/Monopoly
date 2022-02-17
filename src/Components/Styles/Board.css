@@ -152,9 +152,10 @@
 }
 
 .card {
-  border: 2px black solid;
+  border: 1px black solid;
   height: 6em;
   width: 12em;
+  z-index: 1;
 }
 
 .title-cont {
@@ -828,4 +829,14 @@
   position: relative;
   top: 1.5em;
   left: 3em;
+}
+
+.card.guanxi {
+  z-index: 1;
+}
+
+.card-stack {
+  position: absolute;
+  width: 20em;
+  z-index: 300px;
 }
