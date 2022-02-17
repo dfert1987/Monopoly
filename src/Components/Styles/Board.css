@@ -56,7 +56,6 @@
 
 .left-corner-bottom {
   height: 12.5%;
-  padding-bottom: 0.1em;
   width: 100%;
 }
 
@@ -66,8 +65,31 @@
 
 .right-corner-top {
   border-bottom: 3px black solid;
+  display: flex;
+  flex-direction: column;
   height: 12.5%;
   width: 105%;
+}
+.just-visiting-top {
+  height: 1.5em;
+  width: 100%;
+}
+
+.jail-right-visiting {
+  display: flex;
+  flex-direction: row;
+  height: 100%;
+  width: 100%;
+}
+
+.just-visiting-right {
+  width: 22%;
+}
+
+.jail {
+  border-right: 2px solid black;
+  border-top: 2px solid black;
+  width: 78%;
 }
 
 .right-spaces {
@@ -740,4 +762,34 @@
 .all-go {
   display: flex;
   flex-direction: column;
+}
+
+.free-parking-container {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+
+.bathroom-sign {
+  padding-bottom: 0;
+  padding-top: 0.5em;
+  width: 5em;
+}
+
+.go-to-jail-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.police-image {
+  height: 4em;
+  padding-right: 1em;
+  padding-top: 0.5em;
+}
+
+.go-to-jail {
+  font-size: 12px;
+  font-weight: bold;
+  margin-top: 0.15em;
+  padding-left: 0.1em;
 }

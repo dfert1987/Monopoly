@@ -12,6 +12,8 @@ function App() {
   const [properties, setProperties] = useState(Properties);
   const [railRoads, setRailRoads] = useState(RailRoads);
   const [utilities, setUtilities] = useState(Utilities);
+  const [p1Jail, setP1Jail] = useState(false);
+  const [p2Jail, setP2Jail] = useState(false);
 
   return (
     <div className="App">
@@ -24,6 +26,10 @@ function App() {
         setRailRoads={setRailRoads}
         utilities={utilities}
         setUtilities={setUtilities}
+        p1Jail={p1Jail}
+        setP1Jail={setP1Jail}
+        p2Jail={p2Jail}
+        setP2Jail={setP2Jail}
       />
       <Controls
         counterP1={counterP1}
