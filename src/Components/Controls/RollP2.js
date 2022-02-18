@@ -77,7 +77,6 @@ export const RollP2 = ({ counterP2, setCounterP2, turn, setTurn }) => {
     if (first === second) {
       setTurn(turn + 2);
     } else setTurn(turn + 1);
-
     setDie3(first);
     setDie4(second);
     dieImages1(first, "two");
@@ -91,7 +90,7 @@ export const RollP2 = ({ counterP2, setCounterP2, turn, setTurn }) => {
     }
   };
   return (
-    <>
+    <div className="p2-dice-button">
       <div className="roll-section">
         {die3 && die4 ? (
           <>
@@ -117,6 +116,6 @@ export const RollP2 = ({ counterP2, setCounterP2, turn, setTurn }) => {
           ROLL DICE
         </button>
       </div>
-    </>
+    </div>
   );
 };

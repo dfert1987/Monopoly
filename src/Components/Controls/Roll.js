@@ -12,12 +12,14 @@ export const Roll = ({ counterP1, setCounterP1, turn, setTurn, disabled }) => {
   const [die2, setDie2] = useState(1);
   const [die1Img, setDie1Img] = useState(dice1);
   const [die2Img, setDie2Img] = useState(dice1);
+
   const disableLeft = () => {
     if (turn % 2 !== 0) {
       return true;
     }
     return false;
   };
+
   const rollDice = (e) => {
     e.preventDefault();
     let min = 1;
@@ -27,7 +29,6 @@ export const Roll = ({ counterP1, setCounterP1, turn, setTurn, disabled }) => {
     if (first === second) {
       setTurn(turn + 2);
     } else setTurn(turn + 1);
-
     setDie1(first);
     setDie2(second);
     dieImages1(first, "one");
@@ -87,7 +88,7 @@ export const Roll = ({ counterP1, setCounterP1, turn, setTurn, disabled }) => {
   };
 
   return (
-    <>
+    <div className="p1-dice-button">
       <div className="roll-section">
         {die1 && die2 ? (
           <>
@@ -105,6 +106,6 @@ export const Roll = ({ counterP1, setCounterP1, turn, setTurn, disabled }) => {
           ROLL DICE
         </button>
       </div>
-    </>
+    </div>
   );
 };
