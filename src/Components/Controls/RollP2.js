@@ -7,18 +7,17 @@ import dice5 from "../../Assets/Dice/dice5.png";
 import dice6 from "../../Assets/Dice/dice6.png";
 import "../../Components/Styles/Controls.css";
 
-export const RollP2 = ({ counterP2, setCounterP2, turn, setTurn }) => {
+export const RollP2 = ({
+  counterP2,
+  setCounterP2,
+  turn,
+  setTurn,
+  disableRight,
+}) => {
   const [die3, setDie3] = useState(1);
   const [die4, setDie4] = useState(1);
   const [p2Die1Img, setP2Die1Img] = useState();
   const [p2Die2Img, setP2Die2Img] = useState(dice1);
-
-  const disableRight = () => {
-    if (turn === 0 || turn % 2 === 0) {
-      return true;
-    }
-    return false;
-  };
 
   const dieImages1 = (first, pair) => {
     if (pair === "two") {
@@ -107,11 +106,11 @@ export const RollP2 = ({ counterP2, setCounterP2, turn, setTurn }) => {
           </>
         ) : null}
       </div>
-      <div className="button-container">
+      <div className="button-container 2">
         <button
           onClick={rollDice2}
           className="roll-button"
-          disabled={disableRight()}
+          disabled={disableRight}
         >
           ROLL DICE
         </button>

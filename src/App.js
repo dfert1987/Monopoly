@@ -44,6 +44,10 @@ function App() {
         setP1Jail={setP1Jail}
         p2Jail={p2Jail}
         setP2Jail={setP2Jail}
+        setP1Money={setP1Money}
+        p1Money={p1Money}
+        setP2Money={setP2Money}
+        p2Money={p2Money}
       />
     </div>
   );
