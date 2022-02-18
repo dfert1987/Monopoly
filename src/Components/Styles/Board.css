@@ -56,7 +56,6 @@
 
 .left-corner-bottom {
   height: 12.5%;
-  padding-bottom: 0.1em;
   width: 100%;
 }
 
@@ -66,8 +65,35 @@
 
 .right-corner-top {
   border-bottom: 3px black solid;
+  display: flex;
+  flex-direction: column;
   height: 12.5%;
   width: 105%;
+}
+.just-visiting-top {
+  height: 1.5em;
+  width: 100%;
+}
+
+.jail-right-visiting {
+  display: flex;
+  flex-direction: row;
+  height: 100%;
+  width: 100%;
+}
+
+.just-visiting-right {
+  width: 22%;
+}
+
+.jail {
+  background-image: url("../../Assets/PropertyImages/deported.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  border-right: 2px solid black;
+  border-top: 2px solid black;
+  width: 78%;
 }
 
 .right-spaces {
@@ -126,15 +152,16 @@
 }
 
 .card {
-  border: 2px black solid;
+  border: 1px black solid;
   height: 6em;
   width: 12em;
+  z-index: 1;
 }
 
 .title-cont {
   background-color: red;
   border: white 3px solid;
-  border-radius: 4px;
+  border-radius: 16px;
   margin: 1em;
   margin-top: 6em;
 }
@@ -680,7 +707,6 @@
   width: 4em;
   margin: auto;
   padding-bottom: 0;
-  /* padding-top: 2.25em; */
 }
 
 .left-rr-price.agent {
@@ -691,4 +717,126 @@
 
 .subway-logo-left.agent {
   width: 3em;
+}
+
+.top-rr-container.luck {
+  padding-bottom: 0.5em;
+}
+
+.left-rr-container.guanxi {
+  padding-top: 1em;
+}
+
+.go-container {
+  display: flex;
+  flex-direction: column;
+  padding-left: 0.2rem;
+  text-align: center;
+  z-index: 1;
+}
+.go-text-container {
+  display: flex;
+  flex-direction: column;
+  margin-top: 0;
+  -moz-transform: rotate(180deg); /* FF3.5+ */
+  -o-transform: rotate(180deg); /* Opera 10.5 */
+  -webkit-transform: rotate(180deg); /* Safari 3.1+, Chrome */
+  position: relative;
+  bottom: 1.5em;
+}
+
+.go-instructions {
+  font-size: 8px;
+}
+
+.go-arrow {
+  width: 6em;
+  height: 2em;
+}
+
+.go {
+  margin: 0;
+  font-size: 50px;
+  margin-top: 0;
+  -moz-transform: rotate(180deg); /* FF3.5+ */
+  -o-transform: rotate(180deg); /* Opera 10.5 */
+  -webkit-transform: rotate(180deg); /* Safari 3.1+, Chrome */
+  position: relative;
+  bottom: 0.4em;
+}
+.all-go {
+  display: flex;
+  flex-direction: column;
+}
+
+.free-parking-container {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+
+.bathroom-sign {
+  padding-bottom: 0;
+  padding-top: 0.5em;
+  width: 5em;
+}
+
+.go-to-jail-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.police-image {
+  height: 4em;
+  padding-right: 1em;
+  padding-top: 0.5em;
+}
+
+.go-to-jail {
+  font-size: 12px;
+  font-weight: bold;
+  margin-top: 0.15em;
+  padding-left: 0.1em;
+}
+
+.just {
+  text-align: center;
+  -moz-transform: rotate(270deg); /* FF3.5+ */
+  -o-transform: rotate(270deg); /* Opera 10.5 */
+  -webkit-transform: rotate(270deg);
+  position: relative;
+  right: 0.25em;
+  top: 1em;
+}
+
+.visiting {
+  text-align: center;
+  -moz-transform: rotate(180deg); /* FF3.5+ */
+  -o-transform: rotate(180deg); /* Opera 10.5 */
+  -webkit-transform: rotate(180deg);
+  position: relative;
+  bottom: 0.75em;
+  right: 0.25em;
+}
+
+.jail-text {
+  font-size: 12px;
+  font-weight: bold;
+  text-align: center;
+  -moz-transform: rotate(270deg); /* FF3.5+ */
+  -o-transform: rotate(270deg); /* Opera 10.5 */
+  -webkit-transform: rotate(270deg);
+  position: relative;
+  top: 1.5em;
+  left: 3em;
+}
+
+.card.guanxi {
+  z-index: 1;
+}
+
+.card-stack {
+  position: absolute;
+  width: 20em;
+  z-index: 300px;
 }

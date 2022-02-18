@@ -5,9 +5,17 @@ import ditielogo from "../Assets/PropertyImages/ditielogo.png";
 import jug from "../Assets/PropertyImages/jug.png";
 import homeLink from "../Assets/PropertyImages/homeLink.png";
 import mopAyi from "../Assets/PropertyImages/mopAyi.png";
+import guanxi from "../Assets/PropertyImages/guanxi.png";
+import luck from "../Assets/PropertyImages/luck.png";
+import longArrow from "../Assets/PropertyImages/longArrow.png";
+import hutongbathroom from "../Assets/PropertyImages/hutongbathroom.png";
+import police from "../Assets/PropertyImages/gotojailguy.png";
+import guanxiCard from "../Assets/Cards/Guanxi/guanxicard.png";
+import fuYuanCard from "../Assets/Cards/Yunqi/fuyuancards.png";
+
 import "./Styles/Board.css";
 
-export const Board = ({ counterP1, counterP2, properties }) => {
+export const Board = ({ counterP1, counterP2, properties, p1Jail, p2Jail }) => {
   return (
     <div className="main-board">
       <div className="left-column">
@@ -18,6 +26,17 @@ export const Board = ({ counterP1, counterP2, properties }) => {
           {counterP2 === 1 ? (
             <img className="piece two" src={Piece2} alt="p2 game piece" />
           ) : null}
+          <div className="go-container">
+            <img src={longArrow} alt="go-arrow" className="go-arrow" />
+            <div className="all-go">
+              <h1 className="go">GO</h1>
+              <div className="go-text-container">
+                <span className="go-instructions">COLLECT</span>
+                <span className="go-instructions">$200 SALARY</span>
+                <span className="go-instructions">AS YOU PASS</span>
+              </div>
+            </div>
+          </div>
         </div>
         <div className="left-spaces">
           <div id="40" className="left-space">
@@ -78,6 +97,18 @@ export const Board = ({ counterP1, counterP2, properties }) => {
             {counterP2 === 37 ? (
               <img className="piece two" src={Piece2} alt="p2 game piece" />
             ) : null}
+            <div className="left-rr-container luck">
+              <div>
+                <h3 className="left-rr">Fu Yuan</h3>
+                <div className="logo-cont">
+                  <img
+                    className="subway-logo-left luck"
+                    src={luck}
+                    alt="luck-logo"
+                  />
+                </div>
+              </div>
+            </div>
           </div>
           <div id="36" className="left-space">
             {counterP1 === 36 ? (
@@ -126,6 +157,18 @@ export const Board = ({ counterP1, counterP2, properties }) => {
             {counterP2 === 34 ? (
               <img className="piece two" src={Piece2} alt="p2 game piece" />
             ) : null}
+            <div className="left-rr-container guanxi">
+              <div>
+                <h3 className="left-rr">Guanxi</h3>
+                <div className="logo-cont">
+                  <img
+                    className="subway-logo-left guanxi"
+                    src={guanxi}
+                    alt="guanxi-logo"
+                  />
+                </div>
+              </div>
+            </div>
           </div>
           <div id="33" className="left-space">
             <div className="left-main">
@@ -173,6 +216,13 @@ export const Board = ({ counterP1, counterP2, properties }) => {
           {counterP2 === 31 ? (
             <img className="piece two" src={Piece2} alt="p2 game piece" />
           ) : null}
+          <div className="free-parking-container">
+            <img
+              className="bathroom-sign"
+              src={hutongbathroom}
+              alt="bathroom-sign"
+            />
+          </div>
         </div>
       </div>
       <div className="center-top-bottom">
@@ -199,6 +249,18 @@ export const Board = ({ counterP1, counterP2, properties }) => {
             {counterP2 === 3 ? (
               <img className="piece two" src={Piece2} alt="p2 game piece" />
             ) : null}
+            <div className="top-rr-container guanxi">
+              <div>
+                <h3 className="top-rr">Guanxi</h3>
+                <div className="logo-cont">
+                  <img
+                    className="subway-logo-top guanxi"
+                    src={guanxi}
+                    alt="guanxi-logo"
+                  />
+                </div>
+              </div>
+            </div>
           </div>
           <div id="4" className="top-space">
             <div className="top-main">
@@ -273,6 +335,18 @@ export const Board = ({ counterP1, counterP2, properties }) => {
             {counterP2 === 8 ? (
               <img className="piece two" src={Piece2} alt="p2 game piece" />
             ) : null}
+            <div className="top-rr-container luck">
+              <div>
+                <h3 className="top-rr">Fu Yuan</h3>
+                <div className="logo-cont">
+                  <img
+                    className="subway-logo-top luck"
+                    src={luck}
+                    alt="luck-logo"
+                  />
+                </div>
+              </div>
+            </div>
           </div>
           <div id="9" className="top-space">
             <div className="top-main">
@@ -311,11 +385,9 @@ export const Board = ({ counterP1, counterP2, properties }) => {
             <h2 className="board-title">LAOWAI MONOPOLY</h2>
           </div>
           <div className="card-container">
+            <img src={guanxiCard} alt="Guanxi Cards" className="card" />
             <div className="card">
-              <h4 className="card-title">Guanxi</h4>
-            </div>
-            <div className="card">
-              <h4 className="card-title">Yunqi</h4>
+              <img src={fuYuanCard} alt="Fu Yuan Cards" className="card" />
             </div>
           </div>
         </div>
@@ -444,6 +516,18 @@ export const Board = ({ counterP1, counterP2, properties }) => {
             {counterP2 === 23 ? (
               <img className="piece two" src={Piece2} alt="p2 game piece" />
             ) : null}
+            <div className="bottom-rr-container luck">
+              <div>
+                <h3 className="bottom-rr">Fu Yuan</h3>
+                <div className="logo-cont">
+                  <img
+                    className="subway-logo-bottom luck"
+                    src={luck}
+                    alt="luck-logo"
+                  />
+                </div>
+              </div>
+            </div>
           </div>
           <div id="22" className="right">
             <div className="bottom-main">
@@ -463,13 +547,31 @@ export const Board = ({ counterP1, counterP2, properties }) => {
         </div>
       </div>
       <div className="right-column">
-        <div id="11" className="right-corner-top">
-          {counterP1 === 11 ? (
-            <img src={Piece1} className="piece" alt="p1 game piece" />
-          ) : null}
-          {counterP2 === 11 ? (
-            <img className="piece two" src={Piece2} alt="p2 game piece" />
-          ) : null}
+        <div className="right-corner-top">
+          <div id="11" className="just-visiting-top">
+            <p className="visiting">Visiting</p>
+
+            {counterP1 === 11 ? (
+              <img src={Piece1} className="piece" alt="p1 game piece" />
+            ) : null}
+            {counterP2 === 11 ? (
+              <img className="piece two" src={Piece2} alt="p2 game piece" />
+            ) : null}
+          </div>
+          <div className="jail-right-visiting">
+            <div className="jail">
+              {p1Jail ? (
+                <img src={Piece1} className="piece" alt="p1 game piece" />
+              ) : null}
+              {p2Jail ? (
+                <img className="piece two" src={Piece2} alt="p2 game piece" />
+              ) : null}
+              <p className="jail-text">Back Home</p>
+            </div>
+            <div className="just-visiting-right">
+              <p className="just">Just</p>
+            </div>
+          </div>
         </div>
         <div className="right-spaces">
           <div id="12" className="right-space">
@@ -593,6 +695,18 @@ export const Board = ({ counterP1, counterP2, properties }) => {
             {counterP2 === 18 ? (
               <img className="piece two" src={Piece2} alt="p2 game piece" />
             ) : null}
+            <div className="right-rr-container guanxi">
+              <div>
+                <h3 className="right-rr">Guanxi</h3>
+                <div className="logo-cont">
+                  <img
+                    className="subway-logo-right guanxi"
+                    src={guanxi}
+                    alt="guanxi-logo"
+                  />
+                </div>
+              </div>
+            </div>
           </div>
           <div id="19" className="right-space">
             <div className="right-main">
@@ -640,6 +754,10 @@ export const Board = ({ counterP1, counterP2, properties }) => {
           {counterP2 === 21 ? (
             <img className="piece two" src={Piece2} alt="p2 game piece" />
           ) : null}
+          <div className="go-to-jail-container">
+            <img src={police} className="police-image" alt="police" />
+            <p className="go-to-jail">You're Deported!</p>
+          </div>
         </div>
       </div>
     </div>
