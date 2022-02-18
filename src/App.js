@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Board } from "./Components/Board";
-import { Controls } from "./Components/Controls";
+import { Controls } from "./Components/Controls/Controls";
 import { Properties } from "./Assets/Holdings/Properties";
 import { RailRoads } from "./Assets/Holdings/Railroads";
 import { Utilities } from "./Assets/Holdings/Utilities";
@@ -14,6 +14,8 @@ function App() {
   const [utilities, setUtilities] = useState(Utilities);
   const [p1Jail, setP1Jail] = useState(false);
   const [p2Jail, setP2Jail] = useState(false);
+  const [p1Money, setP1Money] = useState(1500);
+  const [p2Money, setP2Money] = useState(1500);
 
   return (
     <div className="App">
@@ -38,6 +40,10 @@ function App() {
         setCounterP2={setCounterP2}
         turn={turn}
         setTurn={setTurn}
+        p1Jail={p1Jail}
+        setP1Jail={setP1Jail}
+        p2Jail={p2Jail}
+        setP2Jail={setP2Jail}
       />
     </div>
   );
