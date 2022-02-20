@@ -312,7 +312,7 @@ export const Properties = [
     color: "orange",
   },
   {
-    Number: 12,
+    Number: 18,
     Name: "Modernista",
     Price: 180,
     rent: 14,

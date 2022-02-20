@@ -16,6 +16,7 @@ function App() {
   const [p2Jail, setP2Jail] = useState(false);
   const [p1Money, setP1Money] = useState(1500);
   const [p2Money, setP2Money] = useState(1500);
+  const [propertyModal, setPropertyModal] = useState(false);
 
   return (
     <div className="App">
@@ -32,12 +33,15 @@ function App() {
         setP1Jail={setP1Jail}
         p2Jail={p2Jail}
         setP2Jail={setP2Jail}
+        propertyModal={propertyModal}
       />
       <Controls
         counterP1={counterP1}
         setCounterP1={setCounterP1}
         counterP2={counterP2}
         setCounterP2={setCounterP2}
+        properties={properties}
+        setProperties={setProperties}
         turn={turn}
         setTurn={setTurn}
         p1Jail={p1Jail}
@@ -48,6 +52,7 @@ function App() {
         p1Money={p1Money}
         setP2Money={setP2Money}
         p2Money={p2Money}
+        setPropertyModal={setPropertyModal}
       />
     </div>
   );

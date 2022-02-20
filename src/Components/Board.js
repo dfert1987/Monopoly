@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useState } from "react";
+import PropertyModal from "../Components/Modals/PropertyModal";
 import Piece1 from "../Assets/Pieces/Piece1.png";
 import Piece2 from "../Assets/Pieces/Piece2.png";
 import ditielogo from "../Assets/PropertyImages/ditielogo.png";
@@ -12,10 +13,18 @@ import hutongbathroom from "../Assets/PropertyImages/hutongbathroom.png";
 import police from "../Assets/PropertyImages/gotojailguy.png";
 import guanxiCard from "../Assets/Cards/Guanxi/guanxicard.png";
 import fuYuanCard from "../Assets/Cards/Yunqi/fuyuancards.png";
-
 import "./Styles/Board.css";
 
-export const Board = ({ counterP1, counterP2, properties, p1Jail, p2Jail }) => {
+export const Board = ({
+  counterP1,
+  counterP2,
+  properties,
+  p1Jail,
+  p2Jail,
+  propertyModal,
+}) => {
+  const [showProperty, setShowProperty] = useState(false);
+
   return (
     <div className="main-board">
       <div className="left-column">
@@ -759,6 +768,7 @@ export const Board = ({ counterP1, counterP2, properties, p1Jail, p2Jail }) => {
             <p className="go-to-jail">You're Deported!</p>
           </div>
         </div>
+        {propertyModal === true ? <PropertyModal /> : null}
       </div>
     </div>
   );

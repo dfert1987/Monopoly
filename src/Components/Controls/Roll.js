@@ -13,6 +13,9 @@ export const Roll = ({
   turn,
   setTurn,
   disableLeft,
+  properties,
+  setProperties,
+  setPropertyModal,
 }) => {
   const [die1, setDie1] = useState(1);
   const [die2, setDie2] = useState(1);
@@ -35,8 +38,21 @@ export const Roll = ({
     if (counterP1 + first + second > 40) {
       let highTotal = counterP1 + first + second;
       setCounterP1(highTotal - 40);
+      showPropertyModal(highTotal - 40);
     } else {
       setCounterP1(counterP1 + first + second);
+      showPropertyModal(counterP1 + first + second);
+    }
+  };
+
+  const showPropertyModal = (space) => {
+    let currentProp = properties.find((property) => property.Number === space);
+    if (
+      currentProp &&
+      currentProp.ownedP1 === false &&
+      currentProp.ownedP2 === false
+    ) {
+      setPropertyModal(true);
     }
   };
 

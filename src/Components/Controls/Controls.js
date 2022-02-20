@@ -14,6 +14,9 @@ export const Controls = ({
   setP1Money,
   p2Money,
   setP2Money,
+  properties,
+  setProperties,
+  setPropertyModal,
 }) => {
   const [disableRight, setDisableRight] = useState(true);
   const [disableLeft, setDisableLeft] = useState(false);
@@ -39,6 +42,9 @@ export const Controls = ({
             turn={turn}
             setTurn={setTurn}
             disableLeft={disableLeft}
+            properties={properties}
+            setProperties={setProperties}
+            setPropertyModal={setPropertyModal}
           />
           <div className="money player1">
             <h3 className="money-label">Money</h3>
@@ -61,6 +67,8 @@ export const Controls = ({
             turn={turn}
             setTurn={setTurn}
             disableRight={disableRight}
+            properties={properties}
+            setProperties={setProperties}
           />
           <div className="money player2">
             <h3 className="money-label">Money</h3>
