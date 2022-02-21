@@ -14,7 +14,6 @@ export const Roll = ({
   setTurn,
   disableLeft,
   properties,
-  setProperties,
   setPropertyModal,
 }) => {
   const [die1, setDie1] = useState(1);
@@ -41,7 +40,9 @@ export const Roll = ({
       showPropertyModal(highTotal - 40);
     } else {
       setCounterP1(counterP1 + first + second);
-      showPropertyModal(counterP1 + first + second);
+      setTimeout(() => {
+        showPropertyModal(counterP1 + first + second);
+      }, 2000);
     }
   };
 

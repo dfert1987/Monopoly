@@ -8,6 +8,10 @@
   width: 800px;
 }
 
+.modal {
+  z-index: 300;
+}
+
 .left-column {
   border-right: 3px black solid;
   flex-direction: column;

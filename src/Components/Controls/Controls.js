@@ -69,6 +69,7 @@ export const Controls = ({
             disableRight={disableRight}
             properties={properties}
             setProperties={setProperties}
+            setPropertyModal={setPropertyModal}
           />
           <div className="money player2">
             <h3 className="money-label">Money</h3>

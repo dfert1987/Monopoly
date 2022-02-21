@@ -34,6 +34,7 @@ function App() {
         p2Jail={p2Jail}
         setP2Jail={setP2Jail}
         propertyModal={propertyModal}
+        setPropertyModal={setPropertyModal}
       />
       <Controls
         counterP1={counterP1}

@@ -1,0 +1,57 @@
+.flex {
+  display: flex;
+}
+
+.centerFlex {
+  justify-content: center;
+  align-items: center;
+}
+
+.flexColumn {
+  flex-direction: column;
+}
+
+.x-icon {
+  height: 2em;
+}
+
+.outerModal {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  background-color: black 0.8;
+}
+.outerModal.flex.centerFlex {
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.innerModal {
+  position: relative;
+  border-radius: 20px;
+  background-color: white;
+  overflow-y: auto;
+  width: 70em;
+  height: 40em;
+}
+
+.button-row {
+  width: 100%;
+  text-align: right;
+}
+
+.close-button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  margin: 1em;
+  transition: 0.3s;
+}
+
+.close-button:hover {
+  color: grey;
+}

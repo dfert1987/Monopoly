@@ -22,9 +22,8 @@ export const Board = ({
   p1Jail,
   p2Jail,
   propertyModal,
+  setPropertyModal,
 }) => {
-  const [showProperty, setShowProperty] = useState(false);
-
   return (
     <div className="main-board">
       <div className="left-column">
@@ -768,7 +767,13 @@ export const Board = ({
             <p className="go-to-jail">You're Deported!</p>
           </div>
         </div>
-        {propertyModal === true ? <PropertyModal /> : null}
+        {propertyModal === true ? (
+          <PropertyModal
+            className="modal"
+            setPropertyModal={setPropertyModal}
+            propertyModal={propertyModal}
+          />
+        ) : null}
       </div>
     </div>
   );
