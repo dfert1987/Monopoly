@@ -55,3 +55,8 @@
 .close-button:hover {
   color: grey;
 }
+
+.main-row {
+  display: flex;
+  flex-direction: row;
+}

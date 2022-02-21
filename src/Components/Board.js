@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import PropertyModal from "../Components/Modals/PropertyModal";
 import Piece1 from "../Assets/Pieces/Piece1.png";
 import Piece2 from "../Assets/Pieces/Piece2.png";
@@ -18,12 +18,15 @@ import "./Styles/Board.css";
 export const Board = ({
   counterP1,
   counterP2,
-  properties,
   p1Jail,
   p2Jail,
-  propertyModal,
-  setPropertyModal,
+  propertyModal1,
+  propertyModal2,
+  setPropertyModal1,
+  setPropertyModal2,
+  turn,
 }) => {
+  console.log(propertyModal1);
   return (
     <div className="main-board">
       <div className="left-column">
@@ -767,11 +770,16 @@ export const Board = ({
             <p className="go-to-jail">You're Deported!</p>
           </div>
         </div>
-        {propertyModal === true ? (
+        {propertyModal1 === true || propertyModal2 === true ? (
           <PropertyModal
             className="modal"
-            setPropertyModal={setPropertyModal}
-            propertyModal={propertyModal}
+            setPropertyModal1={setPropertyModal1}
+            setPropertyModal2={setPropertyModal2}
+            counterP1={counterP1}
+            counterP2={counterP2}
+            propertyModal1={propertyModal1}
+            propertyModal2={propertyModal2}
+            turn={turn}
           />
         ) : null}
       </div>

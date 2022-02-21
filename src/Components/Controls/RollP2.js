@@ -14,7 +14,7 @@ export const RollP2 = ({
   setTurn,
   disableRight,
   properties,
-  setPropertyModal,
+  setPropertyModal2,
 }) => {
   const [die3, setDie3] = useState(1);
   const [die4, setDie4] = useState(1);
@@ -69,12 +69,10 @@ export const RollP2 = ({
 
   const rollDice2 = (e) => {
     e.preventDefault();
-    setTurn(turn + 1);
     let min = 1;
     let max = 6;
     let first = Math.floor(Math.random() * (max - min + 1)) + min;
     let second = Math.floor(Math.random() * (max - min + 1)) + min;
-
     if (first === second) {
       setTurn(turn + 2);
     } else setTurn(turn + 1);
@@ -82,7 +80,6 @@ export const RollP2 = ({
     setDie4(second);
     dieImages1(first, "two");
     dieImages2(second, "two");
-
     if (counterP2 + first + second > 40) {
       let highTotal = counterP2 + first + second;
       setCounterP2(highTotal - 40);
@@ -102,7 +99,7 @@ export const RollP2 = ({
       currentProp.ownedP1 === false &&
       currentProp.ownedP2 === false
     ) {
-      setPropertyModal(true);
+      setPropertyModal2(true);
     }
   };
   return (

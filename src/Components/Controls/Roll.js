@@ -14,12 +14,13 @@ export const Roll = ({
   setTurn,
   disableLeft,
   properties,
-  setPropertyModal,
+  setPropertyModal1,
 }) => {
   const [die1, setDie1] = useState(1);
   const [die2, setDie2] = useState(1);
   const [die1Img, setDie1Img] = useState(dice1);
   const [die2Img, setDie2Img] = useState(dice1);
+  console.log(setPropertyModal1);
 
   const rollDice = (e) => {
     e.preventDefault();
@@ -41,7 +42,7 @@ export const Roll = ({
     } else {
       setCounterP1(counterP1 + first + second);
       setTimeout(() => {
-        showPropertyModal(counterP1 + first + second);
+        showPropertyModal(counterP1 + first + second, "p1");
       }, 2000);
     }
   };
@@ -53,7 +54,7 @@ export const Roll = ({
       currentProp.ownedP1 === false &&
       currentProp.ownedP2 === false
     ) {
-      setPropertyModal(true);
+      setPropertyModal1(true);
     }
   };
 
