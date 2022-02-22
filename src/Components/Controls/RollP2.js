@@ -15,6 +15,7 @@ export const RollP2 = ({
   disableRight,
   properties,
   setPropertyModal2,
+  setOnProp2,
 }) => {
   const [die3, setDie3] = useState(1);
   const [die4, setDie4] = useState(1);
@@ -100,8 +101,11 @@ export const RollP2 = ({
       currentProp.ownedP2 === false
     ) {
       setPropertyModal2(true);
+      setOnProp2(currentProp);
+      console.log(currentProp);
     }
   };
+
   return (
     <div className="p2-dice-button">
       <div className="roll-section">

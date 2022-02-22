@@ -19,6 +19,7 @@ function App() {
   const [propertyModal1, setPropertyModal1] = useState(false);
   const [propertyModal2, setPropertyModal2] = useState(false);
   const [onProp, setOnProp] = useState();
+  const [onProp2, setOnProp2] = useState();
 
   return (
     <div className="App">
@@ -28,6 +29,7 @@ function App() {
         properties={properties}
         setProperties={setProperties}
         onProp={onProp}
+        onProp2={onProp2}
         railRoads={railRoads}
         setRailRoads={setRailRoads}
         utilities={utilities}
@@ -51,6 +53,7 @@ function App() {
         setProperties={setProperties}
         turn={turn}
         setOnProp={setOnProp}
+        setOnProp2={setOnProp2}
         setTurn={setTurn}
         p1Jail={p1Jail}
         setP1Jail={setP1Jail}

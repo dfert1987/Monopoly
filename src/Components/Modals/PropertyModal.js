@@ -9,10 +9,10 @@ const PropertyModal = ({
   propertyModal1,
   propertyModal2,
   onProp,
+  onProp2,
 }) => {
   const [close, setClose] = useState(false);
-  console.log(onProp);
-
+  console.log(onProp2);
   const handleClose = (e) => {
     e.preventDefault();
     setClose(true);
@@ -33,9 +33,24 @@ const PropertyModal = ({
 
   const frontCard = () => {
     if (onProp && propertyModal1 && !propertyModal2 && close === false) {
-      return <div>{onProp.Name}</div>;
-    } else if (propertyModal2 && !propertyModal1 && close === false) {
-      return <div>poop[</div>;
+      return (
+        <>
+          <div className={`banner ${onProp.color}`}></div>
+          <h2>{onProp.Name}</h2>
+        </>
+      );
+    } else if (
+      onProp2 &&
+      propertyModal2 &&
+      !propertyModal1 &&
+      close === false
+    ) {
+      return (
+        <>
+          <div className={`banner ${onProp2.color}`}></div>
+          <h2>{onProp2.Name}</h2>
+        </>
+      );
     }
     return null;
   };
@@ -53,7 +68,7 @@ const PropertyModal = ({
             <div className="flip-card-inner">
               <div className="card front">
                 <div className="card-body d-flex justify-content-center align-items-center">
-                  <p className="card-text fs-1 fw-bold">{frontCard()}</p>
+                  {frontCard()}
                 </div>
               </div>
               <div className="card back">

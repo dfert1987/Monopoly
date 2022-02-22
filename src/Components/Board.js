@@ -27,6 +27,7 @@ export const Board = ({
   turn,
   setOnProp,
   onProp,
+  onProp2,
 }) => {
   console.log(propertyModal1);
   return (
@@ -784,7 +785,7 @@ export const Board = ({
             turn={turn}
             setOnProp={setOnProp}
             onProp={onProp}
-            p
+            onProp2={onProp2}
           />
         ) : null}
       </div>

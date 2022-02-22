@@ -60,3 +60,41 @@
   display: flex;
   flex-direction: row;
 }
+
+.banner {
+  height: 1em;
+  border: 1px solid black;
+  width: 100%;
+}
+
+.banner.red {
+  background-color: red;
+}
+
+.banner.purple {
+  background-color: violet;
+}
+
+.banner.dark-blue {
+  background-color: blue;
+}
+
+.banner.green {
+  background-color: green;
+}
+
+.banner.brown {
+  background-color: rgba(134, 56, 4, 0.993);
+}
+
+.banner.light-blue {
+  background-color: rgb(137, 174, 245);
+}
+
+.banner.yellow {
+  background-color: yellow;
+}
+
+.banner.orange {
+  background-color: orange;
+}
