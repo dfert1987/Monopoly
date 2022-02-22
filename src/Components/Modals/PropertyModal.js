@@ -8,15 +8,15 @@ const PropertyModal = ({
   setPropertyModal2,
   propertyModal1,
   propertyModal2,
+  onProp,
 }) => {
   const [close, setClose] = useState(false);
+  console.log(onProp);
 
   const handleClose = (e) => {
     e.preventDefault();
     setClose(true);
   };
-
-  console.log(close);
   useEffect(() => {
     if (propertyModal1 && !propertyModal2 && close === true) {
       setPropertyModal1(false);
@@ -32,11 +32,12 @@ const PropertyModal = ({
   ]);
 
   const frontCard = () => {
-    if (propertyModal1 && !propertyModal2 && close === false) {
-      return <div>Peep</div>;
+    if (onProp && propertyModal1 && !propertyModal2 && close === false) {
+      return <div>{onProp.Name}</div>;
     } else if (propertyModal2 && !propertyModal1 && close === false) {
-      return <div>Poop</div>;
+      return <div>poop[</div>;
     }
+    return null;
   };
 
   return (

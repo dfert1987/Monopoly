@@ -18,6 +18,7 @@ export const Controls = ({
   setProperties,
   setPropertyModal1,
   setPropertyModal2,
+  setOnProp,
 }) => {
   const [disableRight, setDisableRight] = useState(true);
   const [disableLeft, setDisableLeft] = useState(false);
@@ -46,6 +47,7 @@ export const Controls = ({
             properties={properties}
             setProperties={setProperties}
             setPropertyModal1={setPropertyModal1}
+            setOnProp={setOnProp}
           />
           <div className="money player1">
             <h3 className="money-label">Money</h3>
@@ -71,6 +73,7 @@ export const Controls = ({
             properties={properties}
             setProperties={setProperties}
             setPropertyModal2={setPropertyModal2}
+            setOnProp={setOnProp}
           />
           <div className="money player2">
             <h3 className="money-label">Money</h3>

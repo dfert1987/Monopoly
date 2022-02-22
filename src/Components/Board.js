@@ -25,6 +25,8 @@ export const Board = ({
   setPropertyModal1,
   setPropertyModal2,
   turn,
+  setOnProp,
+  onProp,
 }) => {
   console.log(propertyModal1);
   return (
@@ -780,6 +782,9 @@ export const Board = ({
             propertyModal1={propertyModal1}
             propertyModal2={propertyModal2}
             turn={turn}
+            setOnProp={setOnProp}
+            onProp={onProp}
+            p
           />
         ) : null}
       </div>

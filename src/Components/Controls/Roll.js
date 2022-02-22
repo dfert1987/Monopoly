@@ -15,12 +15,12 @@ export const Roll = ({
   disableLeft,
   properties,
   setPropertyModal1,
+  setOnProp,
 }) => {
   const [die1, setDie1] = useState(1);
   const [die2, setDie2] = useState(1);
   const [die1Img, setDie1Img] = useState(dice1);
   const [die2Img, setDie2Img] = useState(dice1);
-  console.log(setPropertyModal1);
 
   const rollDice = (e) => {
     e.preventDefault();
@@ -55,6 +55,7 @@ export const Roll = ({
       currentProp.ownedP2 === false
     ) {
       setPropertyModal1(true);
+      setOnProp(currentProp);
     }
   };
 
