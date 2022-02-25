@@ -119,6 +119,22 @@ const PropertyModal = ({
     return null;
   };
 
+  const propertyImage = () => {
+    if (onProp && propertyModal1 && !propertyModal2 && close === false) {
+      <div className="image-container">
+        <img className="property-image" alt="property" src={onProp.image} />
+      </div>;
+    } else if (
+      onProp2 &&
+      propertyModal2 &&
+      !propertyModal1 &&
+      close === false
+    ) {
+      <div className="image-container"></div>;
+    }
+    return null;
+  };
+
   return (
     <div className="outerModal flex centerFlex">
       <div className="innerModal flex flexColumn">
@@ -129,8 +145,9 @@ const PropertyModal = ({
         </div>
         <div className="main-row">
           {frontCard()}
-          <div className="options-container"></div>
+          {propertyImage()}
         </div>
+        <div className="options-container"></div>
       </div>
     </div>
   );
