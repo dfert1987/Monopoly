@@ -34,10 +34,42 @@ const PropertyModal = ({
   const frontCard = () => {
     if (onProp && propertyModal1 && !propertyModal2 && close === false) {
       return (
-        <>
-          <div className={`banner ${onProp.color}`}></div>
-          <h2>{onProp.Name}</h2>
-        </>
+        <div className="main-card">
+          <div className={`outer-banner`}>
+            <div className={`banner ${onProp.color}`}>
+              <h2 className="prop-name">{onProp.Name.toUpperCase()}</h2>
+            </div>
+          </div>
+          <div className="all-prop-info">
+            <div className="main-prop-info">
+              <h4 className="rent">{`RENT ¥${onProp.rent}`}</h4>
+              <div className="house-container one">
+                <p className="left-side">With 1 House</p>
+                <p className="right-side">{`¥${onProp.oneHouse}`}</p>
+              </div>
+              <div className="house-container two">
+                <p className="left-side">With 2 Houses</p>
+                <p className="right-side">{`¥${onProp.twoHouses}`}</p>
+              </div>
+              <div className="house-container three">
+                <p className="left-side">With 3 Houses</p>
+                <p className="right-side">{`¥${onProp.threeHouses}`}</p>
+              </div>
+              <div className="house-container four">
+                <p className="left-side">With 4 Houses</p>
+                <p className="right-side">{`¥${onProp.fourHouses}`}</p>
+              </div>
+              <div className="house-container hotel">
+                <p className="left-side">With Hotel</p>
+                <p className="right-side">{`¥${onProp.hotel}`}</p>
+              </div>
+            </div>
+            <div className="secondary-prop-info">
+              <h4 className="mortgage">{`Mortgage Value: ¥${onProp.mortgage}`}</h4>
+              <p className="houses">{`Houses Cost ¥${onProp.buidlingCost}`}</p>
+            </div>
+          </div>
+        </div>
       );
     } else if (
       onProp2 &&
@@ -47,8 +79,9 @@ const PropertyModal = ({
     ) {
       return (
         <>
-          <div className={`banner ${onProp2.color}`}></div>
-          <h2>{onProp2.Name}</h2>
+          <div className={`banner ${onProp2.color}`}>
+            <h2 className="prop-name">{onProp2.Name.toUpperCase()}</h2>
+          </div>
         </>
       );
     }
@@ -64,20 +97,7 @@ const PropertyModal = ({
           </button>
         </div>
         <div className="main-row">
-          <div className="flip-card-outer">
-            <div className="flip-card-inner">
-              <div className="card front">
-                <div className="card-body d-flex justify-content-center align-items-center">
-                  {frontCard()}
-                </div>
-              </div>
-              <div className="card back">
-                <div className="card-body d-flex justify-content-center align-items-center">
-                  <p className="card-text fs-1 fw-bold">Back</p>
-                </div>
-              </div>
-            </div>
-          </div>
+          {frontCard()}
           <div className="options-container"></div>
         </div>
       </div>

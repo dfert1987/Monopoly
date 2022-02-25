@@ -15,6 +15,11 @@
   height: 2em;
 }
 
+.card-body {
+  display: flex;
+  flex-direction: column;
+}
+
 .outerModal {
   position: fixed;
   width: 100%;
@@ -59,12 +64,19 @@
 .main-row {
   display: flex;
   flex-direction: row;
+  justify-content: center;
 }
 
 .banner {
-  height: 1em;
   border: 1px solid black;
-  width: 100%;
+  margin: 1em;
+}
+
+.prop-name {
+  color: white;
+  padding: 0.5em;
+  font-size: 20px;
+  text-align: center;
 }
 
 .banner.red {
@@ -97,4 +109,54 @@
 
 .banner.orange {
   background-color: orange;
+}
+
+.main-prop-info {
+  text-align: center;
+}
+
+.main-card {
+  border: 1px solid black;
+  width: 20em;
+}
+
+.house-container {
+  display: flex;
+  justify-content: space-between;
+  padding-left: 0.5em;
+  padding-right: 0.5em;
+  margin-top: 0;
+}
+
+.left-side {
+  margin-bottom: 0.25em;
+  margin-top: 0;
+}
+
+.right-side {
+  margin-bottom: 0.25em;
+  margin-top: 0;
+}
+
+.outer-banner {
+  border-bottom: 1px black solid;
+}
+
+.mortgage {
+  margin-bottom: 0.25em;
+  margin-top: 0.5em;
+  text-align: center;
+}
+
+.houses {
+  margin-top: 0;
+  text-align: center;
+}
+
+.all-prop-info {
+  padding: 1em;
+}
+
+.rent {
+  margin-top: 0;
 }
