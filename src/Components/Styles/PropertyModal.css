@@ -42,7 +42,7 @@
   background-color: #c0e2ca;
   overflow-y: auto;
   width: 70em;
-  height: 40em;
+  height: 42em;
   box-shadow: 0px 0px 12px -2px;
 }
 
@@ -194,6 +194,7 @@
   font-family: "Monopoly";
   font-size: 1.5em;
   width: 7em;
+  height: 2em;
   text-align: center;
   transition: background-color 0.3s ease;
   overflow: hidden;
@@ -219,6 +220,7 @@
   padding: 0.5em;
   transition: background-color 0.3s ease;
   overflow: hidden;
+  height: 2em;
   width: 7em;
 }
 
@@ -229,4 +231,25 @@
 
 .pass-button:active {
   background-color: grey;
+}
+
+.buy-container {
+  color: red;
+  display: flex;
+  flex-direction: column;
+  font-family: "Monopoly";
+  margin: 0;
+  text-align: center;
+}
+
+.visible {
+  margin: 0;
+  color: red;
+  font-size: 1.5em;
+  padding-left: 9.25em;
+  margin-top: 0.5em;
+}
+
+.invisible {
+  visibility: hidden;
 }

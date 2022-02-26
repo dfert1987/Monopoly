@@ -22,6 +22,16 @@ const PropertyModal = ({
   setProperties,
 }) => {
   const [close, setClose] = useState(false);
+  const [inSufficientFunds, setInsufficientFunds] = useState(false);
+
+  const viewInsufficient = () => {
+    if (!inSufficientFunds) {
+      return "invisible";
+    } else if (inSufficientFunds) {
+      return "visible";
+    }
+  };
+
   const handleClose = (e) => {
     e.preventDefault();
     setClose(true);
@@ -50,14 +60,16 @@ const PropertyModal = ({
       close === false
     ) {
       properties.map((obj) => {
-        if (obj && obj.Name === onProp.Name) {
+        if (obj && obj.Name === onProp.Name && obj.Price <= p1Money) {
           obj.ownedP1 = true;
           setP1Money(p1Money - obj.Price);
+          handleClose(e);
           return properties;
+        } else if (obj.Price > p1Money) {
+          setInsufficientFunds(true);
         }
         return null;
       });
-      handleClose(e);
     } else if (
       properties &&
       onProp2 &&
@@ -66,14 +78,16 @@ const PropertyModal = ({
       close === false
     ) {
       properties.map((obj) => {
-        if (obj && obj.Name === onProp2.Name) {
+        if (obj && obj.Name === onProp2.Name && obj.Price <= p2Money) {
           obj.ownedP2 = true;
           setP2Money(p2Money - obj.Price);
+          handleClose(e);
           return properties;
+        } else if (obj.Price > p2Money) {
+          setInsufficientFunds(true);
         }
         return null;
       });
-      handleClose(e);
     }
   };
 
@@ -200,6 +214,7 @@ const PropertyModal = ({
           <div>{frontCard()}</div>
           <div>{propertyImage()}</div>
         </div>
+        <h4 className={viewInsufficient()}>INSUFFICIENT FUNDS</h4>
         <div className="options-container">
           <button className="buy-button" onClick={buyProperty}>
             PURCHASE
