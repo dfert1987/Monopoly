@@ -149,11 +149,15 @@ const PropertyModal = ({
             <FontAwesomeIcon className="x-icon" icon={faXmark} />
           </button>
         </div>
+        <h2 className="title">FOR SALE</h2>
         <div className="main-row">
           <div>{frontCard()}</div>
           <div>{propertyImage()}</div>
         </div>
-        <div className="options-container"></div>
+        <div className="options-container">
+          <button className="buy-button">PURCHASE</button>
+          <button className="pass-button">PASS</button>
+        </div>
       </div>
     </div>
   );

@@ -37,11 +37,13 @@
 
 .innerModal {
   position: relative;
+  border: 2px black solid;
   border-radius: 20px;
-  background-color: white;
+  background-color: #c0e2ca;
   overflow-y: auto;
   width: 70em;
   height: 40em;
+  box-shadow: 0px 0px 12px -2px;
 }
 
 .button-row {
@@ -99,6 +101,10 @@
   background-color: rgba(134, 56, 4, 0.993);
 }
 
+.property-image {
+  box-shadow: 0px 0px 12px -2px;
+}
+
 .banner.light-blue {
   background-color: rgb(137, 174, 245);
 }
@@ -116,8 +122,10 @@
 }
 
 .main-card {
+  background-color: white;
   border: 1px solid black;
   width: 20em;
+  box-shadow: 0px 0px 12px -2px;
 }
 
 .house-container {
@@ -159,4 +167,63 @@
 
 .rent {
   margin-top: 0;
+}
+
+.title {
+  font-family: "Monopoly";
+  font-size: 5em;
+  margin: 0;
+  text-align: center;
+}
+
+.options-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  margin-top: 1em;
+}
+
+.buy-button {
+  border-radius: 5px;
+  cursor: pointer;
+  box-shadow: 0px 0px 12px -2px;
+  background-color: limegreen;
+  font-family: "Monopoly";
+  font-size: 1.5em;
+  width: 7em;
+  text-align: center;
+  transition: background-color 0.3s ease;
+  overflow: hidden;
+}
+
+.buy-button:hover {
+  background-color: white;
+  color: limegreen;
+}
+
+.buy-button:active {
+  background-color: grey;
+}
+
+.pass-button {
+  border-radius: 5px;
+  cursor: pointer;
+  color: white;
+  box-shadow: 0px 0px 12px -2px;
+  background-color: red;
+  font-family: "Monopoly";
+  font-size: 1.5em;
+  padding: 0.5em;
+  transition: background-color 0.3s ease;
+  overflow: hidden;
+  width: 7em;
+}
+
+.pass-button:hover {
+  background-color: white;
+  color: red;
+}
+
+.pass-button:active {
+  background-color: grey;
 }

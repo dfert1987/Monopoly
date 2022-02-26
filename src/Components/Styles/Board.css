@@ -844,3 +844,12 @@
   width: 20em;
   z-index: 300px;
 }
+
+.image-container {
+  height: 100%;
+}
+
+.property-image {
+  height: 100%;
+  margin-left: 0.5em;
+}
