@@ -121,16 +121,22 @@ const PropertyModal = ({
 
   const propertyImage = () => {
     if (onProp && propertyModal1 && !propertyModal2 && close === false) {
-      <div className="image-container">
-        <img className="property-image" alt="property" src={onProp.image} />
-      </div>;
+      return (
+        <div className="image-container">
+          <img className="property-image" alt="property" src={onProp.image} />
+        </div>
+      );
     } else if (
       onProp2 &&
       propertyModal2 &&
       !propertyModal1 &&
       close === false
     ) {
-      <div className="image-container"></div>;
+      return (
+        <div className="image-container">
+          <img className="property-image" alt="property" src={onProp2.image} />
+        </div>
+      );
     }
     return null;
   };
@@ -144,8 +150,8 @@ const PropertyModal = ({
           </button>
         </div>
         <div className="main-row">
-          {frontCard()}
-          {propertyImage()}
+          <div>{frontCard()}</div>
+          <div>{propertyImage()}</div>
         </div>
         <div className="options-container"></div>
       </div>

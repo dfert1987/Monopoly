@@ -20,7 +20,7 @@ export const Properties = [
     hasFourHouses: false,
     hasHotel: false,
     mortgaged: false,
-    image: require("../PropertyImages/space-trb.jpeg"),
+    image: require("../PropertyImages/image-trb.jpeg"),
     color: "dark-blue",
   },
   {
@@ -44,7 +44,7 @@ export const Properties = [
     hasFourHouses: false,
     hasHotel: false,
     mortgaged: false,
-    image: require("../PropertyImages/space-migas.jpeg"),
+    image: require("../PropertyImages/image-migas.jpeg"),
     color: "dark-blue",
   },
   {
@@ -68,7 +68,7 @@ export const Properties = [
     hasFourHouses: false,
     hasHotel: false,
     mortgaged: false,
-    image: require("../PropertyImages/space-greatleap.png"),
+    image: require("../PropertyImages/image-great-leap.jpeg"),
     color: "green",
   },
   {
@@ -92,7 +92,7 @@ export const Properties = [
     hasFourHouses: false,
     hasHotel: false,
     mortgaged: false,
-    image: require("../PropertyImages/space-slowboat.jpeg"),
+    image: require("../PropertyImages/image-slowboat.jpeg"),
     color: "green",
   },
   {
@@ -116,7 +116,7 @@ export const Properties = [
     hasFourHouses: false,
     hasHotel: false,
     mortgaged: false,
-    image: require("../PropertyImages/space-jinga.jpg"),
+    image: require("../PropertyImages/image-jinga.jpeg"),
     color: "green",
   },
   {
@@ -140,7 +140,7 @@ export const Properties = [
     hasFourHouses: false,
     hasHotel: false,
     mortgaged: false,
-    image: require("../PropertyImages/space-dadong.jpeg"),
+    image: require("../PropertyImages/image-dadong.jpeg"),
     color: "yellow",
   },
   {
@@ -164,7 +164,7 @@ export const Properties = [
     hasFourHouses: false,
     hasHotel: false,
     mortgaged: false,
-    image: require("../PropertyImages/space-haidilao.gif"),
+    image: require("../PropertyImages/image-haidilao.jpeg"),
     color: "yellow",
   },
   {
@@ -188,7 +188,7 @@ export const Properties = [
     hasFourHouses: false,
     hasHotel: false,
     mortgaged: false,
-    image: require("../PropertyImages/space-jdx.jpeg"),
+    image: require("../PropertyImages/image-jdx.jpeg"),
     color: "yellow",
   },
   {
@@ -212,7 +212,7 @@ export const Properties = [
     hasFourHouses: false,
     hasHotel: false,
     mortgaged: false,
-    image: require("../PropertyImages/space-lantern.jpeg"),
+    image: require("../PropertyImages/image-lantern.jpeg"),
     color: "red",
   },
   {
@@ -236,7 +236,7 @@ export const Properties = [
     hasFourHouses: false,
     hasHotel: false,
     mortgaged: false,
-    image: require("../PropertyImages/space-local.jpeg"),
+    image: require("../PropertyImages/image-local.jpeg"),
     color: "red",
   },
   {
@@ -260,7 +260,7 @@ export const Properties = [
     hasFourHouses: false,
     hasHotel: false,
     mortgaged: false,
-    image: require("../PropertyImages/space-annies.jpeg"),
+    image: require("../PropertyImages/image-annies.jpeg"),
     color: "red",
   },
   {
@@ -284,7 +284,7 @@ export const Properties = [
     hasFourHouses: false,
     hasHotel: false,
     mortgaged: false,
-    image: require("../PropertyImages/space-dada.jpeg"),
+    image: require("../PropertyImages/image-dada.png"),
     color: "orange",
   },
   {
@@ -308,7 +308,7 @@ export const Properties = [
     hasFourHouses: false,
     hasHotel: false,
     mortgaged: false,
-    image: require("../PropertyImages/space-trb.jpeg"),
+    image: require("../PropertyImages/image-temp.jpeg"),
     color: "orange",
   },
   {
@@ -332,7 +332,7 @@ export const Properties = [
     hasFourHouses: false,
     hasHotel: false,
     mortgaged: false,
-    image: require("../PropertyImages/space-modernista.jpeg"),
+    image: require("../PropertyImages/image-modernista.jpeg"),
     color: "orange",
   },
   {
@@ -356,7 +356,7 @@ export const Properties = [
     hasFourHouses: false,
     hasHotel: false,
     mortgaged: false,
-    image: require("../PropertyImages/space-zhang.jpeg"),
+    image: require("../PropertyImages/image-zhang.jpeg"),
     color: "purple",
   },
   {
@@ -380,7 +380,7 @@ export const Properties = [
     hasFourHouses: false,
     hasHotel: false,
     mortgaged: false,
-    image: require("../PropertyImages/space-dali.jpeg"),
+    image: require("../PropertyImages/image-dali.jpeg"),
     color: "purple",
   },
   {
@@ -404,7 +404,7 @@ export const Properties = [
     hasFourHouses: false,
     hasHotel: false,
     mortgaged: false,
-    image: require("../PropertyImages/space-laoman.jpeg"),
+    image: require("../PropertyImages/image-laoman.jpeg"),
     color: "purple",
   },
   {
@@ -428,7 +428,7 @@ export const Properties = [
     hasFourHouses: false,
     hasHotel: false,
     mortgaged: false,
-    image: require("../PropertyImages/space-4c.jpeg"),
+    image: require("../PropertyImages/image-4c.jpeg"),
     color: "light-blue",
   },
   {
@@ -452,7 +452,7 @@ export const Properties = [
     hasFourHouses: false,
     hasHotel: false,
     mortgaged: false,
-    image: require("../PropertyImages/space-cdlp.jpeg"),
+    image: require("../PropertyImages/image-cdlp.jpeg"),
     color: "light-blue",
   },
   {
@@ -476,7 +476,7 @@ export const Properties = [
     hasFourHouses: false,
     hasHotel: false,
     mortgaged: false,
-    image: require("../PropertyImages/space-hot-cat.jpeg"),
+    image: require("../PropertyImages/image-hotcat.jpeg"),
     color: "light-blue",
   },
   {
@@ -500,7 +500,7 @@ export const Properties = [
     hasFourHouses: false,
     hasHotel: false,
     mortgaged: false,
-    image: require("../PropertyImages/space-prop.jpeg"),
+    image: require("../PropertyImages/image-prop.jpeg"),
     color: "brown",
   },
   {
@@ -524,7 +524,7 @@ export const Properties = [
     hasFourHouses: false,
     hasHotel: false,
     mortgaged: false,
-    image: require("../PropertyImages/space-lush.png"),
+    image: require("../PropertyImages/image-lush.jpeg"),
     color: "brown",
   },
 ];
