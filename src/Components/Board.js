@@ -28,8 +28,17 @@ export const Board = ({
   setOnProp,
   onProp,
   onProp2,
+  p1Money,
+  p2Money,
+  setP1Money,
+  setP2Money,
+  p1Props,
+  p2Props,
+  setP1Props,
+  setP2Props,
+  properties,
+  setProperties,
 }) => {
-  console.log(propertyModal1);
   return (
     <div className="main-board">
       <div className="left-column">
@@ -786,6 +795,16 @@ export const Board = ({
             setOnProp={setOnProp}
             onProp={onProp}
             onProp2={onProp2}
+            setP1Money={setP1Money}
+            p1Money={p1Money}
+            setP2Money={setP2Money}
+            p2Money={p2Money}
+            p1Props={p1Props}
+            p2Props={p2Props}
+            setP1Props={setP1Props}
+            setP2Props={setP2Props}
+            properties={properties}
+            setProperties={setProperties}
           />
         ) : null}
       </div>

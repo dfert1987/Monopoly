@@ -10,9 +10,18 @@ const PropertyModal = ({
   propertyModal2,
   onProp,
   onProp2,
+  p1Money,
+  p2Money,
+  setP1Money,
+  setP2Money,
+  p1Props,
+  p2Props,
+  setP1Props,
+  setP2Props,
+  properties,
+  setProperties,
 }) => {
   const [close, setClose] = useState(false);
-  console.log(onProp2);
   const handleClose = (e) => {
     e.preventDefault();
     setClose(true);
@@ -30,6 +39,41 @@ const PropertyModal = ({
     propertyModal2,
     setPropertyModal2,
   ]);
+
+  const buyProperty = (e) => {
+    e.preventDefault();
+    if (
+      properties &&
+      onProp &&
+      propertyModal1 &&
+      !propertyModal2 &&
+      close === false
+    ) {
+      properties.map((obj) => {
+        if (obj && obj.Name === onProp.Name) {
+          obj.ownedP1 = true;
+          return properties;
+        }
+        return null;
+      });
+      handleClose(e);
+    } else if (
+      properties &&
+      onProp2 &&
+      propertyModal2 &&
+      !propertyModal1 &&
+      close === false
+    ) {
+      properties.map((obj) => {
+        if (obj && obj.Name === onProp2.Name) {
+          obj.ownedP2 = true;
+          return properties;
+        }
+        return null;
+      });
+      handleClose(e);
+    }
+  };
 
   const frontCard = () => {
     if (onProp && propertyModal1 && !propertyModal2 && close === false) {
@@ -155,8 +199,12 @@ const PropertyModal = ({
           <div>{propertyImage()}</div>
         </div>
         <div className="options-container">
-          <button className="buy-button">PURCHASE</button>
-          <button className="pass-button">PASS</button>
+          <button className="buy-button" onClick={buyProperty}>
+            PURCHASE
+          </button>
+          <button className="pass-button" onClick={handleClose}>
+            PASS
+          </button>
         </div>
       </div>
     </div>

@@ -20,7 +20,10 @@ function App() {
   const [propertyModal2, setPropertyModal2] = useState(false);
   const [onProp, setOnProp] = useState();
   const [onProp2, setOnProp2] = useState();
+  const [p1Props, setP1Props] = useState();
+  const [p2Props, setP2Props] = useState();
 
+  console.log(properties);
   return (
     <div className="App">
       <Board
@@ -43,6 +46,14 @@ function App() {
         propertyModal2={propertyModal2}
         setPropertyModal2={setPropertyModal2}
         turn={turn}
+        setP1Money={setP1Money}
+        p1Money={p1Money}
+        setP2Money={setP2Money}
+        p2Money={p2Money}
+        p1Props={p1Props}
+        p2Props={p2Props}
+        setP1Props={setP1Props}
+        setP2Props={setP2Props}
       />
       <Controls
         counterP1={counterP1}
