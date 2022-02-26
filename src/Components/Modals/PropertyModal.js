@@ -52,6 +52,7 @@ const PropertyModal = ({
       properties.map((obj) => {
         if (obj && obj.Name === onProp.Name) {
           obj.ownedP1 = true;
+          setP1Money(p1Money - obj.Price);
           return properties;
         }
         return null;
@@ -67,6 +68,7 @@ const PropertyModal = ({
       properties.map((obj) => {
         if (obj && obj.Name === onProp2.Name) {
           obj.ownedP2 = true;
+          setP2Money(p2Money - obj.Price);
           return properties;
         }
         return null;
