@@ -105,6 +105,7 @@
 .property-image {
   box-shadow: 0px 0px 12px -2px;
   max-height: 22em;
+  max-width: 25em;
 }
 
 .banner.light-blue {
@@ -182,7 +183,7 @@
 .options-container {
   display: flex;
   flex-direction: row;
-  justify-content: space-evenly;
+  justify-content: center;
   margin-top: 1em;
 }
 
@@ -198,6 +199,7 @@
   text-align: center;
   transition: background-color 0.3s ease;
   overflow: hidden;
+  margin-right: 1em;
 }
 
 .buy-button:hover {

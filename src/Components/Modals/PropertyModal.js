@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import { faXmark } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import "../Styles/PropertyModal.css";
@@ -14,15 +15,27 @@ const PropertyModal = ({
   p2Money,
   setP1Money,
   setP2Money,
-  p1Props,
-  p2Props,
-  setP1Props,
-  setP2Props,
   properties,
-  setProperties,
 }) => {
   const [close, setClose] = useState(false);
   const [inSufficientFunds, setInsufficientFunds] = useState(false);
+
+  const backdrop = {
+    visible: { opacity: 1 },
+    hidden: { opacity: 0 },
+  };
+
+  const modal = {
+    hidden: {
+      y: "-100vh",
+      opacity: 0,
+    },
+    visible: {
+      y: "0px",
+      opacity: 1,
+      transition: { delay: 0.5 },
+    },
+  };
 
   const viewInsufficient = () => {
     if (!inSufficientFunds) {
@@ -35,7 +48,11 @@ const PropertyModal = ({
   const handleClose = (e) => {
     e.preventDefault();
     setClose(true);
+    setPropertyModal1(false);
+    setPropertyModal2(false);
+    setClose(false);
   };
+
   useEffect(() => {
     if (propertyModal1 && !propertyModal2 && close === true) {
       setPropertyModal1(false);
@@ -200,31 +217,49 @@ const PropertyModal = ({
     }
     return null;
   };
+  console.log(propertyModal2, propertyModal1, close);
 
   return (
-    <div className="outerModal flex centerFlex">
-      <div className="innerModal flex flexColumn">
-        <div className="button-row">
-          <button className="close-button" onClick={handleClose}>
-            <FontAwesomeIcon className="x-icon" icon={faXmark} />
-          </button>
-        </div>
-        <h2 className="title">FOR SALE</h2>
-        <div className="main-row">
-          <div>{frontCard()}</div>
-          <div>{propertyImage()}</div>
-        </div>
-        <h4 className={viewInsufficient()}>INSUFFICIENT FUNDS</h4>
-        <div className="options-container">
-          <button className="buy-button" onClick={buyProperty}>
-            PURCHASE
-          </button>
-          <button className="pass-button" onClick={handleClose}>
-            PASS
-          </button>
-        </div>
-      </div>
-    </div>
+    <AnimatePresence exitBeforeEnter>
+      {(propertyModal1 === true && !close) ||
+      (propertyModal2 === true && !close) ? (
+        <motion.div
+          className="outerModal flex centerFlex"
+          variants={backdrop}
+          initial="hidden"
+          animate="visible"
+          exit="hidden"
+        >
+          <motion.div
+            className="innerModal flex flexColumn"
+            variants={modal}
+            initial="hidden"
+            animate="visible"
+            exit="hidden"
+          >
+            <div className="button-row">
+              <button className="close-button" onClick={handleClose}>
+                <FontAwesomeIcon className="x-icon" icon={faXmark} />
+              </button>
+            </div>
+            <h2 className="title">FOR SALE</h2>
+            <div className="main-row">
+              <div>{frontCard()}</div>
+              <div>{propertyImage()}</div>
+            </div>
+            <h4 className={viewInsufficient()}>INSUFFICIENT FUNDS</h4>
+            <div className="options-container">
+              <button className="buy-button" onClick={buyProperty}>
+                PURCHASE
+              </button>
+              <button className="pass-button" onClick={handleClose}>
+                PASS
+              </button>
+            </div>
+          </motion.div>
+        </motion.div>
+      ) : null}
+    </AnimatePresence>
   );
 };
 export default PropertyModal;

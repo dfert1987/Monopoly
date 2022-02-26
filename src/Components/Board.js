@@ -782,31 +782,29 @@ export const Board = ({
             <p className="go-to-jail">You're Deported!</p>
           </div>
         </div>
-        {propertyModal1 === true || propertyModal2 === true ? (
-          <PropertyModal
-            className="modal"
-            setPropertyModal1={setPropertyModal1}
-            setPropertyModal2={setPropertyModal2}
-            counterP1={counterP1}
-            counterP2={counterP2}
-            propertyModal1={propertyModal1}
-            propertyModal2={propertyModal2}
-            turn={turn}
-            setOnProp={setOnProp}
-            onProp={onProp}
-            onProp2={onProp2}
-            setP1Money={setP1Money}
-            p1Money={p1Money}
-            setP2Money={setP2Money}
-            p2Money={p2Money}
-            p1Props={p1Props}
-            p2Props={p2Props}
-            setP1Props={setP1Props}
-            setP2Props={setP2Props}
-            properties={properties}
-            setProperties={setProperties}
-          />
-        ) : null}
+        <PropertyModal
+          className="modal"
+          setPropertyModal1={setPropertyModal1}
+          setPropertyModal2={setPropertyModal2}
+          counterP1={counterP1}
+          counterP2={counterP2}
+          propertyModal1={propertyModal1}
+          propertyModal2={propertyModal2}
+          turn={turn}
+          setOnProp={setOnProp}
+          onProp={onProp}
+          onProp2={onProp2}
+          setP1Money={setP1Money}
+          p1Money={p1Money}
+          setP2Money={setP2Money}
+          p2Money={p2Money}
+          p1Props={p1Props}
+          p2Props={p2Props}
+          setP1Props={setP1Props}
+          setP2Props={setP2Props}
+          properties={properties}
+          setProperties={setProperties}
+        />
       </div>
     </div>
   );
