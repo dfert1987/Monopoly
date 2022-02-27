@@ -22,6 +22,7 @@ export const Properties = [
     mortgaged: false,
     image: require("../PropertyImages/image-trb.jpeg"),
     color: "dark-blue",
+    purchased: "Treat your bougie self!",
   },
   {
     Number: 38,
@@ -46,6 +47,7 @@ export const Properties = [
     mortgaged: false,
     image: require("../PropertyImages/image-migas.jpeg"),
     color: "dark-blue",
+    purchased: "Dance until sunrise!",
   },
   {
     Number: 35,
@@ -70,6 +72,7 @@ export const Properties = [
     mortgaged: false,
     image: require("../PropertyImages/image-great-leap.jpeg"),
     color: "green",
+    purchased: "The OG Beijing brewery is yours!",
   },
   {
     Number: 33,
@@ -94,6 +97,7 @@ export const Properties = [
     mortgaged: false,
     image: require("../PropertyImages/image-slowboat.jpeg"),
     color: "green",
+    puchased: "You're officially a Burger Cup heavy hitter.",
   },
   {
     Number: 32,
@@ -118,6 +122,7 @@ export const Properties = [
     mortgaged: false,
     image: require("../PropertyImages/image-jinga.jpeg"),
     color: "green",
+    purchased: "Punch your ticket for the next beer fest!",
   },
   {
     Number: 30,
@@ -142,6 +147,7 @@ export const Properties = [
     mortgaged: false,
     image: require("../PropertyImages/image-dadong.jpeg"),
     color: "yellow",
+    purchased: "Duck isn't just for when your family visits!",
   },
   {
     Number: 28,
@@ -166,6 +172,7 @@ export const Properties = [
     mortgaged: false,
     image: require("../PropertyImages/image-haidilao.jpeg"),
     color: "yellow",
+    purchased: "Get your noodle dance on!",
   },
   {
     Number: 27,
@@ -190,6 +197,7 @@ export const Properties = [
     mortgaged: false,
     image: require("../PropertyImages/image-jdx.jpeg"),
     color: "yellow",
+    puchased: "Whether it's 11am or 3am, you've got dumplings.",
   },
   {
     Number: 25,
@@ -214,6 +222,7 @@ export const Properties = [
     mortgaged: false,
     image: require("../PropertyImages/image-lantern.jpeg"),
     color: "red",
+    puchased: "Party until you're full of regret!",
   },
   {
     Number: 24,
@@ -238,6 +247,7 @@ export const Properties = [
     mortgaged: false,
     image: require("../PropertyImages/image-local.jpeg"),
     color: "red",
+    purchased: "Wings and a Beergarita await!",
   },
   {
     Number: 22,
@@ -262,6 +272,7 @@ export const Properties = [
     mortgaged: false,
     image: require("../PropertyImages/image-annies.jpeg"),
     color: "red",
+    purchased: "Don't worry, no one's gonna call you basic.",
   },
   {
     Number: 20,
@@ -286,6 +297,7 @@ export const Properties = [
     mortgaged: false,
     image: require("../PropertyImages/image-dada.png"),
     color: "orange",
+    purchased: "Meet you in the upstairs bathroom!",
   },
   {
     Number: 19,
@@ -310,6 +322,7 @@ export const Properties = [
     mortgaged: false,
     image: require("../PropertyImages/image-temp.jpeg"),
     color: "orange",
+    purchased: "You're officially king of the party monsters!",
   },
   {
     Number: 17,
@@ -334,6 +347,7 @@ export const Properties = [
     mortgaged: false,
     image: require("../PropertyImages/image-modernista.jpeg"),
     color: "orange",
+    purchased: "You've got to start smoking cigarettes now I think.",
   },
   {
     Number: 15,
@@ -358,6 +372,7 @@ export const Properties = [
     mortgaged: false,
     image: require("../PropertyImages/image-zhang.jpeg"),
     color: "purple",
+    purchased: "It burns so good!",
   },
   {
     Number: 14,
@@ -382,6 +397,7 @@ export const Properties = [
     mortgaged: false,
     image: require("../PropertyImages/image-dali.jpeg"),
     color: "purple",
+    purchased: "Get one of those big spicy fish for me.",
   },
   {
     Number: 12,
@@ -406,6 +422,7 @@ export const Properties = [
     mortgaged: false,
     image: require("../PropertyImages/image-laoman.jpeg"),
     color: "purple",
+    purchased: "Dumps like what, what!",
   },
   {
     Number: 10,
@@ -430,6 +447,7 @@ export const Properties = [
     mortgaged: false,
     image: require("../PropertyImages/image-4c.jpeg"),
     color: "light-blue",
+    purchased: "You're also now manager of the Solid Gold Dream Machine.",
   },
   {
     Number: 9,
@@ -454,6 +472,7 @@ export const Properties = [
     mortgaged: false,
     image: require("../PropertyImages/image-cdlp.jpeg"),
     color: "light-blue",
+    purchased: "Coffee shots on you!",
   },
   {
     Number: 7,
@@ -478,6 +497,7 @@ export const Properties = [
     mortgaged: false,
     image: require("../PropertyImages/image-hotcat.jpeg"),
     color: "light-blue",
+    purchased: "See for open mic on Wednesday.",
   },
   {
     Number: 4,
@@ -502,6 +522,7 @@ export const Properties = [
     mortgaged: false,
     image: require("../PropertyImages/image-prop.jpeg"),
     color: "brown",
+    purchased: "Tell me the alcohol is real.",
   },
   {
     Number: 2,
@@ -526,5 +547,6 @@ export const Properties = [
     mortgaged: false,
     image: require("../PropertyImages/image-lush.jpeg"),
     color: "brown",
+    purchased: "You are king of the coeds!",
   },
 ];
