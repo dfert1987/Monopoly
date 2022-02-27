@@ -58,6 +58,7 @@ const PurchasedPopUp = ({ viewPurchase, setViewPurchase, onProp, onProp2 }) => {
                   src={yuanSign}
                 />
                 <h2 className="title-bottom">{onProp.Name}</h2>
+                <h4 className="message">{onProp2.purchased}</h4>
               </div>
             </motion.div>
           </motion.div>
@@ -80,6 +81,7 @@ const PurchasedPopUp = ({ viewPurchase, setViewPurchase, onProp, onProp2 }) => {
                   src={yuanSign}
                 />
                 <h2 className="title-bottom">{onProp2.Name}</h2>
+                <h4 className="message">{onProp2.purchased}</h4>
               </div>
             </div>
           </div>
