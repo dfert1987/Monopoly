@@ -1,4 +1,6 @@
-import React from "react";
+import React, { useState } from "react";
+import PropertyModal from "../Components/Modals/PropertyModal";
+import PurchasedPopUp from "../Components/Modals/PurchasedPopUp";
 import Piece1 from "../Assets/Pieces/Piece1.png";
 import Piece2 from "../Assets/Pieces/Piece2.png";
 import ditielogo from "../Assets/PropertyImages/ditielogo.png";
@@ -12,10 +14,33 @@ import hutongbathroom from "../Assets/PropertyImages/hutongbathroom.png";
 import police from "../Assets/PropertyImages/gotojailguy.png";
 import guanxiCard from "../Assets/Cards/Guanxi/guanxicard.png";
 import fuYuanCard from "../Assets/Cards/Yunqi/fuyuancards.png";
-
 import "./Styles/Board.css";
 
-export const Board = ({ counterP1, counterP2, properties, p1Jail, p2Jail }) => {
+export const Board = ({
+  counterP1,
+  counterP2,
+  p1Jail,
+  p2Jail,
+  propertyModal1,
+  propertyModal2,
+  setPropertyModal1,
+  setPropertyModal2,
+  turn,
+  setOnProp,
+  onProp,
+  onProp2,
+  p1Money,
+  p2Money,
+  setP1Money,
+  setP2Money,
+  p1Props,
+  p2Props,
+  setP1Props,
+  setP2Props,
+  properties,
+  setProperties,
+}) => {
+  const [viewPurchase, setViewPurchase] = useState(false);
   return (
     <div className="main-board">
       <div className="left-column">
@@ -759,6 +784,38 @@ export const Board = ({ counterP1, counterP2, properties, p1Jail, p2Jail }) => {
             <p className="go-to-jail">You're Deported!</p>
           </div>
         </div>
+
+        <PurchasedPopUp
+          className="purchased"
+          viewPurchase={viewPurchase}
+          setViewPurchase={setViewPurchase}
+          onProp={onProp}
+          onProp2={onProp2}
+        />
+        <PropertyModal
+          className="modal"
+          setPropertyModal1={setPropertyModal1}
+          setPropertyModal2={setPropertyModal2}
+          counterP1={counterP1}
+          counterP2={counterP2}
+          propertyModal1={propertyModal1}
+          propertyModal2={propertyModal2}
+          turn={turn}
+          setOnProp={setOnProp}
+          onProp={onProp}
+          onProp2={onProp2}
+          setP1Money={setP1Money}
+          p1Money={p1Money}
+          setP2Money={setP2Money}
+          p2Money={p2Money}
+          p1Props={p1Props}
+          p2Props={p2Props}
+          setP1Props={setP1Props}
+          setP2Props={setP2Props}
+          properties={properties}
+          setProperties={setProperties}
+          setViewPurchase={setViewPurchase}
+        />
       </div>
     </div>
   );

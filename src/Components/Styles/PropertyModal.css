@@ -1,0 +1,257 @@
+.flex {
+  display: flex;
+}
+
+.centerFlex {
+  justify-content: center;
+  align-items: center;
+}
+
+.flexColumn {
+  flex-direction: column;
+}
+
+.x-icon {
+  height: 2em;
+}
+
+.card-body {
+  display: flex;
+  flex-direction: column;
+}
+
+.outerModal {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  background-color: black 0.8;
+}
+.outerModal.flex.centerFlex {
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.innerModal {
+  position: relative;
+  border: 2px black solid;
+  border-radius: 20px;
+  background-color: #c0e2ca;
+  overflow-y: auto;
+  width: 70em;
+  height: 42em;
+  box-shadow: 0px 0px 12px -2px;
+}
+
+.button-row {
+  width: 100%;
+  text-align: right;
+}
+
+.close-button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  margin: 1em;
+  transition: 0.3s;
+}
+
+.close-button:hover {
+  color: grey;
+}
+
+.main-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.banner {
+  border: 1px solid black;
+  margin: 1em;
+}
+
+.prop-name {
+  color: white;
+  text-shadow: black 2px 2px 2px;
+  padding: 0.5em;
+  font-size: 20px;
+  text-align: center;
+}
+
+.banner.red {
+  background-color: red;
+}
+
+.banner.purple {
+  background-color: violet;
+}
+
+.banner.dark-blue {
+  background-color: blue;
+}
+
+.banner.green {
+  background-color: green;
+}
+
+.banner.brown {
+  background-color: rgba(134, 56, 4, 0.993);
+}
+
+.property-image {
+  box-shadow: 0px 0px 12px -2px;
+  max-height: 22em;
+  max-width: 25em;
+}
+
+.banner.light-blue {
+  background-color: rgb(137, 174, 245);
+}
+
+.banner.yellow {
+  background-color: yellow;
+}
+
+.banner.orange {
+  background-color: orange;
+}
+
+.main-prop-info {
+  text-align: center;
+}
+
+.main-card {
+  background-color: white;
+  border: 1px solid black;
+  width: 20em;
+  box-shadow: 0px 0px 12px -2px;
+  height: 22em;
+}
+
+.house-container {
+  display: flex;
+  justify-content: space-between;
+  padding-left: 0.5em;
+  padding-right: 0.5em;
+  margin-top: 0;
+}
+
+.left-side {
+  margin-bottom: 0.25em;
+  margin-top: 0;
+}
+
+.right-side {
+  margin-bottom: 0.25em;
+  margin-top: 0;
+}
+
+.outer-banner {
+  border-bottom: 1px black solid;
+}
+
+.mortgage {
+  margin-bottom: 0.25em;
+  margin-top: 0.5em;
+  text-align: center;
+}
+
+.houses {
+  margin-top: 0;
+  text-align: center;
+}
+
+.all-prop-info {
+  padding: 1em;
+}
+
+.rent {
+  margin-top: 0;
+}
+
+.title {
+  font-family: "Monopoly";
+  font-size: 5em;
+  margin: 0;
+  text-align: center;
+}
+
+.options-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-top: 1em;
+}
+
+.buy-button {
+  border-radius: 5px;
+  cursor: pointer;
+  box-shadow: 0px 0px 12px -2px;
+  background-color: limegreen;
+  font-family: "Monopoly";
+  font-size: 1.5em;
+  width: 7em;
+  height: 2em;
+  text-align: center;
+  transition: background-color 0.3s ease;
+  overflow: hidden;
+  margin-right: 1em;
+}
+
+.buy-button:hover {
+  background-color: white;
+  color: limegreen;
+}
+
+.buy-button:active {
+  background-color: grey;
+}
+
+.pass-button {
+  border-radius: 5px;
+  cursor: pointer;
+  color: white;
+  box-shadow: 0px 0px 12px -2px;
+  background-color: red;
+  font-family: "Monopoly";
+  font-size: 1.5em;
+  padding: 0.5em;
+  transition: background-color 0.3s ease;
+  overflow: hidden;
+  height: 2em;
+  width: 7em;
+}
+
+.pass-button:hover {
+  background-color: white;
+  color: red;
+}
+
+.pass-button:active {
+  background-color: grey;
+}
+
+.buy-container {
+  color: red;
+  display: flex;
+  flex-direction: column;
+  font-family: "Monopoly";
+  margin: 0;
+  text-align: center;
+}
+
+.visible {
+  margin: 0;
+  color: red;
+  font-size: 1.5em;
+  padding-left: 9.25em;
+  margin-top: 0.5em;
+}
+
+.invisible {
+  visibility: hidden;
+}

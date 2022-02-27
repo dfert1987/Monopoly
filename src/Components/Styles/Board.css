@@ -8,6 +8,10 @@
   width: 800px;
 }
 
+.modal {
+  z-index: 300;
+}
+
 .left-column {
   border-right: 3px black solid;
   flex-direction: column;
@@ -839,4 +843,13 @@
   position: absolute;
   width: 20em;
   z-index: 300px;
+}
+
+.image-container {
+  height: 100%;
+}
+
+.property-image {
+  height: 100%;
+  margin-left: 0.5em;
 }
