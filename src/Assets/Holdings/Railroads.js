@@ -1,5 +1,6 @@
 export const RailRoads = [
   {
+    Number: 6,
     Name: "Line 10",
     Price: 200,
     rent: 25,
@@ -16,6 +17,7 @@ export const RailRoads = [
     image: require("../PropertyImages/space-line10.jpeg"),
   },
   {
+    Number: 16,
     Name: "Line 2",
     Price: 200,
     rent: 25,
@@ -32,6 +34,7 @@ export const RailRoads = [
     image: require("../PropertyImages/space-line2.jpeg"),
   },
   {
+    Number: 26,
     Name: "Line 6",
     Price: 200,
     rent: 25,
@@ -48,6 +51,7 @@ export const RailRoads = [
     image: require("../PropertyImages/space-line6.jpeg"),
   },
   {
+    Number: 36,
     Name: "Line 13",
     Price: 200,
     rent: 25,
