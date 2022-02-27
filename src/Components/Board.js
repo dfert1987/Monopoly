@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import PropertyModal from "../Components/Modals/PropertyModal";
+import OwnedProperties from "../Components/Modals/OwnedProperties";
 import PurchasedPopUp from "../Components/Modals/PurchasedPopUp";
 import Piece1 from "../Assets/Pieces/Piece1.png";
 import Piece2 from "../Assets/Pieces/Piece2.png";
@@ -39,6 +40,10 @@ export const Board = ({
   setP2Props,
   properties,
   setProperties,
+  viewProperties,
+  setViewProperties,
+  viewProperties2,
+  setViewProperties2,
 }) => {
   const [viewPurchase, setViewPurchase] = useState(false);
   const [viewPurchase2, setViewPurchase2] = useState(false);
@@ -785,6 +790,14 @@ export const Board = ({
             <p className="go-to-jail">You're Deported!</p>
           </div>
         </div>
+        <OwnedProperties
+          className="owned"
+          viewProperties={viewProperties}
+          viewProperties2={viewProperties2}
+          setViewProperties={setViewProperties}
+          setViewProperties2={setViewProperties2}
+          properties={properties}
+        />
         <PurchasedPopUp
           className="purchased"
           viewPurchase={viewPurchase}

@@ -1,0 +1,178 @@
+.flex {
+  display: flex;
+}
+
+.centerFlex {
+  justify-content: center;
+  align-items: center;
+}
+
+.flexColumn {
+  flex-direction: column;
+}
+
+.outerModal {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  background-color: black 0.8;
+}
+.outerModal.flex.centerFlex {
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.innerModalProps {
+  position: relative;
+  border: 2px black solid;
+  border-radius: 20px;
+  background-color: #c0e2ca;
+  overflow-y: auto;
+  width: 70em;
+  height: 60em;
+  box-shadow: 0px 0px 12px -2px;
+}
+
+.x-icon {
+  height: 2em;
+}
+
+.close-button-x {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  margin: 1em;
+  color: black;
+  transition: 0.3s;
+}
+
+.close-button-x:hover {
+  color: white;
+}
+
+.player1 {
+  margin-bottom: 0.25em;
+  margin-top: 0.25em;
+}
+
+.player2 {
+  margin-bottom: 0.25em;
+  margin-top: 0.25em;
+}
+
+.player-row {
+  display: flex;
+  flex-direction: row;
+  font-family: "Monopoly";
+  justify-content: space-evenly;
+  text-decoration: underline;
+  font-size: 1.5em;
+}
+
+.property-squares {
+  display: flex;
+  flex-direction: column;
+}
+
+.card-row {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 1em;
+}
+
+.cardSquare-brown {
+  border: 2px solid rgba(134, 56, 4, 0.993);
+  margin-right: 0.5em;
+  height: 3em;
+  width: 3em;
+}
+
+.cardSquare-light-blue {
+  border: 2px solid rgb(137, 174, 245);
+  margin-right: 0.5em;
+  height: 3em;
+  width: 3em;
+}
+
+.cardSquare-orange {
+  border: 2px solid orange;
+  margin-right: 0.5em;
+  height: 3em;
+  width: 3em;
+}
+
+.cardSquare-violet {
+  border: 2px solid violet;
+  margin-right: 0.5em;
+  height: 3em;
+  width: 3em;
+}
+
+.cardSquare-red {
+  border: 2px solid red;
+  margin-right: 0.5em;
+  height: 3em;
+  width: 3em;
+}
+
+.cardSquare-yellow {
+  border: 2px solid yellow;
+  margin-right: 0.5em;
+  height: 3em;
+  width: 3em;
+}
+
+.cardSquare-green {
+  border: 2px solid green;
+  margin-right: 0.5em;
+  height: 3em;
+  width: 3em;
+}
+
+.cardSquare-blue {
+  border: 2px solid blue;
+  margin-right: 0.5em;
+  height: 3em;
+  width: 3em;
+}
+
+.cardSquare-black {
+  border: 2px solid black;
+  margin-right: 0.5em;
+  height: 3em;
+  width: 3em;
+}
+
+.cardSquare-grey {
+  border: 2px solid grey;
+  margin-right: 0.5em;
+  height: 3em;
+  width: 3em;
+}
+
+.player-column {
+  display: flex;
+  flex-direction: column;
+}
+
+.square-columns {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
+.card-group {
+  display: flex;
+  flex-direction: row;
+  margin-right: 1em;
+}
+
+.subheader {
+  text-align: left;
+  text-decoration: underline;
+  margin-top: 0ex;
+}
