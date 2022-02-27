@@ -96,7 +96,8 @@
 .money-label {
   margin: 0;
   padding-bottom: 0.5em;
-  text-decoration: underline 2px;
+  text-decoration: underline;
+  font-size: 1em;
 }
 
 .money {
