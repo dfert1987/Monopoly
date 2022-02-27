@@ -41,6 +41,7 @@ export const Board = ({
   setProperties,
 }) => {
   const [viewPurchase, setViewPurchase] = useState(false);
+  const [viewPurchase2, setViewPurchase2] = useState(false);
   return (
     <div className="main-board">
       <div className="left-column">
@@ -784,13 +785,14 @@ export const Board = ({
             <p className="go-to-jail">You're Deported!</p>
           </div>
         </div>
-
         <PurchasedPopUp
           className="purchased"
           viewPurchase={viewPurchase}
           setViewPurchase={setViewPurchase}
           onProp={onProp}
           onProp2={onProp2}
+          setViewPurchase2={setViewPurchase2}
+          viewPurchase2={viewPurchase2}
         />
         <PropertyModal
           className="modal"
@@ -815,6 +817,7 @@ export const Board = ({
           properties={properties}
           setProperties={setProperties}
           setViewPurchase={setViewPurchase}
+          setViewPurchase2={setViewPurchase2}
         />
       </div>
     </div>

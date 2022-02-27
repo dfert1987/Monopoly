@@ -50,7 +50,7 @@ export const Controls = ({
           />
           <div className="money player1">
             <h3 className="money-label">Money</h3>
-            <p className="money">{p1Money}</p>
+            <p className="money">¥{p1Money}</p>
           </div>
           <div className="properties player1">
             <h3 className="props-label">Your Properties</h3>
@@ -76,7 +76,7 @@ export const Controls = ({
           />
           <div className="money player2">
             <h3 className="money-label">Money</h3>
-            <p className="money">{p2Money}</p>
+            <p className="money">¥{p2Money}</p>
           </div>
           <div className="properties player2">
             <h3 className="props-label">Your Properties</h3>

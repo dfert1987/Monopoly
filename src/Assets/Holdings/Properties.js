@@ -97,7 +97,7 @@ export const Properties = [
     mortgaged: false,
     image: require("../PropertyImages/image-slowboat.jpeg"),
     color: "green",
-    puchased: "You're officially a Burger Cup heavy hitter.",
+    purchased: "You're officially a Burger Cup heavy hitter.",
   },
   {
     Number: 32,
@@ -197,7 +197,7 @@ export const Properties = [
     mortgaged: false,
     image: require("../PropertyImages/image-jdx.jpeg"),
     color: "yellow",
-    puchased: "Whether it's 11am or 3am, you've got dumplings.",
+    purchased: "Whether it's 11am or 3am, you've got dumplings.",
   },
   {
     Number: 25,
@@ -222,7 +222,7 @@ export const Properties = [
     mortgaged: false,
     image: require("../PropertyImages/image-lantern.jpeg"),
     color: "red",
-    puchased: "Party until you're full of regret!",
+    purchased: "Party until you're full of regret!",
   },
   {
     Number: 24,

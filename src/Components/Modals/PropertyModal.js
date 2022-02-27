@@ -17,6 +17,7 @@ const PropertyModal = ({
   setP2Money,
   properties,
   setViewPurchase,
+  setViewPurchase2,
 }) => {
   const [close, setClose] = useState(false);
   const [inSufficientFunds, setInsufficientFunds] = useState(false);
@@ -101,7 +102,7 @@ const PropertyModal = ({
           obj.ownedP2 = true;
           setP2Money(p2Money - obj.Price);
           handleClose(e);
-          setViewPurchase(true);
+          setViewPurchase2(true);
           return properties;
         } else if (obj.Price > p2Money) {
           setInsufficientFunds(true);

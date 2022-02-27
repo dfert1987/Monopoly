@@ -22,10 +22,18 @@ const modal = {
   },
 };
 
-const PurchasedPopUp = ({ viewPurchase, setViewPurchase, onProp, onProp2 }) => {
+const PurchasedPopUp = ({
+  viewPurchase,
+  viewPurchase2,
+  setViewPurchase,
+  setViewPurchase2,
+  onProp,
+  onProp2,
+}) => {
   const handleClose = (e) => {
     e.preventDefault();
     setViewPurchase(false);
+    setViewPurchase2(false);
   };
   return (
     <>
@@ -58,16 +66,28 @@ const PurchasedPopUp = ({ viewPurchase, setViewPurchase, onProp, onProp2 }) => {
                   src={yuanSign}
                 />
                 <h2 className="title-bottom">{onProp.Name}</h2>
-                <h4 className="message">{onProp2.purchased}</h4>
+                <h4 className="message">{onProp.purchased}</h4>
               </div>
             </motion.div>
           </motion.div>
         ) : null}
       </AnimatePresence>
       <AnimatePresence exitBeforeEnter>
-        {viewPurchase && onProp2 ? (
-          <div className="outerModal flex centerFlex">
-            <div className="flex flexColumn innerModalPurchase">
+        {viewPurchase2 && onProp2 ? (
+          <motion.div
+            className="outerModal flex centerFlex"
+            variants={backdrop}
+            initial="hidden"
+            animate="visible"
+            exit="hidden"
+          >
+            <motion.div
+              className="flex flexColumn innerModalPurchase"
+              variants={modal}
+              initial="hidden"
+              animate="visible"
+              exit="hidden"
+            >
               <div className="button-row">
                 <button className="close-button" onClick={handleClose}>
                   <FontAwesomeIcon className="x-icon" icon={faXmark} />
@@ -83,8 +103,8 @@ const PurchasedPopUp = ({ viewPurchase, setViewPurchase, onProp, onProp2 }) => {
                 <h2 className="title-bottom">{onProp2.Name}</h2>
                 <h4 className="message">{onProp2.purchased}</h4>
               </div>
-            </div>
-          </div>
+            </motion.div>
+          </motion.div>
         ) : null}
       </AnimatePresence>
     </>
