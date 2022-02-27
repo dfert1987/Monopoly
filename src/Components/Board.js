@@ -1,5 +1,6 @@
-import React from "react";
+import React, { useState } from "react";
 import PropertyModal from "../Components/Modals/PropertyModal";
+import PurchasedPopUp from "../Components/Modals/PurchasedPopUp";
 import Piece1 from "../Assets/Pieces/Piece1.png";
 import Piece2 from "../Assets/Pieces/Piece2.png";
 import ditielogo from "../Assets/PropertyImages/ditielogo.png";
@@ -39,6 +40,7 @@ export const Board = ({
   properties,
   setProperties,
 }) => {
+  const [viewPurchase, setViewPurchase] = useState(false);
   return (
     <div className="main-board">
       <div className="left-column">
@@ -782,6 +784,14 @@ export const Board = ({
             <p className="go-to-jail">You're Deported!</p>
           </div>
         </div>
+
+        <PurchasedPopUp
+          className="purchased"
+          viewPurchase={viewPurchase}
+          setViewPurchase={setViewPurchase}
+          onProp={onProp}
+          onProp2={onProp2}
+        />
         <PropertyModal
           className="modal"
           setPropertyModal1={setPropertyModal1}
@@ -804,6 +814,7 @@ export const Board = ({
           setP2Props={setP2Props}
           properties={properties}
           setProperties={setProperties}
+          setViewPurchase={setViewPurchase}
         />
       </div>
     </div>

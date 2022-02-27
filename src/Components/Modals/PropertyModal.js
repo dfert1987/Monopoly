@@ -16,6 +16,7 @@ const PropertyModal = ({
   setP1Money,
   setP2Money,
   properties,
+  setViewPurchase,
 }) => {
   const [close, setClose] = useState(false);
   const [inSufficientFunds, setInsufficientFunds] = useState(false);
@@ -81,6 +82,7 @@ const PropertyModal = ({
           obj.ownedP1 = true;
           setP1Money(p1Money - obj.Price);
           handleClose(e);
+          setViewPurchase(true);
           return properties;
         } else if (obj.Price > p1Money) {
           setInsufficientFunds(true);
@@ -99,6 +101,8 @@ const PropertyModal = ({
           obj.ownedP2 = true;
           setP2Money(p2Money - obj.Price);
           handleClose(e);
+          setViewPurchase(true);
+
           return properties;
         } else if (obj.Price > p2Money) {
           setInsufficientFunds(true);
@@ -217,7 +221,6 @@ const PropertyModal = ({
     }
     return null;
   };
-  console.log(propertyModal2, propertyModal1, close);
 
   return (
     <AnimatePresence exitBeforeEnter>
