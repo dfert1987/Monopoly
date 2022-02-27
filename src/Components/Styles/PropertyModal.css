@@ -57,6 +57,7 @@
   cursor: pointer;
   margin: 1em;
   transition: 0.3s;
+  color: black;
 }
 
 .close-button:hover {

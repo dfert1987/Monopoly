@@ -22,8 +22,9 @@ function App() {
   const [onProp2, setOnProp2] = useState();
   const [p1Props, setP1Props] = useState();
   const [p2Props, setP2Props] = useState();
+  const [viewProperties, setViewProperties] = useState(false);
+  const [viewProperties2, setViewProperties2] = useState(false);
 
-  console.log(properties);
   return (
     <div className="App">
       <Board
@@ -54,6 +55,10 @@ function App() {
         p2Props={p2Props}
         setP1Props={setP1Props}
         setP2Props={setP2Props}
+        viewProperties={viewProperties}
+        viewProperties2={viewProperties2}
+        setViewProperties={setViewProperties}
+        setViewProperties2={setViewProperties2}
       />
       <Controls
         counterP1={counterP1}
@@ -78,6 +83,11 @@ function App() {
         setPropertyModal2={setPropertyModal2}
         propertyModal1={propertyModal1}
         propertyModal2={propertyModal2}
+        viewProperties={viewProperties}
+        viewProperties2={viewProperties2}
+        setViewProperties={setViewProperties}
+        setViewProperties2={setViewProperties2}
+      />
       />
     </div>
   );

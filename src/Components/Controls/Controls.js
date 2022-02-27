@@ -13,11 +13,15 @@ export const Controls = ({
   p1Money,
   p2Money,
   properties,
-  setProperties,
   setPropertyModal1,
   setPropertyModal2,
   setOnProp,
   setOnProp2,
+  setProperties,
+  viewProperties,
+  setViewProperties,
+  viewProperties2,
+  setViewProperties2,
 }) => {
   const [disableRight, setDisableRight] = useState(true);
   const [disableLeft, setDisableLeft] = useState(false);
@@ -54,7 +58,11 @@ export const Controls = ({
           </div>
           <div className="properties player1">
             <h3 className="props-label">Your Properties</h3>
-            <button className="properties-view-button" disabled={disableLeft}>
+            <button
+              className="properties-view-button"
+              disabled={disableLeft}
+              onClick={() => setViewProperties(true)}
+            >
               VIEW
             </button>
           </div>
@@ -80,7 +88,11 @@ export const Controls = ({
           </div>
           <div className="properties player2">
             <h3 className="props-label">Your Properties</h3>
-            <button className="properties-view-button" disabled={disableRight}>
+            <button
+              className="properties-view-button"
+              disabled={disableRight}
+              onClick={() => setViewProperties2(true)}
+            >
               VIEW
             </button>
           </div>
