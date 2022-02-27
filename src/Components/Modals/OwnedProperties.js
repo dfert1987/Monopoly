@@ -1,4 +1,5 @@
 import React from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import { faXmark } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import "../Styles/OwnedProperties.css";
@@ -16,12 +17,41 @@ const OwnedProperties = ({
     setViewProperties2(false);
   };
 
+  const backdrop = {
+    visible: { opacity: 1 },
+    hidden: { opacity: 0 },
+  };
+
+  const modal = {
+    hidden: {
+      y: "-100vh",
+      opacity: 0,
+    },
+    visible: {
+      y: "0px",
+      opacity: 1,
+      transition: { delay: 0.5 },
+    },
+  };
+
   return (
     <>
-      <>
+      <AnimatePresence exitBeforeEnter>
         {viewProperties || viewProperties2 ? (
-          <div className="owned-props-container outerModal flex centerFlex">
-            <div className="innerModalProps flex flexColumn">
+          <motion.div
+            className="owned-props-container outerModal flex centerFlex"
+            variants={backdrop}
+            initial="hidden"
+            animate="visible"
+            exit="hidden"
+          >
+            <motion.div
+              className="innerModalProps flex flexColumn"
+              variants={modal}
+              initial="hidden"
+              animate="visible"
+              exit="hidden"
+            >
               <div className="button-row">
                 <button className="close-button-x" onClick={handleClose}>
                   <FontAwesomeIcon className="x-icon" icon={faXmark} />
@@ -474,10 +504,10 @@ const OwnedProperties = ({
                   </div>
                 </div>
               </div>
-            </div>
-          </div>
+            </motion.div>
+          </motion.div>
         ) : null}
-      </>
+      </AnimatePresence>
     </>
   );
 };
