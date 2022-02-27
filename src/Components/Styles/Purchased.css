@@ -81,3 +81,10 @@
   font-family: "Monopoly";
   font-size: 2em;
 }
+
+.message {
+  font-family: "Monopoly";
+  font-size: 1.5em;
+  color: white;
+  text-shadow: black 2px 2px 2px;
+}
