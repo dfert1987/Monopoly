@@ -33,7 +33,7 @@
   background-color: #c0e2ca;
   overflow-y: auto;
   width: 70em;
-  height: 42em;
+  height: 60em;
   box-shadow: 0px 0px 12px -2px;
 }
 
@@ -54,6 +54,16 @@
   color: white;
 }
 
+.player1 {
+  margin-bottom: 0.25em;
+  margin-top: 0.25em;
+}
+
+.player2 {
+  margin-bottom: 0.25em;
+  margin-top: 0.25em;
+}
+
 .player-row {
   display: flex;
   flex-direction: row;
@@ -71,11 +81,75 @@
 .card-row {
   display: flex;
   flex-direction: row;
+  margin-bottom: 1em;
 }
 
-.cardSquare {
+.cardSquare-brown {
+  border: 2px solid rgba(134, 56, 4, 0.993);
   margin-right: 0.5em;
-  border: 2px solid brown;
+  height: 3em;
+  width: 3em;
+}
+
+.cardSquare-light-blue {
+  border: 2px solid rgb(137, 174, 245);
+  margin-right: 0.5em;
+  height: 3em;
+  width: 3em;
+}
+
+.cardSquare-orange {
+  border: 2px solid orange;
+  margin-right: 0.5em;
+  height: 3em;
+  width: 3em;
+}
+
+.cardSquare-violet {
+  border: 2px solid violet;
+  margin-right: 0.5em;
+  height: 3em;
+  width: 3em;
+}
+
+.cardSquare-red {
+  border: 2px solid red;
+  margin-right: 0.5em;
+  height: 3em;
+  width: 3em;
+}
+
+.cardSquare-yellow {
+  border: 2px solid yellow;
+  margin-right: 0.5em;
+  height: 3em;
+  width: 3em;
+}
+
+.cardSquare-green {
+  border: 2px solid green;
+  margin-right: 0.5em;
+  height: 3em;
+  width: 3em;
+}
+
+.cardSquare-blue {
+  border: 2px solid blue;
+  margin-right: 0.5em;
+  height: 3em;
+  width: 3em;
+}
+
+.cardSquare-black {
+  border: 2px solid black;
+  margin-right: 0.5em;
+  height: 3em;
+  width: 3em;
+}
+
+.cardSquare-grey {
+  border: 2px solid grey;
+  margin-right: 0.5em;
   height: 3em;
   width: 3em;
 }
@@ -89,4 +163,16 @@
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
+}
+
+.card-group {
+  display: flex;
+  flex-direction: row;
+  margin-right: 1em;
+}
+
+.subheader {
+  text-align: left;
+  text-decoration: underline;
+  margin-top: 0ex;
 }
