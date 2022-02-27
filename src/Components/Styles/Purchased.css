@@ -88,3 +88,58 @@
   color: white;
   text-shadow: black 2px 2px 2px;
 }
+
+.main-square {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.main-square:hover {
+  box-shadow: 2px 2px 2px black;
+}
+
+.main-square .top-square {
+  border-bottom: 1px solid black;
+  height: 1em;
+}
+
+.top-square.blue {
+  background-color: blue;
+}
+
+.top-square.green {
+  background-color: green;
+}
+
+.top-square.yellow {
+  background-color: yellow;
+}
+
+.top-square.violet {
+  background-color: violet;
+}
+
+.top-square.orange {
+  background-color: orange;
+}
+
+.top-square.lightBlue {
+  background-color: rgb(137, 174, 245);
+}
+
+.top-square.brown {
+  background-color: rgba(134, 56, 4, 0.993);
+}
+
+.top-square.red {
+  background-color: red;
+}
+
+.white-part {
+  background-color: white;
+  height: 2em;
+}

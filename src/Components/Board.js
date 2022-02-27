@@ -796,6 +796,7 @@ export const Board = ({
           viewProperties2={viewProperties2}
           setViewProperties={setViewProperties}
           setViewProperties2={setViewProperties2}
+          properties={properties}
         />
         <PurchasedPopUp
           className="purchased"

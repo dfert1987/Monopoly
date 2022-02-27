@@ -8,6 +8,7 @@ const OwnedProperties = ({
   viewProperties2,
   setViewProperties,
   setViewProperties2,
+  properties,
 }) => {
   const handleClose = (e) => {
     e.preventDefault();
@@ -20,7 +21,7 @@ const OwnedProperties = ({
       <>
         {viewProperties || viewProperties2 ? (
           <div className="owned-props-container outerModal flex centerFlex">
-            <div className="innerModal flex flexColumn">
+            <div className="innerModalProps flex flexColumn">
               <div className="button-row">
                 <button className="close-button-x" onClick={handleClose}>
                   <FontAwesomeIcon className="x-icon" icon={faXmark} />
@@ -35,48 +36,202 @@ const OwnedProperties = ({
                   <h3 className="subheader">Properties</h3>
                   <div className="card-row left five">
                     <div className="card-group twoGroup">
-                      <div className="cardSquare-brown"></div>
-                      <div className="cardSquare-brown"></div>
+                      <div className="cardSquare-brown">
+                        {properties[21].ownedP1 ? (
+                          <div className="main-square">
+                            <div className="top-square brown"></div>
+                            <div className="white-part"></div>
+                          </div>
+                        ) : null}
+                      </div>
+                      <div className="cardSquare-brown">
+                        {properties[20].ownedP1 ? (
+                          <div className="main-square">
+                            <div className="top-square brown"></div>
+                            <div className="white-part"></div>
+                          </div>
+                        ) : null}
+                      </div>
                     </div>
                     <div className="card-group threeGroup">
-                      <div className="cardSquare-light-blue"></div>
-                      <div className="cardSquare-light-blue"></div>
-                      <div className="cardSquare-light-blue"></div>
+                      <div className="cardSquare-light-blue">
+                        {properties[19].ownedP1 ? (
+                          <div className="main-square">
+                            <div className="top-square lightBlue"></div>
+                            <div className="white-part"></div>
+                          </div>
+                        ) : null}
+                      </div>
+                      <div className="cardSquare-light-blue">
+                        {properties[18].ownedP1 ? (
+                          <div className="main-square">
+                            <div className="top-square lightBlue"></div>
+                            <div className="white-part"></div>
+                          </div>
+                        ) : null}
+                      </div>
+                      <div className="cardSquare-light-blue">
+                        {properties[17].ownedP1 ? (
+                          <div className="main-square">
+                            <div className="top-square lightBlue"></div>
+                            <div className="white-part"></div>
+                          </div>
+                        ) : null}
+                      </div>
                     </div>
                   </div>
                   <div className="card-row left six">
                     <div className="card-group threeGroup">
-                      <div className="cardSquare-violet"></div>
-                      <div className="cardSquare-violet"></div>
-                      <div className="cardSquare-violet"></div>
+                      <div className="cardSquare-violet">
+                        {properties[16].ownedP1 ? (
+                          <div className="main-square">
+                            <div className="top-square violet"></div>
+                            <div className="white-part"></div>
+                          </div>
+                        ) : null}
+                      </div>
+                      <div className="cardSquare-violet">
+                        {properties[15].ownedP1 ? (
+                          <div className="main-square">
+                            <div className="top-square violet"></div>
+                            <div className="white-part"></div>
+                          </div>
+                        ) : null}
+                      </div>
+                      <div className="cardSquare-violet">
+                        {properties[15].ownedP1 ? (
+                          <div className="main-square">
+                            <div className="top-square violet"></div>
+                            <div className="white-part"></div>
+                          </div>
+                        ) : null}
+                      </div>
                     </div>
                     <div className="card-group threeGroup">
-                      <div className="cardSquare-orange"></div>
-                      <div className="cardSquare-orange"></div>
-                      <div className="cardSquare-orange"></div>
+                      <div className="cardSquare-orange">
+                        {properties[13].ownedP1 ? (
+                          <div className="main-square">
+                            <div className="top-square orange"></div>
+                            <div className="white-part"></div>
+                          </div>
+                        ) : null}
+                      </div>
+                      <div className="cardSquare-orange">
+                        {properties[12].ownedP1 ? (
+                          <div className="main-square">
+                            <div className="top-square orange"></div>
+                            <div className="white-part"></div>
+                          </div>
+                        ) : null}
+                      </div>
+                      <div className="cardSquare-orange">
+                        {properties[11].ownedP1 ? (
+                          <div className="main-square">
+                            <div className="top-square orange"></div>
+                            <div className="white-part"></div>
+                          </div>
+                        ) : null}
+                      </div>
                     </div>
                   </div>
                   <div className="card-row left six">
                     <div className="card-group threeGroup">
-                      <div className="cardSquare-red"></div>
-                      <div className="cardSquare-red"></div>
-                      <div className="cardSquare-red"></div>
+                      <div className="cardSquare-red">
+                        {properties[10].ownedP1 ? (
+                          <div className="main-square">
+                            <div className="top-square red"></div>
+                            <div className="white-part"></div>
+                          </div>
+                        ) : null}
+                      </div>
+                      <div className="cardSquare-red">
+                        {properties[9].ownedP1 ? (
+                          <div className="main-square">
+                            <div className="top-square red"></div>
+                            <div className="white-part"></div>
+                          </div>
+                        ) : null}
+                      </div>
+                      <div className="cardSquare-red">
+                        {properties[8].ownedP1 ? (
+                          <div className="main-square">
+                            <div className="top-square red"></div>
+                            <div className="white-part"></div>
+                          </div>
+                        ) : null}
+                      </div>
                     </div>
                     <div className="card-group threeGroup">
-                      <div className="cardSquare-yellow"></div>
-                      <div className="cardSquare-yellow"></div>
-                      <div className="cardSquare-yellow"></div>
+                      <div className="cardSquare-yellow">
+                        {properties[7].ownedP1 ? (
+                          <div className="main-square">
+                            <div className="top-square yellow"></div>
+                            <div className="white-part"></div>
+                          </div>
+                        ) : null}
+                      </div>
+                      <div className="cardSquare-yellow">
+                        {properties[6].ownedP1 ? (
+                          <div className="main-square">
+                            <div className="top-square yellow"></div>
+                            <div className="white-part"></div>
+                          </div>
+                        ) : null}
+                      </div>
+                      <div className="cardSquare-yellow">
+                        {properties[5].ownedP1 ? (
+                          <div className="main-square">
+                            <div className="top-square yellow"></div>
+                            <div className="white-part"></div>
+                          </div>
+                        ) : null}
+                      </div>
                     </div>
                   </div>
                   <div className="card-row left five">
                     <div className="card-group threeGroup">
-                      <div className="cardSquare-green"></div>
-                      <div className="cardSquare-green"></div>
-                      <div className="cardSquare-green"></div>
+                      <div className="cardSquare-green">
+                        {properties[4].ownedP1 ? (
+                          <div className="main-square">
+                            <div className="top-square green"></div>
+                            <div className="white-part"></div>
+                          </div>
+                        ) : null}
+                      </div>
+                      <div className="cardSquare-green">
+                        {properties[3].ownedP1 ? (
+                          <div className="main-square">
+                            <div className="top-square green"></div>
+                            <div className="white-part"></div>
+                          </div>
+                        ) : null}
+                      </div>
+                      <div className="cardSquare-green">
+                        {properties[2].ownedP1 ? (
+                          <div className="main-square">
+                            <div className="top-square green"></div>
+                            <div className="white-part"></div>
+                          </div>
+                        ) : null}
+                      </div>
                     </div>
                     <div className="card-group threeGroup">
-                      <div className="cardSquare-blue"></div>
-                      <div className="cardSquare-blue"></div>
+                      <div className="cardSquare-blue">
+                        {properties[1].ownedP1 ? (
+                          <div className="main-square">
+                            <div className="top-square blue"></div>
+                            <div className="white-part"></div>
+                          </div>
+                        ) : null}
+                      </div>
+                      <div className="cardSquare-blue">
+                        {properties[0].ownedP1 ? (
+                          <div className="main-square">
+                            <div className="top-square blue"></div>
+                            <div className="white-part"></div>
+                          </div>
+                        ) : null}
+                      </div>
                     </div>
                   </div>
                   <h3 className="subheader">Railroads</h3>
@@ -103,48 +258,202 @@ const OwnedProperties = ({
                   <h3 className="subheader">Properties</h3>
                   <div className="card-row right five">
                     <div className="card-group twoGroup">
-                      <div className="cardSquare-brown"></div>
-                      <div className="cardSquare-brown"></div>
+                      <div className="cardSquare-brown">
+                        {properties[21].ownedP2 ? (
+                          <div className="main-square">
+                            <div className="top-square brown"></div>
+                            <div className="white-part"></div>
+                          </div>
+                        ) : null}
+                      </div>
+                      <div className="cardSquare-brown">
+                        {properties[20].ownedP2 ? (
+                          <div className="main-square">
+                            <div className="top-square brown"></div>
+                            <div className="white-part"></div>
+                          </div>
+                        ) : null}
+                      </div>
                     </div>
                     <div className="card-group threeGroup">
-                      <div className="cardSquare-light-blue"></div>
-                      <div className="cardSquare-light-blue"></div>
-                      <div className="cardSquare-light-blue"></div>
+                      <div className="cardSquare-light-blue">
+                        {properties[19].ownedP2 ? (
+                          <div className="main-square">
+                            <div className="top-square lightBlue"></div>
+                            <div className="white-part"></div>
+                          </div>
+                        ) : null}
+                      </div>
+                      <div className="cardSquare-light-blue">
+                        {properties[18].ownedP2 ? (
+                          <div className="main-square">
+                            <div className="top-square lightBlue"></div>
+                            <div className="white-part"></div>
+                          </div>
+                        ) : null}
+                      </div>
+                      <div className="cardSquare-light-blue">
+                        {properties[17].ownedP2 ? (
+                          <div className="main-square">
+                            <div className="top-square lightBlue"></div>
+                            <div className="white-part"></div>
+                          </div>
+                        ) : null}
+                      </div>
                     </div>
                   </div>
                   <div className="card-row left six">
                     <div className="card-group threeGroup">
-                      <div className="cardSquare-violet"></div>
-                      <div className="cardSquare-violet"></div>
-                      <div className="cardSquare-violet"></div>
+                      <div className="cardSquare-violet">
+                        {properties[16].ownedP2 ? (
+                          <div className="main-square">
+                            <div className="top-square violet"></div>
+                            <div className="white-part"></div>
+                          </div>
+                        ) : null}
+                      </div>
+                      <div className="cardSquare-violet">
+                        {properties[15].ownedP2 ? (
+                          <div className="main-square">
+                            <div className="top-square violet"></div>
+                            <div className="white-part"></div>
+                          </div>
+                        ) : null}
+                      </div>
+                      <div className="cardSquare-violet">
+                        {properties[14].ownedP2 ? (
+                          <div className="main-square">
+                            <div className="top-square violet"></div>
+                            <div className="white-part"></div>
+                          </div>
+                        ) : null}
+                      </div>
                     </div>
                     <div className="card-group threeGroup">
-                      <div className="cardSquare-orange"></div>
-                      <div className="cardSquare-orange"></div>
-                      <div className="cardSquare-orange"></div>
+                      <div className="cardSquare-orange">
+                        {properties[13].ownedP2 ? (
+                          <div className="main-square">
+                            <div className="top-square orange"></div>
+                            <div className="white-part"></div>
+                          </div>
+                        ) : null}
+                      </div>
+                      <div className="cardSquare-orange">
+                        {properties[12].ownedP2 ? (
+                          <div className="main-square">
+                            <div className="top-square orange"></div>
+                            <div className="white-part"></div>
+                          </div>
+                        ) : null}
+                      </div>
+                      <div className="cardSquare-orange">
+                        {properties[11].ownedP2 ? (
+                          <div className="main-square">
+                            <div className="top-square orange"></div>
+                            <div className="white-part"></div>
+                          </div>
+                        ) : null}
+                      </div>
                     </div>
                   </div>
                   <div className="card-row left six">
                     <div className="card-group threeGroup">
-                      <div className="cardSquare-red"></div>
-                      <div className="cardSquare-red"></div>
-                      <div className="cardSquare-red"></div>
+                      <div className="cardSquare-red">
+                        {properties[10].ownedP2 ? (
+                          <div className="main-square">
+                            <div className="top-square red"></div>
+                            <div className="white-part"></div>
+                          </div>
+                        ) : null}
+                      </div>
+                      <div className="cardSquare-red">
+                        {properties[9].ownedP2 ? (
+                          <div className="main-square">
+                            <div className="top-square red"></div>
+                            <div className="white-part"></div>
+                          </div>
+                        ) : null}
+                      </div>
+                      <div className="cardSquare-red">
+                        {properties[8].ownedP2 ? (
+                          <div className="main-square">
+                            <div className="top-square red"></div>
+                            <div className="white-part"></div>
+                          </div>
+                        ) : null}
+                      </div>
                     </div>
                     <div className="card-group threeGroup">
-                      <div className="cardSquare-yellow"></div>
-                      <div className="cardSquare-yellow"></div>
-                      <div className="cardSquare-yellow"></div>
+                      <div className="cardSquare-yellow">
+                        {properties[7].ownedP2 ? (
+                          <div className="main-square">
+                            <div className="top-square yellow"></div>
+                            <div className="white-part"></div>
+                          </div>
+                        ) : null}
+                      </div>
+                      <div className="cardSquare-yellow">
+                        {properties[6].ownedP2 ? (
+                          <div className="main-square">
+                            <div className="top-square yellow"></div>
+                            <div className="white-part"></div>
+                          </div>
+                        ) : null}
+                      </div>
+                      <div className="cardSquare-yellow">
+                        {properties[5].ownedP2 ? (
+                          <div className="main-square">
+                            <div className="top-square yellow"></div>
+                            <div className="white-part"></div>
+                          </div>
+                        ) : null}
+                      </div>
                     </div>
                   </div>
                   <div className="card-row left five">
                     <div className="card-group threeGroup">
-                      <div className="cardSquare-green"></div>
-                      <div className="cardSquare-green"></div>
-                      <div className="cardSquare-green"></div>
+                      <div className="cardSquare-green">
+                        {properties[4].ownedP2 ? (
+                          <div className="main-square">
+                            <div className="top-square green"></div>
+                            <div className="white-part"></div>
+                          </div>
+                        ) : null}
+                      </div>
+                      <div className="cardSquare-green">
+                        {properties[3].ownedP2 ? (
+                          <div className="main-square">
+                            <div className="top-square green"></div>
+                            <div className="white-part"></div>
+                          </div>
+                        ) : null}
+                      </div>
+                      <div className="cardSquare-green">
+                        {properties[2].ownedP2 ? (
+                          <div className="main-square">
+                            <div className="top-square green"></div>
+                            <div className="white-part"></div>
+                          </div>
+                        ) : null}
+                      </div>
                     </div>
                     <div className="card-group threeGroup">
-                      <div className="cardSquare-blue"></div>
-                      <div className="cardSquare-blue"></div>
+                      <div className="cardSquare-blue">
+                        {properties[1].ownedP2 ? (
+                          <div className="main-square">
+                            <div className="top-square blue"></div>
+                            <div className="white-part"></div>
+                          </div>
+                        ) : null}
+                      </div>
+                      <div className="cardSquare-blue">
+                        {properties[0].ownedP2 ? (
+                          <div className="main-square">
+                            <div className="top-square blue"></div>
+                            <div className="white-part"></div>
+                          </div>
+                        ) : null}
+                      </div>
                     </div>
                   </div>
                   <h3 className="subheader">Railroads</h3>
