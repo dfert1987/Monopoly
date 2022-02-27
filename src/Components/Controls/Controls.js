@@ -28,6 +28,8 @@ export const Controls = ({
   setOnRR2,
   railRoads,
   setRailRoads,
+  setRRModal,
+  setRRModal2,
 }) => {
   const [disableRight, setDisableRight] = useState(true);
   const [disableLeft, setDisableLeft] = useState(false);
@@ -61,6 +63,7 @@ export const Controls = ({
             setOnRR={setOnRR}
             railRoads={railRoads}
             setRailRoads={setRailRoads}
+            setRRModal={setRRModal}
           />
           <div className="money player1">
             <h3 className="money-label">Money</h3>
@@ -95,6 +98,7 @@ export const Controls = ({
             setOnRR2={setOnRR2}
             railRoads={railRoads}
             setRailRoads={setRailRoads}
+            setRRModal2={setRRModal2}
           />
           <div className="money player2">
             <h3 className="money-label">Money</h3>
