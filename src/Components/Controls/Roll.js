@@ -16,6 +16,8 @@ export const Roll = ({
   properties,
   setPropertyModal1,
   setOnProp,
+  onRR,
+  setOnRR,
 }) => {
   const [die1, setDie1] = useState(1);
   const [die2, setDie2] = useState(1);
