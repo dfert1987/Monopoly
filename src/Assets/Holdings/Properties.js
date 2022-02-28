@@ -430,7 +430,7 @@ export const Properties = [
     image: require("../PropertyImages/image-dali.jpeg"),
     color: "purple",
     purchased: "Get one of those big spicy fish for me.",
-    saying: "A hutong favorite for Yunnan fare.",
+    saying: "Hutong favorite, serving Yunnan food to the expats who love it.",
   },
   {
     order: 16,
