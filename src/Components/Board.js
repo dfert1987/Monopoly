@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import PropertyModal from "../Components/Modals/PropertyModal";
 import OwnedProperties from "../Components/Modals/OwnedProperties";
 import PurchasedPopUp from "../Components/Modals/PurchasedPopUp";
+import RRPurchasedPopUp from "../Components/Modals/RRPurchasedPopUp";
 import RailRoadModal from "../Components/Modals/RailRoadModal";
 import Piece1 from "../Assets/Pieces/Piece1.png";
 import Piece2 from "../Assets/Pieces/Piece2.png";
@@ -840,6 +841,15 @@ export const Board = ({
           onProp2={onProp2}
           setViewPurchase2={setViewPurchase2}
           viewPurchase2={viewPurchase2}
+        />
+        <RRPurchasedPopUp
+          className="purchasedRR"
+          viewPurchaseRR={viewPurchaseRR}
+          setViewPurchaseRR={setViewPurchaseRR}
+          onRR={onRR}
+          onRR2={onRR2}
+          setViewPurchaseRR2={setViewPurchaseRR2}
+          viewPurchaseRR2={viewPurchaseRR2}
         />
         <PropertyModal
           className="modal"
