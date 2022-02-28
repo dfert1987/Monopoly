@@ -11,13 +11,13 @@
   background-color: transparent;
   border: none;
   cursor: pointer;
-  color: white;
+  color: black;
   margin: 1em;
   transition: 0.3s;
 }
 
 .close-button:hover {
-  color: grey;
+  color: white;
 }
 
 .container {
