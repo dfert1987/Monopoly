@@ -1,6 +1,7 @@
 import React from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { faXmark } from "@fortawesome/free-solid-svg-icons";
+import ditielogo from "../../Assets/PropertyImages/ditielogo.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import "../Styles/OwnedProperties.css";
 
@@ -10,6 +11,11 @@ const OwnedProperties = ({
   setViewProperties,
   setViewProperties2,
   properties,
+  railRoads,
+  viewRRs,
+  setViewRRs,
+  viewRRs2,
+  setViewRRs2,
 }) => {
   const handleClose = (e) => {
     e.preventDefault();
@@ -267,10 +273,58 @@ const OwnedProperties = ({
                   <h3 className="subheader">Railroads</h3>
                   <div className="card-row left four">
                     <div className="card-group fourGroup">
-                      <div className="cardSquare-black"></div>
-                      <div className="cardSquare-black"></div>
-                      <div className="cardSquare-black"></div>
-                      <div className="cardSquare-black"></div>
+                      <div className="cardSquare-black">
+                        {railRoads[0].ownedP1 ? (
+                          <div className="main-square">
+                            <div className="white-part-rr">
+                              <img
+                                className="small-ditie"
+                                alt="small subway logo"
+                                src={ditielogo}
+                              />
+                            </div>
+                          </div>
+                        ) : null}
+                      </div>
+                      <div className="cardSquare-black">
+                        {railRoads[1].ownedP1 ? (
+                          <div className="main-square">
+                            <div className="white-part-rr">
+                              <img
+                                className="small-ditie"
+                                alt="small subway logo"
+                                src={ditielogo}
+                              />
+                            </div>
+                          </div>
+                        ) : null}
+                      </div>
+                      <div className="cardSquare-black">
+                        {railRoads[2].ownedP1 ? (
+                          <div className="main-square">
+                            <div className="white-part-rr">
+                              <img
+                                className="small-ditie"
+                                alt="small subway logo"
+                                src={ditielogo}
+                              />
+                            </div>
+                          </div>
+                        ) : null}
+                      </div>
+                      <div className="cardSquare-black">
+                        {railRoads[3].ownedP1 ? (
+                          <div className="main-square">
+                            <div className="white-part-rr">
+                              <img
+                                className="small-ditie"
+                                alt="small subway logo"
+                                src={ditielogo}
+                              />
+                            </div>
+                          </div>
+                        ) : null}
+                      </div>
                     </div>
                   </div>
                   <h3 className="subheader">Utilities</h3>
@@ -489,10 +543,58 @@ const OwnedProperties = ({
                   <h3 className="subheader">Railroads</h3>
                   <div className="card-row left four">
                     <div className="card-group fourGroup">
-                      <div className="cardSquare-black"></div>
-                      <div className="cardSquare-black"></div>
-                      <div className="cardSquare-black"></div>
-                      <div className="cardSquare-black"></div>
+                      <div className="cardSquare-black">
+                        {railRoads[0].ownedP2 ? (
+                          <div className="main-square">
+                            <div className="white-part-rr">
+                              <img
+                                className="small-ditie"
+                                alt="small subway logo"
+                                src={ditielogo}
+                              />
+                            </div>
+                          </div>
+                        ) : null}
+                      </div>
+                      <div className="cardSquare-black">
+                        {railRoads[1].ownedP2 ? (
+                          <div className="main-square">
+                            <div className="white-part-rr">
+                              <img
+                                className="small-ditie"
+                                alt="small subway logo"
+                                src={ditielogo}
+                              />
+                            </div>
+                          </div>
+                        ) : null}
+                      </div>
+                      <div className="cardSquare-black">
+                        {railRoads[2].ownedP2 ? (
+                          <div className="main-square">
+                            <div className="white-part-rr">
+                              <img
+                                className="small-ditie"
+                                alt="small subway logo"
+                                src={ditielogo}
+                              />
+                            </div>
+                          </div>
+                        ) : null}
+                      </div>
+                      <div className="cardSquare-black">
+                        {railRoads[3].ownedP2 ? (
+                          <div className="main-square">
+                            <div className="white-part-rr">
+                              <img
+                                className="small-ditie"
+                                alt="small subway logo"
+                                src={ditielogo}
+                              />
+                            </div>
+                          </div>
+                        ) : null}
+                      </div>
                     </div>
                   </div>
                   <h3 className="subheader">Utilities</h3>
