@@ -538,7 +538,7 @@ export const Properties = [
     mortgaged: false,
     image: require("../PropertyImages/image-hotcat.jpeg"),
     color: "light-blue",
-    purchased: "See for open mic on Wednesday.",
+    purchased: "See you at open mic on Wednesday.",
     saying: "Grimey, Fangjia livehouse where many an open mic'er has bombed.",
   },
   {

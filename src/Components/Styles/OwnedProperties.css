@@ -176,3 +176,18 @@
   text-decoration: underline;
   margin-top: 0ex;
 }
+
+.white-part-rr {
+  height: 100%;
+  width: 100%;
+  background-color: white;
+  text-align: center;
+}
+
+.small-ditie {
+  height: 1.75em;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 0.7em;
+}

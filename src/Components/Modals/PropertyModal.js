@@ -259,7 +259,7 @@ const PropertyModal = ({
               <div>{frontCard()}</div>
               <div>{propertyImage()}</div>
             </div>
-            <h3 className="saying">{saying()}</h3>
+            <div className="saying">{saying()}</div>
             <h4 className={viewInsufficient()}>INSUFFICIENT FUNDS</h4>
             <div className="options-container">
               <button className="buy-button" onClick={buyProperty}>

@@ -24,6 +24,8 @@ function App() {
   const [p2Props, setP2Props] = useState();
   const [viewProperties, setViewProperties] = useState(false);
   const [viewProperties2, setViewProperties2] = useState(false);
+  const [viewRRs, setViewRRs] = useState(false);
+  const [viewRRs2, setViewRRs2] = useState(false);
   const [onRR, setOnRR] = useState();
   const [onRR2, setOnRR2] = useState();
   const [rrModal, setRRModal] = useState(false);
@@ -63,6 +65,10 @@ function App() {
         viewProperties2={viewProperties2}
         setViewProperties={setViewProperties}
         setViewProperties2={setViewProperties2}
+        viewRRs={viewRRs}
+        setViewRRs={setViewRRs}
+        viewRRs2={viewRRs2}
+        setViewRRs2={setViewRRs2}
         onRR={onRR}
         onRR2={onRR2}
         setOnRR={setOnRR}

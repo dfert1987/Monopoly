@@ -56,6 +56,10 @@ export const Board = ({
   setRRModal2,
   railRoads,
   setRailRoads,
+  viewRRs,
+  setViewRRs,
+  viewRRs2,
+  setViewRRs2,
 }) => {
   const [viewPurchase, setViewPurchase] = useState(false);
   const [viewPurchase2, setViewPurchase2] = useState(false);
@@ -832,6 +836,8 @@ export const Board = ({
           setViewProperties={setViewProperties}
           setViewProperties2={setViewProperties2}
           properties={properties}
+          railRoads={railRoads}
+          view
         />
         <PurchasedPopUp
           className="purchased"
