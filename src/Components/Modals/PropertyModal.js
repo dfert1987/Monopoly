@@ -200,6 +200,15 @@ const PropertyModal = ({
     return null;
   };
 
+  const saying = () => {
+    if (onProp && propertyModal1 && !propertyModal2 && !close) {
+      return <h3 className="saying">{onProp.saying}</h3>;
+    } else if (onProp2 && propertyModal2 && !propertyModal1 && !close) {
+      return <h3 className="saying">{onProp2.saying}</h3>;
+    }
+    return null;
+  };
+
   const propertyImage = () => {
     if (onProp && propertyModal1 && !propertyModal2 && close === false) {
       return (
@@ -250,6 +259,7 @@ const PropertyModal = ({
               <div>{frontCard()}</div>
               <div>{propertyImage()}</div>
             </div>
+            <h3 className="saying">{saying()}</h3>
             <h4 className={viewInsufficient()}>INSUFFICIENT FUNDS</h4>
             <div className="options-container">
               <button className="buy-button" onClick={buyProperty}>

@@ -1,5 +1,6 @@
 export const RailRoads = [
   {
+    Number: 6,
     Name: "Line 10",
     Price: 200,
     rent: 25,
@@ -14,8 +15,11 @@ export const RailRoads = [
     owned4: false,
     mortgaged: false,
     image: require("../PropertyImages/space-line10.jpeg"),
+    saying: "It's the biggest loop we've got!",
+    message: "From Sanlitun to Fengtai, the city is yours!",
   },
   {
+    Number: 16,
     Name: "Line 2",
     Price: 200,
     rent: 25,
@@ -30,8 +34,11 @@ export const RailRoads = [
     owned4: false,
     mortgaged: false,
     image: require("../PropertyImages/space-line2.jpeg"),
+    saying: "Old, reliable, and crowded as fuck!",
+    message: "You're a master of public transport in the hutongs!",
   },
   {
+    Number: 26,
     Name: "Line 6",
     Price: 200,
     rent: 25,
@@ -46,8 +53,11 @@ export const RailRoads = [
     owned4: false,
     mortgaged: false,
     image: require("../PropertyImages/space-line6.jpeg"),
+    saying: "Like Line 1, but nice!",
+    message: "Have fun zipping right through the center of the city!",
   },
   {
+    Number: 36,
     Name: "Line 13",
     Price: 200,
     rent: 25,
@@ -62,5 +72,7 @@ export const RailRoads = [
     owned4: false,
     mortgaged: false,
     image: require("../PropertyImages/space-line13.jpeg"),
+    saying: "To Wudaokou, Wangjing and beyond!",
+    message: "You're subway king of the North!",
   },
 ];

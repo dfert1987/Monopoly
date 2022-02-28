@@ -24,6 +24,10 @@ function App() {
   const [p2Props, setP2Props] = useState();
   const [viewProperties, setViewProperties] = useState(false);
   const [viewProperties2, setViewProperties2] = useState(false);
+  const [onRR, setOnRR] = useState();
+  const [onRR2, setOnRR2] = useState();
+  const [rrModal, setRRModal] = useState(false);
+  const [rrModal2, setRRModal2] = useState(false);
 
   return (
     <div className="App">
@@ -59,6 +63,14 @@ function App() {
         viewProperties2={viewProperties2}
         setViewProperties={setViewProperties}
         setViewProperties2={setViewProperties2}
+        onRR={onRR}
+        onRR2={onRR2}
+        setOnRR={setOnRR}
+        setOnRR2={setOnRR2}
+        rrModal={rrModal}
+        rrModal2={rrModal2}
+        setRRModal={setRRModal}
+        setRRModal2={setRRModal2}
       />
       <Controls
         counterP1={counterP1}
@@ -87,7 +99,14 @@ function App() {
         viewProperties2={viewProperties2}
         setViewProperties={setViewProperties}
         setViewProperties2={setViewProperties2}
-      />
+        onRR={onRR}
+        onRR2={onRR2}
+        setOnRR={setOnRR}
+        setOnRR2={setOnRR2}
+        railRoads={railRoads}
+        setRailRoads={setRailRoads}
+        setRRModal={setRRModal}
+        setRRModal2={setRRModal2}
       />
     </div>
   );

@@ -42,7 +42,7 @@
   background-color: #c0e2ca;
   overflow-y: auto;
   width: 70em;
-  height: 42em;
+  height: 48em;
   box-shadow: 0px 0px 12px -2px;
 }
 
@@ -57,7 +57,6 @@
   cursor: pointer;
   margin: 1em;
   transition: 0.3s;
-  color: black;
 }
 
 .close-button:hover {
@@ -255,4 +254,12 @@
 
 .invisible {
   visibility: hidden;
+}
+
+.saying {
+  padding-left: 3.25em;
+  font-family: "Monopoly";
+  margin: 0;
+  margin-top: 0.5em;
+  font-size: 1.5em;
 }
