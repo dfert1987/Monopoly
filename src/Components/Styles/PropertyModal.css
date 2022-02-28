@@ -257,9 +257,11 @@
 }
 
 .saying {
-  padding-left: 3.25em;
+  padding-left: 0.5em;
+  padding-right: 0.5em;
   font-family: "Monopoly";
   margin: 0;
   margin-top: 0.5em;
+  text-align: center;
   font-size: 1.5em;
 }

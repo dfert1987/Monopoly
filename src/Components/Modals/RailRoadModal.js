@@ -12,10 +12,7 @@ const RailRoadModal = ({
   rrModal2,
   onRR,
   onRR2,
-  setOnRR,
-  setOnRR2,
   railRoads,
-  setRailRoads,
   p1Money,
   setP1Money,
   p2Money,
@@ -83,6 +80,15 @@ const RailRoadModal = ({
     return null;
   };
 
+  const saying = () => {
+    if (onRR && rrModal && !rrModal2 && !close) {
+      return <h3 className="saying">{onRR.saying}</h3>;
+    } else if (onRR2 && rrModal2 && !rrModal && !close) {
+      return <h3 className="saying">{onRR2.saying}</h3>;
+    }
+    return null;
+  };
+
   const frontCard = () => {
     if (onRR && rrModal && !rrModal2 && close === false) {
       return (
@@ -118,9 +124,10 @@ const RailRoadModal = ({
     } else if (onRR2 && rrModal2 && !rrModal && close === false) {
       return (
         <div className="main-card">
-          <div className={`outer-banner`}>
+          <div className="outer-banner rail">
             <div className={`banner ${onRR2.color}`}>
-              <h2 className="prop-name">{onRR2.Name.toUpperCase()}</h2>
+              <img className="ditie-logo" src={ditielogo} alt="subway logo" />
+              <h2 className="prop-name rr">{onRR2.Name.toUpperCase()}</h2>
             </div>
           </div>
           <div className="all-prop-info">
@@ -207,6 +214,8 @@ const RailRoadModal = ({
               <div>{frontCard()}</div>
               <div>{rrImage()}</div>
             </div>
+            <div>{saying()}</div>
+
             <h4 className={viewInsufficient()}>INSUFFICIENT FUNDS</h4>
             <div className="options-container">
               <button className="buy-button" onClick={buyRR}>
