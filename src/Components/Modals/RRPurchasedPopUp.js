@@ -101,7 +101,7 @@ const RRPurchasedPopUp = ({
                   src={yuanSign}
                 />
                 <h2 className="title-bottom">{onRR2.Name}</h2>
-                <h4 className="message">{onRR2.purchased}</h4>
+                <h4 className="message">{onRR2.message}</h4>
               </div>
             </motion.div>
           </motion.div>
