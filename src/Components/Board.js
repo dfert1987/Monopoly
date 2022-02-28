@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import PropertyModal from "../Components/Modals/PropertyModal";
 import OwnedProperties from "../Components/Modals/OwnedProperties";
 import PurchasedPopUp from "../Components/Modals/PurchasedPopUp";
+import RailRoadModal from "../Components/Modals/RailRoadModal";
 import Piece1 from "../Assets/Pieces/Piece1.png";
 import Piece2 from "../Assets/Pieces/Piece2.png";
 import ditielogo from "../Assets/PropertyImages/ditielogo.png";
@@ -44,9 +45,21 @@ export const Board = ({
   setViewProperties,
   viewProperties2,
   setViewProperties2,
+  onRR,
+  onRR2,
+  setOnRR,
+  setOnRR2,
+  rrModal,
+  rrModal2,
+  setRRModal,
+  setRRModal2,
+  railRoads,
+  setRailRoads,
 }) => {
   const [viewPurchase, setViewPurchase] = useState(false);
   const [viewPurchase2, setViewPurchase2] = useState(false);
+  const [viewPurchaseRR, setViewPurchaseRR] = useState(false);
+  const [viewPurchaseRR2, setViewPurchaseRR2] = useState(false);
   return (
     <div className="main-board">
       <div className="left-column">
@@ -790,6 +803,27 @@ export const Board = ({
             <p className="go-to-jail">You're Deported!</p>
           </div>
         </div>
+        <RailRoadModal
+          className="RailRoad"
+          setRRModal={setRRModal}
+          setRRModal2={setRRModal2}
+          onRR={onRR}
+          onRR2={onRR2}
+          setOnRR={setOnRR}
+          setOnRR2={setOnRR2}
+          rrModal={rrModal}
+          rrModal2={rrModal2}
+          railRoads={railRoads}
+          setRailRoads={setRailRoads}
+          setP1Money={setP1Money}
+          setP2Money={setP2Money}
+          p1Money={p1Money}
+          p2Money={p2Money}
+          viewPurchaseRR={viewPurchaseRR}
+          setViewPurchaseRR={setViewPurchaseRR}
+          viewPurchaseRR2={setViewPurchaseRR2}
+          setViewPurchaseRR2={setViewPurchaseRR2}
+        />
         <OwnedProperties
           className="owned"
           viewProperties={viewProperties}
