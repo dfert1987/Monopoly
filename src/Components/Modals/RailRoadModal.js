@@ -82,9 +82,9 @@ const RailRoadModal = ({
 
   const saying = () => {
     if (onRR && rrModal && !rrModal2 && !close) {
-      return <h3 className="saying">{onRR.saying}</h3>;
+      return <h3 className="saying-rr">{onRR.saying}</h3>;
     } else if (onRR2 && rrModal2 && !rrModal && !close) {
-      return <h3 className="saying">{onRR2.saying}</h3>;
+      return <h3 className="saying-rr">{onRR2.saying}</h3>;
     }
     return null;
   };

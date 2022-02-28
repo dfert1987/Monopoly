@@ -15,3 +15,12 @@
 .rail {
   border-bottom: none;
 }
+
+.saying-rr {
+  font-size: 2em;
+  font-family: "Monopoly";
+  text-align: center;
+  padding-right: 1em;
+  padding-left: 1em;
+  margin-bottom: 0;
+}
