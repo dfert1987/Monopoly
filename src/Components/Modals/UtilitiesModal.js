@@ -79,17 +79,34 @@ const UtilitiesModal = ({
     return null;
   };
 
+  const bannerImage = () => {
+    if (onUtil && utilModal && !utilModal2 && close === false) {
+      console.log(onUtil);
+      return (
+        <img className="bannerimage" src={onUtil.bannerImage} alt="util pic" />
+      );
+    } else if (onUtil2 && utilModal2 && !utilModal && close === false) {
+      console.log(onUtil2);
+
+      return (
+        <img
+          className="bannerimage"
+          src={onUtil2.bannerImage}
+          alt="banner logo"
+        />
+      );
+    }
+    return null;
+  };
+
   const frontCard = () => {
     if (onUtil && utilModal && !utilModal2 && close === false) {
+      console.log(onUtil);
       return (
         <div className="main-card">
           <div className="outer-banner rail">
             <div className="banner">
-              <img
-                className="utility-logo"
-                src={onUtil.image}
-                alt="utility logo"
-              />
+              {bannerImage()}
               <h2 className="prop-name rr">{onUtil.Name.toUpperCase()}</h2>
             </div>
           </div>
@@ -115,15 +132,12 @@ const UtilitiesModal = ({
         </div>
       );
     } else if (onUtil2 && utilModal2 && !utilModal && close === false) {
+      console.log(onUtil2);
       return (
         <div className="main-card">
           <div className="outer-banner rail">
             <div className={`banner ${onUtil2.color}`}>
-              <img
-                className="utility-logo"
-                src={onUtil2.image}
-                alt="utility logo"
-              />
+              {bannerImage()}
               <h2 className="prop-name rr">{onUtil2.Name.toUpperCase()}</h2>
             </div>
           </div>

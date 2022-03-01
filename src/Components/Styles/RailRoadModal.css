@@ -24,3 +24,22 @@
   padding-left: 1em;
   margin-bottom: 0;
 }
+
+.bannerimage {
+  height: 4em;
+}
+.rent1Container {
+  text-align: left;
+}
+
+.rent2Container {
+  text-align: left;
+}
+
+.rent1 {
+  margin-top: 0;
+}
+
+.prop-name.rr {
+  font-family: "Monopoly";
+}
