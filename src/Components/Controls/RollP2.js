@@ -21,6 +21,11 @@ export const RollP2 = ({
   setOnRR2,
   setRailRoads,
   setRRModal2,
+  onUtil2,
+  setOnUtil2,
+  utilities,
+  setUtilities,
+  setUtilModal2,
 }) => {
   const [die3, setDie3] = useState(1);
   const [die4, setDie4] = useState(1);
@@ -101,6 +106,7 @@ export const RollP2 = ({
   const showPropertyModal = (space) => {
     let currentProp = properties.find((property) => property.Number === space);
     let currentRR = railRoads.find((railRoad) => railRoad.Number === space);
+    let currentUtil = utilities.find((util) => util.Number === space);
     if (
       currentProp &&
       currentProp.ownedP1 === false &&
@@ -115,6 +121,13 @@ export const RollP2 = ({
     ) {
       setRRModal2(true);
       setOnRR2(currentRR);
+    } else if (
+      currentUtil &&
+      currentUtil.ownedP1 === false &&
+      currentUtil.ownedP2 === false
+    ) {
+      setUtilModal2(true);
+      setOnUtil2(currentUtil);
     }
   };
 
