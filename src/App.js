@@ -30,6 +30,12 @@ function App() {
   const [onRR2, setOnRR2] = useState();
   const [rrModal, setRRModal] = useState(false);
   const [rrModal2, setRRModal2] = useState(false);
+  const [utilModal, setUtilModal] = useState(false);
+  const [utilModal2, setUtilModal2] = useState(false);
+  const [onUtil, setOnUtil] = useState(false);
+  const [onUtil2, setOnUtil2] = useState(false);
+  const [viewUtils, setViewUtils] = useState(false);
+  const [viewUtils2, setViewUtils2] = useState(false);
 
   return (
     <div className="App">
@@ -77,6 +83,19 @@ function App() {
         rrModal2={rrModal2}
         setRRModal={setRRModal}
         setRRModal2={setRRModal2}
+        viewUtils={viewUtils}
+        viewUtils2={viewUtils2}
+        setViewUtils={setViewUtils}
+        setViewUtils2={setViewUtils2}
+        utilModal={utilModal}
+        utilModal2={utilModal2}
+        setUtilModal={setUtilModal}
+        setUtilModal2={setUtilModal2}
+        onUtil={onUtil}
+        onUtil2={onUtil2}
+        setOnUtil={setOnUtil}
+        setOnUtil2={setOnUtil2}
+        setUtilities={setUtilities}
       />
       <Controls
         counterP1={counterP1}
@@ -113,6 +132,20 @@ function App() {
         setRailRoads={setRailRoads}
         setRRModal={setRRModal}
         setRRModal2={setRRModal2}
+        viewUtils={viewUtils}
+        viewUtils2={viewUtils2}
+        setViewUtils={setViewUtils}
+        setViewUtils2={setViewUtils2}
+        utilModal={utilModal}
+        utilModal2={utilModal2}
+        setUtilModal={setUtilModal}
+        setUtilModal2={setUtilModal2}
+        onUtil={onUtil}
+        onUtil2={onUtil2}
+        setOnUtil={setOnUtil}
+        setOnUtil2={setOnUtil2}
+        utilities={utilities}
+        setUtilities={setUtilities}
       />
     </div>
   );

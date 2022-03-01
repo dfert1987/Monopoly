@@ -1,9 +1,10 @@
 import React, { useState } from "react";
 import PropertyModal from "../Components/Modals/PropertyModal";
-import OwnedProperties from "../Components/Modals/OwnedProperties";
+import UtilitiesModal from "../Components/Modals/UtilitiesModal";
+import RailRoadModal from "../Components/Modals/RailRoadModal";
 import PurchasedPopUp from "../Components/Modals/PurchasedPopUp";
 import RRPurchasedPopUp from "../Components/Modals/RRPurchasedPopUp";
-import RailRoadModal from "../Components/Modals/RailRoadModal";
+import OwnedProperties from "../Components/Modals/OwnedProperties";
 import Piece1 from "../Assets/Pieces/Piece1.png";
 import Piece2 from "../Assets/Pieces/Piece2.png";
 import ditielogo from "../Assets/PropertyImages/ditielogo.png";
@@ -60,11 +61,27 @@ export const Board = ({
   setViewRRs,
   viewRRs2,
   setViewRRs2,
+  viewUtils,
+  viewUtils2,
+  setViewUtils,
+  setViewUtils2,
+  utilModal,
+  utilModal2,
+  setUtilModal,
+  setUtilModal2,
+  onUtil,
+  onUtil2,
+  setOnUtil,
+  setOnUtil2,
+  utilities,
+  setUtilities,
 }) => {
   const [viewPurchase, setViewPurchase] = useState(false);
   const [viewPurchase2, setViewPurchase2] = useState(false);
   const [viewPurchaseRR, setViewPurchaseRR] = useState(false);
   const [viewPurchaseRR2, setViewPurchaseRR2] = useState(false);
+  const [viewPurchaseUtil, setViewPurchaseUtil] = useState(false);
+  const [viewPurchaseUtil2, setViewPurchaseUtil2] = useState(false);
   return (
     <div className="main-board">
       <div className="left-column">
@@ -808,27 +825,6 @@ export const Board = ({
             <p className="go-to-jail">You're Deported!</p>
           </div>
         </div>
-        <RailRoadModal
-          className="RailRoad"
-          setRRModal={setRRModal}
-          setRRModal2={setRRModal2}
-          onRR={onRR}
-          onRR2={onRR2}
-          setOnRR={setOnRR}
-          setOnRR2={setOnRR2}
-          rrModal={rrModal}
-          rrModal2={rrModal2}
-          railRoads={railRoads}
-          setRailRoads={setRailRoads}
-          setP1Money={setP1Money}
-          setP2Money={setP2Money}
-          p1Money={p1Money}
-          p2Money={p2Money}
-          viewPurchaseRR={viewPurchaseRR}
-          setViewPurchaseRR={setViewPurchaseRR}
-          viewPurchaseRR2={setViewPurchaseRR2}
-          setViewPurchaseRR2={setViewPurchaseRR2}
-        />
         <OwnedProperties
           className="owned"
           viewProperties={viewProperties}
@@ -881,6 +877,48 @@ export const Board = ({
           setProperties={setProperties}
           setViewPurchase={setViewPurchase}
           setViewPurchase2={setViewPurchase2}
+        />
+        <RailRoadModal
+          className="RailRoad"
+          setRRModal={setRRModal}
+          setRRModal2={setRRModal2}
+          onRR={onRR}
+          onRR2={onRR2}
+          setOnRR={setOnRR}
+          setOnRR2={setOnRR2}
+          rrModal={rrModal}
+          rrModal2={rrModal2}
+          railRoads={railRoads}
+          setRailRoads={setRailRoads}
+          setP1Money={setP1Money}
+          setP2Money={setP2Money}
+          p1Money={p1Money}
+          p2Money={p2Money}
+          viewPurchaseRR={viewPurchaseRR}
+          setViewPurchaseRR={setViewPurchaseRR}
+          viewPurchaseRR2={setViewPurchaseRR2}
+          setViewPurchaseRR2={setViewPurchaseRR2}
+        />
+        <UtilitiesModal
+          className="Utilities"
+          utilModal={utilModal}
+          utilModal2={utilModal2}
+          setUtilModal={setUtilModal}
+          setUtilModal2={setUtilModal2}
+          onUtil={onUtil}
+          onUtil2={onUtil2}
+          setOnUtil={setOnUtil}
+          setOnUtil2={setOnUtil2}
+          utilities={utilities}
+          setUtilities={setUtilities}
+          setP1Money={setP1Money}
+          setP2Money={setP2Money}
+          p1Money={p1Money}
+          p2Money={p2Money}
+          viewPurchaseUtil={viewPurchaseUtil}
+          setViewPurchaseUtil={setViewPurchaseUtil}
+          viewPurchaseUtil2={viewPurchaseUtil2}
+          setViewPuruchaseUtil2={setViewPurchaseUtil2}
         />
       </div>
     </div>
