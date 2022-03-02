@@ -26,6 +26,9 @@ export const RollP2 = ({
   utilities,
   setUtilities,
   setUtilModal2,
+  setPayProp,
+  setPayTo,
+  setPayType,
 }) => {
   const [die3, setDie3] = useState(1);
   const [die4, setDie4] = useState(1);
@@ -99,7 +102,7 @@ export const RollP2 = ({
       setCounterP2(counterP2 + first + second);
       setTimeout(() => {
         showPropertyModal(counterP2 + first + second);
-      }, 2000);
+      }, 1000);
     }
   };
 
@@ -107,27 +110,20 @@ export const RollP2 = ({
     let currentProp = properties.find((property) => property.Number === space);
     let currentRR = railRoads.find((railRoad) => railRoad.Number === space);
     let currentUtil = utilities.find((util) => util.Number === space);
-    if (
-      currentProp &&
-      currentProp.ownedP1 === false &&
-      currentProp.ownedP2 === false
-    ) {
+    if (currentProp && !currentProp.ownedP1 && !currentProp.ownedP2) {
       setPropertyModal2(true);
       setOnProp2(currentProp);
-    } else if (
-      currentRR &&
-      currentRR.ownedP1 === false &&
-      currentRR.ownedP2 === false
-    ) {
+    } else if (currentRR && !currentRR.ownedP1 && !currentRR.ownedP2) {
       setRRModal2(true);
       setOnRR2(currentRR);
-    } else if (
-      currentUtil &&
-      currentUtil.ownedP1 === false &&
-      currentUtil.ownedP2 === false
-    ) {
+    } else if (currentUtil && !currentUtil.ownedP1 && !currentUtil.ownedP2) {
       setUtilModal2(true);
       setOnUtil2(currentUtil);
+    } else if (currentProp && !currentProp.ownedP2 && currentProp.ownedP1) {
+      setOnProp2(currentProp);
+      setPayProp(true);
+      setPayTo(1);
+      setPayType("prop");
     }
   };
 

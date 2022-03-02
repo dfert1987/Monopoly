@@ -25,6 +25,7 @@ export const Properties = [
     color: "dark-blue",
     purchased: "Treat your bougie self!",
     saying: "About as fancy as it gets!",
+    paySaying: "Tasting menus don't come cheap!",
   },
   {
     order: 1,
@@ -52,6 +53,7 @@ export const Properties = [
     color: "dark-blue",
     purchased: "Dance until sunrise!",
     saying: "Tapas, Paella and Disco!",
+    paySaying: "How many Gin Tonics did you have?",
   },
   {
     order: 2,
@@ -79,6 +81,7 @@ export const Properties = [
     color: "green",
     purchased: "The OG Beijing brewery is yours!",
     saying: "The godfather of Beijing Beer",
+    paySaying: "YanJing is a lot cheaper.",
   },
   {
     order: 3,
@@ -106,6 +109,7 @@ export const Properties = [
     color: "green",
     purchased: "You're officially a Burger Cup heavy hitter.",
     saying: "Beer and Burgers, a timeless combo.",
+    paySaying: "Your IPA habit is hurting your bottom line.",
   },
   {
     order: 4,
@@ -133,6 +137,7 @@ export const Properties = [
     color: "green",
     purchased: "Punch your ticket for the next beer fest!",
     saying: "Beijing's trendiest beer hall?",
+    paySaying: "You're developing a bit of a craft beer belly",
   },
   {
     order: 5,
@@ -160,6 +165,7 @@ export const Properties = [
     color: "yellow",
     purchased: "Duck isn't just for when your family visits!",
     saying: "It's all about the skin if you ask me.",
+    paySaying: "It was a special occasion.",
   },
   {
     order: 6,
@@ -187,6 +193,7 @@ export const Properties = [
     color: "yellow",
     purchased: "Get your noodle dance on!",
     saying: "Way more than just hot pot.",
+    paySaying: "That spicy hot pot is hurting your bowels and wallet. ",
   },
   {
     order: 7,
@@ -214,6 +221,8 @@ export const Properties = [
     color: "yellow",
     purchased: "Late night shumai, here you come!",
     saying: "Yonghegong's 24/7 dim sum emporioum.",
+    paySaying:
+      "Nothing like waking up and vaguely remembering eating 3 orders of pork buns at 1am.",
   },
   {
     order: 8,
@@ -229,7 +238,7 @@ export const Properties = [
     hotel: 1100,
     mortgage: 120,
     buidlingCost: 150,
-    ownedP1: false,
+    ownedP1: true,
     ownedP2: false,
     hasOneHouse: false,
     hasTwoHouses: false,
@@ -241,6 +250,7 @@ export const Properties = [
     color: "red",
     purchased: "Party until you're full of regret!",
     saying: "Beijing's premier depraved techno bunker",
+    paySaying: "If you stay out till 5am, you're gonna spend some money.",
   },
   {
     order: 9,
@@ -256,7 +266,7 @@ export const Properties = [
     hotel: 1050,
     mortgage: 110,
     buidlingCost: 150,
-    ownedP1: false,
+    ownedP1: true,
     ownedP2: false,
     hasOneHouse: false,
     hasTwoHouses: false,
@@ -268,6 +278,7 @@ export const Properties = [
     color: "red",
     purchased: "Wings and a Beergarita await!",
     saying: "One of the city's premier happy hour hangs.",
+    paySaying: "You got wing sauce on your shirt to boot.",
   },
   {
     order: 10,
@@ -295,6 +306,7 @@ export const Properties = [
     color: "red",
     purchased: "Don't worry, no one's gonna call you basic.",
     saying: "A staple of the hungover expat delivery scene.",
+    paySaying: "These Sherpa delivery fees are adding up.",
   },
   {
     order: 11,
@@ -322,6 +334,7 @@ export const Properties = [
     color: "orange",
     purchased: "Meet you in the upstairs bathroom to celebrate!",
     saying: "Late nights, loud bass, and debauchery.",
+    paySaying: "At least the DJ ripped.",
   },
   {
     order: 12,
@@ -349,6 +362,7 @@ export const Properties = [
     color: "orange",
     purchased: "You're officially king of the party monsters!",
     saying: "It's the place you always end up. ",
+    paySaying: "Is the hangover worth it?",
   },
   {
     order: 13,
@@ -364,7 +378,7 @@ export const Properties = [
     hotel: 950,
     mortgage: 90,
     buidlingCost: 100,
-    ownedP1: false,
+    ownedP1: true,
     ownedP2: false,
     hasOneHouse: false,
     hasTwoHouses: false,
@@ -377,6 +391,7 @@ export const Properties = [
     purchased: "You've got to start smoking cigarettes now I think.",
     saying:
       "If 'A Moveable Feast' were about when Hemmingway lived in Beijing and wrote for Timeout",
+    paySaying: "You really ordered the absynthe, huh?.",
   },
   {
     order: 14,
@@ -392,7 +407,7 @@ export const Properties = [
     hotel: 900,
     mortgage: 80,
     buidlingCost: 100,
-    ownedP1: false,
+    ownedP1: true,
     ownedP2: false,
     hasOneHouse: false,
     hasTwoHouses: false,
@@ -404,6 +419,7 @@ export const Properties = [
     color: "purple",
     purchased: "Your next shit will be spicy.",
     saying: "It burns so good!",
+    paySaying: "You over ordered. Classic.",
   },
   {
     order: 15,
@@ -419,7 +435,7 @@ export const Properties = [
     hotel: 750,
     mortgage: 70,
     buidlingCost: 100,
-    ownedP1: false,
+    ownedP1: true,
     ownedP2: false,
     hasOneHouse: false,
     hasTwoHouses: false,
@@ -431,6 +447,7 @@ export const Properties = [
     color: "purple",
     purchased: "Get one of those big spicy fish for me.",
     saying: "Hutong favorite, serving Yunnan food to the expats who love it.",
+    paySaying: "Did you need three orders of that cheese?",
   },
   {
     order: 16,
@@ -446,7 +463,7 @@ export const Properties = [
     hotel: 750,
     mortgage: 70,
     buidlingCost: 100,
-    ownedP1: false,
+    ownedP1: true,
     ownedP2: false,
     hasOneHouse: false,
     hasTwoHouses: false,
@@ -458,6 +475,7 @@ export const Properties = [
     color: "purple",
     purchased: "Dumps like what, what!",
     saying: "Chain specializing in plump dumplings and classic Beijing eats.",
+    paySaying: "It's Chinese custom to try and cover the bill.",
   },
   {
     order: 17,
@@ -473,7 +491,7 @@ export const Properties = [
     hotel: 600,
     mortgage: 60,
     buidlingCost: 50,
-    ownedP1: false,
+    ownedP1: true,
     ownedP2: false,
     hasOneHouse: false,
     hasTwoHouses: false,
@@ -485,6 +503,7 @@ export const Properties = [
     color: "light-blue",
     purchased: "You're also now manager of the Solid Gold Dream Machine.",
     saying: "Resilient, happening, houhai adjacent watering hole.",
+    paySaying: "Jun and Tavey thank you.",
   },
   {
     order: 18,
@@ -500,7 +519,7 @@ export const Properties = [
     hotel: 550,
     mortgage: 50,
     buidlingCost: 50,
-    ownedP1: false,
+    ownedP1: true,
     ownedP2: false,
     hasOneHouse: false,
     hasTwoHouses: false,
@@ -513,6 +532,7 @@ export const Properties = [
     purchased: "Coffee shots on you!",
     saying:
       "Respectable French restaurant by day. One of the drunkest places on earth at night.",
+    paySaying: "You close the place down!",
   },
   {
     order: 19,
@@ -528,7 +548,7 @@ export const Properties = [
     hotel: 550,
     mortgage: 50,
     buidlingCost: 50,
-    ownedP1: false,
+    ownedP1: true,
     ownedP2: false,
     hasOneHouse: false,
     hasTwoHouses: false,
@@ -539,7 +559,8 @@ export const Properties = [
     image: require("../PropertyImages/image-hotcat.jpeg"),
     color: "light-blue",
     purchased: "See you at open mic on Wednesday.",
-    saying: "Grimey, Fangjia livehouse where many an open mic'er has bombed.",
+    saying: "Grimey, Fangjia livehouse and Comedy Club China's home base.",
+    paySaying: "You needed some liquid courage to get on stage",
   },
   {
     order: 20,
@@ -555,7 +576,7 @@ export const Properties = [
     hotel: 450,
     mortgage: 30,
     buildingCost: 50,
-    ownedP1: false,
+    ownedP1: true,
     ownedP2: false,
     hasOneHouse: false,
     hasTwoHouses: false,
@@ -567,6 +588,7 @@ export const Properties = [
     color: "brown",
     purchased: "Tell me that the alcohol is real.",
     saying: "You're drunk. You're 22. You're trying to fuck.",
+    paySaying: "Top 40 EDM remixes sound better after a couple rounds.",
   },
   {
     order: 21,
@@ -582,7 +604,7 @@ export const Properties = [
     hotel: 250,
     mortgage: 30,
     buildingCost: 50,
-    ownedP1: false,
+    ownedP1: true,
     ownedP2: false,
     hasOneHouse: false,
     hasTwoHouses: false,
@@ -592,7 +614,8 @@ export const Properties = [
     mortgaged: false,
     image: require("../PropertyImages/image-lush.jpeg"),
     color: "brown",
-    purchased: "You are king of the coeds!",
+    purchased: "You're going back to college!",
     saying: "HQ for many a study abroad student.",
+    paySaying: "At least Wudaokou is cheap.",
   },
 ];

@@ -243,7 +243,7 @@ const PropertyModal = ({
           exit="hidden"
         >
           <motion.div
-            className="innerModal flex flexColumn"
+            className="innerModalPurchase"
             variants={modal}
             initial="hidden"
             animate="visible"
