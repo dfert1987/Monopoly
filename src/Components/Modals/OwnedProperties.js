@@ -3,6 +3,8 @@ import { motion, AnimatePresence } from "framer-motion";
 import { faXmark } from "@fortawesome/free-solid-svg-icons";
 import ditielogo from "../../Assets/PropertyImages/ditielogo.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import mopAyi from "../../Assets/PropertyImages/mopAyi.png";
+import jug from "../../Assets/PropertyImages/jug.png";
 import "../Styles/OwnedProperties.css";
 
 const OwnedProperties = ({
@@ -12,10 +14,7 @@ const OwnedProperties = ({
   setViewProperties2,
   properties,
   railRoads,
-  viewRRs,
-  setViewRRs,
-  viewRRs2,
-  setViewRRs2,
+  utilities,
 }) => {
   const handleClose = (e) => {
     e.preventDefault();
@@ -330,8 +329,32 @@ const OwnedProperties = ({
                   <h3 className="subheader">Utilities</h3>
                   <div className="card-row left two">
                     <div className="card-group threeGroup">
-                      <div className="cardSquare-grey"></div>
-                      <div className="cardSquare-grey"></div>
+                      <div className="cardSquare-grey">
+                        {utilities[0].ownedP1 ? (
+                          <div className="main-square">
+                            <div className="white-part-rr">
+                              <img
+                                className="small-ditie"
+                                alt="water jug"
+                                src={jug}
+                              />
+                            </div>
+                          </div>
+                        ) : null}
+                      </div>
+                      <div className="cardSquare-grey">
+                        {utilities[1].ownedP1 ? (
+                          <div className="main-square">
+                            <div className="white-part-rr">
+                              <img
+                                className="small-ditie"
+                                alt="mop"
+                                src={mopAyi}
+                              />
+                            </div>
+                          </div>
+                        ) : null}
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -600,8 +623,32 @@ const OwnedProperties = ({
                   <h3 className="subheader">Utilities</h3>
                   <div className="card-row left two">
                     <div className="card-group threeGroup">
-                      <div className="cardSquare-grey"></div>
-                      <div className="cardSquare-grey"></div>
+                      <div className="cardSquare-grey">
+                        {utilities[0].ownedP2 ? (
+                          <div className="main-square">
+                            <div className="white-part-rr">
+                              <img
+                                className="small-ditie"
+                                alt="water jug"
+                                src={jug}
+                              />
+                            </div>
+                          </div>
+                        ) : null}
+                      </div>
+                      <div className="cardSquare-grey">
+                        {utilities[1].ownedP2 ? (
+                          <div className="main-square">
+                            <div className="white-part-rr">
+                              <img
+                                className="small-ditie"
+                                alt="mop"
+                                src={mopAyi}
+                              />
+                            </div>
+                          </div>
+                        ) : null}
+                      </div>
                     </div>
                   </div>
                 </div>
