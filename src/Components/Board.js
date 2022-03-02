@@ -89,7 +89,6 @@ export const Board = ({
   const [viewPurchaseRR2, setViewPurchaseRR2] = useState(false);
   const [viewPurchaseUtil, setViewPurchaseUtil] = useState(false);
   const [viewPurchaseUtil2, setViewPurchaseUtil2] = useState(false);
-  console.log(payProp);
   return (
     <div className="main-board">
       <div className="left-column">
@@ -842,6 +841,7 @@ export const Board = ({
           properties={properties}
           railRoads={railRoads}
           utilities={utilities}
+          onProp={onProp}
         />
         <PayOpponent
           className="pay-opponent"
@@ -849,11 +849,17 @@ export const Board = ({
           setPayProp={setPayProp}
           p1Money={p1Money}
           p2Money={p2Money}
+          setP1Money={setP1Money}
+          setP2Money={setP2Money}
           payTo={payTo}
           setPayTo={setPayTo}
           payType={setPayType}
           setPayType={setPayType}
           onProp={onProp}
+          onProp2={onProp2}
+          properties={properties}
+          utilities={utilities}
+          railRoads={railRoads}
         />
         <PurchasedPopUp
           className="purchased"

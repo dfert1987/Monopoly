@@ -39,7 +39,6 @@ function App() {
   const [payProp, setPayProp] = useState(false);
   const [payTo, setPayTo] = useState();
   const [payType, setPayType] = useState();
-  console.log(payProp);
   return (
     <div className="App">
       <Board

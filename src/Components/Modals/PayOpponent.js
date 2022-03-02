@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { faXmark } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -14,7 +14,13 @@ export const PayOpponent = ({
   setPayType,
   payType,
   onProp2,
+  properties,
+  utilities,
+  railRoads,
+  setP1Money,
+  setP2Money,
 }) => {
+  const [rent, setRent] = useState("");
   const backdrop = {
     visible: { opacity: 1 },
     hidden: { opacity: 0 },
@@ -39,9 +45,122 @@ export const PayOpponent = ({
     setPayType(null);
   };
 
+  const player = () => {
+    if (payTo && payTo === 2) {
+      return "Player 2";
+    } else if (payTo && payTo === 1) {
+      return "Player 1";
+    }
+    return null;
+  };
+
+  useEffect(() => {
+    if (
+      onProp2 &&
+      payTo &&
+      (onProp2.color === "blue" || onProp2.color === "brown") &&
+      !onProp2.hasOneHouse
+    ) {
+      let number = properties.filter(
+        (property) =>
+          property.color === onProp2.color && property.ownedP1 === true
+      );
+      if (number.length === 2) {
+        let p1New = p1Money + onProp2.monopolyRent;
+        let p2New = p2Money - onProp2.monopolyRent;
+        setP1Money(p1New);
+        setP2Money(p2New);
+        setRent(`¥${onProp2.monopolyRent}`);
+      } else if (number.length < 2) {
+        let p1New = p1Money + onProp2.rent;
+        let p2New = p2Money - onProp2.rent;
+        setP1Money(p1New);
+        setP2Money(p2New);
+        setRent(`¥${onProp2.rent}`);
+      }
+    } else if (
+      onProp &&
+      payTo &&
+      (onProp.color === "blue" || onProp.color === "brown") &&
+      !onProp.hasOneHouse
+    ) {
+      let number = properties.filter(
+        (property) =>
+          property.color === onProp.color && property.ownedP2 === true
+      );
+      if (number.length === 2) {
+        let p1New = p1Money - onProp.monopolyRent;
+        let p2New = p2Money + onProp.monopolyRent;
+        setP1Money(p1New);
+        setP2Money(p2New);
+        setRent(`¥${onProp.monopolyRent}`);
+      } else if (number.length < 2) {
+        let p1New = p1Money - onProp.rent;
+        let p2New = p2Money + onProp.rent;
+        setP1Money(p1New);
+        setP2Money(p2New);
+        setRent(`¥${onProp.rent}`);
+      }
+    } else if (onProp2 && payTo && payTo === 1 && !onProp2.hasOneHouse) {
+      let number = properties.filter(
+        (property) =>
+          property.color === onProp2.color && property.ownedP1 === true
+      );
+      if (number && number.length === 3) {
+        let p1New = p1Money + onProp2.monopolyRent;
+        let p2New = p2Money - onProp2.monopolyRent;
+        setP1Money(p1New);
+        setP2Money(p2New);
+        setRent(`¥${onProp2.monopolyRent}`);
+      } else if (number.length < 3) {
+        let p1New = p1Money + onProp2.rent;
+        let p2New = p2Money - onProp2.rent;
+        setP1Money(p1New);
+        setP2Money(p2New);
+        setRent(`¥${onProp2.rent}`);
+      }
+    } else if (onProp && payTo && payTo === 2 && !onProp.hasOneHouse) {
+      let number = properties.filter(
+        (property) =>
+          property.color === onProp.color && property.ownedP2 === true
+      );
+      if (number && number.length === 3) {
+        let p1New = p1Money - onProp.rent;
+        let p2New = p2Money + onProp.rent;
+        setP1Money(p2New);
+        setP2Money(p1New);
+        setRent(`¥${onProp.monopolyRent}`);
+      } else if (number.length < 3) {
+        let p1New = p1Money - onProp.rent;
+        let p2New = p2Money + onProp.rent;
+        setP1Money(p2New);
+        setP2Money(p1New);
+        setRent(`¥${onProp.rent}`);
+      }
+    }
+    return null;
+  }, [
+    onProp,
+    onProp2,
+    p1Money,
+    p2Money,
+    payTo,
+    properties,
+    setP1Money,
+    setP2Money,
+  ]);
+
+  const propName = () => {
+    if (onProp) {
+      return onProp.Name;
+    } else if (onProp2) {
+      return onProp2.Name;
+    }
+  };
+
   return (
     <AnimatePresence exitBeforeEnter>
-      {payProp === true ? (
+      {payProp === true && (onProp || onProp2) ? (
         <motion.div
           className="outerModal flex centerFlex"
           variants={backdrop}
@@ -61,6 +180,8 @@ export const PayOpponent = ({
                 <FontAwesomeIcon className="x-icon" icon={faXmark} />
               </button>
             </div>
+            <h2 className="line-1">{`${player()} owns ${propName()}`}</h2>
+            <h2 className="ammount">Pay {rent}</h2>
           </motion.div>
         </motion.div>
       ) : null}

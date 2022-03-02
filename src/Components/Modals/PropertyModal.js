@@ -105,6 +105,8 @@ const PropertyModal = ({
           setViewPurchase2(true);
           return properties;
         } else if (obj.Price > p2Money) {
+          console.log(obj.Price);
+          console.log(p2Money);
           setInsufficientFunds(true);
         }
         return null;
