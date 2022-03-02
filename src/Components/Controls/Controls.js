@@ -38,6 +38,10 @@ export const Controls = ({
   setUtilities,
   setUtilModal,
   setUtilModal2,
+  payProp,
+  setPayProp,
+  setPayTo,
+  setPayType,
 }) => {
   const [disableRight, setDisableRight] = useState(true);
   const [disableLeft, setDisableLeft] = useState(false);
@@ -77,6 +81,9 @@ export const Controls = ({
             utilities={utilities}
             setUtilities={setUtilities}
             setUtilModal={setUtilModal}
+            setPayProp={setPayProp}
+            setPayType={setPayType}
+            setPayTo={setPayTo}
           />
           <div className="money player1">
             <h3 className="money-label">Money</h3>
@@ -117,6 +124,8 @@ export const Controls = ({
             utilities={utilities}
             setUtilities={setUtilities}
             setUtilModal2={setUtilModal2}
+            setPayType={setPayType}
+            setPayTo={setPayTo}
           />
           <div className="money player2">
             <h3 className="money-label">Money</h3>

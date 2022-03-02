@@ -36,6 +36,9 @@ function App() {
   const [onUtil2, setOnUtil2] = useState(false);
   const [viewUtils, setViewUtils] = useState(false);
   const [viewUtils2, setViewUtils2] = useState(false);
+  const [payProp, setPayProp] = useState(false);
+  const [payTo, setPayTo] = useState();
+  const [payType, setPayType] = useState();
 
   return (
     <div className="App">
@@ -95,7 +98,12 @@ function App() {
         onUtil2={onUtil2}
         setOnUtil={setOnUtil}
         setOnUtil2={setOnUtil2}
-        setUtilities={setUtilities}
+        payProp={setPayProp}
+        setPayProp={setPayProp}
+        payTo={payTo}
+        setPayTo={setPayTo}
+        payType={payType}
+        setPayType={setPayType}
       />
       <Controls
         counterP1={counterP1}
@@ -146,6 +154,12 @@ function App() {
         setOnUtil2={setOnUtil2}
         utilities={utilities}
         setUtilities={setUtilities}
+        setPayProp={setPayProp}
+        payProp={payProp}
+        payTo={payTo}
+        setPayTo={setPayTo}
+        payType={payType}
+        setPayType={setPayType}
       />
     </div>
   );

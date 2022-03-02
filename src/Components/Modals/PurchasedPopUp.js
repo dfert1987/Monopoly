@@ -5,23 +5,6 @@ import { faXmark } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import "../Styles/Purchased.css";
 
-const backdrop = {
-  visible: { opacity: 1 },
-  hidden: { opacity: 0 },
-};
-
-const modal = {
-  hidden: {
-    y: "-100vh",
-    opacity: 0,
-  },
-  visible: {
-    y: "0px",
-    opacity: 1,
-    transition: { delay: 0.5 },
-  },
-};
-
 const PurchasedPopUp = ({
   viewPurchase,
   viewPurchase2,
@@ -30,6 +13,22 @@ const PurchasedPopUp = ({
   onProp,
   onProp2,
 }) => {
+  const backdrop = {
+    visible: { opacity: 1 },
+    hidden: { opacity: 0 },
+  };
+
+  const modal = {
+    hidden: {
+      y: "-100vh",
+      opacity: 0,
+    },
+    visible: {
+      y: "0px",
+      opacity: 1,
+      transition: { delay: 0.5 },
+    },
+  };
   const handleClose = (e) => {
     e.preventDefault();
     setViewPurchase(false);
