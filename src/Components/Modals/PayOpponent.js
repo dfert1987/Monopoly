@@ -1,7 +1,10 @@
 import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { faXmark } from "@fortawesome/free-solid-svg-icons";
+import smallPay from "../../Assets/Misc/smallpay.jpeg";
+import bigPay from "../../Assets/Misc/bigPay.jpeg";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import "../Styles/PayOpponentModal.css";
 
 export const PayOpponent = ({
   payProp,
@@ -43,6 +46,7 @@ export const PayOpponent = ({
     setPayProp(false);
     setPayTo(null);
     setPayType(null);
+    setRent(null);
   };
 
   const player = () => {
@@ -70,13 +74,13 @@ export const PayOpponent = ({
         let p2New = p2Money - onProp2.monopolyRent;
         setP1Money(p1New);
         setP2Money(p2New);
-        setRent(`¥${onProp2.monopolyRent}`);
+        setRent(onProp2.monopolyRent);
       } else if (number.length < 2) {
         let p1New = p1Money + onProp2.rent;
         let p2New = p2Money - onProp2.rent;
         setP1Money(p1New);
         setP2Money(p2New);
-        setRent(`¥${onProp2.rent}`);
+        setRent(onProp2.rent);
       }
     } else if (
       onProp &&
@@ -93,13 +97,13 @@ export const PayOpponent = ({
         let p2New = p2Money + onProp.monopolyRent;
         setP1Money(p1New);
         setP2Money(p2New);
-        setRent(`¥${onProp.monopolyRent}`);
+        setRent(onProp.monopolyRent);
       } else if (number.length < 2) {
         let p1New = p1Money - onProp.rent;
         let p2New = p2Money + onProp.rent;
         setP1Money(p1New);
         setP2Money(p2New);
-        setRent(`¥${onProp.rent}`);
+        setRent(onProp.rent);
       }
     } else if (onProp2 && payTo && payTo === 1 && !onProp2.hasOneHouse) {
       let number = properties.filter(
@@ -111,13 +115,13 @@ export const PayOpponent = ({
         let p2New = p2Money - onProp2.monopolyRent;
         setP1Money(p1New);
         setP2Money(p2New);
-        setRent(`¥${onProp2.monopolyRent}`);
+        setRent(onProp2.monopolyRent);
       } else if (number.length < 3) {
         let p1New = p1Money + onProp2.rent;
         let p2New = p2Money - onProp2.rent;
         setP1Money(p1New);
         setP2Money(p2New);
-        setRent(`¥${onProp2.rent}`);
+        setRent(onProp2.rent);
       }
     } else if (onProp && payTo && payTo === 2 && !onProp.hasOneHouse) {
       let number = properties.filter(
@@ -129,16 +133,17 @@ export const PayOpponent = ({
         let p2New = p2Money + onProp.rent;
         setP1Money(p2New);
         setP2Money(p1New);
-        setRent(`¥${onProp.monopolyRent}`);
+        setRent(onProp.monopolyRent);
       } else if (number.length < 3) {
         let p1New = p1Money - onProp.rent;
         let p2New = p2Money + onProp.rent;
         setP1Money(p2New);
         setP2Money(p1New);
-        setRent(`¥${onProp.rent}`);
+        setRent(onProp.rent);
       }
     }
     return null;
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [onProp, onProp2, payTo, properties, setP1Money, setP2Money]);
 
   const propName = () => {
@@ -146,6 +151,14 @@ export const PayOpponent = ({
       return onProp.Name;
     } else if (onProp2) {
       return onProp2.Name;
+    }
+  };
+
+  const cashPic = () => {
+    if (rent && rent < 100) {
+      return <img className="cash-pic" alt="small bills" src={smallPay} />;
+    } else if (rent && rent > 100) {
+      return <img clasName="cash-pic" alt="large bills" src={bigPay} />;
     }
   };
 
@@ -160,7 +173,7 @@ export const PayOpponent = ({
           exit="hidden"
         >
           <motion.div
-            className="flex flexColumn innerModalPurchase"
+            className="flex flexColumn innerModalPay"
             variants={modal}
             initial="hidden"
             animate="visible"
@@ -171,8 +184,13 @@ export const PayOpponent = ({
                 <FontAwesomeIcon className="x-icon" icon={faXmark} />
               </button>
             </div>
-            <h2 className="line-1">{`${player()} owns ${propName()}`}</h2>
-            <h2 className="ammount">Pay {rent}</h2>
+            <div className="main-content-container">
+              <h2 className="line-1">{`${player()} owns ${propName()}`}</h2>
+              {cashPic()}
+              <h2 className="ammount">
+                Pay <span className="rent">{`¥${rent}`}</span> in rent.
+              </h2>
+            </div>
           </motion.div>
         </motion.div>
       ) : null}
