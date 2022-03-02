@@ -152,6 +152,7 @@ export const PayOpponent = ({
     } else if (onProp2) {
       return onProp2.Name;
     }
+    return null;
   };
 
   const cashPic = () => {
@@ -160,6 +161,15 @@ export const PayOpponent = ({
     } else if (rent && rent > 100) {
       return <img clasName="cash-pic" alt="large bills" src={bigPay} />;
     }
+  };
+
+  const saying = () => {
+    if (onProp) {
+      return onProp.paySaying;
+    } else if (onProp2) {
+      return onProp2.paySaying;
+    }
+    return null;
   };
 
   return (
@@ -190,6 +200,7 @@ export const PayOpponent = ({
               <h2 className="ammount">
                 Pay <span className="rent">{`¥${rent}`}</span> in Rent.
               </h2>
+              <h4 className="pay-saying">{saying()}</h4>
             </div>
           </motion.div>
         </motion.div>

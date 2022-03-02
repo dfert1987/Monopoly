@@ -72,8 +72,15 @@
 
 .ammount {
   margin-top: 0.5em;
+  margin-bottom: 0;
 }
 
 .line-1 {
   margin-bottom: 0.5em;
+}
+
+.pay-saying {
+  margin-top: 0;
+  margin-bottom: 0;
+  font-style: italic;
 }

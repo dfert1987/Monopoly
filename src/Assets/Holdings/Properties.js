@@ -588,7 +588,7 @@ export const Properties = [
     color: "brown",
     purchased: "Tell me that the alcohol is real.",
     saying: "You're drunk. You're 22. You're trying to fuck.",
-    paySaying: "Top 40 EDM remixes, sound better after a couple rounds.",
+    paySaying: "Top 40 EDM remixes sound better after a couple rounds.",
   },
   {
     order: 21,
