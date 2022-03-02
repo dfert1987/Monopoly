@@ -39,7 +39,7 @@ function App() {
   const [payProp, setPayProp] = useState(false);
   const [payTo, setPayTo] = useState();
   const [payType, setPayType] = useState();
-
+  console.log(payProp);
   return (
     <div className="App">
       <Board
@@ -98,7 +98,7 @@ function App() {
         onUtil2={onUtil2}
         setOnUtil={setOnUtil}
         setOnUtil2={setOnUtil2}
-        payProp={setPayProp}
+        payProp={payProp}
         setPayProp={setPayProp}
         payTo={payTo}
         setPayTo={setPayTo}

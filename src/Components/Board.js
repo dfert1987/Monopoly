@@ -78,6 +78,10 @@ export const Board = ({
   setUtilities,
   setPayProp,
   payProp,
+  payType,
+  payTo,
+  setPayTo,
+  setPayType,
 }) => {
   const [viewPurchase, setViewPurchase] = useState(false);
   const [viewPurchase2, setViewPurchase2] = useState(false);
@@ -85,6 +89,7 @@ export const Board = ({
   const [viewPurchaseRR2, setViewPurchaseRR2] = useState(false);
   const [viewPurchaseUtil, setViewPurchaseUtil] = useState(false);
   const [viewPurchaseUtil2, setViewPurchaseUtil2] = useState(false);
+  console.log(payProp);
   return (
     <div className="main-board">
       <div className="left-column">
@@ -844,6 +849,11 @@ export const Board = ({
           setPayProp={setPayProp}
           p1Money={p1Money}
           p2Money={p2Money}
+          payTo={payTo}
+          setPayTo={setPayTo}
+          payType={setPayType}
+          setPayType={setPayType}
+          onProp={onProp}
         />
         <PurchasedPopUp
           className="purchased"

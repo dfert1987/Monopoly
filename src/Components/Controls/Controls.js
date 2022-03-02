@@ -126,6 +126,7 @@ export const Controls = ({
             setUtilModal2={setUtilModal2}
             setPayType={setPayType}
             setPayTo={setPayTo}
+            setPayProp={setPayProp}
           />
           <div className="money player2">
             <h3 className="money-label">Money</h3>

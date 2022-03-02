@@ -3,7 +3,18 @@ import { motion, AnimatePresence } from "framer-motion";
 import { faXmark } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-export const PayOpponent = ({ payProp, setPayProp, p1Money, p2Money }) => {
+export const PayOpponent = ({
+  payProp,
+  setPayProp,
+  p1Money,
+  p2Money,
+  onProp,
+  setPayTo,
+  payTo,
+  setPayType,
+  payType,
+  onProp2,
+}) => {
   const backdrop = {
     visible: { opacity: 1 },
     hidden: { opacity: 0 },
@@ -23,32 +34,36 @@ export const PayOpponent = ({ payProp, setPayProp, p1Money, p2Money }) => {
 
   const handleClose = (e) => {
     e.preventDefault();
-    setPayProp(false, "none", 0);
+    setPayProp(false);
+    setPayTo(null);
+    setPayType(null);
   };
 
   return (
     <AnimatePresence exitBeforeEnter>
-      <motion.div
-        className="outerModal flex centerFlex"
-        variants={backdrop}
-        initial="hidden"
-        animate="visible"
-        exit="hidden"
-      >
+      {payProp === true ? (
         <motion.div
-          className="flex flexColumn innerModalPurchase"
-          variants={modal}
+          className="outerModal flex centerFlex"
+          variants={backdrop}
           initial="hidden"
           animate="visible"
           exit="hidden"
         >
-          <div className="button-row">
-            <button className="close-button" onClick={handleClose}>
-              <FontAwesomeIcon className="x-icon" icon={faXmark} />
-            </button>
-          </div>
+          <motion.div
+            className="flex flexColumn innerModalPurchase"
+            variants={modal}
+            initial="hidden"
+            animate="visible"
+            exit="hidden"
+          >
+            <div className="button-row">
+              <button className="close-button" onClick={handleClose}>
+                <FontAwesomeIcon className="x-icon" icon={faXmark} />
+              </button>
+            </div>
+          </motion.div>
         </motion.div>
-      </motion.div>
+      ) : null}
     </AnimatePresence>
   );
 };
