@@ -185,10 +185,10 @@ export const PayOpponent = ({
               </button>
             </div>
             <div className="main-content-container">
-              <h2 className="line-1">{`${player()} owns ${propName()}`}</h2>
+              <h2 className="line-1">{`${player()} Owns ${propName()}`}</h2>
               {cashPic()}
               <h2 className="ammount">
-                Pay <span className="rent">{`¥${rent}`}</span> in rent.
+                Pay <span className="rent">{`¥${rent}`}</span> in Rent.
               </h2>
             </div>
           </motion.div>
