@@ -139,16 +139,7 @@ export const PayOpponent = ({
       }
     }
     return null;
-  }, [
-    onProp,
-    onProp2,
-    p1Money,
-    p2Money,
-    payTo,
-    properties,
-    setP1Money,
-    setP2Money,
-  ]);
+  }, [onProp, onProp2, payTo, properties, setP1Money, setP2Money]);
 
   const propName = () => {
     if (onProp) {
