@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { faXmark } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import subwaypic1 from "../../Assets/Misc/subwaypic1.jpeg";
+import subwayPictwo from "../../Assets/Misc/subwayPictwo.jpeg";
 import "../Styles/PayOpponentModal.css";
 
 export const PayOpponentRail = ({
@@ -128,6 +130,20 @@ export const PayOpponentRail = ({
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [onRR2, payRailTo, onRR, railRoads, setP1Money, setP2Money]);
+
+  const ticketPic = () => {
+    if (fare && fare <= 75) {
+      return <img className="cash-pic" alt="subway card" src={subwayPictwo} />;
+    } else if (fare && fare > 75) {
+      return (
+        <img
+          clasName="cash-pic"
+          alt="person squished on subway"
+          src={subwaypic1}
+        />
+      );
+    }
+  };
 
   return (
     <AnimatePresence exitBeforeEnter>
