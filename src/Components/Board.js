@@ -6,6 +6,7 @@ import PurchasedPopUp from "../Components/Modals/PurchasedPopUp";
 import RRPurchasedPopUp from "../Components/Modals/RRPurchasedPopUp";
 import OwnedProperties from "../Components/Modals/OwnedProperties";
 import PayOpponent from "../Components/Modals/PayOpponent";
+import PayOpponentRail from "../Components/Modals/PayOpponentRail";
 import Piece1 from "../Assets/Pieces/Piece1.png";
 import Piece2 from "../Assets/Pieces/Piece2.png";
 import ditielogo from "../Assets/PropertyImages/ditielogo.png";
@@ -78,10 +79,12 @@ export const Board = ({
   setUtilities,
   setPayProp,
   payProp,
-  payType,
   payTo,
   setPayTo,
-  setPayType,
+  payRailTo,
+  setPayRailTo,
+  payRail,
+  setPayRail,
 }) => {
   const [viewPurchase, setViewPurchase] = useState(false);
   const [viewPurchase2, setViewPurchase2] = useState(false);
@@ -853,12 +856,22 @@ export const Board = ({
           setP2Money={setP2Money}
           payTo={payTo}
           setPayTo={setPayTo}
-          payType={setPayType}
-          setPayType={setPayType}
           onProp={onProp}
           onProp2={onProp2}
           properties={properties}
-          utilities={utilities}
+        />
+        <PayOpponentRail
+          className="pay-opponent"
+          payRail={payRail}
+          setPayRail={setPayRail}
+          p1Money={p1Money}
+          p2Money={p2Money}
+          setP1Money={setP1Money}
+          setP2Money={setP2Money}
+          payRailTo={payRailTo}
+          setRailPayTo={setPayRailTo}
+          onRR={onRR}
+          onRR2={onRR2}
           railRoads={railRoads}
         />
         <PurchasedPopUp

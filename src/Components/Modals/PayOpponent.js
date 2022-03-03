@@ -14,16 +14,12 @@ export const PayOpponent = ({
   onProp,
   setPayTo,
   payTo,
-  setPayType,
-  payType,
   onProp2,
   properties,
-  utilities,
-  railRoads,
   setP1Money,
   setP2Money,
 }) => {
-  const [rent, setRent] = useState("");
+  const [rent, setRent] = useState();
   const backdrop = {
     visible: { opacity: 1 },
     hidden: { opacity: 0 },
@@ -45,7 +41,6 @@ export const PayOpponent = ({
     e.preventDefault();
     setPayProp(false);
     setPayTo(null);
-    setPayType(null);
     setRent(null);
   };
 

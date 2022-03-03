@@ -38,7 +38,9 @@ function App() {
   const [viewUtils2, setViewUtils2] = useState(false);
   const [payProp, setPayProp] = useState(false);
   const [payTo, setPayTo] = useState();
-  const [payType, setPayType] = useState();
+  const [payRail, setPayRail] = useState(false);
+  const [payRailTo, setPayRailTo] = useState(false);
+
   return (
     <div className="App">
       <Board
@@ -101,8 +103,10 @@ function App() {
         setPayProp={setPayProp}
         payTo={payTo}
         setPayTo={setPayTo}
-        payType={payType}
-        setPayType={setPayType}
+        payRailTo={payRailTo}
+        setPayRailTo={setPayRailTo}
+        payRail={payRail}
+        setPayRail={setPayRail}
       />
       <Controls
         counterP1={counterP1}
@@ -157,8 +161,10 @@ function App() {
         payProp={payProp}
         payTo={payTo}
         setPayTo={setPayTo}
-        payType={payType}
-        setPayType={setPayType}
+        payRailTo={payRailTo}
+        setPayRailTo={setPayRailTo}
+        payRail={payRail}
+        setPayRail={setPayRail}
       />
     </div>
   );
