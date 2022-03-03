@@ -78,10 +78,8 @@ export const Board = ({
   setUtilities,
   setPayProp,
   payProp,
-  payType,
   payTo,
   setPayTo,
-  setPayType,
 }) => {
   const [viewPurchase, setViewPurchase] = useState(false);
   const [viewPurchase2, setViewPurchase2] = useState(false);
@@ -853,8 +851,6 @@ export const Board = ({
           setP2Money={setP2Money}
           payTo={payTo}
           setPayTo={setPayTo}
-          payType={setPayType}
-          setPayType={setPayType}
           onProp={onProp}
           onProp2={onProp2}
           properties={properties}

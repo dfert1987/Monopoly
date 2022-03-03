@@ -28,7 +28,10 @@ export const Roll = ({
   setUtilModal,
   setPayProp,
   setPayTo,
-  setPayType,
+  payRail,
+  setPayRail,
+  payRailTo,
+  setPayRailTo,
 }) => {
   const [die1, setDie1] = useState(1);
   const [die2, setDie2] = useState(1);
@@ -77,7 +80,10 @@ export const Roll = ({
       setOnProp(currentProp);
       setPayProp(true);
       setPayTo(2);
-      setPayType("prop");
+    } else if (currentRR && !currentRR.ownedP1 && currentRR.ownedP2) {
+      setOnRR(currentRR);
+      setPayRail(true);
+      setPayTo(2);
     }
   };
 
