@@ -48,11 +48,44 @@ export const PayOpponentUtil = ({
     },
   };
 
+  useEffect(() => {
+    if (onUtil2 && payUtilTo) {
+      let number = utilities.filter((util) => util.ownedP1 === true);
+      if (number.length === 1) {
+        setMultiplier(4);
+      } else if (number.length === 2) {
+        setMultiplier(10);
+      }
+    } else if (onUtil && payUtilTo) {
+      let number = utilities.filter((util) => util.ownedP1 === true);
+      if (number.length === 1) {
+        setMultiplier(4);
+      } else if (number.length === 2) {
+        setMultiplier(10);
+      }
+    }
+  }, [onUtil2, payUtilTo, onUtil, utilities]);
+
   const handleClose = (e) => {
     e.preventDefault();
     setPayUtil(false);
     setPayUtilTo(null);
+    setMultiplier(4);
     setRent(null);
+  };
+
+  const changeMoney = () => {
+    if (onUtil) {
+      let p1New = p1Money - rent;
+      let p2New = p2Money + rent;
+      setP1Money(p1New);
+      setP2Money(p2New);
+    } else if (onUtil2) {
+      let p1New = p1Money + rent;
+      let p2New = p2Money - rent;
+      setP1Money(p1New);
+      setP2Money(p2New);
+    }
   };
 
   const rollDice = (e) => {
@@ -68,9 +101,11 @@ export const PayOpponentUtil = ({
     if (multiplier === 4) {
       let totalDue = (first + second) * 4;
       setRent(totalDue);
+      changeMoney();
     } else if (multiplier === 10) {
       let totalDue = (first + second) * 10;
       setRent(totalDue);
+      changeMoney();
     }
   };
 
