@@ -47,11 +47,20 @@ const PropertyModal = ({
     }
   };
 
+  const activeInactive = () => {
+    if (!inSufficientFunds) {
+      return "buy-button";
+    } else if (inSufficientFunds) {
+      return "inactive-buy-button";
+    }
+  };
+
   const handleClose = (e) => {
     e.preventDefault();
     setClose(true);
     setPropertyModal1(false);
     setPropertyModal2(false);
+    setInsufficientFunds(false);
     setClose(false);
   };
 
@@ -243,7 +252,7 @@ const PropertyModal = ({
           exit="hidden"
         >
           <motion.div
-            className="innerModalPurchase"
+            className="innerModal"
             variants={modal}
             initial="hidden"
             animate="visible"
@@ -262,7 +271,11 @@ const PropertyModal = ({
             <div className="saying">{saying()}</div>
             <h4 className={viewInsufficient()}>INSUFFICIENT FUNDS</h4>
             <div className="options-container">
-              <button className="buy-button" onClick={buyProperty}>
+              <button
+                className={activeInactive()}
+                onClick={buyProperty}
+                disabled={inSufficientFunds}
+              >
                 PURCHASE
               </button>
               <button className="pass-button" onClick={handleClose}>

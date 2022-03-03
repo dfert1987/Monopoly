@@ -17,7 +17,7 @@
 }
 
 .close-button:hover {
-  color: white;
+  color: grey;
 }
 
 .container {
@@ -46,7 +46,7 @@
   border: none;
   overflow-y: auto;
   width: 70em;
-  height: 80em;
+  height: 42em;
   box-shadow: none;
 }
 
