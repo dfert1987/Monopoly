@@ -17,6 +17,7 @@ export const RailRoads = [
     image: require("../PropertyImages/space-line13.jpeg"),
     saying: "To Wudaokou, Wangjing and beyond!",
     message: "You're subway king of the North!",
+    paySaying: "Enjoy the Korean food up there!",
   },
   {
     Number: 16,
@@ -36,6 +37,7 @@ export const RailRoads = [
     image: require("../PropertyImages/space-line2.jpeg"),
     saying: "Old, reliable, and crowded as fuck!",
     message: "You're a master of public transport in the hutongs!",
+    paySaying: "Avoiding that Dongzhimen traffic, I see.",
   },
   {
     Number: 26,
@@ -55,6 +57,8 @@ export const RailRoads = [
     image: require("../PropertyImages/space-line6.jpeg"),
     saying: "Like Line 1, but nice!",
     message: "Have fun zipping right through the center of the city!",
+    paySaying:
+      "Meet you at the NanluoGuxiang Station. I've Got a hankering for crowds and squid on a stick.",
   },
   {
     Number: 36,
@@ -73,6 +77,7 @@ export const RailRoads = [
     mortgaged: false,
     image: require("../PropertyImages/space-line10.jpeg"),
     saying: "It's the biggest loop we've got!",
-    message: "From Sanlitun to Fengtai, the city is yours!",
+    message: "From Sanlitun to Haidian, the city is yours!",
+    paySaying: "Shit, you fell asleep and ended up in Fengtai",
   },
 ];
