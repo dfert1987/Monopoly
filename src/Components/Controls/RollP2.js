@@ -129,7 +129,7 @@ export const RollP2 = ({
     } else if (currentRR && !currentRR.owned2 && currentRR.ownedP1) {
       setOnRR2(currentRR);
       setPayRail(true);
-      setPayTo(2);
+      setPayRailTo(1);
     }
   };
 

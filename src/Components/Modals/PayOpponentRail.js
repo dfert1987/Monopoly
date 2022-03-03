@@ -156,7 +156,7 @@ export const PayOpponentRail = ({
           exit="hidden"
         >
           <motion.div
-            className="flex flexColumn innerModalPay"
+            className="flex flexColumn innerModalPayRail"
             variants={modal}
             initial="hidden"
             animate="visible"

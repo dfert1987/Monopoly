@@ -37,6 +37,18 @@
   box-shadow: none;
 }
 
+.innerModalPayRail {
+  position: relative;
+  border: none;
+  overflow-y: auto;
+  width: 50em;
+  height: 40em;
+  background-color: #c0e2ca;
+  border-radius: 6px;
+  border: 4px solid red;
+  box-shadow: none;
+}
+
 .outerModal {
   position: fixed;
   width: 100%;
