@@ -202,6 +202,20 @@
   margin-right: 1em;
 }
 
+.inactive-buy-button {
+  border-radius: 5px;
+  box-shadow: 0px 0px 12px -2px;
+  background-color: grey;
+  font-family: "Monopoly";
+  font-size: 1.5em;
+  width: 7em;
+  height: 2em;
+  text-align: center;
+  transition: background-color 0.3s ease;
+  overflow: hidden;
+  margin-right: 1em;
+}
+
 .buy-button:hover {
   background-color: white;
   color: limegreen;
@@ -248,8 +262,8 @@
   margin: 0;
   color: red;
   font-size: 1.5em;
-  padding-left: 9.25em;
   margin-top: 0.5em;
+  text-align: center;
 }
 
 .invisible {
