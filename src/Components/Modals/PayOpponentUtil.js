@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { faXmark } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import smallPay from "../../Assets/Misc/smallpay.jpeg";
+import bigPay from "../../Assets/Misc/bigPay.jpeg";
 import dice1 from "../../Assets/Dice/dice1.png";
 import dice2 from "../../Assets/Dice/dice2.png";
 import dice3 from "../../Assets/Dice/dice3.png";
@@ -145,6 +147,14 @@ export const PayOpponentUtil = ({
     return null;
   };
 
+  const pic = () => {
+    if (rent && rent < 100) {
+      return <img className="cash-pic" alt="small bills" src={smallPay} />;
+    } else if (rent && rent > 100) {
+      return <img clasName="cash-pic" alt="large bills" src={bigPay} />;
+    }
+  };
+
   return (
     <AnimatePresence exitBeforeEnter>
       {payUtil === true && (onUtil || onUtil2) ? (
@@ -169,11 +179,15 @@ export const PayOpponentUtil = ({
             </div>
             <div className="main-content-container">
               <h2 className="line-1">{`${player()} Owns ${propName()}`}</h2>
-              {/* {cashPic()} */}
+              {pic()}
               <h3 className="roll-instruction">
                 Roll dice to determine what you owe.
               </h3>
-              <p className="explanation">Pay 4x the amount on the die</p>
+              {multiplier === 4 ? (
+                <p className="explanation">Pay 4x the amount on the die</p>
+              ) : (
+                <p className="explanation">Pay 10x the amount on the die</p>
+              )}
               <div className="p1-dice-button">
                 <div className="roll-section">
                   {die1 && die2 ? (
