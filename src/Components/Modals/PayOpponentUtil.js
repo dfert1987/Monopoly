@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { faXmark } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import smallPay from "../../Assets/Misc/smallpay.jpeg";
 import bigPay from "../../Assets/Misc/bigPay.jpeg";
 import dice1 from "../../Assets/Dice/dice1.png";
 import dice2 from "../../Assets/Dice/dice2.png";
@@ -69,9 +68,15 @@ export const PayOpponentUtil = ({
   const handleClose = (e) => {
     e.preventDefault();
     setPayUtil(false);
-    setPayUtilTo(null);
+    setPayUtilTo();
     setMultiplier(4);
-    setRent(null);
+  };
+
+  const disabled = () => {
+    if (rent) {
+      return true;
+    }
+    return false;
   };
 
   const changeMoney = () => {
@@ -182,14 +187,6 @@ export const PayOpponentUtil = ({
     return null;
   };
 
-  const pic = () => {
-    if (rent && rent < 100) {
-      return <img className="cash-pic" alt="small bills" src={smallPay} />;
-    } else if (rent && rent > 100) {
-      return <img clasName="cash-pic" alt="large bills" src={bigPay} />;
-    }
-  };
-
   return (
     <AnimatePresence exitBeforeEnter>
       {payUtil === true && (onUtil || onUtil2) ? (
@@ -201,7 +198,7 @@ export const PayOpponentUtil = ({
           exit="hidden"
         >
           <motion.div
-            className="flex flexColumn innerModalPay"
+            className="flex flexColumn innerModalPayUtil"
             variants={modal}
             initial="hidden"
             animate="visible"
@@ -214,14 +211,23 @@ export const PayOpponentUtil = ({
             </div>
             <div className="main-content-container">
               <h2 className="line-1">{`${player()} Owns ${propName()}`}</h2>
-              {pic()}
+              <img
+                clasName="money"
+                alt="large bills"
+                src={bigPay}
+                style={{ height: "4em" }}
+              />
               <h3 className="roll-instruction">
                 Roll dice to determine what you owe.
               </h3>
               {multiplier === 4 ? (
-                <p className="explanation">Pay 4x the amount on the die</p>
+                <p className="explanation">
+                  Pay <span className="number">4x</span> the amount on the die
+                </p>
               ) : (
-                <p className="explanation">Pay 10x the amount on the die</p>
+                <p className="explanation">
+                  Pay <span className="number">10x</span> the amount on the die
+                </p>
               )}
               <div className="p1-dice-button">
                 <div className="roll-section">
@@ -237,15 +243,23 @@ export const PayOpponentUtil = ({
                   ) : null}
                 </div>
                 <div className="button-container">
-                  <button onClick={rollDice} className="roll-button">
+                  <button
+                    onClick={rollDice}
+                    className="roll-button"
+                    disabled={disabled()}
+                  >
                     ROLL DICE
                   </button>
                 </div>
               </div>
-              <h2 className="ammount">
-                Pay <span className="rent">{`¥${rent}`}</span> in Rent.
-              </h2>
               <h4 className="pay-saying">{saying()}</h4>
+              {rent ? (
+                <>
+                  <h2 className="ammount">
+                    Pay <span className="rent">{`¥${rent}`}</span> in Rent.
+                  </h2>
+                </>
+              ) : null}
             </div>
           </motion.div>
         </motion.div>
