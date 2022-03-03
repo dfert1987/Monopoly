@@ -136,6 +136,15 @@ export const PayOpponentUtil = ({
     return null;
   };
 
+  const saying = () => {
+    if (onUtil) {
+      return onUtil.paySaying;
+    } else if (onUtil2) {
+      return onUtil2.paySaying;
+    }
+    return null;
+  };
+
   return (
     <AnimatePresence exitBeforeEnter>
       {payUtil === true && (onUtil || onUtil2) ? (
@@ -187,7 +196,7 @@ export const PayOpponentUtil = ({
               <h2 className="ammount">
                 Pay <span className="rent">{`¥${rent}`}</span> in Rent.
               </h2>
-              {/* <h4 className="pay-saying">{saying()}</h4> */}
+              <h4 className="pay-saying">{saying()}</h4>
             </div>
           </motion.div>
         </motion.div>

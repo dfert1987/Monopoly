@@ -13,6 +13,7 @@ export const Utilities = [
     image: require("../PropertyImages/space-jug.jpeg"),
     bannerImage: require("../PropertyImages/jug.png"),
     saying: "Hydration at your doorstep.",
+    paySaying: "Those jugs are heavy. Pay the man.",
   },
   {
     Number: 29,
@@ -28,5 +29,6 @@ export const Utilities = [
     image: require("../PropertyImages/space-ayi.jpeg"),
     bannerImage: require("../PropertyImages/mopAyi.png"),
     saying: "Has iron, will travel.",
+    paySaing: "Pay your ayi well. She's an angel.",
   },
 ];
