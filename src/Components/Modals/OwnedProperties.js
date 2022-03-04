@@ -1,4 +1,5 @@
 import React from "react";
+import PropertyCard from "./PropertyCard";
 import { motion, AnimatePresence } from "framer-motion";
 import { faXmark } from "@fortawesome/free-solid-svg-icons";
 import ditielogo from "../../Assets/PropertyImages/ditielogo.png";
@@ -825,6 +826,7 @@ const OwnedProperties = ({
           </motion.div>
         ) : null}
       </AnimatePresence>
+      <PropertyCard />
     </>
   );
 };
