@@ -86,70 +86,60 @@
 
 .cardSquare-brown {
   border: 2px solid rgba(134, 56, 4, 0.993);
-  margin-right: 0.5em;
   height: 3em;
   width: 3em;
 }
 
 .cardSquare-light-blue {
   border: 2px solid rgb(137, 174, 245);
-  margin-right: 0.5em;
   height: 3em;
   width: 3em;
 }
 
 .cardSquare-orange {
   border: 2px solid orange;
-  margin-right: 0.5em;
   height: 3em;
   width: 3em;
 }
 
 .cardSquare-violet {
   border: 2px solid violet;
-  margin-right: 0.5em;
   height: 3em;
   width: 3em;
 }
 
 .cardSquare-red {
   border: 2px solid red;
-  margin-right: 0.5em;
   height: 3em;
   width: 3em;
 }
 
 .cardSquare-yellow {
   border: 2px solid yellow;
-  margin-right: 0.5em;
   height: 3em;
   width: 3em;
 }
 
 .cardSquare-green {
   border: 2px solid green;
-  margin-right: 0.5em;
   height: 3em;
   width: 3em;
 }
 
 .cardSquare-blue {
   border: 2px solid blue;
-  margin-right: 0.5em;
   height: 3em;
   width: 3em;
 }
 
 .cardSquare-black {
   border: 2px solid black;
-  margin-right: 0.5em;
   height: 3em;
   width: 3em;
 }
 
 .cardSquare-grey {
   border: 2px solid grey;
-  margin-right: 0.5em;
   height: 3em;
   width: 3em;
 }
@@ -190,4 +180,18 @@
   margin-left: auto;
   margin-right: auto;
   padding-top: 0.7em;
+}
+
+.card-plus-name {
+  display: flex;
+  flex-direction: column;
+  margin-right: 0.5em;
+  text-align: center;
+}
+
+.name {
+  font-size: 8px;
+  text-align: center;
+  margin-bottom: 0.1em;
+  margin-top: 0;
 }
