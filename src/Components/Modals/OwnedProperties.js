@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import PropertyCard from "./PropertyCard";
 import { motion, AnimatePresence } from "framer-motion";
 import { faXmark } from "@fortawesome/free-solid-svg-icons";
@@ -17,6 +17,14 @@ const OwnedProperties = ({
   railRoads,
   utilities,
 }) => {
+  const [propertyCard, setPropertyCard] = useState(false);
+  const [chosenProp, setChosenProp] = useState();
+
+  const showProp = (prop) => {
+    setChosenProp(prop);
+    setPropertyCard(true);
+  };
+
   const handleClose = (e) => {
     e.preventDefault();
     setViewProperties(false);
@@ -76,7 +84,10 @@ const OwnedProperties = ({
                         <p className="name">{properties[21].Name}</p>
                         <div className="cardSquare-brown">
                           {properties[21].ownedP1 ? (
-                            <div className="main-square">
+                            <div
+                              className="main-square"
+                              onClick={() => showProp(properties[21])}
+                            >
                               <div className="top-square brown"></div>
                               <div className="white-part"></div>
                             </div>
@@ -87,7 +98,10 @@ const OwnedProperties = ({
                         <p className="name">{properties[20].Name}</p>
                         <div className="cardSquare-brown">
                           {properties[20].ownedP1 ? (
-                            <div className="main-square">
+                            <div
+                              className="main-square"
+                              onClick={() => showProp(properties[20])}
+                            >
                               <div className="top-square brown"></div>
                               <div className="white-part"></div>
                             </div>
@@ -826,7 +840,13 @@ const OwnedProperties = ({
           </motion.div>
         ) : null}
       </AnimatePresence>
-      <PropertyCard />
+      <PropertyCard
+        className="propertyCard"
+        propertyCard={propertyCard}
+        setPropertyCard={setPropertyCard}
+        chosenProp={chosenProp}
+        setChosenProp={setChosenProp}
+      />
     </>
   );
 };

@@ -4,8 +4,14 @@ import { faXmark } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import "../Styles/PropertyModal.css";
 
-const PropertyCard = ({ setPropertyCard, propertyCard }) => {
+const PropertyCard = ({
+  setPropertyCard,
+  propertyCard,
+  chosenProp,
+  setChosenProp,
+}) => {
   const [close, setClose] = useState(false);
+  console.log(chosenProp);
   const backdrop = {
     visible: { opacity: 1 },
     hidden: { opacity: 0 },
@@ -27,33 +33,37 @@ const PropertyCard = ({ setPropertyCard, propertyCard }) => {
     e.preventDefault();
     setClose(true);
     setPropertyCard(false);
+    setChosenProp(false);
     setClose(false);
   };
-  <AnimatePresence exitBeforeEnter>
-    {propertyCard && !close ? (
-      <motion.div
-        className="outerModal flex centerFlex"
-        variants={backdrop}
-        initial="hidden"
-        animate="visible"
-        exit="hidden"
-      >
+
+  return (
+    <AnimatePresence exitBeforeEnter>
+      {propertyCard && !close ? (
         <motion.div
-          className="innerModal"
-          variants={modal}
+          className="outerModal flex centerFlex"
+          variants={backdrop}
           initial="hidden"
           animate="visible"
           exit="hidden"
         >
-          <div className="button-row">
-            <button className="close-button" onClick={handleClose}>
-              <FontAwesomeIcon className="x-icon" icon={faXmark} />
-            </button>
-          </div>
+          <motion.div
+            className="innerModal"
+            variants={modal}
+            initial="hidden"
+            animate="visible"
+            exit="hidden"
+          >
+            <div className="button-row">
+              <button className="close-button" onClick={handleClose}>
+                <FontAwesomeIcon className="x-icon" icon={faXmark} />
+              </button>
+            </div>
+          </motion.div>
         </motion.div>
-      </motion.div>
-    ) : null}
-  </AnimatePresence>;
+      ) : null}
+    </AnimatePresence>
+  );
 };
 
 export default PropertyCard;
