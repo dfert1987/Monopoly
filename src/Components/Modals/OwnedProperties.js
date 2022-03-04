@@ -114,7 +114,10 @@ const OwnedProperties = ({
                         <p className="name">{properties[19].Name}</p>
                         <div className="cardSquare-light-blue">
                           {properties[19].ownedP1 ? (
-                            <div className="main-square">
+                            <div
+                              className="main-square"
+                              onClick={() => showProp(properties[19])}
+                            >
                               <div className="top-square lightBlue"></div>
                               <div className="white-part"></div>
                             </div>
@@ -125,7 +128,10 @@ const OwnedProperties = ({
                         <p className="name">CDLP</p>
                         <div className="cardSquare-light-blue">
                           {properties[18].ownedP1 ? (
-                            <div className="main-square">
+                            <div
+                              className="main-square"
+                              onClick={() => showProp(properties[18])}
+                            >
                               <div className="top-square lightBlue"></div>
                               <div className="white-part"></div>
                             </div>
@@ -136,7 +142,10 @@ const OwnedProperties = ({
                         <p className="name">{properties[17].Name}</p>
                         <div className="cardSquare-light-blue">
                           {properties[17].ownedP1 ? (
-                            <div className="main-square">
+                            <div
+                              className="main-square"
+                              onClick={() => showProp(properties[17])}
+                            >
                               <div className="top-square lightBlue"></div>
                               <div className="white-part"></div>
                             </div>
@@ -151,7 +160,10 @@ const OwnedProperties = ({
                         <p className="name">{properties[16].Name}</p>
                         <div className="cardSquare-violet">
                           {properties[16].ownedP1 ? (
-                            <div className="main-square">
+                            <div
+                              className="main-square"
+                              onClick={() => showProp(properties[16])}
+                            >
                               <div className="top-square violet"></div>
                               <div className="white-part"></div>
                             </div>
@@ -162,7 +174,10 @@ const OwnedProperties = ({
                         <p className="name">{properties[15].Name}</p>
                         <div className="cardSquare-violet">
                           {properties[15].ownedP1 ? (
-                            <div className="main-square">
+                            <div
+                              className="main-square"
+                              onClick={() => showProp(properties[15])}
+                            >
                               <div className="top-square violet"></div>
                               <div className="white-part"></div>
                             </div>
@@ -173,7 +188,10 @@ const OwnedProperties = ({
                         <p className="name">{properties[14].Name}</p>
                         <div className="cardSquare-violet">
                           {properties[14].ownedP1 ? (
-                            <div className="main-square">
+                            <div
+                              className="main-square"
+                              onClick={() => showProp(properties[14])}
+                            >
                               <div className="top-square violet"></div>
                               <div className="white-part"></div>
                             </div>
@@ -186,7 +204,10 @@ const OwnedProperties = ({
                         <p className="name">{properties[13].Name}</p>
                         <div className="cardSquare-orange">
                           {properties[13].ownedP1 ? (
-                            <div className="main-square">
+                            <div
+                              className="main-square"
+                              onClick={() => showProp(properties[13])}
+                            >
                               <div className="top-square orange"></div>
                               <div className="white-part"></div>
                             </div>
@@ -197,7 +218,10 @@ const OwnedProperties = ({
                         <p className="name">{properties[12].Name}</p>
                         <div className="cardSquare-orange">
                           {properties[12].ownedP1 ? (
-                            <div className="main-square">
+                            <div
+                              className="main-square"
+                              onClick={() => showProp(properties[12])}
+                            >
                               <div className="top-square orange"></div>
                               <div className="white-part"></div>
                             </div>
@@ -208,7 +232,10 @@ const OwnedProperties = ({
                         <p className="name">{properties[11].Name}</p>
                         <div className="cardSquare-orange">
                           {properties[11].ownedP1 ? (
-                            <div className="main-square">
+                            <div
+                              className="main-square"
+                              onClick={() => showProp(properties[11])}
+                            >
                               <div className="top-square orange"></div>
                               <div className="white-part"></div>
                             </div>
@@ -223,7 +250,10 @@ const OwnedProperties = ({
                         <p className="name">{properties[10].Name}</p>
                         <div className="cardSquare-red">
                           {properties[10].ownedP1 ? (
-                            <div className="main-square">
+                            <div
+                              className="main-square"
+                              onClick={() => showProp(properties[10])}
+                            >
                               <div className="top-square red"></div>
                               <div className="white-part"></div>
                             </div>
@@ -234,7 +264,10 @@ const OwnedProperties = ({
                         <p className="name">{properties[9].Name}</p>
                         <div className="cardSquare-red">
                           {properties[9].ownedP1 ? (
-                            <div className="main-square">
+                            <div
+                              className="main-square"
+                              onClick={() => showProp(properties[9])}
+                            >
                               <div className="top-square red"></div>
                               <div className="white-part"></div>
                             </div>
@@ -245,7 +278,10 @@ const OwnedProperties = ({
                         <p className="name">{properties[8].Name}</p>
                         <div className="cardSquare-red">
                           {properties[8].ownedP1 ? (
-                            <div className="main-square">
+                            <div
+                              className="main-square"
+                              onClick={() => showProp(properties[21])}
+                            >
                               <div className="top-square red"></div>
                               <div className="white-part"></div>
                             </div>
@@ -258,7 +294,10 @@ const OwnedProperties = ({
                         <p className="name">JDX</p>
                         <div className="cardSquare-yellow">
                           {properties[7].ownedP1 ? (
-                            <div className="main-square">
+                            <div
+                              className="main-square"
+                              onClick={() => showProp(properties[7])}
+                            >
                               <div className="top-square yellow"></div>
                               <div className="white-part"></div>
                             </div>
@@ -269,7 +308,10 @@ const OwnedProperties = ({
                         <p className="name">{properties[6].Name}</p>
                         <div className="cardSquare-yellow">
                           {properties[6].ownedP1 ? (
-                            <div className="main-square">
+                            <div
+                              className="main-square"
+                              onClick={() => showProp(properties[6])}
+                            >
                               <div className="top-square yellow"></div>
                               <div className="white-part"></div>
                             </div>
@@ -280,7 +322,10 @@ const OwnedProperties = ({
                         <p className="name">{properties[5].Name}</p>
                         <div className="cardSquare-yellow">
                           {properties[5].ownedP1 ? (
-                            <div className="main-square">
+                            <div
+                              className="main-square"
+                              onClick={() => showProp(properties[5])}
+                            >
                               <div className="top-square yellow"></div>
                               <div className="white-part"></div>
                             </div>
@@ -295,7 +340,10 @@ const OwnedProperties = ({
                         <p className="name">{properties[4].Name}</p>
                         <div className="cardSquare-green">
                           {properties[4].ownedP1 ? (
-                            <div className="main-square">
+                            <div
+                              className="main-square"
+                              onClick={() => showProp(properties[4])}
+                            >
                               <div className="top-square green"></div>
                               <div className="white-part"></div>
                             </div>
@@ -306,7 +354,10 @@ const OwnedProperties = ({
                         <p className="name">{properties[3].Name}</p>
                         <div className="cardSquare-green">
                           {properties[3].ownedP1 ? (
-                            <div className="main-square">
+                            <div
+                              className="main-square"
+                              onClick={() => showProp(properties[3])}
+                            >
                               <div className="top-square green"></div>
                               <div className="white-part"></div>
                             </div>
@@ -317,7 +368,10 @@ const OwnedProperties = ({
                         <p className="name">{properties[2].Name}</p>
                         <div className="cardSquare-green">
                           {properties[2].ownedP1 ? (
-                            <div className="main-square">
+                            <div
+                              className="main-square"
+                              onClick={() => showProp(properties[2])}
+                            >
                               <div className="top-square green"></div>
                               <div className="white-part"></div>
                             </div>
@@ -330,7 +384,10 @@ const OwnedProperties = ({
                         <p className="name">{properties[1].Name}</p>
                         <div className="cardSquare-blue">
                           {properties[1].ownedP1 ? (
-                            <div className="main-square">
+                            <div
+                              className="main-square"
+                              onClick={() => showProp(properties[1])}
+                            >
                               <div className="top-square blue"></div>
                               <div className="white-part"></div>
                             </div>
@@ -341,7 +398,10 @@ const OwnedProperties = ({
                         <p className="name">{properties[0].Name}</p>
                         <div className="cardSquare-blue">
                           {properties[0].ownedP1 ? (
-                            <div className="main-square">
+                            <div
+                              className="main-square"
+                              onClick={() => showProp(properties[0])}
+                            >
                               <div className="top-square blue"></div>
                               <div className="white-part"></div>
                             </div>
@@ -468,7 +528,10 @@ const OwnedProperties = ({
                         <p className="name">{properties[21].Name}</p>
                         <div className="cardSquare-brown">
                           {properties[21].ownedP2 ? (
-                            <div className="main-square">
+                            <div
+                              className="main-square"
+                              onClick={() => showProp(properties[21])}
+                            >
                               <div className="top-square brown"></div>
                               <div className="white-part"></div>
                             </div>
@@ -479,7 +542,10 @@ const OwnedProperties = ({
                         <p className="name">{properties[20].Name}</p>
                         <div className="cardSquare-brown">
                           {properties[20].ownedP2 ? (
-                            <div className="main-square">
+                            <div
+                              className="main-square"
+                              onClick={() => showProp(properties[20])}
+                            >
                               <div className="top-square brown"></div>
                               <div className="white-part"></div>
                             </div>
@@ -492,7 +558,10 @@ const OwnedProperties = ({
                         <p className="name">{properties[19].Name}</p>
                         <div className="cardSquare-light-blue">
                           {properties[19].ownedP2 ? (
-                            <div className="main-square">
+                            <div
+                              className="main-square"
+                              onClick={() => showProp(properties[19])}
+                            >
                               <div className="top-square lightBlue"></div>
                               <div className="white-part"></div>
                             </div>
@@ -503,7 +572,10 @@ const OwnedProperties = ({
                         <p className="name">CDLP</p>
                         <div className="cardSquare-light-blue">
                           {properties[18].ownedP2 ? (
-                            <div className="main-square">
+                            <div
+                              className="main-square"
+                              onClick={() => showProp(properties[18])}
+                            >
                               <div className="top-square lightBlue"></div>
                               <div className="white-part"></div>
                             </div>
@@ -514,7 +586,10 @@ const OwnedProperties = ({
                         <p className="name">{properties[17].Name}</p>
                         <div className="cardSquare-light-blue">
                           {properties[17].ownedP2 ? (
-                            <div className="main-square">
+                            <div
+                              className="main-square"
+                              onClick={() => showProp(properties[17])}
+                            >
                               <div className="top-square lightBlue"></div>
                               <div className="white-part"></div>
                             </div>
@@ -529,7 +604,10 @@ const OwnedProperties = ({
                         <p className="name">{properties[16].Name}</p>
                         <div className="cardSquare-violet">
                           {properties[16].ownedP2 ? (
-                            <div className="main-square">
+                            <div
+                              className="main-square"
+                              onClick={() => showProp(properties[16])}
+                            >
                               <div className="top-square violet"></div>
                               <div className="white-part"></div>
                             </div>
@@ -540,7 +618,10 @@ const OwnedProperties = ({
                         <p className="name">{properties[15].Name}</p>
                         <div className="cardSquare-violet">
                           {properties[15].ownedP2 ? (
-                            <div className="main-square">
+                            <div
+                              className="main-square"
+                              onClick={() => showProp(properties[15])}
+                            >
                               <div className="top-square violet"></div>
                               <div className="white-part"></div>
                             </div>
@@ -551,7 +632,10 @@ const OwnedProperties = ({
                         <p className="name">{properties[14].Name}</p>
                         <div className="cardSquare-violet">
                           {properties[14].ownedP2 ? (
-                            <div className="main-square">
+                            <div
+                              className="main-square"
+                              onClick={() => showProp(properties[14])}
+                            >
                               <div className="top-square violet"></div>
                               <div className="white-part"></div>
                             </div>
@@ -562,7 +646,10 @@ const OwnedProperties = ({
                     <div className="card-group threeGroup">
                       <div className="card-plus-name">
                         <p className="name">{properties[13].Name}</p>
-                        <div className="cardSquare-orange">
+                        <div
+                          className="cardSquare-orange"
+                          onClick={() => showProp(properties[13])}
+                        >
                           {properties[13].ownedP2 ? (
                             <div className="main-square">
                               <div className="top-square orange"></div>
@@ -575,7 +662,10 @@ const OwnedProperties = ({
                         <p className="name">{properties[12].Name}</p>
                         <div className="cardSquare-orange">
                           {properties[12].ownedP2 ? (
-                            <div className="main-square">
+                            <div
+                              className="main-square"
+                              onClick={() => showProp(properties[12])}
+                            >
                               <div className="top-square orange"></div>
                               <div className="white-part"></div>
                             </div>
@@ -586,7 +676,10 @@ const OwnedProperties = ({
                         <p className="name">{properties[11].Name}</p>
                         <div className="cardSquare-orange">
                           {properties[11].ownedP2 ? (
-                            <div className="main-square">
+                            <div
+                              className="main-square"
+                              onClick={() => showProp(properties[11])}
+                            >
                               <div className="top-square orange"></div>
                               <div className="white-part"></div>
                             </div>
@@ -601,7 +694,10 @@ const OwnedProperties = ({
                         <p className="name">{properties[10].Name}</p>
                         <div className="cardSquare-red">
                           {properties[10].ownedP2 ? (
-                            <div className="main-square">
+                            <div
+                              className="main-square"
+                              onClick={() => showProp(properties[10])}
+                            >
                               <div className="top-square red"></div>
                               <div className="white-part"></div>
                             </div>
@@ -612,7 +708,10 @@ const OwnedProperties = ({
                         <p className="name">{properties[9].Name}</p>
                         <div className="cardSquare-red">
                           {properties[9].ownedP2 ? (
-                            <div className="main-square">
+                            <div
+                              className="main-square"
+                              onClick={() => showProp(properties[9])}
+                            >
                               <div className="top-square red"></div>
                               <div className="white-part"></div>
                             </div>
@@ -623,7 +722,10 @@ const OwnedProperties = ({
                         <p className="name">{properties[8].Name}</p>
                         <div className="cardSquare-red">
                           {properties[8].ownedP2 ? (
-                            <div className="main-square">
+                            <div
+                              className="main-square"
+                              onClick={() => showProp(properties[8])}
+                            >
                               <div className="top-square red"></div>
                               <div className="white-part"></div>
                             </div>
@@ -636,7 +738,10 @@ const OwnedProperties = ({
                         <p className="name">JDX</p>
                         <div className="cardSquare-yellow">
                           {properties[7].ownedP2 ? (
-                            <div className="main-square">
+                            <div
+                              className="main-square"
+                              onClick={() => showProp(properties[7])}
+                            >
                               <div className="top-square yellow"></div>
                               <div className="white-part"></div>
                             </div>
@@ -647,7 +752,10 @@ const OwnedProperties = ({
                         <p className="name">{properties[6].Name}</p>
                         <div className="cardSquare-yellow">
                           {properties[6].ownedP2 ? (
-                            <div className="main-square">
+                            <div
+                              className="main-square"
+                              onClick={() => showProp(properties[6])}
+                            >
                               <div className="top-square yellow"></div>
                               <div className="white-part"></div>
                             </div>
@@ -658,7 +766,10 @@ const OwnedProperties = ({
                         <p className="name">{properties[5].Name}</p>
                         <div className="cardSquare-yellow">
                           {properties[5].ownedP2 ? (
-                            <div className="main-square">
+                            <div
+                              className="main-square"
+                              onClick={() => showProp(properties[5])}
+                            >
                               <div className="top-square yellow"></div>
                               <div className="white-part"></div>
                             </div>
@@ -673,7 +784,10 @@ const OwnedProperties = ({
                         <p className="name">{properties[4].Name}</p>
                         <div className="cardSquare-green">
                           {properties[4].ownedP2 ? (
-                            <div className="main-square">
+                            <div
+                              className="main-square"
+                              onClick={() => showProp(properties[4])}
+                            >
                               <div className="top-square green"></div>
                               <div className="white-part"></div>
                             </div>
@@ -684,7 +798,10 @@ const OwnedProperties = ({
                         <p className="name">{properties[3].Name}</p>
                         <div className="cardSquare-green">
                           {properties[3].ownedP2 ? (
-                            <div className="main-square">
+                            <div
+                              className="main-square"
+                              onClick={() => showProp(properties[3])}
+                            >
                               <div className="top-square green"></div>
                               <div className="white-part"></div>
                             </div>
@@ -695,7 +812,10 @@ const OwnedProperties = ({
                         <p className="name">{properties[2].Name}</p>
                         <div className="cardSquare-green">
                           {properties[2].ownedP2 ? (
-                            <div className="main-square">
+                            <div
+                              className="main-square"
+                              onClick={() => showProp(properties[2])}
+                            >
                               <div className="top-square green"></div>
                               <div className="white-part"></div>
                             </div>
@@ -706,7 +826,10 @@ const OwnedProperties = ({
                     <div className="card-group twoGroup">
                       <div className="card-plus-name">
                         <p className="name">{properties[1].Name}</p>
-                        <div className="cardSquare-blue">
+                        <div
+                          className="cardSquare-blue"
+                          onClick={() => showProp(properties[1])}
+                        >
                           {properties[1].ownedP2 ? (
                             <div className="main-square">
                               <div className="top-square blue"></div>
@@ -719,7 +842,10 @@ const OwnedProperties = ({
                         <p className="name">{properties[0].Name}</p>
                         <div className="cardSquare-blue">
                           {properties[0].ownedP2 ? (
-                            <div className="main-square">
+                            <div
+                              className="main-square"
+                              onClick={() => showProp(properties[0])}
+                            >
                               <div className="top-square blue"></div>
                               <div className="white-part"></div>
                             </div>
