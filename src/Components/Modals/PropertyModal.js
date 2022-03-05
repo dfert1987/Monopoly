@@ -169,7 +169,7 @@ const PropertyModal = ({
     ) {
       return (
         <div className="main-card">
-          <div className={`outer-banner`}>
+          <div className="outer-banner">
             <div className={`banner ${onProp2.color}`}>
               <h2 className="prop-name">{onProp2.Name.toUpperCase()}</h2>
             </div>

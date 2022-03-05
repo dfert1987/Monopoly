@@ -29,6 +29,8 @@ const OwnedProperties = ({
     e.preventDefault();
     setViewProperties(false);
     setViewProperties2(false);
+    setChosenProp();
+    setPropertyCard(false);
   };
 
   const backdrop = {

@@ -277,3 +277,15 @@
   font-size: 1.5em;
   text-align: center;
 }
+
+.prop-title {
+  font-family: "Monopoly";
+  text-align: center;
+  font-size: 4em;
+  margin: 0;
+  margin-bottom: 0.25em;
+}
+
+.innerModal.prop {
+  width: 26em;
+}

@@ -11,11 +11,12 @@ const PropertyCard = ({
   setChosenProp,
 }) => {
   const [close, setClose] = useState(false);
-  console.log(chosenProp);
   const backdrop = {
     visible: { opacity: 1 },
     hidden: { opacity: 0 },
   };
+
+  console.log(chosenProp);
 
   const modal = {
     hidden: {
@@ -33,7 +34,7 @@ const PropertyCard = ({
     e.preventDefault();
     setClose(true);
     setPropertyCard(false);
-    setChosenProp(false);
+    setChosenProp();
     setClose(false);
   };
 
@@ -48,7 +49,7 @@ const PropertyCard = ({
           exit="hidden"
         >
           <motion.div
-            className="innerModal"
+            className="innerModal prop"
             variants={modal}
             initial="hidden"
             animate="visible"
@@ -58,6 +59,52 @@ const PropertyCard = ({
               <button className="close-button" onClick={handleClose}>
                 <FontAwesomeIcon className="x-icon" icon={faXmark} />
               </button>
+              <h1 className="prop-title">{chosenProp.Name}</h1>
+              <div className="main-row">
+                <div className="main-card">
+                  <div className="outer-banner">
+                    <div className={`banner ${chosenProp.color}`}>
+                      <h2 className="prop-name">
+                        {chosenProp.Name.toUpperCase()}
+                      </h2>
+                    </div>
+                  </div>
+                  <div className="all-prop-info">
+                    <div className="main-prop-info">
+                      <h4 className="rent">{`RENT ¥${chosenProp.rent}`}</h4>
+                      <div className="house-container one">
+                        <p className="left-side">With 1 House</p>
+                        <p className="right-side">{`¥${chosenProp.oneHouse}`}</p>
+                      </div>
+                      <div className="house-container two">
+                        <p className="left-side">With 2 Houses</p>
+                        <p className="right-side">{`¥${chosenProp.twoHouses}`}</p>
+                      </div>
+                      <div className="house-container three">
+                        <p className="left-side">With 3 Houses</p>
+                        <p className="right-side">{`¥${chosenProp.threeHouses}`}</p>
+                      </div>
+                      <div className="house-container four">
+                        <p className="left-side">With 4 Houses</p>
+                        <p className="right-side">{`¥${chosenProp.fourHouses}`}</p>
+                      </div>
+                      <div className="house-container hotel">
+                        <p className="left-side">With Hotel</p>
+                        <p className="right-side">{`¥${chosenProp.hotel}`}</p>
+                      </div>
+                    </div>
+                    <div className="secondary-prop-info">
+                      <h4 className="mortgage">{`Mortgage Value: ¥${chosenProp.mortgage}`}</h4>
+                      <p className="houses">{`Houses Cost ¥${chosenProp.buidlingCost}`}</p>
+                    </div>
+                  </div>
+                </div>
+                <div className="bottom-info">
+                  <div className="row1">
+                    <h4 className="houses">Houses</h4>
+                  </div>
+                </div>
+              </div>
             </div>
           </motion.div>
         </motion.div>
