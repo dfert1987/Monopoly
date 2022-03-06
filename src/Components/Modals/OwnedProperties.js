@@ -941,7 +941,7 @@ const OwnedProperties = ({
                           {railRoads[3].ownedP2 ? (
                             <div
                               className="main-square"
-                              onClick={() => showRR(railRoads[0])}
+                              onClick={() => showRR(railRoads[3])}
                             >
                               <div className="white-part-rr">
                                 <img
@@ -1012,6 +1012,7 @@ const OwnedProperties = ({
         setRRCard={setRRCard}
         chosenProp={chosenProp}
         setChosenProp={setChosenProp}
+        railRoads={railRoads}
       />
     </>
   );

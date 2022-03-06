@@ -42,7 +42,6 @@ function App() {
   const [payRailTo, setPayRailTo] = useState();
   const [payUtilTo, setPayUtilTo] = useState();
   const [payUtil, setPayUtil] = useState(false);
-  console.log(payUtil, onUtil, onUtil2);
   return (
     <div className="App">
       <Board
