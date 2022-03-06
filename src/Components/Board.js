@@ -7,6 +7,7 @@ import RRPurchasedPopUp from "../Components/Modals/RRPurchasedPopUp";
 import OwnedProperties from "../Components/Modals/OwnedProperties";
 import PayOpponent from "../Components/Modals/PayOpponent";
 import PayOpponentRail from "../Components/Modals/PayOpponentRail";
+import PayOpponentUtil from "../Components/Modals/PayOpponentUtil";
 import Piece1 from "../Assets/Pieces/Piece1.png";
 import Piece2 from "../Assets/Pieces/Piece2.png";
 import ditielogo from "../Assets/PropertyImages/ditielogo.png";
@@ -85,6 +86,10 @@ export const Board = ({
   setPayRailTo,
   payRail,
   setPayRail,
+  payUtilTo,
+  setPayUtilTo,
+  payUtil,
+  setPayUtil,
 }) => {
   const [viewPurchase, setViewPurchase] = useState(false);
   const [viewPurchase2, setViewPurchase2] = useState(false);
@@ -873,6 +878,20 @@ export const Board = ({
           onRR={onRR}
           onRR2={onRR2}
           railRoads={railRoads}
+        />
+        <PayOpponentUtil
+          className="pay-opponent"
+          payUtil={payUtil}
+          setPayUtil={setPayUtil}
+          p1Money={p1Money}
+          p2Money={p2Money}
+          setP1Money={setP1Money}
+          setP2Money={setP2Money}
+          payUtilTo={payUtilTo}
+          setPayUtilTo={setPayUtilTo}
+          onUtil={onUtil}
+          onUtil2={onUtil2}
+          utilities={utilities}
         />
         <PurchasedPopUp
           className="purchased"

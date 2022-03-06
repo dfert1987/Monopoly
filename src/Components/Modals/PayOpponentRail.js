@@ -40,9 +40,8 @@ export const PayOpponentRail = ({
 
   const handleClose = (e) => {
     e.preventDefault();
-    setFare(null);
     setPayRail(false);
-    setPayRailTo(null);
+    setPayRailTo();
   };
 
   const railName = () => {

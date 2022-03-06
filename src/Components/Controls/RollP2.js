@@ -32,6 +32,10 @@ export const RollP2 = ({
   setPayRail,
   payRailTo,
   setPayRailTo,
+  payUtil,
+  setPayUtil,
+  payUtilTo,
+  setPayUtilTo,
 }) => {
   const [die3, setDie3] = useState(1);
   const [die4, setDie4] = useState(1);
@@ -130,6 +134,10 @@ export const RollP2 = ({
       setOnRR2(currentRR);
       setPayRail(true);
       setPayRailTo(1);
+    } else if (currentUtil && !currentUtil.ownedP2 && currentUtil.ownedP1) {
+      setOnUtil2(currentUtil);
+      setPayUtil(true);
+      setPayUtilTo(1);
     }
   };
 

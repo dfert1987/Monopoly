@@ -33,6 +33,18 @@
   color: #c0e2ca;
 }
 
+.roll-button:disabled {
+  background-color: grey;
+  cursor: default;
+  color: rgb(197, 196, 196);
+}
+
+.roll-button:disabled:hover {
+  background-color: grey;
+  cursor: default;
+  color: rgb(197, 196, 196);
+}
+
 .button-container {
   margin-left: auto;
   margin-right: auto;
