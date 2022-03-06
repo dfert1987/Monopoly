@@ -78,6 +78,50 @@ const PropertyModal = ({
     setPropertyModal2,
   ]);
 
+  const setMonop = () => {
+    if (onProp.color === "blue" || onProp.color === "brown") {
+      let number = properties.filter(
+        (property) =>
+          property.color === onProp.color && property.ownedP1 === true
+      );
+      if (number.length === 2) {
+        onProp.isMonopoly = true;
+      }
+      onProp.isMonopoly = false;
+    } else {
+      let number = properties.filter(
+        (property) =>
+          property.color === onProp.color && property.ownedP1 === true
+      );
+      if (number.length === 3) {
+        onProp.isMonopoly = true;
+      }
+      onProp.isMonopoly = false;
+    }
+  };
+
+  const setMonop2 = () => {
+    if (onProp.color === "blue" || onProp.color === "brown") {
+      let number = properties.filter(
+        (property) =>
+          property.color === onProp.color && property.ownedP1 === true
+      );
+      if (number.length === 2) {
+        onProp.isMonopoly = true;
+      }
+      onProp.isMonopoly = false;
+    } else {
+      let number = properties.filter(
+        (property) =>
+          property.color === onProp.color && property.ownedP1 === true
+      );
+      if (number.length === 3) {
+        onProp.isMonopoly = true;
+      }
+      onProp.isMonopoly = false;
+    }
+  };
+
   const buyProperty = (e) => {
     e.preventDefault();
     if (
@@ -93,6 +137,7 @@ const PropertyModal = ({
           setP1Money(p1Money - obj.Price);
           handleClose(e);
           setViewPurchase(true);
+          setMonop();
           return properties;
         } else if (obj.Price > p1Money) {
           setInsufficientFunds(true);
@@ -112,6 +157,7 @@ const PropertyModal = ({
           setP2Money(p2Money - obj.Price);
           handleClose(e);
           setViewPurchase2(true);
+          setMonop2();
           return properties;
         } else if (obj.Price > p2Money) {
           setInsufficientFunds(true);
