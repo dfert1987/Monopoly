@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import PropertyCard from "../Modals/ViewInfoModals/PropertyCard";
+import RRCard from "../Modals/ViewInfoModals/RRCard";
 import { motion, AnimatePresence } from "framer-motion";
 import { faXmark } from "@fortawesome/free-solid-svg-icons";
 import ditielogo from "../../Assets/PropertyImages/ditielogo.png";
@@ -18,11 +19,17 @@ const OwnedProperties = ({
   utilities,
 }) => {
   const [propertyCard, setPropertyCard] = useState(false);
+  const [rrCard, setRRCard] = useState(false);
   const [chosenProp, setChosenProp] = useState();
 
   const showProp = (prop) => {
     setChosenProp(prop);
     setPropertyCard(true);
+  };
+
+  const showRR = (rr) => {
+    setChosenProp(rr);
+    setRRCard(true);
   };
 
   const handleClose = (e) => {
@@ -419,7 +426,10 @@ const OwnedProperties = ({
                         <p className="name">{railRoads[0].Name}</p>
                         <div className="cardSquare-black">
                           {railRoads[0].ownedP1 ? (
-                            <div className="main-square">
+                            <div
+                              className="main-square"
+                              onClick={() => showRR(railRoads[0])}
+                            >
                               <div className="white-part-rr">
                                 <img
                                   className="small-ditie"
@@ -972,6 +982,13 @@ const OwnedProperties = ({
         className="propertyCard"
         propertyCard={propertyCard}
         setPropertyCard={setPropertyCard}
+        chosenProp={chosenProp}
+        setChosenProp={setChosenProp}
+      />
+      <RRCard
+        className="rrCard"
+        rrCard={rrCard}
+        setRRCard={setRRCard}
         chosenProp={chosenProp}
         setChosenProp={setChosenProp}
       />
