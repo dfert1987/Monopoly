@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import PropertyCard from "../Modals/ViewInfoModals/PropertyCard";
 import RRCard from "../Modals/ViewInfoModals/RRCard";
+import UtilCard from "../Modals/ViewInfoModals/UtilCard";
 import { motion, AnimatePresence } from "framer-motion";
 import { faXmark } from "@fortawesome/free-solid-svg-icons";
 import ditielogo from "../../Assets/PropertyImages/ditielogo.png";
@@ -20,6 +21,7 @@ const OwnedProperties = ({
 }) => {
   const [propertyCard, setPropertyCard] = useState(false);
   const [rrCard, setRRCard] = useState(false);
+  const [utilCard, setUtilCard] = useState(false);
   const [chosenProp, setChosenProp] = useState();
 
   const showProp = (prop) => {
@@ -1013,6 +1015,14 @@ const OwnedProperties = ({
         chosenProp={chosenProp}
         setChosenProp={setChosenProp}
         railRoads={railRoads}
+      />
+      <UtilCard
+        className="utilCard"
+        rrCard={utilCard}
+        setRRCard={setUtilCard}
+        chosenProp={chosenProp}
+        setChosenProp={setChosenProp}
+        railRoads={utilities}
       />
     </>
   );
