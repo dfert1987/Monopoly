@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import PropertyCard from "./PropertyCard";
+import PropertyCard from "../Modals/ViewInfoModals/PropertyCard";
 import { motion, AnimatePresence } from "framer-motion";
 import { faXmark } from "@fortawesome/free-solid-svg-icons";
 import ditielogo from "../../Assets/PropertyImages/ditielogo.png";

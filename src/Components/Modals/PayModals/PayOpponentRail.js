@@ -2,9 +2,9 @@ import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { faXmark } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import subwaypic1 from "../../Assets/Misc/subwaypic1.jpeg";
-import subwayPictwo from "../../Assets/Misc/subwayPictwo.jpeg";
-import "../Styles/PayOpponentModal.css";
+import subwaypic1 from "../../../Assets/Misc/subwaypic1.jpeg";
+import subwayPictwo from "../../../Assets/Misc/subwayPictwo.jpeg";
+import "../../Styles/PayOpponentModal.css";
 
 export const PayOpponentRail = ({
   payRail,

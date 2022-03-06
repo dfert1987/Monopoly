@@ -1,9 +1,9 @@
 import React from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import yuanSign from "../../Assets/Misc/yuan.png";
+import yuanSign from "../../../Assets/Misc/yuan.png";
 import { faXmark } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import "../Styles/Purchased.css";
+import "../../Styles/Purchased.css";
 
 const backdrop = {
   visible: { opacity: 1 },

@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { faXmark } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import "../Styles/PropertyModal.css";
+import "../../Styles/PropertyModal.css";
 
 const PropertyModal = ({
   setPropertyModal1,
@@ -101,19 +101,19 @@ const PropertyModal = ({
   };
 
   const setMonop2 = () => {
-    if (onProp.color === "blue" || onProp.color === "brown") {
+    if (onProp2.color === "blue" || onProp2.color === "brown") {
       let number = properties.filter(
         (property) =>
-          property.color === onProp.color && property.ownedP1 === true
+          property.color === onProp.color && property.ownedP2 === true
       );
       if (number.length === 2) {
-        onProp.isMonopoly = true;
+        onProp2.isMonopoly = true;
       }
-      onProp.isMonopoly = false;
+      onProp2.isMonopoly = false;
     } else {
       let number = properties.filter(
         (property) =>
-          property.color === onProp.color && property.ownedP1 === true
+          property.color === onProp.color && property.ownedP2 === true
       );
       if (number.length === 3) {
         onProp.isMonopoly = true;
