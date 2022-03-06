@@ -47,7 +47,13 @@ const RRCard = ({ setRRCard, rrCard, chosenProp, setChosenProp }) => {
             initial="hidden"
             animate="visible"
             exit="hidden"
-          ></motion.div>
+          >
+            <div className="button-row">
+              <button className="close-button" onClick={handleClose}>
+                <FontAwesomeIcon className="x-icon" icon={faXmark} />
+              </button>
+            </div>
+          </motion.div>
         </motion.div>
       ) : null}
     </AnimatePresence>
