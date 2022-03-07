@@ -98,6 +98,7 @@ export const Board = ({
   setOnFreeParking,
   onFreeParking2,
   setOnFreeParking2,
+  setOnProp2,
 }) => {
   const [viewPurchase, setViewPurchase] = useState(false);
   const [viewPurchase2, setViewPurchase2] = useState(false);
@@ -106,6 +107,7 @@ export const Board = ({
   const [viewPurchaseUtil, setViewPurchaseUtil] = useState(false);
   const [viewPurchaseUtil2, setViewPurchaseUtil2] = useState(false);
 
+  console.log(onFreeParking, onFreeParking2);
   return (
     <div className="main-board">
       <div className="left-column">
@@ -872,6 +874,8 @@ export const Board = ({
           setPayTo={setPayTo}
           onProp={onProp}
           onProp2={onProp2}
+          setOnProp={setOnProp}
+          setOnProp2={setOnProp2}
           properties={properties}
         />
         <PayOpponentRail
@@ -886,6 +890,8 @@ export const Board = ({
           setRailPayTo={setPayRailTo}
           onRR={onRR}
           onRR2={onRR2}
+          setOnRR={setOnRR}
+          setOnRR2={setOnRR2}
           railRoads={railRoads}
         />
         <PayOpponentUtil
@@ -900,6 +906,8 @@ export const Board = ({
           setPayUtilTo={setPayUtilTo}
           onUtil={onUtil}
           onUtil2={onUtil2}
+          setOnUtil={setOnUtil}
+          setOnUtil2={setOnUtil2}
           utilities={utilities}
         />
         <PurchasedPopUp
@@ -910,6 +918,8 @@ export const Board = ({
           onProp2={onProp2}
           setViewPurchase2={setViewPurchase2}
           viewPurchase2={viewPurchase2}
+          setOnProp={setOnProp}
+          setOnProp2={setOnProp2}
         />
         <RRPurchasedPopUp
           className="purchasedRR"
@@ -917,6 +927,8 @@ export const Board = ({
           setViewPurchaseRR={setViewPurchaseRR}
           onRR={onRR}
           onRR2={onRR2}
+          setOnRR={setOnRR}
+          setOnRR2={setOnRR2}
           setViewPurchaseRR2={setViewPurchaseRR2}
           viewPurchaseRR2={viewPurchaseRR2}
         />
@@ -926,6 +938,8 @@ export const Board = ({
           viewPurchaseUtil2={viewPurchaseUtil2}
           onUtil={onUtil}
           onUtil2={onUtil2}
+          setOnUtil={setOnUtil}
+          setOnUtil2={setOnUtil2}
           setViewPurchaseUtil={setViewPurchaseUtil}
           setViewPurchaseUtil2={setViewPurchaseUtil2}
         />
@@ -939,6 +953,7 @@ export const Board = ({
           propertyModal2={propertyModal2}
           turn={turn}
           setOnProp={setOnProp}
+          setOnProp2={setOnProp2}
           onProp={onProp}
           onProp2={onProp2}
           setP1Money={setP1Money}

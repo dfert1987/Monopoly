@@ -35,7 +35,6 @@ const OwnedProperties = ({
   };
 
   const showUtil = (util) => {
-    console.log(util);
     setChosenProp(util);
     setUtilCard(true);
   };

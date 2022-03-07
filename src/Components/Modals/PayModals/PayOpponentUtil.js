@@ -18,6 +18,8 @@ export const PayOpponentUtil = ({
   p2Money,
   onUtil,
   onUtil2,
+  setOnUtil,
+  setOnUtil2,
   setPayUtilTo,
   payUtilTo,
   utilities,
@@ -70,6 +72,8 @@ export const PayOpponentUtil = ({
     setPayUtil(false);
     setPayUtilTo();
     setMultiplier(4);
+    setOnUtil2();
+    setOnUtil();
   };
 
   const disabled = () => {

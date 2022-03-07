@@ -12,6 +12,8 @@ const PurchasedPopUp = ({
   setViewPurchase2,
   onProp,
   onProp2,
+  setOnProp,
+  setOnProp2,
 }) => {
   const backdrop = {
     visible: { opacity: 1 },
@@ -33,6 +35,8 @@ const PurchasedPopUp = ({
     e.preventDefault();
     setViewPurchase(false);
     setViewPurchase2(false);
+    setOnProp();
+    setOnProp2();
   };
   return (
     <>

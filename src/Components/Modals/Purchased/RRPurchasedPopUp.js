@@ -29,11 +29,15 @@ const RRPurchasedPopUp = ({
   setViewPurchaseRR2,
   onRR,
   onRR2,
+  setOnRR,
+  setOnRR2,
 }) => {
   const handleClose = (e) => {
     e.preventDefault();
     setViewPurchaseRR(false);
     setViewPurchaseRR2(false);
+    setOnRR();
+    setOnRR2();
   };
   return (
     <>

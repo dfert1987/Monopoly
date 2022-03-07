@@ -113,12 +113,12 @@ const PropertyModal = ({
     } else {
       let number = properties.filter(
         (property) =>
-          property.color === onProp.color && property.ownedP2 === true
+          property.color === onProp2.color && property.ownedP2 === true
       );
       if (number.length === 3) {
-        onProp.isMonopoly = true;
+        onProp2.isMonopoly = true;
       }
-      onProp.isMonopoly = false;
+      onProp2.isMonopoly = false;
     }
   };
 

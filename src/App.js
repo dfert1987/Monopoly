@@ -84,6 +84,8 @@ function App() {
         setViewRRs={setViewRRs}
         viewRRs2={viewRRs2}
         setViewRRs2={setViewRRs2}
+        setOnProp2={setOnProp2}
+        setOnProp={setOnProp}
         onRR={onRR}
         onRR2={onRR2}
         setOnRR={setOnRR}

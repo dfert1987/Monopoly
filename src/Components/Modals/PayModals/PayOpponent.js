@@ -18,6 +18,8 @@ export const PayOpponent = ({
   properties,
   setP1Money,
   setP2Money,
+  setOnProp,
+  setOnProp2,
 }) => {
   const [rent, setRent] = useState();
   const backdrop = {
@@ -40,9 +42,13 @@ export const PayOpponent = ({
   const handleClose = (e) => {
     e.preventDefault();
     setPayProp(false);
-    setPayTo(null);
-    setRent(null);
+    setPayTo();
+    setRent();
+    setOnProp();
+    setOnProp2();
   };
+
+  console.log(onProp, onProp2);
 
   const player = () => {
     if (payTo && payTo === 2) {
