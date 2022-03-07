@@ -1018,6 +1018,10 @@ export const Board = ({
           onFreeParking2={onFreeParking2}
           setOnFreeParking2={setOnFreeParking2}
           setFreeParking={setFreeParking}
+          setP1Money={setP1Money}
+          setP2Money={setP2Money}
+          p1Money={p1Money}
+          p2Money={p2Money}
         />
       </div>
     </div>

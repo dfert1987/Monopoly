@@ -2,6 +2,7 @@ import React from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { faXmark } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import manInMoney from "../../Assets/Misc/manInMoney.jpeg";
 
 const FreeParking = ({
   freeParking,
@@ -10,6 +11,10 @@ const FreeParking = ({
   setOnFreeParking,
   setOnFreeParking2,
   onFreeParking2,
+  setP1Money,
+  setP2Money,
+  p1Money,
+  p2Money,
 }) => {
   const backdrop = {
     visible: { opacity: 1 },
@@ -30,9 +35,20 @@ const FreeParking = ({
 
   const handleClose = (e) => {
     e.preventDefault();
-    setFreeParking(500);
-    setOnFreeParking(false);
-    setOnFreeParking2(false);
+    if (setOnFreeParking) {
+      let newMoney = p1Money + freeParking;
+      setP1Money(newMoney);
+      setOnFreeParking(false);
+      setOnFreeParking2(false);
+      setFreeParking(500);
+    } else if (setOnFreeParking2) {
+      let newMoney = p2Money + freeParking;
+      setP2Money(newMoney);
+      setOnFreeParking(false);
+      setOnFreeParking2(false);
+      setFreeParking(500);
+    }
+    return null;
   };
 
   return (
@@ -58,6 +74,13 @@ const FreeParking = ({
                   <FontAwesomeIcon className="x-icon" icon={faXmark} />
                 </button>
               </div>
+              <h1 className="main-congrats">Congratulations!</h1>
+              <img
+                className="manInMoney"
+                alt="man in pile of money"
+                src={manInMoney}
+              />
+              <h2 className="prize">{`Collect the pot of ¥${freeParking}!`}</h2>
             </motion.div>
           </motion.div>
         ) : null}

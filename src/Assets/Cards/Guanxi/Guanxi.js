@@ -167,4 +167,12 @@ export const Guanxi = [
     amt: 200,
     space: 0,
   },
+  {
+    Number: 21,
+    Text: "It's Qingming Festival!",
+    Instruction: "Burn 100rmb for your ancestors.",
+    Type: "Pay",
+    amt: 100,
+    space: 0,
+  },
 ];
