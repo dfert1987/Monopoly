@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { faXmark } from "@fortawesome/free-solid-svg-icons";
-import smallPay from "../../Assets/Misc/smallpay.jpeg";
-import bigPay from "../../Assets/Misc/bigPay.jpeg";
+import smallPay from "../../../Assets/Misc/smallpay.jpeg";
+import bigPay from "../../../Assets/Misc/bigPay.jpeg";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import "../Styles/PayOpponentModal.css";
+import "../../Styles/PayOpponentModal.css";
 
 export const PayOpponent = ({
   payProp,

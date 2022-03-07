@@ -43,3 +43,17 @@
 .prop-name.rr {
   font-family: "Monopoly";
 }
+
+.main-card.util {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.row.utils {
+  justify-content: center;
+}
+
+.innerModal.util {
+  width: 26em;
+  height: 35em;
+}

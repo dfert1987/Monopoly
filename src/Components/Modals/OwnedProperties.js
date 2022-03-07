@@ -1,5 +1,7 @@
 import React, { useState } from "react";
-import PropertyCard from "./PropertyCard";
+import PropertyCard from "../Modals/ViewInfoModals/PropertyCard";
+import RRCard from "../Modals/ViewInfoModals/RRCard";
+import UtilCard from "../Modals/ViewInfoModals/UtilCard";
 import { motion, AnimatePresence } from "framer-motion";
 import { faXmark } from "@fortawesome/free-solid-svg-icons";
 import ditielogo from "../../Assets/PropertyImages/ditielogo.png";
@@ -18,11 +20,24 @@ const OwnedProperties = ({
   utilities,
 }) => {
   const [propertyCard, setPropertyCard] = useState(false);
+  const [rrCard, setRRCard] = useState(false);
+  const [utilCard, setUtilCard] = useState(false);
   const [chosenProp, setChosenProp] = useState();
 
   const showProp = (prop) => {
     setChosenProp(prop);
     setPropertyCard(true);
+  };
+
+  const showRR = (rr) => {
+    setChosenProp(rr);
+    setRRCard(true);
+  };
+
+  const showUtil = (util) => {
+    console.log(util);
+    setChosenProp(util);
+    setUtilCard(true);
   };
 
   const handleClose = (e) => {
@@ -419,7 +434,10 @@ const OwnedProperties = ({
                         <p className="name">{railRoads[0].Name}</p>
                         <div className="cardSquare-black">
                           {railRoads[0].ownedP1 ? (
-                            <div className="main-square">
+                            <div
+                              className="main-square"
+                              onClick={() => showRR(railRoads[0])}
+                            >
                               <div className="white-part-rr">
                                 <img
                                   className="small-ditie"
@@ -435,7 +453,10 @@ const OwnedProperties = ({
                         <p className="name">{railRoads[1].Name}</p>
                         <div className="cardSquare-black">
                           {railRoads[1].ownedP1 ? (
-                            <div className="main-square">
+                            <div
+                              className="main-square"
+                              onClick={() => showRR(railRoads[1])}
+                            >
                               <div className="white-part-rr">
                                 <img
                                   className="small-ditie"
@@ -451,7 +472,10 @@ const OwnedProperties = ({
                         <p className="name">{railRoads[2].Name}</p>
                         <div className="cardSquare-black">
                           {railRoads[2].ownedP1 ? (
-                            <div className="main-square">
+                            <div
+                              className="main-square"
+                              onClick={() => showRR(railRoads[2])}
+                            >
                               <div className="white-part-rr">
                                 <img
                                   className="small-ditie"
@@ -467,7 +491,10 @@ const OwnedProperties = ({
                         <p className="name">{railRoads[3].Name}</p>
                         <div className="cardSquare-black">
                           {railRoads[3].ownedP1 ? (
-                            <div className="main-square">
+                            <div
+                              className="main-square"
+                              onClick={() => showRR(railRoads[0])}
+                            >
                               <div className="white-part-rr">
                                 <img
                                   className="small-ditie"
@@ -488,7 +515,10 @@ const OwnedProperties = ({
                         <p className="name">WATER</p>
                         <div className="cardSquare-grey">
                           {utilities[0].ownedP1 ? (
-                            <div className="main-square">
+                            <div
+                              className="main-square"
+                              onClick={() => showUtil(utilities[0])}
+                            >
                               <div className="white-part-rr">
                                 <img
                                   className="small-ditie"
@@ -504,7 +534,10 @@ const OwnedProperties = ({
                         <p className="name">AYI</p>
                         <div className="cardSquare-grey">
                           {utilities[1].ownedP1 ? (
-                            <div className="main-square">
+                            <div
+                              className="main-square"
+                              onClick={() => showUtil(utilities[1])}
+                            >
                               <div className="white-part-rr">
                                 <img
                                   className="small-ditie"
@@ -863,7 +896,10 @@ const OwnedProperties = ({
                         <p className="name">{railRoads[0].Name}</p>
                         <div className="cardSquare-black">
                           {railRoads[0].ownedP2 ? (
-                            <div className="main-square">
+                            <div
+                              className="main-square"
+                              onClick={() => showRR(railRoads[0])}
+                            >
                               <div className="white-part-rr">
                                 <img
                                   className="small-ditie"
@@ -879,7 +915,10 @@ const OwnedProperties = ({
                         <p className="name">{railRoads[1].Name}</p>
                         <div className="cardSquare-black">
                           {railRoads[1].ownedP2 ? (
-                            <div className="main-square">
+                            <div
+                              className="main-square"
+                              onClick={() => showRR(railRoads[1])}
+                            >
                               <div className="white-part-rr">
                                 <img
                                   className="small-ditie"
@@ -895,7 +934,10 @@ const OwnedProperties = ({
                         <p className="name">{railRoads[2].Name}</p>
                         <div className="cardSquare-black">
                           {railRoads[2].ownedP2 ? (
-                            <div className="main-square">
+                            <div
+                              className="main-square"
+                              onClick={() => showRR(railRoads[2])}
+                            >
                               <div className="white-part-rr">
                                 <img
                                   className="small-ditie"
@@ -911,7 +953,10 @@ const OwnedProperties = ({
                         <p className="name">{railRoads[3].Name}</p>
                         <div className="cardSquare-black">
                           {railRoads[3].ownedP2 ? (
-                            <div className="main-square">
+                            <div
+                              className="main-square"
+                              onClick={() => showRR(railRoads[3])}
+                            >
                               <div className="white-part-rr">
                                 <img
                                   className="small-ditie"
@@ -932,7 +977,10 @@ const OwnedProperties = ({
                         <p className="name">WATER</p>
                         <div className="cardSquare-grey">
                           {utilities[0].ownedP2 ? (
-                            <div className="main-square">
+                            <div
+                              className="main-square"
+                              onClick={() => showUtil(utilities[0])}
+                            >
                               <div className="white-part-rr">
                                 <img
                                   className="small-ditie"
@@ -948,7 +996,10 @@ const OwnedProperties = ({
                         <p className="name">AYI</p>
                         <div className="cardSquare-grey">
                           {utilities[1].ownedP2 ? (
-                            <div className="main-square">
+                            <div
+                              className="main-square"
+                              onClick={() => showUtil(utilities[1])}
+                            >
                               <div className="white-part-rr">
                                 <img
                                   className="small-ditie"
@@ -974,6 +1025,22 @@ const OwnedProperties = ({
         setPropertyCard={setPropertyCard}
         chosenProp={chosenProp}
         setChosenProp={setChosenProp}
+      />
+      <RRCard
+        className="rrCard"
+        rrCard={rrCard}
+        setRRCard={setRRCard}
+        chosenProp={chosenProp}
+        setChosenProp={setChosenProp}
+        railRoads={railRoads}
+      />
+      <UtilCard
+        className="utilCard"
+        utilCard={utilCard}
+        setUtilCard={setUtilCard}
+        chosenProp={chosenProp}
+        setChosenProp={setChosenProp}
+        utilities={utilities}
       />
     </>
   );

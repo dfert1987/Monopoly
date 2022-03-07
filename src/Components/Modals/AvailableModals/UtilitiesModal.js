@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { faXmark } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import "../Styles/RailRoadModal.css";
+import "../../Styles/RailRoadModal.css";
 
 const UtilitiesModal = ({
   setUtilModal,
@@ -132,7 +132,6 @@ const UtilitiesModal = ({
         </div>
       );
     } else if (onUtil2 && utilModal2 && !utilModal && close === false) {
-      console.log(onUtil2);
       return (
         <div className="main-card">
           <div className="outer-banner rail">

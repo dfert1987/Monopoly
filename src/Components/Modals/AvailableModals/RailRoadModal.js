@@ -2,8 +2,8 @@ import React, { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { faXmark } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import ditielogo from "../../Assets/PropertyImages/ditielogo.png";
-import "../Styles/RailRoadModal.css";
+import ditielogo from "../../../Assets/PropertyImages/ditielogo.png";
+import "../../Styles/RailRoadModal.css";
 
 const RailRoadModal = ({
   setRRModal,
