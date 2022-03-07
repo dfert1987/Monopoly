@@ -5,6 +5,7 @@ import RailRoadModal from "./Modals/AvailableModals/RailRoadModal";
 import PurchasedPopUp from "./Modals/Purchased/PurchasedPopUp";
 import RRPurchasedPopUp from "./Modals/Purchased/RRPurchasedPopUp";
 import PurchasedUtilPopUp from "./Modals/Purchased/PurchasedUtilPopUp";
+import FreeParking from "./Modals/FreeParking";
 import OwnedProperties from "./Modals/OwnedProperties";
 import PayOpponent from "./Modals/PayModals/PayOpponent";
 import PayOpponentRail from "../Components/Modals/PayModals/PayOpponentRail";
@@ -91,6 +92,12 @@ export const Board = ({
   setPayUtilTo,
   payUtil,
   setPayUtil,
+  freeParking,
+  setFreeParking,
+  onFreeParking,
+  setOnFreeParking,
+  onFreeParking2,
+  setOnFreeParking2,
 }) => {
   const [viewPurchase, setViewPurchase] = useState(false);
   const [viewPurchase2, setViewPurchase2] = useState(false);
@@ -98,6 +105,7 @@ export const Board = ({
   const [viewPurchaseRR2, setViewPurchaseRR2] = useState(false);
   const [viewPurchaseUtil, setViewPurchaseUtil] = useState(false);
   const [viewPurchaseUtil2, setViewPurchaseUtil2] = useState(false);
+
   return (
     <div className="main-board">
       <div className="left-column">
@@ -987,6 +995,14 @@ export const Board = ({
           setViewPurchaseUtil={setViewPurchaseUtil}
           viewPurchaseUtil2={viewPurchaseUtil2}
           setViewPuruchaseUtil2={setViewPurchaseUtil2}
+        />
+        <FreeParking
+          freeParking={freeParking}
+          onFreeParking={onFreeParking}
+          setOnFreeParking={setOnFreeParking}
+          onFreeParking2={onFreeParking2}
+          setOnFreeParking2={setOnFreeParking2}
+          setFreeParking={setFreeParking}
         />
       </div>
     </div>

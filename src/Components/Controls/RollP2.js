@@ -36,6 +36,7 @@ export const RollP2 = ({
   setPayUtil,
   payUtilTo,
   setPayUtilTo,
+  setOnFreeParking2,
 }) => {
   const [die3, setDie3] = useState(1);
   const [die4, setDie4] = useState(1);
@@ -138,6 +139,8 @@ export const RollP2 = ({
       setOnUtil2(currentUtil);
       setPayUtil(true);
       setPayUtilTo(1);
+    } else if (space === 31) {
+      setOnFreeParking2(true);
     }
   };
 

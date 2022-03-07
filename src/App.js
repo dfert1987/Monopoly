@@ -42,6 +42,10 @@ function App() {
   const [payRailTo, setPayRailTo] = useState();
   const [payUtilTo, setPayUtilTo] = useState();
   const [payUtil, setPayUtil] = useState(false);
+  const [freeParking, setFreeParking] = useState(500);
+  const [onFreeParking, setOnFreeParking] = useState(false);
+  const [onFreeParking2, setOnFreeParking2] = useState(false);
+
   return (
     <div className="App">
       <Board
@@ -112,6 +116,12 @@ function App() {
         setPayUtil={setPayUtil}
         payUtilTo={payUtilTo}
         setPayUtilTo={setPayUtilTo}
+        freeParking={freeParking}
+        setFreeParking={setFreeParking}
+        onFreeParking={onFreeParking}
+        setOnFreeParking={setOnFreeParking}
+        onFreeParking2={onFreeParking2}
+        setOnFreeParking2={setOnFreeParking2}
       />
       <Controls
         counterP1={counterP1}
@@ -174,6 +184,12 @@ function App() {
         setPayUtil={setPayUtil}
         payUtilTo={payUtilTo}
         setPayUtilTo={setPayUtilTo}
+        freeParking={freeParking}
+        setFreeParking={setFreeParking}
+        onFreeParking={onFreeParking}
+        setOnFreeParking={setOnFreeParking}
+        onFreeParking2={onFreeParking2}
+        setOnFreeParking2={setOnFreeParking2}
       />
     </div>
   );
