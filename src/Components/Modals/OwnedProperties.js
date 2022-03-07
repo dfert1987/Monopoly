@@ -34,6 +34,12 @@ const OwnedProperties = ({
     setRRCard(true);
   };
 
+  const showUtil = (util) => {
+    console.log(util);
+    setChosenProp(util);
+    setUtilCard(true);
+  };
+
   const handleClose = (e) => {
     e.preventDefault();
     setViewProperties(false);
@@ -509,7 +515,10 @@ const OwnedProperties = ({
                         <p className="name">WATER</p>
                         <div className="cardSquare-grey">
                           {utilities[0].ownedP1 ? (
-                            <div className="main-square">
+                            <div
+                              className="main-square"
+                              onClick={() => showUtil(utilities[0])}
+                            >
                               <div className="white-part-rr">
                                 <img
                                   className="small-ditie"
@@ -525,7 +534,10 @@ const OwnedProperties = ({
                         <p className="name">AYI</p>
                         <div className="cardSquare-grey">
                           {utilities[1].ownedP1 ? (
-                            <div className="main-square">
+                            <div
+                              className="main-square"
+                              onClick={() => showUtil(utilities[1])}
+                            >
                               <div className="white-part-rr">
                                 <img
                                   className="small-ditie"
@@ -965,7 +977,10 @@ const OwnedProperties = ({
                         <p className="name">WATER</p>
                         <div className="cardSquare-grey">
                           {utilities[0].ownedP2 ? (
-                            <div className="main-square">
+                            <div
+                              className="main-square"
+                              onClick={() => showUtil(utilities[0])}
+                            >
                               <div className="white-part-rr">
                                 <img
                                   className="small-ditie"
@@ -981,7 +996,10 @@ const OwnedProperties = ({
                         <p className="name">AYI</p>
                         <div className="cardSquare-grey">
                           {utilities[1].ownedP2 ? (
-                            <div className="main-square">
+                            <div
+                              className="main-square"
+                              onClick={() => showUtil(utilities[1])}
+                            >
                               <div className="white-part-rr">
                                 <img
                                   className="small-ditie"
@@ -1018,11 +1036,11 @@ const OwnedProperties = ({
       />
       <UtilCard
         className="utilCard"
-        rrCard={utilCard}
-        setRRCard={setUtilCard}
+        utilCard={utilCard}
+        setUtilCard={setUtilCard}
         chosenProp={chosenProp}
         setChosenProp={setChosenProp}
-        railRoads={utilities}
+        utilities={utilities}
       />
     </>
   );

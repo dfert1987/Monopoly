@@ -132,7 +132,6 @@ const UtilitiesModal = ({
         </div>
       );
     } else if (onUtil2 && utilModal2 && !utilModal && close === false) {
-      console.log(onUtil2);
       return (
         <div className="main-card">
           <div className="outer-banner rail">
