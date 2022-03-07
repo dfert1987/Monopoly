@@ -4,6 +4,7 @@ import UtilitiesModal from "./Modals/AvailableModals/UtilitiesModal";
 import RailRoadModal from "./Modals/AvailableModals/RailRoadModal";
 import PurchasedPopUp from "./Modals/Purchased/PurchasedPopUp";
 import RRPurchasedPopUp from "./Modals/Purchased/RRPurchasedPopUp";
+import PurchasedUtilPopUp from "./Modals/Purchased/PurchasedUtilPopUp";
 import OwnedProperties from "./Modals/OwnedProperties";
 import PayOpponent from "./Modals/PayModals/PayOpponent";
 import PayOpponentRail from "../Components/Modals/PayModals/PayOpponentRail";
@@ -910,6 +911,15 @@ export const Board = ({
           onRR2={onRR2}
           setViewPurchaseRR2={setViewPurchaseRR2}
           viewPurchaseRR2={viewPurchaseRR2}
+        />
+        <PurchasedUtilPopUp
+          className="purchaseUtil"
+          viewPurchaseUtil={viewPurchaseUtil}
+          viewPurchaseUtil2={viewPurchaseUtil2}
+          onUtil={onUtil}
+          onUtil2={onUtil2}
+          setViewPurchaseUtil={setViewPurchaseUtil}
+          setViewPurchaseUtil2={setViewPurchaseUtil2}
         />
         <PropertyModal
           className="modal"

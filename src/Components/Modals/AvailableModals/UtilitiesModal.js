@@ -18,10 +18,11 @@ const UtilitiesModal = ({
   setP2Money,
   setViewPurchaseUtil,
   setViewPurchaseUtil2,
+  viewPurchaseUtil,
 }) => {
   const [close, setClose] = useState(false);
   const [inSufficientFunds, setInsufficientFunds] = useState(false);
-
+  console.log(viewPurchaseUtil);
   const backdrop = {
     visible: { opacity: 1 },
     hidden: { opacity: 0 },
