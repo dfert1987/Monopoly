@@ -27,11 +27,20 @@ const OwnedProperties = ({
   const [buildYellowP1, setBuildYellowP1] = useState(false);
   const [buildGreenP1, setBuildGreenP1] = useState(false);
   const [buildBlueP1, setBuildBlueP1] = useState(false);
-  const [buildBrownP1, setBuildBrown] = useState(false);
-  const [buildLightBlueP1, seBuildLightBlueP1] = useState(false);
+  const [buildBrownP1, setBuildBrownP1] = useState(false);
+  const [buildLightBlueP1, setBuildLightBlueP1] = useState(false);
   const [buildVioletP1, setBuildVioletP1] = useState(false);
   const [buildOrangeP1, setBuildOrangeP1] = useState(false);
   const [buildRedP1, setBuildRedP1] = useState(false);
+  const [canBuildP2, setCanBuildP2] = useState(false);
+  const [buildYellowP2, setBuildYellowP2] = useState(false);
+  const [buildGreenP2, setBuildGreenP2] = useState(false);
+  const [buildBlueP2, setBuildBlueP2] = useState(false);
+  const [buildBrownP2, setBuildBrownP2] = useState(false);
+  const [buildLightBlueP2, setBuildLightBlueP2] = useState(false);
+  const [buildVioletP2, setBuildVioletP2] = useState(false);
+  const [buildOrangeP2, setBuildOrangeP2] = useState(false);
+  const [buildRedP2, setBuildRedP2] = useState(false);
 
   const showProp = (prop) => {
     setChosenProp(prop);
@@ -80,6 +89,13 @@ const OwnedProperties = ({
     } else setBuildYellowP1(false);
   };
 
+  const checkYellowsP2 = (yellows) => {
+    if (yellows && yellows.length === 3) {
+      setCanBuildP2(true);
+      setBuildYellowP2(true);
+    } else setBuildYellowP2(false);
+  };
+
   const checkGreensP1 = (greens) => {
     if (greens && greens.length === 3) {
       setCanBuildP1(true);
@@ -87,13 +103,138 @@ const OwnedProperties = ({
     } else setBuildGreenP1(false);
   };
 
+  const checkGreensP2 = (greens) => {
+    if (greens && greens.length === 3) {
+      setCanBuildP2(true);
+      setBuildGreenP2(true);
+    } else setBuildGreenP2(false);
+  };
+
+  const checkBluesP1 = (blues) => {
+    if (blues && blues.length === 2) {
+      setCanBuildP1(true);
+      setBuildBlueP1(true);
+    } else setBuildBlueP1(false);
+  };
+
+  const checkBluesP2 = (blues) => {
+    if (blues && blues.length === 2) {
+      setCanBuildP2(true);
+      setBuildBlueP2(true);
+    } else setBuildBlueP2(false);
+  };
+
+  const checkBrownsP1 = (browns) => {
+    if (browns && browns.length === 2) {
+      setCanBuildP1(true);
+      setBuildBrownP1(true);
+    } else setBuildBrownP1(false);
+  };
+
+  const checkBrownsP2 = (browns) => {
+    if (browns && browns.length === 2) {
+      setCanBuildP2(true);
+      setBuildBrownP2(true);
+    } else setBuildBrownP2(false);
+  };
+
+  const checkOrangesP1 = (oranges) => {
+    if (oranges && oranges.length === 3) {
+      setCanBuildP1(true);
+      setBuildOrangeP1(true);
+    } else setBuildOrangeP1(false);
+  };
+
+  const checkOrangesP2 = (oranges) => {
+    if (oranges && oranges.length === 3) {
+      setCanBuildP2(true);
+      setBuildOrangeP2(true);
+    } else setBuildOrangeP2(false);
+  };
+
+  const checkRedsP1 = (reds) => {
+    if (reds && reds.length === 3) {
+      setCanBuildP1(true);
+      setBuildRedP1(true);
+    } else setBuildRedP1(false);
+  };
+
+  const checkRedsP2 = (reds) => {
+    if (reds && reds.length === 3) {
+      setCanBuildP2(true);
+      setBuildRedP2(true);
+    } else setBuildRedP2(false);
+  };
+
+  const checkLightBluesP1 = (lbs) => {
+    if (lbs && lbs.length === 3) {
+      setCanBuildP1(true);
+      setBuildLightBlueP1(true);
+    } else setBuildLightBlueP1(false);
+  };
+
+  const checkLightBluesP2 = (lbs) => {
+    if (lbs && lbs.length === 3) {
+      setCanBuildP2(true);
+      setBuildLightBlueP2(true);
+    } else setBuildLightBlueP2(false);
+  };
+
+  const checkVioletsP1 = (violets) => {
+    if (violets && violets.length === 3) {
+      setCanBuildP1(true);
+      setBuildVioletP1(true);
+    } else setBuildVioletP1(false);
+  };
+
+  const checkVioletsP2 = (violets) => {
+    if (violets && violets.length === 3) {
+      setCanBuildP2(true);
+      setBuildVioletP2(true);
+    } else setBuildVioletP2(false);
+  };
+
   useEffect(() => {
     if (viewProperties && !viewProperties2) {
       let allOwned = properties.filter((property) => property.ownedP1 === true);
       let yellows = allOwned.filter((property) => property.color === "yellow");
       let greens = allOwned.filter((property) => property.color === "green");
+      let blues = allOwned.filter((property) => property.color === "blue");
+      let browns = allOwned.filter((property) => property.color === "brown");
+      let oranges = allOwned.filter((property) => property.color === "orange");
+      let reds = allOwned.filter((property) => property.color === "red");
+      let lightBlues = allOwned.filter(
+        (property) => property.color === "lightBlue"
+      );
+      let violets = allOwned.filter((property) => property.color === "violet");
       checkYellowsP1(yellows);
       checkGreensP1(greens);
+      checkBluesP1(blues);
+      checkBrownsP1(browns);
+      checkRedsP1(reds);
+      checkOrangesP1(oranges);
+      checkLightBluesP1(lightBlues);
+      checkVioletsP1(violets);
+    } else if (viewProperties2 && !viewProperties) {
+      let allOwned = properties.filter((property) => property.ownedP2 === true);
+      let yellows = allOwned.filter((property) => property.color === "yellow");
+      let greens = allOwned.filter((property) => property.color === "green");
+      let blues = allOwned.filter((property) => property.color === "blue");
+      let browns = allOwned.filter((property) => property.color === "brown");
+      let oranges = allOwned.filter((property) => property.color === "orange");
+      let reds = allOwned.filter((property) => property.color === "red");
+      let lightBlues = allOwned.filter(
+        (property) => property.color === "lightBlue"
+      );
+      let violets = allOwned.filter((property) => property.color === "violet");
+      checkYellowsP2(yellows);
+      checkGreensP2(greens);
+      checkBluesP2(blues);
+      checkBrownsP2(browns);
+      checkRedsP2(reds);
+      checkOrangesP2(oranges);
+      checkLightBluesP2(lightBlues);
+      checkVioletsP2(violets);
     }
   }, [properties, viewProperties, viewProperties2]);
 
