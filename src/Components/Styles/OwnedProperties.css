@@ -195,3 +195,11 @@
   margin-bottom: 0.1em;
   margin-top: 0;
 }
+
+.out {
+  border-radius: 6px;
+  padding-bottom: 0.5em;
+  padding-left: 0.5em;
+  border: 2px gold solid;
+  box-shadow: 0 0 15px gold;
+}

@@ -41,6 +41,8 @@ const OwnedProperties = ({
   const [buildVioletP2, setBuildVioletP2] = useState(false);
   const [buildOrangeP2, setBuildOrangeP2] = useState(false);
   const [buildRedP2, setBuildRedP2] = useState(false);
+  const [showOutlines1, setShowOutlines1] = useState(false);
+  const [showOutlines2, setShowOutlines2] = useState(false);
 
   const showProp = (prop) => {
     setChosenProp(prop);
@@ -61,6 +63,8 @@ const OwnedProperties = ({
     e.preventDefault();
     setViewProperties(false);
     setViewProperties2(false);
+    setCanBuildP2(false);
+    setCanBuildP1(false);
     setChosenProp();
     setPropertyCard(false);
   };
@@ -269,7 +273,11 @@ const OwnedProperties = ({
                   </div>
                   <h3 className="subheader">Properties</h3>
                   <div className="card-row left five">
-                    <div className="card-group twoGroup">
+                    <div
+                      className={`card-group twoGroup ${
+                        showOutlines1 && canBuildP1 && buildBrownP1 ? "out" : ""
+                      }`}
+                    >
                       <div className="card-plus-name">
                         <p className="name">{properties[21].Name}</p>
                         <div className="cardSquare-brown">
@@ -299,7 +307,13 @@ const OwnedProperties = ({
                         </div>
                       </div>
                     </div>
-                    <div className="card-group threeGroup">
+                    <div
+                      className={`card-group threeGroup ${
+                        showOutlines1 && canBuildP1 && buildLightBlueP1
+                          ? "out"
+                          : ""
+                      }`}
+                    >
                       <div className="card-plus-name">
                         <p className="name">{properties[19].Name}</p>
                         <div className="cardSquare-light-blue">
@@ -345,7 +359,13 @@ const OwnedProperties = ({
                     </div>
                   </div>
                   <div className="card-row left six">
-                    <div className="card-group threeGroup">
+                    <div
+                      className={`card-group threeGroup ${
+                        showOutlines1 && canBuildP1 && buildVioletP1
+                          ? "out"
+                          : ""
+                      }`}
+                    >
                       <div className="card-plus-name">
                         <p className="name">{properties[16].Name}</p>
                         <div className="cardSquare-violet">
@@ -389,7 +409,13 @@ const OwnedProperties = ({
                         </div>
                       </div>
                     </div>
-                    <div className="card-group threeGroup">
+                    <div
+                      className={`card-group threeGroup ${
+                        showOutlines1 && canBuildP1 && buildOrangeP1
+                          ? "out"
+                          : ""
+                      }`}
+                    >
                       <div className="card-plus-name">
                         <p className="name">{properties[13].Name}</p>
                         <div className="cardSquare-orange">
@@ -435,7 +461,11 @@ const OwnedProperties = ({
                     </div>
                   </div>
                   <div className="card-row left six">
-                    <div className="card-group threeGroup">
+                    <div
+                      className={`card-group threeGroup ${
+                        showOutlines1 && canBuildP1 && buildRedP1 ? "out" : ""
+                      }`}
+                    >
                       <div className="card-plus-name">
                         <p className="name">{properties[10].Name}</p>
                         <div className="cardSquare-red">
@@ -479,7 +509,13 @@ const OwnedProperties = ({
                         </div>
                       </div>
                     </div>
-                    <div className="card-group threeGroup">
+                    <div
+                      className={`card-group threeGroup ${
+                        showOutlines1 && canBuildP1 && buildYellowP1
+                          ? "out"
+                          : ""
+                      }`}
+                    >
                       <div className="card-plus-name">
                         <p className="name">JDX</p>
                         <div className="cardSquare-yellow">
@@ -525,7 +561,11 @@ const OwnedProperties = ({
                     </div>
                   </div>
                   <div className="card-row left five">
-                    <div className="card-group threeGroup">
+                    <div
+                      className={`card-group threeGroup ${
+                        showOutlines1 && canBuildP1 && buildGreenP1 ? "out" : ""
+                      }`}
+                    >
                       <div className="card-plus-name">
                         <p className="name">{properties[4].Name}</p>
                         <div className="cardSquare-green">
@@ -569,7 +609,11 @@ const OwnedProperties = ({
                         </div>
                       </div>
                     </div>
-                    <div className="card-group threeGroup">
+                    <div
+                      className={`card-group twoGroup ${
+                        showOutlines1 && canBuildP1 && buildBlueP1 ? "out" : ""
+                      }`}
+                    >
                       <div className="card-plus-name">
                         <p className="name">{properties[1].Name}</p>
                         <div className="cardSquare-blue">
@@ -724,7 +768,11 @@ const OwnedProperties = ({
                       </div>
                     </div>
                   </div>
-                  <button className="buy-houses" disabled={false}>
+                  <button
+                    className="buy-houses"
+                    onClick={() => setShowOutlines1(true)}
+                    disabled={!canBuildP1}
+                  >
                     Buy Houses
                   </button>
                 </div>
@@ -1189,6 +1237,13 @@ const OwnedProperties = ({
                       </div>
                     </div>
                   </div>
+                  <button
+                    className="buy-houses"
+                    onClick={() => setShowOutlines2(true)}
+                    disabled={!canBuildP2}
+                  >
+                    Buy Houses
+                  </button>
                 </div>
               </div>
             </motion.div>

@@ -158,7 +158,7 @@ export const Properties = [
     hotel: 1200,
     mortgage: 140,
     buidlingCost: 150,
-    ownedP1: false,
+    ownedP1: true,
     ownedP2: false,
     hasOneHouse: false,
     hasTwoHouses: false,
