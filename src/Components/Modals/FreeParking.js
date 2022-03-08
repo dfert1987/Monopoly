@@ -77,7 +77,7 @@ const FreeParking = ({
             >
               <div className="button-row">
                 <button className="close-button" onClick={handleClose}>
-                  <FontAwesomeIcon className="x-icon free" icon={faXmark} />
+                  <FontAwesomeIcon className="x-icon" icon={faXmark} />
                 </button>
               </div>
               <div className="main-part">
