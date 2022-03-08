@@ -117,13 +117,12 @@ export const Controls = ({
             <p className="money">¥{p1Money}</p>
           </div>
           <div className="properties player1">
-            <h3 className="props-label">Your Properties</h3>
             <button
               className="properties-view-button"
               disabled={disableLeft}
               onClick={() => setViewProperties(true)}
             >
-              VIEW
+              VIEW ASSETS
             </button>
           </div>
         </div>
@@ -172,13 +171,12 @@ export const Controls = ({
             <p className="money">¥{p2Money}</p>
           </div>
           <div className="properties player2">
-            <h3 className="props-label">Your Properties</h3>
             <button
               className="properties-view-button"
               disabled={disableRight}
               onClick={() => setViewProperties2(true)}
             >
-              VIEW
+              VIEW ASSETS
             </button>
           </div>
         </div>

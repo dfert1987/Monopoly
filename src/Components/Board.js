@@ -6,7 +6,7 @@ import PurchasedPopUp from "./Modals/Purchased/PurchasedPopUp";
 import RRPurchasedPopUp from "./Modals/Purchased/RRPurchasedPopUp";
 import PurchasedUtilPopUp from "./Modals/Purchased/PurchasedUtilPopUp";
 import FreeParking from "./Modals/FreeParking";
-import AgentFee from "./Moadals/AgentFee";
+import AgentFee from "./Modals/AgentFee";
 import OwnedProperties from "./Modals/OwnedProperties";
 import PayOpponent from "./Modals/PayModals/PayOpponent";
 import PayOpponentRail from "../Components/Modals/PayModals/PayOpponentRail";

@@ -47,7 +47,7 @@ function App() {
   const [onFreeParking2, setOnFreeParking2] = useState(false);
   const [onAgentFee, setOnAgentFee] = useState(false);
   const [onAgentFee2, setOnAgentFee2] = useState(false);
-
+  console.log(properties);
   return (
     <div className="App">
       <Board

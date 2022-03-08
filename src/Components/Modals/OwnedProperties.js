@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import PropertyCard from "../Modals/ViewInfoModals/PropertyCard";
 import RRCard from "../Modals/ViewInfoModals/RRCard";
 import UtilCard from "../Modals/ViewInfoModals/UtilCard";
@@ -23,6 +23,15 @@ const OwnedProperties = ({
   const [rrCard, setRRCard] = useState(false);
   const [utilCard, setUtilCard] = useState(false);
   const [chosenProp, setChosenProp] = useState();
+  const [canBuildP1, setCanBuildP1] = useState(false);
+  const [buildYellowP1, setBuildYellowP1] = useState(false);
+  const [buildGreenP1, setBuildGreenP1] = useState(false);
+  const [buildBlueP1, setBuildBlueP1] = useState(false);
+  const [buildBrownP1, setBuildBrown] = useState(false);
+  const [buildLightBlueP1, seBuildLightBlueP1] = useState(false);
+  const [buildVioletP1, setBuildVioletP1] = useState(false);
+  const [buildOrangeP1, setBuildOrangeP1] = useState(false);
+  const [buildRedP1, setBuildRedP1] = useState(false);
 
   const showProp = (prop) => {
     setChosenProp(prop);
@@ -63,6 +72,30 @@ const OwnedProperties = ({
       transition: { delay: 0.5 },
     },
   };
+
+  const checkYellowsP1 = (yellows) => {
+    if (yellows && yellows.length === 3) {
+      setCanBuildP1(true);
+      setBuildYellowP1(true);
+    } else setBuildYellowP1(false);
+  };
+
+  const checkGreensP1 = (greens) => {
+    if (greens && greens.length === 3) {
+      setCanBuildP1(true);
+      setBuildGreenP1(true);
+    } else setBuildGreenP1(false);
+  };
+
+  useEffect(() => {
+    if (viewProperties && !viewProperties2) {
+      let allOwned = properties.filter((property) => property.ownedP1 === true);
+      let yellows = allOwned.filter((property) => property.color === "yellow");
+      let greens = allOwned.filter((property) => property.color === "green");
+      checkYellowsP1(yellows);
+      checkGreensP1(greens);
+    }
+  }, [properties, viewProperties, viewProperties2]);
 
   return (
     <>
@@ -550,6 +583,9 @@ const OwnedProperties = ({
                       </div>
                     </div>
                   </div>
+                  <button className="buy-houses" disabled={false}>
+                    Buy Houses
+                  </button>
                 </div>
                 <div className="property-squares">
                   <div className="player-row">
