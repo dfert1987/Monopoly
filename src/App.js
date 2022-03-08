@@ -6,8 +6,8 @@ import { RailRoads } from "./Assets/Holdings/Railroads";
 import { Utilities } from "./Assets/Holdings/Utilities";
 
 function App() {
-  const [counterP1, setCounterP1] = useState(30);
-  const [counterP2, setCounterP2] = useState(30);
+  const [counterP1, setCounterP1] = useState(20);
+  const [counterP2, setCounterP2] = useState(20);
   const [turn, setTurn] = useState(0);
   const [properties, setProperties] = useState(Properties);
   const [railRoads, setRailRoads] = useState(RailRoads);
@@ -45,8 +45,6 @@ function App() {
   const [freeParking, setFreeParking] = useState(500);
   const [onFreeParking, setOnFreeParking] = useState(false);
   const [onFreeParking2, setOnFreeParking2] = useState(false);
-  const [onAgentFee, setOnAgentFee] = useState(false);
-  const [onAgentFee2, setOnAgentFee2] = useState(false);
 
   return (
     <div className="App">
@@ -126,10 +124,6 @@ function App() {
         setOnFreeParking={setOnFreeParking}
         onFreeParking2={onFreeParking2}
         setOnFreeParking2={setOnFreeParking2}
-        onAgentFee={onAgentFee}
-        setOnAgentFee={setOnAgentFee}
-        onAgentFee2={onAgentFee2}
-        setOnAgentFee2={setOnAgentFee2}
       />
       <Controls
         counterP1={counterP1}
@@ -198,10 +192,6 @@ function App() {
         setOnFreeParking={setOnFreeParking}
         onFreeParking2={onFreeParking2}
         setOnFreeParking2={setOnFreeParking2}
-        onAgentFee={onAgentFee}
-        setOnAgentFee={setOnAgentFee}
-        onAgentFee2={onAgentFee2}
-        setOnAgentFee2={setOnAgentFee2}
       />
     </div>
   );
