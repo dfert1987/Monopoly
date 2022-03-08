@@ -2,25 +2,19 @@ import React from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { faXmark } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import manInMoney from "../../Assets/Misc/manInMoney.jpeg";
-import { useWindowSize } from "@react-hook/window-size";
-import Confetti from "react-confetti";
+import homelink from "../../Assets/Misc/homelink.jpeg";
 import "../Styles/FreeParking.css";
 
-const FreeParking = ({
-  freeParking,
-  setFreeParking,
-  onFreeParking,
-  setOnFreeParking,
-  setOnFreeParking2,
-  onFreeParking2,
+const AgentFee = ({
+  setOnAgentFee,
+  onAgentFee,
+  setOnAgentFee2,
+  onAgentFee2,
   setP1Money,
   setP2Money,
   p1Money,
   p2Money,
 }) => {
-  const [width, height] = useWindowSize();
-
   const backdrop = {
     visible: { opacity: 1 },
     hidden: { opacity: 0 },
@@ -40,18 +34,16 @@ const FreeParking = ({
 
   const handleClose = (e) => {
     e.preventDefault();
-    if (setOnFreeParking) {
-      let newMoney = p1Money + freeParking;
+    if (setOnAgentFee) {
+      let newMoney = p1Money - 75;
       setP1Money(newMoney);
-      setOnFreeParking(false);
-      setOnFreeParking2(false);
-      setFreeParking(500);
-    } else if (setOnFreeParking2) {
-      let newMoney = p2Money + freeParking;
+      setOnAgentFee(false);
+      setOnAgentFee2(false);
+    } else if (setOnAgentFee2) {
+      let newMoney = p2Money - 75;
       setP2Money(newMoney);
-      setOnFreeParking(false);
-      setOnFreeParking2(false);
-      setFreeParking(500);
+      setOnAgentFee(false);
+      setOnAgentFee2(false);
     }
     return null;
   };
@@ -59,7 +51,7 @@ const FreeParking = ({
   return (
     <>
       <AnimatePresence exitBeforeEnter>
-        {onFreeParking || onFreeParking2 ? (
+        {onAgentFee || onAgentFee2 ? (
           <motion.div
             className="outerModal flex centerFlex"
             variants={backdrop}
@@ -67,7 +59,6 @@ const FreeParking = ({
             animate="visible"
             exit="hidden"
           >
-            <Confetti width={width} height={height} />
             <motion.div
               className="flex flexColumn innerModalPurchase"
               variants={modal}
@@ -81,13 +72,13 @@ const FreeParking = ({
                 </button>
               </div>
               <div className="main-part">
-                <h1 className="main-congrats">Congratulations!</h1>
+                <h1 className="main-congrats">Agent Fee!</h1>
                 <img
-                  className="manInMoney"
-                  alt="man in pile of money"
-                  src={manInMoney}
+                  className="agent"
+                  alt="real estate office"
+                  src={homelink}
                 />
-                <h2 className="prize">{`Collect the pot of ¥${freeParking}!`}</h2>
+                <h2 className="prize">Pay Up ¥75!</h2>
               </div>
             </motion.div>
           </motion.div>
@@ -97,4 +88,4 @@ const FreeParking = ({
   );
 };
 
-export default FreeParking;
+export default AgentFee;

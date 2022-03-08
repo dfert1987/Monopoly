@@ -55,10 +55,8 @@ export const Controls = ({
   setOnFreeParking,
   onFreeParking2,
   setOnFreeParking2,
-  viewFreeParking,
-  viewFreeParking2,
-  setViewFreeParking,
-  setViewFreeParking2,
+  setOnAgentFee,
+  setOnAgentFee2,
 }) => {
   const [disableRight, setDisableRight] = useState(true);
   const [disableLeft, setDisableLeft] = useState(false);
@@ -112,6 +110,7 @@ export const Controls = ({
             setFreeParking={setFreeParking}
             onFreeParking={onFreeParking}
             setOnFreeParking={setOnFreeParking}
+            setOnAgentFee={setOnAgentFee}
           />
           <div className="money player1">
             <h3 className="money-label">Money</h3>
@@ -166,6 +165,7 @@ export const Controls = ({
             setFreeParking={setFreeParking}
             onFreeParking2={onFreeParking2}
             setOnFreeParking2={setOnFreeParking2}
+            setOnAgentFee2={setOnAgentFee2}
           />
           <div className="money player2">
             <h3 className="money-label">Money</h3>
