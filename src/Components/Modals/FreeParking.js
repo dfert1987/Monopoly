@@ -3,6 +3,9 @@ import { motion, AnimatePresence } from "framer-motion";
 import { faXmark } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import manInMoney from "../../Assets/Misc/manInMoney.jpeg";
+import { useWindowSize } from "@react-hook/window-size";
+import Confetti from "react-confetti";
+import "../Styles/FreeParking.css";
 
 const FreeParking = ({
   freeParking,
@@ -16,6 +19,8 @@ const FreeParking = ({
   p1Money,
   p2Money,
 }) => {
+  const [width, height] = useWindowSize();
+
   const backdrop = {
     visible: { opacity: 1 },
     hidden: { opacity: 0 },
@@ -62,6 +67,7 @@ const FreeParking = ({
             animate="visible"
             exit="hidden"
           >
+            <Confetti width={width} height={height} />
             <motion.div
               className="flex flexColumn innerModalPurchase"
               variants={modal}
@@ -74,13 +80,15 @@ const FreeParking = ({
                   <FontAwesomeIcon className="x-icon" icon={faXmark} />
                 </button>
               </div>
-              <h1 className="main-congrats">Congratulations!</h1>
-              <img
-                className="manInMoney"
-                alt="man in pile of money"
-                src={manInMoney}
-              />
-              <h2 className="prize">{`Collect the pot of ¥${freeParking}!`}</h2>
+              <div className="main-part">
+                <h1 className="main-congrats">Congratulations!</h1>
+                <img
+                  className="manInMoney"
+                  alt="man in pile of money"
+                  src={manInMoney}
+                />
+                <h2 className="prize">{`Collect the pot of ¥${freeParking}!`}</h2>
+              </div>
             </motion.div>
           </motion.div>
         ) : null}
