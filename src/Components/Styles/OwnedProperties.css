@@ -203,3 +203,8 @@
   border: 2px gold solid;
   box-shadow: 0 0 15px gold;
 }
+
+.disabled {
+  pointer-events: none;
+  opacity: 0.7;
+}
