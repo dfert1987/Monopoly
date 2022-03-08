@@ -22,7 +22,6 @@ const UtilitiesModal = ({
 }) => {
   const [close, setClose] = useState(false);
   const [inSufficientFunds, setInsufficientFunds] = useState(false);
-  console.log(viewPurchaseUtil);
   const backdrop = {
     visible: { opacity: 1 },
     hidden: { opacity: 0 },
@@ -82,13 +81,10 @@ const UtilitiesModal = ({
 
   const bannerImage = () => {
     if (onUtil && utilModal && !utilModal2 && close === false) {
-      console.log(onUtil);
       return (
         <img className="bannerimage" src={onUtil.bannerImage} alt="util pic" />
       );
     } else if (onUtil2 && utilModal2 && !utilModal && close === false) {
-      console.log(onUtil2);
-
       return (
         <img
           className="bannerimage"
@@ -102,7 +98,6 @@ const UtilitiesModal = ({
 
   const frontCard = () => {
     if (onUtil && utilModal && !utilModal2 && close === false) {
-      console.log(onUtil);
       return (
         <div className="main-card">
           <div className="outer-banner rail">

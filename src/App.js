@@ -6,8 +6,8 @@ import { RailRoads } from "./Assets/Holdings/Railroads";
 import { Utilities } from "./Assets/Holdings/Utilities";
 
 function App() {
-  const [counterP1, setCounterP1] = useState(1);
-  const [counterP2, setCounterP2] = useState(1);
+  const [counterP1, setCounterP1] = useState(20);
+  const [counterP2, setCounterP2] = useState(20);
   const [turn, setTurn] = useState(0);
   const [properties, setProperties] = useState(Properties);
   const [railRoads, setRailRoads] = useState(RailRoads);
@@ -42,6 +42,10 @@ function App() {
   const [payRailTo, setPayRailTo] = useState();
   const [payUtilTo, setPayUtilTo] = useState();
   const [payUtil, setPayUtil] = useState(false);
+  const [freeParking, setFreeParking] = useState(500);
+  const [onFreeParking, setOnFreeParking] = useState(false);
+  const [onFreeParking2, setOnFreeParking2] = useState(false);
+
   return (
     <div className="App">
       <Board
@@ -80,6 +84,8 @@ function App() {
         setViewRRs={setViewRRs}
         viewRRs2={viewRRs2}
         setViewRRs2={setViewRRs2}
+        setOnProp2={setOnProp2}
+        setOnProp={setOnProp}
         onRR={onRR}
         onRR2={onRR2}
         setOnRR={setOnRR}
@@ -112,6 +118,12 @@ function App() {
         setPayUtil={setPayUtil}
         payUtilTo={payUtilTo}
         setPayUtilTo={setPayUtilTo}
+        freeParking={freeParking}
+        setFreeParking={setFreeParking}
+        onFreeParking={onFreeParking}
+        setOnFreeParking={setOnFreeParking}
+        onFreeParking2={onFreeParking2}
+        setOnFreeParking2={setOnFreeParking2}
       />
       <Controls
         counterP1={counterP1}
@@ -174,6 +186,12 @@ function App() {
         setPayUtil={setPayUtil}
         payUtilTo={payUtilTo}
         setPayUtilTo={setPayUtilTo}
+        freeParking={freeParking}
+        setFreeParking={setFreeParking}
+        onFreeParking={onFreeParking}
+        setOnFreeParking={setOnFreeParking}
+        onFreeParking2={onFreeParking2}
+        setOnFreeParking2={setOnFreeParking2}
       />
     </div>
   );

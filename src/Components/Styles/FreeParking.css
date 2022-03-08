@@ -1,0 +1,36 @@
+.main-part {
+  text-align: center;
+  padding-bottom: 10em;
+}
+
+.main-congrats {
+  font-family: "Monopoly";
+  font-size: 4em;
+  margin: 0;
+  color: white;
+  text-shadow: 2px 2px black;
+}
+
+.manInMoney {
+  height: 20em;
+  border: 2px yellow solid;
+  border-radius: 8px;
+  box-shadow: 2px 2px 2px black;
+}
+
+.prize {
+  font-size: 3.5em;
+  font-family: "Monopoly";
+  color: white;
+  margin: 0;
+  text-shadow: 2px 2px black;
+}
+
+.x-icon.free {
+  color: white;
+  transition: 0.3s;
+}
+
+.x-icon.free:hover {
+  color: black;
+}

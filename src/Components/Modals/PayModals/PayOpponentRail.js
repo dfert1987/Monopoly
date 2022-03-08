@@ -11,6 +11,8 @@ export const PayOpponentRail = ({
   setPayRail,
   onRR,
   onRR2,
+  setOnRR,
+  setOnRR2,
   railRoads,
   p1Money,
   p2Money,
@@ -42,6 +44,8 @@ export const PayOpponentRail = ({
     e.preventDefault();
     setPayRail(false);
     setPayRailTo();
+    setOnRR2();
+    setOnRR();
   };
 
   const railName = () => {

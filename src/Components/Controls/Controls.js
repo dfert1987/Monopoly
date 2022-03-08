@@ -49,6 +49,16 @@ export const Controls = ({
   setPayUtil,
   payUtilTo,
   setPayUtilTo,
+  freeParking,
+  setFreeParking,
+  onFreeParking,
+  setOnFreeParking,
+  onFreeParking2,
+  setOnFreeParking2,
+  viewFreeParking,
+  viewFreeParking2,
+  setViewFreeParking,
+  setViewFreeParking2,
 }) => {
   const [disableRight, setDisableRight] = useState(true);
   const [disableLeft, setDisableLeft] = useState(false);
@@ -98,6 +108,10 @@ export const Controls = ({
             setPayUtil={setPayUtil}
             payUtilTo={payUtilTo}
             setPayUtilTo={setPayUtilTo}
+            freeParking={freeParking}
+            setFreeParking={setFreeParking}
+            onFreeParking={onFreeParking}
+            setOnFreeParking={setOnFreeParking}
           />
           <div className="money player1">
             <h3 className="money-label">Money</h3>
@@ -148,6 +162,10 @@ export const Controls = ({
             setPayUtil={setPayUtil}
             payUtilTo={payUtilTo}
             setPayUtilTo={setPayUtilTo}
+            freeParking={freeParking}
+            setFreeParking={setFreeParking}
+            onFreeParking2={onFreeParking2}
+            setOnFreeParking2={setOnFreeParking2}
           />
           <div className="money player2">
             <h3 className="money-label">Money</h3>

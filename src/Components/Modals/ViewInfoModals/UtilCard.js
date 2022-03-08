@@ -14,7 +14,6 @@ const UtilCard = ({
   utilities,
 }) => {
   const [close, setClose] = useState(false);
-  console.log(utilities);
   const backdrop = {
     visible: { opacity: 1 },
     hidden: { opacity: 0 },

@@ -12,6 +12,8 @@ const PurchasedUtilPopUp = ({
   setViewPurchaseUtil2,
   onUtil,
   onUtil2,
+  setOnUtil,
+  setOnUtil2,
 }) => {
   const backdrop = {
     visible: { opacity: 1 },
@@ -29,12 +31,13 @@ const PurchasedUtilPopUp = ({
       transition: { delay: 0.5 },
     },
   };
-  console.log(onUtil);
 
   const handleClose = (e) => {
     e.preventDefault();
     setViewPurchaseUtil(false);
     setViewPurchaseUtil2(false);
+    setOnUtil();
+    setOnUtil2();
   };
   return (
     <>
