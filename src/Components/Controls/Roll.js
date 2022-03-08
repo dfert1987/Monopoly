@@ -37,6 +37,7 @@ export const Roll = ({
   payUtilTo,
   setPayUtilTo,
   setOnFreeParking,
+  setOnAgentFee,
 }) => {
   const [die1, setDie1] = useState(1);
   const [die2, setDie2] = useState(1);
@@ -69,7 +70,6 @@ export const Roll = ({
   };
 
   const showPropertyModal = (space) => {
-    console.log(space);
     let currentProp = properties.find((property) => property.Number === space);
     let currentRR = railRoads.find((railRoad) => railRoad.Number === space);
     let currentUtil = utilities.find((util) => util.Number === space);
@@ -96,6 +96,8 @@ export const Roll = ({
       setPayUtilTo(2);
     } else if (space === 31) {
       setOnFreeParking(true);
+    } else if (space === 39) {
+      setOnAgentFee(true);
     }
   };
 

@@ -45,6 +45,8 @@ function App() {
   const [freeParking, setFreeParking] = useState(500);
   const [onFreeParking, setOnFreeParking] = useState(false);
   const [onFreeParking2, setOnFreeParking2] = useState(false);
+  const [onAgentFee, setOnAgentFee] = useState(false);
+  const [onAgentFee2, setOnAgentFee2] = useState(false);
 
   return (
     <div className="App">
@@ -124,6 +126,10 @@ function App() {
         setOnFreeParking={setOnFreeParking}
         onFreeParking2={onFreeParking2}
         setOnFreeParking2={setOnFreeParking2}
+        onAgentFee={onAgentFee}
+        onAgentFee2={onAgentFee2}
+        setOnAgentFee={setOnAgentFee}
+        setOnAgentFee2={setOnAgentFee2}
       />
       <Controls
         counterP1={counterP1}
@@ -192,6 +198,10 @@ function App() {
         setOnFreeParking={setOnFreeParking}
         onFreeParking2={onFreeParking2}
         setOnFreeParking2={setOnFreeParking2}
+        onAgentFee={onAgentFee}
+        onAgentFee2={onAgentFee2}
+        setOnAgentFee={setOnAgentFee}
+        setOnAgentFee2={setOnAgentFee2}
       />
     </div>
   );
