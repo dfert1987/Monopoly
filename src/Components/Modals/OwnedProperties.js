@@ -44,6 +44,8 @@ const OwnedProperties = ({
   const [showOutlines1, setShowOutlines1] = useState(false);
   const [showOutlines2, setShowOutlines2] = useState(false);
 
+  console.log(canBuildP1, buildYellowP1, showOutlines1);
+
   const showProp = (prop) => {
     setChosenProp(prop);
     setPropertyCard(true);
@@ -67,6 +69,8 @@ const OwnedProperties = ({
     setCanBuildP1(false);
     setChosenProp();
     setPropertyCard(false);
+    setShowOutlines1(false);
+    setShowOutlines2(false);
   };
 
   const backdrop = {
@@ -283,7 +287,11 @@ const OwnedProperties = ({
                         <div className="cardSquare-brown">
                           {properties[21].ownedP1 ? (
                             <div
-                              className="main-square"
+                              className={`main-square ${
+                                showOutlines1 && canBuildP1 && buildBrownP1
+                                  ? "disabled"
+                                  : ""
+                              }`}
                               onClick={() => showProp(properties[21])}
                             >
                               <div className="top-square brown"></div>
@@ -297,7 +305,11 @@ const OwnedProperties = ({
                         <div className="cardSquare-brown">
                           {properties[20].ownedP1 ? (
                             <div
-                              className="main-square"
+                              className={`main-square ${
+                                showOutlines1 && canBuildP1 && buildBrownP1
+                                  ? "disabled"
+                                  : ""
+                              }`}
                               onClick={() => showProp(properties[20])}
                             >
                               <div className="top-square brown"></div>
@@ -319,7 +331,11 @@ const OwnedProperties = ({
                         <div className="cardSquare-light-blue">
                           {properties[19].ownedP1 ? (
                             <div
-                              className="main-square"
+                              className={`main-square ${
+                                showOutlines1 && canBuildP1 && buildLightBlueP1
+                                  ? "disabled"
+                                  : ""
+                              }`}
                               onClick={() => showProp(properties[19])}
                             >
                               <div className="top-square lightBlue"></div>
@@ -333,7 +349,11 @@ const OwnedProperties = ({
                         <div className="cardSquare-light-blue">
                           {properties[18].ownedP1 ? (
                             <div
-                              className="main-square"
+                              className={`main-square ${
+                                showOutlines1 && canBuildP1 && buildLightBlueP1
+                                  ? "disabled"
+                                  : ""
+                              }`}
                               onClick={() => showProp(properties[18])}
                             >
                               <div className="top-square lightBlue"></div>
@@ -347,7 +367,11 @@ const OwnedProperties = ({
                         <div className="cardSquare-light-blue">
                           {properties[17].ownedP1 ? (
                             <div
-                              className="main-square"
+                              className={`main-square ${
+                                showOutlines1 && canBuildP1 && buildLightBlueP1
+                                  ? "disabled"
+                                  : ""
+                              }`}
                               onClick={() => showProp(properties[17])}
                             >
                               <div className="top-square lightBlue"></div>
@@ -371,7 +395,11 @@ const OwnedProperties = ({
                         <div className="cardSquare-violet">
                           {properties[16].ownedP1 ? (
                             <div
-                              className="main-square"
+                              className={`main-square ${
+                                showOutlines1 && canBuildP1 && buildVioletP1
+                                  ? "disabled"
+                                  : ""
+                              }`}
                               onClick={() => showProp(properties[16])}
                             >
                               <div className="top-square violet"></div>
@@ -385,7 +413,11 @@ const OwnedProperties = ({
                         <div className="cardSquare-violet">
                           {properties[15].ownedP1 ? (
                             <div
-                              className="main-square"
+                              className={`main-square ${
+                                showOutlines1 && canBuildP1 && buildVioletP1
+                                  ? "disabled"
+                                  : ""
+                              }`}
                               onClick={() => showProp(properties[15])}
                             >
                               <div className="top-square violet"></div>
@@ -399,7 +431,11 @@ const OwnedProperties = ({
                         <div className="cardSquare-violet">
                           {properties[14].ownedP1 ? (
                             <div
-                              className="main-square"
+                              className={`main-square ${
+                                showOutlines1 && canBuildP1 && buildVioletP1
+                                  ? "disabled"
+                                  : ""
+                              }`}
                               onClick={() => showProp(properties[14])}
                             >
                               <div className="top-square violet"></div>
@@ -421,7 +457,11 @@ const OwnedProperties = ({
                         <div className="cardSquare-orange">
                           {properties[13].ownedP1 ? (
                             <div
-                              className="main-square"
+                              className={`main-square ${
+                                showOutlines1 && canBuildP1 && buildOrangeP1
+                                  ? "disabled"
+                                  : ""
+                              }`}
                               onClick={() => showProp(properties[13])}
                             >
                               <div className="top-square orange"></div>
@@ -435,7 +475,11 @@ const OwnedProperties = ({
                         <div className="cardSquare-orange">
                           {properties[12].ownedP1 ? (
                             <div
-                              className="main-square"
+                              className={`main-square ${
+                                showOutlines1 && canBuildP1 && buildOrangeP1
+                                  ? "disabled"
+                                  : ""
+                              }`}
                               onClick={() => showProp(properties[12])}
                             >
                               <div className="top-square orange"></div>
@@ -449,7 +493,11 @@ const OwnedProperties = ({
                         <div className="cardSquare-orange">
                           {properties[11].ownedP1 ? (
                             <div
-                              className="main-square"
+                              className={`main-square ${
+                                showOutlines1 && canBuildP1 && buildVioletP1
+                                  ? "disabled"
+                                  : ""
+                              }`}
                               onClick={() => showProp(properties[11])}
                             >
                               <div className="top-square orange"></div>
@@ -471,7 +519,11 @@ const OwnedProperties = ({
                         <div className="cardSquare-red">
                           {properties[10].ownedP1 ? (
                             <div
-                              className="main-square"
+                              className={`main-square ${
+                                showOutlines1 && canBuildP1 && buildRedP1
+                                  ? "disabled"
+                                  : ""
+                              }`}
                               onClick={() => showProp(properties[10])}
                             >
                               <div className="top-square red"></div>
@@ -485,7 +537,11 @@ const OwnedProperties = ({
                         <div className="cardSquare-red">
                           {properties[9].ownedP1 ? (
                             <div
-                              className="main-square"
+                              className={`main-square ${
+                                showOutlines1 && canBuildP1 && buildRedP1
+                                  ? "disabled"
+                                  : ""
+                              }`}
                               onClick={() => showProp(properties[9])}
                             >
                               <div className="top-square red"></div>
@@ -499,7 +555,11 @@ const OwnedProperties = ({
                         <div className="cardSquare-red">
                           {properties[8].ownedP1 ? (
                             <div
-                              className="main-square"
+                              className={`main-square ${
+                                showOutlines1 && canBuildP1 && buildRedP1
+                                  ? "disabled"
+                                  : ""
+                              }`}
                               onClick={() => showProp(properties[21])}
                             >
                               <div className="top-square red"></div>
@@ -521,7 +581,11 @@ const OwnedProperties = ({
                         <div className="cardSquare-yellow">
                           {properties[7].ownedP1 ? (
                             <div
-                              className="main-square"
+                              className={`main-square ${
+                                showOutlines1 && canBuildP1 && buildYellowP1
+                                  ? "disabled"
+                                  : ""
+                              }`}
                               onClick={() => showProp(properties[7])}
                             >
                               <div className="top-square yellow"></div>
@@ -535,7 +599,11 @@ const OwnedProperties = ({
                         <div className="cardSquare-yellow">
                           {properties[6].ownedP1 ? (
                             <div
-                              className="main-square"
+                              className={`main-square ${
+                                showOutlines1 && canBuildP1 && buildYellowP1
+                                  ? "disabled"
+                                  : ""
+                              }`}
                               onClick={() => showProp(properties[6])}
                             >
                               <div className="top-square yellow"></div>
@@ -549,7 +617,11 @@ const OwnedProperties = ({
                         <div className="cardSquare-yellow">
                           {properties[5].ownedP1 ? (
                             <div
-                              className="main-square"
+                              className={`main-square ${
+                                showOutlines1 && canBuildP1 && buildYellowP1
+                                  ? "disabled"
+                                  : ""
+                              }`}
                               onClick={() => showProp(properties[5])}
                             >
                               <div className="top-square yellow"></div>
@@ -571,7 +643,11 @@ const OwnedProperties = ({
                         <div className="cardSquare-green">
                           {properties[4].ownedP1 ? (
                             <div
-                              className="main-square"
+                              className={`main-square ${
+                                showOutlines1 && canBuildP1 && buildGreenP1
+                                  ? "disabled"
+                                  : ""
+                              }`}
                               onClick={() => showProp(properties[4])}
                             >
                               <div className="top-square green"></div>
@@ -585,7 +661,11 @@ const OwnedProperties = ({
                         <div className="cardSquare-green">
                           {properties[3].ownedP1 ? (
                             <div
-                              className="main-square"
+                              className={`main-square ${
+                                showOutlines1 && canBuildP1 && buildGreenP1
+                                  ? "disabled"
+                                  : ""
+                              }`}
                               onClick={() => showProp(properties[3])}
                             >
                               <div className="top-square green"></div>
@@ -599,7 +679,11 @@ const OwnedProperties = ({
                         <div className="cardSquare-green">
                           {properties[2].ownedP1 ? (
                             <div
-                              className="main-square"
+                              className={`main-square ${
+                                showOutlines1 && canBuildP1 && buildGreenP1
+                                  ? "disabled"
+                                  : ""
+                              }`}
                               onClick={() => showProp(properties[2])}
                             >
                               <div className="top-square green"></div>
@@ -619,7 +703,11 @@ const OwnedProperties = ({
                         <div className="cardSquare-blue">
                           {properties[1].ownedP1 ? (
                             <div
-                              className="main-square"
+                              className={`main-square ${
+                                showOutlines1 && canBuildP1 && buildBlueP1
+                                  ? "disabled"
+                                  : ""
+                              }`}
                               onClick={() => showProp(properties[1])}
                             >
                               <div className="top-square blue"></div>
@@ -633,7 +721,11 @@ const OwnedProperties = ({
                         <div className="cardSquare-blue">
                           {properties[0].ownedP1 ? (
                             <div
-                              className="main-square"
+                              className={`main-square ${
+                                showOutlines1 && canBuildP1 && buildBlueP1
+                                  ? "disabled"
+                                  : ""
+                              }`}
                               onClick={() => showProp(properties[0])}
                             >
                               <div className="top-square blue"></div>
