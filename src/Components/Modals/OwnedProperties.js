@@ -295,11 +295,8 @@ const OwnedProperties = ({
                   <div className="card-row left five">
                     <div
                       className={`card-group twoGroup ${
-                        showOutlines1 && canBuildP1 && buildBrownP1
-                          ? "out"
-                          : "none"
+                        showOutlines1 && canBuildP1 && buildBrownP1 ? "out" : ""
                       }`}
-                      onClick={() => buildModal("brown")}
                     >
                       <div className="card-plus-name">
                         <p className="name">{properties[21].Name}</p>
@@ -311,7 +308,11 @@ const OwnedProperties = ({
                                   ? "disabled"
                                   : ""
                               }`}
-                              onClick={() => showProp(properties[21])}
+                              onClick={
+                                showOutlines1 && canBuildP1 && buildBrownP1
+                                  ? () => buildModal("brown")
+                                  : () => showProp(properties[21])
+                              }
                             >
                               <div className="top-square brown"></div>
                               <div className="white-part"></div>
@@ -329,7 +330,11 @@ const OwnedProperties = ({
                                   ? "disabled"
                                   : ""
                               }`}
-                              onClick={() => showProp(properties[20])}
+                              onClick={
+                                showOutlines1 && canBuildP1 && buildBrownP1
+                                  ? () => buildModal("brown")
+                                  : () => showProp(properties[20])
+                              }
                             >
                               <div className="top-square brown"></div>
                               <div className="white-part"></div>
@@ -342,9 +347,8 @@ const OwnedProperties = ({
                       className={`card-group threeGroup ${
                         showOutlines1 && canBuildP1 && buildLightBlueP1
                           ? "out"
-                          : "none"
+                          : ""
                       }`}
-                      onClick={() => buildModal("light-blue")}
                     >
                       <div className="card-plus-name">
                         <p className="name">{properties[19].Name}</p>
@@ -356,7 +360,11 @@ const OwnedProperties = ({
                                   ? "disabled"
                                   : ""
                               }`}
-                              onClick={() => showProp(properties[19])}
+                              onClick={
+                                showOutlines1 && canBuildP1 && buildLightBlueP1
+                                  ? () => buildModal("light-blue")
+                                  : () => showProp(properties[19])
+                              }
                             >
                               <div className="top-square lightBlue"></div>
                               <div className="white-part"></div>
@@ -374,7 +382,11 @@ const OwnedProperties = ({
                                   ? "disabled"
                                   : ""
                               }`}
-                              onClick={() => showProp(properties[18])}
+                              onClick={
+                                showOutlines1 && canBuildP1 && buildLightBlueP1
+                                  ? () => buildModal("light-blue")
+                                  : () => showProp(properties[18])
+                              }
                             >
                               <div className="top-square lightBlue"></div>
                               <div className="white-part"></div>
@@ -392,7 +404,11 @@ const OwnedProperties = ({
                                   ? "disabled"
                                   : ""
                               }`}
-                              onClick={() => showProp(properties[17])}
+                              onClick={
+                                showOutlines1 && canBuildP1 && buildLightBlueP1
+                                  ? () => buildModal("light-blue")
+                                  : () => showProp(properties[17])
+                              }
                             >
                               <div className="top-square lightBlue"></div>
                               <div className="white-part"></div>
@@ -407,9 +423,8 @@ const OwnedProperties = ({
                       className={`card-group threeGroup ${
                         showOutlines1 && canBuildP1 && buildVioletP1
                           ? "out"
-                          : "none"
+                          : ""
                       }`}
-                      onClick={() => buildModal("violet")}
                     >
                       <div className="card-plus-name">
                         <p className="name">{properties[16].Name}</p>
@@ -421,7 +436,11 @@ const OwnedProperties = ({
                                   ? "disabled"
                                   : ""
                               }`}
-                              onClick={() => showProp(properties[16])}
+                              onClick={
+                                showOutlines1 && canBuildP1 && buildVioletP1
+                                  ? () => buildModal("violet")
+                                  : () => showProp(properties[16])
+                              }
                             >
                               <div className="top-square violet"></div>
                               <div className="white-part"></div>
@@ -439,7 +458,11 @@ const OwnedProperties = ({
                                   ? "disabled"
                                   : ""
                               }`}
-                              onClick={() => showProp(properties[15])}
+                              onClick={
+                                showOutlines1 && canBuildP1 && buildVioletP1
+                                  ? () => buildModal("violet")
+                                  : () => showProp(properties[15])
+                              }
                             >
                               <div className="top-square violet"></div>
                               <div className="white-part"></div>
@@ -457,7 +480,11 @@ const OwnedProperties = ({
                                   ? "disabled"
                                   : ""
                               }`}
-                              onClick={() => showProp(properties[14])}
+                              onClick={
+                                showOutlines1 && canBuildP1 && buildVioletP1
+                                  ? () => buildModal("violet")
+                                  : () => showProp(properties[14])
+                              }
                             >
                               <div className="top-square violet"></div>
                               <div className="white-part"></div>
@@ -470,9 +497,8 @@ const OwnedProperties = ({
                       className={`card-group threeGroup ${
                         showOutlines1 && canBuildP1 && buildOrangeP1
                           ? "out"
-                          : "none"
+                          : ""
                       }`}
-                      onClick={() => buildModal("orange")}
                     >
                       <div className="card-plus-name">
                         <p className="name">{properties[13].Name}</p>
@@ -484,7 +510,11 @@ const OwnedProperties = ({
                                   ? "disabled"
                                   : ""
                               }`}
-                              onClick={() => showProp(properties[13])}
+                              onClick={
+                                showOutlines1 && canBuildP1 && buildOrangeP1
+                                  ? () => buildModal("orange")
+                                  : () => showProp(properties[13])
+                              }
                             >
                               <div className="top-square orange"></div>
                               <div className="white-part"></div>
@@ -502,7 +532,11 @@ const OwnedProperties = ({
                                   ? "disabled"
                                   : ""
                               }`}
-                              onClick={() => showProp(properties[12])}
+                              onClick={
+                                showOutlines1 && canBuildP1 && buildOrangeP1
+                                  ? () => buildModal("orange")
+                                  : () => showProp(properties[12])
+                              }
                             >
                               <div className="top-square orange"></div>
                               <div className="white-part"></div>
@@ -516,11 +550,15 @@ const OwnedProperties = ({
                           {properties[11].ownedP1 ? (
                             <div
                               className={`main-square ${
-                                showOutlines1 && canBuildP1 && buildVioletP1
+                                showOutlines1 && canBuildP1 && buildOrangeP1
                                   ? "disabled"
                                   : ""
                               }`}
-                              onClick={() => showProp(properties[11])}
+                              onClick={
+                                showOutlines1 && canBuildP1 && buildOrangeP1
+                                  ? () => buildModal("orange")
+                                  : () => showProp(properties[11])
+                              }
                             >
                               <div className="top-square orange"></div>
                               <div className="white-part"></div>
@@ -533,11 +571,8 @@ const OwnedProperties = ({
                   <div className="card-row left six">
                     <div
                       className={`card-group threeGroup ${
-                        showOutlines1 && canBuildP1 && buildRedP1
-                          ? "out"
-                          : "none"
+                        showOutlines1 && canBuildP1 && buildRedP1 ? "out" : ""
                       }`}
-                      onClick={() => buildModal("red")}
                     >
                       <div className="card-plus-name">
                         <p className="name">{properties[10].Name}</p>
@@ -549,7 +584,11 @@ const OwnedProperties = ({
                                   ? "disabled"
                                   : ""
                               }`}
-                              onClick={() => showProp(properties[10])}
+                              onClick={
+                                showOutlines1 && canBuildP1 && buildRedP1
+                                  ? () => buildModal("red")
+                                  : () => showProp(properties[10])
+                              }
                             >
                               <div className="top-square red"></div>
                               <div className="white-part"></div>
@@ -567,7 +606,11 @@ const OwnedProperties = ({
                                   ? "disabled"
                                   : ""
                               }`}
-                              onClick={() => showProp(properties[9])}
+                              onClick={
+                                showOutlines1 && canBuildP1 && buildRedP1
+                                  ? () => buildModal("red")
+                                  : () => showProp(properties[9])
+                              }
                             >
                               <div className="top-square red"></div>
                               <div className="white-part"></div>
@@ -585,7 +628,11 @@ const OwnedProperties = ({
                                   ? "disabled"
                                   : ""
                               }`}
-                              onClick={() => showProp(properties[21])}
+                              onClick={
+                                showOutlines1 && canBuildP1 && buildRedP1
+                                  ? () => buildModal("red")
+                                  : () => showProp(properties[8])
+                              }
                             >
                               <div className="top-square red"></div>
                               <div className="white-part"></div>
@@ -598,9 +645,8 @@ const OwnedProperties = ({
                       className={`card-group threeGroup ${
                         showOutlines1 && canBuildP1 && buildYellowP1
                           ? "out"
-                          : "none"
+                          : ""
                       }`}
-                      onClick={() => buildModal("yellow")}
                     >
                       <div className="card-plus-name">
                         <p className="name">JDX</p>
@@ -612,7 +658,11 @@ const OwnedProperties = ({
                                   ? "disabled"
                                   : ""
                               }`}
-                              onClick={() => showProp(properties[7])}
+                              onClick={
+                                showOutlines1 && canBuildP1 && buildYellowP1
+                                  ? () => buildModal("yellow")
+                                  : () => showProp(properties[7])
+                              }
                             >
                               <div className="top-square yellow"></div>
                               <div className="white-part"></div>
@@ -630,7 +680,11 @@ const OwnedProperties = ({
                                   ? "disabled"
                                   : ""
                               }`}
-                              onClick={() => showProp(properties[6])}
+                              onClick={
+                                showOutlines1 && canBuildP1 && buildYellowP1
+                                  ? () => buildModal("yellow")
+                                  : () => showProp(properties[6])
+                              }
                             >
                               <div className="top-square yellow"></div>
                               <div className="white-part"></div>
@@ -648,7 +702,11 @@ const OwnedProperties = ({
                                   ? "disabled"
                                   : ""
                               }`}
-                              onClick={() => showProp(properties[5])}
+                              onClick={
+                                showOutlines1 && canBuildP1 && buildYellowP1
+                                  ? () => buildModal("yellow")
+                                  : () => showProp(properties[5])
+                              }
                             >
                               <div className="top-square yellow"></div>
                               <div className="white-part"></div>
@@ -661,11 +719,8 @@ const OwnedProperties = ({
                   <div className="card-row left five">
                     <div
                       className={`card-group threeGroup ${
-                        showOutlines1 && canBuildP1 && buildGreenP1
-                          ? "out"
-                          : "none"
+                        showOutlines1 && canBuildP1 && buildGreenP1 ? "out" : ""
                       }`}
-                      onClick={() => buildModal("green")}
                     >
                       <div className="card-plus-name">
                         <p className="name">{properties[4].Name}</p>
@@ -677,7 +732,11 @@ const OwnedProperties = ({
                                   ? "disabled"
                                   : ""
                               }`}
-                              onClick={() => showProp(properties[4])}
+                              onClick={
+                                showOutlines1 && canBuildP1 && buildGreenP1
+                                  ? () => buildModal("green")
+                                  : () => showProp(properties[4])
+                              }
                             >
                               <div className="top-square green"></div>
                               <div className="white-part"></div>
@@ -695,7 +754,11 @@ const OwnedProperties = ({
                                   ? "disabled"
                                   : ""
                               }`}
-                              onClick={() => showProp(properties[3])}
+                              onClick={
+                                showOutlines1 && canBuildP1 && buildGreenP1
+                                  ? () => buildModal("green")
+                                  : () => showProp(properties[3])
+                              }
                             >
                               <div className="top-square green"></div>
                               <div className="white-part"></div>
@@ -713,7 +776,11 @@ const OwnedProperties = ({
                                   ? "disabled"
                                   : ""
                               }`}
-                              onClick={() => showProp(properties[2])}
+                              onClick={
+                                showOutlines1 && canBuildP1 && buildGreenP1
+                                  ? () => buildModal("green")
+                                  : () => showProp(properties[2])
+                              }
                             >
                               <div className="top-square green"></div>
                               <div className="white-part"></div>
@@ -724,11 +791,8 @@ const OwnedProperties = ({
                     </div>
                     <div
                       className={`card-group twoGroup ${
-                        showOutlines1 && canBuildP1 && buildBlueP1
-                          ? "out"
-                          : "none"
+                        showOutlines1 && canBuildP1 && buildBlueP1 ? "out" : ""
                       }`}
-                      onClick={() => buildModal("blue")}
                     >
                       <div className="card-plus-name">
                         <p className="name">{properties[1].Name}</p>
@@ -740,7 +804,11 @@ const OwnedProperties = ({
                                   ? "disabled"
                                   : ""
                               }`}
-                              onClick={() => showProp(properties[1])}
+                              onClick={
+                                showOutlines1 && canBuildP1 && buildBlueP1
+                                  ? () => buildModal("blue")
+                                  : () => showProp(properties[1])
+                              }
                             >
                               <div className="top-square blue"></div>
                               <div className="white-part"></div>
@@ -758,7 +826,11 @@ const OwnedProperties = ({
                                   ? "disabled"
                                   : ""
                               }`}
-                              onClick={() => showProp(properties[0])}
+                              onClick={
+                                showOutlines1 && canBuildP1 && buildBlueP1
+                                  ? () => buildModal("blue")
+                                  : () => showProp(properties[0])
+                              }
                             >
                               <div className="top-square blue"></div>
                               <div className="white-part"></div>
@@ -908,11 +980,8 @@ const OwnedProperties = ({
                   <div className="card-row right five">
                     <div
                       className={`card-group twoGroup ${
-                        showOutlines2 && canBuildP2 && buildBrownP2
-                          ? "out"
-                          : "none"
+                        showOutlines2 && canBuildP2 && buildBrownP2 ? "out" : ""
                       }`}
-                      onClick={() => buildModal2("brown")}
                     >
                       <div className="card-plus-name">
                         <p className="name">{properties[21].Name}</p>
@@ -924,7 +993,11 @@ const OwnedProperties = ({
                                   ? "disabled"
                                   : ""
                               }`}
-                              onClick={() => showProp(properties[21])}
+                              onClick={
+                                showOutlines2 && canBuildP2 && buildBrownP2
+                                  ? () => buildModal("brown")
+                                  : () => showProp(properties[21])
+                              }
                             >
                               <div className="top-square brown"></div>
                               <div className="white-part"></div>
@@ -942,7 +1015,11 @@ const OwnedProperties = ({
                                   ? "disabled"
                                   : ""
                               }`}
-                              onClick={() => showProp(properties[20])}
+                              onClick={
+                                showOutlines2 && canBuildP2 && buildBrownP2
+                                  ? () => buildModal("brown")
+                                  : () => showProp(properties[20])
+                              }
                             >
                               <div className="top-square brown"></div>
                               <div className="white-part"></div>
@@ -955,9 +1032,8 @@ const OwnedProperties = ({
                       className={`card-group threeGroup ${
                         showOutlines2 && canBuildP2 && buildLightBlueP2
                           ? "out"
-                          : "none"
+                          : ""
                       }`}
-                      onClick={() => buildModal2("light-blue")}
                     >
                       <div className="card-plus-name">
                         <p className="name">{properties[19].Name}</p>
@@ -969,7 +1045,11 @@ const OwnedProperties = ({
                                   ? "disabled"
                                   : ""
                               }`}
-                              onClick={() => showProp(properties[19])}
+                              onClick={
+                                showOutlines2 && canBuildP2 && buildLightBlueP2
+                                  ? () => buildModal("light-blue")
+                                  : () => showProp(properties[19])
+                              }
                             >
                               <div className="top-square lightBlue"></div>
                               <div className="white-part"></div>
@@ -987,7 +1067,11 @@ const OwnedProperties = ({
                                   ? "disabled"
                                   : ""
                               }`}
-                              onClick={() => showProp(properties[18])}
+                              onClick={
+                                showOutlines2 && canBuildP2 && buildLightBlueP2
+                                  ? () => buildModal("light-blue")
+                                  : () => showProp(properties[18])
+                              }
                             >
                               <div className="top-square lightBlue"></div>
                               <div className="white-part"></div>
@@ -1005,7 +1089,11 @@ const OwnedProperties = ({
                                   ? "disabled"
                                   : ""
                               }`}
-                              onClick={() => showProp(properties[17])}
+                              onClick={
+                                showOutlines2 && canBuildP2 && buildLightBlueP2
+                                  ? () => buildModal("light-blue")
+                                  : () => showProp(properties[17])
+                              }
                             >
                               <div className="top-square lightBlue"></div>
                               <div className="white-part"></div>
@@ -1020,9 +1108,8 @@ const OwnedProperties = ({
                       className={`card-group threeGroup ${
                         showOutlines2 && canBuildP2 && buildVioletP2
                           ? "out"
-                          : "none"
+                          : ""
                       }`}
-                      onClick={() => buildModal2("violet")}
                     >
                       <div className="card-plus-name">
                         <p className="name">{properties[16].Name}</p>
@@ -1034,7 +1121,11 @@ const OwnedProperties = ({
                                   ? "disabled"
                                   : ""
                               }`}
-                              onClick={() => showProp(properties[16])}
+                              onClick={
+                                showOutlines2 && canBuildP2 && buildVioletP2
+                                  ? () => buildModal("violet")
+                                  : () => showProp(properties[16])
+                              }
                             >
                               <div className="top-square violet"></div>
                               <div className="white-part"></div>
@@ -1052,7 +1143,11 @@ const OwnedProperties = ({
                                   ? "disabled"
                                   : ""
                               }`}
-                              onClick={() => showProp(properties[15])}
+                              onClick={
+                                showOutlines2 && canBuildP2 && buildVioletP2
+                                  ? () => buildModal("violet")
+                                  : () => showProp(properties[15])
+                              }
                             >
                               <div className="top-square violet"></div>
                               <div className="white-part"></div>
@@ -1070,7 +1165,11 @@ const OwnedProperties = ({
                                   ? "disabled"
                                   : ""
                               }`}
-                              onClick={() => showProp(properties[14])}
+                              onClick={
+                                showOutlines2 && canBuildP2 && buildVioletP2
+                                  ? () => buildModal("violet")
+                                  : () => showProp(properties[14])
+                              }
                             >
                               <div className="top-square violet"></div>
                               <div className="white-part"></div>
@@ -1083,15 +1182,18 @@ const OwnedProperties = ({
                       className={`card-group threeGroup ${
                         showOutlines2 && canBuildP2 && buildOrangeP2
                           ? "out"
-                          : "none"
+                          : ""
                       }`}
-                      onClick={() => buildModal2("orange")}
                     >
                       <div className="card-plus-name">
                         <p className="name">{properties[13].Name}</p>
                         <div
                           className="cardSquare-orange"
-                          onClick={() => showProp(properties[13])}
+                          onClick={
+                            showOutlines2 && canBuildP2 && buildOrangeP2
+                              ? () => buildModal("orange")
+                              : () => showProp(properties[13])
+                          }
                         >
                           {properties[13].ownedP2 ? (
                             <div
@@ -1117,7 +1219,11 @@ const OwnedProperties = ({
                                   ? "disabled"
                                   : ""
                               }`}
-                              onClick={() => showProp(properties[12])}
+                              onClick={
+                                showOutlines2 && canBuildP2 && buildOrangeP2
+                                  ? () => buildModal("orange")
+                                  : () => showProp(properties[12])
+                              }
                             >
                               <div className="top-square orange"></div>
                               <div className="white-part"></div>
@@ -1135,7 +1241,11 @@ const OwnedProperties = ({
                                   ? "disabled"
                                   : ""
                               }`}
-                              onClick={() => showProp(properties[11])}
+                              onClick={
+                                showOutlines2 && canBuildP2 && buildOrangeP2
+                                  ? () => buildModal("orange")
+                                  : () => showProp(properties[11])
+                              }
                             >
                               <div className="top-square orange"></div>
                               <div className="white-part"></div>
@@ -1148,11 +1258,8 @@ const OwnedProperties = ({
                   <div className="card-row left six">
                     <div
                       className={`card-group threeGroup ${
-                        showOutlines2 && canBuildP2 && buildRedP2
-                          ? "out"
-                          : "none"
+                        showOutlines2 && canBuildP2 && buildRedP2 ? "out" : ""
                       }`}
-                      onClick={() => buildModal2("red")}
                     >
                       <div className="card-plus-name">
                         <p className="name">{properties[10].Name}</p>
@@ -1164,7 +1271,11 @@ const OwnedProperties = ({
                                   ? "disabled"
                                   : ""
                               }`}
-                              onClick={() => showProp(properties[10])}
+                              onClick={
+                                showOutlines2 && canBuildP2 && buildRedP2
+                                  ? () => buildModal("red")
+                                  : () => showProp(properties[10])
+                              }
                             >
                               <div className="top-square red"></div>
                               <div className="white-part"></div>
@@ -1182,7 +1293,11 @@ const OwnedProperties = ({
                                   ? "disabled"
                                   : ""
                               }`}
-                              onClick={() => showProp(properties[9])}
+                              onClick={
+                                showOutlines2 && canBuildP2 && buildRedP2
+                                  ? () => buildModal("red")
+                                  : () => showProp(properties[9])
+                              }
                             >
                               <div className="top-square red"></div>
                               <div className="white-part"></div>
@@ -1200,7 +1315,11 @@ const OwnedProperties = ({
                                   ? "disabled"
                                   : ""
                               }`}
-                              onClick={() => showProp(properties[8])}
+                              onClick={
+                                showOutlines2 && canBuildP2 && buildRedP2
+                                  ? () => buildModal("red")
+                                  : () => showProp(properties[8])
+                              }
                             >
                               <div className="top-square red"></div>
                               <div className="white-part"></div>
@@ -1213,9 +1332,8 @@ const OwnedProperties = ({
                       className={`card-group threeGroup ${
                         showOutlines2 && canBuildP2 && buildYellowP2
                           ? "out"
-                          : "none"
+                          : ""
                       }`}
-                      onClick={() => buildModal2("yellow")}
                     >
                       <div className="card-plus-name">
                         <p className="name">JDX</p>
@@ -1227,7 +1345,11 @@ const OwnedProperties = ({
                                   ? "disabled"
                                   : ""
                               }`}
-                              onClick={() => showProp(properties[7])}
+                              onClick={
+                                showOutlines2 && canBuildP2 && buildYellowP2
+                                  ? () => buildModal("yellow")
+                                  : () => showProp(properties[7])
+                              }
                             >
                               <div className="top-square yellow"></div>
                               <div className="white-part"></div>
@@ -1245,7 +1367,11 @@ const OwnedProperties = ({
                                   ? "disabled"
                                   : ""
                               }`}
-                              onClick={() => showProp(properties[6])}
+                              onClick={
+                                showOutlines2 && canBuildP2 && buildYellowP2
+                                  ? () => buildModal("yellow")
+                                  : () => showProp(properties[6])
+                              }
                             >
                               <div className="top-square yellow"></div>
                               <div className="white-part"></div>
@@ -1263,7 +1389,11 @@ const OwnedProperties = ({
                                   ? "disabled"
                                   : ""
                               }`}
-                              onClick={() => showProp(properties[5])}
+                              onClick={
+                                showOutlines2 && canBuildP2 && buildYellowP2
+                                  ? () => buildModal("yellow")
+                                  : () => showProp(properties[5])
+                              }
                             >
                               <div className="top-square yellow"></div>
                               <div className="white-part"></div>
@@ -1276,11 +1406,8 @@ const OwnedProperties = ({
                   <div className="card-row left five">
                     <div
                       className={`card-group threeGroup ${
-                        showOutlines2 && canBuildP2 && buildGreenP2
-                          ? "out"
-                          : "none"
+                        showOutlines2 && canBuildP2 && buildGreenP2 ? "out" : ""
                       }`}
-                      onClick={() => buildModal2("green")}
                     >
                       <div className="card-plus-name">
                         <p className="name">{properties[4].Name}</p>
@@ -1292,7 +1419,11 @@ const OwnedProperties = ({
                                   ? "disabled"
                                   : ""
                               }`}
-                              onClick={() => showProp(properties[4])}
+                              onClick={
+                                showOutlines2 && canBuildP2 && buildGreenP2
+                                  ? () => buildModal("green")
+                                  : () => showProp(properties[4])
+                              }
                             >
                               <div className="top-square green"></div>
                               <div className="white-part"></div>
@@ -1310,7 +1441,11 @@ const OwnedProperties = ({
                                   ? "disabled"
                                   : ""
                               }`}
-                              onClick={() => showProp(properties[3])}
+                              onClick={
+                                showOutlines2 && canBuildP2 && buildGreenP2
+                                  ? () => buildModal("green")
+                                  : () => showProp(properties[3])
+                              }
                             >
                               <div className="top-square green"></div>
                               <div className="white-part"></div>
@@ -1328,7 +1463,11 @@ const OwnedProperties = ({
                                   ? "disabled"
                                   : ""
                               }`}
-                              onClick={() => showProp(properties[2])}
+                              onClick={
+                                showOutlines2 && canBuildP2 && buildGreenP2
+                                  ? () => buildModal("green")
+                                  : () => showProp(properties[2])
+                              }
                             >
                               <div className="top-square green"></div>
                               <div className="white-part"></div>
@@ -1339,17 +1478,18 @@ const OwnedProperties = ({
                     </div>
                     <div
                       className={`card-group twoGroup ${
-                        showOutlines2 && canBuildP2 && buildBlueP2
-                          ? "out"
-                          : "none"
+                        showOutlines2 && canBuildP2 && buildBlueP2 ? "out" : ""
                       }`}
-                      onClick={() => buildModal2("blue")}
                     >
                       <div className="card-plus-name">
                         <p className="name">{properties[1].Name}</p>
                         <div
                           className="cardSquare-blue"
-                          onClick={() => showProp(properties[1])}
+                          onClick={
+                            showOutlines2 && canBuildP2 && buildBlueP2
+                              ? () => buildModal("blue")
+                              : () => showProp(properties[1])
+                          }
                         >
                           {properties[1].ownedP2 ? (
                             <div
@@ -1375,7 +1515,11 @@ const OwnedProperties = ({
                                   ? "disabled"
                                   : ""
                               }`}
-                              onClick={() => showProp(properties[0])}
+                              onClick={
+                                showOutlines2 && canBuildP2 && buildBlueP2
+                                  ? () => buildModal("blue")
+                                  : () => showProp(properties[0])
+                              }
                             >
                               <div className="top-square blue"></div>
                               <div className="white-part"></div>
