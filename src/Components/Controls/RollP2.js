@@ -116,8 +116,6 @@ export const RollP2 = ({
   };
 
   const showPropertyModal = (space) => {
-    console.log(space);
-
     let currentProp = properties.find((property) => property.Number === space);
     let currentRR = railRoads.find((railRoad) => railRoad.Number === space);
     let currentUtil = utilities.find((util) => util.Number === space);
@@ -144,7 +142,7 @@ export const RollP2 = ({
       setPayUtilTo(1);
     } else if (space === 31) {
       setOnFreeParking2(true);
-    } else if (space === 30) {
+    } else if (space === 39) {
       setOnAgentFee2(true);
     }
   };

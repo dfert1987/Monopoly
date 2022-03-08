@@ -74,11 +74,11 @@ const AgentFee = ({
               <div className="main-part">
                 <h1 className="main-congrats">Agent Fee!</h1>
                 <img
-                  className="agent"
+                  className="agent-pic"
                   alt="real estate office"
                   src={homelink}
                 />
-                <h2 className="prize">Pay Up ¥75!</h2>
+                <h2 className="prize">Pay ¥75!</h2>
               </div>
             </motion.div>
           </motion.div>
