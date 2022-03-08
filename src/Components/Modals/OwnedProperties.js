@@ -43,8 +43,20 @@ const OwnedProperties = ({
   const [buildRedP2, setBuildRedP2] = useState(false);
   const [showOutlines1, setShowOutlines1] = useState(false);
   const [showOutlines2, setShowOutlines2] = useState(false);
+  const [houseModal, setHouseModal] = useState(false);
+  const [houseModal2, setHouseModal2] = useState(false);
+  const [selectedGroup, setSelectedGroup] = useState();
+  const [selectedGroup2, setSelectedGroup2] = useState();
 
-  console.log(canBuildP1, buildYellowP1, showOutlines1);
+  const buildModal = (color) => {
+    setHouseModal(true);
+    setSelectedGroup(color);
+  };
+
+  const buildModal2 = (color) => {
+    setHouseModal2(true);
+    setSelectedGroup(color);
+  };
 
   const showProp = (prop) => {
     setChosenProp(prop);
@@ -71,6 +83,10 @@ const OwnedProperties = ({
     setPropertyCard(false);
     setShowOutlines1(false);
     setShowOutlines2(false);
+    setHouseModal(false);
+    setHouseModal2(false);
+    setSelectedGroup();
+    setSelectedGroup2();
   };
 
   const backdrop = {
@@ -279,8 +295,11 @@ const OwnedProperties = ({
                   <div className="card-row left five">
                     <div
                       className={`card-group twoGroup ${
-                        showOutlines1 && canBuildP1 && buildBrownP1 ? "out" : ""
+                        showOutlines1 && canBuildP1 && buildBrownP1
+                          ? "out"
+                          : "none"
                       }`}
+                      onClick={() => buildModal("brown")}
                     >
                       <div className="card-plus-name">
                         <p className="name">{properties[21].Name}</p>
@@ -323,8 +342,9 @@ const OwnedProperties = ({
                       className={`card-group threeGroup ${
                         showOutlines1 && canBuildP1 && buildLightBlueP1
                           ? "out"
-                          : ""
+                          : "none"
                       }`}
+                      onClick={() => buildModal("light-blue")}
                     >
                       <div className="card-plus-name">
                         <p className="name">{properties[19].Name}</p>
@@ -387,8 +407,9 @@ const OwnedProperties = ({
                       className={`card-group threeGroup ${
                         showOutlines1 && canBuildP1 && buildVioletP1
                           ? "out"
-                          : ""
+                          : "none"
                       }`}
+                      onClick={() => buildModal("violet")}
                     >
                       <div className="card-plus-name">
                         <p className="name">{properties[16].Name}</p>
@@ -449,8 +470,9 @@ const OwnedProperties = ({
                       className={`card-group threeGroup ${
                         showOutlines1 && canBuildP1 && buildOrangeP1
                           ? "out"
-                          : ""
+                          : "none"
                       }`}
+                      onClick={() => buildModal("orange")}
                     >
                       <div className="card-plus-name">
                         <p className="name">{properties[13].Name}</p>
@@ -511,8 +533,11 @@ const OwnedProperties = ({
                   <div className="card-row left six">
                     <div
                       className={`card-group threeGroup ${
-                        showOutlines1 && canBuildP1 && buildRedP1 ? "out" : ""
+                        showOutlines1 && canBuildP1 && buildRedP1
+                          ? "out"
+                          : "none"
                       }`}
+                      onClick={() => buildModal("red")}
                     >
                       <div className="card-plus-name">
                         <p className="name">{properties[10].Name}</p>
@@ -573,8 +598,9 @@ const OwnedProperties = ({
                       className={`card-group threeGroup ${
                         showOutlines1 && canBuildP1 && buildYellowP1
                           ? "out"
-                          : ""
+                          : "none"
                       }`}
+                      onClick={() => buildModal("yellow")}
                     >
                       <div className="card-plus-name">
                         <p className="name">JDX</p>
@@ -635,8 +661,11 @@ const OwnedProperties = ({
                   <div className="card-row left five">
                     <div
                       className={`card-group threeGroup ${
-                        showOutlines1 && canBuildP1 && buildGreenP1 ? "out" : ""
+                        showOutlines1 && canBuildP1 && buildGreenP1
+                          ? "out"
+                          : "none"
                       }`}
+                      onClick={() => buildModal("green")}
                     >
                       <div className="card-plus-name">
                         <p className="name">{properties[4].Name}</p>
@@ -695,8 +724,11 @@ const OwnedProperties = ({
                     </div>
                     <div
                       className={`card-group twoGroup ${
-                        showOutlines1 && canBuildP1 && buildBlueP1 ? "out" : ""
+                        showOutlines1 && canBuildP1 && buildBlueP1
+                          ? "out"
+                          : "none"
                       }`}
+                      onClick={() => buildModal("blue")}
                     >
                       <div className="card-plus-name">
                         <p className="name">{properties[1].Name}</p>
@@ -876,8 +908,11 @@ const OwnedProperties = ({
                   <div className="card-row right five">
                     <div
                       className={`card-group twoGroup ${
-                        showOutlines2 && canBuildP2 && buildBrownP2 ? "out" : ""
+                        showOutlines2 && canBuildP2 && buildBrownP2
+                          ? "out"
+                          : "none"
                       }`}
+                      onClick={() => buildModal2("brown")}
                     >
                       <div className="card-plus-name">
                         <p className="name">{properties[21].Name}</p>
@@ -920,8 +955,9 @@ const OwnedProperties = ({
                       className={`card-group threeGroup ${
                         showOutlines2 && canBuildP2 && buildLightBlueP2
                           ? "out"
-                          : ""
+                          : "none"
                       }`}
+                      onClick={() => buildModal2("light-blue")}
                     >
                       <div className="card-plus-name">
                         <p className="name">{properties[19].Name}</p>
@@ -984,8 +1020,9 @@ const OwnedProperties = ({
                       className={`card-group threeGroup ${
                         showOutlines2 && canBuildP2 && buildVioletP2
                           ? "out"
-                          : ""
+                          : "none"
                       }`}
+                      onClick={() => buildModal2("violet")}
                     >
                       <div className="card-plus-name">
                         <p className="name">{properties[16].Name}</p>
@@ -1046,8 +1083,9 @@ const OwnedProperties = ({
                       className={`card-group threeGroup ${
                         showOutlines2 && canBuildP2 && buildOrangeP2
                           ? "out"
-                          : ""
+                          : "none"
                       }`}
+                      onClick={() => buildModal2("orange")}
                     >
                       <div className="card-plus-name">
                         <p className="name">{properties[13].Name}</p>
@@ -1110,8 +1148,11 @@ const OwnedProperties = ({
                   <div className="card-row left six">
                     <div
                       className={`card-group threeGroup ${
-                        showOutlines2 && canBuildP2 && buildRedP2 ? "out" : ""
+                        showOutlines2 && canBuildP2 && buildRedP2
+                          ? "out"
+                          : "none"
                       }`}
+                      onClick={() => buildModal2("red")}
                     >
                       <div className="card-plus-name">
                         <p className="name">{properties[10].Name}</p>
@@ -1172,8 +1213,9 @@ const OwnedProperties = ({
                       className={`card-group threeGroup ${
                         showOutlines2 && canBuildP2 && buildYellowP2
                           ? "out"
-                          : ""
+                          : "none"
                       }`}
+                      onClick={() => buildModal2("yellow")}
                     >
                       <div className="card-plus-name">
                         <p className="name">JDX</p>
@@ -1234,8 +1276,11 @@ const OwnedProperties = ({
                   <div className="card-row left five">
                     <div
                       className={`card-group threeGroup ${
-                        showOutlines2 && canBuildP2 && buildGreenP2 ? "out" : ""
+                        showOutlines2 && canBuildP2 && buildGreenP2
+                          ? "out"
+                          : "none"
                       }`}
+                      onClick={() => buildModal2("green")}
                     >
                       <div className="card-plus-name">
                         <p className="name">{properties[4].Name}</p>
@@ -1294,8 +1339,11 @@ const OwnedProperties = ({
                     </div>
                     <div
                       className={`card-group twoGroup ${
-                        showOutlines2 && canBuildP2 && buildBlueP2 ? "out" : ""
+                        showOutlines2 && canBuildP2 && buildBlueP2
+                          ? "out"
+                          : "none"
                       }`}
+                      onClick={() => buildModal2("blue")}
                     >
                       <div className="card-plus-name">
                         <p className="name">{properties[1].Name}</p>
