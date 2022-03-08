@@ -6,6 +6,7 @@ import PurchasedPopUp from "./Modals/Purchased/PurchasedPopUp";
 import RRPurchasedPopUp from "./Modals/Purchased/RRPurchasedPopUp";
 import PurchasedUtilPopUp from "./Modals/Purchased/PurchasedUtilPopUp";
 import FreeParking from "./Modals/FreeParking";
+import AgentFee from "./Moadals/AgentFee";
 import OwnedProperties from "./Modals/OwnedProperties";
 import PayOpponent from "./Modals/PayModals/PayOpponent";
 import PayOpponentRail from "../Components/Modals/PayModals/PayOpponentRail";
@@ -99,6 +100,10 @@ export const Board = ({
   onFreeParking2,
   setOnFreeParking2,
   setOnProp2,
+  setOnAgentFee,
+  setOnAgentFee2,
+  onAgentFee2,
+  onAgentFee,
 }) => {
   const [viewPurchase, setViewPurchase] = useState(false);
   const [viewPurchase2, setViewPurchase2] = useState(false);
@@ -106,8 +111,6 @@ export const Board = ({
   const [viewPurchaseRR2, setViewPurchaseRR2] = useState(false);
   const [viewPurchaseUtil, setViewPurchaseUtil] = useState(false);
   const [viewPurchaseUtil2, setViewPurchaseUtil2] = useState(false);
-
-  console.log(onFreeParking, onFreeParking2);
   return (
     <div className="main-board">
       <div className="left-column">
@@ -1018,6 +1021,16 @@ export const Board = ({
           onFreeParking2={onFreeParking2}
           setOnFreeParking2={setOnFreeParking2}
           setFreeParking={setFreeParking}
+          setP1Money={setP1Money}
+          setP2Money={setP2Money}
+          p1Money={p1Money}
+          p2Money={p2Money}
+        />
+        <AgentFee
+          onAgentFee={onAgentFee}
+          onAgentFee2={onAgentFee2}
+          setOnAgentFee={setOnAgentFee}
+          setOnAgentFee2={setOnAgentFee2}
           setP1Money={setP1Money}
           setP2Money={setP2Money}
           p1Money={p1Money}
