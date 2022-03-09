@@ -966,10 +966,14 @@ const OwnedProperties = ({
                   </div>
                   <button
                     className="buy-houses"
-                    onClick={() => setShowOutlines1(true)}
+                    onClick={
+                      !showOutlines1
+                        ? () => setShowOutlines1(true)
+                        : () => setShowOutlines1(false)
+                    }
                     disabled={!canBuildP1}
                   >
-                    Buy Houses
+                    {!showOutlines1 ? "Build Houses" : "Cancel Build"}
                   </button>
                 </div>
                 <div className="property-squares">
@@ -995,7 +999,7 @@ const OwnedProperties = ({
                               }`}
                               onClick={
                                 showOutlines2 && canBuildP2 && buildBrownP2
-                                  ? () => buildModal("brown")
+                                  ? () => buildModal2("brown")
                                   : () => showProp(properties[21])
                               }
                             >
@@ -1017,7 +1021,7 @@ const OwnedProperties = ({
                               }`}
                               onClick={
                                 showOutlines2 && canBuildP2 && buildBrownP2
-                                  ? () => buildModal("brown")
+                                  ? () => buildModal2("brown")
                                   : () => showProp(properties[20])
                               }
                             >
@@ -1047,7 +1051,7 @@ const OwnedProperties = ({
                               }`}
                               onClick={
                                 showOutlines2 && canBuildP2 && buildLightBlueP2
-                                  ? () => buildModal("light-blue")
+                                  ? () => buildModal2("light-blue")
                                   : () => showProp(properties[19])
                               }
                             >
@@ -1069,7 +1073,7 @@ const OwnedProperties = ({
                               }`}
                               onClick={
                                 showOutlines2 && canBuildP2 && buildLightBlueP2
-                                  ? () => buildModal("light-blue")
+                                  ? () => buildModal2("light-blue")
                                   : () => showProp(properties[18])
                               }
                             >
@@ -1091,7 +1095,7 @@ const OwnedProperties = ({
                               }`}
                               onClick={
                                 showOutlines2 && canBuildP2 && buildLightBlueP2
-                                  ? () => buildModal("light-blue")
+                                  ? () => buildModal2("light-blue")
                                   : () => showProp(properties[17])
                               }
                             >
@@ -1123,7 +1127,7 @@ const OwnedProperties = ({
                               }`}
                               onClick={
                                 showOutlines2 && canBuildP2 && buildVioletP2
-                                  ? () => buildModal("violet")
+                                  ? () => buildModal2("violet")
                                   : () => showProp(properties[16])
                               }
                             >
@@ -1145,7 +1149,7 @@ const OwnedProperties = ({
                               }`}
                               onClick={
                                 showOutlines2 && canBuildP2 && buildVioletP2
-                                  ? () => buildModal("violet")
+                                  ? () => buildModal2("violet")
                                   : () => showProp(properties[15])
                               }
                             >
@@ -1167,7 +1171,7 @@ const OwnedProperties = ({
                               }`}
                               onClick={
                                 showOutlines2 && canBuildP2 && buildVioletP2
-                                  ? () => buildModal("violet")
+                                  ? () => buildModal2("violet")
                                   : () => showProp(properties[14])
                               }
                             >
@@ -1191,7 +1195,7 @@ const OwnedProperties = ({
                           className="cardSquare-orange"
                           onClick={
                             showOutlines2 && canBuildP2 && buildOrangeP2
-                              ? () => buildModal("orange")
+                              ? () => buildModal2("orange")
                               : () => showProp(properties[13])
                           }
                         >
@@ -1221,7 +1225,7 @@ const OwnedProperties = ({
                               }`}
                               onClick={
                                 showOutlines2 && canBuildP2 && buildOrangeP2
-                                  ? () => buildModal("orange")
+                                  ? () => buildModal2("orange")
                                   : () => showProp(properties[12])
                               }
                             >
@@ -1243,7 +1247,7 @@ const OwnedProperties = ({
                               }`}
                               onClick={
                                 showOutlines2 && canBuildP2 && buildOrangeP2
-                                  ? () => buildModal("orange")
+                                  ? () => buildModal2("orange")
                                   : () => showProp(properties[11])
                               }
                             >
@@ -1273,7 +1277,7 @@ const OwnedProperties = ({
                               }`}
                               onClick={
                                 showOutlines2 && canBuildP2 && buildRedP2
-                                  ? () => buildModal("red")
+                                  ? () => buildModal2("red")
                                   : () => showProp(properties[10])
                               }
                             >
@@ -1295,7 +1299,7 @@ const OwnedProperties = ({
                               }`}
                               onClick={
                                 showOutlines2 && canBuildP2 && buildRedP2
-                                  ? () => buildModal("red")
+                                  ? () => buildModal2("red")
                                   : () => showProp(properties[9])
                               }
                             >
@@ -1317,7 +1321,7 @@ const OwnedProperties = ({
                               }`}
                               onClick={
                                 showOutlines2 && canBuildP2 && buildRedP2
-                                  ? () => buildModal("red")
+                                  ? () => buildModal2("red")
                                   : () => showProp(properties[8])
                               }
                             >
@@ -1347,7 +1351,7 @@ const OwnedProperties = ({
                               }`}
                               onClick={
                                 showOutlines2 && canBuildP2 && buildYellowP2
-                                  ? () => buildModal("yellow")
+                                  ? () => buildModal2("yellow")
                                   : () => showProp(properties[7])
                               }
                             >
@@ -1369,7 +1373,7 @@ const OwnedProperties = ({
                               }`}
                               onClick={
                                 showOutlines2 && canBuildP2 && buildYellowP2
-                                  ? () => buildModal("yellow")
+                                  ? () => buildModal2("yellow")
                                   : () => showProp(properties[6])
                               }
                             >
@@ -1391,7 +1395,7 @@ const OwnedProperties = ({
                               }`}
                               onClick={
                                 showOutlines2 && canBuildP2 && buildYellowP2
-                                  ? () => buildModal("yellow")
+                                  ? () => buildModal2("yellow")
                                   : () => showProp(properties[5])
                               }
                             >
@@ -1421,7 +1425,7 @@ const OwnedProperties = ({
                               }`}
                               onClick={
                                 showOutlines2 && canBuildP2 && buildGreenP2
-                                  ? () => buildModal("green")
+                                  ? () => buildModal2("green")
                                   : () => showProp(properties[4])
                               }
                             >
@@ -1443,7 +1447,7 @@ const OwnedProperties = ({
                               }`}
                               onClick={
                                 showOutlines2 && canBuildP2 && buildGreenP2
-                                  ? () => buildModal("green")
+                                  ? () => buildModal2("green")
                                   : () => showProp(properties[3])
                               }
                             >
@@ -1465,7 +1469,7 @@ const OwnedProperties = ({
                               }`}
                               onClick={
                                 showOutlines2 && canBuildP2 && buildGreenP2
-                                  ? () => buildModal("green")
+                                  ? () => buildModal2("green")
                                   : () => showProp(properties[2])
                               }
                             >
@@ -1487,7 +1491,7 @@ const OwnedProperties = ({
                           className="cardSquare-blue"
                           onClick={
                             showOutlines2 && canBuildP2 && buildBlueP2
-                              ? () => buildModal("blue")
+                              ? () => buildModal2("blue")
                               : () => showProp(properties[1])
                           }
                         >
@@ -1517,7 +1521,7 @@ const OwnedProperties = ({
                               }`}
                               onClick={
                                 showOutlines2 && canBuildP2 && buildBlueP2
-                                  ? () => buildModal("blue")
+                                  ? () => buildModal2("blue")
                                   : () => showProp(properties[0])
                               }
                             >
@@ -1655,10 +1659,14 @@ const OwnedProperties = ({
                   </div>
                   <button
                     className="buy-houses"
-                    onClick={() => setShowOutlines2(true)}
+                    onClick={
+                      !showOutlines2
+                        ? () => setShowOutlines2(true)
+                        : () => setShowOutlines2(false)
+                    }
                     disabled={!canBuildP2}
                   >
-                    Buy Houses
+                    {!showOutlines2 ? "Build Houses" : "Cancel Build"}
                   </button>
                 </div>
               </div>
