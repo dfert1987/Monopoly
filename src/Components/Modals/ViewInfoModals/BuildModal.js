@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { faXmark } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import "../../Styles/BuildModal.css";
 
 const BuildModal = ({
   houseModal,
@@ -20,7 +21,11 @@ const BuildModal = ({
 }) => {
   const handleClose = (e) => {
     e.preventDefault();
+    setHouseModal2(false);
+    setHouseModal(false);
   };
+
+  console.log(houseModal, selectedGroup);
 
   const backdrop = {
     visible: { opacity: 1 },
@@ -37,6 +42,26 @@ const BuildModal = ({
       opacity: 1,
       transition: { delay: 0.5 },
     },
+  };
+
+  const PropCards = () => {
+    if (houseModal) {
+      let propsToBuild = properties.filter(
+        (property) => property.color === selectedGroup
+      );
+      let card = propsToBuild.map((n) => {
+        return (
+          <div className="main-card propCard">
+            <div className="outer-banner">
+              <div className={`banner ${n.color}`}>
+                <h2 className="prop-name"> {n.Name.toUpperCase()}</h2>
+              </div>
+            </div>
+          </div>
+        );
+      });
+      return card;
+    }
   };
 
   return (
@@ -61,6 +86,10 @@ const BuildModal = ({
                 <button className="close-button-x" onClick={handleClose}>
                   <FontAwesomeIcon className="x-icon" icon={faXmark} />
                 </button>
+              </div>
+              <h1 className="title">Build Hutongs/Apartments</h1>
+              <div className="property-cards-container">
+                <PropCards />
               </div>
             </motion.div>
           </motion.div>
