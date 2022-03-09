@@ -21,7 +21,7 @@ const PropertyModal = ({
 }) => {
   const [close, setClose] = useState(false);
   const [inSufficientFunds, setInsufficientFunds] = useState(false);
-
+  console.log(properties);
   const backdrop = {
     visible: { opacity: 1 },
     hidden: { opacity: 0 },
@@ -78,7 +78,8 @@ const PropertyModal = ({
     setPropertyModal2,
   ]);
 
-  const setMonop = () => {
+  const setMonop = (e) => {
+    console.log("heyoo");
     if (onProp.color === "blue" || onProp.color === "brown") {
       let number = properties.filter(
         (property) =>
@@ -95,16 +96,18 @@ const PropertyModal = ({
       );
       if (number.length === 3) {
         onProp.isMonopoly = true;
+        console.log(onProp);
       }
       onProp.isMonopoly = false;
     }
+    handleClose(e);
   };
 
-  const setMonop2 = () => {
+  const setMonop2 = (e) => {
     if (onProp2.color === "blue" || onProp2.color === "brown") {
       let number = properties.filter(
         (property) =>
-          property.color === onProp.color && property.ownedP2 === true
+          property.color === onProp2.color && property.ownedP2 === true
       );
       if (number.length === 2) {
         onProp2.isMonopoly = true;
@@ -120,6 +123,7 @@ const PropertyModal = ({
       }
       onProp2.isMonopoly = false;
     }
+    handleClose(e);
   };
 
   const buyProperty = (e) => {
@@ -135,12 +139,12 @@ const PropertyModal = ({
         if (obj && obj.Name === onProp.Name && obj.Price <= p1Money) {
           obj.ownedP1 = true;
           setP1Money(p1Money - obj.Price);
-          handleClose(e);
           setViewPurchase(true);
-          setMonop();
+          setMonop(e);
           return properties;
         } else if (obj.Price > p1Money) {
           setInsufficientFunds(true);
+          handleClose(e);
         }
         return null;
       });
@@ -155,12 +159,12 @@ const PropertyModal = ({
         if (obj && obj.Name === onProp2.Name && obj.Price <= p2Money) {
           obj.ownedP2 = true;
           setP2Money(p2Money - obj.Price);
-          handleClose(e);
           setViewPurchase2(true);
-          setMonop2();
+          setMonop2(e);
           return properties;
         } else if (obj.Price > p2Money) {
           setInsufficientFunds(true);
+          handleClose(e);
         }
         return null;
       });

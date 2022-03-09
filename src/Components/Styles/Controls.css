@@ -120,6 +120,8 @@
 .properties {
   margin-top: 0;
   text-align: center;
+  display: flex;
+  flex-direction: column;
 }
 
 .props-label {
