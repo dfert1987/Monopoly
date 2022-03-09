@@ -57,6 +57,35 @@ const BuildModal = ({
                 <h2 className="prop-name"> {n.Name.toUpperCase()}</h2>
               </div>
             </div>
+            <div className="all-prop-info">
+              <div className="main-prop-info">
+                <h4 className="rent">{`RENT ¥${n.rent}`}</h4>
+                <div className="house-container one">
+                  <p className="left-side">With 1 House</p>
+                  <p className="right-side">{`¥${n.oneHouse}`}</p>
+                </div>
+                <div className="house-container two">
+                  <p className="left-side">With 2 Houses</p>
+                  <p className="right-side">{`¥${n.twoHouses}`}</p>
+                </div>
+                <div className="house-container three">
+                  <p className="left-side">With 3 Houses</p>
+                  <p className="right-side">{`¥${n.threeHouses}`}</p>
+                </div>
+                <div className="house-container four">
+                  <p className="left-side">With 4 Houses</p>
+                  <p className="right-side">{`¥${n.fourHouses}`}</p>
+                </div>
+                <div className="house-container hotel">
+                  <p className="left-side">With Hotel</p>
+                  <p className="right-side">{`¥${n.hotel}`}</p>
+                </div>
+              </div>
+              <div className="secondary-prop-info">
+                <h4 className="mortgage">{`Mortgage Value: ¥${n.mortgage}`}</h4>
+                <p className="houses">{`Houses Cost ¥${n.buidlingCost}`}</p>
+              </div>
+            </div>
           </div>
         );
       });
@@ -89,6 +118,7 @@ const BuildModal = ({
               </div>
               <h1 className="title">Build Hutongs/Apartments</h1>
               <div className="property-cards-container">
+                f
                 <PropCards />
               </div>
             </motion.div>

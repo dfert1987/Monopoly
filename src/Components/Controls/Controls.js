@@ -65,9 +65,11 @@ export const Controls = ({
     if (turn === 0 || turn % 2 === 0) {
       setDisableRight(true);
       setDisableLeft(false);
+      setOnProp();
     } else {
       setDisableRight(false);
       setDisableLeft(true);
+      setOnProp2();
     }
   }, [turn]);
 

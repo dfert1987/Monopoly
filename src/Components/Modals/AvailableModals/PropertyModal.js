@@ -107,7 +107,7 @@ const PropertyModal = ({
     if (onProp2.color === "blue" || onProp2.color === "brown") {
       let number = properties.filter(
         (property) =>
-          property.color === onProp.color && property.ownedP2 === true
+          property.color === onProp2.color && property.ownedP2 === true
       );
       if (number.length === 2) {
         onProp2.isMonopoly = true;
