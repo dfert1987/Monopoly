@@ -79,7 +79,6 @@ const PropertyModal = ({
   ]);
 
   const setMonop = (e) => {
-    console.log("heyoo");
     if (onProp.color === "blue" || onProp.color === "brown") {
       let number = properties.filter(
         (property) =>
