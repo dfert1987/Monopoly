@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import PropertyCard from "../Modals/ViewInfoModals/PropertyCard";
 import RRCard from "../Modals/ViewInfoModals/RRCard";
 import UtilCard from "../Modals/ViewInfoModals/UtilCard";
+import BuildModal from "../Modals/ViewInfoModals/BuildModal";
 import { motion, AnimatePresence } from "framer-motion";
 import { faXmark } from "@fortawesome/free-solid-svg-icons";
 import ditielogo from "../../Assets/PropertyImages/ditielogo.png";
@@ -18,6 +19,10 @@ const OwnedProperties = ({
   properties,
   railRoads,
   utilities,
+  p1Money,
+  setP1Money,
+  p2Money,
+  setP2Money,
 }) => {
   const [propertyCard, setPropertyCard] = useState(false);
   const [rrCard, setRRCard] = useState(false);
@@ -55,7 +60,7 @@ const OwnedProperties = ({
 
   const buildModal2 = (color) => {
     setHouseModal2(true);
-    setSelectedGroup(color);
+    setSelectedGroup2(color);
   };
 
   const showProp = (prop) => {
@@ -1696,6 +1701,22 @@ const OwnedProperties = ({
         chosenProp={chosenProp}
         setChosenProp={setChosenProp}
         utilities={utilities}
+      />
+      <BuildModal
+        className="buildModal"
+        houseModal={houseModal}
+        houseModal2={houseModal2}
+        setHouseModal={setHouseModal}
+        setHouseModal2={setHouseModal2}
+        selectedGroup={selectedGroup}
+        selectedGroup2={selectedGroup2}
+        setSelectedGroup={setSelectedGroup}
+        setSelectedGroup2={setSelectedGroup2}
+        properties={properties}
+        p1Money={p1Money}
+        p2Money={p2Money}
+        setP1Money={setP1Money}
+        setP2Money={setP2Money}
       />
     </>
   );

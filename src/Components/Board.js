@@ -864,6 +864,10 @@ export const Board = ({
           railRoads={railRoads}
           utilities={utilities}
           onProp={onProp}
+          p1Money={p1Money}
+          setP1Money={setP1Money}
+          p2Money={p2Money}
+          setP2Money={setP2Money}
         />
         <PayOpponent
           className="pay-opponent"
