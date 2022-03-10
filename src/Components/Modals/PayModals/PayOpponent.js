@@ -48,8 +48,6 @@ export const PayOpponent = ({
     setOnProp2();
   };
 
-  console.log(onProp, onProp2);
-
   const player = () => {
     if (payTo && payTo === 2) {
       return "Player 2";
