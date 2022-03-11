@@ -16,14 +16,6 @@ export const Guanxi = [
     space: 0,
   },
   {
-    Number: 2,
-    Text: "Xin Nian Kuai Le!",
-    Instruction: "Get 200rmb in hong bao!",
-    Type: "receive",
-    amt: 200,
-    space: 0,
-  },
-  {
     Number: 3,
     Text: "Full on bender",
     Instruction: "Head to Lantern!",
@@ -169,6 +161,31 @@ export const Guanxi = [
       "Pay ayi deep cleaning fee. 30rmb for each hutong, and 50rmb for each apartment complex.",
     Type: "pay house",
     amt: null,
+    space: 0,
+  },
+  {
+    Number: 21,
+    Text: "No TP on you for public restroom",
+    Instruction: "Uregently use 20rmb to...",
+    Type: "pay",
+    amt: 20,
+    space: 0,
+  },
+  {
+    Number: 22,
+    Text: "Office party!",
+    Instruction:
+      "Collect 10rmb from opponent for mandarin oranges and warm Sprite",
+    Type: "collect opponent",
+    amt: 10,
+    space: 0,
+  },
+  {
+    Number: 23,
+    Text: "Pile of Mobikes!",
+    Instruction: "Scan a QR and go ahead 10 spaces",
+    Type: "advance",
+    amt: 10,
     space: 0,
   },
 ];

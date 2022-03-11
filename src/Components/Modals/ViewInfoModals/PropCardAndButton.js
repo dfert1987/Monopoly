@@ -10,6 +10,10 @@ const PropCardAndButton = ({
   setProperties,
   houseModal,
   houseModal2,
+  p1Money,
+  p2Money,
+  setP1Money,
+  setP2Money,
 }) => {
   const [houseCount, setHouseCount] = useState(0);
   const [hotel, setHotel] = useState(false);
@@ -18,6 +22,8 @@ const PropCardAndButton = ({
     event.preventDefault();
     if (houseCount === 0) {
       setHouseCount(1);
+      let newMoney = p1Money - card.buidlingCost;
+      setP1Money(newMoney);
       let updatedProperties = properties.map((property) => {
         if (property.Name === card.Name) {
           return { ...property, hasOneHouse: true };
@@ -29,6 +35,8 @@ const PropCardAndButton = ({
     }
     if (houseCount === 1) {
       setHouseCount(2);
+      let newMoney = p1Money - card.buidlingCost;
+      setP1Money(newMoney);
       let updatedProperties = properties.map((property) => {
         if (property.Name === card.Name) {
           return { ...property, hasTwoHouses: true };
@@ -40,6 +48,8 @@ const PropCardAndButton = ({
     }
     if (houseCount === 2) {
       setHouseCount(3);
+      let newMoney = p1Money - card.buidlingCost;
+      setP1Money(newMoney);
       let updatedProperties = properties.map((property) => {
         if (property.Name === card.Name) {
           return { ...property, hasThreeHouses: true };
@@ -51,6 +61,8 @@ const PropCardAndButton = ({
     }
     if (houseCount === 3) {
       setHouseCount(4);
+      let newMoney = p1Money - card.buidlingCost;
+      setP1Money(newMoney);
       let updatedProperties = properties.map((property) => {
         if (property.Name === card.Name) {
           return { ...property, hasFourHouses: true };
@@ -62,6 +74,8 @@ const PropCardAndButton = ({
     }
     if ((houseCount === 4) & !hotel) {
       setHotel(true);
+      let newMoney = p1Money - card.buidlingCost;
+      setP1Money(newMoney);
       let updatedProperties = properties.map((property) => {
         if (property.Name === card.Name) {
           return { ...property, hasHotel: true };
@@ -69,7 +83,6 @@ const PropCardAndButton = ({
         return property;
       });
       setProperties(updatedProperties);
-      console.log(updatedProperties);
     }
     if ((houseCount === 4) & hotel) {
       setHotel(true);
