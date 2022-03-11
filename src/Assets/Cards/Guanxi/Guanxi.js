@@ -63,14 +63,7 @@ export const Guanxi = [
     amt: 25,
     space: 0,
   },
-  {
-    Number: 8,
-    Text: "Jumble sale!",
-    Instruction: "Make 25rmb",
-    Type: "receive",
-    amt: 25,
-    space: 0,
-  },
+
   {
     Number: 9,
     Text: "Ill advised late night meet up with Nigerian homie.",
@@ -96,14 +89,6 @@ export const Guanxi = [
     space: 0,
   },
   {
-    Number: 12,
-    Text: "AQI over 400",
-    Instruction: "Go back 4 spaces.",
-    Type: "Back",
-    amt: 0,
-    space: 0,
-  },
-  {
     Number: 13,
     Text: "Duck dinner with visiting friend.",
     Instruction: "Head to Dadong",
@@ -111,14 +96,7 @@ export const Guanxi = [
     amt: 0,
     space: 30,
   },
-  {
-    Number: 14,
-    Text: "Duck dinner with visiting friend.",
-    Instruction: "Head to Dadong",
-    Type: "advance",
-    amt: 0,
-    space: 30,
-  },
+
   {
     Number: 15,
     Text: "Coffee Shots!",
@@ -135,14 +113,7 @@ export const Guanxi = [
     amt: 5,
     space: 0,
   },
-  {
-    Number: 17,
-    Text: "Fake alcohol!",
-    Instruction: "Go back 5 spaces.",
-    Type: "Back",
-    amt: 5,
-    space: 0,
-  },
+
   {
     Number: 18,
     Text: "Asshole Landlord!",
@@ -168,11 +139,36 @@ export const Guanxi = [
     space: 0,
   },
   {
-    Number: 21,
+    Number: 17,
     Text: "It's Qingming Festival!",
     Instruction: "Burn 100rmb for your ancestors.",
     Type: "Pay",
     amt: 100,
+    space: 0,
+  },
+  {
+    Number: 14,
+    Text: "Run into old man on scooter.",
+    Instruction: "Pay 200rmb to him for injuries sustained",
+    Type: "Pay",
+    amt: 200,
+    space: 0,
+  },
+  {
+    Number: 12,
+    Text: "Teacher's day!",
+    Instruction: "Collect 40rmb from opposing player.",
+    Type: "Collect opponent",
+    amt: 40,
+    space: 0,
+  },
+  {
+    Number: 8,
+    Text: "Moving day!",
+    Instruction:
+      "Pay ayi deep cleaning fee. 30rmb for each hutong, and 50rmb for each apartment complex.",
+    Type: "pay house",
+    amt: null,
     space: 0,
   },
 ];

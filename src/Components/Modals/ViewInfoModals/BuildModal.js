@@ -49,14 +49,14 @@ const BuildModal = ({
         (property) => property.color === selectedGroup
       );
       return propsToBuild.map((n, index) => {
-        return <PropCardAndButton card={n} index={index} />;
+        return <PropCardAndButton card={n} key={index} />;
       });
     } else if (houseModal2) {
       let propsToBuild = properties.filter(
         (property) => property.color === selectedGroup2
       );
       return propsToBuild.map((n, index) => {
-        return <PropCardAndButton card={n} index={index} />;
+        return <PropCardAndButton card={n} key={index} />;
       });
     }
     return null;
@@ -74,7 +74,7 @@ const BuildModal = ({
             exit="hidden"
           >
             <motion.div
-              className="innerModalProps flex flexColumn"
+              className="innerModalProps flex flexColumn properties"
               variants={modal}
               initial="hidden"
               animate="visible"

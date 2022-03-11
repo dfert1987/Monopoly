@@ -1,12 +1,80 @@
-import React from "react";
+import React, { useState } from "react";
+import hutong from "../../../Assets/Misc/hutong.jpeg";
+import apartment from "../../../Assets/Misc/biejing apartment.jpeg";
 import "../../Styles/BuildModal.css";
 
 const PropCardAndButton = ({ card, index }) => {
+  const [houseCount, setHouseCount] = useState(0);
+  const [hotel, setHotel] = useState(false);
+
+  const buyHutong = () => {
+    if (houseCount < 4) {
+      let newHouse = houseCount + 1;
+      setHouseCount(newHouse);
+      //   subtract money
+      //   adjust actual prop
+    }
+    if (houseCount === 4) {
+      setHouseCount(0);
+      setHotel(true);
+    } else if (hotel === true) {
+      setHouseCount(0);
+      setHotel(true);
+    }
+    return null;
+  };
+  console.log(houseCount);
+
+  const setHouses = () => {
+    if (houseCount === 1) {
+      return (
+        <div className="house-container">
+          <img className="hutong-piece" alt="house-icon" src={hutong} />
+        </div>
+      );
+    } else if (houseCount === 2) {
+      return (
+        <div className="house-container">
+          <img className="hutong-piece" alt="house-icon" src={hutong} />
+          <img className="hutong-piece" alt="house-icon" src={hutong} />
+        </div>
+      );
+    } else if (houseCount === 3) {
+      return (
+        <div className="house-container">
+          <img className="hutong-piece" alt="house-icon" src={hutong} />
+          <img className="hutong-piece" alt="house-icon" src={hutong} />
+          <img className="hutong-piece" alt="house-icon" src={hutong} />
+        </div>
+      );
+    } else if (houseCount === 4) {
+      return (
+        <div className="house-container">
+          <img className="hutong-piece" alt="house-icon" src={hutong} />
+          <img className="hutong-piece" alt="house-icon" src={hutong} />
+          <img className="hutong-piece" alt="house-icon" src={hutong} />
+          <img className="hutong-piece" alt="house-icon" src={hutong} />
+        </div>
+      );
+    } else if (hotel) {
+      return (
+        <div className="house-container">
+          <img
+            className="hutong-piece hotel"
+            alt="hotel-icon"
+            src={apartment}
+          />
+        </div>
+      );
+    }
+  };
+
   return (
-    <div className="container" id={index}>
-      <div className="main-card propCard">
+    <div className="container" id={index} key={index}>
+      <div className="main-card propCard houses">
         <div className="outer-banner">
           <div className={`banner ${card.color}`}>
+            {setHouses()}
             <h2 className="prop-name">{card.Name.toUpperCase()}</h2>
           </div>
         </div>
@@ -40,6 +108,9 @@ const PropCardAndButton = ({ card, index }) => {
           </div>
         </div>
       </div>
+      <button className="buy" onClick={() => buyHutong()} key={index}>
+        Buy House
+      </button>
     </div>
   );
 };
