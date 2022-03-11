@@ -22,6 +22,7 @@ const OwnedProperties = ({
   p1Money,
   setP1Money,
   p2Money,
+  setProperties,
   setP2Money,
 }) => {
   const [propertyCard, setPropertyCard] = useState(false);
@@ -1713,6 +1714,7 @@ const OwnedProperties = ({
         setSelectedGroup={setSelectedGroup}
         setSelectedGroup2={setSelectedGroup2}
         properties={properties}
+        setProperties={setProperties}
         p1Money={p1Money}
         p2Money={p2Money}
         setP1Money={setP1Money}

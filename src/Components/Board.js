@@ -861,6 +861,7 @@ export const Board = ({
           setViewProperties={setViewProperties}
           setViewProperties2={setViewProperties2}
           properties={properties}
+          setProperties={setProperties}
           railRoads={railRoads}
           utilities={utilities}
           onProp={onProp}

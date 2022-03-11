@@ -3,27 +3,79 @@ import hutong from "../../../Assets/Misc/hutong.jpeg";
 import apartment from "../../../Assets/Misc/biejing apartment.jpeg";
 import "../../Styles/BuildModal.css";
 
-const PropCardAndButton = ({ card, index }) => {
+const PropCardAndButton = ({
+  card,
+  index,
+  properties,
+  setProperties,
+  houseModal,
+  houseModal2,
+}) => {
   const [houseCount, setHouseCount] = useState(0);
   const [hotel, setHotel] = useState(false);
 
-  const buyHutong = () => {
-    if (houseCount < 4) {
-      let newHouse = houseCount + 1;
-      setHouseCount(newHouse);
-      //   subtract money
-      //   adjust actual prop
+  const buyHutong = (event) => {
+    event.preventDefault();
+    if (houseCount === 0) {
+      setHouseCount(1);
+      let updatedProperties = properties.map((property) => {
+        if (property.Name === card.Name) {
+          return { ...property, hasOneHouse: true };
+        }
+        return property;
+      });
+      setProperties(updatedProperties);
+      console.log(updatedProperties);
     }
-    if (houseCount === 4) {
-      setHouseCount(0);
+    if (houseCount === 1) {
+      setHouseCount(2);
+      let updatedProperties = properties.map((property) => {
+        if (property.Name === card.Name) {
+          return { ...property, hasTwoHouses: true };
+        }
+        return property;
+      });
+      setProperties(updatedProperties);
+      console.log(updatedProperties);
+    }
+    if (houseCount === 2) {
+      setHouseCount(3);
+      let updatedProperties = properties.map((property) => {
+        if (property.Name === card.Name) {
+          return { ...property, hasThreeHouses: true };
+        }
+        return property;
+      });
+      setProperties(updatedProperties);
+      console.log(updatedProperties);
+    }
+    if (houseCount === 3) {
+      setHouseCount(4);
+      let updatedProperties = properties.map((property) => {
+        if (property.Name === card.Name) {
+          return { ...property, hasFourHouses: true };
+        }
+        return property;
+      });
+      setProperties(updatedProperties);
+      console.log(updatedProperties);
+    }
+    if ((houseCount === 4) & !hotel) {
       setHotel(true);
-    } else if (hotel === true) {
-      setHouseCount(0);
+      let updatedProperties = properties.map((property) => {
+        if (property.Name === card.Name) {
+          return { ...property, hasHotel: true };
+        }
+        return property;
+      });
+      setProperties(updatedProperties);
+      console.log(updatedProperties);
+    }
+    if ((houseCount === 4) & hotel) {
       setHotel(true);
     }
     return null;
   };
-  console.log(houseCount);
 
   const setHouses = () => {
     if (houseCount === 1) {
@@ -47,7 +99,7 @@ const PropCardAndButton = ({ card, index }) => {
           <img className="hutong-piece" alt="house-icon" src={hutong} />
         </div>
       );
-    } else if (houseCount === 4) {
+    } else if (houseCount === 4 && !hotel) {
       return (
         <div className="house-container">
           <img className="hutong-piece" alt="house-icon" src={hutong} />
@@ -108,7 +160,7 @@ const PropCardAndButton = ({ card, index }) => {
           </div>
         </div>
       </div>
-      <button className="buy" onClick={() => buyHutong()} key={index}>
+      <button className="buy" onClick={buyHutong} key={index}>
         Buy House
       </button>
     </div>

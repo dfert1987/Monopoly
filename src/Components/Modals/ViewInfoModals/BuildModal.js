@@ -15,6 +15,7 @@ const BuildModal = ({
   setSelectedGroup,
   setSelectedGroup2,
   properties,
+  setProperties,
   p1Money,
   p2Money,
   setP1Money,
@@ -42,21 +43,36 @@ const BuildModal = ({
       transition: { delay: 0.5 },
     },
   };
-  console.log(houseModal);
   const propCards = () => {
     if (houseModal) {
       let propsToBuild = properties.filter(
         (property) => property.color === selectedGroup
       );
       return propsToBuild.map((n, index) => {
-        return <PropCardAndButton card={n} key={index} />;
+        return (
+          <PropCardAndButton
+            card={n}
+            key={index}
+            properties={properties}
+            houseModal={houseModal}
+            setProperties={setProperties}
+          />
+        );
       });
     } else if (houseModal2) {
       let propsToBuild = properties.filter(
         (property) => property.color === selectedGroup2
       );
       return propsToBuild.map((n, index) => {
-        return <PropCardAndButton card={n} key={index} />;
+        return (
+          <PropCardAndButton
+            card={n}
+            key={index}
+            properties={properties}
+            houseModal2={houseModal2}
+            setProperties={setProperties}
+          />
+        );
       });
     }
     return null;
