@@ -45,13 +45,13 @@ const PropertyCard = ({
   };
 
   const houses = () => {
-    if (chosenProp.hasOneHouse) {
+    if (chosenProp.hasOneHouse && !chosenProp.hasTwoHouses) {
       return "1";
-    } else if (chosenProp.hasTwoHouses) {
+    } else if (chosenProp.hasTwoHouses && !chosenProp.hasThreeHouses) {
       return "2";
-    } else if (chosenProp.hasThreeHouses) {
+    } else if (chosenProp.hasThreeHouses && !chosenProp.hasFourHouses) {
       return "3";
-    } else if (chosenProp.hasFourHouses) {
+    } else if (chosenProp.hasFourHouses && !chosenProp.hasHotel) {
       return "4";
     } else return "None";
   };
