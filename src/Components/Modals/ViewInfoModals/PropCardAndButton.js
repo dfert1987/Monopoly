@@ -15,6 +15,7 @@ const PropCardAndButton = ({
   setP1Money,
   setP2Money,
 }) => {
+  console.log(setP1Money);
   const [houseCount, setHouseCount] = useState(0);
   const [hotel, setHotel] = useState(false);
 
@@ -31,7 +32,13 @@ const PropCardAndButton = ({
       setHouseCount(0);
       setHotel(true);
     }
-  });
+  }, [
+    card.hasOneHouse,
+    card.hasTwoHouses,
+    card.hasThreeHouses,
+    card.hasFourHouses,
+    card.hasHotel,
+  ]);
 
   const buyHutong = (event) => {
     event.preventDefault();

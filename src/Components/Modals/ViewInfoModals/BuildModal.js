@@ -43,6 +43,7 @@ const BuildModal = ({
       transition: { delay: 0.5 },
     },
   };
+  console.log(setP1Money);
   const propCards = () => {
     if (houseModal) {
       let propsToBuild = properties.filter(
@@ -55,7 +56,12 @@ const BuildModal = ({
             key={index}
             properties={properties}
             houseModal={houseModal}
+            houseModal2={houseModal2}
             setProperties={setProperties}
+            setP1Money={setP1Money}
+            setP2Money={setP2Money}
+            p1Money={p1Money}
+            p2Money={p2Money}
           />
         );
       });
@@ -71,6 +77,10 @@ const BuildModal = ({
             properties={properties}
             houseModal2={houseModal2}
             setProperties={setProperties}
+            p1Money={p1Money}
+            p2Money={p2Money}
+            setP1Money={setP1Money}
+            setP2Money={setP2Money}
           />
         );
       });
