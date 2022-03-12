@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import hutong from "../../../Assets/Misc/hutong.jpeg";
 import apartment from "../../../Assets/Misc/biejing apartment.jpeg";
 import "../../Styles/BuildModal.css";
@@ -17,6 +17,21 @@ const PropCardAndButton = ({
 }) => {
   const [houseCount, setHouseCount] = useState(0);
   const [hotel, setHotel] = useState(false);
+
+  useEffect(() => {
+    if (card.hasOneHouse === true && card.hasTwoHouses === false) {
+      setHouseCount(1);
+    } else if (card.hasTwoHouses === true && card.hasThreeHouses === false) {
+      setHouseCount(2);
+    } else if (card.hasThreeHouses === true && card.hasFourHouses === false) {
+      setHouseCount(3);
+    } else if (card.hasFourHouses === true && card.hasHotel === false) {
+      setHouseCount(4);
+    } else if (card.hasHotel === true) {
+      setHouseCount(0);
+      setHotel(true);
+    }
+  });
 
   const buyHutong = (event) => {
     event.preventDefault();
