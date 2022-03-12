@@ -68,7 +68,7 @@ export const PayOpponent = ({
         (property) =>
           property.color === onProp2.color && property.ownedP1 === true
       );
-      if (number.length === 2) {
+      if (number.length === 2 && onProp2.hasOneHouse === false) {
         let p1New = p1Money + onProp2.monopolyRent;
         let p2New = p2Money - onProp2.monopolyRent;
         setP1Money(p1New);
@@ -80,6 +80,52 @@ export const PayOpponent = ({
         setP1Money(p1New);
         setP2Money(p2New);
         setRent(onProp2.rent);
+      } else if (
+        number.length === 2 &&
+        onProp2.hasOneHouse === true &&
+        onProp2.hasTwoHouses === false
+      ) {
+        let p1New = p1Money + onProp2.oneHouse;
+        let p2New = p2Money - onProp2.oneHouse;
+        setP1Money(p1New);
+        setP2Money(p2New);
+        setRent(onProp2.oneHouse);
+      } else if (
+        number.length === 2 &&
+        onProp2.hasTwoHouses === true &&
+        onProp2.hasThreeHouses === false
+      ) {
+        let p1New = p1Money + onProp2.twoHouses;
+        let p2New = p2Money - onProp2.twoHouses;
+        setP1Money(p1New);
+        setP2Money(p2New);
+        setRent(onProp2.twoHouses);
+      } else if (
+        number.length === 2 &&
+        onProp2.hasThreeHouses === true &&
+        onProp2.hasFourHouses === false
+      ) {
+        let p1New = p1Money + onProp2.threeHouses;
+        let p2New = p2Money - onProp2.threeHouses;
+        setP1Money(p1New);
+        setP2Money(p2New);
+        setRent(onProp2.threeHouses);
+      } else if (
+        number.length === 2 &&
+        onProp2.hasFourHouses === true &&
+        onProp2.hasHotel === false
+      ) {
+        let p1New = p1Money + onProp2.fourHouses;
+        let p2New = p2Money - onProp2.fourHouses;
+        setP1Money(p1New);
+        setP2Money(p2New);
+        setRent(onProp2.fourHouses);
+      } else if (number.length === 2 && onProp2.hasHotel === true) {
+        let p1New = p1Money + onProp2.hotel;
+        let p2New = p2Money - onProp2.hotel;
+        setP1Money(p1New);
+        setP2Money(p2New);
+        setRent(onProp2.hotel);
       }
     } else if (
       onProp &&
