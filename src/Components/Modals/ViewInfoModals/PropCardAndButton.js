@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
-import hutong from "../../../Assets/Misc/hutong.jpeg";
-import apartment from "../../../Assets/Misc/biejing apartment.jpeg";
+import hutong from "../../../Assets/Misc/hutong.png";
+import apartment from "../../../Assets/Misc/apartment.png";
 import "../../Styles/BuildModal.css";
 
 const PropCardAndButton = ({
