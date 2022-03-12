@@ -195,4 +195,12 @@ export const Yunqi = [
     amt: 250,
     space: 0,
   },
+  {
+    Number: 25,
+    Text: "Your 'guy' has arrived!",
+    Instruction: "Advance to Dada (bathroom)",
+    Type: "advance",
+    amt: null,
+    space: 20,
+  },
 ];

@@ -188,4 +188,12 @@ export const Guanxi = [
     amt: 10,
     space: 0,
   },
+  {
+    Number: 24,
+    Text: "Join the Beijing Beatles",
+    Instruction: "Play FuBar and make 100rmb",
+    Type: "collect",
+    amt: 100,
+    space: 0,
+  },
 ];

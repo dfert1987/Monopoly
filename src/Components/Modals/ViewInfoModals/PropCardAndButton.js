@@ -20,7 +20,7 @@ const PropCardAndButton = ({
 
   const buyHutong = (event) => {
     event.preventDefault();
-    if (houseCount === 0) {
+    if (houseCount === 0 && houseModal) {
       setHouseCount(1);
       let newMoney = p1Money - card.buidlingCost;
       setP1Money(newMoney);
@@ -31,9 +31,8 @@ const PropCardAndButton = ({
         return property;
       });
       setProperties(updatedProperties);
-      console.log(updatedProperties);
     }
-    if (houseCount === 1) {
+    if (houseCount === 1 && houseModal) {
       setHouseCount(2);
       let newMoney = p1Money - card.buidlingCost;
       setP1Money(newMoney);
@@ -44,9 +43,8 @@ const PropCardAndButton = ({
         return property;
       });
       setProperties(updatedProperties);
-      console.log(updatedProperties);
     }
-    if (houseCount === 2) {
+    if (houseCount === 2 && houseModal) {
       setHouseCount(3);
       let newMoney = p1Money - card.buidlingCost;
       setP1Money(newMoney);
@@ -57,9 +55,8 @@ const PropCardAndButton = ({
         return property;
       });
       setProperties(updatedProperties);
-      console.log(updatedProperties);
     }
-    if (houseCount === 3) {
+    if (houseCount === 3 && houseModal) {
       setHouseCount(4);
       let newMoney = p1Money - card.buidlingCost;
       setP1Money(newMoney);
@@ -70,9 +67,8 @@ const PropCardAndButton = ({
         return property;
       });
       setProperties(updatedProperties);
-      console.log(updatedProperties);
     }
-    if ((houseCount === 4) & !hotel) {
+    if (houseCount === 4 && houseModal && !hotel) {
       setHotel(true);
       let newMoney = p1Money - card.buidlingCost;
       setP1Money(newMoney);
@@ -84,7 +80,70 @@ const PropCardAndButton = ({
       });
       setProperties(updatedProperties);
     }
-    if ((houseCount === 4) & hotel) {
+    if (houseCount === 4 && hotel && houseModal) {
+      setHotel(true);
+    }
+    if (houseCount === 0 && houseModal2) {
+      setHouseCount(1);
+      let newMoney = p2Money - card.buidlingCost;
+      setP2Money(newMoney);
+      let updatedProperties = properties.map((property) => {
+        if (property.Name === card.Name) {
+          return { ...property, hasOneHouse: true };
+        }
+        return property;
+      });
+      setProperties(updatedProperties);
+    }
+    if (houseCount === 1 && houseModal2) {
+      setHouseCount(2);
+      let newMoney = p2Money - card.buidlingCost;
+      setP2Money(newMoney);
+      let updatedProperties = properties.map((property) => {
+        if (property.Name === card.Name) {
+          return { ...property, hasTwoHouses: true };
+        }
+        return property;
+      });
+      setProperties(updatedProperties);
+    }
+    if (houseCount === 2 && houseModal2) {
+      setHouseCount(3);
+      let newMoney = p2Money - card.buidlingCost;
+      setP1Money(newMoney);
+      let updatedProperties = properties.map((property) => {
+        if (property.Name === card.Name) {
+          return { ...property, hasTwoHouses: true };
+        }
+        return property;
+      });
+      setProperties(updatedProperties);
+    }
+    if (houseCount === 3 && houseModal2) {
+      setHouseCount(4);
+      let newMoney = p2Money - card.buidlingCost;
+      setP2Money(newMoney);
+      let updatedProperties = properties.map((property) => {
+        if (property.Name === card.Name) {
+          return { ...property, hasTwoHouses: true };
+        }
+        return property;
+      });
+      setProperties(updatedProperties);
+    }
+    if (houseCount === 4 && houseModal2 && !hotel) {
+      setHotel(true);
+      let newMoney = p2Money - card.buidlingCost;
+      setP2Money(newMoney);
+      let updatedProperties = properties.map((property) => {
+        if (property.Name === card.Name) {
+          return { ...property, hasTwoHouses: true };
+        }
+        return property;
+      });
+      setProperties(updatedProperties);
+    }
+    if (houseCount === 4 && hotel && houseModal2) {
       setHotel(true);
     }
     return null;
