@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import PropCardAndButton from "./PropCardAndButton";
 import { motion, AnimatePresence } from "framer-motion";
 import { faXmark } from "@fortawesome/free-solid-svg-icons";
@@ -21,10 +21,13 @@ const BuildModal = ({
   setP1Money,
   setP2Money,
 }) => {
+  const [tooMuch, setTooMuch] = useState(false);
+
   const handleClose = (e) => {
     e.preventDefault();
     setHouseModal2(false);
     setHouseModal(false);
+    setTooMuch(false);
   };
 
   const backdrop = {
@@ -62,6 +65,8 @@ const BuildModal = ({
             setP2Money={setP2Money}
             p1Money={p1Money}
             p2Money={p2Money}
+            setTooMuch={setTooMuch}
+            tooMuch={tooMuch}
           />
         );
       });
@@ -81,6 +86,8 @@ const BuildModal = ({
             p2Money={p2Money}
             setP1Money={setP1Money}
             setP2Money={setP2Money}
+            setTooMuch={setTooMuch}
+            tooMuch={tooMuch}
           />
         );
       });
