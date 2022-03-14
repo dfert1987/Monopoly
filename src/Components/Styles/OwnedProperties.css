@@ -207,3 +207,22 @@
   box-shadow: 0 0 15px gold;
   cursor: pointer;
 }
+
+.buy-houses {
+  background-color: white;
+  border-radius: 5px;
+  cursor: pointer;
+  box-shadow: 0px 0px 12px -2px;
+  font-family: "Monopoly";
+  font-size: 1em;
+  margin-bottom: 1em;
+  margin-top: 0em;
+  width: 8em;
+  overflow: hidden;
+  transition: background-color 0.3s ease;
+}
+
+.buy-houses:hover {
+  background-color: grey;
+  color: white;
+}

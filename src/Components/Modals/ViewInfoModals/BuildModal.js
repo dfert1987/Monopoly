@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import PropCardAndButton from "./PropCardAndButton";
 import { motion, AnimatePresence } from "framer-motion";
 import { faXmark } from "@fortawesome/free-solid-svg-icons";
@@ -21,10 +21,13 @@ const BuildModal = ({
   setP1Money,
   setP2Money,
 }) => {
+  const [tooMuch, setTooMuch] = useState(false);
+
   const handleClose = (e) => {
     e.preventDefault();
     setHouseModal2(false);
     setHouseModal(false);
+    setTooMuch(false);
   };
 
   const backdrop = {
@@ -43,7 +46,6 @@ const BuildModal = ({
       transition: { delay: 0.5 },
     },
   };
-  console.log(setP1Money);
   const propCards = () => {
     if (houseModal) {
       let propsToBuild = properties.filter(
@@ -62,6 +64,8 @@ const BuildModal = ({
             setP2Money={setP2Money}
             p1Money={p1Money}
             p2Money={p2Money}
+            setTooMuch={setTooMuch}
+            tooMuch={tooMuch}
           />
         );
       });
@@ -81,6 +85,8 @@ const BuildModal = ({
             p2Money={p2Money}
             setP1Money={setP1Money}
             setP2Money={setP2Money}
+            setTooMuch={setTooMuch}
+            tooMuch={tooMuch}
           />
         );
       });
@@ -112,6 +118,11 @@ const BuildModal = ({
                 </button>
               </div>
               <h1 className="title">Build Hutongs/Apartments</h1>
+              {tooMuch ? (
+                <div className="insufficient-warning-container">
+                  <p className="insufficient-warning">Insufficient Funds</p>
+                </div>
+              ) : null}
               <div className="property-cards-container">{propCards()}</div>
             </motion.div>
           </motion.div>
