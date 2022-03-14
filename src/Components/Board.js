@@ -63,14 +63,6 @@ export const Board = ({
   setRRModal2,
   railRoads,
   setRailRoads,
-  viewRRs,
-  setViewRRs,
-  viewRRs2,
-  setViewRRs2,
-  viewUtils,
-  viewUtils2,
-  setViewUtils,
-  setViewUtils2,
   utilModal,
   utilModal2,
   setUtilModal,
@@ -861,6 +853,7 @@ export const Board = ({
           setViewProperties={setViewProperties}
           setViewProperties2={setViewProperties2}
           properties={properties}
+          setProperties={setProperties}
           railRoads={railRoads}
           utilities={utilities}
           onProp={onProp}

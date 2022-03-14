@@ -22,6 +22,7 @@ const OwnedProperties = ({
   p1Money,
   setP1Money,
   p2Money,
+  setProperties,
   setP2Money,
 }) => {
   const [propertyCard, setPropertyCard] = useState(false);
@@ -52,6 +53,7 @@ const OwnedProperties = ({
   const [houseModal2, setHouseModal2] = useState(false);
   const [selectedGroup, setSelectedGroup] = useState();
   const [selectedGroup2, setSelectedGroup2] = useState();
+  console.log(setP1Money);
 
   const buildModal = (color) => {
     setHouseModal(true);
@@ -1713,6 +1715,7 @@ const OwnedProperties = ({
         setSelectedGroup={setSelectedGroup}
         setSelectedGroup2={setSelectedGroup2}
         properties={properties}
+        setProperties={setProperties}
         p1Money={p1Money}
         p2Money={p2Money}
         setP1Money={setP1Money}

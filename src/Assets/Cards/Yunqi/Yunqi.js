@@ -74,7 +74,8 @@ export const Yunqi = [
   {
     Number: 10,
     Text: "Hungover teaching!",
-    Instruction: "Go back 3 spaces.",
+    Instruction:
+      "8 hours of Hangman later - Go back 3 spaces and reevaluate your life.",
     Type: "Back",
     amt: 3,
     space: 0,
@@ -147,7 +148,8 @@ export const Yunqi = [
   {
     Number: 19,
     Text: "Lose Bank of China Debit Card",
-    Instruction: "Pay $50 for replacement",
+    Instruction:
+      "Pay $50 for replacement, and skip turn while stuck at Bank of China.",
     Type: "Pay",
     amt: 50,
     space: 0,
@@ -167,5 +169,38 @@ export const Yunqi = [
     Type: "Back",
     amt: 6,
     space: 0,
+  },
+  {
+    Number: 22,
+    Text: "You got bricked!",
+    Instruction: "Lose two random houses to government bricklayers",
+    Type: "House",
+    amt: null,
+    space: null,
+  },
+  {
+    Number: 23,
+    Text: "Visa Run",
+    Instruction:
+      "Head directly to home country (just visiting). Do not pass go. Pay 200rmb",
+    Type: "pay space",
+    amt: 200,
+    space: 11,
+  },
+  {
+    Number: 24,
+    Text: "You went to Maggies and got more than the Hot Dog",
+    Instruction: "Pay 250rmb, and feel full of regret.",
+    Type: "pay",
+    amt: 250,
+    space: 0,
+  },
+  {
+    Number: 25,
+    Text: "Your 'guy' has arrived!",
+    Instruction: "Advance to Dada (bathroom)",
+    Type: "advance",
+    amt: null,
+    space: 20,
   },
 ];

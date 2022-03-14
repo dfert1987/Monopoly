@@ -12,8 +12,6 @@ const RailRoadModal = ({
   rrModal2,
   onRR,
   onRR2,
-  setOnRR,
-  setOnRR2,
   railRoads,
   p1Money,
   setP1Money,
@@ -47,8 +45,6 @@ const RailRoadModal = ({
     setRRModal(false);
     setRRModal2(false);
     setClose(false);
-    setOnRR();
-    setOnRR2();
   };
 
   useEffect(() => {

@@ -2,4 +2,40 @@
   display: flex;
   flex-direction: row;
   justify-content: center;
+  padding-top: 1em;
+}
+
+.hutong {
+  max-height: 4em;
+  margin-top: 8em;
+  text-align: center;
+  cursor: grab;
+}
+
+.main-card.propCard.houses {
+  height: 25em;
+}
+.hutong:active {
+  cursor: grabbing;
+}
+
+.hutong-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.buy {
+  width: 10em;
+  margin-top: 2em;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.innerModalProps.flex.flexColumn.properties {
+  height: 40em;
+}
+
+.hutong-piece {
+  max-height: 3em;
 }

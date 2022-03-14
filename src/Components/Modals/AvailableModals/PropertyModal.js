@@ -21,7 +21,6 @@ const PropertyModal = ({
 }) => {
   const [close, setClose] = useState(false);
   const [inSufficientFunds, setInsufficientFunds] = useState(false);
-  console.log(properties);
   const backdrop = {
     visible: { opacity: 1 },
     hidden: { opacity: 0 },
@@ -95,7 +94,6 @@ const PropertyModal = ({
       );
       if (number.length === 3) {
         onProp.isMonopoly = true;
-        console.log(onProp);
       }
       onProp.isMonopoly = false;
     }

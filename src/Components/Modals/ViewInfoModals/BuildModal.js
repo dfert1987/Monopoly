@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React from "react";
+import PropCardAndButton from "./PropCardAndButton";
 import { motion, AnimatePresence } from "framer-motion";
 import { faXmark } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -14,6 +15,7 @@ const BuildModal = ({
   setSelectedGroup,
   setSelectedGroup2,
   properties,
+  setProperties,
   p1Money,
   p2Money,
   setP1Money,
@@ -24,8 +26,6 @@ const BuildModal = ({
     setHouseModal2(false);
     setHouseModal(false);
   };
-
-  console.log(houseModal, selectedGroup);
 
   const backdrop = {
     visible: { opacity: 1 },
@@ -43,54 +43,49 @@ const BuildModal = ({
       transition: { delay: 0.5 },
     },
   };
-
-  const PropCards = () => {
+  console.log(setP1Money);
+  const propCards = () => {
     if (houseModal) {
       let propsToBuild = properties.filter(
         (property) => property.color === selectedGroup
       );
-      let card = propsToBuild.map((n) => {
+      return propsToBuild.map((n, index) => {
         return (
-          <div className="main-card propCard">
-            <div className="outer-banner">
-              <div className={`banner ${n.color}`}>
-                <h2 className="prop-name"> {n.Name.toUpperCase()}</h2>
-              </div>
-            </div>
-            <div className="all-prop-info">
-              <div className="main-prop-info">
-                <h4 className="rent">{`RENT ¥${n.rent}`}</h4>
-                <div className="house-container one">
-                  <p className="left-side">With 1 House</p>
-                  <p className="right-side">{`¥${n.oneHouse}`}</p>
-                </div>
-                <div className="house-container two">
-                  <p className="left-side">With 2 Houses</p>
-                  <p className="right-side">{`¥${n.twoHouses}`}</p>
-                </div>
-                <div className="house-container three">
-                  <p className="left-side">With 3 Houses</p>
-                  <p className="right-side">{`¥${n.threeHouses}`}</p>
-                </div>
-                <div className="house-container four">
-                  <p className="left-side">With 4 Houses</p>
-                  <p className="right-side">{`¥${n.fourHouses}`}</p>
-                </div>
-                <div className="house-container hotel">
-                  <p className="left-side">With Hotel</p>
-                  <p className="right-side">{`¥${n.hotel}`}</p>
-                </div>
-              </div>
-              <div className="secondary-prop-info">
-                <h4 className="mortgage">{`Mortgage Value: ¥${n.mortgage}`}</h4>
-                <p className="houses">{`Houses Cost ¥${n.buidlingCost}`}</p>
-              </div>
-            </div>
-          </div>
+          <PropCardAndButton
+            card={n}
+            key={index}
+            properties={properties}
+            houseModal={houseModal}
+            houseModal2={houseModal2}
+            setProperties={setProperties}
+            setP1Money={setP1Money}
+            setP2Money={setP2Money}
+            p1Money={p1Money}
+            p2Money={p2Money}
+          />
         );
       });
-      return card;
+    } else if (houseModal2) {
+      let propsToBuild = properties.filter(
+        (property) => property.color === selectedGroup2
+      );
+      return propsToBuild.map((n, index) => {
+        return (
+          <PropCardAndButton
+            card={n}
+            key={index}
+            properties={properties}
+            houseModal2={houseModal2}
+            setProperties={setProperties}
+            p1Money={p1Money}
+            p2Money={p2Money}
+            setP1Money={setP1Money}
+            setP2Money={setP2Money}
+          />
+        );
+      });
     }
+    return null;
   };
 
   return (
@@ -105,7 +100,7 @@ const BuildModal = ({
             exit="hidden"
           >
             <motion.div
-              className="innerModalProps flex flexColumn"
+              className="innerModalProps flex flexColumn properties"
               variants={modal}
               initial="hidden"
               animate="visible"
@@ -117,10 +112,7 @@ const BuildModal = ({
                 </button>
               </div>
               <h1 className="title">Build Hutongs/Apartments</h1>
-              <div className="property-cards-container">
-                f
-                <PropCards />
-              </div>
+              <div className="property-cards-container">{propCards()}</div>
             </motion.div>
           </motion.div>
         ) : null}
