@@ -33,9 +33,16 @@
 }
 
 .innerModalProps.flex.flexColumn.properties {
-  height: 40em;
+  height: 43em;
 }
 
 .hutong-piece {
   max-height: 3em;
+}
+
+.insufficient-warning {
+  color: red;
+  font-family: "Monopoly";
+  font-size: 2em;
+  margin: 0;
 }

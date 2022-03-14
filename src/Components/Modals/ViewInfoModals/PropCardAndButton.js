@@ -271,11 +271,6 @@ const PropCardAndButton = ({
           </div>
         </div>
       </div>
-      {tooMuch ? (
-        <div className="insufficient-warning-container">
-          <p className="insufficient-warning">Insufficient Funds</p>
-        </div>
-      ) : null}
       <button
         className="buy"
         onClick={buyHutong}

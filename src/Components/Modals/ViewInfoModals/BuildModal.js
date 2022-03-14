@@ -46,7 +46,6 @@ const BuildModal = ({
       transition: { delay: 0.5 },
     },
   };
-  console.log(setP1Money);
   const propCards = () => {
     if (houseModal) {
       let propsToBuild = properties.filter(
@@ -119,6 +118,11 @@ const BuildModal = ({
                 </button>
               </div>
               <h1 className="title">Build Hutongs/Apartments</h1>
+              {tooMuch ? (
+                <div className="insufficient-warning-container">
+                  <p className="insufficient-warning">Insufficient Funds</p>
+                </div>
+              ) : null}
               <div className="property-cards-container">{propCards()}</div>
             </motion.div>
           </motion.div>
