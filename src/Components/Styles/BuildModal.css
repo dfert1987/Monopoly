@@ -46,3 +46,22 @@
   font-size: 2em;
   margin: 0;
 }
+
+.buy {
+  background-color: white;
+  border-radius: 5px;
+  cursor: pointer;
+  box-shadow: 0px 0px 12px -2px;
+  font-family: "Monopoly";
+  font-size: 1em;
+  margin-bottom: 1em;
+  margin-top: 1em;
+  width: 8em;
+  overflow: hidden;
+  transition: background-color 0.3s ease;
+}
+
+.buy:hover {
+  background-color: grey;
+  color: white;
+}
