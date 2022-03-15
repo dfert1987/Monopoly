@@ -57,6 +57,10 @@ export const Controls = ({
   setOnFreeParking2,
   setOnAgentFee,
   setOnAgentFee2,
+  onVisa,
+  onVisa2,
+  setOnVisa,
+  setOnVisa2,
 }) => {
   const [disableRight, setDisableRight] = useState(true);
   const [disableLeft, setDisableLeft] = useState(false);
@@ -71,6 +75,7 @@ export const Controls = ({
       setDisableLeft(true);
       setOnProp2();
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [turn]);
 
   return (
@@ -113,6 +118,8 @@ export const Controls = ({
             onFreeParking={onFreeParking}
             setOnFreeParking={setOnFreeParking}
             setOnAgentFee={setOnAgentFee}
+            onVisa={onVisa}
+            setOnVisa={setOnVisa}
           />
           <div className="money player1">
             <h3 className="money-label">Money</h3>
@@ -167,6 +174,8 @@ export const Controls = ({
             onFreeParking2={onFreeParking2}
             setOnFreeParking2={setOnFreeParking2}
             setOnAgentFee2={setOnAgentFee2}
+            onVisa2={onVisa2}
+            setOnVisa2={setOnVisa2}
           />
           <div className="money player2">
             <h3 className="money-label">Money</h3>
