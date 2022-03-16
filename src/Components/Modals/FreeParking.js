@@ -2,9 +2,9 @@ import React from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { faXmark } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import manInMoney from "../../Assets/Misc/manInMoney.jpeg";
 import { useWindowSize } from "@react-hook/window-size";
 import Confetti from "react-confetti";
+import manInMoney from "../../Assets/Misc/manInMoney.jpeg";
 import "../Styles/FreeParking.css";
 
 const FreeParking = ({
@@ -69,7 +69,7 @@ const FreeParking = ({
           >
             <Confetti width={width} height={height} />
             <motion.div
-              className="flex flexColumn innerModalPurchase"
+              className="flex flexColumn innerModal"
               variants={modal}
               initial="hidden"
               animate="visible"
@@ -77,7 +77,7 @@ const FreeParking = ({
             >
               <div className="button-row">
                 <button className="close-button" onClick={handleClose}>
-                  <FontAwesomeIcon className="x-icon" icon={faXmark} />
+                  <FontAwesomeIcon className="x-icon free" icon={faXmark} />
                 </button>
               </div>
               <div className="main-part">

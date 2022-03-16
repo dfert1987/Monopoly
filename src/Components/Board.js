@@ -7,6 +7,7 @@ import RRPurchasedPopUp from "./Modals/Purchased/RRPurchasedPopUp";
 import PurchasedUtilPopUp from "./Modals/Purchased/PurchasedUtilPopUp";
 import FreeParking from "./Modals/FreeParking";
 import AgentFee from "./Modals/AgentFee";
+import Visa from "./Modals/Visa";
 import OwnedProperties from "./Modals/OwnedProperties";
 import PayOpponent from "./Modals/PayModals/PayOpponent";
 import PayOpponentRail from "../Components/Modals/PayModals/PayOpponentRail";
@@ -96,6 +97,10 @@ export const Board = ({
   setOnAgentFee2,
   onAgentFee2,
   onAgentFee,
+  onVisa,
+  onVisa2,
+  setOnVisa,
+  setOnVisa2,
 }) => {
   const [viewPurchase, setViewPurchase] = useState(false);
   const [viewPurchase2, setViewPurchase2] = useState(false);
@@ -1032,6 +1037,16 @@ export const Board = ({
           setP2Money={setP2Money}
           p1Money={p1Money}
           p2Money={p2Money}
+        />
+        <Visa
+          onVisa={onVisa}
+          onVisa2={onVisa2}
+          setOnVisa={setOnVisa}
+          setOnVisa2={setOnVisa2}
+          p1Money={p1Money}
+          p2Money={p2Money}
+          setP1Money={setP1Money}
+          setP2Money={setP2Money}
         />
       </div>
     </div>

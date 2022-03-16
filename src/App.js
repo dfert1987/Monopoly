@@ -6,16 +6,16 @@ import { RailRoads } from "./Assets/Holdings/Railroads";
 import { Utilities } from "./Assets/Holdings/Utilities";
 
 function App() {
-  const [counterP1, setCounterP1] = useState(20);
-  const [counterP2, setCounterP2] = useState(20);
+  const [counterP1, setCounterP1] = useState(38);
+  const [counterP2, setCounterP2] = useState(38);
   const [turn, setTurn] = useState(0);
   const [properties, setProperties] = useState(Properties);
   const [railRoads, setRailRoads] = useState(RailRoads);
   const [utilities, setUtilities] = useState(Utilities);
   const [p1Jail, setP1Jail] = useState(false);
   const [p2Jail, setP2Jail] = useState(false);
-  const [p1Money, setP1Money] = useState(10);
-  const [p2Money, setP2Money] = useState(1500);
+  const [p1Money, setP1Money] = useState(100);
+  const [p2Money, setP2Money] = useState(100);
   const [propertyModal1, setPropertyModal1] = useState(false);
   const [propertyModal2, setPropertyModal2] = useState(false);
   const [onProp, setOnProp] = useState();
@@ -47,8 +47,10 @@ function App() {
   const [onFreeParking2, setOnFreeParking2] = useState(false);
   const [onAgentFee, setOnAgentFee] = useState(false);
   const [onAgentFee2, setOnAgentFee2] = useState(false);
+  const [onVisa, setOnVisa] = useState(false);
+  const [onVisa2, setOnVisa2] = useState(false);
+  console.log(onProp);
 
-  console.log(properties);
   return (
     <div className="App">
       <Board
@@ -131,6 +133,10 @@ function App() {
         onAgentFee2={onAgentFee2}
         setOnAgentFee={setOnAgentFee}
         setOnAgentFee2={setOnAgentFee2}
+        onVisa={onVisa}
+        setOnVisa={setOnVisa}
+        onVisa2={onVisa2}
+        setOnVisa2={setOnVisa2}
       />
       <Controls
         counterP1={counterP1}
@@ -203,6 +209,10 @@ function App() {
         onAgentFee2={onAgentFee2}
         setOnAgentFee={setOnAgentFee}
         setOnAgentFee2={setOnAgentFee2}
+        onVisa={onVisa}
+        setOnVisa={setOnVisa}
+        onVisa2={onVisa2}
+        setOnVisa2={setOnVisa2}
       />
     </div>
   );

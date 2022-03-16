@@ -11,6 +11,19 @@
   text-shadow: 2px 2px black;
 }
 
+.main-title {
+  font-family: "Monopoly";
+  font-size: 4em;
+  margin: 0;
+}
+
+.choice {
+  font-family: "Monopoly";
+  margin: 0;
+  font-size: 3em;
+  margin-top: 0.5em;
+}
+
 .manInMoney {
   height: 20em;
   border: 2px yellow solid;
@@ -39,4 +52,67 @@
   border-radius: 8px;
   border: 3px red solid;
   box-shadow: 2px 2px black;
+}
+
+.innerModal {
+  border: 2px black solid;
+  border-radius: 20px;
+  height: 50em;
+  background-color: #c0e2ca;
+  box-shadow: 0px 0px 12px -2px;
+}
+
+.building-pic {
+  max-width: 30em;
+  border-radius: 8px;
+  border: 3px red solid;
+  box-shadow: 2px 2px black;
+  margin-left: 10em;
+  margin-right: 10em;
+}
+
+.choice-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-top: 1em;
+}
+
+.choice-button {
+  margin: 1em;
+  background-color: white;
+  border-radius: 5px;
+  cursor: pointer;
+  box-shadow: 0px 0px 12px -2px;
+  font-family: "Monopoly";
+  font-size: 2em;
+  height: 50px;
+  width: 8em;
+  overflow: hidden;
+  transition: background-color 0.3s ease;
+}
+
+.choice-button:hover {
+  background-color: grey;
+  color: white;
+}
+
+.x {
+  color: black;
+}
+
+.money-error {
+  font-family: "Monopoly";
+  color: red;
+  margin: 0;
+  margin-top: 0.5em;
+  font-size: 30px;
+}
+
+.poor-message {
+  font-family: "Monopoly";
+  color: red;
+  margin: 0;
+  margin-top: 0.5em;
+  font-size: 30px;
 }
