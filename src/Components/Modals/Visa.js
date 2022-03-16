@@ -108,6 +108,13 @@ const Visa = ({
                   src={visaPlace}
                 />
                 <h2 className="choice">Pay ¥200 or 10% of your money.</h2>
+                {notEnough ? (
+                  <>
+                    <h3 className="money-error">
+                      Not Enough Money! Try 10%...
+                    </h3>
+                  </>
+                ) : null}
                 <div className="choice-container">
                   <button
                     className="choice-button"
