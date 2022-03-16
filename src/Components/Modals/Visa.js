@@ -19,6 +19,7 @@ const Visa = ({
   const [disabled, setDisabled] = useState(false);
   const [disabledLeft, setDisabledLeft] = useState(false);
   const [notEnough, setNotEnough] = useState(false);
+  const [poorMessage, setPoorMessage] = useState(false);
   const backdrop = {
     visible: { opacity: 1 },
     hidden: { opacity: 0 },
@@ -61,18 +62,50 @@ const Visa = ({
     return null;
   };
 
-  const handleClose = (e) => {
-    e.preventDefault();
+  const pay10 = () => {
+    setNotEnough(false);
+    if (onVisa && !onVisa2 && p1Money > 10) {
+      let fee = p1Money * 0.1;
+      setVisaFee(fee);
+      let newMoney = p1Money - fee;
+      setP1Money(newMoney);
+      handleClose();
+    } else if (onVisa && !onVisa2 && p1Money < 10) {
+      setPoorMessage(true);
+      setTimeout(() => {
+        handleClose();
+      }, 2000);
+    } else if (onVisa2 && !onVisa && p2Money > 10) {
+      let fee = p2Money * 0.1;
+      setVisaFee(fee);
+      let newMoney = p2Money - fee;
+      setP1Money(newMoney);
+      handleClose();
+    } else if (onVisa2 && !onVisa && p2Money < 10) {
+      setPoorMessage(true);
+      setTimeout(() => {
+        handleClose();
+      }, 2000);
+    }
+  };
+
+  const handleClose = () => {
     if (onVisa) {
       setOnVisa(false);
       setOnVisa2(false);
       setDisabled(false);
       setDisabledLeft(false);
+      setPoorMessage(false);
+      setNotEnough(false);
+      setVisaFee();
     } else if (onVisa2) {
       setOnVisa2(false);
       setOnVisa(false);
       setDisabled(false);
       setDisabledLeft(false);
+      setPoorMessage(false);
+      setNotEnough(false);
+      setVisaFee();
     }
     return null;
   };
@@ -123,10 +156,21 @@ const Visa = ({
                   >
                     ¥200
                   </button>
-                  <button className="choice-button" disabled={disabled}>
+                  <button
+                    className="choice-button"
+                    disabled={disabled}
+                    onClick={() => pay10()}
+                  >
                     10%
                   </button>
                 </div>
+                {poorMessage ? (
+                  <>
+                    <h4 className="poor-message">
+                      Actually, you're so broke, we'll let you slide.
+                    </h4>
+                  </>
+                ) : null}
               </div>
             </motion.div>
           </motion.div>
