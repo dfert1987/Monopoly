@@ -14,8 +14,8 @@ function App() {
   const [utilities, setUtilities] = useState(Utilities);
   const [p1Jail, setP1Jail] = useState(false);
   const [p2Jail, setP2Jail] = useState(false);
-  const [p1Money, setP1Money] = useState(5);
-  const [p2Money, setP2Money] = useState(5);
+  const [p1Money, setP1Money] = useState(100);
+  const [p2Money, setP2Money] = useState(100);
   const [propertyModal1, setPropertyModal1] = useState(false);
   const [propertyModal2, setPropertyModal2] = useState(false);
   const [onProp, setOnProp] = useState();
@@ -49,8 +49,8 @@ function App() {
   const [onAgentFee2, setOnAgentFee2] = useState(false);
   const [onVisa, setOnVisa] = useState(false);
   const [onVisa2, setOnVisa2] = useState(false);
+  console.log(onProp);
 
-  console.log(properties);
   return (
     <div className="App">
       <Board

@@ -69,7 +69,7 @@ const FreeParking = ({
           >
             <Confetti width={width} height={height} />
             <motion.div
-              className="flex flexColumn innerModalPurchase"
+              className="flex flexColumn innerModal"
               variants={modal}
               initial="hidden"
               animate="visible"

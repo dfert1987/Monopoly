@@ -41,22 +41,22 @@
   background: rgba(0, 0, 0, 0.5);
 }
 
-.innerModalPurhcase {
+.innerModalPurhcase.clear {
   position: relative;
   border: none;
   overflow-y: auto;
   width: 70em;
   height: 42em;
   box-shadow: none;
+  background-color: transparent;
 }
 
-.purchased-container {
+.purchased-container.clear {
   display: flex;
   flex-direction: column;
   height: 100%;
   width: 100%;
   text-align: center;
-  background-color: transparent;
   justify-content: center;
 }
 

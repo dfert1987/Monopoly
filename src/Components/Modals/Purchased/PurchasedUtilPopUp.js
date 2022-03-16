@@ -62,7 +62,7 @@ const PurchasedUtilPopUp = ({
                   <FontAwesomeIcon className="x-icon" icon={faXmark} />
                 </button>
               </div>
-              <div className="purchased-container">
+              <div className="purchased-container clear">
                 <h2 className="title-top">YOU'VE PURCHASED</h2>
                 <img
                   className="dollar-sign"
@@ -97,7 +97,7 @@ const PurchasedUtilPopUp = ({
                   <FontAwesomeIcon className="x-icon" icon={faXmark} />
                 </button>
               </div>
-              <div className="purchased-container">
+              <div className="purchased-container clear">
                 <h2 className="title-top">YOU'VE PURCHASED</h2>
                 <img
                   className="dollar-sign"

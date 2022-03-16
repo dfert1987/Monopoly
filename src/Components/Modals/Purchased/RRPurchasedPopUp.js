@@ -51,7 +51,7 @@ const RRPurchasedPopUp = ({
             exit="hidden"
           >
             <motion.div
-              className="flex flexColumn innerModalPurchase"
+              className="flex flexColumn innerModalPurchase clear"
               variants={modal}
               initial="hidden"
               animate="visible"
@@ -62,7 +62,7 @@ const RRPurchasedPopUp = ({
                   <FontAwesomeIcon className="x-icon" icon={faXmark} />
                 </button>
               </div>
-              <div className="purchased-container">
+              <div className="purchased-container clear">
                 <h2 className="title-top">YOU'VE PURCHASED</h2>
                 <img
                   className="dollar-sign"
@@ -86,7 +86,7 @@ const RRPurchasedPopUp = ({
             exit="hidden"
           >
             <motion.div
-              className="flex flexColumn innerModalPurchase"
+              className="flex flexColumn innerModalPurchase clear"
               variants={modal}
               initial="hidden"
               animate="visible"
@@ -97,7 +97,7 @@ const RRPurchasedPopUp = ({
                   <FontAwesomeIcon className="x-icon" icon={faXmark} />
                 </button>
               </div>
-              <div className="purchased-container">
+              <div className="purchased-container clear">
                 <h2 className="title-top">YOU'VE PURCHASED</h2>
                 <img
                   className="dollar-sign"

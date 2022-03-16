@@ -122,7 +122,7 @@ const Visa = ({
             exit="hidden"
           >
             <motion.div
-              className="flex flexColumn innerModalPurchase"
+              className="flex flexColumn innerModal"
               variants={modal}
               initial="hidden"
               animate="visible"
