@@ -6,16 +6,16 @@ import { RailRoads } from "./Assets/Holdings/Railroads";
 import { Utilities } from "./Assets/Holdings/Utilities";
 
 function App() {
-  const [counterP1, setCounterP1] = useState(38);
-  const [counterP2, setCounterP2] = useState(38);
+  const [counterP1, setCounterP1] = useState(40);
+  const [counterP2, setCounterP2] = useState(40);
   const [turn, setTurn] = useState(0);
   const [properties, setProperties] = useState(Properties);
   const [railRoads, setRailRoads] = useState(RailRoads);
   const [utilities, setUtilities] = useState(Utilities);
   const [p1Jail, setP1Jail] = useState(false);
   const [p2Jail, setP2Jail] = useState(false);
-  const [p1Money, setP1Money] = useState(100);
-  const [p2Money, setP2Money] = useState(100);
+  const [p1Money, setP1Money] = useState(1500);
+  const [p2Money, setP2Money] = useState(1500);
   const [propertyModal1, setPropertyModal1] = useState(false);
   const [propertyModal2, setPropertyModal2] = useState(false);
   const [onProp, setOnProp] = useState();
