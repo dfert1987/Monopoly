@@ -49,7 +49,8 @@ function App() {
   const [onAgentFee2, setOnAgentFee2] = useState(false);
   const [onVisa, setOnVisa] = useState(false);
   const [onVisa2, setOnVisa2] = useState(false);
-  console.log(onProp);
+  const [onGoJail, setOnGoJail] = useState(false);
+  const [onGoJail2, setOnGoJail2] = useState(false);
 
   return (
     <div className="App">
@@ -137,6 +138,10 @@ function App() {
         setOnVisa={setOnVisa}
         onVisa2={onVisa2}
         setOnVisa2={setOnVisa2}
+        onGoJail={onGoJail}
+        setOnGoJail={setOnGoJail}
+        onGoJail2={onGoJail2}
+        setOnGoJail2={setOnGoJail2}
       />
       <Controls
         counterP1={counterP1}
@@ -213,6 +218,10 @@ function App() {
         setOnVisa={setOnVisa}
         onVisa2={onVisa2}
         setOnVisa2={setOnVisa2}
+        onGoJail={onGoJail}
+        setOnGoJail={setOnGoJail}
+        onGoJail2={onGoJail2}
+        setOnGoJail2={setOnGoJail2}
       />
     </div>
   );

@@ -61,6 +61,12 @@ export const Controls = ({
   onVisa2,
   setOnVisa,
   setOnVisa2,
+  setOnGoJail,
+  setOnGoJail2,
+  onGoJail,
+  onGoJail2,
+  setP1Jail,
+  setP2Jail,
 }) => {
   const [disableRight, setDisableRight] = useState(true);
   const [disableLeft, setDisableLeft] = useState(false);
@@ -120,6 +126,9 @@ export const Controls = ({
             setOnAgentFee={setOnAgentFee}
             onVisa={onVisa}
             setOnVisa={setOnVisa}
+            onGoJail={onGoJail}
+            setOnGoJail={setOnGoJail}
+            setP1Jail={setP1Jail}
           />
           <div className="money player1">
             <h3 className="money-label">Money</h3>
@@ -176,6 +185,9 @@ export const Controls = ({
             setOnAgentFee2={setOnAgentFee2}
             onVisa2={onVisa2}
             setOnVisa2={setOnVisa2}
+            setOnGoJail2={setOnGoJail2}
+            onGoJail2={onGoJail2}
+            setP2Jail={setP2Jail}
           />
           <div className="money player2">
             <h3 className="money-label">Money</h3>

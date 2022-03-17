@@ -39,6 +39,8 @@ export const RollP2 = ({
   setOnFreeParking2,
   setOnAgentFee2,
   setOnVisa2,
+  setOnGoJail2,
+  setP2Jail,
 }) => {
   const [die3, setDie3] = useState(1);
   const [die4, setDie4] = useState(1);
@@ -147,6 +149,10 @@ export const RollP2 = ({
       setOnAgentFee2(true);
     } else if (space === 5) {
       setOnVisa2(true);
+    } else if (space === 21) {
+      setOnGoJail2(true);
+      setCounterP2(41);
+      setP2Jail(true);
     }
   };
 
