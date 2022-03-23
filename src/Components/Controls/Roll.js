@@ -42,6 +42,7 @@ export const Roll = ({
   setOnGoJail,
   setP1Jail,
   p1Jail,
+  inJail,
 }) => {
   const [die1, setDie1] = useState(1);
   const [die2, setDie2] = useState(1);
@@ -71,6 +72,10 @@ export const Roll = ({
         showPropertyModal(counterP1 + first + second, "p1");
       }, 1000);
     }
+  };
+
+  const jailRoll = (e) => {
+    e.preventDefault();
   };
 
   const showPropertyModal = (space) => {
@@ -168,13 +173,23 @@ export const Roll = ({
         ) : null}
       </div>
       <div className="button-container">
-        <button
-          onClick={rollDice}
-          className="roll-button"
-          disabled={disableLeft}
-        >
-          ROLL DICE
-        </button>
+        {!inJail ? (
+          <button
+            onClick={rollDice}
+            className="roll-button"
+            disabled={disableLeft}
+          >
+            ROLL DICE
+          </button>
+        ) : (
+          <button
+            onClick={jailRoll}
+            className="roll-button"
+            disabled={disableLeft}
+          >
+            RETURN TO CHINA
+          </button>
+        )}
       </div>
     </div>
   );

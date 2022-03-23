@@ -10,10 +10,8 @@ const Jail = ({
   setOnGoJail,
   onGoJail2,
   setOnGoJail2,
-  p1Jail,
-  p2Jail,
-  setP1Jail,
-  setP2Jail,
+  setInJail,
+  setInJail2,
 }) => {
   const backdrop = {
     visible: { opacity: 1 },
@@ -34,8 +32,17 @@ const Jail = ({
 
   const handleClose = (e) => {
     e.preventDefault();
+    goToJail();
     setOnGoJail(false);
     setOnGoJail2(false);
+  };
+
+  const goToJail = () => {
+    if (onGoJail) {
+      setInJail(true);
+    } else if (onGoJail2) {
+      setInJail2(true);
+    } else return null;
   };
 
   return (
@@ -62,7 +69,7 @@ const Jail = ({
                 </button>
               </div>
               <div className="main-part">
-                <h1 className="main-title .jail">YOU'RE DEPORTED!</h1>
+                <h1 className="main-title">YOU'RE DEPORTED!</h1>
                 <h2 className="instructions-jail">
                   Go back to your home country!
                 </h2>

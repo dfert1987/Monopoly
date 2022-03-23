@@ -53,14 +53,8 @@ function App() {
   const [onGoJail2, setOnGoJail2] = useState(false);
   const [inJail, setInJail] = useState(false);
   const [inJail2, setInJail2] = useState(false);
-
-  useEffect(() => {
-    if ((turn === 0 || turn % 2 === 0) && counterP1 === 41) {
-      setInJail(true);
-    } else if ((turn !== 0 || turn % 2 !== 0) && counterP2 === 41) {
-      setInJail2(true);
-    }
-  }, [turn, counterP1, counterP2]);
+  const [inJailModal, setInJailModal] = useState(false);
+  const [inJailModal2, setInJailModal2] = useState(false);
 
   return (
     <div className="App">
@@ -156,6 +150,7 @@ function App() {
         inJail2={inJail2}
         setInJail={setInJail}
         setInJail2={setInJail2}
+        setTurn={setTurn}
       />
       <Controls
         counterP1={counterP1}
