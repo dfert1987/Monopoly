@@ -152,6 +152,10 @@ function App() {
         setOnGoJail={setOnGoJail}
         onGoJail2={onGoJail2}
         setOnGoJail2={setOnGoJail2}
+        inJail={inJail}
+        inJail2={inJail2}
+        setInJail={setInJail}
+        setInJail2={setInJail2}
       />
       <Controls
         counterP1={counterP1}
@@ -232,6 +236,10 @@ function App() {
         setOnGoJail={setOnGoJail}
         onGoJail2={onGoJail2}
         setOnGoJail2={setOnGoJail2}
+        inJail={inJail}
+        inJail2={inJail2}
+        setInJail={setInJail}
+        setInJail2={setInJail2}
       />
     </div>
   );

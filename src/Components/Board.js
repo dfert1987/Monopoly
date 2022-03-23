@@ -106,6 +106,10 @@ export const Board = ({
   onGoJail2,
   setOnGoJail2,
   setOnGoJail,
+  inJail,
+  inJail2,
+  setInJail,
+  setInJail2,
 }) => {
   const [viewPurchase, setViewPurchase] = useState(false);
   const [viewPurchase2, setViewPurchase2] = useState(false);
@@ -1058,6 +1062,12 @@ export const Board = ({
           setOnGoJail={setOnGoJail}
           onGoJail2={onGoJail2}
           setOnGoJail2={setOnGoJail2}
+        />
+        <InJail
+          inJail={inJail}
+          setInJail={setInJail}
+          inJail2={inJail2}
+          setInJail2={setInJail2}
         />
       </div>
     </div>
