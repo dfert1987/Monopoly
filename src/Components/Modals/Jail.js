@@ -30,6 +30,8 @@ const Jail = ({
     },
   };
 
+  console.log(onGoJail, onGoJail2);
+
   const handleClose = (e) => {
     e.preventDefault();
     setOnGoJail(false);
