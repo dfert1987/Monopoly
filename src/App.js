@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Board } from "./Components/Board";
 import { Controls } from "./Components/Controls/Controls";
 import { Properties } from "./Assets/Holdings/Properties";
@@ -51,6 +51,16 @@ function App() {
   const [onVisa2, setOnVisa2] = useState(false);
   const [onGoJail, setOnGoJail] = useState(false);
   const [onGoJail2, setOnGoJail2] = useState(false);
+  const [inJail, setInJail] = useState(false);
+  const [inJail2, setInJail2] = useState(false);
+
+  useEffect(() => {
+    if ((turn === 0 || turn % 2 === 0) && counterP1 === 41) {
+      setInJail(true);
+    } else if ((turn !== 0 || turn % 2 !== 0) && counterP2 === 41) {
+      setInJail2(true);
+    }
+  }, [turn, counterP1, counterP2]);
 
   return (
     <div className="App">
