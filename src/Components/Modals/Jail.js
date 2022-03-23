@@ -2,6 +2,8 @@ import React from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { faXmark } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import deported from "../../Assets/Misc/deported.jpeg";
+import "../Styles/Jail.css";
 
 const Jail = ({
   onGoJail,
@@ -29,8 +31,6 @@ const Jail = ({
       transition: { delay: 0.5 },
     },
   };
-
-  console.log(onGoJail, onGoJail2);
 
   const handleClose = (e) => {
     e.preventDefault();
@@ -60,6 +60,26 @@ const Jail = ({
                 <button className="close-button" onClick={handleClose}>
                   <FontAwesomeIcon className="x-icon free" icon={faXmark} />
                 </button>
+              </div>
+              <div className="main-part">
+                <h1 className="main-title .jail">YOU'RE DEPORTED!</h1>
+                <h2 className="instructions-jail">
+                  Go back to your home country!
+                </h2>
+                <div className="instructions-jail two">
+                  <h3 className="one">Do NOT pass GO! </h3>
+                  <h3 className="one">Do NOT say goodbye to your friends!</h3>
+                  <h3 className="one">Do NOT tell your job!</h3>
+                  <h3 className="one">Do NOT grab a Yanjing for the road!</h3>
+                  <h3 className="one">
+                    Just throw some shit in a bag and get the fuck out!
+                  </h3>
+                  <img
+                    className="deported-pic"
+                    alt="person being deported"
+                    src={deported}
+                  />
+                </div>
               </div>
             </motion.div>
           </motion.div>
