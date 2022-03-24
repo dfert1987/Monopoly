@@ -71,10 +71,15 @@ export const Controls = ({
   inJail2,
   setInJail,
   setInJail2,
+  inJailModal,
+  setInJailModal,
+  setInJailModal2,
+  inJailModal2,
+  disableLeft,
+  disableRight,
+  setDisableLeft,
+  setDisableRight,
 }) => {
-  const [disableRight, setDisableRight] = useState(true);
-  const [disableLeft, setDisableLeft] = useState(false);
-
   useEffect(() => {
     if (turn === 0 || turn % 2 === 0) {
       setDisableRight(true);
@@ -134,6 +139,9 @@ export const Controls = ({
             setOnGoJail={setOnGoJail}
             setP1Jail={setP1Jail}
             inJail={inJail}
+            setInJail={setInJail}
+            inJailModal={inJailModal}
+            setInJailModal={setInJailModal}
           />
           <div className="money player1">
             <h3 className="money-label">Money</h3>
@@ -194,6 +202,8 @@ export const Controls = ({
             onGoJail2={onGoJail2}
             setP2Jail={setP2Jail}
             inJail2={inJail2}
+            setInJailModal2={setInJailModal2}
+            inJailModal2={inJailModal2}
           />
           <div className="money player2">
             <h3 className="money-label">Money</h3>

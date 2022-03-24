@@ -55,6 +55,8 @@ function App() {
   const [inJail2, setInJail2] = useState(false);
   const [inJailModal, setInJailModal] = useState(false);
   const [inJailModal2, setInJailModal2] = useState(false);
+  const [disableRight, setDisableRight] = useState(true);
+  const [disableLeft, setDisableLeft] = useState(false);
 
   return (
     <div className="App">
@@ -151,6 +153,14 @@ function App() {
         setInJail={setInJail}
         setInJail2={setInJail2}
         setTurn={setTurn}
+        inJailModal={inJailModal}
+        inJailModal2={inJailModal2}
+        setInJailModal={setInJailModal}
+        setInJailModal2={setInJailModal2}
+        setCounterP1={setCounterP1}
+        setCounterP2={setCounterP2}
+        setDisableLeft={setDisableLeft}
+        setDisableRight={setDisableRight}
       />
       <Controls
         counterP1={counterP1}
@@ -235,6 +245,14 @@ function App() {
         inJail2={inJail2}
         setInJail={setInJail}
         setInJail2={setInJail2}
+        inJailModal={inJailModal}
+        inJailModal2={inJailModal2}
+        setInJailModal={setInJailModal}
+        setInJailModal2={setInJailModal2}
+        setDisableLeft={setDisableLeft}
+        setDisableRight={setDisableRight}
+        disableLeft={disableLeft}
+        disableRight={disableRight}
       />
     </div>
   );

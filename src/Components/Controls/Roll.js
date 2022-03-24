@@ -16,33 +16,25 @@ export const Roll = ({
   properties,
   setPropertyModal1,
   setOnProp,
-  onRR,
   setOnRR,
   railRoads,
-  setRailRoads,
   setRRModal,
-  onUtil,
   setOnUtil,
   utilities,
-  setUtilities,
   setUtilModal,
   setPayProp,
   setPayTo,
-  payRail,
   setPayRail,
-  payRailTo,
   setPayRailTo,
-  payUtil,
   setPayUtil,
-  payUtilTo,
   setPayUtilTo,
   setOnFreeParking,
   setOnAgentFee,
   setOnVisa,
   setOnGoJail,
   setP1Jail,
-  p1Jail,
   inJail,
+  setInJailModal,
 }) => {
   const [die1, setDie1] = useState(1);
   const [die2, setDie2] = useState(1);
@@ -76,6 +68,7 @@ export const Roll = ({
 
   const jailRoll = (e) => {
     e.preventDefault();
+    setInJailModal(true);
   };
 
   const showPropertyModal = (space) => {

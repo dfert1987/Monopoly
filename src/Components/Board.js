@@ -32,6 +32,8 @@ import "./Styles/Board.css";
 export const Board = ({
   counterP1,
   counterP2,
+  setCounterP1,
+  setCounterP2,
   p1Jail,
   p2Jail,
   propertyModal1,
@@ -116,6 +118,8 @@ export const Board = ({
   setInJailModal2,
   inJailModal,
   inJailModal2,
+  setDisableLeft,
+  setDisableRight,
 }) => {
   const [viewPurchase, setViewPurchase] = useState(false);
   const [viewPurchase2, setViewPurchase2] = useState(false);
@@ -1081,7 +1085,12 @@ export const Board = ({
           inJailModal={inJailModal}
           inJailModal2={inJailModal2}
           setInJailModal={setInJailModal}
+          turn={turn}
           setInJailModal2={setInJailModal2}
+          setCounterP1={setCounterP1}
+          setCounterP2={setCounterP2}
+          setDisableRight={setDisableRight}
+          setDisableLeft={setDisableLeft}
         />
       </div>
     </div>
