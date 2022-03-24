@@ -17,28 +17,24 @@ export const RollP2 = ({
   setPropertyModal2,
   setOnProp2,
   railRoads,
-  onRR2,
   setOnRR2,
-  setRailRoads,
   setRRModal2,
-  onUtil2,
   setOnUtil2,
   utilities,
-  setUtilities,
   setUtilModal2,
   setPayProp,
   setPayTo,
-  payRail,
   setPayRail,
-  payRailTo,
   setPayRailTo,
-  payUtil,
   setPayUtil,
-  payUtilTo,
   setPayUtilTo,
   setOnFreeParking2,
   setOnAgentFee2,
   setOnVisa2,
+  setOnGoJail2,
+  setP2Jail,
+  inJail2,
+  setInJailModal2,
 }) => {
   const [die3, setDie3] = useState(1);
   const [die4, setDie4] = useState(1);
@@ -116,6 +112,11 @@ export const RollP2 = ({
     }
   };
 
+  const jailRoll = (e) => {
+    e.preventDefault();
+    setInJailModal2(true);
+  };
+
   const showPropertyModal = (space) => {
     let currentProp = properties.find((property) => property.Number === space);
     let currentRR = railRoads.find((railRoad) => railRoad.Number === space);
@@ -147,6 +148,10 @@ export const RollP2 = ({
       setOnAgentFee2(true);
     } else if (space === 5) {
       setOnVisa2(true);
+    } else if (space === 21) {
+      setOnGoJail2(true);
+      setCounterP2(41);
+      setP2Jail(true);
     }
   };
 
@@ -169,13 +174,23 @@ export const RollP2 = ({
         ) : null}
       </div>
       <div className="button-container 2">
-        <button
-          onClick={rollDice2}
-          className="roll-button"
-          disabled={disableRight}
-        >
-          ROLL DICE
-        </button>
+        {!inJail2 ? (
+          <button
+            onClick={rollDice2}
+            className="roll-button"
+            disabled={disableRight}
+          >
+            ROLL DICE
+          </button>
+        ) : (
+          <button
+            onClick={jailRoll}
+            className="roll-button"
+            disabled={disableRight}
+          >
+            RETURN TO CHINA
+          </button>
+        )}
       </div>
     </div>
   );

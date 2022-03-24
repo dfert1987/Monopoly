@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Board } from "./Components/Board";
 import { Controls } from "./Components/Controls/Controls";
 import { Properties } from "./Assets/Holdings/Properties";
@@ -6,16 +6,16 @@ import { RailRoads } from "./Assets/Holdings/Railroads";
 import { Utilities } from "./Assets/Holdings/Utilities";
 
 function App() {
-  const [counterP1, setCounterP1] = useState(38);
-  const [counterP2, setCounterP2] = useState(38);
+  const [counterP1, setCounterP1] = useState(12);
+  const [counterP2, setCounterP2] = useState(12);
   const [turn, setTurn] = useState(0);
   const [properties, setProperties] = useState(Properties);
   const [railRoads, setRailRoads] = useState(RailRoads);
   const [utilities, setUtilities] = useState(Utilities);
   const [p1Jail, setP1Jail] = useState(false);
   const [p2Jail, setP2Jail] = useState(false);
-  const [p1Money, setP1Money] = useState(100);
-  const [p2Money, setP2Money] = useState(100);
+  const [p1Money, setP1Money] = useState(1500);
+  const [p2Money, setP2Money] = useState(1500);
   const [propertyModal1, setPropertyModal1] = useState(false);
   const [propertyModal2, setPropertyModal2] = useState(false);
   const [onProp, setOnProp] = useState();
@@ -49,7 +49,14 @@ function App() {
   const [onAgentFee2, setOnAgentFee2] = useState(false);
   const [onVisa, setOnVisa] = useState(false);
   const [onVisa2, setOnVisa2] = useState(false);
-  console.log(onProp);
+  const [onGoJail, setOnGoJail] = useState(false);
+  const [onGoJail2, setOnGoJail2] = useState(false);
+  const [inJail, setInJail] = useState(false);
+  const [inJail2, setInJail2] = useState(false);
+  const [inJailModal, setInJailModal] = useState(false);
+  const [inJailModal2, setInJailModal2] = useState(false);
+  const [disableRight, setDisableRight] = useState(true);
+  const [disableLeft, setDisableLeft] = useState(false);
 
   return (
     <div className="App">
@@ -137,6 +144,23 @@ function App() {
         setOnVisa={setOnVisa}
         onVisa2={onVisa2}
         setOnVisa2={setOnVisa2}
+        onGoJail={onGoJail}
+        setOnGoJail={setOnGoJail}
+        onGoJail2={onGoJail2}
+        setOnGoJail2={setOnGoJail2}
+        inJail={inJail}
+        inJail2={inJail2}
+        setInJail={setInJail}
+        setInJail2={setInJail2}
+        setTurn={setTurn}
+        inJailModal={inJailModal}
+        inJailModal2={inJailModal2}
+        setInJailModal={setInJailModal}
+        setInJailModal2={setInJailModal2}
+        setCounterP1={setCounterP1}
+        setCounterP2={setCounterP2}
+        setDisableLeft={setDisableLeft}
+        setDisableRight={setDisableRight}
       />
       <Controls
         counterP1={counterP1}
@@ -213,6 +237,22 @@ function App() {
         setOnVisa={setOnVisa}
         onVisa2={onVisa2}
         setOnVisa2={setOnVisa2}
+        onGoJail={onGoJail}
+        setOnGoJail={setOnGoJail}
+        onGoJail2={onGoJail2}
+        setOnGoJail2={setOnGoJail2}
+        inJail={inJail}
+        inJail2={inJail2}
+        setInJail={setInJail}
+        setInJail2={setInJail2}
+        inJailModal={inJailModal}
+        inJailModal2={inJailModal2}
+        setInJailModal={setInJailModal}
+        setInJailModal2={setInJailModal2}
+        setDisableLeft={setDisableLeft}
+        setDisableRight={setDisableRight}
+        disableLeft={disableLeft}
+        disableRight={disableRight}
       />
     </div>
   );

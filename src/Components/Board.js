@@ -8,6 +8,8 @@ import PurchasedUtilPopUp from "./Modals/Purchased/PurchasedUtilPopUp";
 import FreeParking from "./Modals/FreeParking";
 import AgentFee from "./Modals/AgentFee";
 import Visa from "./Modals/Visa";
+import Jail from "./Modals/Jail";
+import InJail from "./Modals/InJail";
 import OwnedProperties from "./Modals/OwnedProperties";
 import PayOpponent from "./Modals/PayModals/PayOpponent";
 import PayOpponentRail from "../Components/Modals/PayModals/PayOpponentRail";
@@ -30,6 +32,8 @@ import "./Styles/Board.css";
 export const Board = ({
   counterP1,
   counterP2,
+  setCounterP1,
+  setCounterP2,
   p1Jail,
   p2Jail,
   propertyModal1,
@@ -101,6 +105,21 @@ export const Board = ({
   onVisa2,
   setOnVisa,
   setOnVisa2,
+  onGoJail,
+  onGoJail2,
+  setOnGoJail2,
+  setOnGoJail,
+  inJail,
+  inJail2,
+  setInJail,
+  setInJail2,
+  setTurn,
+  setInJailModal,
+  setInJailModal2,
+  inJailModal,
+  inJailModal2,
+  setDisableLeft,
+  setDisableRight,
 }) => {
   const [viewPurchase, setViewPurchase] = useState(false);
   const [viewPurchase2, setViewPurchase2] = useState(false);
@@ -1047,6 +1066,31 @@ export const Board = ({
           p2Money={p2Money}
           setP1Money={setP1Money}
           setP2Money={setP2Money}
+        />
+        <Jail
+          onGoJail={onGoJail}
+          setOnGoJail={setOnGoJail}
+          onGoJail2={onGoJail2}
+          setOnGoJail2={setOnGoJail2}
+          setInJail={setInJail}
+          setInJail2={setInJail2}
+          setTurn={setTurn}
+        />
+        <InJail
+          inJail={inJail}
+          setInJail={setInJail}
+          inJail2={inJail2}
+          setInJail2={setInJail2}
+          setTurn={setTurn}
+          inJailModal={inJailModal}
+          inJailModal2={inJailModal2}
+          setInJailModal={setInJailModal}
+          turn={turn}
+          setInJailModal2={setInJailModal2}
+          setCounterP1={setCounterP1}
+          setCounterP2={setCounterP2}
+          setDisableRight={setDisableRight}
+          setDisableLeft={setDisableLeft}
         />
       </div>
     </div>

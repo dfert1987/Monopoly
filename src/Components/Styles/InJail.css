@@ -1,0 +1,19 @@
+.depressed {
+  max-width: 30em;
+  border-radius: 6px;
+  border: 2px red solid;
+  box-shadow: 2px 2px 8px;
+  margin-top: 0.5em;
+}
+
+.instructions.in-jail {
+  font-family: "Monopoly";
+  font-size: 2em;
+  margin-bottom: 0;
+}
+
+.instructions-bottom {
+  font-family: "Monopoly";
+  font-size: 2em;
+  margin-top: 0;
+}

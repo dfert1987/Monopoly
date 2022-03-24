@@ -1,0 +1,28 @@
+.instructions-jail {
+  padding-right: 4em;
+  padding-left: 4em;
+  font-family: "Monopoly";
+  font-size: 3em;
+  margin-bottom: 0;
+  margin-top: 0.25em;
+}
+
+.instructions-jail.two {
+  font-size: 1.5em;
+}
+
+.one {
+  margin: 0;
+}
+
+.main-title.jail {
+  margin-bottom: 0;
+}
+
+.deported-pic {
+  margin-top: 1em;
+  height: 14em;
+  border: 2px red solid;
+  border-radius: 6px;
+  box-shadow: 2px 2px 10px;
+}
