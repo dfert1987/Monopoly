@@ -9,6 +9,7 @@ import FreeParking from "./Modals/FreeParking";
 import AgentFee from "./Modals/AgentFee";
 import Visa from "./Modals/Visa";
 import Jail from "./Modals/Jail";
+import Cards from "./Modals/Cards";
 import InJail from "./Modals/InJail";
 import OwnedProperties from "./Modals/OwnedProperties";
 import PayOpponent from "./Modals/PayModals/PayOpponent";
@@ -120,6 +121,10 @@ export const Board = ({
   inJailModal2,
   setDisableLeft,
   setDisableRight,
+  onCard,
+  onCard2,
+  setOnCard,
+  setOnCard2,
 }) => {
   const [viewPurchase, setViewPurchase] = useState(false);
   const [viewPurchase2, setViewPurchase2] = useState(false);
@@ -1091,6 +1096,19 @@ export const Board = ({
           setCounterP2={setCounterP2}
           setDisableRight={setDisableRight}
           setDisableLeft={setDisableLeft}
+        />
+        <Cards
+          onCard={onCard}
+          setOnCard={setOnCard}
+          onCard2={onCard2}
+          setOnCard2={setOnCard2}
+          setInJail={setInJail}
+          setInJail2={setInJail2}
+          setP1Money={setP1Money}
+          setP2Money={setP2Money}
+          p1Money={p1Money}
+          p2Money={p2Money}
+          setFreeParking={setFreeParking}
         />
       </div>
     </div>

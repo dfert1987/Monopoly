@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { Board } from "./Components/Board";
 import { Controls } from "./Components/Controls/Controls";
 import { Properties } from "./Assets/Holdings/Properties";
@@ -57,6 +57,8 @@ function App() {
   const [inJailModal2, setInJailModal2] = useState(false);
   const [disableRight, setDisableRight] = useState(true);
   const [disableLeft, setDisableLeft] = useState(false);
+  const [onCard, setOnCard] = useState(false);
+  const [onCard2, setOnCard2] = useState(false);
 
   return (
     <div className="App">
@@ -161,6 +163,10 @@ function App() {
         setCounterP2={setCounterP2}
         setDisableLeft={setDisableLeft}
         setDisableRight={setDisableRight}
+        onCard={onCard}
+        onCard2={onCard2}
+        setOnCard={setOnCard}
+        setOnCard2={setOnCard2}
       />
       <Controls
         counterP1={counterP1}
@@ -253,6 +259,10 @@ function App() {
         setDisableRight={setDisableRight}
         disableLeft={disableLeft}
         disableRight={disableRight}
+        onCard={onCard}
+        onCard2={onCard2}
+        setOnCard={setOnCard}
+        setOnCard2={setOnCard2}
       />
     </div>
   );

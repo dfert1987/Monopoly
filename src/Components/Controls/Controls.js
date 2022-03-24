@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect } from "react";
 import { Roll } from "./Roll";
 import { RollP2 } from "./RollP2";
 import "../../Components/Styles/Controls.css";
@@ -18,9 +18,7 @@ export const Controls = ({
   setOnProp,
   setOnProp2,
   setProperties,
-  viewProperties,
   setViewProperties,
-  viewProperties2,
   setViewProperties2,
   onRR,
   onRR2,
@@ -79,6 +77,10 @@ export const Controls = ({
   disableRight,
   setDisableLeft,
   setDisableRight,
+  onCard,
+  onCard2,
+  setOnCard,
+  setOnCard2,
 }) => {
   useEffect(() => {
     if (turn === 0 || turn % 2 === 0) {
@@ -142,6 +144,8 @@ export const Controls = ({
             setInJail={setInJail}
             inJailModal={inJailModal}
             setInJailModal={setInJailModal}
+            onCard={onCard}
+            setOnCard={setOnCard}
           />
           <div className="money player1">
             <h3 className="money-label">Money</h3>
@@ -201,9 +205,12 @@ export const Controls = ({
             setOnGoJail2={setOnGoJail2}
             onGoJail2={onGoJail2}
             setP2Jail={setP2Jail}
+            setInJail2={setInJail2}
             inJail2={inJail2}
             setInJailModal2={setInJailModal2}
             inJailModal2={inJailModal2}
+            onCard2={onCard2}
+            setOnCard2={setOnCard2}
           />
           <div className="money player2">
             <h3 className="money-label">Money</h3>
