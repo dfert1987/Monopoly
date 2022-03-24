@@ -203,4 +203,20 @@ export const Yunqi = [
     amt: null,
     space: 20,
   },
+  {
+    Number: 26,
+    Text: "Promoted to head teacher!",
+    Instruction: "The XiaoPengYous have spoken! Collect 150rmb",
+    Type: "advance",
+    amt: 150,
+    space: null,
+  },
+  {
+    Number: 26,
+    Text: "Promoted to head teacher!",
+    Instruction: "The XiaoPengYous have spoken! Collect 150rmb",
+    Type: "advance",
+    amt: 150,
+    space: null,
+  },
 ];

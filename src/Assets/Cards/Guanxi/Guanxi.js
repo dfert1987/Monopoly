@@ -191,9 +191,35 @@ export const Guanxi = [
   {
     Number: 24,
     Text: "Join the Beijing Beatles",
-    Instruction: "Play FuBar and make 100rmb",
+    Instruction: "Play FuBar for the 40th time and make 100rmb",
     Type: "collect",
     amt: 100,
+    space: 0,
+  },
+  {
+    Number: 25,
+    Text: "Gongti bottle service",
+    Instruction:
+      "Those champagnes with the sparklers at Mix were worth it though right? Pay 150rmb",
+    Type: "pay",
+    amt: 150,
+    space: 0,
+  },
+  {
+    Number: 26,
+    Text: "Hutong Bathroom has no TP!",
+    Instruction: "Use 15rmb for ... LOOK, YOU NEEDED IT!",
+    Type: "pay",
+    amt: 15,
+    space: 0,
+  },
+  {
+    Number: 27,
+    Text: "The Beijinger Publishes your Article!",
+    Instruction:
+      "Collect 25rmb, and start to fancy yourself the Hunter S Thompson of writing about cheeseburgers.",
+    Type: "pay",
+    amt: 15,
     space: 0,
   },
 ];
