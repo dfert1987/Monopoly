@@ -170,6 +170,7 @@ export const Guanxi = [
     Type: "pay",
     amt: 20,
     space: 0,
+    image: require("./Pics/poopmoney.jpeg"),
   },
   {
     Number: 22,
@@ -218,8 +219,24 @@ export const Guanxi = [
     Text: "The Beijinger Publishes your Article!",
     Instruction:
       "Collect 25rmb, and start to fancy yourself the Hunter S Thompson of writing about cheeseburgers.",
-    Type: "pay",
-    amt: 15,
+    Type: "collect",
+    amt: 25,
     space: 0,
+  },
+  {
+    Number: 28,
+    Text: "WeChat Wallet Malfunction in your favor!",
+    Instruction: "Collect 100rmb from some random Chinese person.",
+    Type: "collect",
+    amt: 100,
+    space: 0,
+  },
+  {
+    Number: 29,
+    Text: "The rooftop is open!",
+    Instruction: "Advance to Migas",
+    Type: "advance",
+    amt: null,
+    space: 38,
   },
 ];

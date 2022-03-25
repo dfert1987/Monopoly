@@ -9,7 +9,7 @@ import FreeParking from "./Modals/FreeParking";
 import AgentFee from "./Modals/AgentFee";
 import Visa from "./Modals/Visa";
 import Jail from "./Modals/Jail";
-import Cards from "./Modals/Cards";
+import Cards from "./Modals/Cards/Cards";
 import InJail from "./Modals/InJail";
 import OwnedProperties from "./Modals/OwnedProperties";
 import PayOpponent from "./Modals/PayModals/PayOpponent";
@@ -1109,6 +1109,8 @@ export const Board = ({
           p1Money={p1Money}
           p2Money={p2Money}
           setFreeParking={setFreeParking}
+          counterP1={counterP1}
+          counterP2={counterP2}
         />
       </div>
     </div>

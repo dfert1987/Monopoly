@@ -1,0 +1,28 @@
+.card-type {
+  font-family: "Monopoly";
+  font-size: 3.5em;
+}
+
+.card-horizontal {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding-right: 1em;
+  padding-left: 1em;
+}
+
+.card-right {
+  display: flex;
+  flex-direction: column;
+}
+
+.card-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.continue-button {
+  max-width: 10em;
+  margin-left: auto;
+  margin-right: auto;
+}

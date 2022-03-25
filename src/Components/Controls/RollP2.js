@@ -153,7 +153,17 @@ export const RollP2 = ({
       setOnGoJail2(true);
       setCounterP2(41);
       setP2Jail(true);
-    } else if (space === 34 || 3 || 18 || 8 || 23 || 37) {
+    } else if (space === 34) {
+      setOnCard2(true);
+    } else if (space === 3) {
+      setOnCard2(true);
+    } else if (space === 18) {
+      setOnCard2(true);
+    } else if (space === 8) {
+      setOnCard2(true);
+    } else if (space === 23) {
+      setOnCard2(true);
+    } else if (space === 37) {
       setOnCard2(true);
     }
   };
