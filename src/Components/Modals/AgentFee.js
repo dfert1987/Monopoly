@@ -71,7 +71,7 @@ const AgentFee = ({
                   <FontAwesomeIcon className="x-icon free" icon={faXmark} />
                 </button>
               </div>
-              <div className="main-part">
+              <div className="main-agent">
                 <h1 className="main-congrats">Agent Fee!</h1>
                 <img
                   className="agent-pic"

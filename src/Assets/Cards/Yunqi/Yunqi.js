@@ -99,7 +99,8 @@ export const Yunqi = [
   {
     Number: 13,
     Text: "It's your Chinaversary!",
-    Instruction: "Openent pays you 40rmb",
+    Instruction:
+      "Celebrate living where most people in the world live. Openent pays you 40rmb",
     Type: "Recieve Opponent",
     amt: 40,
     space: 0,
@@ -122,7 +123,7 @@ export const Yunqi = [
   },
   {
     Number: 16,
-    Text: "Traffic Jam",
+    Text: "3rd Ring Traffic Jam",
     Instruction:
       "Advance to nearest Subway. If unowned you may purchase. If owned pay owner double",
     Type: "Nearest",
@@ -206,17 +207,33 @@ export const Yunqi = [
   {
     Number: 26,
     Text: "Promoted to head teacher!",
-    Instruction: "The XiaoPengYous have spoken! Collect 150rmb",
-    Type: "advance",
+    Instruction: "The XiaoPengYous have spoken! Collect a 150rmb pay raise",
+    Type: "collect",
     amt: 150,
     space: null,
   },
   {
-    Number: 26,
-    Text: "Promoted to head teacher!",
-    Instruction: "The XiaoPengYous have spoken! Collect 150rmb",
-    Type: "advance",
-    amt: 150,
+    Number: 27,
+    Text: "Hire Chinese Tutor!",
+    Instruction: "Pay 80rmb, bettering yourself isn't free.",
+    Type: "pay",
+    amt: 80,
     space: null,
+  },
+  {
+    Number: 28,
+    Text: "Buy fireworks for Chinese New Year!",
+    Instruction: "Pay 30rmb, and buy the loudest one they got.",
+    Type: "pay",
+    amt: 30,
+    space: null,
+  },
+  {
+    Number: 29,
+    Text: "Rush week!",
+    Instruction: "Advance to Lush and start drinking!",
+    Type: "advance",
+    amt: null,
+    space: 2,
   },
 ];

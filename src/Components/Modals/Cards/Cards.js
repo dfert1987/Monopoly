@@ -41,12 +41,6 @@ export const Cards = ({
     },
   };
 
-  const handleClose = (e) => {
-    e.preventDefault();
-    setOnCard(false);
-    setOnCard2(false);
-  };
-
   useEffect(() => {
     if (onCard === true && (counterP1 === 34 || 3 || 18)) {
       setCardOption("GUANXI");
