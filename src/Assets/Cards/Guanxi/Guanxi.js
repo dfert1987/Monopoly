@@ -6,6 +6,7 @@ export const Guanxi = [
     Type: "advance",
     amt: 0,
     space: 1,
+    image: require("./Pics/guanxi-airport.jpeg"),
   },
   {
     Number: 2,
@@ -14,6 +15,7 @@ export const Guanxi = [
     Type: "receive",
     amt: 200,
     space: 0,
+    image: require("./Pics/guanxi-hongbao.jpeg"),
   },
   {
     Number: 3,
@@ -22,6 +24,7 @@ export const Guanxi = [
     Type: "advance",
     amt: 0,
     space: 25,
+    image: require("./Pics/guanxi-lantern.jpeg"),
   },
   {
     Number: 4,
@@ -30,6 +33,7 @@ export const Guanxi = [
     Type: "advance",
     amt: 0,
     space: 17,
+    image: require("./Pics/guanxi-modernista.jpeg"),
   },
   {
     Number: 5,
@@ -38,6 +42,7 @@ export const Guanxi = [
     Type: "advance",
     amt: 0,
     space: 41,
+    image: require("./Pics/guanxi-drug.jpeg"),
   },
   {
     Number: 6,
@@ -46,6 +51,7 @@ export const Guanxi = [
     Type: "receive",
     amt: 150,
     space: 0,
+    image: require("./Pics/guanxi-tutor.jpeg"),
   },
   {
     Number: 7,
@@ -54,6 +60,7 @@ export const Guanxi = [
     Type: "receive",
     amt: 25,
     space: 0,
+    image: require("./Pics/guanxi-Jumble.jpeg"),
   },
 
   {
@@ -63,6 +70,7 @@ export const Guanxi = [
     Type: "pay",
     amt: 500,
     space: 0,
+    image: require("./Pics/guanxi-dealer.jpeg"),
   },
   {
     Number: 10,
@@ -71,6 +79,7 @@ export const Guanxi = [
     Type: "Skip",
     amt: 0,
     space: 0,
+    image: require("./Pics/guanxi-nanluo.jpeg"),
   },
   {
     Number: 11,
@@ -79,6 +88,7 @@ export const Guanxi = [
     Type: "Back",
     amt: 4,
     space: 0,
+    image: require("./Pics/guanxi-aqi.jpeg"),
   },
   {
     Number: 13,
@@ -87,6 +97,7 @@ export const Guanxi = [
     Type: "advance",
     amt: 0,
     space: 30,
+    image: require("./Pics/guanxi-duck.jpeg"),
   },
 
   {
@@ -164,15 +175,6 @@ export const Guanxi = [
     space: 0,
   },
   {
-    Number: 21,
-    Text: "No TP on you for public restroom",
-    Instruction: "Uregently use 20rmb to...",
-    Type: "pay",
-    amt: 20,
-    space: 0,
-    image: require("./Pics/poopmoney.jpeg"),
-  },
-  {
     Number: 22,
     Text: "Office party!",
     Instruction:
@@ -209,7 +211,7 @@ export const Guanxi = [
   {
     Number: 26,
     Text: "Hutong Bathroom has no TP!",
-    Instruction: "Use 15rmb for ... LOOK, YOU NEEDED IT!",
+    Instruction: "Urgently use 15rmb for ... LOOK, YOU NEEDED IT!",
     Type: "pay",
     amt: 15,
     space: 0,
