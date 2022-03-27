@@ -20,6 +20,7 @@ const InnerCard = ({ setCardOption, cardOption, guanxi, yunqi }) => {
     setCurrentCard();
     setCardOption();
   };
+  console.log(currentCard);
 
   return (
     <>

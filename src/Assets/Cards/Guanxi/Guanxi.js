@@ -107,6 +107,7 @@ export const Guanxi = [
     Type: "reroll",
     amt: 0,
     space: 0,
+    image: require("./Pics/guanxi-cdlp.jpeg"),
   },
   {
     Number: 16,
@@ -115,6 +116,7 @@ export const Guanxi = [
     Type: "Back",
     amt: 5,
     space: 0,
+    image: require("./Pics/guanxi-fake-alcohol.jpeg"),
   },
 
   {
@@ -124,6 +126,7 @@ export const Guanxi = [
     Type: "Nearest",
     amt: 0,
     space: 0,
+    image: require("./Pics/guanxi-landlord.jpeg"),
   },
   {
     Number: 19,
@@ -132,6 +135,7 @@ export const Guanxi = [
     Type: "Visa",
     amt: 0,
     space: 0,
+    image: require("./Pics/guanxi-visa.jpeg"),
   },
   {
     Number: 20,
@@ -140,6 +144,7 @@ export const Guanxi = [
     Type: "Receive Opponent",
     amt: 200,
     space: 0,
+    image: require("./Pics/guanxi-hsk.png"),
   },
   {
     Number: 17,
@@ -148,6 +153,7 @@ export const Guanxi = [
     Type: "Pay",
     amt: 100,
     space: 0,
+    image: require("./Pics/guanxi-qinming.jpeg"),
   },
   {
     Number: 14,
@@ -156,6 +162,7 @@ export const Guanxi = [
     Type: "Pay",
     amt: 200,
     space: 0,
+    image: require("./Pics/guanxi-scooter.jpeg"),
   },
   {
     Number: 12,
@@ -164,6 +171,7 @@ export const Guanxi = [
     Type: "Collect opponent",
     amt: 40,
     space: 0,
+    image: require("./Pics/guanxi-teach.jpeg"),
   },
   {
     Number: 8,
@@ -173,6 +181,7 @@ export const Guanxi = [
     Type: "pay house",
     amt: null,
     space: 0,
+    image: require("./Pics/guanxi-moving.jpeg"),
   },
   {
     Number: 22,
@@ -182,6 +191,7 @@ export const Guanxi = [
     Type: "collect opponent",
     amt: 10,
     space: 0,
+    image: require("./Pics/guanxi-soda.jpeg"),
   },
   {
     Number: 23,
@@ -190,6 +200,7 @@ export const Guanxi = [
     Type: "advance",
     amt: 10,
     space: 0,
+    image: require("./Pics/guanxi-mobike.jpeg"),
   },
   {
     Number: 24,
@@ -198,6 +209,7 @@ export const Guanxi = [
     Type: "collect",
     amt: 100,
     space: 0,
+    image: require("./Pics/guanxi-beatles.jpeg"),
   },
   {
     Number: 25,
@@ -207,6 +219,7 @@ export const Guanxi = [
     Type: "pay",
     amt: 150,
     space: 0,
+    image: require("./Pics/guanxi-gongti.jpeg"),
   },
   {
     Number: 26,
@@ -215,6 +228,7 @@ export const Guanxi = [
     Type: "pay",
     amt: 15,
     space: 0,
+    image: require("./Pics/poopmoney.jpeg"),
   },
   {
     Number: 27,
@@ -224,6 +238,7 @@ export const Guanxi = [
     Type: "collect",
     amt: 25,
     space: 0,
+    image: require("./Pics/guanxi-beijinger.jpeg"),
   },
   {
     Number: 28,
@@ -232,6 +247,7 @@ export const Guanxi = [
     Type: "collect",
     amt: 100,
     space: 0,
+    image: require("./Pics/guanxi-wechat.jpeg"),
   },
   {
     Number: 29,
@@ -240,5 +256,6 @@ export const Guanxi = [
     Type: "advance",
     amt: null,
     space: 38,
+    image: require("./Pics/guanxi-migas.jpeg"),
   },
 ];
