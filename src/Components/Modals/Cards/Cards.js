@@ -89,6 +89,8 @@ export const Cards = ({
                 setCardOption={setCardOption}
                 setYunqi={setYunqi}
                 setGuanxi={setGuanxi}
+                setOnCard={setOnCard}
+                setOnCard2={setOnCard2}
               />
             </div>
           </motion.div>

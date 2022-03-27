@@ -1,7 +1,14 @@
 import React, { useState, useEffect } from "react";
 import "../../Styles/Card.css";
 
-const InnerCard = ({ setCardOption, cardOption, guanxi, yunqi }) => {
+const InnerCard = ({
+  setCardOption,
+  cardOption,
+  guanxi,
+  yunqi,
+  setOnCard,
+  setOnCard2,
+}) => {
   const [currentCard, setCurrentCard] = useState();
 
   useEffect(() => {
@@ -15,12 +22,12 @@ const InnerCard = ({ setCardOption, cardOption, guanxi, yunqi }) => {
     return null;
   }, [cardOption, guanxi, yunqi]);
 
-  const close = (e) => {
-    e.preventDefault();
+  const close = () => {
     setCurrentCard();
     setCardOption();
+    setOnCard(false);
+    setOnCard2(false);
   };
-  console.log(currentCard);
 
   return (
     <>
