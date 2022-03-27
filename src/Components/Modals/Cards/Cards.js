@@ -42,13 +42,30 @@ export const Cards = ({
   };
 
   useEffect(() => {
-    if (onCard === true && (counterP1 === 34 || 3 || 18)) {
+    console.log(onCard, onCard2, counterP1, counterP2);
+    if (
+      onCard === true &&
+      (counterP1 === 34 || counterP1 === 3 || counterP1 === 18)
+    ) {
       setCardOption("GUANXI");
-    } else if (onCard === true && (counterP1 === 8 || 23 || 37)) {
+      console.log("p1 guan");
+    } else if (
+      onCard === true &&
+      (counterP1 === 8 || counterP1 === 23 || counterP1 === 37)
+    ) {
+      console.log("p1 yun");
       setCardOption("YUNQI");
-    } else if (onCard2 === true && (counterP2 === 34 || 3 || 18)) {
+    } else if (
+      onCard2 === true &&
+      (counterP2 === 34 || counterP2 === 3 || counterP2 === 18)
+    ) {
       setCardOption("GUANXI");
-    } else if (onCard2 === true && (counterP1 === 8 || 23 || 37)) {
+      console.log("p2 guan");
+    } else if (
+      onCard2 === true &&
+      (counterP2 === 8 || counterP2 === 23 || counterP2 === 37)
+    ) {
+      console.log("p2 yun");
       setCardOption("YUNQI");
     }
     return null;
@@ -91,6 +108,8 @@ export const Cards = ({
                 setGuanxi={setGuanxi}
                 setOnCard={setOnCard}
                 setOnCard2={setOnCard2}
+                onCard={onCard}
+                onCard2={onCard2}
               />
             </div>
           </motion.div>

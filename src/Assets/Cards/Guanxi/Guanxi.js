@@ -215,7 +215,7 @@ export const Guanxi = [
     Number: 25,
     Text: "Gongti bottle service",
     Instruction:
-      "Those champagnes with the sparklers at Mix were worth it though right? Pay 150rmb",
+      "Those champagnes with the sparklers at Mix were worth it though, right? Pay 150rmb",
     Type: "pay",
     amt: 150,
     space: 0,

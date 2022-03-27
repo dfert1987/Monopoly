@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { Yunqi } from "../../../Assets/Cards/Yunqi/Yunqi";
 import "../../Styles/Card.css";
 
 const InnerCard = ({
@@ -8,8 +9,38 @@ const InnerCard = ({
   yunqi,
   setOnCard,
   setOnCard2,
+  setGuanxi,
+  setYunqi,
 }) => {
   const [currentCard, setCurrentCard] = useState();
+
+  const arrayRemovePre = () => {
+    if (cardOption === "GUANXI") {
+      arrayRemove(guanxi, currentCard);
+    }
+    if (cardOption === "YUNQI") {
+      arrayRemove(yunqi, currentCard);
+    }
+  };
+
+  const arrayRemove = (arr, value) => {
+    if (arr === guanxi) {
+      let newArray = arr.filter(function (ele) {
+        return ele !== value;
+      });
+      setGuanxi(newArray);
+      console.log(guanxi);
+    } else if (arr === yunqi) {
+      let newArray = arr.filter(function (ele) {
+        return ele !== value;
+      });
+      setYunqi(newArray);
+      console.log(Yunqi);
+    }
+  };
+
+  console.log(guanxi);
+  console.log(yunqi);
 
   useEffect(() => {
     if (cardOption === "GUANXI" && guanxi.length) {
@@ -23,6 +54,7 @@ const InnerCard = ({
   }, [cardOption, guanxi, yunqi]);
 
   const close = () => {
+    arrayRemovePre();
     setCurrentCard();
     setCardOption();
     setOnCard(false);
