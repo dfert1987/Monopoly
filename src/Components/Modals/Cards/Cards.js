@@ -54,6 +54,14 @@ export const Cards = ({
     return null;
   }, [counterP1, counterP2, onCard, onCard2]);
 
+  const cardStyle = () => {
+    if (cardOption && cardOption === "YUNQI") {
+      return "flex flexColumn innerModalPayRail YUNQI";
+    } else if (cardOption && cardOption === "GUANXI") {
+      return "flex flexColumn innerModalPayRail GUANXI";
+    }
+  };
+
   return (
     <AnimatePresence exitBeforeEnter>
       {onCard || onCard2 ? (
@@ -65,7 +73,7 @@ export const Cards = ({
           exit="hidden"
         >
           <motion.div
-            className="flex flexColumn innerModalPayRail"
+            className={cardStyle()}
             variants={modal}
             initial="hidden"
             animate="visible"

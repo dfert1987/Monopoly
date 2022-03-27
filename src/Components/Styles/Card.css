@@ -1,6 +1,9 @@
 .card-type {
   font-family: "Monopoly";
   font-size: 3.5em;
+  margin-top: 0;
+  color: white;
+  text-shadow: 2px 2px 5px black;
 }
 
 .card-horizontal {
@@ -14,6 +17,8 @@
 .card-right {
   display: flex;
   flex-direction: column;
+  margin-right: 1em;
+  margin-left: 1em;
 }
 
 .card-info {
@@ -25,4 +30,55 @@
   max-width: 10em;
   margin-left: auto;
   margin-right: auto;
+}
+
+.card-image {
+  border-radius: 6px;
+  max-width: 24em;
+  box-shadow: 2px 2px 8px;
+  margin-left: 3em;
+}
+
+.continue-button {
+  background-color: white;
+  border-radius: 5px;
+  cursor: pointer;
+  box-shadow: 0px 0px 12px -2px;
+  font-family: "Monopoly";
+  font-size: 1.75em;
+  margin-bottom: 1em;
+  margin-top: 1em;
+  width: 8em;
+  overflow: hidden;
+  transition: background-color 0.3s ease;
+}
+
+.continue-button:hover {
+  background-color: grey;
+  color: #c0e2ca;
+}
+
+.card-main-text {
+  font-family: "Monopoly";
+  font-size: 2.5em;
+  margin-bottom: 0;
+  padding-top: 0.5em;
+  margin-top: 0.25em;
+  color: white;
+  text-shadow: 2px 2px 5px black;
+}
+
+.card-secondary-text {
+  color: white;
+  text-shadow: 2px 2px 5px black;
+}
+
+.flex.flexColumn.innerModalPayRail.YUNQI {
+  border: 3px red solid;
+  background-color: salmon;
+}
+
+.flex.flexColumn.innerModalPayRail.GUANXI {
+  border: 3px blue solid;
+  background-color: cornflowerblue;
 }
