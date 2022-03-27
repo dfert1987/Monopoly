@@ -195,15 +195,19 @@ export const PayOpponent = ({
         setRent(onProp.hotel);
       }
     } else if (onProp2 && payTo && payTo === 1) {
+      console.log("pop");
       let number = properties.filter(
         (property) =>
           property.color === onProp2.color && property.ownedP1 === true
       );
-      if (number && number.length === 3 && onProp2.oneHouse === false) {
+      console.log(number, number.length, onProp2.hasOneHouse);
+      if (number && number.length === 3 && onProp2.hasOneHouse === false) {
+        console.log("poooooop");
         let p1New = p1Money + onProp2.monopolyRent;
         let p2New = p2Money - onProp2.monopolyRent;
         setP1Money(p1New);
         setP2Money(p2New);
+        console.log(onProp2.monopolyRent);
         setRent(onProp2.monopolyRent);
       } else if (number.length < 3) {
         let p1New = p1Money + onProp2.rent;
@@ -272,6 +276,7 @@ export const PayOpponent = ({
         let p2New = p2Money + onProp.monopolyRent;
         setP1Money(p2New);
         setP2Money(p1New);
+        console.log(onProp.monopolyRent);
         setRent(onProp.monopolyRent);
       } else if (number.length < 3) {
         let p1New = p1Money - onProp.rent;

@@ -66,19 +66,19 @@ const AgentFee = ({
               animate="visible"
               exit="hidden"
             >
-              <div className="button-row">
-                <button className="close-button" onClick={handleClose}>
-                  <FontAwesomeIcon className="x-icon free" icon={faXmark} />
-                </button>
-              </div>
               <div className="main-agent">
-                <h1 className="main-congrats">Agent Fee!</h1>
+                <div className="button-row">
+                  <button className="close-button" onClick={handleClose}>
+                    <FontAwesomeIcon className="x-icon free" icon={faXmark} />
+                  </button>
+                </div>
+                <h1 className="main-congrats pay">Agent Fee!</h1>
                 <img
                   className="agent-pic"
                   alt="real estate office"
                   src={homelink}
                 />
-                <h2 className="prize">Pay ¥75!</h2>
+                <h2 className="prize pay">Pay ¥75!</h2>
               </div>
             </motion.div>
           </motion.div>

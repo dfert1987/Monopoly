@@ -15,25 +15,33 @@ const InnerCard = ({
   const [currentCard, setCurrentCard] = useState();
 
   const arrayRemovePre = () => {
+    console.log("hi");
     if (cardOption === "GUANXI") {
+      console.log("ok");
       arrayRemove(guanxi, currentCard);
     }
     if (cardOption === "YUNQI") {
+      console.log("ok yunqi");
       arrayRemove(yunqi, currentCard);
     }
   };
 
   const arrayRemove = (arr, value) => {
     if (arr === guanxi) {
+      console.log("ok 2");
       let newArray = arr.filter(function (ele) {
         return ele !== value;
       });
       setGuanxi(newArray);
-      console.log(guanxi);
+      // console.log(newArray);
     } else if (arr === yunqi) {
+      console.log("ok 3");
       let newArray = arr.filter(function (ele) {
         return ele !== value;
       });
+
+      // console.log(newArray);
+
       setYunqi(newArray);
       console.log(Yunqi);
     }
