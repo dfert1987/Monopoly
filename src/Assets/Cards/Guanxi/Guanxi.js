@@ -6,6 +6,7 @@ export const Guanxi = [
     Type: "advance",
     amt: 0,
     space: 1,
+    image: require("./Pics/guanxi-airport.jpeg"),
   },
   {
     Number: 2,
@@ -14,6 +15,7 @@ export const Guanxi = [
     Type: "receive",
     amt: 200,
     space: 0,
+    image: require("./Pics/guanxi-hongbao.jpeg"),
   },
   {
     Number: 3,
@@ -22,6 +24,7 @@ export const Guanxi = [
     Type: "advance",
     amt: 0,
     space: 25,
+    image: require("./Pics/guanxi-lantern.jpeg"),
   },
   {
     Number: 4,
@@ -30,6 +33,7 @@ export const Guanxi = [
     Type: "advance",
     amt: 0,
     space: 17,
+    image: require("./Pics/guanxi-modernista.jpeg"),
   },
   {
     Number: 5,
@@ -38,6 +42,7 @@ export const Guanxi = [
     Type: "advance",
     amt: 0,
     space: 41,
+    image: require("./Pics/guanxi-drug.jpeg"),
   },
   {
     Number: 6,
@@ -46,6 +51,7 @@ export const Guanxi = [
     Type: "receive",
     amt: 150,
     space: 0,
+    image: require("./Pics/guanxi-tutor.jpeg"),
   },
   {
     Number: 7,
@@ -54,6 +60,7 @@ export const Guanxi = [
     Type: "receive",
     amt: 25,
     space: 0,
+    image: require("./Pics/guanxi-Jumble.jpeg"),
   },
 
   {
@@ -63,6 +70,7 @@ export const Guanxi = [
     Type: "pay",
     amt: 500,
     space: 0,
+    image: require("./Pics/guanxi-dealer.jpeg"),
   },
   {
     Number: 10,
@@ -71,6 +79,7 @@ export const Guanxi = [
     Type: "Skip",
     amt: 0,
     space: 0,
+    image: require("./Pics/guanxi-nanluo.jpeg"),
   },
   {
     Number: 11,
@@ -79,6 +88,7 @@ export const Guanxi = [
     Type: "Back",
     amt: 4,
     space: 0,
+    image: require("./Pics/guanxi-aqi.jpeg"),
   },
   {
     Number: 13,
@@ -87,6 +97,7 @@ export const Guanxi = [
     Type: "advance",
     amt: 0,
     space: 30,
+    image: require("./Pics/guanxi-duck.jpeg"),
   },
 
   {
@@ -96,6 +107,7 @@ export const Guanxi = [
     Type: "reroll",
     amt: 0,
     space: 0,
+    image: require("./Pics/guanxi-cdlp.jpeg"),
   },
   {
     Number: 16,
@@ -104,6 +116,7 @@ export const Guanxi = [
     Type: "Back",
     amt: 5,
     space: 0,
+    image: require("./Pics/guanxi-fake-alcohol.jpeg"),
   },
 
   {
@@ -113,6 +126,7 @@ export const Guanxi = [
     Type: "Nearest",
     amt: 0,
     space: 0,
+    image: require("./Pics/guanxi-landlord.jpeg"),
   },
   {
     Number: 19,
@@ -121,6 +135,7 @@ export const Guanxi = [
     Type: "Visa",
     amt: 0,
     space: 0,
+    image: require("./Pics/guanxi-visa.jpeg"),
   },
   {
     Number: 20,
@@ -129,6 +144,7 @@ export const Guanxi = [
     Type: "Receive Opponent",
     amt: 200,
     space: 0,
+    image: require("./Pics/guanxi-hsk.png"),
   },
   {
     Number: 17,
@@ -137,6 +153,7 @@ export const Guanxi = [
     Type: "Pay",
     amt: 100,
     space: 0,
+    image: require("./Pics/guanxi-qinming.jpeg"),
   },
   {
     Number: 14,
@@ -145,6 +162,7 @@ export const Guanxi = [
     Type: "Pay",
     amt: 200,
     space: 0,
+    image: require("./Pics/guanxi-scooter.jpeg"),
   },
   {
     Number: 12,
@@ -153,6 +171,7 @@ export const Guanxi = [
     Type: "Collect opponent",
     amt: 40,
     space: 0,
+    image: require("./Pics/guanxi-teach.jpeg"),
   },
   {
     Number: 8,
@@ -162,14 +181,7 @@ export const Guanxi = [
     Type: "pay house",
     amt: null,
     space: 0,
-  },
-  {
-    Number: 21,
-    Text: "No TP on you for public restroom",
-    Instruction: "Uregently use 20rmb to...",
-    Type: "pay",
-    amt: 20,
-    space: 0,
+    image: require("./Pics/guanxi-moving.jpeg"),
   },
   {
     Number: 22,
@@ -179,6 +191,7 @@ export const Guanxi = [
     Type: "collect opponent",
     amt: 10,
     space: 0,
+    image: require("./Pics/guanxi-soda.jpeg"),
   },
   {
     Number: 23,
@@ -187,13 +200,62 @@ export const Guanxi = [
     Type: "advance",
     amt: 10,
     space: 0,
+    image: require("./Pics/guanxi-mobike.jpeg"),
   },
   {
     Number: 24,
     Text: "Join the Beijing Beatles",
-    Instruction: "Play FuBar and make 100rmb",
+    Instruction: "Play FuBar for the 40th time and make 100rmb",
     Type: "collect",
     amt: 100,
     space: 0,
+    image: require("./Pics/guanxi-beatles.jpeg"),
+  },
+  {
+    Number: 25,
+    Text: "Gongti bottle service",
+    Instruction:
+      "Those champagnes with the sparklers at Mix were worth it though, right? Pay 150rmb",
+    Type: "pay",
+    amt: 150,
+    space: 0,
+    image: require("./Pics/guanxi-gongti.jpeg"),
+  },
+  {
+    Number: 26,
+    Text: "Hutong Bathroom has no TP!",
+    Instruction: "Urgently use 15rmb for ... LOOK, YOU NEEDED IT!",
+    Type: "pay",
+    amt: 15,
+    space: 0,
+    image: require("./Pics/poopmoney.jpeg"),
+  },
+  {
+    Number: 27,
+    Text: "The Beijinger Publishes your Article!",
+    Instruction:
+      "Collect 25rmb, and start to fancy yourself the Hunter S Thompson of writing about cheeseburgers.",
+    Type: "collect",
+    amt: 25,
+    space: 0,
+    image: require("./Pics/guanxi-beijinger.jpeg"),
+  },
+  {
+    Number: 28,
+    Text: "WeChat Wallet Malfunction in your favor!",
+    Instruction: "Collect 100rmb from some random Chinese person.",
+    Type: "collect",
+    amt: 100,
+    space: 0,
+    image: require("./Pics/guanxi-wechat.jpeg"),
+  },
+  {
+    Number: 29,
+    Text: "The rooftop is open!",
+    Instruction: "Advance to Migas",
+    Type: "advance",
+    amt: null,
+    space: 38,
+    image: require("./Pics/guanxi-migas.jpeg"),
   },
 ];

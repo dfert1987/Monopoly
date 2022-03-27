@@ -140,7 +140,7 @@ export const PayOpponentRail = ({
     } else if (fare && fare > 75) {
       return (
         <img
-          clasName="cash-pic"
+          className="cash-pic"
           alt="person squished on subway"
           src={subwaypic1}
         />

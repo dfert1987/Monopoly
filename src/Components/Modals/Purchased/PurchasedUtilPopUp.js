@@ -51,7 +51,7 @@ const PurchasedUtilPopUp = ({
             exit="hidden"
           >
             <motion.div
-              className="flex flexColumn innerModalPurchase"
+              className="flex flexColumn innerModalPurchase clear"
               variants={modal}
               initial="hidden"
               animate="visible"
@@ -86,7 +86,7 @@ const PurchasedUtilPopUp = ({
             exit="hidden"
           >
             <motion.div
-              className="flex flexColumn innerModalPurchase"
+              className="flex flexColumn innerModalPurchase clear"
               variants={modal}
               initial="hidden"
               animate="visible"

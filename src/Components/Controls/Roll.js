@@ -35,6 +35,7 @@ export const Roll = ({
   setP1Jail,
   inJail,
   setInJailModal,
+  setOnCard,
 }) => {
   const [die1, setDie1] = useState(1);
   const [die2, setDie2] = useState(1);
@@ -106,6 +107,18 @@ export const Roll = ({
       setOnGoJail(true);
       setCounterP1(41);
       setP1Jail(true);
+    } else if (space === 34) {
+      setOnCard(true);
+    } else if (space === 3) {
+      setOnCard(true);
+    } else if (space === 18) {
+      setOnCard(true);
+    } else if (space === 8) {
+      setOnCard(true);
+    } else if (space === 23) {
+      setOnCard(true);
+    } else if (space === 37) {
+      setOnCard(true);
     }
   };
 
