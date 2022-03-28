@@ -14,8 +14,9 @@ const Visa = ({
   p2Money,
   setP1Money,
   setP2Money,
+  freeParking,
+  setFreeParking,
 }) => {
-  const [visaFee, setVisaFee] = useState();
   const [disabled, setDisabled] = useState(false);
   const [disabledLeft, setDisabledLeft] = useState(false);
   const [notEnough, setNotEnough] = useState(false);
@@ -39,21 +40,23 @@ const Visa = ({
 
   const pay200 = () => {
     if (onVisa && !onVisa2) {
+      let newFP = freeParking + 200;
+      setFreeParking(newFP);
       if (p1Money < 200) {
         setDisabledLeft(true);
         setNotEnough(true);
       } else if (p1Money > 200) {
-        setVisaFee(200);
         let newMoney = p1Money - 200;
         setP1Money(newMoney);
         handleClose();
       }
     } else if (onVisa2 && !onVisa) {
+      let newFP = freeParking + 200;
+      setFreeParking(newFP);
       if (p2Money < 200) {
         setDisabledLeft(true);
         setNotEnough(true);
       } else if (p2Money > 200) {
-        setVisaFee(200);
         let newMoney = p2Money - 200;
         setP2Money(newMoney);
         handleClose();
@@ -66,8 +69,9 @@ const Visa = ({
     setNotEnough(false);
     if (onVisa && !onVisa2 && p1Money > 10) {
       let fee = p1Money * 0.1;
-      setVisaFee(fee);
-      let newMoney = p1Money - fee;
+      let newMoney = p1Money - fee.floor();
+      let newFP = freeParking + fee;
+      setFreeParking(newFP);
       setP1Money(newMoney);
       handleClose();
     } else if (onVisa && !onVisa2 && p1Money < 10) {
@@ -77,8 +81,9 @@ const Visa = ({
       }, 2000);
     } else if (onVisa2 && !onVisa && p2Money > 10) {
       let fee = p2Money * 0.1;
-      setVisaFee(fee);
-      let newMoney = p2Money - fee;
+      let newMoney = p2Money - fee.floor();
+      let newFP = freeParking + fee;
+      setFreeParking(newFP);
       setP1Money(newMoney);
       handleClose();
     } else if (onVisa2 && !onVisa && p2Money < 10) {
@@ -97,7 +102,6 @@ const Visa = ({
       setDisabledLeft(false);
       setPoorMessage(false);
       setNotEnough(false);
-      setVisaFee();
     } else if (onVisa2) {
       setOnVisa2(false);
       setOnVisa(false);
@@ -105,7 +109,6 @@ const Visa = ({
       setDisabledLeft(false);
       setPoorMessage(false);
       setNotEnough(false);
-      setVisaFee();
     }
     return null;
   };
