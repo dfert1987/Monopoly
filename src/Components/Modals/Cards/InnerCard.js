@@ -35,11 +35,21 @@ const InnerCard = ({
       setP1Money(newMoney);
       let newFP = freeParking + currentCard.amt;
       setFreeParking(newFP);
+      setCurrentCard();
     } else if (!onCard && onCard2 && currentCard.Type === "pay") {
       let newMoney = p2Money - currentCard.amt;
       setP2Money(newMoney);
       let newFP = freeParking + currentCard.amt;
       setFreeParking(newFP);
+      setCurrentCard();
+    } else if (onCard && !onCard2 && currentCard.Type === "receive") {
+      let newMoney = p1Money + currentCard.amt;
+      setP1Money(newMoney);
+      setCurrentCard();
+    } else if (!onCard && onCard2 && currentCard.Type === "receive") {
+      let newMoney = p2Money + currentCard.amt;
+      setP2Money(newMoney);
+      setCurrentCard();
     }
   };
 
