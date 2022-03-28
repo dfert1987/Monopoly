@@ -14,6 +14,8 @@ const AgentFee = ({
   setP2Money,
   p1Money,
   p2Money,
+  setFreeParking,
+  freeParking,
 }) => {
   const backdrop = {
     visible: { opacity: 1 },
@@ -33,17 +35,20 @@ const AgentFee = ({
   };
 
   const handleClose = (e) => {
+    let newFP = freeParking + 75;
     e.preventDefault();
     if (setOnAgentFee) {
       let newMoney = p1Money - 75;
       setP1Money(newMoney);
       setOnAgentFee(false);
       setOnAgentFee2(false);
+      setFreeParking(newFP);
     } else if (setOnAgentFee2) {
       let newMoney = p2Money - 75;
       setP2Money(newMoney);
       setOnAgentFee(false);
       setOnAgentFee2(false);
+      setFreeParking(newFP);
     }
     return null;
   };

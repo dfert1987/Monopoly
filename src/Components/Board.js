@@ -1061,6 +1061,7 @@ export const Board = ({
           setP2Money={setP2Money}
           p1Money={p1Money}
           p2Money={p2Money}
+          setFreeParking={setFreeParking}
         />
         <Visa
           onVisa={onVisa}
@@ -1071,6 +1072,7 @@ export const Board = ({
           p2Money={p2Money}
           setP1Money={setP1Money}
           setP2Money={setP2Money}
+          setFreeParking={setFreeParking}
         />
         <Jail
           onGoJail={onGoJail}
