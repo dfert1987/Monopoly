@@ -11,6 +11,7 @@ export const Cards = ({
   onCard2,
   setOnCard2,
   setFreeParking,
+  freeParking,
   setP1Money,
   setP2Money,
   p1Money,
@@ -19,6 +20,8 @@ export const Cards = ({
   setInJail2,
   counterP1,
   counterP2,
+  setCounterP1,
+  setCounterP2,
 }) => {
   const [guanxi, setGuanxi] = useState(Guanxi);
   const [yunqi, setYunqi] = useState(Yunqi);
@@ -110,6 +113,18 @@ export const Cards = ({
                 setOnCard2={setOnCard2}
                 onCard={onCard}
                 onCard2={onCard2}
+                setFreeParking={setFreeParking}
+                freeParking={freeParking}
+                p1Money={p1Money}
+                p2Money={p2Money}
+                setP1Money={setP1Money}
+                setP2Money={setP2Money}
+                setInJail={setInJail}
+                setInJail2={setInJail2}
+                counterP1={counterP1}
+                counterP2={counterP2}
+                setCounterP1={setCounterP1}
+                setCounterP2={setCounterP2}
               />
             </div>
           </motion.div>

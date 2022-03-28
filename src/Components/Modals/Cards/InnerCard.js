@@ -12,8 +12,27 @@ const InnerCard = ({
   setOnCard2,
   setGuanxi,
   setYunqi,
+  onCard,
+  onCard2,
+  counterP1,
+  counterP2,
+  setCounterP1,
+  setCounterP2,
+  setInJail,
+  setInJail2,
+  p1Money,
+  setP1Money,
+  p2Money,
+  setP2Money,
+  freeParking,
+  setFreeParking,
 }) => {
   const [currentCard, setCurrentCard] = useState();
+
+  const cardFunctionSorter = () => {
+    if (onCard && !onCard2) {
+    }
+  };
 
   const arrayRemovePre = () => {
     if (cardOption === "GUANXI") {
@@ -58,6 +77,7 @@ const InnerCard = ({
   }, [cardOption, guanxi, yunqi]);
 
   const close = () => {
+    cardFunctionSorter();
     arrayRemovePre();
     setCurrentCard();
     setCardOption();
