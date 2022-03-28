@@ -14,6 +14,8 @@ const Visa = ({
   p2Money,
   setP1Money,
   setP2Money,
+  freeParking,
+  setFreeParking,
 }) => {
   const [disabled, setDisabled] = useState(false);
   const [disabledLeft, setDisabledLeft] = useState(false);
@@ -38,6 +40,8 @@ const Visa = ({
 
   const pay200 = () => {
     if (onVisa && !onVisa2) {
+      let newFP = freeParking + 200;
+      setFreeParking(newFP);
       if (p1Money < 200) {
         setDisabledLeft(true);
         setNotEnough(true);
@@ -47,6 +51,8 @@ const Visa = ({
         handleClose();
       }
     } else if (onVisa2 && !onVisa) {
+      let newFP = freeParking + 200;
+      setFreeParking(newFP);
       if (p2Money < 200) {
         setDisabledLeft(true);
         setNotEnough(true);
@@ -64,6 +70,8 @@ const Visa = ({
     if (onVisa && !onVisa2 && p1Money > 10) {
       let fee = p1Money * 0.1;
       let newMoney = p1Money - fee.floor();
+      let newFP = freeParking + fee;
+      setFreeParking(newFP);
       setP1Money(newMoney);
       handleClose();
     } else if (onVisa && !onVisa2 && p1Money < 10) {
@@ -74,6 +82,8 @@ const Visa = ({
     } else if (onVisa2 && !onVisa && p2Money > 10) {
       let fee = p2Money * 0.1;
       let newMoney = p2Money - fee.floor();
+      let newFP = freeParking + fee;
+      setFreeParking(newFP);
       setP1Money(newMoney);
       handleClose();
     } else if (onVisa2 && !onVisa && p2Money < 10) {
