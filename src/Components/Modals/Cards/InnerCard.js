@@ -30,7 +30,16 @@ const InnerCard = ({
   const [currentCard, setCurrentCard] = useState();
 
   const cardFunctionSorter = () => {
-    if (onCard && !onCard2) {
+    if (onCard && !onCard2 && currentCard.Type === "pay") {
+      let newMoney = p1Money - currentCard.amt;
+      setP1Money(newMoney);
+      let newFP = freeParking + currentCard.amt;
+      setFreeParking(newFP);
+    } else if (!onCard && onCard2 && currentCard.Type === "pay") {
+      let newMoney = p2Money - currentCard.amt;
+      setP2Money(newMoney);
+      let newFP = freeParking + currentCard.amt;
+      setFreeParking(newFP);
     }
   };
 
@@ -79,7 +88,7 @@ const InnerCard = ({
   const close = () => {
     cardFunctionSorter();
     arrayRemovePre();
-    setCurrentCard();
+    // setCurrentCard();
     setCardOption();
     setOnCard(false);
     setOnCard2(false);
