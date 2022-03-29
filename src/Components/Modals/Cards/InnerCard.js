@@ -77,6 +77,19 @@ const InnerCard = ({
     } else if (onCard && !onCard2 && currentCard.Type === "forward") {
       let newSpace = counterP1 + currentCard.amt;
       setCounterP1(newSpace);
+      setCurrentCard();
+    } else if (!onCard && onCard2 && currentCard.Type === "forward") {
+      let newSpace = counterP2 + currentCard.amt;
+      setCounterP2(newSpace);
+      setCurrentCard();
+    } else if (onCard && !onCard2 && currentCard.Type === "back") {
+      let newSpace = counterP1 - currentCard.amt;
+      setCounterP1(newSpace);
+      setCurrentCard();
+    } else if (!onCard && onCard2 && currentCard.Type === "back") {
+      let newSpace = counterP2 - currentCard.amt;
+      setCounterP2(newSpace);
+      setCurrentCard();
     }
   };
 
