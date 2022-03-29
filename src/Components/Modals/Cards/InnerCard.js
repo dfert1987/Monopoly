@@ -62,6 +62,18 @@ const InnerCard = ({
       setP2Money(newMoney);
       setP1Money(newMoney2);
       setCurrentCard();
+    } else if (onCard && !onCard2 && currentCard.Type === "pay-opponent") {
+      let newMoney = p1Money - currentCard.amt;
+      let newMoney2 = p2Money + currentCard.amt;
+      setP1Money(newMoney);
+      setP2Money(newMoney2);
+      setCurrentCard();
+    } else if (!onCard && onCard2 && currentCard.Type === "pay-opponent") {
+      let newMoney = p2Money - currentCard.amt;
+      let newMoney2 = p1Money + currentCard.amt;
+      setP1Money(newMoney2);
+      setP2Money(newMoney);
+      setCurrentCard();
     }
   };
 
