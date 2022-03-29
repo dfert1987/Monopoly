@@ -81,6 +81,10 @@ export const Controls = ({
   onCard2,
   setOnCard,
   setOnCard2,
+  skip1,
+  skip2,
+  setSkip1,
+  setSkip2,
 }) => {
   useEffect(() => {
     if (turn === 0 || turn % 2 === 0) {
@@ -146,6 +150,8 @@ export const Controls = ({
             setInJailModal={setInJailModal}
             onCard={onCard}
             setOnCard={setOnCard}
+            skip2={skip2}
+            setSkip2={setSkip2}
           />
           <div className="money player1">
             <h3 className="money-label">Money</h3>
@@ -211,6 +217,8 @@ export const Controls = ({
             inJailModal2={inJailModal2}
             onCard2={onCard2}
             setOnCard2={setOnCard2}
+            setSkip1={setSkip1}
+            skip1={skip1}
           />
           <div className="money player2">
             <h3 className="money-label">Money</h3>

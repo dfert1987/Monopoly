@@ -32,6 +32,8 @@ const InnerCard = ({
   setDoubleRR,
   setDoubleProp,
   properties,
+  setSkip1,
+  setSkip2,
 }) => {
   const [currentCard, setCurrentCard] = useState();
 
@@ -356,7 +358,44 @@ const InnerCard = ({
           // PASS GO
           setCounterP2(moveTo);
         } else setCounterP2(counterP2);
+      } else if (counterP2 === 34) {
+        let orderedProps = [
+          properties[2],
+          properties[1],
+          properties[0],
+          properties[21],
+          properties[20],
+          properties[19],
+          properties[18],
+          properties[17],
+          properties[16],
+          properties[15],
+          properties[14],
+          properties[13],
+          properties[12],
+          properties[11],
+          properties[10],
+          properties[9],
+          properties[8],
+          properties[7],
+          properties[6],
+          properties[5],
+          properties[4],
+          properties[3],
+        ];
+        let firstOwned = orderedProps.find(
+          (property) => property.ownedP1 === true
+        );
+        if (firstOwned) {
+          let moveTo = firstOwned.Number;
+          setDoubleProp(true);
+          setCounterP2(moveTo);
+        } else setCounterP2(counterP2);
       }
+    } else if (onCard && !onCard2 && currentCard.Type === "skip") {
+      setSkip1(true);
+    } else if (!onCard && onCard2 && currentCard.Type === "skip") {
+      setSkip2(true);
     }
   };
 

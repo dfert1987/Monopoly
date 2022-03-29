@@ -28,6 +28,7 @@ export const Cards = ({
   properties,
   setDoubleRR,
   setDoubleProp,
+  setSkip,
 }) => {
   const [guanxi, setGuanxi] = useState(Guanxi);
   const [yunqi, setYunqi] = useState(Yunqi);
@@ -51,18 +52,15 @@ export const Cards = ({
   };
 
   useEffect(() => {
-    console.log(onCard, onCard2, counterP1, counterP2);
     if (
       onCard === true &&
       (counterP1 === 34 || counterP1 === 3 || counterP1 === 18)
     ) {
       setCardOption("GUANXI");
-      console.log("p1 guan");
     } else if (
       onCard === true &&
       (counterP1 === 8 || counterP1 === 23 || counterP1 === 37)
     ) {
-      console.log("p1 yun");
       setCardOption("YUNQI");
     } else if (
       onCard2 === true &&
@@ -74,7 +72,6 @@ export const Cards = ({
       onCard2 === true &&
       (counterP2 === 8 || counterP2 === 23 || counterP2 === 37)
     ) {
-      console.log("p2 yun");
       setCardOption("YUNQI");
     }
     return null;
@@ -137,6 +134,7 @@ export const Cards = ({
                 properties={properties}
                 setDoubleRR={setDoubleRR}
                 setDoubleProp={setDoubleProp}
+                setSkip={setSkip}
               />
             </div>
           </motion.div>

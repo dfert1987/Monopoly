@@ -59,6 +59,8 @@ function App() {
   const [disableLeft, setDisableLeft] = useState(false);
   const [onCard, setOnCard] = useState(false);
   const [onCard2, setOnCard2] = useState(false);
+  const [skip1, setSkip1] = useState(false);
+  const [skip2, setSkip2] = useState(false);
 
   return (
     <div className="App">
@@ -167,6 +169,8 @@ function App() {
         onCard2={onCard2}
         setOnCard={setOnCard}
         setOnCard2={setOnCard2}
+        setSkip1={setSkip1}
+        setSKip2={setSkip2}
       />
       <Controls
         counterP1={counterP1}
@@ -263,6 +267,10 @@ function App() {
         onCard2={onCard2}
         setOnCard={setOnCard}
         setOnCard2={setOnCard2}
+        skip1={skip1}
+        skip2={skip2}
+        setSkip1={setSkip1}
+        setSkip2={setSkip2}
       />
     </div>
   );
