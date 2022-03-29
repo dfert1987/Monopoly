@@ -103,7 +103,7 @@ export const Guanxi = [
   {
     Number: 15,
     Text: "Coffee Shots!",
-    Instruction: "Roll Again",
+    Instruction: "roll-again",
     Type: "reroll",
     amt: 0,
     space: 0,

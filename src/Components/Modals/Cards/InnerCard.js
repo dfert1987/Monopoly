@@ -26,6 +26,8 @@ const InnerCard = ({
   setP2Money,
   freeParking,
   setFreeParking,
+  setTurn,
+  turn,
 }) => {
   const [currentCard, setCurrentCard] = useState();
 
@@ -90,6 +92,9 @@ const InnerCard = ({
       let newSpace = counterP2 - currentCard.amt;
       setCounterP2(newSpace);
       setCurrentCard();
+    } else if (currentCard.Type === "reroll") {
+      let newTurn = turn + 1;
+      setTurn(newTurn);
     }
   };
 
