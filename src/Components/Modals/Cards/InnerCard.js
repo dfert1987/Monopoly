@@ -28,6 +28,8 @@ const InnerCard = ({
   setFreeParking,
   setTurn,
   turn,
+  railRoads,
+  setDoubleRR,
 }) => {
   const [currentCard, setCurrentCard] = useState();
 
@@ -79,10 +81,12 @@ const InnerCard = ({
     } else if (onCard && !onCard2 && currentCard.Type === "forward") {
       let newSpace = counterP1 + currentCard.amt;
       setCounterP1(newSpace);
+      // PASS GO
       setCurrentCard();
     } else if (!onCard && onCard2 && currentCard.Type === "forward") {
       let newSpace = counterP2 + currentCard.amt;
       setCounterP2(newSpace);
+      // PASS GO
       setCurrentCard();
     } else if (onCard && !onCard2 && currentCard.Type === "back") {
       let newSpace = counterP1 - currentCard.amt;
@@ -95,15 +99,74 @@ const InnerCard = ({
     } else if (currentCard.Type === "reroll") {
       let newTurn = turn + 1;
       setTurn(newTurn);
+      setCurrentCard();
     } else if (onCard && !onCard2 && currentCard.Type === "advance") {
       setCounterP1(currentCard.space);
+      // PASS GO
       if (currentCard.space === 41) {
         setInJail(true);
+        setCurrentCard();
       }
+      setCurrentCard();
     } else if (!onCard && onCard2 && currentCard.Type === "advance") {
       setCounterP2(currentCard.space);
+      // PASS GO
       if (currentCard.space === 41) {
         setInJail2(true);
+        setCurrentCard();
+      }
+      setCurrentCard();
+    } else if (
+      onCard &&
+      !onCard2 &&
+      currentCard.Type === "nearest" &&
+      currentCard.Number === 16
+    ) {
+      if (counterP1 === 37) {
+        setCounterP1(6);
+        if (railRoads[0].ownedP2) {
+          setDoubleRR(true);
+        }
+        // PASS GO
+        setCurrentCard();
+      } else if (counterP1 === 8) {
+        setCounterP1(16);
+        if (railRoads[1].ownedP2) {
+          setDoubleRR(true);
+        }
+        setCurrentCard();
+      } else if (counterP1 === 23) {
+        setCounterP1(26);
+        if (railRoads[2].ownedP2) {
+          setDoubleRR(true);
+        }
+        setCurrentCard();
+      }
+    } else if (
+      !onCard &&
+      onCard2 &&
+      currentCard.Type === "nearest" &&
+      currentCard.Number === 16
+    ) {
+      if (counterP2 === 37) {
+        setCounterP2(6);
+        if (railRoads[0].ownedP1) {
+          setDoubleRR(true);
+        }
+        // PASS GO
+        setCurrentCard();
+      } else if (counterP2 === 8) {
+        setCounterP2(16);
+        if (railRoads[1].ownedP1) {
+          setDoubleRR(true);
+        }
+        setCurrentCard();
+      } else if (counterP2 === 23) {
+        setCounterP2(26);
+        if (railRoads[2].ownedP1) {
+          setDoubleRR(true);
+        }
+        setCurrentCard();
       }
     }
   };

@@ -132,6 +132,7 @@ export const Board = ({
   const [viewPurchaseRR2, setViewPurchaseRR2] = useState(false);
   const [viewPurchaseUtil, setViewPurchaseUtil] = useState(false);
   const [viewPurchaseUtil2, setViewPurchaseUtil2] = useState(false);
+  const [doubleRR, setDoubleRR] = useState(false);
   return (
     <div className="main-board">
       <div className="left-column">
@@ -922,6 +923,8 @@ export const Board = ({
           setOnRR={setOnRR}
           setOnRR2={setOnRR2}
           railRoads={railRoads}
+          setDoubleRR={setDoubleRR}
+          doubleRR={doubleRR}
         />
         <PayOpponentUtil
           className="pay-opponent"
@@ -1120,6 +1123,8 @@ export const Board = ({
           setCounterP2={setCounterP2}
           setTurn={setTurn}
           turn={turn}
+          railRoads={railRoads}
+          setDoubleRR={setDoubleRR}
         />
       </div>
     </div>

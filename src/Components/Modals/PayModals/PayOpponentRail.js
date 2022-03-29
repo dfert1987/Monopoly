@@ -20,6 +20,8 @@ export const PayOpponentRail = ({
   setPayRailTo,
   setP1Money,
   setP2Money,
+  setDoubleRR,
+  doubleRR,
 }) => {
   const [fare, setFare] = useState();
 
@@ -46,6 +48,7 @@ export const PayOpponentRail = ({
     setPayRailTo();
     setOnRR2();
     setOnRR();
+    setDoubleRR(false);
   };
 
   const railName = () => {
@@ -78,57 +81,113 @@ export const PayOpponentRail = ({
   useEffect(() => {
     if (onRR2 && payRailTo) {
       let number = railRoads.filter((rr) => rr.ownedP1 === true);
-      if (number.length === 1) {
+      if (number.length === 1 && !doubleRR) {
         let p1New = p1Money + onRR2.rent;
         let p2New = p2Money - onRR2.rent;
         setP1Money(p1New);
         setP2Money(p2New);
         setFare(onRR2.rent);
-      } else if (number.length === 2) {
+      } else if (number.length === 2 && !doubleRR) {
         let p1New = p1Money + onRR2.twoRRs;
         let p2New = p2Money - onRR2.twoRRs;
         setP1Money(p1New);
         setP2Money(p2New);
         setFare(onRR2.twoRRs);
-      } else if (number.length === 3) {
+      } else if (number.length === 3 && !doubleRR) {
         let p1New = p1Money + onRR2.threeRRs;
         let p2New = p2Money - onRR2.threeRRs;
         setP1Money(p1New);
         setP2Money(p2New);
         setFare(onRR2.threeRRs);
-      } else if (number.length === 4) {
+      } else if (number.length === 4 && !doubleRR) {
         let p1New = p1Money + onRR2.fourRRs;
         let p2New = p2Money - onRR2.fourRRs;
         setP1Money(p1New);
         setP2Money(p2New);
         setFare(onRR2.fourRRs);
+      } else if (number.length === 1 && doubleRR) {
+        let doubled = onRR2.rent * 2;
+        let p1New = p1Money + doubled;
+        let p2New = p2Money - doubled;
+        setP1Money(p1New);
+        setP2Money(p2New);
+        setFare(doubled);
+      } else if (number.length === 2 && doubleRR) {
+        let doubled = onRR2.twoRRs * 2;
+        let p1New = p1Money + doubled;
+        let p2New = p2Money - doubled;
+        setP1Money(p1New);
+        setP2Money(p2New);
+        setFare(onRR2.doubled);
+      } else if (number.length === 3 && doubleRR) {
+        let doubled = onRR2.threeRRs * 2;
+        let p1New = p1Money + doubled;
+        let p2New = p2Money - doubled;
+        setP1Money(p1New);
+        setP2Money(p2New);
+        setFare(doubled);
+      } else if (number.length === 4 && doubleRR) {
+        let doubled = onRR2.fourRRs * 2;
+        let p1New = p1Money + doubled;
+        let p2New = p2Money - doubled;
+        setP1Money(p1New);
+        setP2Money(p2New);
+        setFare(doubled);
       }
     } else if (onRR && payRailTo) {
       let number = railRoads.filter((rr) => rr.ownedP2 === true);
-      if (number.length === 1) {
+      if (number.length === 1 && !doubleRR) {
         let p1New = p1Money - onRR.rent;
         let p2New = p2Money + onRR.rent;
         setP1Money(p1New);
         setP2Money(p2New);
         setFare(onRR.rent);
-      } else if (number.length === 2) {
+      } else if (number.length === 2 && !doubleRR) {
         let p1New = p1Money - onRR.twoRRs;
         let p2New = p2Money + onRR.twoRRs;
         setP1Money(p1New);
         setP2Money(p2New);
         setFare(onRR.twoRRs);
-      } else if (number.length === 3) {
+      } else if (number.length === 3 && !doubleRR) {
         let p1New = p1Money - onRR.threeRRs;
         let p2New = p2Money + onRR.threeRRs;
         setP1Money(p1New);
         setP2Money(p2New);
         setFare(onRR.threeRRs);
-      } else if (number.length === 4) {
+      } else if (number.length === 4 && !doubleRR) {
         let p1New = p1Money - onRR.fourRRs;
         let p2New = p2Money + onRR.fourRRs;
         setP1Money(p1New);
         setP2Money(p2New);
         setFare(onRR.fourRRs);
+      } else if (number.length === 1 && doubleRR) {
+        let doubled = onRR.rent * 2;
+        let p1New = p1Money - doubled;
+        let p2New = p2Money + doubled;
+        setP1Money(p1New);
+        setP2Money(p2New);
+        setFare(doubled);
+      } else if (number.length === 2 && doubleRR) {
+        let doubled = onRR.twoRRs * 2;
+        let p1New = p1Money - doubled;
+        let p2New = p2Money + doubled;
+        setP1Money(p1New);
+        setP2Money(p2New);
+        setFare(doubled);
+      } else if (number.length === 3 && doubleRR) {
+        let doubled = onRR.threeRRs * 2;
+        let p1New = p1Money - doubled;
+        let p2New = p2Money + doubled;
+        setP1Money(p1New);
+        setP2Money(p2New);
+        setFare(doubled);
+      } else if (number.length === 4 && doubleRR) {
+        let doubled = onRR.fourRRs * 2;
+        let p1New = p1Money - doubled;
+        let p2New = p2Money + doubled;
+        setP1Money(p1New);
+        setP2Money(p2New);
+        setFare(doubled);
       }
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps

@@ -24,6 +24,8 @@ export const Cards = ({
   setCounterP2,
   setTurn,
   turn,
+  railRoads,
+  setDoubleRR,
 }) => {
   const [guanxi, setGuanxi] = useState(Guanxi);
   const [yunqi, setYunqi] = useState(Yunqi);
@@ -129,6 +131,8 @@ export const Cards = ({
                 setCounterP2={setCounterP2}
                 setTurn={setTurn}
                 turn={turn}
+                railRoads={railRoads}
+                setDoubleRR={setDoubleRR}
               />
             </div>
           </motion.div>
