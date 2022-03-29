@@ -42,13 +42,25 @@ const InnerCard = ({
       let newFP = freeParking + currentCard.amt;
       setFreeParking(newFP);
       setCurrentCard();
-    } else if (onCard && !onCard2 && currentCard.Type === "receive") {
+    } else if (onCard && !onCard2 && currentCard.Type === "collect") {
       let newMoney = p1Money + currentCard.amt;
       setP1Money(newMoney);
       setCurrentCard();
-    } else if (!onCard && onCard2 && currentCard.Type === "receive") {
+    } else if (!onCard && onCard2 && currentCard.Type === "collect") {
       let newMoney = p2Money + currentCard.amt;
       setP2Money(newMoney);
+      setCurrentCard();
+    } else if (onCard && !onCard2 && currentCard.Type === "collect-opponent") {
+      let newMoney = p1Money + currentCard.amt;
+      let newMoney2 = p2Money - currentCard.amt;
+      setP1Money(newMoney);
+      setP2Money(newMoney2);
+      setCurrentCard();
+    } else if (!onCard && onCard2 && currentCard.Type === "collect-opponent") {
+      let newMoney = p2Money + currentCard.amt;
+      let newMoney2 = p1Money - currentCard.amt;
+      setP2Money(newMoney);
+      setP1Money(newMoney2);
       setCurrentCard();
     }
   };

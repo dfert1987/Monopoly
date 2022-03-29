@@ -167,8 +167,8 @@ export const Guanxi = [
   {
     Number: 12,
     Text: "Teacher's day!",
-    Instruction: "Collect 40rmb from opposing player.",
-    Type: "Collect opponent",
+    Instruction: "Collect 40rmb from opposing player for your services.",
+    Type: "collect-opponent",
     amt: 40,
     space: 0,
     image: require("./Pics/guanxi-teach.jpeg"),
@@ -188,7 +188,7 @@ export const Guanxi = [
     Text: "Office party!",
     Instruction:
       "Collect 10rmb from opponent for mandarin oranges and warm Sprite",
-    Type: "collect opponent",
+    Type: "collect-opponent",
     amt: 10,
     space: 0,
     image: require("./Pics/guanxi-soda.jpeg"),
