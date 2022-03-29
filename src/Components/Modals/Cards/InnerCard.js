@@ -1,4 +1,3 @@
-import { counter } from "@fortawesome/fontawesome-svg-core";
 import React, { useState, useEffect } from "react";
 import { Guanxi } from "../../../Assets/Cards/Guanxi/Guanxi";
 import { Yunqi } from "../../../Assets/Cards/Yunqi/Yunqi";
@@ -32,6 +31,7 @@ const InnerCard = ({
   railRoads,
   setDoubleRR,
   setDoubleProp,
+  properties,
 }) => {
   const [currentCard, setCurrentCard] = useState();
 
@@ -177,6 +177,185 @@ const InnerCard = ({
       currentCard.Number === 18
     ) {
       if (counterP1 === 3) {
+        let orderedProps = [
+          properties[20],
+          properties[19],
+          properties[18],
+          properties[17],
+          properties[16],
+          properties[15],
+          properties[14],
+          properties[13],
+          properties[12],
+          properties[11],
+          properties[10],
+          properties[9],
+          properties[8],
+          properties[7],
+          properties[6],
+          properties[5],
+          properties[4],
+          properties[3],
+          properties[2],
+          properties[1],
+          properties[0],
+          properties[21],
+        ];
+
+        let firstOwned = orderedProps.find(
+          (property) => property.ownedP2 === true
+        );
+        if (firstOwned) {
+          let moveTo = firstOwned.Number;
+          setDoubleProp(true);
+          // PASS GO
+          setCounterP1(moveTo);
+        } else setCounterP1(counterP1);
+      } else if (counterP1 === 18) {
+        let orderedProps = [
+          properties[12],
+          properties[11],
+          properties[10],
+          properties[9],
+          properties[8],
+          properties[7],
+          properties[6],
+          properties[5],
+          properties[4],
+          properties[3],
+          properties[2],
+          properties[1],
+          properties[0],
+          properties[21],
+          properties[20],
+          properties[19],
+          properties[18],
+          properties[17],
+          properties[16],
+          properties[15],
+          properties[14],
+          properties[13],
+        ];
+        let firstOwned = orderedProps.find(
+          (property) => property.ownedP2 === true
+        );
+        if (firstOwned) {
+          let moveTo = firstOwned.Number;
+          setDoubleProp(true);
+          // PASS GO
+          setCounterP1(moveTo);
+        } else setCounterP1(counterP1);
+      } else if (counterP1 === 34) {
+        let orderedProps = [
+          properties[2],
+          properties[1],
+          properties[0],
+          properties[21],
+          properties[20],
+          properties[19],
+          properties[18],
+          properties[17],
+          properties[16],
+          properties[15],
+          properties[14],
+          properties[13],
+          properties[12],
+          properties[11],
+          properties[10],
+          properties[9],
+          properties[8],
+          properties[7],
+          properties[6],
+          properties[5],
+          properties[4],
+          properties[3],
+        ];
+        let firstOwned = orderedProps.find(
+          (property) => property.ownedP2 === true
+        );
+        if (firstOwned) {
+          let moveTo = firstOwned.Number;
+          setDoubleProp(true);
+          // PASS GO
+          setCounterP1(moveTo);
+        }
+      }
+    } else if (
+      !onCard &&
+      onCard2 &&
+      currentCard.Type === "nearest" &&
+      currentCard.Number === 18
+    ) {
+      if (counterP2 === 3) {
+        let orderedProps = [
+          properties[20],
+          properties[19],
+          properties[18],
+          properties[17],
+          properties[16],
+          properties[15],
+          properties[14],
+          properties[13],
+          properties[12],
+          properties[11],
+          properties[10],
+          properties[9],
+          properties[8],
+          properties[7],
+          properties[6],
+          properties[5],
+          properties[4],
+          properties[3],
+          properties[2],
+          properties[1],
+          properties[0],
+          properties[21],
+        ];
+
+        let firstOwned = orderedProps.find(
+          (property) => property.ownedP1 === true
+        );
+        if (firstOwned) {
+          let moveTo = firstOwned.Number;
+          setDoubleProp(true);
+          // PASS GO
+          setCounterP2(moveTo);
+        } else setCounterP2(counterP2);
+      } else if (counterP2 === 18) {
+        let orderedProps = [
+          properties[12],
+          properties[11],
+          properties[10],
+          properties[9],
+          properties[8],
+          properties[7],
+          properties[6],
+          properties[5],
+          properties[4],
+          properties[3],
+          properties[2],
+          properties[1],
+          properties[0],
+          properties[21],
+          properties[20],
+          properties[19],
+          properties[18],
+          properties[17],
+          properties[16],
+          properties[15],
+          properties[14],
+          properties[13],
+        ];
+
+        let firstOwned = orderedProps.find(
+          (property) => property.ownedP1 === true
+        );
+        if (firstOwned) {
+          let moveTo = firstOwned.Number;
+          setDoubleProp(true);
+          // PASS GO
+          setCounterP2(moveTo);
+        } else setCounterP2(counterP2);
       }
     }
   };
