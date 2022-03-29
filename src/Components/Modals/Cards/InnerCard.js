@@ -74,6 +74,9 @@ const InnerCard = ({
       setP1Money(newMoney2);
       setP2Money(newMoney);
       setCurrentCard();
+    } else if (onCard && !onCard2 && currentCard.Type === "forward") {
+      let newSpace = counterP1 + currentCard.amt;
+      setCounterP1(newSpace);
     }
   };
 
@@ -122,7 +125,6 @@ const InnerCard = ({
   const close = () => {
     cardFunctionSorter();
     arrayRemovePre();
-    // setCurrentCard();
     setCardOption();
     setOnCard(false);
     setOnCard2(false);

@@ -94,7 +94,7 @@ export const Yunqi = [
     Number: 11,
     Text: "Baijiu Drunk!",
     Instruction: "Go forward 3 spaces.",
-    Type: "Forward",
+    Type: "forward",
     amt: 3,
     space: 0,
     image: require("./pics/yunqi-baijiu.jpeg"),
