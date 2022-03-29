@@ -1,3 +1,4 @@
+import { counter } from "@fortawesome/fontawesome-svg-core";
 import React, { useState, useEffect } from "react";
 import { Guanxi } from "../../../Assets/Cards/Guanxi/Guanxi";
 import { Yunqi } from "../../../Assets/Cards/Yunqi/Yunqi";
@@ -30,6 +31,7 @@ const InnerCard = ({
   turn,
   railRoads,
   setDoubleRR,
+  setDoubleProp,
 }) => {
   const [currentCard, setCurrentCard] = useState();
 
@@ -167,6 +169,14 @@ const InnerCard = ({
           setDoubleRR(true);
         }
         setCurrentCard();
+      }
+    } else if (
+      onCard &&
+      !onCard2 &&
+      currentCard.Type === "nearest" &&
+      currentCard.Number === 18
+    ) {
+      if (counterP1 === 3) {
       }
     }
   };

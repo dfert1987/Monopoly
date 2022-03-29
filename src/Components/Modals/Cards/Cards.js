@@ -25,7 +25,9 @@ export const Cards = ({
   setTurn,
   turn,
   railRoads,
+  properties,
   setDoubleRR,
+  setDoubleProp,
 }) => {
   const [guanxi, setGuanxi] = useState(Guanxi);
   const [yunqi, setYunqi] = useState(Yunqi);
@@ -132,7 +134,9 @@ export const Cards = ({
                 setTurn={setTurn}
                 turn={turn}
                 railRoads={railRoads}
+                properties={properties}
                 setDoubleRR={setDoubleRR}
+                setDoubleProp={setDoubleProp}
               />
             </div>
           </motion.div>
