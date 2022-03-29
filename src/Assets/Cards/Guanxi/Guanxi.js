@@ -38,7 +38,7 @@ export const Guanxi = [
   {
     Number: 5,
     Text: "Drug raid in Sanlitun!",
-    Instruction: "Leave country immediately!",
+    Instruction: "DEPORTED! Leave country immediately!",
     Type: "advance",
     amt: 0,
     space: 41,
@@ -103,7 +103,7 @@ export const Guanxi = [
   {
     Number: 15,
     Text: "Coffee Shots!",
-    Instruction: "roll-again",
+    Instruction: "Roll Again!",
     Type: "reroll",
     amt: 0,
     space: 0,

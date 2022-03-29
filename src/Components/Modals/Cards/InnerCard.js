@@ -95,6 +95,16 @@ const InnerCard = ({
     } else if (currentCard.Type === "reroll") {
       let newTurn = turn + 1;
       setTurn(newTurn);
+    } else if (onCard && !onCard2 && currentCard.Type === "advance") {
+      setCounterP1(currentCard.space);
+      if (currentCard.space === 41) {
+        setInJail(true);
+      }
+    } else if (!onCard && onCard2 && currentCard.Type === "advance") {
+      setCounterP2(currentCard.space);
+      if (currentCard.space === 41) {
+        setInJail2(true);
+      }
     }
   };
 
