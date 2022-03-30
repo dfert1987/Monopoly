@@ -43,16 +43,16 @@ const InnerCard = ({
   utilities,
   setOnUtil,
   setOnUtil2,
-  onUtil,
-  onUtil2,
   setUtilModal2,
   setUtilModal,
-  utilModal,
-  utilModal2,
-  payUtil,
   setPayUtil,
   setPayUtilTo,
-  payUtilTo,
+  setOnProp,
+  setOnProp2,
+  setPayProp,
+  setPayTo,
+  setPropertyModal1,
+  setPropertyModal2,
 }) => {
   const [currentCard, setCurrentCard] = useState();
 
@@ -114,11 +114,26 @@ const InnerCard = ({
     } else if (onCard && !onCard2 && currentCard.Type === "back") {
       let newSpace = counterP1 - currentCard.amt;
       let currentUtil = utilities.find((util) => util.Number === newSpace);
+      let currentProp = properties.find(
+        (property) => property.Number === newSpace
+      );
       setCounterP1(newSpace);
       setCurrentCard();
+      // if on onowned prop
+      if (currentProp && !currentProp.ownedP1 && !currentProp.ownedP2) {
+        setPropertyModal1(true);
+        setOnProp(currentProp);
+      }
+
+      // if on prop owned by p1
+      else if (currentProp && !currentProp.ownedP1 && currentProp.ownedP2) {
+        setOnProp(currentProp);
+        setPayProp(true);
+        setPayTo(2);
+      }
 
       // if on unowned util
-      if (currentUtil && !currentUtil.ownedP1 && !currentUtil.ownedP2) {
+      else if (currentUtil && !currentUtil.ownedP1 && !currentUtil.ownedP2) {
         setUtilModal(true);
         setOnUtil(currentUtil);
         // if on util owned by p2
@@ -130,13 +145,30 @@ const InnerCard = ({
     } else if (!onCard && onCard2 && currentCard.Type === "back") {
       let newSpace = counterP2 - currentCard.amt;
       let currentUtil = utilities.find((util) => util.Number === newSpace);
+      let currentProp = properties.find(
+        (property) => property.Number === newSpace
+      );
       setCounterP2(newSpace);
+      setCurrentCard();
 
+      // if on onowned prop
+      if (currentProp && !currentProp.ownedP1 && !currentProp.ownedP2) {
+        setPropertyModal2(true);
+        setOnProp2(currentProp);
+      }
+
+      // if on prop owned by p1
+      else if (currentProp && currentProp.ownedP1 && !currentProp.ownedP2) {
+        setOnProp2(currentProp);
+        setPayProp(true);
+        setPayTo(1);
+      }
       // if on unowned util
-      if (currentUtil && !currentUtil.ownedP1 && !currentUtil.ownedP2) {
+      else if (currentUtil && !currentUtil.ownedP1 && !currentUtil.ownedP2) {
         setUtilModal2(true);
         setOnUtil2(currentUtil);
       }
+
       // if on util owned by p1
       else if (currentUtil && currentUtil.ownedP1 && !currentUtil.ownedP2) {
         setOnUtil2(currentUtil);

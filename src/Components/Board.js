@@ -1178,6 +1178,12 @@ export const Board = ({
           setUtilModal2={setUtilModal2}
           payUtil={payUtil}
           setPayUtil={setPayUtil}
+          setOnProp={setOnProp}
+          setOnProp2={setOnProp2}
+          setPayTo={setPayTo}
+          setPayProp={setPayProp}
+          setPropertyModal1={setPropertyModal1}
+          setPropertyModal2={setPropertyModal2}
         />
       </div>
     </div>
