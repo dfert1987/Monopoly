@@ -55,6 +55,8 @@ export const Cards = ({
   setPayTo,
   setPropertyModal1,
   setPropertyModal2,
+  setOnAgentFee,
+  setOnAgentFee2,
 }) => {
   const [guanxi, setGuanxi] = useState(Guanxi);
   const [yunqi, setYunqi] = useState(Yunqi);
@@ -187,6 +189,8 @@ export const Cards = ({
                 setPayProp={setPayProp}
                 setPropertyModal1={setPropertyModal1}
                 setPropertyModal2={setPropertyModal2}
+                setOnAgentFee={setOnAgentFee}
+                setOnAgentFee2={setOnAgentFee2}
               />
             </div>
           </motion.div>

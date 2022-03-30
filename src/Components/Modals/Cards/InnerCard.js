@@ -53,6 +53,8 @@ const InnerCard = ({
   setPayTo,
   setPropertyModal1,
   setPropertyModal2,
+  setOnAgentFee,
+  setOnAgentFee2,
 }) => {
   const [currentCard, setCurrentCard] = useState();
 
@@ -111,10 +113,12 @@ const InnerCard = ({
       setCounterP2(newSpace);
       // PASS GO
       setCurrentCard();
+
+      // BAAAAAACK
     } else if (onCard && !onCard2 && currentCard.Type === "back") {
       let newSpace = counterP1 - currentCard.amt;
       let currentUtil = utilities.find((util) => util.Number === newSpace);
-
+      // if goes back to migas past go reverse
       if (newSpace === -2) {
         setCounterP1(38);
         setCurrentCard();
@@ -127,6 +131,11 @@ const InnerCard = ({
           setPayProp(true);
           setPayTo(2);
         }
+        // if doesnt go past go in reverse
+      } else if (newSpace === -1) {
+        setCounterP2(39);
+        setCurrentCard();
+        setOnAgentFee(true);
       } else if (newSpace > 0) {
         setCounterP1(newSpace);
         setCurrentCard();
@@ -160,7 +169,7 @@ const InnerCard = ({
     } else if (!onCard && onCard2 && currentCard.Type === "back") {
       let newSpace = counterP2 - currentCard.amt;
       let currentUtil = utilities.find((util) => util.Number === newSpace);
-
+      // if going past go in reverse to migas
       if (newSpace === -2) {
         setCounterP2(38);
         setCurrentCard();
@@ -174,7 +183,13 @@ const InnerCard = ({
           setPayProp(true);
           setPayTo(1);
         }
-      } else if (newSpace > 0) {
+      } else if (newSpace === -1) {
+        setCounterP2(39);
+        setCurrentCard();
+        setOnAgentFee2(true);
+      }
+      // for all backs that dont go past go in reverse
+      else if (newSpace > 0) {
         setCounterP2(newSpace);
         setCurrentCard();
         let currentProp = properties.find(
