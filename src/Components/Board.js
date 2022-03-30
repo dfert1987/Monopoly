@@ -129,6 +129,14 @@ export const Board = ({
   setSkip2,
   setVisa1,
   setVisa2,
+  hotelsP1,
+  hotelsP2,
+  setHotelsP1,
+  setHotelsP2,
+  setTotalHousesP1,
+  setTotalHousesP2,
+  totalHousesP1,
+  totalHousesP2,
 }) => {
   const [viewPurchase, setViewPurchase] = useState(false);
   const [viewPurchase2, setViewPurchase2] = useState(false);
@@ -896,6 +904,14 @@ export const Board = ({
           setP1Money={setP1Money}
           p2Money={p2Money}
           setP2Money={setP2Money}
+          hotelsP1={hotelsP1}
+          hotelsP2={hotelsP2}
+          setHotelsP1={setHotelsP1}
+          setHotelsP2={setHotelsP2}
+          setTotalHousesP1={setTotalHousesP1}
+          totalHousesP1={totalHousesP1}
+          setTotalHousesP2={setTotalHousesP2}
+          totalHousesP2={totalHousesP2}
         />
         <PayOpponent
           className="pay-opponent"
@@ -1139,6 +1155,14 @@ export const Board = ({
           setSkip2={setSkip2}
           setVisa1={setVisa1}
           setVisa2={setVisa2}
+          hotelsP1={hotelsP1}
+          hotelsP2={hotelsP2}
+          setHotelsP1={setHotelsP1}
+          setHotelsP2={setHotelsP2}
+          setTotalHousesP1={setTotalHousesP1}
+          totalHousesP1={totalHousesP1}
+          setTotalHousesP2={setTotalHousesP2}
+          totalHousesP2={totalHousesP2}
         />
       </div>
     </div>

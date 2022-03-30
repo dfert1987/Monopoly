@@ -63,7 +63,11 @@ function App() {
   const [skip2, setSkip2] = useState(false);
   const [visaP1, setVisaP1] = useState(false);
   const [visaP2, setVisaP2] = useState(false);
-
+  const [totalHousesP1, setTotalHousesP1] = useState(0);
+  const [totalHousesP2, setTotalHousesP2] = useState(0);
+  const [hotelsP1, setHotelsP1] = useState(0);
+  const [hotelsP2, setHotelsP2] = useState(0);
+  console.log(setTotalHousesP1);
   return (
     <div className="App">
       <Board
@@ -175,6 +179,14 @@ function App() {
         setSKip2={setSkip2}
         setVisaP1={setVisaP1}
         setVisaP2={setVisaP2}
+        hotelsP1={hotelsP1}
+        hotelsP2={hotelsP2}
+        setHotelsP1={setHotelsP1}
+        setHotelsP2={setHotelsP2}
+        setTotalHousesP1={setTotalHousesP1}
+        totalHousesP1={totalHousesP1}
+        setTotalHousesP2={setTotalHousesP2}
+        totalHousesP2={totalHousesP2}
       />
       <Controls
         counterP1={counterP1}

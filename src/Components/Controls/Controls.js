@@ -131,6 +131,10 @@ export const Controls = ({
       <div className="p1">
         <h3 className="player">Player 1</h3>
         <div className="player-1-stats">
+          <div className="money player1">
+            <h3 className="money-label">Money</h3>
+            <p className="money">¥{p1Money}</p>
+          </div>
           <Roll
             counterP1={counterP1}
             setCounterP1={setCounterP1}
@@ -180,10 +184,6 @@ export const Controls = ({
             skip2={skip2}
             setSkip2={setSkip2}
           />
-          <div className="money player1">
-            <h3 className="money-label">Money</h3>
-            <p className="money">¥{p1Money}</p>
-          </div>
           <div className="properties player1">
             <button
               className="properties-view-button"
@@ -195,7 +195,7 @@ export const Controls = ({
             <button
               className="properties-view-button"
               disabled={disableVisaLeft}
-              onClick={() => useVisa(1)}
+              onClick={useVisa(1)}
             >
               USE VISA
             </button>
@@ -205,6 +205,10 @@ export const Controls = ({
       <div className="p2">
         <h3 className="player">Player 2</h3>
         <div className="player-2-stats">
+          <div className="money player2">
+            <h3 className="money-label">Money</h3>
+            <p className="money">¥{p2Money}</p>
+          </div>
           <RollP2
             counterP2={counterP2}
             setCounterP2={setCounterP2}
@@ -254,10 +258,6 @@ export const Controls = ({
             setSkip1={setSkip1}
             skip1={skip1}
           />
-          <div className="money player2">
-            <h3 className="money-label">Money</h3>
-            <p className="money">¥{p2Money}</p>
-          </div>
           <div className="properties player2">
             <button
               className="properties-view-button"
@@ -269,7 +269,7 @@ export const Controls = ({
             <button
               className="properties-view-button"
               disabled={disableVisaRight}
-              onClick={() => useVisa(2)}
+              onClick={useVisa(2)}
             >
               USE VISA
             </button>
