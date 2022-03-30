@@ -28,7 +28,10 @@ export const Cards = ({
   properties,
   setDoubleRR,
   setDoubleProp,
-  setSkip,
+  setSkip1,
+  setSkip2,
+  setVisaP1,
+  setVisaP2,
 }) => {
   const [guanxi, setGuanxi] = useState(Guanxi);
   const [yunqi, setYunqi] = useState(Yunqi);
@@ -134,7 +137,10 @@ export const Cards = ({
                 properties={properties}
                 setDoubleRR={setDoubleRR}
                 setDoubleProp={setDoubleProp}
-                setSkip={setSkip}
+                setSkip1={setSkip1}
+                setSkip2={setSkip2}
+                setVisaP1={setVisaP1}
+                setVisaP2={setVisaP2}
               />
             </div>
           </motion.div>

@@ -61,6 +61,8 @@ function App() {
   const [onCard2, setOnCard2] = useState(false);
   const [skip1, setSkip1] = useState(false);
   const [skip2, setSkip2] = useState(false);
+  const [visaP1, setVisaP1] = useState(false);
+  const [visaP2, setVisaP2] = useState(false);
 
   return (
     <div className="App">
@@ -171,6 +173,8 @@ function App() {
         setOnCard2={setOnCard2}
         setSkip1={setSkip1}
         setSKip2={setSkip2}
+        setVisaP1={setVisaP1}
+        setVisaP2={setVisaP2}
       />
       <Controls
         counterP1={counterP1}
@@ -271,6 +275,10 @@ function App() {
         skip2={skip2}
         setSkip1={setSkip1}
         setSkip2={setSkip2}
+        setVisaP1={setVisaP1}
+        setVisaP2={setVisaP2}
+        visaP1={visaP1}
+        visaP2={visaP2}
       />
     </div>
   );

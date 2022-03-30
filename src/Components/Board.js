@@ -127,6 +127,8 @@ export const Board = ({
   setOnCard2,
   setSkip1,
   setSkip2,
+  setVisa1,
+  setVisa2,
 }) => {
   const [viewPurchase, setViewPurchase] = useState(false);
   const [viewPurchase2, setViewPurchase2] = useState(false);
@@ -1135,6 +1137,8 @@ export const Board = ({
           setDoubleProp={setDoubleProp}
           setSkip1={setSkip1}
           setSkip2={setSkip2}
+          setVisa1={setVisa1}
+          setVisa2={setVisa2}
         />
       </div>
     </div>

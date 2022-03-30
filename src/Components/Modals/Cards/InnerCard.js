@@ -34,6 +34,8 @@ const InnerCard = ({
   properties,
   setSkip1,
   setSkip2,
+  setVisaP1,
+  setVisaP2,
 }) => {
   const [currentCard, setCurrentCard] = useState();
 
@@ -396,6 +398,10 @@ const InnerCard = ({
       setSkip1(true);
     } else if (!onCard && onCard2 && currentCard.Type === "skip") {
       setSkip2(true);
+    } else if (onCard && !onCard2 && currentCard.Type === "visa") {
+      setVisaP1(true);
+    } else if (!onCard && onCard2 && currentCard.Type === "visa") {
+      setVisaP2(true);
     }
   };
 
