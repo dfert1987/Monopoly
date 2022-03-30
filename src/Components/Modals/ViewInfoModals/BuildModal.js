@@ -12,14 +12,20 @@ const BuildModal = ({
   setHouseModal2,
   selectedGroup,
   selectedGroup2,
-  setSelectedGroup,
-  setSelectedGroup2,
   properties,
   setProperties,
   p1Money,
   p2Money,
   setP1Money,
   setP2Money,
+  hotelsP1,
+  hotelsP2,
+  setHotelsP1,
+  setHotelsP2,
+  setTotalHousesP1,
+  setTotalHousesP2,
+  totalHousesP1,
+  totalHousesP2,
 }) => {
   const [tooMuch, setTooMuch] = useState(false);
 
@@ -66,6 +72,14 @@ const BuildModal = ({
             p2Money={p2Money}
             setTooMuch={setTooMuch}
             tooMuch={tooMuch}
+            hotelsP1={hotelsP1}
+            hotelsP2={hotelsP2}
+            setHotelsP1={setHotelsP1}
+            setHotelsP2={setHotelsP2}
+            setTotalHousesP1={setTotalHousesP1}
+            totalHousesP1={totalHousesP1}
+            setTotalHousesP2={setTotalHousesP2}
+            totalHousesP2={totalHousesP2}
           />
         );
       });
@@ -87,6 +101,14 @@ const BuildModal = ({
             setP2Money={setP2Money}
             setTooMuch={setTooMuch}
             tooMuch={tooMuch}
+            hotelsP1={hotelsP1}
+            hotelsP2={hotelsP2}
+            setHotelsP1={setHotelsP1}
+            setHotelsP2={setHotelsP2}
+            setTotalHousesP1={setTotalHousesP1}
+            totalHousesP1={totalHousesP1}
+            setTotalHousesP2={setTotalHousesP2}
+            totalHousesP2={totalHousesP2}
           />
         );
       });

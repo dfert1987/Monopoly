@@ -11,6 +11,7 @@ export const Cards = ({
   onCard2,
   setOnCard2,
   setFreeParking,
+  freeParking,
   setP1Money,
   setP2Money,
   p1Money,
@@ -19,6 +20,18 @@ export const Cards = ({
   setInJail2,
   counterP1,
   counterP2,
+  setCounterP1,
+  setCounterP2,
+  setTurn,
+  turn,
+  railRoads,
+  properties,
+  setDoubleRR,
+  setDoubleProp,
+  setSkip1,
+  setSkip2,
+  setVisaP1,
+  setVisaP2,
 }) => {
   const [guanxi, setGuanxi] = useState(Guanxi);
   const [yunqi, setYunqi] = useState(Yunqi);
@@ -42,18 +55,15 @@ export const Cards = ({
   };
 
   useEffect(() => {
-    console.log(onCard, onCard2, counterP1, counterP2);
     if (
       onCard === true &&
       (counterP1 === 34 || counterP1 === 3 || counterP1 === 18)
     ) {
       setCardOption("GUANXI");
-      console.log("p1 guan");
     } else if (
       onCard === true &&
       (counterP1 === 8 || counterP1 === 23 || counterP1 === 37)
     ) {
-      console.log("p1 yun");
       setCardOption("YUNQI");
     } else if (
       onCard2 === true &&
@@ -65,7 +75,6 @@ export const Cards = ({
       onCard2 === true &&
       (counterP2 === 8 || counterP2 === 23 || counterP2 === 37)
     ) {
-      console.log("p2 yun");
       setCardOption("YUNQI");
     }
     return null;
@@ -110,6 +119,28 @@ export const Cards = ({
                 setOnCard2={setOnCard2}
                 onCard={onCard}
                 onCard2={onCard2}
+                setFreeParking={setFreeParking}
+                freeParking={freeParking}
+                p1Money={p1Money}
+                p2Money={p2Money}
+                setP1Money={setP1Money}
+                setP2Money={setP2Money}
+                setInJail={setInJail}
+                setInJail2={setInJail2}
+                counterP1={counterP1}
+                counterP2={counterP2}
+                setCounterP1={setCounterP1}
+                setCounterP2={setCounterP2}
+                setTurn={setTurn}
+                turn={turn}
+                railRoads={railRoads}
+                properties={properties}
+                setDoubleRR={setDoubleRR}
+                setDoubleProp={setDoubleProp}
+                setSkip1={setSkip1}
+                setSkip2={setSkip2}
+                setVisaP1={setVisaP1}
+                setVisaP2={setVisaP2}
               />
             </div>
           </motion.div>

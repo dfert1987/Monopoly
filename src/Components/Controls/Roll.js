@@ -36,6 +36,8 @@ export const Roll = ({
   inJail,
   setInJailModal,
   setOnCard,
+  skip2,
+  setSkip2,
 }) => {
   const [die1, setDie1] = useState(1);
   const [die2, setDie2] = useState(1);
@@ -50,6 +52,10 @@ export const Roll = ({
     let second = Math.floor(Math.random() * (max - min + 1)) + min;
     if (first === second) {
       setTurn(turn + 2);
+    }
+    if (skip2 === true) {
+      setTurn(turn + 2);
+      setSkip2(false);
     } else setTurn(turn + 1);
     setDie1(first);
     setDie2(second);

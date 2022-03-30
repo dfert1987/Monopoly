@@ -125,6 +125,18 @@ export const Board = ({
   onCard2,
   setOnCard,
   setOnCard2,
+  setSkip1,
+  setSkip2,
+  setVisa1,
+  setVisa2,
+  hotelsP1,
+  hotelsP2,
+  setHotelsP1,
+  setHotelsP2,
+  setTotalHousesP1,
+  setTotalHousesP2,
+  totalHousesP1,
+  totalHousesP2,
 }) => {
   const [viewPurchase, setViewPurchase] = useState(false);
   const [viewPurchase2, setViewPurchase2] = useState(false);
@@ -132,6 +144,8 @@ export const Board = ({
   const [viewPurchaseRR2, setViewPurchaseRR2] = useState(false);
   const [viewPurchaseUtil, setViewPurchaseUtil] = useState(false);
   const [viewPurchaseUtil2, setViewPurchaseUtil2] = useState(false);
+  const [doubleRR, setDoubleRR] = useState(false);
+  const [doubleProp, setDoubleProp] = useState(false);
   return (
     <div className="main-board">
       <div className="left-column">
@@ -890,6 +904,14 @@ export const Board = ({
           setP1Money={setP1Money}
           p2Money={p2Money}
           setP2Money={setP2Money}
+          hotelsP1={hotelsP1}
+          hotelsP2={hotelsP2}
+          setHotelsP1={setHotelsP1}
+          setHotelsP2={setHotelsP2}
+          setTotalHousesP1={setTotalHousesP1}
+          totalHousesP1={totalHousesP1}
+          setTotalHousesP2={setTotalHousesP2}
+          totalHousesP2={totalHousesP2}
         />
         <PayOpponent
           className="pay-opponent"
@@ -906,6 +928,8 @@ export const Board = ({
           setOnProp={setOnProp}
           setOnProp2={setOnProp2}
           properties={properties}
+          doubleProp={doubleProp}
+          setDoubleProp={setDoubleProp}
         />
         <PayOpponentRail
           className="pay-opponent"
@@ -922,6 +946,8 @@ export const Board = ({
           setOnRR={setOnRR}
           setOnRR2={setOnRR2}
           railRoads={railRoads}
+          setDoubleRR={setDoubleRR}
+          doubleRR={doubleRR}
         />
         <PayOpponentUtil
           className="pay-opponent"
@@ -1062,6 +1088,7 @@ export const Board = ({
           p1Money={p1Money}
           p2Money={p2Money}
           setFreeParking={setFreeParking}
+          freeParking={freeParking}
         />
         <Visa
           onVisa={onVisa}
@@ -1073,6 +1100,7 @@ export const Board = ({
           setP1Money={setP1Money}
           setP2Money={setP2Money}
           setFreeParking={setFreeParking}
+          freeParking={freeParking}
         />
         <Jail
           onGoJail={onGoJail}
@@ -1111,8 +1139,30 @@ export const Board = ({
           p1Money={p1Money}
           p2Money={p2Money}
           setFreeParking={setFreeParking}
+          freeParking={freeParking}
           counterP1={counterP1}
           counterP2={counterP2}
+          setCounterP1={setCounterP1}
+          setCounterP2={setCounterP2}
+          setTurn={setTurn}
+          turn={turn}
+          railRoads={railRoads}
+          properties={properties}
+          setDoubleRR={setDoubleRR}
+          doubleProp={doubleProp}
+          setDoubleProp={setDoubleProp}
+          setSkip1={setSkip1}
+          setSkip2={setSkip2}
+          setVisa1={setVisa1}
+          setVisa2={setVisa2}
+          hotelsP1={hotelsP1}
+          hotelsP2={hotelsP2}
+          setHotelsP1={setHotelsP1}
+          setHotelsP2={setHotelsP2}
+          setTotalHousesP1={setTotalHousesP1}
+          totalHousesP1={totalHousesP1}
+          setTotalHousesP2={setTotalHousesP2}
+          totalHousesP2={totalHousesP2}
         />
       </div>
     </div>
