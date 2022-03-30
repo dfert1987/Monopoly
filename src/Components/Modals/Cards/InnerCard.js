@@ -218,7 +218,10 @@ const InnerCard = ({
           setDoubleProp(true);
           // PASS GO
           setCounterP1(moveTo);
-        } else setCounterP1(counterP1);
+        } else {
+          setCounterP1(counterP1);
+          setCurrentCard();
+        }
       } else if (counterP1 === 18) {
         let orderedProps = [
           properties[12],
@@ -252,7 +255,11 @@ const InnerCard = ({
           setDoubleProp(true);
           // PASS GO
           setCounterP1(moveTo);
-        } else setCounterP1(counterP1);
+          setCurrentCard();
+        } else {
+          setCounterP1(counterP1);
+          setCurrentCard();
+        }
       } else if (counterP1 === 34) {
         let orderedProps = [
           properties[2],
@@ -286,6 +293,7 @@ const InnerCard = ({
           setDoubleProp(true);
           // PASS GO
           setCounterP1(moveTo);
+          setCurrentCard();
         }
       }
     } else if (
@@ -328,7 +336,11 @@ const InnerCard = ({
           setDoubleProp(true);
           // PASS GO
           setCounterP2(moveTo);
-        } else setCounterP2(counterP2);
+          setCurrentCard();
+        } else {
+          setCounterP2(counterP2);
+          setCurrentCard();
+        }
       } else if (counterP2 === 18) {
         let orderedProps = [
           properties[12],
@@ -363,7 +375,11 @@ const InnerCard = ({
           setDoubleProp(true);
           // PASS GO
           setCounterP2(moveTo);
-        } else setCounterP2(counterP2);
+          setCurrentCard();
+        } else {
+          setCounterP2(counterP2);
+          setCurrentCard();
+        }
       } else if (counterP2 === 34) {
         let orderedProps = [
           properties[2],
@@ -396,28 +412,38 @@ const InnerCard = ({
           let moveTo = firstOwned.Number;
           setDoubleProp(true);
           setCounterP2(moveTo);
-        } else setCounterP2(counterP2);
+          setCurrentCard();
+        } else {
+          setCounterP2(counterP2);
+          setCurrentCard();
+        }
       }
     } else if (onCard && !onCard2 && currentCard.Type === "skip") {
       setSkip1(true);
+      setCurrentCard();
     } else if (!onCard && onCard2 && currentCard.Type === "skip") {
       setSkip2(true);
+      setCurrentCard();
     } else if (onCard && !onCard2 && currentCard.Type === "visa") {
       setVisaP1(true);
+      setCurrentCard();
     } else if (!onCard && onCard2 && currentCard.Type === "visa") {
       setVisaP2(true);
+      setCurrentCard();
     } else if (onCard && !onCard2 && currentCard.Type === "pay-house") {
       let cost = totalHousesP1 * 30 + hotelsP1 * 50;
       let newMoney = p1Money - cost;
       let newParking = freeParking + cost;
       setP1Money(newMoney);
       setFreeParking(newParking);
+      setCurrentCard();
     } else if (!onCard && onCard2 && currentCard.Type === "pay-house") {
       let cost = totalHousesP2 * 30 + hotelsP2 * 50;
       let newMoney = p2Money - cost;
       let newParking = freeParking + cost;
       setP2Money(newMoney);
       setFreeParking(newParking);
+      setCurrentCard();
     }
   };
 
