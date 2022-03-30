@@ -36,6 +36,10 @@ const InnerCard = ({
   setSkip2,
   setVisaP1,
   setVisaP2,
+  hotelsP1,
+  hotelsP2,
+  totalHousesP1,
+  totalHousesP2,
 }) => {
   const [currentCard, setCurrentCard] = useState();
 
@@ -402,6 +406,18 @@ const InnerCard = ({
       setVisaP1(true);
     } else if (!onCard && onCard2 && currentCard.Type === "visa") {
       setVisaP2(true);
+    } else if (onCard && !onCard2 && currentCard.Type === "pay-house") {
+      let cost = totalHousesP1 * 30 + hotelsP1 * 50;
+      let newMoney = p1Money - cost;
+      let newParking = freeParking + cost;
+      setP1Money(newMoney);
+      setFreeParking(newParking);
+    } else if (!onCard && onCard2 && currentCard.Type === "pay-house") {
+      let cost = totalHousesP2 * 30 + hotelsP2 * 50;
+      let newMoney = p2Money - cost;
+      let newParking = freeParking + cost;
+      setP2Money(newMoney);
+      setFreeParking(newParking);
     }
   };
 
