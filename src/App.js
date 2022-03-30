@@ -6,8 +6,8 @@ import { RailRoads } from "./Assets/Holdings/Railroads";
 import { Utilities } from "./Assets/Holdings/Utilities";
 
 function App() {
-  const [counterP1, setCounterP1] = useState(39);
-  const [counterP2, setCounterP2] = useState(39);
+  const [counterP1, setCounterP1] = useState(31);
+  const [counterP2, setCounterP2] = useState(31);
   const [turn, setTurn] = useState(0);
   const [properties, setProperties] = useState(Properties);
   const [railRoads, setRailRoads] = useState(RailRoads);
