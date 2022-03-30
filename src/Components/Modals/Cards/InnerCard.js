@@ -114,66 +114,97 @@ const InnerCard = ({
     } else if (onCard && !onCard2 && currentCard.Type === "back") {
       let newSpace = counterP1 - currentCard.amt;
       let currentUtil = utilities.find((util) => util.Number === newSpace);
-      let currentProp = properties.find(
-        (property) => property.Number === newSpace
-      );
-      setCounterP1(newSpace);
-      setCurrentCard();
-      // if on onowned prop
-      if (currentProp && !currentProp.ownedP1 && !currentProp.ownedP2) {
-        setPropertyModal1(true);
-        setOnProp(currentProp);
-      }
 
-      // if on prop owned by p1
-      else if (currentProp && !currentProp.ownedP1 && currentProp.ownedP2) {
-        setOnProp(currentProp);
-        setPayProp(true);
-        setPayTo(2);
-      }
+      if (newSpace === -2) {
+        setCounterP1(38);
+        setCurrentCard();
+        let currentProp = properties.find((property) => property.Number === 38);
+        if (currentProp && !currentProp.ownedP1 && !currentProp.ownedP2) {
+          setPropertyModal1(true);
+          setOnProp(currentProp);
+        } else if (currentProp && !currentProp.ownedP1 && currentProp.ownedP2) {
+          setOnProp(currentProp);
+          setPayProp(true);
+          setPayTo(2);
+        }
+      } else if (newSpace > 0) {
+        setCounterP1(newSpace);
+        setCurrentCard();
+        let currentProp = properties.find(
+          (property) => property.Number === newSpace
+        );
+        // if on onowned prop
+        if (currentProp && !currentProp.ownedP1 && !currentProp.ownedP2) {
+          setPropertyModal1(true);
+          setOnProp(currentProp);
+        }
 
-      // if on unowned util
-      else if (currentUtil && !currentUtil.ownedP1 && !currentUtil.ownedP2) {
-        setUtilModal(true);
-        setOnUtil(currentUtil);
-        // if on util owned by p2
-      } else if (currentUtil && !currentUtil.ownedP1 && currentUtil.ownedP2) {
-        setOnUtil(currentUtil);
-        setPayUtil(true);
-        setPayUtilTo(2);
+        // if on prop owned by p1
+        else if (currentProp && !currentProp.ownedP1 && currentProp.ownedP2) {
+          setOnProp(currentProp);
+          setPayProp(true);
+          setPayTo(2);
+        }
+
+        // if on unowned util
+        else if (currentUtil && !currentUtil.ownedP1 && !currentUtil.ownedP2) {
+          setUtilModal(true);
+          setOnUtil(currentUtil);
+          // if on util owned by p2
+        } else if (currentUtil && !currentUtil.ownedP1 && currentUtil.ownedP2) {
+          setOnUtil(currentUtil);
+          setPayUtil(true);
+          setPayUtilTo(2);
+        }
       }
     } else if (!onCard && onCard2 && currentCard.Type === "back") {
       let newSpace = counterP2 - currentCard.amt;
       let currentUtil = utilities.find((util) => util.Number === newSpace);
-      let currentProp = properties.find(
-        (property) => property.Number === newSpace
-      );
-      setCounterP2(newSpace);
-      setCurrentCard();
 
-      // if on onowned prop
-      if (currentProp && !currentProp.ownedP1 && !currentProp.ownedP2) {
-        setPropertyModal2(true);
-        setOnProp2(currentProp);
-      }
+      if (newSpace === -2) {
+        setCounterP2(38);
+        setCurrentCard();
 
-      // if on prop owned by p1
-      else if (currentProp && currentProp.ownedP1 && !currentProp.ownedP2) {
-        setOnProp2(currentProp);
-        setPayProp(true);
-        setPayTo(1);
-      }
-      // if on unowned util
-      else if (currentUtil && !currentUtil.ownedP1 && !currentUtil.ownedP2) {
-        setUtilModal2(true);
-        setOnUtil2(currentUtil);
-      }
+        let currentProp = properties.find((property) => property.Number === 38);
+        if (currentProp && !currentProp.ownedP1 && !currentProp.ownedP2) {
+          setPropertyModal2(true);
+          setOnProp2(currentProp);
+        } else if (currentProp && currentProp.ownedP1 && !currentProp.ownedP2) {
+          setOnProp2(currentProp);
+          setPayProp(true);
+          setPayTo(1);
+        }
+      } else if (newSpace > 0) {
+        setCounterP2(newSpace);
+        setCurrentCard();
+        let currentProp = properties.find(
+          (property) => property.Number === newSpace
+        );
 
-      // if on util owned by p1
-      else if (currentUtil && currentUtil.ownedP1 && !currentUtil.ownedP2) {
-        setOnUtil2(currentUtil);
-        setPayUtil(true);
-        setPayUtilTo(1);
+        // if on onowned prop
+        if (currentProp && !currentProp.ownedP1 && !currentProp.ownedP2) {
+          setPropertyModal2(true);
+          setOnProp2(currentProp);
+        }
+
+        // if on prop owned by p1
+        else if (currentProp && currentProp.ownedP1 && !currentProp.ownedP2) {
+          setOnProp2(currentProp);
+          setPayProp(true);
+          setPayTo(1);
+        }
+        // if on unowned util
+        else if (currentUtil && !currentUtil.ownedP1 && !currentUtil.ownedP2) {
+          setUtilModal2(true);
+          setOnUtil2(currentUtil);
+        }
+
+        // if on util owned by p1
+        else if (currentUtil && currentUtil.ownedP1 && !currentUtil.ownedP2) {
+          setOnUtil2(currentUtil);
+          setPayUtil(true);
+          setPayUtilTo(1);
+        }
       }
     } else if (currentCard.Type === "reroll") {
       let newTurn = turn + 1;
