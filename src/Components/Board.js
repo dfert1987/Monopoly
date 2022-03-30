@@ -146,6 +146,8 @@ export const Board = ({
   const [viewPurchaseUtil2, setViewPurchaseUtil2] = useState(false);
   const [doubleRR, setDoubleRR] = useState(false);
   const [doubleProp, setDoubleProp] = useState(false);
+  console.log(setUtilModal2);
+  console.log(setUtilModal);
   return (
     <div className="main-board">
       <div className="left-column">
@@ -1164,6 +1166,18 @@ export const Board = ({
           setTotalHousesP2={setTotalHousesP2}
           totalHousesP2={totalHousesP2}
           utilities={utilities}
+          payUtilTo={payUtilTo}
+          setPayUtilTo={setPayUtilTo}
+          onUtil={onUtil}
+          onUtil2={onUtil2}
+          setOnUtil={setOnUtil}
+          setOnUtil2={setOnUtil2}
+          utilModal={utilModal}
+          utilModal2={utilModal2}
+          setUtilModal={setUtilModal}
+          setUtilModal2={setUtilModal2}
+          payUtil={payUtil}
+          setPayUtil={setPayUtil}
         />
       </div>
     </div>

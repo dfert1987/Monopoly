@@ -115,6 +115,7 @@ const InnerCard = ({
       let newSpace = counterP1 - currentCard.amt;
       let currentUtil = utilities.find((util) => util.Number === newSpace);
       setCounterP1(newSpace);
+      setCurrentCard();
 
       // if on unowned util
       if (currentUtil && !currentUtil.ownedP1 && !currentUtil.ownedP2) {
@@ -126,8 +127,6 @@ const InnerCard = ({
         setPayUtil(true);
         setPayUtilTo(2);
       }
-
-      setCurrentCard();
     } else if (!onCard && onCard2 && currentCard.Type === "back") {
       let newSpace = counterP2 - currentCard.amt;
       let currentUtil = utilities.find((util) => util.Number === newSpace);
@@ -144,8 +143,6 @@ const InnerCard = ({
         setPayUtil(true);
         setPayUtilTo(1);
       }
-
-      setCurrentCard();
     } else if (currentCard.Type === "reroll") {
       let newTurn = turn + 1;
       setTurn(newTurn);
