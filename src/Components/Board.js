@@ -1186,6 +1186,10 @@ export const Board = ({
           setPropertyModal2={setPropertyModal2}
           setOnAgentFee={setOnAgentFee}
           setOnAgentFee2={setOnAgentFee2}
+          onVisa={onVisa}
+          onVisa2={onVisa2}
+          setOnVisa={setOnVisa}
+          setOnVisa2={setOnVisa2}
         />
       </div>
     </div>

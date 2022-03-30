@@ -57,6 +57,10 @@ export const Cards = ({
   setPropertyModal2,
   setOnAgentFee,
   setOnAgentFee2,
+  onVisa,
+  onVisa2,
+  setOnVisa,
+  setOnVisa2,
 }) => {
   const [guanxi, setGuanxi] = useState(Guanxi);
   const [yunqi, setYunqi] = useState(Yunqi);
@@ -191,6 +195,10 @@ export const Cards = ({
                 setPropertyModal2={setPropertyModal2}
                 setOnAgentFee={setOnAgentFee}
                 setOnAgentFee2={setOnAgentFee2}
+                onVisa={onVisa}
+                onVisa2={onVisa2}
+                setOnVisa={setOnVisa}
+                setOnVisa2={setOnVisa2}
               />
             </div>
           </motion.div>

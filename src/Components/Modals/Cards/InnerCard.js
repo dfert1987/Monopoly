@@ -55,6 +55,8 @@ const InnerCard = ({
   setPropertyModal2,
   setOnAgentFee,
   setOnAgentFee2,
+  setOnVisa,
+  setOnVisa2,
 }) => {
   const [currentCard, setCurrentCard] = useState();
 
@@ -136,12 +138,16 @@ const InnerCard = ({
         setCounterP2(39);
         setCurrentCard();
         setOnAgentFee(true);
+      } else if (newSpace === 5) {
+        setOnVisa2(true);
+        setCurrentCard();
       } else if (newSpace > 0) {
         setCounterP1(newSpace);
         setCurrentCard();
         let currentProp = properties.find(
           (property) => property.Number === newSpace
         );
+
         // if on onowned prop
         if (currentProp && !currentProp.ownedP1 && !currentProp.ownedP2) {
           setPropertyModal1(true);
@@ -187,9 +193,12 @@ const InnerCard = ({
         setCounterP2(39);
         setCurrentCard();
         setOnAgentFee2(true);
+      } else if (newSpace === 5) {
+        setOnVisa(true);
+        setCurrentCard();
       }
       // for all backs that dont go past go in reverse
-      else if (newSpace > 0) {
+      if (newSpace > 0) {
         setCounterP2(newSpace);
         setCurrentCard();
         let currentProp = properties.find(
