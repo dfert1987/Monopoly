@@ -1163,6 +1163,7 @@ export const Board = ({
           totalHousesP1={totalHousesP1}
           setTotalHousesP2={setTotalHousesP2}
           totalHousesP2={totalHousesP2}
+          utilities={utilities}
         />
       </div>
     </div>

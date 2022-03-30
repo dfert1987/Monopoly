@@ -67,7 +67,6 @@ function App() {
   const [totalHousesP2, setTotalHousesP2] = useState(0);
   const [hotelsP1, setHotelsP1] = useState(0);
   const [hotelsP2, setHotelsP2] = useState(0);
-  console.log(setTotalHousesP1);
   return (
     <div className="App">
       <Board

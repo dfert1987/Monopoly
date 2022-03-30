@@ -66,7 +66,7 @@ export const Yunqi = [
     Number: 8,
     Text: "Le Duzi!",
     Instruction: "Skip a turn.",
-    Type: "Skip",
+    Type: "skip",
     amt: 0,
     space: 0,
     image: require("./pics/yunqi-duzi.jpeg"),

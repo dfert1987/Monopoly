@@ -40,6 +40,19 @@ const InnerCard = ({
   hotelsP2,
   totalHousesP1,
   totalHousesP2,
+  utilities,
+  setOnUtil,
+  setOnUtil2,
+  onUtil,
+  onUtil2,
+  setUtilModal2,
+  setUtilModal,
+  utilModal,
+  utilModal2,
+  payUtil,
+  setPayUtil,
+  setPayUtilTo,
+  payUtilTo,
 }) => {
   const [currentCard, setCurrentCard] = useState();
 
@@ -100,11 +113,38 @@ const InnerCard = ({
       setCurrentCard();
     } else if (onCard && !onCard2 && currentCard.Type === "back") {
       let newSpace = counterP1 - currentCard.amt;
+      let currentUtil = utilities.find((util) => util.Number === newSpace);
       setCounterP1(newSpace);
+
+      // if on unowned util
+      if (currentUtil && !currentUtil.ownedP1 && !currentUtil.ownedP2) {
+        setUtilModal(true);
+        setOnUtil(currentUtil);
+        // if on util owned by p2
+      } else if (currentUtil && !currentUtil.ownedP1 && currentUtil.ownedP2) {
+        setOnUtil(currentUtil);
+        setPayUtil(true);
+        setPayUtilTo(2);
+      }
+
       setCurrentCard();
     } else if (!onCard && onCard2 && currentCard.Type === "back") {
       let newSpace = counterP2 - currentCard.amt;
+      let currentUtil = utilities.find((util) => util.Number === newSpace);
       setCounterP2(newSpace);
+
+      // if on unowned util
+      if (currentUtil && !currentUtil.ownedP1 && !currentUtil.ownedP2) {
+        setUtilModal2(true);
+        setOnUtil2(currentUtil);
+      }
+      // if on util owned by p1
+      else if (currentUtil && currentUtil.ownedP1 && !currentUtil.ownedP2) {
+        setOnUtil2(currentUtil);
+        setPayUtil(true);
+        setPayUtilTo(1);
+      }
+
       setCurrentCard();
     } else if (currentCard.Type === "reroll") {
       let newTurn = turn + 1;
@@ -218,6 +258,7 @@ const InnerCard = ({
           setDoubleProp(true);
           // PASS GO
           setCounterP1(moveTo);
+          setCurrentCard();
         } else {
           setCounterP1(counterP1);
           setCurrentCard();

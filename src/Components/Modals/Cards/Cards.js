@@ -32,6 +32,23 @@ export const Cards = ({
   setSkip2,
   setVisaP1,
   setVisaP2,
+  totalHousesP1,
+  totalHousesP2,
+  hotelsP1,
+  hotelsP2,
+  utilities,
+  setOnUtil,
+  setOnUtil2,
+  onUtil,
+  onUtil2,
+  setUtilModal2,
+  setUtilModal,
+  utilModal,
+  utilModal2,
+  payUtil,
+  setPayUtil,
+  setPayUtilTo,
+  payUtilTo,
 }) => {
   const [guanxi, setGuanxi] = useState(Guanxi);
   const [yunqi, setYunqi] = useState(Yunqi);
@@ -141,6 +158,23 @@ export const Cards = ({
                 setSkip2={setSkip2}
                 setVisaP1={setVisaP1}
                 setVisaP2={setVisaP2}
+                totalHousesP1={totalHousesP1}
+                totalHousesP2={totalHousesP2}
+                hotelsP1={hotelsP1}
+                hotelsP2={hotelsP2}
+                utilities={utilities}
+                payUtilTo={payUtilTo}
+                setPayUtilTo={setPayUtilTo}
+                onUtil={onUtil}
+                onUtil2={onUtil2}
+                setOnUtil={setOnUtil}
+                setOnUtil2={setOnUtil2}
+                utilModal={utilModal}
+                utilModal2={utilModal2}
+                setUtilModal={setUtilModal}
+                setUtilModal2={setUtilModal2}
+                payUtil={payUtil}
+                setPayUtil={setPayUtil}
               />
             </div>
           </motion.div>
