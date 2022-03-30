@@ -186,7 +186,7 @@ export const Yunqi = [
   {
     Number: 21,
     Text: "No pictures on menu!",
-    Instruction: "Order tripe or something, and Go Back 6 Spaces.",
+    Instruction: "Accidentally order tripe or something, and Go Back 6 Spaces.",
     Type: "back",
     amt: 6,
     space: 0,

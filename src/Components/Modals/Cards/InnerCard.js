@@ -135,12 +135,15 @@ const InnerCard = ({
         }
         // if doesnt go past go in reverse
       } else if (newSpace === -1) {
-        setCounterP2(39);
+        setCounterP1(39);
         setCurrentCard();
         setOnAgentFee(true);
       } else if (newSpace === 5) {
-        setOnVisa2(true);
+        setOnVisa(true);
         setCurrentCard();
+      } else if (newSpace === 34) {
+        setCurrentCard();
+        setOnCard(newSpace);
       } else if (newSpace > 0) {
         setCounterP1(newSpace);
         setCurrentCard();
@@ -179,7 +182,6 @@ const InnerCard = ({
       if (newSpace === -2) {
         setCounterP2(38);
         setCurrentCard();
-
         let currentProp = properties.find((property) => property.Number === 38);
         if (currentProp && !currentProp.ownedP1 && !currentProp.ownedP2) {
           setPropertyModal2(true);
@@ -194,11 +196,14 @@ const InnerCard = ({
         setCurrentCard();
         setOnAgentFee2(true);
       } else if (newSpace === 5) {
-        setOnVisa(true);
+        setOnVisa2(true);
         setCurrentCard();
+      } else if (newSpace === 34) {
+        setCurrentCard();
+        setOnCard2(true);
       }
       // for all backs that dont go past go in reverse
-      if (newSpace > 0) {
+      else if (newSpace > 0) {
         setCounterP2(newSpace);
         setCurrentCard();
         let currentProp = properties.find(
