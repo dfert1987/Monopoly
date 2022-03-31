@@ -6,8 +6,8 @@ import { RailRoads } from "./Assets/Holdings/Railroads";
 import { Utilities } from "./Assets/Holdings/Utilities";
 
 function App() {
-  const [counterP1, setCounterP1] = useState(16);
-  const [counterP2, setCounterP2] = useState(16);
+  const [counterP1, setCounterP1] = useState(10);
+  const [counterP2, setCounterP2] = useState(10);
   const [turn, setTurn] = useState(0);
   const [properties, setProperties] = useState(Properties);
   const [railRoads, setRailRoads] = useState(RailRoads);
@@ -67,7 +67,6 @@ function App() {
   const [totalHousesP2, setTotalHousesP2] = useState(0);
   const [hotelsP1, setHotelsP1] = useState(0);
   const [hotelsP2, setHotelsP2] = useState(0);
-  const [stayOn, setStayOn] = useState();
   return (
     <div className="App">
       <Board
@@ -176,7 +175,7 @@ function App() {
         setOnCard={setOnCard}
         setOnCard2={setOnCard2}
         setSkip1={setSkip1}
-        setSKip2={setSkip2}
+        setSkip2={setSkip2}
         setVisaP1={setVisaP1}
         setVisaP2={setVisaP2}
         hotelsP1={hotelsP1}

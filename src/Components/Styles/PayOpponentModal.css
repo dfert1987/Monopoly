@@ -29,8 +29,7 @@
   position: relative;
   border: none;
   overflow-y: auto;
-  width: 55em;
-  height: 35em;
+  padding: 1em;
   background-color: #c0e2ca;
   border-radius: 6px;
   border: 4px solid red;
@@ -66,12 +65,11 @@
   position: relative;
   border: none;
   overflow-y: auto;
-  width: 50em;
-  height: 50em;
   background-color: #c0e2ca;
   border-radius: 6px;
   border: 4px solid red;
   box-shadow: none;
+  padding: 1em;
 }
 
 .innerModalPayRail {
@@ -134,4 +132,21 @@
   padding-left: 0.5em;
   padding-right: 0.5em;
   font-style: italic;
+}
+
+.continue-button {
+  background-color: white;
+  border-radius: 5px;
+  cursor: pointer;
+  box-shadow: 0px 0px 12px -2px;
+  font-family: "Monopoly";
+  font-size: 1em;
+  width: 6em;
+  overflow: hidden;
+  transition: background-color 0.3s ease;
+}
+
+.continue-button:hover {
+  background-color: grey;
+  color: #c0e2ca;
 }

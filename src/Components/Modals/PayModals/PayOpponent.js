@@ -660,7 +660,7 @@ export const PayOpponent = ({
     if (rent && rent < 100) {
       return <img className="cash-pic" alt="small bills" src={smallPay} />;
     } else if (rent && rent > 100) {
-      return <img clasName="cash-pic" alt="large bills" src={bigPay} />;
+      return <img className="cash-pic" alt="large bills" src={bigPay} />;
     }
   };
 
