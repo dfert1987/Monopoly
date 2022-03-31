@@ -65,6 +65,13 @@ export const Cards = ({
   setStayOn2,
   setOnFreeParking,
   setOnFreeParking2,
+  payRailTo,
+  setPayRailTo,
+  setPayRail,
+  setOnRR,
+  setOnRR2,
+  setRRModal,
+  setRRModal2,
 }) => {
   const [guanxi, setGuanxi] = useState(Guanxi);
   const [yunqi, setYunqi] = useState(Yunqi);
@@ -86,8 +93,6 @@ export const Cards = ({
       transition: { delay: 0.5 },
     },
   };
-
-  console.log(onCard, onCard2);
 
   useEffect(() => {
     if (
@@ -209,6 +214,13 @@ export const Cards = ({
                 setStayOn2={setStayOn2}
                 setOnFreeParking={setOnFreeParking}
                 setOnFreeParking2={setOnFreeParking2}
+                payRailTo={payRailTo}
+                setPayRailTo={setPayRailTo}
+                setPayRail={setPayRail}
+                setOnRR={setOnRR}
+                setOnRR2={setOnRR2}
+                setRRModal={setRRModal}
+                setRRModal2={setRRModal2}
               />
             </div>
           </motion.div>
