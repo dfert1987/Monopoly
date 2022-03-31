@@ -87,6 +87,9 @@ const Jail = ({
                     src={deported}
                   />
                 </div>
+                <button onClick={handleClose} className="continue-button">
+                  Pack Your Bags
+                </button>
               </div>
             </motion.div>
           </motion.div>

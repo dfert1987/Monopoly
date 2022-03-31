@@ -72,16 +72,16 @@ export const Guanxi = [
   //   space: 0,
   //   image: require("./Pics/guanxi-dealer.jpeg"),
   // },
-  {
-    Number: 10,
-    Text: "Stuck on NanLouGuxiang",
-    Instruction:
-      "Skip next turn, while you shove, and squish your way to freedom.",
-    Type: "skip",
-    amt: 0,
-    space: 0,
-    image: require("./Pics/guanxi-nanluo.jpeg"),
-  },
+  // {
+  //   Number: 10,
+  //   Text: "Stuck on NanLouGuxiang",
+  //   Instruction:
+  //     "Skip next turn, while you shove, and squish your way to freedom.",
+  //   Type: "skip",
+  //   amt: 0,
+  //   space: 0,
+  //   image: require("./Pics/guanxi-nanluo.jpeg"),
+  // },
   // {
   //   Number: 11,
   //   Text: "AQI over 400",
@@ -101,15 +101,15 @@ export const Guanxi = [
   //   image: require("./Pics/guanxi-duck.jpeg"),
   // },
 
-  // {
-  //   Number: 15,
-  //   Text: "Coffee Shots!",
-  //   Instruction: "Roll Again!",
-  //   Type: "reroll",
-  //   amt: 0,
-  //   space: 0,
-  //   image: require("./Pics/guanxi-cdlp.jpeg"),
-  // },
+  {
+    Number: 15,
+    Text: "Coffee Shots!",
+    Instruction: "Roll Again!",
+    Type: "reroll",
+    amt: 0,
+    space: 0,
+    image: require("./Pics/guanxi-cdlp.jpeg"),
+  },
   // {
   //   Number: 16,
   //   Text: "Fake alcohol!",
