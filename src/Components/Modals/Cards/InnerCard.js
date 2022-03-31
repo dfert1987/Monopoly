@@ -503,8 +503,65 @@ const InnerCard = ({
       setOnCard(false);
       setOnCard2(false);
     } else if (onCard && !onCard2 && currentCard.Type === "advance") {
+      let currentProp = properties.find(
+        (property) => property.Number === currentCard.space
+      );
+      let currentUtil = utilities.find(
+        (util) => util.Number === currentCard.space
+      );
+      let currentRR = railRoads.find((rr) => rr.Number === currentCard.space);
       setCounterP1(currentCard.space);
-      // PASS GO
+      if (currentProp && !currentProp.ownedP1 && !currentProp.ownedP2) {
+        setPropertyModal2(true);
+        setOnProp2(currentProp);
+        arrayRemovePre();
+        setCardOption();
+        setOnCard(false);
+        setOnCard2(false);
+      } else if (currentProp && currentProp.ownedP1 && !currentProp.ownedP2) {
+        setOnProp2(currentProp);
+        setPayProp(true);
+        setPayTo(1);
+        arrayRemovePre();
+        setCardOption();
+        setOnCard(false);
+        setOnCard2(false);
+      } else if (currentUtil && !currentUtil.ownedP1 && !currentUtil.ownedP2) {
+        setUtilModal2(true);
+        setOnUtil2(currentUtil);
+        arrayRemovePre();
+        setCardOption();
+        setOnCard(false);
+        setOnCard2(false);
+      } else if (currentUtil && currentUtil.ownedP1 && !currentUtil.ownedP2) {
+        setOnUtil2(currentUtil);
+        setPayUtil(true);
+        setPayUtilTo(1);
+        arrayRemovePre();
+        setCardOption();
+        setOnCard(false);
+        setOnCard2(false);
+      } else if (currentRR && !currentRR.ownedP1 && !currentRR.ownedP2) {
+        setRRModal2(true);
+        setOnRR2(currentRR);
+        arrayRemovePre();
+        setCardOption();
+        setOnCard(false);
+        setOnCard2(false);
+      } else if (currentRR && currentRR.ownedP1 && !currentRR.ownedP2) {
+        setOnRR2(currentRR);
+        setPayRail(true);
+        setPayRailTo(1);
+        arrayRemovePre();
+        setCardOption();
+        setOnCard(false);
+        setOnCard2(false);
+      } else {
+        arrayRemovePre();
+        setCardOption();
+        setOnCard(false);
+        setOnCard2(false);
+      }
       if (currentCard.space === 41) {
         setInJail(true);
         setCurrentCard();
@@ -519,7 +576,67 @@ const InnerCard = ({
       setOnCard(false);
       setOnCard2(false);
     } else if (!onCard && onCard2 && currentCard.Type === "advance") {
+      let currentProp = properties.find(
+        (property) => property.Number === currentCard.space
+      );
+      let currentUtil = utilities.find(
+        (util) => util.Number === currentCard.space
+      );
+      let currentRR = railRoads.find((rr) => rr.Number === currentCard.space);
+
       setCounterP2(currentCard.space);
+
+      if (currentProp && !currentProp.ownedP1 && !currentProp.ownedP2) {
+        setPropertyModal2(true);
+        setOnProp2(currentProp);
+        arrayRemovePre();
+        setCardOption();
+        setOnCard(false);
+        setOnCard2(false);
+      } else if (currentProp && currentProp.ownedP1 && !currentProp.ownedP2) {
+        setOnProp2(currentProp);
+        setPayProp(true);
+        setPayTo(1);
+        arrayRemovePre();
+        setCardOption();
+        setOnCard(false);
+        setOnCard2(false);
+      } else if (currentUtil && !currentUtil.ownedP1 && !currentUtil.ownedP2) {
+        setUtilModal2(true);
+        setOnUtil2(currentUtil);
+        arrayRemovePre();
+        setCardOption();
+        setOnCard(false);
+        setOnCard2(false);
+      } else if (currentUtil && currentUtil.ownedP1 && !currentUtil.ownedP2) {
+        setOnUtil2(currentUtil);
+        setPayUtil(true);
+        setPayUtilTo(1);
+        arrayRemovePre();
+        setCardOption();
+        setOnCard(false);
+        setOnCard2(false);
+      } else if (currentRR && !currentRR.ownedP1 && !currentRR.ownedP2) {
+        setRRModal2(true);
+        setOnRR2(currentRR);
+        arrayRemovePre();
+        setCardOption();
+        setOnCard(false);
+        setOnCard2(false);
+      } else if (currentRR && currentRR.ownedP1 && !currentRR.ownedP2) {
+        setOnRR2(currentRR);
+        setPayRail(true);
+        setPayRailTo(1);
+        arrayRemovePre();
+        setCardOption();
+        setOnCard(false);
+        setOnCard2(false);
+      } else {
+        arrayRemovePre();
+        setCardOption();
+        setOnCard(false);
+        setOnCard2(false);
+      }
       // PASS GO
       if (currentCard.space === 41) {
         setInJail2(true);
