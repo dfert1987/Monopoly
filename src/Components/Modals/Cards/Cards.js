@@ -83,6 +83,8 @@ export const Cards = ({
     },
   };
 
+  console.log(onCard, onCard2);
+
   useEffect(() => {
     if (
       onCard === true &&

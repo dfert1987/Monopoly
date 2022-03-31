@@ -137,6 +137,8 @@ export const Board = ({
   setTotalHousesP2,
   totalHousesP1,
   totalHousesP2,
+  setStayOn,
+  setStayOn2,
 }) => {
   const [viewPurchase, setViewPurchase] = useState(false);
   const [viewPurchase2, setViewPurchase2] = useState(false);
@@ -146,8 +148,7 @@ export const Board = ({
   const [viewPurchaseUtil2, setViewPurchaseUtil2] = useState(false);
   const [doubleRR, setDoubleRR] = useState(false);
   const [doubleProp, setDoubleProp] = useState(false);
-  console.log(setUtilModal2);
-  console.log(setUtilModal);
+
   return (
     <div className="main-board">
       <div className="left-column">
@@ -1190,6 +1191,8 @@ export const Board = ({
           onVisa2={onVisa2}
           setOnVisa={setOnVisa}
           setOnVisa2={setOnVisa2}
+          setStayOn={setStayOn}
+          setStayOn2={setStayOn2}
         />
       </div>
     </div>

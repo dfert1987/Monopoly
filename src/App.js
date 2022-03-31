@@ -6,8 +6,8 @@ import { RailRoads } from "./Assets/Holdings/Railroads";
 import { Utilities } from "./Assets/Holdings/Utilities";
 
 function App() {
-  const [counterP1, setCounterP1] = useState(31);
-  const [counterP2, setCounterP2] = useState(31);
+  const [counterP1, setCounterP1] = useState(29);
+  const [counterP2, setCounterP2] = useState(29);
   const [turn, setTurn] = useState(0);
   const [properties, setProperties] = useState(Properties);
   const [railRoads, setRailRoads] = useState(RailRoads);
@@ -67,6 +67,7 @@ function App() {
   const [totalHousesP2, setTotalHousesP2] = useState(0);
   const [hotelsP1, setHotelsP1] = useState(0);
   const [hotelsP2, setHotelsP2] = useState(0);
+  const [stayOn, setStayOn] = useState();
   return (
     <div className="App">
       <Board

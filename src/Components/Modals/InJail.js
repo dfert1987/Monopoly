@@ -152,7 +152,6 @@ const InJail = ({
     setDisabledButton(true);
   };
 
-  console.log(inJailModal, inJailModal2);
   return (
     <>
       <AnimatePresence exitBeforeEnter>
