@@ -142,21 +142,60 @@ const InnerCard = ({
     } else if (onCard && !onCard2 && currentCard.Type === "forward") {
       let newSpace = counterP1 + currentCard.amt;
       setCounterP1(newSpace);
-      // PASS GO
       setCurrentCard();
-      arrayRemovePre();
-      setCardOption();
-      setOnCard(false);
-      setOnCard2(false);
+      let currentProp = properties.find(
+        (property) => property.Number === newSpace
+      );
+
+      if (currentProp && !currentProp.ownedP1 && !currentProp.ownedP2) {
+        setPropertyModal1(true);
+        setOnProp(currentProp);
+        arrayRemovePre();
+        setCardOption();
+        setOnCard(false);
+        setOnCard2(false);
+      } else if (currentProp && !currentProp.ownedP1 && currentProp.ownedP2) {
+        setOnProp(currentProp);
+        setPayProp(true);
+        setPayTo(2);
+        arrayRemovePre();
+        setCardOption();
+        setOnCard(false);
+        setOnCard2(false);
+      } else {
+        arrayRemovePre();
+        setCardOption();
+        setOnCard(false);
+        setOnCard2(false);
+      }
     } else if (!onCard && onCard2 && currentCard.Type === "forward") {
       let newSpace = counterP2 + currentCard.amt;
       setCounterP2(newSpace);
-      // PASS GO
       setCurrentCard();
-      arrayRemovePre();
-      setCardOption();
-      setOnCard(false);
-      setOnCard2(false);
+      let currentProp = properties.find(
+        (property) => property.Number === newSpace
+      );
+      if (currentProp && !currentProp.ownedP1 && !currentProp.ownedP2) {
+        setPropertyModal2(true);
+        setOnProp2(currentProp);
+        arrayRemovePre();
+        setCardOption();
+        setOnCard(false);
+        setOnCard2(false);
+      } else if (currentProp && currentProp.ownedP1 && !currentProp.ownedP2) {
+        setOnProp2(currentProp);
+        setPayProp(true);
+        setPayTo(1);
+        arrayRemovePre();
+        setCardOption();
+        setOnCard(false);
+        setOnCard2(false);
+      } else {
+        arrayRemovePre();
+        setCardOption();
+        setOnCard(false);
+        setOnCard2(false);
+      }
       // BAAAAAACK
     } else if (onCard && !onCard2 && currentCard.Type === "back") {
       let newSpace = counterP1 - currentCard.amt;
@@ -177,6 +216,11 @@ const InnerCard = ({
           setOnProp(currentProp);
           setPayProp(true);
           setPayTo(2);
+          arrayRemovePre();
+          setCardOption();
+          setOnCard(false);
+          setOnCard2(false);
+        } else {
           arrayRemovePre();
           setCardOption();
           setOnCard(false);
@@ -257,6 +301,11 @@ const InnerCard = ({
           setCardOption();
           setOnCard(false);
           setOnCard2(false);
+        } else {
+          arrayRemovePre();
+          setCardOption();
+          setOnCard(false);
+          setOnCard2(false);
         }
       }
     } else if (!onCard && onCard2 && currentCard.Type === "back") {
@@ -278,6 +327,11 @@ const InnerCard = ({
           setOnProp2(currentProp);
           setPayProp(true);
           setPayTo(1);
+          arrayRemovePre();
+          setCardOption();
+          setOnCard(false);
+          setOnCard2(false);
+        } else {
           arrayRemovePre();
           setCardOption();
           setOnCard(false);
@@ -307,7 +361,7 @@ const InnerCard = ({
         setOnCard(false);
       } else if (newSpace === 31) {
         setCounterP1(newSpace);
-        setOnFreeParking(true);
+        setOnFreeParking2(true);
         setCurrentCard();
         arrayRemovePre();
         setCardOption();
@@ -360,6 +414,11 @@ const InnerCard = ({
           setOnCard(false);
           setOnCard2(false);
         }
+      } else {
+        arrayRemovePre();
+        setCardOption();
+        setOnCard(false);
+        setOnCard2(false);
       }
     } else if (currentCard.Type === "reroll") {
       let newTurn = turn + 1;

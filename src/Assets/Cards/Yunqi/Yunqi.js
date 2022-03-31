@@ -90,15 +90,15 @@ export const Yunqi = [
   //   space: 0,
   //   image: require("./pics/yunqi-hangover.jpeg"),
   // },
-  // {
-  //   Number: 11,
-  //   Text: "Baijiu Drunk!",
-  //   Instruction: "Go forward 3 spaces.",
-  //   Type: "forward",
-  //   amt: 3,
-  //   space: 0,
-  //   image: require("./pics/yunqi-baijiu.jpeg"),
-  // },
+  {
+    Number: 11,
+    Text: "Baijiu Drunk!",
+    Instruction: "Go forward 3 spaces. Presumably in the direction of chuanr.",
+    Type: "forward",
+    amt: 3,
+    space: 0,
+    image: require("./pics/yunqi-baijiu.jpeg"),
+  },
   // {
   //   Number: 12,
   //   Text: "Group Chuanr night",
@@ -183,16 +183,16 @@ export const Yunqi = [
   //   space: 35,
   //   image: require("./pics/beers.jpeg"),
   // },
-  {
-    Number: 21,
-    Text: "No pictures on menu!",
-    Instruction:
-      "Accidentally order tripe or something, and Go Back 6 Spaces to study your hanzi.",
-    Type: "back",
-    amt: 6,
-    space: 0,
-    image: require("./pics/yunqi-menu.jpeg"),
-  },
+  // {
+  //   Number: 21,
+  //   Text: "No pictures on menu!",
+  //   Instruction:
+  //     "Accidentally order tripe or something, and Go Back 6 Spaces to study your hanzi.",
+  //   Type: "back",
+  //   amt: 6,
+  //   space: 0,
+  //   image: require("./pics/yunqi-menu.jpeg"),
+  // },
   // {
   //   Number: 22,
   //   Text: "You got bricked!",
@@ -274,5 +274,14 @@ export const Yunqi = [
   //   amt: 80,
   //   space: 2,
   //   image: require("./pics/mahjong.jpeg"),
+  // },
+  // {
+  //   Number: 31,
+  //   Text: "Marathon KTV sesh with the co-teachers.",
+  //   Instruction: "Sleep in, rest those vocal chords, and skip your next turn.",
+  //   Type: "skip",
+  //   amt: null,
+  //   space: null,
+  //   image: require("./pics/ktv.jpeg"),
   // },
 ];
