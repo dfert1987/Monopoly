@@ -154,7 +154,13 @@ const InnerCard = ({
         (property) => property.Number === newSpace
       );
       let currentRR = railRoads.find((rr) => rr.Number === newSpace);
-
+      if (newSpace === 11) {
+        setCounterP1(newSpace);
+        arrayRemovePre();
+        setCardOption();
+        setOnCard(false);
+        setOnCard2(false);
+      }
       if (currentRR) {
         if (!currentRR.ownedP1 && !currentRR.ownedP2) {
           setRRModal(true);
@@ -213,7 +219,13 @@ const InnerCard = ({
         (property) => property.Number === newSpace
       );
       let currentRR = railRoads.find((rr) => rr.Number === newSpace);
-      if (currentRR) {
+      if (newSpace === 11) {
+        setCounterP2(newSpace);
+        arrayRemovePre();
+        setCardOption();
+        setOnCard(false);
+        setOnCard2(false);
+      } else if (currentRR) {
         if (!currentRR.ownedP1 && !currentRR.ownedP2) {
           setRRModal2(true);
           setOnRR2(currentRR);
