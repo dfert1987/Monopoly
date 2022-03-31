@@ -1193,6 +1193,8 @@ export const Board = ({
           setOnVisa2={setOnVisa2}
           setStayOn={setStayOn}
           setStayOn2={setStayOn2}
+          setOnFreeParking={setOnFreeParking}
+          setOnFreeParking2={setOnFreeParking2}
         />
       </div>
     </div>

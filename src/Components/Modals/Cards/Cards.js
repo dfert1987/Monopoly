@@ -61,6 +61,10 @@ export const Cards = ({
   onVisa2,
   setOnVisa,
   setOnVisa2,
+  setStayOn,
+  setStayOn2,
+  setOnFreeParking,
+  setOnFreeParking2,
 }) => {
   const [guanxi, setGuanxi] = useState(Guanxi);
   const [yunqi, setYunqi] = useState(Yunqi);
@@ -201,6 +205,10 @@ export const Cards = ({
                 onVisa2={onVisa2}
                 setOnVisa={setOnVisa}
                 setOnVisa2={setOnVisa2}
+                setStayOn={setStayOn}
+                setStayOn2={setStayOn2}
+                setOnFreeParking={setOnFreeParking}
+                setOnFreeParking2={setOnFreeParking2}
               />
             </div>
           </motion.div>

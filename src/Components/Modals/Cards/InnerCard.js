@@ -57,10 +57,10 @@ const InnerCard = ({
   setOnAgentFee2,
   setOnVisa,
   setOnVisa2,
+  setOnFreeParking,
+  setOnFreeParking2,
 }) => {
   const [currentCard, setCurrentCard] = useState();
-  const [stayOn, setStayOn] = useState(false);
-  const [stayOn2, setStayOn2] = useState(false);
 
   const cardFunctionSorter = () => {
     if (onCard && !onCard2 && currentCard.Type === "pay") {
@@ -160,7 +160,6 @@ const InnerCard = ({
       // BAAAAAACK
     } else if (onCard && !onCard2 && currentCard.Type === "back") {
       let newSpace = counterP1 - currentCard.amt;
-      console.log(newSpace);
       let currentUtil = utilities.find((util) => util.Number === newSpace);
       // if goes back to migas past go reverse
       if (newSpace === -2) {
@@ -202,10 +201,17 @@ const InnerCard = ({
       } else if (newSpace === 34) {
         setCounterP1(newSpace);
         setOnCard(true);
-        setStayOn(true);
         setCurrentCard();
         arrayRemovePre();
         setCardOption();
+      } else if (newSpace === 31) {
+        setCounterP1(newSpace);
+        setOnFreeParking(true);
+        setCurrentCard();
+        arrayRemovePre();
+        setCardOption();
+        setOnCard(false);
+        setOnCard2(false);
       } else if (newSpace > 0) {
         setCounterP1(newSpace);
         setCurrentCard();
@@ -255,7 +261,6 @@ const InnerCard = ({
       }
     } else if (!onCard && onCard2 && currentCard.Type === "back") {
       let newSpace = counterP2 - currentCard.amt;
-      console.log(newSpace);
       let currentUtil = utilities.find((util) => util.Number === newSpace);
       // if going past go in reverse to migas
       if (newSpace === -2) {
@@ -296,11 +301,18 @@ const InnerCard = ({
       } else if (newSpace === 34) {
         setCounterP2(newSpace);
         setOnCard2(true);
-        setStayOn2(true);
         setCurrentCard();
         arrayRemovePre();
         setCardOption();
         setOnCard(false);
+      } else if (newSpace === 31) {
+        setCounterP1(newSpace);
+        setOnFreeParking(true);
+        setCurrentCard();
+        arrayRemovePre();
+        setCardOption();
+        setOnCard(false);
+        setOnCard2(false);
       } else if (newSpace > 0) {
         setCounterP2(newSpace);
         setCurrentCard();

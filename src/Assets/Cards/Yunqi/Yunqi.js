@@ -80,16 +80,16 @@ export const Yunqi = [
   //   space: 41,
   //   image: require("./pics/yunqi-overstay.png"),
   // },
-  {
-    Number: 10,
-    Text: "Hungover teaching!",
-    Instruction:
-      "8 hours of Hangman later - Go back 3 spaces and reevaluate your life.",
-    Type: "back",
-    amt: 3,
-    space: 0,
-    image: require("./pics/yunqi-hangover.jpeg"),
-  },
+  // {
+  //   Number: 10,
+  //   Text: "Hungover teaching!",
+  //   Instruction:
+  //     "8 hours of Hangman later - Go back 3 spaces and reevaluate your life.",
+  //   Type: "back",
+  //   amt: 3,
+  //   space: 0,
+  //   image: require("./pics/yunqi-hangover.jpeg"),
+  // },
   // {
   //   Number: 11,
   //   Text: "Baijiu Drunk!",
@@ -183,15 +183,16 @@ export const Yunqi = [
   //   space: 35,
   //   image: require("./pics/beers.jpeg"),
   // },
-  // {
-  //   Number: 21,
-  //   Text: "No pictures on menu!",
-  //   Instruction: "Accidentally order tripe or something, and Go Back 6 Spaces.",
-  //   Type: "back",
-  //   amt: 6,
-  //   space: 0,
-  //   image: require("./pics/yunqi-menu.jpeg"),
-  // },
+  {
+    Number: 21,
+    Text: "No pictures on menu!",
+    Instruction:
+      "Accidentally order tripe or something, and Go Back 6 Spaces to study your hanzi.",
+    Type: "back",
+    amt: 6,
+    space: 0,
+    image: require("./pics/yunqi-menu.jpeg"),
+  },
   // {
   //   Number: 22,
   //   Text: "You got bricked!",
