@@ -1,0 +1,37 @@
+.go {
+  padding: 1em;
+}
+
+.money-stack {
+  max-height: 22em;
+  border-radius: 6px;
+  box-shadow: 2px 2px 6px;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.main {
+  margin-left: auto;
+  margin-right: auto;
+  padding: 1em;
+  display: flex;
+  flex-direction: column;
+}
+
+.innerModal {
+  max-width: 50em;
+}
+
+.main-text {
+  text-align: center;
+  font-family: "Monopoly";
+  font-size: 4em;
+}
+
+.instruction {
+  text-align: center;
+  font-family: "Monopoly";
+  font-size: 3em;
+  margin-bottom: 0;
+}

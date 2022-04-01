@@ -1,6 +1,7 @@
 .main-part {
   text-align: center;
   padding-top: 2em;
+  padding: 1em;
 }
 
 .main-agent {
@@ -73,7 +74,6 @@
 .innerModal {
   border: 2px black solid;
   border-radius: 20px;
-  height: 50em;
   background-color: #c0e2ca;
   box-shadow: 0px 0px 12px -2px;
 }
