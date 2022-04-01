@@ -2,6 +2,10 @@
   display: flex;
 }
 
+.title {
+  padding-bottom: 0.5em;
+}
+
 .centerFlex {
   justify-content: center;
   align-items: center;
@@ -223,6 +227,32 @@
 }
 
 .buy-houses:hover {
+  background-color: grey;
+  color: white;
+}
+.exit-container {
+  margin-right: auto;
+  margin-left: auto;
+  display: flex;
+  flex-direction: column;
+}
+.exit {
+  justify-content: center;
+  text-align: center;
+  width: 12em;
+  margin-right: auto;
+  margin-left: auto;
+  margin-top: 1em;
+  background-color: white;
+  border-radius: 5px;
+  cursor: pointer;
+  box-shadow: 0px 0px 12px -2px;
+  font-family: "Monopoly";
+  font-size: 1.5em;
+  transition: background-color 0.3s ease;
+}
+
+.exit:hover {
   background-color: grey;
   color: white;
 }

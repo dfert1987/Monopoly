@@ -300,1387 +300,1430 @@ const OwnedProperties = ({
                 </button>
               </div>
               <h1 className="title">ASSETS</h1>
-              <div className="square-columns">
-                <div className="property-squares">
-                  <div className="player-row">
-                    <h2 className="player1">PLAYER 1</h2>
-                  </div>
-                  <h3 className="subheader">Properties</h3>
-                  <div className="card-row left five">
-                    <div
-                      className={`card-group twoGroup ${
-                        showOutlines1 && canBuildP1 && buildBrownP1 ? "out" : ""
-                      }`}
-                    >
-                      <div className="card-plus-name">
-                        <p className="name">{properties[21].Name}</p>
-                        <div className="cardSquare-brown">
-                          {properties[21].ownedP1 ? (
-                            <div
-                              className={`main-square ${
-                                showOutlines1 && canBuildP1 && buildBrownP1
-                                  ? "disabled"
-                                  : ""
-                              }`}
-                              onClick={
-                                showOutlines1 && canBuildP1 && buildBrownP1
-                                  ? () => buildModal("brown")
-                                  : () => showProp(properties[21])
-                              }
-                            >
-                              <div className="top-square brown"></div>
-                              <div className="white-part"></div>
-                            </div>
-                          ) : null}
-                        </div>
-                      </div>
-                      <div className="card-plus-name">
-                        <p className="name">{properties[20].Name}</p>
-                        <div className="cardSquare-brown">
-                          {properties[20].ownedP1 ? (
-                            <div
-                              className={`main-square ${
-                                showOutlines1 && canBuildP1 && buildBrownP1
-                                  ? "disabled"
-                                  : ""
-                              }`}
-                              onClick={
-                                showOutlines1 && canBuildP1 && buildBrownP1
-                                  ? () => buildModal("brown")
-                                  : () => showProp(properties[20])
-                              }
-                            >
-                              <div className="top-square brown"></div>
-                              <div className="white-part"></div>
-                            </div>
-                          ) : null}
-                        </div>
-                      </div>
+              <div>
+                <div className="square-columns">
+                  <div className="property-squares">
+                    <div className="player-row">
+                      <h2 className="player1">PLAYER 1</h2>
                     </div>
-                    <div
-                      className={`card-group threeGroup ${
-                        showOutlines1 && canBuildP1 && buildLightBlueP1
-                          ? "out"
-                          : ""
-                      }`}
-                    >
-                      <div className="card-plus-name">
-                        <p className="name">{properties[19].Name}</p>
-                        <div className="cardSquare-light-blue">
-                          {properties[19].ownedP1 ? (
-                            <div
-                              className={`main-square ${
-                                showOutlines1 && canBuildP1 && buildLightBlueP1
-                                  ? "disabled"
-                                  : ""
-                              }`}
-                              onClick={
-                                showOutlines1 && canBuildP1 && buildLightBlueP1
-                                  ? () => buildModal("light-blue")
-                                  : () => showProp(properties[19])
-                              }
-                            >
-                              <div className="top-square lightBlue"></div>
-                              <div className="white-part"></div>
-                            </div>
-                          ) : null}
-                        </div>
-                      </div>
-                      <div className="card-plus-name">
-                        <p className="name">CDLP</p>
-                        <div className="cardSquare-light-blue">
-                          {properties[18].ownedP1 ? (
-                            <div
-                              className={`main-square ${
-                                showOutlines1 && canBuildP1 && buildLightBlueP1
-                                  ? "disabled"
-                                  : ""
-                              }`}
-                              onClick={
-                                showOutlines1 && canBuildP1 && buildLightBlueP1
-                                  ? () => buildModal("light-blue")
-                                  : () => showProp(properties[18])
-                              }
-                            >
-                              <div className="top-square lightBlue"></div>
-                              <div className="white-part"></div>
-                            </div>
-                          ) : null}
-                        </div>
-                      </div>
-                      <div className="card-plus-name">
-                        <p className="name">{properties[17].Name}</p>
-                        <div className="cardSquare-light-blue">
-                          {properties[17].ownedP1 ? (
-                            <div
-                              className={`main-square ${
-                                showOutlines1 && canBuildP1 && buildLightBlueP1
-                                  ? "disabled"
-                                  : ""
-                              }`}
-                              onClick={
-                                showOutlines1 && canBuildP1 && buildLightBlueP1
-                                  ? () => buildModal("light-blue")
-                                  : () => showProp(properties[17])
-                              }
-                            >
-                              <div className="top-square lightBlue"></div>
-                              <div className="white-part"></div>
-                            </div>
-                          ) : null}
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="card-row left six">
-                    <div
-                      className={`card-group threeGroup ${
-                        showOutlines1 && canBuildP1 && buildVioletP1
-                          ? "out"
-                          : ""
-                      }`}
-                    >
-                      <div className="card-plus-name">
-                        <p className="name">{properties[16].Name}</p>
-                        <div className="cardSquare-violet">
-                          {properties[16].ownedP1 ? (
-                            <div
-                              className={`main-square ${
-                                showOutlines1 && canBuildP1 && buildVioletP1
-                                  ? "disabled"
-                                  : ""
-                              }`}
-                              onClick={
-                                showOutlines1 && canBuildP1 && buildVioletP1
-                                  ? () => buildModal("violet")
-                                  : () => showProp(properties[16])
-                              }
-                            >
-                              <div className="top-square violet"></div>
-                              <div className="white-part"></div>
-                            </div>
-                          ) : null}
-                        </div>
-                      </div>
-                      <div className="card-plus-name">
-                        <p className="name">{properties[15].Name}</p>
-                        <div className="cardSquare-violet">
-                          {properties[15].ownedP1 ? (
-                            <div
-                              className={`main-square ${
-                                showOutlines1 && canBuildP1 && buildVioletP1
-                                  ? "disabled"
-                                  : ""
-                              }`}
-                              onClick={
-                                showOutlines1 && canBuildP1 && buildVioletP1
-                                  ? () => buildModal("violet")
-                                  : () => showProp(properties[15])
-                              }
-                            >
-                              <div className="top-square violet"></div>
-                              <div className="white-part"></div>
-                            </div>
-                          ) : null}
-                        </div>
-                      </div>
-                      <div className="card-plus-name">
-                        <p className="name">{properties[14].Name}</p>
-                        <div className="cardSquare-violet">
-                          {properties[14].ownedP1 ? (
-                            <div
-                              className={`main-square ${
-                                showOutlines1 && canBuildP1 && buildVioletP1
-                                  ? "disabled"
-                                  : ""
-                              }`}
-                              onClick={
-                                showOutlines1 && canBuildP1 && buildVioletP1
-                                  ? () => buildModal("violet")
-                                  : () => showProp(properties[14])
-                              }
-                            >
-                              <div className="top-square violet"></div>
-                              <div className="white-part"></div>
-                            </div>
-                          ) : null}
-                        </div>
-                      </div>
-                    </div>
-                    <div
-                      className={`card-group threeGroup ${
-                        showOutlines1 && canBuildP1 && buildOrangeP1
-                          ? "out"
-                          : ""
-                      }`}
-                    >
-                      <div className="card-plus-name">
-                        <p className="name">{properties[13].Name}</p>
-                        <div className="cardSquare-orange">
-                          {properties[13].ownedP1 ? (
-                            <div
-                              className={`main-square ${
-                                showOutlines1 && canBuildP1 && buildOrangeP1
-                                  ? "disabled"
-                                  : ""
-                              }`}
-                              onClick={
-                                showOutlines1 && canBuildP1 && buildOrangeP1
-                                  ? () => buildModal("orange")
-                                  : () => showProp(properties[13])
-                              }
-                            >
-                              <div className="top-square orange"></div>
-                              <div className="white-part"></div>
-                            </div>
-                          ) : null}
-                        </div>
-                      </div>
-                      <div className="card-plus-name">
-                        <p className="name">{properties[12].Name}</p>
-                        <div className="cardSquare-orange">
-                          {properties[12].ownedP1 ? (
-                            <div
-                              className={`main-square ${
-                                showOutlines1 && canBuildP1 && buildOrangeP1
-                                  ? "disabled"
-                                  : ""
-                              }`}
-                              onClick={
-                                showOutlines1 && canBuildP1 && buildOrangeP1
-                                  ? () => buildModal("orange")
-                                  : () => showProp(properties[12])
-                              }
-                            >
-                              <div className="top-square orange"></div>
-                              <div className="white-part"></div>
-                            </div>
-                          ) : null}
-                        </div>
-                      </div>
-                      <div className="card-plus-name">
-                        <p className="name">{properties[11].Name}</p>
-                        <div className="cardSquare-orange">
-                          {properties[11].ownedP1 ? (
-                            <div
-                              className={`main-square ${
-                                showOutlines1 && canBuildP1 && buildOrangeP1
-                                  ? "disabled"
-                                  : ""
-                              }`}
-                              onClick={
-                                showOutlines1 && canBuildP1 && buildOrangeP1
-                                  ? () => buildModal("orange")
-                                  : () => showProp(properties[11])
-                              }
-                            >
-                              <div className="top-square orange"></div>
-                              <div className="white-part"></div>
-                            </div>
-                          ) : null}
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="card-row left six">
-                    <div
-                      className={`card-group threeGroup ${
-                        showOutlines1 && canBuildP1 && buildRedP1 ? "out" : ""
-                      }`}
-                    >
-                      <div className="card-plus-name">
-                        <p className="name">{properties[10].Name}</p>
-                        <div className="cardSquare-red">
-                          {properties[10].ownedP1 ? (
-                            <div
-                              className={`main-square ${
-                                showOutlines1 && canBuildP1 && buildRedP1
-                                  ? "disabled"
-                                  : ""
-                              }`}
-                              onClick={
-                                showOutlines1 && canBuildP1 && buildRedP1
-                                  ? () => buildModal("red")
-                                  : () => showProp(properties[10])
-                              }
-                            >
-                              <div className="top-square red"></div>
-                              <div className="white-part"></div>
-                            </div>
-                          ) : null}
-                        </div>
-                      </div>
-                      <div className="card-plus-name">
-                        <p className="name">{properties[9].Name}</p>
-                        <div className="cardSquare-red">
-                          {properties[9].ownedP1 ? (
-                            <div
-                              className={`main-square ${
-                                showOutlines1 && canBuildP1 && buildRedP1
-                                  ? "disabled"
-                                  : ""
-                              }`}
-                              onClick={
-                                showOutlines1 && canBuildP1 && buildRedP1
-                                  ? () => buildModal("red")
-                                  : () => showProp(properties[9])
-                              }
-                            >
-                              <div className="top-square red"></div>
-                              <div className="white-part"></div>
-                            </div>
-                          ) : null}
-                        </div>
-                      </div>
-                      <div className="card-plus-name">
-                        <p className="name">{properties[8].Name}</p>
-                        <div className="cardSquare-red">
-                          {properties[8].ownedP1 ? (
-                            <div
-                              className={`main-square ${
-                                showOutlines1 && canBuildP1 && buildRedP1
-                                  ? "disabled"
-                                  : ""
-                              }`}
-                              onClick={
-                                showOutlines1 && canBuildP1 && buildRedP1
-                                  ? () => buildModal("red")
-                                  : () => showProp(properties[8])
-                              }
-                            >
-                              <div className="top-square red"></div>
-                              <div className="white-part"></div>
-                            </div>
-                          ) : null}
-                        </div>
-                      </div>
-                    </div>
-                    <div
-                      className={`card-group threeGroup ${
-                        showOutlines1 && canBuildP1 && buildYellowP1
-                          ? "out"
-                          : ""
-                      }`}
-                    >
-                      <div className="card-plus-name">
-                        <p className="name">JDX</p>
-                        <div className="cardSquare-yellow">
-                          {properties[7].ownedP1 ? (
-                            <div
-                              className={`main-square ${
-                                showOutlines1 && canBuildP1 && buildYellowP1
-                                  ? "disabled"
-                                  : ""
-                              }`}
-                              onClick={
-                                showOutlines1 && canBuildP1 && buildYellowP1
-                                  ? () => buildModal("yellow")
-                                  : () => showProp(properties[7])
-                              }
-                            >
-                              <div className="top-square yellow"></div>
-                              <div className="white-part"></div>
-                            </div>
-                          ) : null}
-                        </div>
-                      </div>
-                      <div className="card-plus-name">
-                        <p className="name">{properties[6].Name}</p>
-                        <div className="cardSquare-yellow">
-                          {properties[6].ownedP1 ? (
-                            <div
-                              className={`main-square ${
-                                showOutlines1 && canBuildP1 && buildYellowP1
-                                  ? "disabled"
-                                  : ""
-                              }`}
-                              onClick={
-                                showOutlines1 && canBuildP1 && buildYellowP1
-                                  ? () => buildModal("yellow")
-                                  : () => showProp(properties[6])
-                              }
-                            >
-                              <div className="top-square yellow"></div>
-                              <div className="white-part"></div>
-                            </div>
-                          ) : null}
-                        </div>
-                      </div>
-                      <div className="card-plus-name">
-                        <p className="name">{properties[5].Name}</p>
-                        <div className="cardSquare-yellow">
-                          {properties[5].ownedP1 ? (
-                            <div
-                              className={`main-square ${
-                                showOutlines1 && canBuildP1 && buildYellowP1
-                                  ? "disabled"
-                                  : ""
-                              }`}
-                              onClick={
-                                showOutlines1 && canBuildP1 && buildYellowP1
-                                  ? () => buildModal("yellow")
-                                  : () => showProp(properties[5])
-                              }
-                            >
-                              <div className="top-square yellow"></div>
-                              <div className="white-part"></div>
-                            </div>
-                          ) : null}
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="card-row left five">
-                    <div
-                      className={`card-group threeGroup ${
-                        showOutlines1 && canBuildP1 && buildGreenP1 ? "out" : ""
-                      }`}
-                    >
-                      <div className="card-plus-name">
-                        <p className="name">{properties[4].Name}</p>
-                        <div className="cardSquare-green">
-                          {properties[4].ownedP1 ? (
-                            <div
-                              className={`main-square ${
-                                showOutlines1 && canBuildP1 && buildGreenP1
-                                  ? "disabled"
-                                  : ""
-                              }`}
-                              onClick={
-                                showOutlines1 && canBuildP1 && buildGreenP1
-                                  ? () => buildModal("green")
-                                  : () => showProp(properties[4])
-                              }
-                            >
-                              <div className="top-square green"></div>
-                              <div className="white-part"></div>
-                            </div>
-                          ) : null}
-                        </div>
-                      </div>
-                      <div className="card-plus-name">
-                        <p className="name">{properties[3].Name}</p>
-                        <div className="cardSquare-green">
-                          {properties[3].ownedP1 ? (
-                            <div
-                              className={`main-square ${
-                                showOutlines1 && canBuildP1 && buildGreenP1
-                                  ? "disabled"
-                                  : ""
-                              }`}
-                              onClick={
-                                showOutlines1 && canBuildP1 && buildGreenP1
-                                  ? () => buildModal("green")
-                                  : () => showProp(properties[3])
-                              }
-                            >
-                              <div className="top-square green"></div>
-                              <div className="white-part"></div>
-                            </div>
-                          ) : null}
-                        </div>
-                      </div>
-                      <div className="card-plus-name">
-                        <p className="name">{properties[2].Name}</p>
-                        <div className="cardSquare-green">
-                          {properties[2].ownedP1 ? (
-                            <div
-                              className={`main-square ${
-                                showOutlines1 && canBuildP1 && buildGreenP1
-                                  ? "disabled"
-                                  : ""
-                              }`}
-                              onClick={
-                                showOutlines1 && canBuildP1 && buildGreenP1
-                                  ? () => buildModal("green")
-                                  : () => showProp(properties[2])
-                              }
-                            >
-                              <div className="top-square green"></div>
-                              <div className="white-part"></div>
-                            </div>
-                          ) : null}
-                        </div>
-                      </div>
-                    </div>
-                    <div
-                      className={`card-group twoGroup ${
-                        showOutlines1 && canBuildP1 && buildBlueP1 ? "out" : ""
-                      }`}
-                    >
-                      <div className="card-plus-name">
-                        <p className="name">{properties[1].Name}</p>
-                        <div className="cardSquare-blue">
-                          {properties[1].ownedP1 ? (
-                            <div
-                              className={`main-square ${
-                                showOutlines1 && canBuildP1 && buildBlueP1
-                                  ? "disabled"
-                                  : ""
-                              }`}
-                              onClick={
-                                showOutlines1 && canBuildP1 && buildBlueP1
-                                  ? () => buildModal("blue")
-                                  : () => showProp(properties[1])
-                              }
-                            >
-                              <div className="top-square blue"></div>
-                              <div className="white-part"></div>
-                            </div>
-                          ) : null}
-                        </div>
-                      </div>
-                      <div className="card-plus-name">
-                        <p className="name">{properties[0].Name}</p>
-                        <div className="cardSquare-blue">
-                          {properties[0].ownedP1 ? (
-                            <div
-                              className={`main-square ${
-                                showOutlines1 && canBuildP1 && buildBlueP1
-                                  ? "disabled"
-                                  : ""
-                              }`}
-                              onClick={
-                                showOutlines1 && canBuildP1 && buildBlueP1
-                                  ? () => buildModal("blue")
-                                  : () => showProp(properties[0])
-                              }
-                            >
-                              <div className="top-square blue"></div>
-                              <div className="white-part"></div>
-                            </div>
-                          ) : null}
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <h3 className="subheader">Railroads</h3>
-                  <div className="card-row left four">
-                    <div className="card-group fourGroup">
-                      <div className="card-plus-name">
-                        <p className="name">{railRoads[0].Name}</p>
-                        <div className="cardSquare-black">
-                          {railRoads[0].ownedP1 ? (
-                            <div
-                              className="main-square"
-                              onClick={() => showRR(railRoads[0])}
-                            >
-                              <div className="white-part-rr">
-                                <img
-                                  className="small-ditie"
-                                  alt="small subway logo"
-                                  src={ditielogo}
-                                />
+                    <h3 className="subheader">Properties</h3>
+                    <div className="card-row left five">
+                      <div
+                        className={`card-group twoGroup ${
+                          showOutlines1 && canBuildP1 && buildBrownP1
+                            ? "out"
+                            : ""
+                        }`}
+                      >
+                        <div className="card-plus-name">
+                          <p className="name">{properties[21].Name}</p>
+                          <div className="cardSquare-brown">
+                            {properties[21].ownedP1 ? (
+                              <div
+                                className={`main-square ${
+                                  showOutlines1 && canBuildP1 && buildBrownP1
+                                    ? "disabled"
+                                    : ""
+                                }`}
+                                onClick={
+                                  showOutlines1 && canBuildP1 && buildBrownP1
+                                    ? () => buildModal("brown")
+                                    : () => showProp(properties[21])
+                                }
+                              >
+                                <div className="top-square brown"></div>
+                                <div className="white-part"></div>
                               </div>
-                            </div>
-                          ) : null}
+                            ) : null}
+                          </div>
+                        </div>
+                        <div className="card-plus-name">
+                          <p className="name">{properties[20].Name}</p>
+                          <div className="cardSquare-brown">
+                            {properties[20].ownedP1 ? (
+                              <div
+                                className={`main-square ${
+                                  showOutlines1 && canBuildP1 && buildBrownP1
+                                    ? "disabled"
+                                    : ""
+                                }`}
+                                onClick={
+                                  showOutlines1 && canBuildP1 && buildBrownP1
+                                    ? () => buildModal("brown")
+                                    : () => showProp(properties[20])
+                                }
+                              >
+                                <div className="top-square brown"></div>
+                                <div className="white-part"></div>
+                              </div>
+                            ) : null}
+                          </div>
                         </div>
                       </div>
-                      <div className="card-plus-name">
-                        <p className="name">{railRoads[1].Name}</p>
-                        <div className="cardSquare-black">
-                          {railRoads[1].ownedP1 ? (
-                            <div
-                              className="main-square"
-                              onClick={() => showRR(railRoads[1])}
-                            >
-                              <div className="white-part-rr">
-                                <img
-                                  className="small-ditie"
-                                  alt="small subway logo"
-                                  src={ditielogo}
-                                />
+                      <div
+                        className={`card-group threeGroup ${
+                          showOutlines1 && canBuildP1 && buildLightBlueP1
+                            ? "out"
+                            : ""
+                        }`}
+                      >
+                        <div className="card-plus-name">
+                          <p className="name">{properties[19].Name}</p>
+                          <div className="cardSquare-light-blue">
+                            {properties[19].ownedP1 ? (
+                              <div
+                                className={`main-square ${
+                                  showOutlines1 &&
+                                  canBuildP1 &&
+                                  buildLightBlueP1
+                                    ? "disabled"
+                                    : ""
+                                }`}
+                                onClick={
+                                  showOutlines1 &&
+                                  canBuildP1 &&
+                                  buildLightBlueP1
+                                    ? () => buildModal("light-blue")
+                                    : () => showProp(properties[19])
+                                }
+                              >
+                                <div className="top-square lightBlue"></div>
+                                <div className="white-part"></div>
                               </div>
-                            </div>
-                          ) : null}
+                            ) : null}
+                          </div>
                         </div>
-                      </div>
-                      <div className="card-plus-name">
-                        <p className="name">{railRoads[2].Name}</p>
-                        <div className="cardSquare-black">
-                          {railRoads[2].ownedP1 ? (
-                            <div
-                              className="main-square"
-                              onClick={() => showRR(railRoads[2])}
-                            >
-                              <div className="white-part-rr">
-                                <img
-                                  className="small-ditie"
-                                  alt="small subway logo"
-                                  src={ditielogo}
-                                />
+                        <div className="card-plus-name">
+                          <p className="name">CDLP</p>
+                          <div className="cardSquare-light-blue">
+                            {properties[18].ownedP1 ? (
+                              <div
+                                className={`main-square ${
+                                  showOutlines1 &&
+                                  canBuildP1 &&
+                                  buildLightBlueP1
+                                    ? "disabled"
+                                    : ""
+                                }`}
+                                onClick={
+                                  showOutlines1 &&
+                                  canBuildP1 &&
+                                  buildLightBlueP1
+                                    ? () => buildModal("light-blue")
+                                    : () => showProp(properties[18])
+                                }
+                              >
+                                <div className="top-square lightBlue"></div>
+                                <div className="white-part"></div>
                               </div>
-                            </div>
-                          ) : null}
+                            ) : null}
+                          </div>
                         </div>
-                      </div>
-                      <div className="card-plus-name">
-                        <p className="name">{railRoads[3].Name}</p>
-                        <div className="cardSquare-black">
-                          {railRoads[3].ownedP1 ? (
-                            <div
-                              className="main-square"
-                              onClick={() => showRR(railRoads[0])}
-                            >
-                              <div className="white-part-rr">
-                                <img
-                                  className="small-ditie"
-                                  alt="small subway logo"
-                                  src={ditielogo}
-                                />
+                        <div className="card-plus-name">
+                          <p className="name">{properties[17].Name}</p>
+                          <div className="cardSquare-light-blue">
+                            {properties[17].ownedP1 ? (
+                              <div
+                                className={`main-square ${
+                                  showOutlines1 &&
+                                  canBuildP1 &&
+                                  buildLightBlueP1
+                                    ? "disabled"
+                                    : ""
+                                }`}
+                                onClick={
+                                  showOutlines1 &&
+                                  canBuildP1 &&
+                                  buildLightBlueP1
+                                    ? () => buildModal("light-blue")
+                                    : () => showProp(properties[17])
+                                }
+                              >
+                                <div className="top-square lightBlue"></div>
+                                <div className="white-part"></div>
                               </div>
-                            </div>
-                          ) : null}
+                            ) : null}
+                          </div>
                         </div>
                       </div>
                     </div>
-                  </div>
-                  <h3 className="subheader">Utilities</h3>
-                  <div className="card-row left two">
-                    <div className="card-group threeGroup">
-                      <div className="card-plus-name">
-                        <p className="name">WATER</p>
-                        <div className="cardSquare-grey">
-                          {utilities[0].ownedP1 ? (
-                            <div
-                              className="main-square"
-                              onClick={() => showUtil(utilities[0])}
-                            >
-                              <div className="white-part-rr">
-                                <img
-                                  className="small-ditie"
-                                  alt="water jug"
-                                  src={jug}
-                                />
+                    <div className="card-row left six">
+                      <div
+                        className={`card-group threeGroup ${
+                          showOutlines1 && canBuildP1 && buildVioletP1
+                            ? "out"
+                            : ""
+                        }`}
+                      >
+                        <div className="card-plus-name">
+                          <p className="name">{properties[16].Name}</p>
+                          <div className="cardSquare-violet">
+                            {properties[16].ownedP1 ? (
+                              <div
+                                className={`main-square ${
+                                  showOutlines1 && canBuildP1 && buildVioletP1
+                                    ? "disabled"
+                                    : ""
+                                }`}
+                                onClick={
+                                  showOutlines1 && canBuildP1 && buildVioletP1
+                                    ? () => buildModal("violet")
+                                    : () => showProp(properties[16])
+                                }
+                              >
+                                <div className="top-square violet"></div>
+                                <div className="white-part"></div>
                               </div>
-                            </div>
-                          ) : null}
+                            ) : null}
+                          </div>
+                        </div>
+                        <div className="card-plus-name">
+                          <p className="name">{properties[15].Name}</p>
+                          <div className="cardSquare-violet">
+                            {properties[15].ownedP1 ? (
+                              <div
+                                className={`main-square ${
+                                  showOutlines1 && canBuildP1 && buildVioletP1
+                                    ? "disabled"
+                                    : ""
+                                }`}
+                                onClick={
+                                  showOutlines1 && canBuildP1 && buildVioletP1
+                                    ? () => buildModal("violet")
+                                    : () => showProp(properties[15])
+                                }
+                              >
+                                <div className="top-square violet"></div>
+                                <div className="white-part"></div>
+                              </div>
+                            ) : null}
+                          </div>
+                        </div>
+                        <div className="card-plus-name">
+                          <p className="name">{properties[14].Name}</p>
+                          <div className="cardSquare-violet">
+                            {properties[14].ownedP1 ? (
+                              <div
+                                className={`main-square ${
+                                  showOutlines1 && canBuildP1 && buildVioletP1
+                                    ? "disabled"
+                                    : ""
+                                }`}
+                                onClick={
+                                  showOutlines1 && canBuildP1 && buildVioletP1
+                                    ? () => buildModal("violet")
+                                    : () => showProp(properties[14])
+                                }
+                              >
+                                <div className="top-square violet"></div>
+                                <div className="white-part"></div>
+                              </div>
+                            ) : null}
+                          </div>
                         </div>
                       </div>
-                      <div className="card-plus-name">
-                        <p className="name">AYI</p>
-                        <div className="cardSquare-grey">
-                          {utilities[1].ownedP1 ? (
-                            <div
-                              className="main-square"
-                              onClick={() => showUtil(utilities[1])}
-                            >
-                              <div className="white-part-rr">
-                                <img
-                                  className="small-ditie"
-                                  alt="mop"
-                                  src={mopAyi}
-                                />
+                      <div
+                        className={`card-group threeGroup ${
+                          showOutlines1 && canBuildP1 && buildOrangeP1
+                            ? "out"
+                            : ""
+                        }`}
+                      >
+                        <div className="card-plus-name">
+                          <p className="name">{properties[13].Name}</p>
+                          <div className="cardSquare-orange">
+                            {properties[13].ownedP1 ? (
+                              <div
+                                className={`main-square ${
+                                  showOutlines1 && canBuildP1 && buildOrangeP1
+                                    ? "disabled"
+                                    : ""
+                                }`}
+                                onClick={
+                                  showOutlines1 && canBuildP1 && buildOrangeP1
+                                    ? () => buildModal("orange")
+                                    : () => showProp(properties[13])
+                                }
+                              >
+                                <div className="top-square orange"></div>
+                                <div className="white-part"></div>
                               </div>
-                            </div>
-                          ) : null}
+                            ) : null}
+                          </div>
+                        </div>
+                        <div className="card-plus-name">
+                          <p className="name">{properties[12].Name}</p>
+                          <div className="cardSquare-orange">
+                            {properties[12].ownedP1 ? (
+                              <div
+                                className={`main-square ${
+                                  showOutlines1 && canBuildP1 && buildOrangeP1
+                                    ? "disabled"
+                                    : ""
+                                }`}
+                                onClick={
+                                  showOutlines1 && canBuildP1 && buildOrangeP1
+                                    ? () => buildModal("orange")
+                                    : () => showProp(properties[12])
+                                }
+                              >
+                                <div className="top-square orange"></div>
+                                <div className="white-part"></div>
+                              </div>
+                            ) : null}
+                          </div>
+                        </div>
+                        <div className="card-plus-name">
+                          <p className="name">{properties[11].Name}</p>
+                          <div className="cardSquare-orange">
+                            {properties[11].ownedP1 ? (
+                              <div
+                                className={`main-square ${
+                                  showOutlines1 && canBuildP1 && buildOrangeP1
+                                    ? "disabled"
+                                    : ""
+                                }`}
+                                onClick={
+                                  showOutlines1 && canBuildP1 && buildOrangeP1
+                                    ? () => buildModal("orange")
+                                    : () => showProp(properties[11])
+                                }
+                              >
+                                <div className="top-square orange"></div>
+                                <div className="white-part"></div>
+                              </div>
+                            ) : null}
+                          </div>
                         </div>
                       </div>
                     </div>
+                    <div className="card-row left six">
+                      <div
+                        className={`card-group threeGroup ${
+                          showOutlines1 && canBuildP1 && buildRedP1 ? "out" : ""
+                        }`}
+                      >
+                        <div className="card-plus-name">
+                          <p className="name">{properties[10].Name}</p>
+                          <div className="cardSquare-red">
+                            {properties[10].ownedP1 ? (
+                              <div
+                                className={`main-square ${
+                                  showOutlines1 && canBuildP1 && buildRedP1
+                                    ? "disabled"
+                                    : ""
+                                }`}
+                                onClick={
+                                  showOutlines1 && canBuildP1 && buildRedP1
+                                    ? () => buildModal("red")
+                                    : () => showProp(properties[10])
+                                }
+                              >
+                                <div className="top-square red"></div>
+                                <div className="white-part"></div>
+                              </div>
+                            ) : null}
+                          </div>
+                        </div>
+                        <div className="card-plus-name">
+                          <p className="name">{properties[9].Name}</p>
+                          <div className="cardSquare-red">
+                            {properties[9].ownedP1 ? (
+                              <div
+                                className={`main-square ${
+                                  showOutlines1 && canBuildP1 && buildRedP1
+                                    ? "disabled"
+                                    : ""
+                                }`}
+                                onClick={
+                                  showOutlines1 && canBuildP1 && buildRedP1
+                                    ? () => buildModal("red")
+                                    : () => showProp(properties[9])
+                                }
+                              >
+                                <div className="top-square red"></div>
+                                <div className="white-part"></div>
+                              </div>
+                            ) : null}
+                          </div>
+                        </div>
+                        <div className="card-plus-name">
+                          <p className="name">{properties[8].Name}</p>
+                          <div className="cardSquare-red">
+                            {properties[8].ownedP1 ? (
+                              <div
+                                className={`main-square ${
+                                  showOutlines1 && canBuildP1 && buildRedP1
+                                    ? "disabled"
+                                    : ""
+                                }`}
+                                onClick={
+                                  showOutlines1 && canBuildP1 && buildRedP1
+                                    ? () => buildModal("red")
+                                    : () => showProp(properties[8])
+                                }
+                              >
+                                <div className="top-square red"></div>
+                                <div className="white-part"></div>
+                              </div>
+                            ) : null}
+                          </div>
+                        </div>
+                      </div>
+                      <div
+                        className={`card-group threeGroup ${
+                          showOutlines1 && canBuildP1 && buildYellowP1
+                            ? "out"
+                            : ""
+                        }`}
+                      >
+                        <div className="card-plus-name">
+                          <p className="name">JDX</p>
+                          <div className="cardSquare-yellow">
+                            {properties[7].ownedP1 ? (
+                              <div
+                                className={`main-square ${
+                                  showOutlines1 && canBuildP1 && buildYellowP1
+                                    ? "disabled"
+                                    : ""
+                                }`}
+                                onClick={
+                                  showOutlines1 && canBuildP1 && buildYellowP1
+                                    ? () => buildModal("yellow")
+                                    : () => showProp(properties[7])
+                                }
+                              >
+                                <div className="top-square yellow"></div>
+                                <div className="white-part"></div>
+                              </div>
+                            ) : null}
+                          </div>
+                        </div>
+                        <div className="card-plus-name">
+                          <p className="name">{properties[6].Name}</p>
+                          <div className="cardSquare-yellow">
+                            {properties[6].ownedP1 ? (
+                              <div
+                                className={`main-square ${
+                                  showOutlines1 && canBuildP1 && buildYellowP1
+                                    ? "disabled"
+                                    : ""
+                                }`}
+                                onClick={
+                                  showOutlines1 && canBuildP1 && buildYellowP1
+                                    ? () => buildModal("yellow")
+                                    : () => showProp(properties[6])
+                                }
+                              >
+                                <div className="top-square yellow"></div>
+                                <div className="white-part"></div>
+                              </div>
+                            ) : null}
+                          </div>
+                        </div>
+                        <div className="card-plus-name">
+                          <p className="name">{properties[5].Name}</p>
+                          <div className="cardSquare-yellow">
+                            {properties[5].ownedP1 ? (
+                              <div
+                                className={`main-square ${
+                                  showOutlines1 && canBuildP1 && buildYellowP1
+                                    ? "disabled"
+                                    : ""
+                                }`}
+                                onClick={
+                                  showOutlines1 && canBuildP1 && buildYellowP1
+                                    ? () => buildModal("yellow")
+                                    : () => showProp(properties[5])
+                                }
+                              >
+                                <div className="top-square yellow"></div>
+                                <div className="white-part"></div>
+                              </div>
+                            ) : null}
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="card-row left five">
+                      <div
+                        className={`card-group threeGroup ${
+                          showOutlines1 && canBuildP1 && buildGreenP1
+                            ? "out"
+                            : ""
+                        }`}
+                      >
+                        <div className="card-plus-name">
+                          <p className="name">{properties[4].Name}</p>
+                          <div className="cardSquare-green">
+                            {properties[4].ownedP1 ? (
+                              <div
+                                className={`main-square ${
+                                  showOutlines1 && canBuildP1 && buildGreenP1
+                                    ? "disabled"
+                                    : ""
+                                }`}
+                                onClick={
+                                  showOutlines1 && canBuildP1 && buildGreenP1
+                                    ? () => buildModal("green")
+                                    : () => showProp(properties[4])
+                                }
+                              >
+                                <div className="top-square green"></div>
+                                <div className="white-part"></div>
+                              </div>
+                            ) : null}
+                          </div>
+                        </div>
+                        <div className="card-plus-name">
+                          <p className="name">{properties[3].Name}</p>
+                          <div className="cardSquare-green">
+                            {properties[3].ownedP1 ? (
+                              <div
+                                className={`main-square ${
+                                  showOutlines1 && canBuildP1 && buildGreenP1
+                                    ? "disabled"
+                                    : ""
+                                }`}
+                                onClick={
+                                  showOutlines1 && canBuildP1 && buildGreenP1
+                                    ? () => buildModal("green")
+                                    : () => showProp(properties[3])
+                                }
+                              >
+                                <div className="top-square green"></div>
+                                <div className="white-part"></div>
+                              </div>
+                            ) : null}
+                          </div>
+                        </div>
+                        <div className="card-plus-name">
+                          <p className="name">{properties[2].Name}</p>
+                          <div className="cardSquare-green">
+                            {properties[2].ownedP1 ? (
+                              <div
+                                className={`main-square ${
+                                  showOutlines1 && canBuildP1 && buildGreenP1
+                                    ? "disabled"
+                                    : ""
+                                }`}
+                                onClick={
+                                  showOutlines1 && canBuildP1 && buildGreenP1
+                                    ? () => buildModal("green")
+                                    : () => showProp(properties[2])
+                                }
+                              >
+                                <div className="top-square green"></div>
+                                <div className="white-part"></div>
+                              </div>
+                            ) : null}
+                          </div>
+                        </div>
+                      </div>
+                      <div
+                        className={`card-group twoGroup ${
+                          showOutlines1 && canBuildP1 && buildBlueP1
+                            ? "out"
+                            : ""
+                        }`}
+                      >
+                        <div className="card-plus-name">
+                          <p className="name">{properties[1].Name}</p>
+                          <div className="cardSquare-blue">
+                            {properties[1].ownedP1 ? (
+                              <div
+                                className={`main-square ${
+                                  showOutlines1 && canBuildP1 && buildBlueP1
+                                    ? "disabled"
+                                    : ""
+                                }`}
+                                onClick={
+                                  showOutlines1 && canBuildP1 && buildBlueP1
+                                    ? () => buildModal("blue")
+                                    : () => showProp(properties[1])
+                                }
+                              >
+                                <div className="top-square blue"></div>
+                                <div className="white-part"></div>
+                              </div>
+                            ) : null}
+                          </div>
+                        </div>
+                        <div className="card-plus-name">
+                          <p className="name">{properties[0].Name}</p>
+                          <div className="cardSquare-blue">
+                            {properties[0].ownedP1 ? (
+                              <div
+                                className={`main-square ${
+                                  showOutlines1 && canBuildP1 && buildBlueP1
+                                    ? "disabled"
+                                    : ""
+                                }`}
+                                onClick={
+                                  showOutlines1 && canBuildP1 && buildBlueP1
+                                    ? () => buildModal("blue")
+                                    : () => showProp(properties[0])
+                                }
+                              >
+                                <div className="top-square blue"></div>
+                                <div className="white-part"></div>
+                              </div>
+                            ) : null}
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <h3 className="subheader">Railroads</h3>
+                    <div className="card-row left four">
+                      <div className="card-group fourGroup">
+                        <div className="card-plus-name">
+                          <p className="name">{railRoads[0].Name}</p>
+                          <div className="cardSquare-black">
+                            {railRoads[0].ownedP1 ? (
+                              <div
+                                className="main-square"
+                                onClick={() => showRR(railRoads[0])}
+                              >
+                                <div className="white-part-rr">
+                                  <img
+                                    className="small-ditie"
+                                    alt="small subway logo"
+                                    src={ditielogo}
+                                  />
+                                </div>
+                              </div>
+                            ) : null}
+                          </div>
+                        </div>
+                        <div className="card-plus-name">
+                          <p className="name">{railRoads[1].Name}</p>
+                          <div className="cardSquare-black">
+                            {railRoads[1].ownedP1 ? (
+                              <div
+                                className="main-square"
+                                onClick={() => showRR(railRoads[1])}
+                              >
+                                <div className="white-part-rr">
+                                  <img
+                                    className="small-ditie"
+                                    alt="small subway logo"
+                                    src={ditielogo}
+                                  />
+                                </div>
+                              </div>
+                            ) : null}
+                          </div>
+                        </div>
+                        <div className="card-plus-name">
+                          <p className="name">{railRoads[2].Name}</p>
+                          <div className="cardSquare-black">
+                            {railRoads[2].ownedP1 ? (
+                              <div
+                                className="main-square"
+                                onClick={() => showRR(railRoads[2])}
+                              >
+                                <div className="white-part-rr">
+                                  <img
+                                    className="small-ditie"
+                                    alt="small subway logo"
+                                    src={ditielogo}
+                                  />
+                                </div>
+                              </div>
+                            ) : null}
+                          </div>
+                        </div>
+                        <div className="card-plus-name">
+                          <p className="name">{railRoads[3].Name}</p>
+                          <div className="cardSquare-black">
+                            {railRoads[3].ownedP1 ? (
+                              <div
+                                className="main-square"
+                                onClick={() => showRR(railRoads[0])}
+                              >
+                                <div className="white-part-rr">
+                                  <img
+                                    className="small-ditie"
+                                    alt="small subway logo"
+                                    src={ditielogo}
+                                  />
+                                </div>
+                              </div>
+                            ) : null}
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <h3 className="subheader">Utilities</h3>
+                    <div className="card-row left two">
+                      <div className="card-group threeGroup">
+                        <div className="card-plus-name">
+                          <p className="name">WATER</p>
+                          <div className="cardSquare-grey">
+                            {utilities[0].ownedP1 ? (
+                              <div
+                                className="main-square"
+                                onClick={() => showUtil(utilities[0])}
+                              >
+                                <div className="white-part-rr">
+                                  <img
+                                    className="small-ditie"
+                                    alt="water jug"
+                                    src={jug}
+                                  />
+                                </div>
+                              </div>
+                            ) : null}
+                          </div>
+                        </div>
+                        <div className="card-plus-name">
+                          <p className="name">AYI</p>
+                          <div className="cardSquare-grey">
+                            {utilities[1].ownedP1 ? (
+                              <div
+                                className="main-square"
+                                onClick={() => showUtil(utilities[1])}
+                              >
+                                <div className="white-part-rr">
+                                  <img
+                                    className="small-ditie"
+                                    alt="mop"
+                                    src={mopAyi}
+                                  />
+                                </div>
+                              </div>
+                            ) : null}
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <button
+                      className="buy-houses"
+                      onClick={
+                        !showOutlines1
+                          ? () => setShowOutlines1(true)
+                          : () => setShowOutlines1(false)
+                      }
+                      disabled={!canBuildP1}
+                    >
+                      {!showOutlines1 ? "Build Houses" : "Cancel Build"}
+                    </button>
                   </div>
-                  <button
-                    className="buy-houses"
-                    onClick={
-                      !showOutlines1
-                        ? () => setShowOutlines1(true)
-                        : () => setShowOutlines1(false)
-                    }
-                    disabled={!canBuildP1}
-                  >
-                    {!showOutlines1 ? "Build Houses" : "Cancel Build"}
-                  </button>
+                  <div className="property-squares">
+                    <div className="player-row">
+                      <h2 className="player2">PLAYER 2</h2>
+                    </div>
+                    <h3 className="subheader">Properties</h3>
+                    <div className="card-row right five">
+                      <div
+                        className={`card-group twoGroup ${
+                          showOutlines2 && canBuildP2 && buildBrownP2
+                            ? "out"
+                            : ""
+                        }`}
+                      >
+                        <div className="card-plus-name">
+                          <p className="name">{properties[21].Name}</p>
+                          <div className="cardSquare-brown">
+                            {properties[21].ownedP2 ? (
+                              <div
+                                className={`main-square ${
+                                  showOutlines2 && canBuildP2 && buildBrownP2
+                                    ? "disabled"
+                                    : ""
+                                }`}
+                                onClick={
+                                  showOutlines2 && canBuildP2 && buildBrownP2
+                                    ? () => buildModal2("brown")
+                                    : () => showProp(properties[21])
+                                }
+                              >
+                                <div className="top-square brown"></div>
+                                <div className="white-part"></div>
+                              </div>
+                            ) : null}
+                          </div>
+                        </div>
+                        <div className="card-plus-name">
+                          <p className="name">{properties[20].Name}</p>
+                          <div className="cardSquare-brown">
+                            {properties[20].ownedP2 ? (
+                              <div
+                                className={`main-square ${
+                                  showOutlines2 && canBuildP2 && buildBrownP2
+                                    ? "disabled"
+                                    : ""
+                                }`}
+                                onClick={
+                                  showOutlines2 && canBuildP2 && buildBrownP2
+                                    ? () => buildModal2("brown")
+                                    : () => showProp(properties[20])
+                                }
+                              >
+                                <div className="top-square brown"></div>
+                                <div className="white-part"></div>
+                              </div>
+                            ) : null}
+                          </div>
+                        </div>
+                      </div>
+                      <div
+                        className={`card-group threeGroup ${
+                          showOutlines2 && canBuildP2 && buildLightBlueP2
+                            ? "out"
+                            : ""
+                        }`}
+                      >
+                        <div className="card-plus-name">
+                          <p className="name">{properties[19].Name}</p>
+                          <div className="cardSquare-light-blue">
+                            {properties[19].ownedP2 ? (
+                              <div
+                                className={`main-square ${
+                                  showOutlines2 &&
+                                  canBuildP2 &&
+                                  buildLightBlueP2
+                                    ? "disabled"
+                                    : ""
+                                }`}
+                                onClick={
+                                  showOutlines2 &&
+                                  canBuildP2 &&
+                                  buildLightBlueP2
+                                    ? () => buildModal2("light-blue")
+                                    : () => showProp(properties[19])
+                                }
+                              >
+                                <div className="top-square lightBlue"></div>
+                                <div className="white-part"></div>
+                              </div>
+                            ) : null}
+                          </div>
+                        </div>
+                        <div className="card-plus-name">
+                          <p className="name">CDLP</p>
+                          <div className="cardSquare-light-blue">
+                            {properties[18].ownedP2 ? (
+                              <div
+                                className={`main-square ${
+                                  showOutlines2 &&
+                                  canBuildP2 &&
+                                  buildLightBlueP2
+                                    ? "disabled"
+                                    : ""
+                                }`}
+                                onClick={
+                                  showOutlines2 &&
+                                  canBuildP2 &&
+                                  buildLightBlueP2
+                                    ? () => buildModal2("light-blue")
+                                    : () => showProp(properties[18])
+                                }
+                              >
+                                <div className="top-square lightBlue"></div>
+                                <div className="white-part"></div>
+                              </div>
+                            ) : null}
+                          </div>
+                        </div>
+                        <div className="card-plus-name">
+                          <p className="name">{properties[17].Name}</p>
+                          <div className="cardSquare-light-blue">
+                            {properties[17].ownedP2 ? (
+                              <div
+                                className={`main-square ${
+                                  showOutlines2 &&
+                                  canBuildP2 &&
+                                  buildLightBlueP2
+                                    ? "disabled"
+                                    : ""
+                                }`}
+                                onClick={
+                                  showOutlines2 &&
+                                  canBuildP2 &&
+                                  buildLightBlueP2
+                                    ? () => buildModal2("light-blue")
+                                    : () => showProp(properties[17])
+                                }
+                              >
+                                <div className="top-square lightBlue"></div>
+                                <div className="white-part"></div>
+                              </div>
+                            ) : null}
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="card-row left six">
+                      <div
+                        className={`card-group threeGroup ${
+                          showOutlines2 && canBuildP2 && buildVioletP2
+                            ? "out"
+                            : ""
+                        }`}
+                      >
+                        <div className="card-plus-name">
+                          <p className="name">{properties[16].Name}</p>
+                          <div className="cardSquare-violet">
+                            {properties[16].ownedP2 ? (
+                              <div
+                                className={`main-square ${
+                                  showOutlines2 && canBuildP2 && buildVioletP2
+                                    ? "disabled"
+                                    : ""
+                                }`}
+                                onClick={
+                                  showOutlines2 && canBuildP2 && buildVioletP2
+                                    ? () => buildModal2("violet")
+                                    : () => showProp(properties[16])
+                                }
+                              >
+                                <div className="top-square violet"></div>
+                                <div className="white-part"></div>
+                              </div>
+                            ) : null}
+                          </div>
+                        </div>
+                        <div className="card-plus-name">
+                          <p className="name">{properties[15].Name}</p>
+                          <div className="cardSquare-violet">
+                            {properties[15].ownedP2 ? (
+                              <div
+                                className={`main-square ${
+                                  showOutlines2 && canBuildP2 && buildVioletP2
+                                    ? "disabled"
+                                    : ""
+                                }`}
+                                onClick={
+                                  showOutlines2 && canBuildP2 && buildVioletP2
+                                    ? () => buildModal2("violet")
+                                    : () => showProp(properties[15])
+                                }
+                              >
+                                <div className="top-square violet"></div>
+                                <div className="white-part"></div>
+                              </div>
+                            ) : null}
+                          </div>
+                        </div>
+                        <div className="card-plus-name">
+                          <p className="name">{properties[14].Name}</p>
+                          <div className="cardSquare-violet">
+                            {properties[14].ownedP2 ? (
+                              <div
+                                className={`main-square ${
+                                  showOutlines2 && canBuildP2 && buildVioletP2
+                                    ? "disabled"
+                                    : ""
+                                }`}
+                                onClick={
+                                  showOutlines2 && canBuildP2 && buildVioletP2
+                                    ? () => buildModal2("violet")
+                                    : () => showProp(properties[14])
+                                }
+                              >
+                                <div className="top-square violet"></div>
+                                <div className="white-part"></div>
+                              </div>
+                            ) : null}
+                          </div>
+                        </div>
+                      </div>
+                      <div
+                        className={`card-group threeGroup ${
+                          showOutlines2 && canBuildP2 && buildOrangeP2
+                            ? "out"
+                            : ""
+                        }`}
+                      >
+                        <div className="card-plus-name">
+                          <p className="name">{properties[13].Name}</p>
+                          <div
+                            className="cardSquare-orange"
+                            onClick={
+                              showOutlines2 && canBuildP2 && buildOrangeP2
+                                ? () => buildModal2("orange")
+                                : () => showProp(properties[13])
+                            }
+                          >
+                            {properties[13].ownedP2 ? (
+                              <div
+                                className={`main-square ${
+                                  showOutlines2 && canBuildP2 && buildOrangeP2
+                                    ? "disabled"
+                                    : ""
+                                }`}
+                              >
+                                <div className="top-square orange"></div>
+                                <div className="white-part"></div>
+                              </div>
+                            ) : null}
+                          </div>
+                        </div>
+                        <div className="card-plus-name">
+                          <p className="name">{properties[12].Name}</p>
+                          <div className="cardSquare-orange">
+                            {properties[12].ownedP2 ? (
+                              <div
+                                className={`main-square ${
+                                  showOutlines2 && canBuildP2 && buildOrangeP2
+                                    ? "disabled"
+                                    : ""
+                                }`}
+                                onClick={
+                                  showOutlines2 && canBuildP2 && buildOrangeP2
+                                    ? () => buildModal2("orange")
+                                    : () => showProp(properties[12])
+                                }
+                              >
+                                <div className="top-square orange"></div>
+                                <div className="white-part"></div>
+                              </div>
+                            ) : null}
+                          </div>
+                        </div>
+                        <div className="card-plus-name">
+                          <p className="name">{properties[11].Name}</p>
+                          <div className="cardSquare-orange">
+                            {properties[11].ownedP2 ? (
+                              <div
+                                className={`main-square ${
+                                  showOutlines2 && canBuildP2 && buildOrangeP2
+                                    ? "disabled"
+                                    : ""
+                                }`}
+                                onClick={
+                                  showOutlines2 && canBuildP2 && buildOrangeP2
+                                    ? () => buildModal2("orange")
+                                    : () => showProp(properties[11])
+                                }
+                              >
+                                <div className="top-square orange"></div>
+                                <div className="white-part"></div>
+                              </div>
+                            ) : null}
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="card-row left six">
+                      <div
+                        className={`card-group threeGroup ${
+                          showOutlines2 && canBuildP2 && buildRedP2 ? "out" : ""
+                        }`}
+                      >
+                        <div className="card-plus-name">
+                          <p className="name">{properties[10].Name}</p>
+                          <div className="cardSquare-red">
+                            {properties[10].ownedP2 ? (
+                              <div
+                                className={`main-square ${
+                                  showOutlines2 && canBuildP2 && buildRedP2
+                                    ? "disabled"
+                                    : ""
+                                }`}
+                                onClick={
+                                  showOutlines2 && canBuildP2 && buildRedP2
+                                    ? () => buildModal2("red")
+                                    : () => showProp(properties[10])
+                                }
+                              >
+                                <div className="top-square red"></div>
+                                <div className="white-part"></div>
+                              </div>
+                            ) : null}
+                          </div>
+                        </div>
+                        <div className="card-plus-name">
+                          <p className="name">{properties[9].Name}</p>
+                          <div className="cardSquare-red">
+                            {properties[9].ownedP2 ? (
+                              <div
+                                className={`main-square ${
+                                  showOutlines2 && canBuildP2 && buildRedP2
+                                    ? "disabled"
+                                    : ""
+                                }`}
+                                onClick={
+                                  showOutlines2 && canBuildP2 && buildRedP2
+                                    ? () => buildModal2("red")
+                                    : () => showProp(properties[9])
+                                }
+                              >
+                                <div className="top-square red"></div>
+                                <div className="white-part"></div>
+                              </div>
+                            ) : null}
+                          </div>
+                        </div>
+                        <div className="card-plus-name">
+                          <p className="name">{properties[8].Name}</p>
+                          <div className="cardSquare-red">
+                            {properties[8].ownedP2 ? (
+                              <div
+                                className={`main-square ${
+                                  showOutlines2 && canBuildP2 && buildRedP2
+                                    ? "disabled"
+                                    : ""
+                                }`}
+                                onClick={
+                                  showOutlines2 && canBuildP2 && buildRedP2
+                                    ? () => buildModal2("red")
+                                    : () => showProp(properties[8])
+                                }
+                              >
+                                <div className="top-square red"></div>
+                                <div className="white-part"></div>
+                              </div>
+                            ) : null}
+                          </div>
+                        </div>
+                      </div>
+                      <div
+                        className={`card-group threeGroup ${
+                          showOutlines2 && canBuildP2 && buildYellowP2
+                            ? "out"
+                            : ""
+                        }`}
+                      >
+                        <div className="card-plus-name">
+                          <p className="name">JDX</p>
+                          <div className="cardSquare-yellow">
+                            {properties[7].ownedP2 ? (
+                              <div
+                                className={`main-square ${
+                                  showOutlines2 && canBuildP2 && buildYellowP2
+                                    ? "disabled"
+                                    : ""
+                                }`}
+                                onClick={
+                                  showOutlines2 && canBuildP2 && buildYellowP2
+                                    ? () => buildModal2("yellow")
+                                    : () => showProp(properties[7])
+                                }
+                              >
+                                <div className="top-square yellow"></div>
+                                <div className="white-part"></div>
+                              </div>
+                            ) : null}
+                          </div>
+                        </div>
+                        <div className="card-plus-name">
+                          <p className="name">{properties[6].Name}</p>
+                          <div className="cardSquare-yellow">
+                            {properties[6].ownedP2 ? (
+                              <div
+                                className={`main-square ${
+                                  showOutlines2 && canBuildP2 && buildYellowP2
+                                    ? "disabled"
+                                    : ""
+                                }`}
+                                onClick={
+                                  showOutlines2 && canBuildP2 && buildYellowP2
+                                    ? () => buildModal2("yellow")
+                                    : () => showProp(properties[6])
+                                }
+                              >
+                                <div className="top-square yellow"></div>
+                                <div className="white-part"></div>
+                              </div>
+                            ) : null}
+                          </div>
+                        </div>
+                        <div className="card-plus-name">
+                          <p className="name">{properties[5].Name}</p>
+                          <div className="cardSquare-yellow">
+                            {properties[5].ownedP2 ? (
+                              <div
+                                className={`main-square ${
+                                  showOutlines2 && canBuildP2 && buildYellowP2
+                                    ? "disabled"
+                                    : ""
+                                }`}
+                                onClick={
+                                  showOutlines2 && canBuildP2 && buildYellowP2
+                                    ? () => buildModal2("yellow")
+                                    : () => showProp(properties[5])
+                                }
+                              >
+                                <div className="top-square yellow"></div>
+                                <div className="white-part"></div>
+                              </div>
+                            ) : null}
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="card-row left five">
+                      <div
+                        className={`card-group threeGroup ${
+                          showOutlines2 && canBuildP2 && buildGreenP2
+                            ? "out"
+                            : ""
+                        }`}
+                      >
+                        <div className="card-plus-name">
+                          <p className="name">{properties[4].Name}</p>
+                          <div className="cardSquare-green">
+                            {properties[4].ownedP2 ? (
+                              <div
+                                className={`main-square ${
+                                  showOutlines2 && canBuildP2 && buildGreenP2
+                                    ? "disabled"
+                                    : ""
+                                }`}
+                                onClick={
+                                  showOutlines2 && canBuildP2 && buildGreenP2
+                                    ? () => buildModal2("green")
+                                    : () => showProp(properties[4])
+                                }
+                              >
+                                <div className="top-square green"></div>
+                                <div className="white-part"></div>
+                              </div>
+                            ) : null}
+                          </div>
+                        </div>
+                        <div className="card-plus-name">
+                          <p className="name">{properties[3].Name}</p>
+                          <div className="cardSquare-green">
+                            {properties[3].ownedP2 ? (
+                              <div
+                                className={`main-square ${
+                                  showOutlines2 && canBuildP2 && buildGreenP2
+                                    ? "disabled"
+                                    : ""
+                                }`}
+                                onClick={
+                                  showOutlines2 && canBuildP2 && buildGreenP2
+                                    ? () => buildModal2("green")
+                                    : () => showProp(properties[3])
+                                }
+                              >
+                                <div className="top-square green"></div>
+                                <div className="white-part"></div>
+                              </div>
+                            ) : null}
+                          </div>
+                        </div>
+                        <div className="card-plus-name">
+                          <p className="name">{properties[2].Name}</p>
+                          <div className="cardSquare-green">
+                            {properties[2].ownedP2 ? (
+                              <div
+                                className={`main-square ${
+                                  showOutlines2 && canBuildP2 && buildGreenP2
+                                    ? "disabled"
+                                    : ""
+                                }`}
+                                onClick={
+                                  showOutlines2 && canBuildP2 && buildGreenP2
+                                    ? () => buildModal2("green")
+                                    : () => showProp(properties[2])
+                                }
+                              >
+                                <div className="top-square green"></div>
+                                <div className="white-part"></div>
+                              </div>
+                            ) : null}
+                          </div>
+                        </div>
+                      </div>
+                      <div
+                        className={`card-group twoGroup ${
+                          showOutlines2 && canBuildP2 && buildBlueP2
+                            ? "out"
+                            : ""
+                        }`}
+                      >
+                        <div className="card-plus-name">
+                          <p className="name">{properties[1].Name}</p>
+                          <div
+                            className="cardSquare-blue"
+                            onClick={
+                              showOutlines2 && canBuildP2 && buildBlueP2
+                                ? () => buildModal2("blue")
+                                : () => showProp(properties[1])
+                            }
+                          >
+                            {properties[1].ownedP2 ? (
+                              <div
+                                className={`main-square ${
+                                  showOutlines2 && canBuildP2 && buildBlueP2
+                                    ? "disabled"
+                                    : ""
+                                }`}
+                              >
+                                <div className="top-square blue"></div>
+                                <div className="white-part"></div>
+                              </div>
+                            ) : null}
+                          </div>
+                        </div>
+                        <div className="card-plus-name">
+                          <p className="name">{properties[0].Name}</p>
+                          <div className="cardSquare-blue">
+                            {properties[0].ownedP2 ? (
+                              <div
+                                className={`main-square ${
+                                  showOutlines2 && canBuildP2 && buildBlueP2
+                                    ? "disabled"
+                                    : ""
+                                }`}
+                                onClick={
+                                  showOutlines2 && canBuildP2 && buildBlueP2
+                                    ? () => buildModal2("blue")
+                                    : () => showProp(properties[0])
+                                }
+                              >
+                                <div className="top-square blue"></div>
+                                <div className="white-part"></div>
+                              </div>
+                            ) : null}
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <h3 className="subheader">Railroads</h3>
+                    <div className="card-row left four">
+                      <div className="card-group fourGroup">
+                        <div className="card-plus-name">
+                          <p className="name">{railRoads[0].Name}</p>
+                          <div className="cardSquare-black">
+                            {railRoads[0].ownedP2 ? (
+                              <div
+                                className="main-square"
+                                onClick={() => showRR(railRoads[0])}
+                              >
+                                <div className="white-part-rr">
+                                  <img
+                                    className="small-ditie"
+                                    alt="small subway logo"
+                                    src={ditielogo}
+                                  />
+                                </div>
+                              </div>
+                            ) : null}
+                          </div>
+                        </div>
+                        <div className="card-plus-name">
+                          <p className="name">{railRoads[1].Name}</p>
+                          <div className="cardSquare-black">
+                            {railRoads[1].ownedP2 ? (
+                              <div
+                                className="main-square"
+                                onClick={() => showRR(railRoads[1])}
+                              >
+                                <div className="white-part-rr">
+                                  <img
+                                    className="small-ditie"
+                                    alt="small subway logo"
+                                    src={ditielogo}
+                                  />
+                                </div>
+                              </div>
+                            ) : null}
+                          </div>
+                        </div>
+                        <div className="card-plus-name">
+                          <p className="name">{railRoads[2].Name}</p>
+                          <div className="cardSquare-black">
+                            {railRoads[2].ownedP2 ? (
+                              <div
+                                className="main-square"
+                                onClick={() => showRR(railRoads[2])}
+                              >
+                                <div className="white-part-rr">
+                                  <img
+                                    className="small-ditie"
+                                    alt="small subway logo"
+                                    src={ditielogo}
+                                  />
+                                </div>
+                              </div>
+                            ) : null}
+                          </div>
+                        </div>
+                        <div className="card-plus-name">
+                          <p className="name">{railRoads[3].Name}</p>
+                          <div className="cardSquare-black">
+                            {railRoads[3].ownedP2 ? (
+                              <div
+                                className="main-square"
+                                onClick={() => showRR(railRoads[3])}
+                              >
+                                <div className="white-part-rr">
+                                  <img
+                                    className="small-ditie"
+                                    alt="small subway logo"
+                                    src={ditielogo}
+                                  />
+                                </div>
+                              </div>
+                            ) : null}
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <h3 className="subheader">Utilities</h3>
+                    <div className="card-row left two">
+                      <div className="card-group threeGroup">
+                        <div className="card-plus-name">
+                          <p className="name">WATER</p>
+                          <div className="cardSquare-grey">
+                            {utilities[0].ownedP2 ? (
+                              <div
+                                className="main-square"
+                                onClick={() => showUtil(utilities[0])}
+                              >
+                                <div className="white-part-rr">
+                                  <img
+                                    className="small-ditie"
+                                    alt="water jug"
+                                    src={jug}
+                                  />
+                                </div>
+                              </div>
+                            ) : null}
+                          </div>
+                        </div>
+                        <div className="card-plus-name">
+                          <p className="name">AYI</p>
+                          <div className="cardSquare-grey">
+                            {utilities[1].ownedP2 ? (
+                              <div
+                                className="main-square"
+                                onClick={() => showUtil(utilities[1])}
+                              >
+                                <div className="white-part-rr">
+                                  <img
+                                    className="small-ditie"
+                                    alt="mop"
+                                    src={mopAyi}
+                                  />
+                                </div>
+                              </div>
+                            ) : null}
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <button
+                      className="buy-houses"
+                      onClick={
+                        !showOutlines2
+                          ? () => setShowOutlines2(true)
+                          : () => setShowOutlines2(false)
+                      }
+                      disabled={!canBuildP2}
+                    >
+                      {!showOutlines2 ? "Build Houses" : "Cancel Build"}
+                    </button>
+                  </div>
                 </div>
-                <div className="property-squares">
-                  <div className="player-row">
-                    <h2 className="player2">PLAYER 2</h2>
-                  </div>
-                  <h3 className="subheader">Properties</h3>
-                  <div className="card-row right five">
-                    <div
-                      className={`card-group twoGroup ${
-                        showOutlines2 && canBuildP2 && buildBrownP2 ? "out" : ""
-                      }`}
-                    >
-                      <div className="card-plus-name">
-                        <p className="name">{properties[21].Name}</p>
-                        <div className="cardSquare-brown">
-                          {properties[21].ownedP2 ? (
-                            <div
-                              className={`main-square ${
-                                showOutlines2 && canBuildP2 && buildBrownP2
-                                  ? "disabled"
-                                  : ""
-                              }`}
-                              onClick={
-                                showOutlines2 && canBuildP2 && buildBrownP2
-                                  ? () => buildModal2("brown")
-                                  : () => showProp(properties[21])
-                              }
-                            >
-                              <div className="top-square brown"></div>
-                              <div className="white-part"></div>
-                            </div>
-                          ) : null}
-                        </div>
-                      </div>
-                      <div className="card-plus-name">
-                        <p className="name">{properties[20].Name}</p>
-                        <div className="cardSquare-brown">
-                          {properties[20].ownedP2 ? (
-                            <div
-                              className={`main-square ${
-                                showOutlines2 && canBuildP2 && buildBrownP2
-                                  ? "disabled"
-                                  : ""
-                              }`}
-                              onClick={
-                                showOutlines2 && canBuildP2 && buildBrownP2
-                                  ? () => buildModal2("brown")
-                                  : () => showProp(properties[20])
-                              }
-                            >
-                              <div className="top-square brown"></div>
-                              <div className="white-part"></div>
-                            </div>
-                          ) : null}
-                        </div>
-                      </div>
-                    </div>
-                    <div
-                      className={`card-group threeGroup ${
-                        showOutlines2 && canBuildP2 && buildLightBlueP2
-                          ? "out"
-                          : ""
-                      }`}
-                    >
-                      <div className="card-plus-name">
-                        <p className="name">{properties[19].Name}</p>
-                        <div className="cardSquare-light-blue">
-                          {properties[19].ownedP2 ? (
-                            <div
-                              className={`main-square ${
-                                showOutlines2 && canBuildP2 && buildLightBlueP2
-                                  ? "disabled"
-                                  : ""
-                              }`}
-                              onClick={
-                                showOutlines2 && canBuildP2 && buildLightBlueP2
-                                  ? () => buildModal2("light-blue")
-                                  : () => showProp(properties[19])
-                              }
-                            >
-                              <div className="top-square lightBlue"></div>
-                              <div className="white-part"></div>
-                            </div>
-                          ) : null}
-                        </div>
-                      </div>
-                      <div className="card-plus-name">
-                        <p className="name">CDLP</p>
-                        <div className="cardSquare-light-blue">
-                          {properties[18].ownedP2 ? (
-                            <div
-                              className={`main-square ${
-                                showOutlines2 && canBuildP2 && buildLightBlueP2
-                                  ? "disabled"
-                                  : ""
-                              }`}
-                              onClick={
-                                showOutlines2 && canBuildP2 && buildLightBlueP2
-                                  ? () => buildModal2("light-blue")
-                                  : () => showProp(properties[18])
-                              }
-                            >
-                              <div className="top-square lightBlue"></div>
-                              <div className="white-part"></div>
-                            </div>
-                          ) : null}
-                        </div>
-                      </div>
-                      <div className="card-plus-name">
-                        <p className="name">{properties[17].Name}</p>
-                        <div className="cardSquare-light-blue">
-                          {properties[17].ownedP2 ? (
-                            <div
-                              className={`main-square ${
-                                showOutlines2 && canBuildP2 && buildLightBlueP2
-                                  ? "disabled"
-                                  : ""
-                              }`}
-                              onClick={
-                                showOutlines2 && canBuildP2 && buildLightBlueP2
-                                  ? () => buildModal2("light-blue")
-                                  : () => showProp(properties[17])
-                              }
-                            >
-                              <div className="top-square lightBlue"></div>
-                              <div className="white-part"></div>
-                            </div>
-                          ) : null}
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="card-row left six">
-                    <div
-                      className={`card-group threeGroup ${
-                        showOutlines2 && canBuildP2 && buildVioletP2
-                          ? "out"
-                          : ""
-                      }`}
-                    >
-                      <div className="card-plus-name">
-                        <p className="name">{properties[16].Name}</p>
-                        <div className="cardSquare-violet">
-                          {properties[16].ownedP2 ? (
-                            <div
-                              className={`main-square ${
-                                showOutlines2 && canBuildP2 && buildVioletP2
-                                  ? "disabled"
-                                  : ""
-                              }`}
-                              onClick={
-                                showOutlines2 && canBuildP2 && buildVioletP2
-                                  ? () => buildModal2("violet")
-                                  : () => showProp(properties[16])
-                              }
-                            >
-                              <div className="top-square violet"></div>
-                              <div className="white-part"></div>
-                            </div>
-                          ) : null}
-                        </div>
-                      </div>
-                      <div className="card-plus-name">
-                        <p className="name">{properties[15].Name}</p>
-                        <div className="cardSquare-violet">
-                          {properties[15].ownedP2 ? (
-                            <div
-                              className={`main-square ${
-                                showOutlines2 && canBuildP2 && buildVioletP2
-                                  ? "disabled"
-                                  : ""
-                              }`}
-                              onClick={
-                                showOutlines2 && canBuildP2 && buildVioletP2
-                                  ? () => buildModal2("violet")
-                                  : () => showProp(properties[15])
-                              }
-                            >
-                              <div className="top-square violet"></div>
-                              <div className="white-part"></div>
-                            </div>
-                          ) : null}
-                        </div>
-                      </div>
-                      <div className="card-plus-name">
-                        <p className="name">{properties[14].Name}</p>
-                        <div className="cardSquare-violet">
-                          {properties[14].ownedP2 ? (
-                            <div
-                              className={`main-square ${
-                                showOutlines2 && canBuildP2 && buildVioletP2
-                                  ? "disabled"
-                                  : ""
-                              }`}
-                              onClick={
-                                showOutlines2 && canBuildP2 && buildVioletP2
-                                  ? () => buildModal2("violet")
-                                  : () => showProp(properties[14])
-                              }
-                            >
-                              <div className="top-square violet"></div>
-                              <div className="white-part"></div>
-                            </div>
-                          ) : null}
-                        </div>
-                      </div>
-                    </div>
-                    <div
-                      className={`card-group threeGroup ${
-                        showOutlines2 && canBuildP2 && buildOrangeP2
-                          ? "out"
-                          : ""
-                      }`}
-                    >
-                      <div className="card-plus-name">
-                        <p className="name">{properties[13].Name}</p>
-                        <div
-                          className="cardSquare-orange"
-                          onClick={
-                            showOutlines2 && canBuildP2 && buildOrangeP2
-                              ? () => buildModal2("orange")
-                              : () => showProp(properties[13])
-                          }
-                        >
-                          {properties[13].ownedP2 ? (
-                            <div
-                              className={`main-square ${
-                                showOutlines2 && canBuildP2 && buildOrangeP2
-                                  ? "disabled"
-                                  : ""
-                              }`}
-                            >
-                              <div className="top-square orange"></div>
-                              <div className="white-part"></div>
-                            </div>
-                          ) : null}
-                        </div>
-                      </div>
-                      <div className="card-plus-name">
-                        <p className="name">{properties[12].Name}</p>
-                        <div className="cardSquare-orange">
-                          {properties[12].ownedP2 ? (
-                            <div
-                              className={`main-square ${
-                                showOutlines2 && canBuildP2 && buildOrangeP2
-                                  ? "disabled"
-                                  : ""
-                              }`}
-                              onClick={
-                                showOutlines2 && canBuildP2 && buildOrangeP2
-                                  ? () => buildModal2("orange")
-                                  : () => showProp(properties[12])
-                              }
-                            >
-                              <div className="top-square orange"></div>
-                              <div className="white-part"></div>
-                            </div>
-                          ) : null}
-                        </div>
-                      </div>
-                      <div className="card-plus-name">
-                        <p className="name">{properties[11].Name}</p>
-                        <div className="cardSquare-orange">
-                          {properties[11].ownedP2 ? (
-                            <div
-                              className={`main-square ${
-                                showOutlines2 && canBuildP2 && buildOrangeP2
-                                  ? "disabled"
-                                  : ""
-                              }`}
-                              onClick={
-                                showOutlines2 && canBuildP2 && buildOrangeP2
-                                  ? () => buildModal2("orange")
-                                  : () => showProp(properties[11])
-                              }
-                            >
-                              <div className="top-square orange"></div>
-                              <div className="white-part"></div>
-                            </div>
-                          ) : null}
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="card-row left six">
-                    <div
-                      className={`card-group threeGroup ${
-                        showOutlines2 && canBuildP2 && buildRedP2 ? "out" : ""
-                      }`}
-                    >
-                      <div className="card-plus-name">
-                        <p className="name">{properties[10].Name}</p>
-                        <div className="cardSquare-red">
-                          {properties[10].ownedP2 ? (
-                            <div
-                              className={`main-square ${
-                                showOutlines2 && canBuildP2 && buildRedP2
-                                  ? "disabled"
-                                  : ""
-                              }`}
-                              onClick={
-                                showOutlines2 && canBuildP2 && buildRedP2
-                                  ? () => buildModal2("red")
-                                  : () => showProp(properties[10])
-                              }
-                            >
-                              <div className="top-square red"></div>
-                              <div className="white-part"></div>
-                            </div>
-                          ) : null}
-                        </div>
-                      </div>
-                      <div className="card-plus-name">
-                        <p className="name">{properties[9].Name}</p>
-                        <div className="cardSquare-red">
-                          {properties[9].ownedP2 ? (
-                            <div
-                              className={`main-square ${
-                                showOutlines2 && canBuildP2 && buildRedP2
-                                  ? "disabled"
-                                  : ""
-                              }`}
-                              onClick={
-                                showOutlines2 && canBuildP2 && buildRedP2
-                                  ? () => buildModal2("red")
-                                  : () => showProp(properties[9])
-                              }
-                            >
-                              <div className="top-square red"></div>
-                              <div className="white-part"></div>
-                            </div>
-                          ) : null}
-                        </div>
-                      </div>
-                      <div className="card-plus-name">
-                        <p className="name">{properties[8].Name}</p>
-                        <div className="cardSquare-red">
-                          {properties[8].ownedP2 ? (
-                            <div
-                              className={`main-square ${
-                                showOutlines2 && canBuildP2 && buildRedP2
-                                  ? "disabled"
-                                  : ""
-                              }`}
-                              onClick={
-                                showOutlines2 && canBuildP2 && buildRedP2
-                                  ? () => buildModal2("red")
-                                  : () => showProp(properties[8])
-                              }
-                            >
-                              <div className="top-square red"></div>
-                              <div className="white-part"></div>
-                            </div>
-                          ) : null}
-                        </div>
-                      </div>
-                    </div>
-                    <div
-                      className={`card-group threeGroup ${
-                        showOutlines2 && canBuildP2 && buildYellowP2
-                          ? "out"
-                          : ""
-                      }`}
-                    >
-                      <div className="card-plus-name">
-                        <p className="name">JDX</p>
-                        <div className="cardSquare-yellow">
-                          {properties[7].ownedP2 ? (
-                            <div
-                              className={`main-square ${
-                                showOutlines2 && canBuildP2 && buildYellowP2
-                                  ? "disabled"
-                                  : ""
-                              }`}
-                              onClick={
-                                showOutlines2 && canBuildP2 && buildYellowP2
-                                  ? () => buildModal2("yellow")
-                                  : () => showProp(properties[7])
-                              }
-                            >
-                              <div className="top-square yellow"></div>
-                              <div className="white-part"></div>
-                            </div>
-                          ) : null}
-                        </div>
-                      </div>
-                      <div className="card-plus-name">
-                        <p className="name">{properties[6].Name}</p>
-                        <div className="cardSquare-yellow">
-                          {properties[6].ownedP2 ? (
-                            <div
-                              className={`main-square ${
-                                showOutlines2 && canBuildP2 && buildYellowP2
-                                  ? "disabled"
-                                  : ""
-                              }`}
-                              onClick={
-                                showOutlines2 && canBuildP2 && buildYellowP2
-                                  ? () => buildModal2("yellow")
-                                  : () => showProp(properties[6])
-                              }
-                            >
-                              <div className="top-square yellow"></div>
-                              <div className="white-part"></div>
-                            </div>
-                          ) : null}
-                        </div>
-                      </div>
-                      <div className="card-plus-name">
-                        <p className="name">{properties[5].Name}</p>
-                        <div className="cardSquare-yellow">
-                          {properties[5].ownedP2 ? (
-                            <div
-                              className={`main-square ${
-                                showOutlines2 && canBuildP2 && buildYellowP2
-                                  ? "disabled"
-                                  : ""
-                              }`}
-                              onClick={
-                                showOutlines2 && canBuildP2 && buildYellowP2
-                                  ? () => buildModal2("yellow")
-                                  : () => showProp(properties[5])
-                              }
-                            >
-                              <div className="top-square yellow"></div>
-                              <div className="white-part"></div>
-                            </div>
-                          ) : null}
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="card-row left five">
-                    <div
-                      className={`card-group threeGroup ${
-                        showOutlines2 && canBuildP2 && buildGreenP2 ? "out" : ""
-                      }`}
-                    >
-                      <div className="card-plus-name">
-                        <p className="name">{properties[4].Name}</p>
-                        <div className="cardSquare-green">
-                          {properties[4].ownedP2 ? (
-                            <div
-                              className={`main-square ${
-                                showOutlines2 && canBuildP2 && buildGreenP2
-                                  ? "disabled"
-                                  : ""
-                              }`}
-                              onClick={
-                                showOutlines2 && canBuildP2 && buildGreenP2
-                                  ? () => buildModal2("green")
-                                  : () => showProp(properties[4])
-                              }
-                            >
-                              <div className="top-square green"></div>
-                              <div className="white-part"></div>
-                            </div>
-                          ) : null}
-                        </div>
-                      </div>
-                      <div className="card-plus-name">
-                        <p className="name">{properties[3].Name}</p>
-                        <div className="cardSquare-green">
-                          {properties[3].ownedP2 ? (
-                            <div
-                              className={`main-square ${
-                                showOutlines2 && canBuildP2 && buildGreenP2
-                                  ? "disabled"
-                                  : ""
-                              }`}
-                              onClick={
-                                showOutlines2 && canBuildP2 && buildGreenP2
-                                  ? () => buildModal2("green")
-                                  : () => showProp(properties[3])
-                              }
-                            >
-                              <div className="top-square green"></div>
-                              <div className="white-part"></div>
-                            </div>
-                          ) : null}
-                        </div>
-                      </div>
-                      <div className="card-plus-name">
-                        <p className="name">{properties[2].Name}</p>
-                        <div className="cardSquare-green">
-                          {properties[2].ownedP2 ? (
-                            <div
-                              className={`main-square ${
-                                showOutlines2 && canBuildP2 && buildGreenP2
-                                  ? "disabled"
-                                  : ""
-                              }`}
-                              onClick={
-                                showOutlines2 && canBuildP2 && buildGreenP2
-                                  ? () => buildModal2("green")
-                                  : () => showProp(properties[2])
-                              }
-                            >
-                              <div className="top-square green"></div>
-                              <div className="white-part"></div>
-                            </div>
-                          ) : null}
-                        </div>
-                      </div>
-                    </div>
-                    <div
-                      className={`card-group twoGroup ${
-                        showOutlines2 && canBuildP2 && buildBlueP2 ? "out" : ""
-                      }`}
-                    >
-                      <div className="card-plus-name">
-                        <p className="name">{properties[1].Name}</p>
-                        <div
-                          className="cardSquare-blue"
-                          onClick={
-                            showOutlines2 && canBuildP2 && buildBlueP2
-                              ? () => buildModal2("blue")
-                              : () => showProp(properties[1])
-                          }
-                        >
-                          {properties[1].ownedP2 ? (
-                            <div
-                              className={`main-square ${
-                                showOutlines2 && canBuildP2 && buildBlueP2
-                                  ? "disabled"
-                                  : ""
-                              }`}
-                            >
-                              <div className="top-square blue"></div>
-                              <div className="white-part"></div>
-                            </div>
-                          ) : null}
-                        </div>
-                      </div>
-                      <div className="card-plus-name">
-                        <p className="name">{properties[0].Name}</p>
-                        <div className="cardSquare-blue">
-                          {properties[0].ownedP2 ? (
-                            <div
-                              className={`main-square ${
-                                showOutlines2 && canBuildP2 && buildBlueP2
-                                  ? "disabled"
-                                  : ""
-                              }`}
-                              onClick={
-                                showOutlines2 && canBuildP2 && buildBlueP2
-                                  ? () => buildModal2("blue")
-                                  : () => showProp(properties[0])
-                              }
-                            >
-                              <div className="top-square blue"></div>
-                              <div className="white-part"></div>
-                            </div>
-                          ) : null}
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <h3 className="subheader">Railroads</h3>
-                  <div className="card-row left four">
-                    <div className="card-group fourGroup">
-                      <div className="card-plus-name">
-                        <p className="name">{railRoads[0].Name}</p>
-                        <div className="cardSquare-black">
-                          {railRoads[0].ownedP2 ? (
-                            <div
-                              className="main-square"
-                              onClick={() => showRR(railRoads[0])}
-                            >
-                              <div className="white-part-rr">
-                                <img
-                                  className="small-ditie"
-                                  alt="small subway logo"
-                                  src={ditielogo}
-                                />
-                              </div>
-                            </div>
-                          ) : null}
-                        </div>
-                      </div>
-                      <div className="card-plus-name">
-                        <p className="name">{railRoads[1].Name}</p>
-                        <div className="cardSquare-black">
-                          {railRoads[1].ownedP2 ? (
-                            <div
-                              className="main-square"
-                              onClick={() => showRR(railRoads[1])}
-                            >
-                              <div className="white-part-rr">
-                                <img
-                                  className="small-ditie"
-                                  alt="small subway logo"
-                                  src={ditielogo}
-                                />
-                              </div>
-                            </div>
-                          ) : null}
-                        </div>
-                      </div>
-                      <div className="card-plus-name">
-                        <p className="name">{railRoads[2].Name}</p>
-                        <div className="cardSquare-black">
-                          {railRoads[2].ownedP2 ? (
-                            <div
-                              className="main-square"
-                              onClick={() => showRR(railRoads[2])}
-                            >
-                              <div className="white-part-rr">
-                                <img
-                                  className="small-ditie"
-                                  alt="small subway logo"
-                                  src={ditielogo}
-                                />
-                              </div>
-                            </div>
-                          ) : null}
-                        </div>
-                      </div>
-                      <div className="card-plus-name">
-                        <p className="name">{railRoads[3].Name}</p>
-                        <div className="cardSquare-black">
-                          {railRoads[3].ownedP2 ? (
-                            <div
-                              className="main-square"
-                              onClick={() => showRR(railRoads[3])}
-                            >
-                              <div className="white-part-rr">
-                                <img
-                                  className="small-ditie"
-                                  alt="small subway logo"
-                                  src={ditielogo}
-                                />
-                              </div>
-                            </div>
-                          ) : null}
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <h3 className="subheader">Utilities</h3>
-                  <div className="card-row left two">
-                    <div className="card-group threeGroup">
-                      <div className="card-plus-name">
-                        <p className="name">WATER</p>
-                        <div className="cardSquare-grey">
-                          {utilities[0].ownedP2 ? (
-                            <div
-                              className="main-square"
-                              onClick={() => showUtil(utilities[0])}
-                            >
-                              <div className="white-part-rr">
-                                <img
-                                  className="small-ditie"
-                                  alt="water jug"
-                                  src={jug}
-                                />
-                              </div>
-                            </div>
-                          ) : null}
-                        </div>
-                      </div>
-                      <div className="card-plus-name">
-                        <p className="name">AYI</p>
-                        <div className="cardSquare-grey">
-                          {utilities[1].ownedP2 ? (
-                            <div
-                              className="main-square"
-                              onClick={() => showUtil(utilities[1])}
-                            >
-                              <div className="white-part-rr">
-                                <img
-                                  className="small-ditie"
-                                  alt="mop"
-                                  src={mopAyi}
-                                />
-                              </div>
-                            </div>
-                          ) : null}
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <button
-                    className="buy-houses"
-                    onClick={
-                      !showOutlines2
-                        ? () => setShowOutlines2(true)
-                        : () => setShowOutlines2(false)
-                    }
-                    disabled={!canBuildP2}
-                  >
-                    {!showOutlines2 ? "Build Houses" : "Cancel Build"}
+                <div className="exit-container">
+                  <button className="exit" onClick={handleClose}>
+                    EXIT
                   </button>
                 </div>
               </div>
