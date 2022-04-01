@@ -101,15 +101,15 @@ export const Guanxi = [
   //   image: require("./Pics/guanxi-duck.jpeg"),
   // },
 
-  {
-    Number: 15,
-    Text: "Coffee Shots!",
-    Instruction: "Roll Again!",
-    Type: "reroll",
-    amt: 0,
-    space: 0,
-    image: require("./Pics/guanxi-cdlp.jpeg"),
-  },
+  // {
+  //   Number: 15,
+  //   Text: "Coffee Shots!",
+  //   Instruction: "Roll Again!",
+  //   Type: "reroll",
+  //   amt: 0,
+  //   space: 0,
+  //   image: require("./Pics/guanxi-cdlp.jpeg"),
+  // },
   // {
   //   Number: 16,
   //   Text: "Fake alcohol!",
@@ -120,15 +120,15 @@ export const Guanxi = [
   //   image: require("./Pics/guanxi-fake-alcohol.jpeg"),
   // },
 
-  // {
-  //   Number: 18,
-  //   Text: "Asshole Landlord!",
-  //   Instruction: "Head to nearest opponent owned property and pay double.",
-  //   Type: "nearest",
-  //   amt: 0,
-  //   space: 0,
-  //   image: require("./Pics/guanxi-landlord.jpeg"),
-  // },
+  {
+    Number: 18,
+    Text: "Asshole Landlord!",
+    Instruction: "Head to nearest opponent owned property and pay double.",
+    Type: "nearest",
+    amt: 0,
+    space: 0,
+    image: require("./Pics/guanxi-landlord.jpeg"),
+  },
   // {
   //   Number: 19,
   //   Text: "Awarded A-Tier Z-Visa!",

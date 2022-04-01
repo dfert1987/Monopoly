@@ -512,46 +512,46 @@ const InnerCard = ({
       let currentRR = railRoads.find((rr) => rr.Number === currentCard.space);
       setCounterP1(currentCard.space);
       if (currentProp && !currentProp.ownedP1 && !currentProp.ownedP2) {
-        setPropertyModal2(true);
+        setPropertyModal1(true);
         setOnProp2(currentProp);
         arrayRemovePre();
         setCardOption();
         setOnCard(false);
         setOnCard2(false);
-      } else if (currentProp && currentProp.ownedP1 && !currentProp.ownedP2) {
-        setOnProp2(currentProp);
+      } else if (currentProp && !currentProp.ownedP1 && currentProp.ownedP2) {
+        setOnProp(currentProp);
         setPayProp(true);
-        setPayTo(1);
+        setPayTo(2);
         arrayRemovePre();
         setCardOption();
         setOnCard(false);
         setOnCard2(false);
       } else if (currentUtil && !currentUtil.ownedP1 && !currentUtil.ownedP2) {
-        setUtilModal2(true);
-        setOnUtil2(currentUtil);
+        setUtilModal(true);
+        setOnUtil(currentUtil);
         arrayRemovePre();
         setCardOption();
         setOnCard(false);
         setOnCard2(false);
-      } else if (currentUtil && currentUtil.ownedP1 && !currentUtil.ownedP2) {
-        setOnUtil2(currentUtil);
+      } else if (currentUtil && !currentUtil.ownedP1 && currentUtil.ownedP2) {
+        setOnUtil(currentUtil);
         setPayUtil(true);
-        setPayUtilTo(1);
+        setPayUtilTo(2);
         arrayRemovePre();
         setCardOption();
         setOnCard(false);
         setOnCard2(false);
       } else if (currentRR && !currentRR.ownedP1 && !currentRR.ownedP2) {
-        setRRModal2(true);
-        setOnRR2(currentRR);
+        setRRModal(true);
+        setOnRR(currentRR);
         arrayRemovePre();
         setCardOption();
         setOnCard(false);
         setOnCard2(false);
-      } else if (currentRR && currentRR.ownedP1 && !currentRR.ownedP2) {
-        setOnRR2(currentRR);
+      } else if (currentRR && !currentRR.ownedP1 && currentRR.ownedP2) {
+        setOnRR(currentRR);
         setPayRail(true);
-        setPayRailTo(1);
+        setPayRailTo(2);
         arrayRemovePre();
         setCardOption();
         setOnCard(false);
@@ -661,6 +661,12 @@ const InnerCard = ({
         setCounterP1(6);
         if (railRoads[0].ownedP2) {
           setDoubleRR(true);
+          setOnRR(true);
+          setPayRail(true);
+          setPayRailTo(2);
+          setPropertyModal2(true);
+          setPayProp(true);
+          setPayTo(1);
           arrayRemovePre();
           setCardOption();
           setOnCard(false);
@@ -676,6 +682,9 @@ const InnerCard = ({
         setCounterP1(16);
         if (railRoads[1].ownedP2) {
           setDoubleRR(true);
+          setOnRR(true);
+          setPayRail(true);
+          setPayRailTo(2);
           arrayRemovePre();
           setCardOption();
           setOnCard(false);
@@ -690,6 +699,9 @@ const InnerCard = ({
         setCounterP1(26);
         if (railRoads[2].ownedP2) {
           setDoubleRR(true);
+          setOnRR(true);
+          setPayRail(true);
+          setPayRailTo(2);
           arrayRemovePre();
           setCardOption();
           setOnCard(false);
@@ -711,12 +723,14 @@ const InnerCard = ({
         setCounterP2(6);
         if (railRoads[0].ownedP1) {
           setDoubleRR(true);
+          setOnRR2(true);
+          setPayRail(true);
+          setPayRailTo(1);
           arrayRemovePre();
           setCardOption();
           setOnCard(false);
           setOnCard2(false);
         }
-        // PASS GO
         setCurrentCard();
         arrayRemovePre();
         setCardOption();
@@ -726,6 +740,9 @@ const InnerCard = ({
         setCounterP2(16);
         if (railRoads[1].ownedP1) {
           setDoubleRR(true);
+          setOnRR2(true);
+          setPayRail(true);
+          setPayRailTo(1);
           arrayRemovePre();
           setCardOption();
           setOnCard(false);
@@ -741,6 +758,9 @@ const InnerCard = ({
         if (railRoads[2].ownedP1) {
           setDoubleRR(true);
           arrayRemovePre();
+          setOnRR2(true);
+          setPayRail(true);
+          setPayRailTo(1);
           setCardOption();
           setOnCard(false);
           setOnCard2(false);
@@ -789,8 +809,10 @@ const InnerCard = ({
         if (firstOwned) {
           let moveTo = firstOwned.Number;
           setDoubleProp(true);
-          // PASS GO
           setCounterP1(moveTo);
+          setOnProp(firstOwned);
+          setPayProp(true);
+          setPayTo(2);
           setCurrentCard();
           arrayRemovePre();
           setCardOption();
@@ -835,8 +857,10 @@ const InnerCard = ({
         if (firstOwned) {
           let moveTo = firstOwned.Number;
           setDoubleProp(true);
-          // PASS GO
           setCounterP1(moveTo);
+          setPayProp(true);
+          setOnProp(firstOwned);
+          setPayTo(2);
           setCurrentCard();
           arrayRemovePre();
           setCardOption();
@@ -881,8 +905,17 @@ const InnerCard = ({
         if (firstOwned) {
           let moveTo = firstOwned.Number;
           setDoubleProp(true);
-          // PASS GO
           setCounterP1(moveTo);
+          setOnProp(firstOwned);
+          setPayProp(true);
+          setPayTo(2);
+          setCurrentCard();
+          arrayRemovePre();
+          setCardOption();
+          setOnCard(false);
+          setOnCard2(false);
+        } else {
+          setCounterP1(counterP1);
           setCurrentCard();
           arrayRemovePre();
           setCardOption();
@@ -927,9 +960,11 @@ const InnerCard = ({
         );
         if (firstOwned) {
           let moveTo = firstOwned.Number;
-          setDoubleProp(true);
-          // PASS GO
+          setDoubleProp(false);
           setCounterP2(moveTo);
+          setOnProp2(firstOwned);
+          setPayProp(true);
+          setPayTo(1);
           setCurrentCard();
           arrayRemovePre();
           setCardOption();
@@ -973,9 +1008,12 @@ const InnerCard = ({
           (property) => property.ownedP1 === true
         );
         if (firstOwned) {
+          console.log("booty");
           let moveTo = firstOwned.Number;
           setDoubleProp(true);
-          // PASS GO
+          setOnProp2(firstOwned);
+          setPayProp(true);
+          setPayTo(1);
           setCounterP2(moveTo);
           setCurrentCard();
           arrayRemovePre();
@@ -1021,6 +1059,9 @@ const InnerCard = ({
         if (firstOwned) {
           let moveTo = firstOwned.Number;
           setDoubleProp(true);
+          setOnProp2(firstOwned);
+          setPayProp(true);
+          setPayTo(1);
           setCounterP2(moveTo);
           setCurrentCard();
           arrayRemovePre();
