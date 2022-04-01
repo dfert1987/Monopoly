@@ -196,8 +196,9 @@ export const Yunqi = [
   {
     Number: 22,
     Text: "You got bricked!",
-    Instruction: "Lose two random houses to government bricklayers",
-    Type: "house",
+    Instruction:
+      "Pay 30rmb per house and 50rmb to per apartment building to de-brick.",
+    Type: "pay-house",
     amt: null,
     space: null,
     image: require("./pics/yunqi-bricks.jpeg"),

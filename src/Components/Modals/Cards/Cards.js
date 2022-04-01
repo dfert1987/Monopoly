@@ -34,6 +34,8 @@ export const Cards = ({
   setVisa2,
   totalHousesP1,
   totalHousesP2,
+  setTotalHousesP1,
+  setTotalHousesP2,
   hotelsP1,
   hotelsP2,
   utilities,
@@ -220,6 +222,8 @@ export const Cards = ({
                 setOnRR2={setOnRR2}
                 setRRModal={setRRModal}
                 setRRModal2={setRRModal2}
+                setTotalHousesP1={setTotalHousesP1}
+                setTotalHousesP2={setTotalHousesP2}
               />
             </div>
           </motion.div>

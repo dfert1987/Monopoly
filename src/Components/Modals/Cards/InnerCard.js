@@ -59,7 +59,6 @@ const InnerCard = ({
   setOnVisa2,
   setOnFreeParking,
   setOnFreeParking2,
-  payRailTo,
   setPayRailTo,
   setPayRail,
   setOnRR,
@@ -1187,7 +1186,7 @@ const InnerCard = ({
       setCardOption();
       setOnCard(false);
       setOnCard2(false);
-    } else if (!onCard && onCard && currentCard.Type === "pay-space") {
+    } else if (!onCard && onCard2 && currentCard.Type === "pay-space") {
       let newMoney = p2Money - 200;
       setP2Money(newMoney);
       let newParking = freeParking + 200;
