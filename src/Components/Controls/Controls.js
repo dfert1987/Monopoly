@@ -36,7 +36,6 @@ export const Controls = ({
   setUtilities,
   setUtilModal,
   setUtilModal2,
-  payProp,
   setPayProp,
   setPayTo,
   payRail,
@@ -89,10 +88,13 @@ export const Controls = ({
   setVisa1,
   visa2,
   setVisa2,
+  onGoP1,
+  onGoP2,
+  setOnGoP1,
+  setOnGoP2,
 }) => {
   const [disableVisaRight, setDisableVisaRight] = useState(true);
   const [disableVisaLeft, setDisableVisaLeft] = useState(true);
-  console.log(visa1, visa2);
   useEffect(() => {
     if (visa2 === false || turn % 2 === 0) {
       setDisableVisaRight(true);
@@ -175,6 +177,8 @@ export const Controls = ({
             setOnCard={setOnCard}
             skip2={skip2}
             setSkip2={setSkip2}
+            onGoP1={onGoP1}
+            setOnGoP1={setOnGoP1}
           />
           <div className="properties player1">
             <button
@@ -249,6 +253,8 @@ export const Controls = ({
             setOnCard2={setOnCard2}
             setSkip1={setSkip1}
             skip1={skip1}
+            setOnGoP2={setOnGoP2}
+            onGoP2={onGoP2}
           />
           <div className="properties player2">
             <button

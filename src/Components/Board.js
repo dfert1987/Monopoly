@@ -5,6 +5,7 @@ import RailRoadModal from "./Modals/AvailableModals/RailRoadModal";
 import PurchasedPopUp from "./Modals/Purchased/PurchasedPopUp";
 import RRPurchasedPopUp from "./Modals/Purchased/RRPurchasedPopUp";
 import PurchasedUtilPopUp from "./Modals/Purchased/PurchasedUtilPopUp";
+import Go from "./Modals/Go";
 import FreeParking from "./Modals/FreeParking";
 import AgentFee from "./Modals/AgentFee";
 import Visa from "./Modals/Visa";
@@ -139,6 +140,10 @@ export const Board = ({
   totalHousesP2,
   setStayOn,
   setStayOn2,
+  onGoP1,
+  onGoP2,
+  setOnGoP1,
+  setOnGoP2,
 }) => {
   const [viewPurchase, setViewPurchase] = useState(false);
   const [viewPurchase2, setViewPurchase2] = useState(false);
@@ -1076,6 +1081,16 @@ export const Board = ({
           onFreeParking2={onFreeParking2}
           setOnFreeParking2={setOnFreeParking2}
           setFreeParking={setFreeParking}
+          setP1Money={setP1Money}
+          setP2Money={setP2Money}
+          p1Money={p1Money}
+          p2Money={p2Money}
+        />
+        <Go
+          onGoP1={onGoP1}
+          onGoP2={onGoP2}
+          setOnGoP1={setOnGoP1}
+          setOnGoP2={setOnGoP2}
           setP1Money={setP1Money}
           setP2Money={setP2Money}
           p1Money={p1Money}

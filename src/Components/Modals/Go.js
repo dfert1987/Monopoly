@@ -1,15 +1,15 @@
-import React, { useState } from "react";
+import React from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { faXmark } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { useWindowSize } from "@react-hook/window-size";
+import moneyStack from "../../Assets/Misc/moneystack.jpeg";
 import "../Styles/Go.css";
 
 const Go = ({
   onGoP1,
   onGoP2,
   setOnGoP1,
-  setOnGop2,
+  setOnGoP2,
   p1Money,
   setP1Money,
   p2Money,
@@ -41,7 +41,7 @@ const Go = ({
     } else if (onGoP2) {
       let newMoney = p2Money + 400;
       setP2Money(newMoney);
-      setOnGop2(false);
+      setOnGoP2(false);
     }
   };
 
@@ -68,9 +68,18 @@ const Go = ({
                   <FontAwesomeIcon className="x-icon free" icon={faXmark} />
                 </button>
               </div>
-              <button className="exit" onClick={handleClose}>
-                CLOSE
-              </button>
+              <div className="main">
+                <h1 className="main-text">Summer Vacation Bonus!</h1>
+                <img
+                  className="money-stack"
+                  alt="money stack"
+                  src={moneyStack}
+                />
+                <h2 className="instruction">Collect 400rmb this paycheck!</h2>
+                <button className="exit" onClick={handleClose}>
+                  CLOSE
+                </button>
+              </div>
             </motion.div>
           </motion.div>
         ) : null}
@@ -78,3 +87,5 @@ const Go = ({
     </>
   );
 };
+
+export default Go;

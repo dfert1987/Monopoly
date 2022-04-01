@@ -38,6 +38,7 @@ export const Roll = ({
   setOnCard,
   skip2,
   setSkip2,
+  setOnGoP1,
 }) => {
   const [die1, setDie1] = useState(1);
   const [die2, setDie2] = useState(1);
@@ -125,6 +126,8 @@ export const Roll = ({
       setOnCard(true);
     } else if (space === 37) {
       setOnCard(true);
+    } else if (space === 1) {
+      setOnGoP1(true);
     }
   };
 
