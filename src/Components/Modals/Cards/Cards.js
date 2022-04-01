@@ -120,7 +120,7 @@ export const Cards = ({
   }, [counterP1, counterP2, onCard, onCard2]);
 
   const cardStyle = () => {
-    if (cardOption && cardOption === "YUNQI") {
+    if (cardOption && cardOption === "FU YUAN") {
       return "flex flexColumn innerModalPayRail YUNQI";
     } else if (cardOption && cardOption === "GUANXI") {
       return "flex flexColumn innerModalPayRail GUANXI";

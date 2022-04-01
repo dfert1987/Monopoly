@@ -1183,7 +1183,7 @@ const InnerCard = ({
     if (cardOption === "GUANXI") {
       arrayRemove(guanxi, currentCard);
     }
-    if (cardOption === "YUNQI") {
+    if (cardOption === "FU YUAN") {
       arrayRemove(yunqi, currentCard);
     }
   };
@@ -1210,10 +1210,10 @@ const InnerCard = ({
       setGuanxi(Guanxi);
       let cardChoice = guanxi[Math.floor(Math.random() * guanxi.length)];
       setCurrentCard(cardChoice);
-    } else if (cardOption === "YUNQI" && yunqi.length) {
+    } else if (cardOption === "FU YUAN" && yunqi.length) {
       let cardChoice = yunqi[Math.floor(Math.random() * yunqi.length)];
       setCurrentCard(cardChoice);
-    } else if (cardOption === "YUNQI" && !yunqi.length) {
+    } else if (cardOption === "FU YUAN" && !yunqi.length) {
       setYunqi(Yunqi);
       let cardChoice = yunqi[Math.floor(Math.random() * yunqi.length)];
       setYunqi(cardChoice);
