@@ -104,18 +104,17 @@ export const Cards = ({
       onCard === true &&
       (counterP1 === 8 || counterP1 === 23 || counterP1 === 37)
     ) {
-      setCardOption("YUNQI");
+      setCardOption("FU YUAN");
     } else if (
       onCard2 === true &&
       (counterP2 === 34 || counterP2 === 3 || counterP2 === 18)
     ) {
       setCardOption("GUANXI");
-      console.log("p2 guan");
     } else if (
       onCard2 === true &&
       (counterP2 === 8 || counterP2 === 23 || counterP2 === 37)
     ) {
-      setCardOption("YUNQI");
+      setCardOption("FU YUAN");
     }
     return null;
   }, [counterP1, counterP2, onCard, onCard2]);
