@@ -80,7 +80,6 @@ export const PayOpponentRail = ({
 
   useEffect(() => {
     if (onRR2 && payRailTo) {
-      console.log("HEEYY");
       let number = railRoads.filter((rr) => rr.ownedP1 === true);
       if (number.length === 1 && !doubleRR) {
         let p1New = p1Money + onRR2.rent;
@@ -207,7 +206,6 @@ export const PayOpponentRail = ({
       );
     }
   };
-  console.log(onRR2);
   return (
     <AnimatePresence exitBeforeEnter>
       {payRail === true && (onRR || onRR2) ? (

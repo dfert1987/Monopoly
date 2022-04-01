@@ -30,8 +30,8 @@ export const Cards = ({
   setDoubleProp,
   setSkip1,
   setSkip2,
-  setVisaP1,
-  setVisaP2,
+  setVisa1,
+  setVisa2,
   totalHousesP1,
   totalHousesP2,
   hotelsP1,
@@ -178,8 +178,8 @@ export const Cards = ({
                 setDoubleProp={setDoubleProp}
                 setSkip1={setSkip1}
                 setSkip2={setSkip2}
-                setVisaP1={setVisaP1}
-                setVisaP2={setVisaP2}
+                setVisa1={setVisa1}
+                setVisa2={setVisa2}
                 totalHousesP1={totalHousesP1}
                 totalHousesP2={totalHousesP2}
                 hotelsP1={hotelsP1}

@@ -34,8 +34,8 @@ const InnerCard = ({
   properties,
   setSkip1,
   setSkip2,
-  setVisaP1,
-  setVisaP2,
+  setVisa1,
+  setVisa2,
   hotelsP1,
   hotelsP2,
   totalHousesP1,
@@ -1141,14 +1141,14 @@ const InnerCard = ({
       setOnCard(false);
       setOnCard2(false);
     } else if (onCard && !onCard2 && currentCard.Type === "visa") {
-      setVisaP1(true);
+      setVisa1(true);
       setCurrentCard();
       arrayRemovePre();
       setCardOption();
       setOnCard(false);
       setOnCard2(false);
     } else if (!onCard && onCard2 && currentCard.Type === "visa") {
-      setVisaP2(true);
+      setVisa2(true);
       setCurrentCard();
       arrayRemovePre();
       setCardOption();
