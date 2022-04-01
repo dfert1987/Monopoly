@@ -129,15 +129,15 @@ export const Guanxi = [
   //   space: 0,
   //   image: require("./Pics/guanxi-landlord.jpeg"),
   // },
-  {
-    Number: 19,
-    Text: "Awarded A-Tier Z-Visa!",
-    Instruction: "Gain a Visa Card (If you don't already have one.)",
-    Type: "visa",
-    amt: 0,
-    space: 0,
-    image: require("./Pics/guanxi-visa.jpeg"),
-  },
+  // {
+  //   Number: 19,
+  //   Text: "Awarded A-Tier Z-Visa!",
+  //   Instruction: "Gain a Visa Card (If you don't already have one.)",
+  //   Type: "visa",
+  //   amt: 0,
+  //   space: 0,
+  //   image: require("./Pics/guanxi-visa.jpeg"),
+  // },
   // {
   //   Number: 20,
   //   Text: "Congrats, you passed HSK 5!",
@@ -174,16 +174,16 @@ export const Guanxi = [
   //   space: 0,
   //   image: require("./Pics/guanxi-teach.jpeg"),
   // },
-  // {
-  //   Number: 8,
-  //   Text: "Moving day!",
-  //   Instruction:
-  //     "Pay movers and ayi for deep cleaning fee. 30rmb for each hutong, and 50rmb for each apartment complex.",
-  //   Type: "pay-house",
-  //   amt: null,
-  //   space: 0,
-  //   image: require("./Pics/guanxi-moving.jpeg"),
-  // },
+  {
+    Number: 8,
+    Text: "Moving day!",
+    Instruction:
+      "Pay movers and ayi for deep cleaning fee. 30rmb for each hutong, and 50rmb for each apartment complex.",
+    Type: "pay-house",
+    amt: null,
+    space: 0,
+    image: require("./Pics/guanxi-moving.jpeg"),
+  },
   // {
   //   Number: 22,
   //   Text: "Office party!",
