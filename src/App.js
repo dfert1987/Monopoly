@@ -67,9 +67,9 @@ function App() {
   const [totalHousesP2, setTotalHousesP2] = useState(0);
   const [hotelsP1, setHotelsP1] = useState(0);
   const [hotelsP2, setHotelsP2] = useState(0);
+  const [onGoP1, setOnGoP1] = useState(false);
+  const [onGoP2, setOnGoP2] = useState(false);
 
-  console.log(totalHousesP1);
-  console.log(hotelsP1);
   return (
     <div className="App">
       <Board
@@ -189,6 +189,10 @@ function App() {
         totalHousesP1={totalHousesP1}
         setTotalHousesP2={setTotalHousesP2}
         totalHousesP2={totalHousesP2}
+        onGoP1={onGoP1}
+        onGoP2={onGoP2}
+        setOnGoP1={setOnGoP1}
+        setOnGoP2={setOnGoP2}
       />
       <Controls
         counterP1={counterP1}
@@ -293,6 +297,10 @@ function App() {
         setVisa2={setVisa2}
         visa1={visa1}
         visa2={visa2}
+        onGoP1={onGoP1}
+        onGoP2={onGoP2}
+        setOnGoP1={setOnGoP1}
+        setOnGoP2={setOnGoP2}
       />
     </div>
   );
