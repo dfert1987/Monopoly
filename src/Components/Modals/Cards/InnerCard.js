@@ -637,7 +637,6 @@ const InnerCard = ({
         setOnCard(false);
         setOnCard2(false);
       }
-      // PASS GO
       if (currentCard.space === 41) {
         setInJail2(true);
         setCurrentCard();
@@ -661,57 +660,80 @@ const InnerCard = ({
         setCounterP1(6);
         if (railRoads[0].ownedP2) {
           setDoubleRR(true);
-          setOnRR(true);
+          setOnRR(railRoads[0]);
           setPayRail(true);
           setPayRailTo(2);
-          setPropertyModal2(true);
-          setPayProp(true);
-          setPayTo(1);
+          arrayRemovePre();
+          setCardOption();
+          setOnCard(false);
+          setOnCard2(false);
+        } else if (!railRoads[0].ownedP2 && !railRoads[0].ownedP1) {
+          setRRModal(true);
+          setOnRR(railRoads[0]);
+          setCurrentCard();
+          arrayRemovePre();
+          setCardOption();
+          setOnCard(false);
+          setOnCard2(false);
+        } else {
+          setCurrentCard();
           arrayRemovePre();
           setCardOption();
           setOnCard(false);
           setOnCard2(false);
         }
-        // PASS GO
-        setCurrentCard();
-        arrayRemovePre();
-        setCardOption();
-        setOnCard(false);
-        setOnCard2(false);
       } else if (counterP1 === 8) {
         setCounterP1(16);
         if (railRoads[1].ownedP2) {
           setDoubleRR(true);
-          setOnRR(true);
+          setOnRR(railRoads[1]);
           setPayRail(true);
           setPayRailTo(2);
           arrayRemovePre();
           setCardOption();
           setOnCard(false);
           setOnCard2(false);
+        } else if (!railRoads[1].owned2 && !railRoads[1].ownedP1) {
+          setOnRR(railRoads[1]);
+          setRRModal(true);
+          setCurrentCard();
+          arrayRemovePre();
+          setCardOption();
+          setOnCard(false);
+          setOnCard2(false);
+        } else {
+          setCurrentCard();
+          arrayRemovePre();
+          setCardOption();
+          setOnCard(false);
+          setOnCard2(false);
         }
-        setCurrentCard();
-        arrayRemovePre();
-        setCardOption();
-        setOnCard(false);
-        setOnCard2(false);
       } else if (counterP1 === 23) {
         setCounterP1(26);
         if (railRoads[2].ownedP2) {
           setDoubleRR(true);
-          setOnRR(true);
+          setOnRR(railRoads[2]);
           setPayRail(true);
           setPayRailTo(2);
           arrayRemovePre();
           setCardOption();
           setOnCard(false);
           setOnCard2(false);
+        } else if (!railRoads[2].ownedP2 && !railRoads[2].ownedP1) {
+          setRRModal(true);
+          setOnRR(railRoads[2]);
+          setCurrentCard();
+          arrayRemovePre();
+          setCardOption();
+          setOnCard(false);
+          setOnCard2(false);
+        } else {
+          setCurrentCard();
+          arrayRemovePre();
+          setCardOption();
+          setOnCard(false);
+          setOnCard2(false);
         }
-        setCurrentCard();
-        arrayRemovePre();
-        setCardOption();
-        setOnCard(false);
-        setOnCard2(false);
       }
     } else if (
       !onCard &&
@@ -723,53 +745,80 @@ const InnerCard = ({
         setCounterP2(6);
         if (railRoads[0].ownedP1) {
           setDoubleRR(true);
-          setOnRR2(true);
+          setOnRR2(railRoads[0]);
           setPayRail(true);
           setPayRailTo(1);
           arrayRemovePre();
           setCardOption();
           setOnCard(false);
           setOnCard2(false);
+        } else if (!railRoads[0].ownedP1 && !railRoads[0].ownedP2) {
+          setOnRR2(railRoads[0]);
+          setRRModal2(true);
+          setCurrentCard();
+          arrayRemovePre();
+          setCardOption();
+          setOnCard(false);
+          setOnCard2(false);
+        } else {
+          setCurrentCard();
+          arrayRemovePre();
+          setCardOption();
+          setOnCard(false);
+          setOnCard2(false);
         }
-        setCurrentCard();
-        arrayRemovePre();
-        setCardOption();
-        setOnCard(false);
-        setOnCard2(false);
       } else if (counterP2 === 8) {
         setCounterP2(16);
         if (railRoads[1].ownedP1) {
           setDoubleRR(true);
-          setOnRR2(true);
+          setOnRR2(railRoads[1]);
           setPayRail(true);
           setPayRailTo(1);
           arrayRemovePre();
           setCardOption();
           setOnCard(false);
           setOnCard2(false);
+        } else if (!railRoads[1].ownedP2 && !railRoads[1].ownedP1) {
+          setOnRR2(railRoads[1]);
+          setRRModal2(true);
+          setCurrentCard();
+          arrayRemovePre();
+          setCardOption();
+          setOnCard(false);
+          setOnCard2(false);
+        } else {
+          setCurrentCard();
+          arrayRemovePre();
+          setCardOption();
+          setOnCard(false);
+          setOnCard2(false);
         }
-        setCurrentCard();
-        arrayRemovePre();
-        setCardOption();
-        setOnCard(false);
-        setOnCard2(false);
       } else if (counterP2 === 23) {
         setCounterP2(26);
         if (railRoads[2].ownedP1) {
           setDoubleRR(true);
-          arrayRemovePre();
-          setOnRR2(true);
+          setOnRR2(railRoads[2]);
           setPayRail(true);
           setPayRailTo(1);
+          arrayRemovePre();
+          setCardOption();
+          setOnCard(false);
+          setOnCard2(false);
+        } else if (!railRoads[2].ownedP1 && !railRoads[2].ownedP2) {
+          setOnRR2(railRoads[2]);
+          setRRModal2(true);
+          setCurrentCard();
+          arrayRemovePre();
+          setCardOption();
+          setOnCard(false);
+          setOnCard2(false);
+        } else {
+          setCurrentCard();
+          arrayRemovePre();
           setCardOption();
           setOnCard(false);
           setOnCard2(false);
         }
-        setCurrentCard();
-        arrayRemovePre();
-        setCardOption();
-        setOnCard(false);
-        setOnCard2(false);
       }
     } else if (
       onCard &&

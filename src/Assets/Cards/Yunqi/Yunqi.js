@@ -90,15 +90,15 @@ export const Yunqi = [
   //   space: 0,
   //   image: require("./pics/yunqi-hangover.jpeg"),
   // },
-  {
-    Number: 11,
-    Text: "Baijiu Drunk!",
-    Instruction: "Go forward 3 spaces. Presumably in the direction of chuanr.",
-    Type: "forward",
-    amt: 3,
-    space: 0,
-    image: require("./pics/yunqi-baijiu.jpeg"),
-  },
+  // {
+  //   Number: 11,
+  //   Text: "Baijiu Drunk!",
+  //   Instruction: "Go forward 3 spaces. Presumably in the direction of chuanr.",
+  //   Type: "forward",
+  //   amt: 3,
+  //   space: 0,
+  //   image: require("./pics/yunqi-baijiu.jpeg"),
+  // },
   // {
   //   Number: 12,
   //   Text: "Group Chuanr night",
@@ -136,16 +136,16 @@ export const Yunqi = [
   //   space: 0,
   //   image: require("./pics/yunqi-burger.jpeg"),
   // },
-  // {
-  //   Number: 16,
-  //   Text: "3rd Ring Traffic Jam",
-  //   Instruction:
-  //     "Advance to nearest Subway. If unowned you may purchase. If owned pay owner double",
-  //   Type: "nearest",
-  //   amt: 0,
-  //   space: 0,
-  //   image: require("./pics/yunqi-traffic.jpeg"),
-  // },
+  {
+    Number: 16,
+    Text: "3rd Ring Traffic Jam",
+    Instruction:
+      "Advance to nearest Subway. If unowned you may purchase. If owned pay owner double",
+    Type: "nearest",
+    amt: 0,
+    space: 0,
+    image: require("./pics/yunqi-traffic.jpeg"),
+  },
   // {
   //   Number: 17,
   //   Text: "Ripped off at Yashow Market.",
