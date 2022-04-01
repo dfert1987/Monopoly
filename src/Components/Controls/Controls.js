@@ -85,25 +85,25 @@ export const Controls = ({
   skip2,
   setSkip1,
   setSkip2,
-  visaP1,
-  setVisaP1,
-  visaP2,
-  setVisaP2,
+  visa1,
+  setVisa1,
+  visa2,
+  setVisa2,
 }) => {
   const [disableVisaRight, setDisableVisaRight] = useState(true);
   const [disableVisaLeft, setDisableVisaLeft] = useState(true);
-
+  console.log(visa1, visa2);
   useEffect(() => {
-    if (visaP2 === false || turn % 2 === 0) {
+    if (visa2 === false || turn % 2 === 0) {
       setDisableVisaRight(true);
     }
-    if (visaP2 === true && (turn !== 0 || turn % 2 === 0)) {
+    if (visa2 === true && (turn !== 0 || turn % 2 === 0)) {
       setDisableVisaRight(false);
     }
-    if (visaP1 === false || turn !== 0 || turn % 2 !== 0) {
+    if (visa1 === false || turn !== 0 || turn % 2 !== 0) {
       setDisableVisaLeft(true);
     }
-    if (visaP1 === true && turn % 2 === 0) {
+    if (visa1 === true && turn % 2 === 0) {
       setDisableVisaLeft(false);
     }
     if (turn === 0 || turn % 2 === 0) {
@@ -116,15 +116,7 @@ export const Controls = ({
       setOnProp2();
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [turn]);
-
-  const useVisa = (number) => {
-    if (number === 1) {
-      setVisaP1(false);
-    } else if (number === 2) {
-      setVisaP2(false);
-    }
-  };
+  }, [turn, visa1, visa2]);
 
   return (
     <div className="controls-container">
@@ -195,7 +187,7 @@ export const Controls = ({
             <button
               className="properties-view-button"
               disabled={disableVisaLeft}
-              onClick={useVisa(1)}
+              onClick={() => setVisa1(false)}
             >
               USE VISA
             </button>
@@ -269,7 +261,7 @@ export const Controls = ({
             <button
               className="properties-view-button"
               disabled={disableVisaRight}
-              onClick={useVisa(2)}
+              onClick={() => setVisa2(false)}
             >
               USE VISA
             </button>

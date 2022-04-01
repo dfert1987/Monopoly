@@ -1,7 +1,5 @@
 import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { faXmark } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import bigPay from "../../../Assets/Misc/bigPay.jpeg";
 import dice1 from "../../../Assets/Dice/dice1.png";
 import dice2 from "../../../Assets/Dice/dice2.png";
@@ -83,15 +81,15 @@ export const PayOpponentUtil = ({
     return false;
   };
 
-  const changeMoney = () => {
+  const changeMoney = (amount) => {
     if (onUtil) {
-      let p1New = p1Money - rent;
-      let p2New = p2Money + rent;
+      let p1New = p1Money - amount;
+      let p2New = p2Money + amount;
       setP1Money(p1New);
       setP2Money(p2New);
     } else if (onUtil2) {
-      let p1New = p1Money + rent;
-      let p2New = p2Money - rent;
+      let p1New = p1Money + amount;
+      let p2New = p2Money - amount;
       setP1Money(p1New);
       setP2Money(p2New);
     }
@@ -110,11 +108,11 @@ export const PayOpponentUtil = ({
     if (multiplier === 4) {
       let totalDue = (first + second) * 4;
       setRent(totalDue);
-      changeMoney();
+      changeMoney(totalDue);
     } else if (multiplier === 10) {
       let totalDue = (first + second) * 10;
       setRent(totalDue);
-      changeMoney();
+      changeMoney(totalDue);
     }
   };
 
@@ -208,15 +206,10 @@ export const PayOpponentUtil = ({
             animate="visible"
             exit="hidden"
           >
-            <div className="button-row">
-              <button className="close-button" onClick={handleClose}>
-                <FontAwesomeIcon className="x-icon" icon={faXmark} />
-              </button>
-            </div>
             <div className="main-content-container">
               <h2 className="line-1">{`${player()} Owns ${propName()}`}</h2>
               <img
-                clasName="money"
+                clasaName="money"
                 alt="large bills"
                 src={bigPay}
                 style={{ height: "4em" }}
@@ -262,6 +255,9 @@ export const PayOpponentUtil = ({
                   <h2 className="ammount">
                     Pay <span className="rent">{`¥${rent}`}</span> in Rent.
                   </h2>
+                  <button onClick={handleClose} className="continue-button">
+                    Pay and Continue
+                  </button>
                 </>
               ) : null}
             </div>

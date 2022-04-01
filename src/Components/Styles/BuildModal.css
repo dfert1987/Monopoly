@@ -2,7 +2,11 @@
   display: flex;
   flex-direction: row;
   justify-content: center;
-  padding-top: 1em;
+  padding: 1em;
+}
+
+.properties {
+  padding: 1em;
 }
 
 .hutong {
@@ -32,8 +36,12 @@
   margin-right: auto;
 }
 
+.title {
+  padding-bottom: 1em;
+}
+
 .innerModalProps.flex.flexColumn.properties {
-  height: 43em;
+  justify-content: center;
 }
 
 .hutong-piece {
@@ -63,5 +71,27 @@
 
 .buy:hover {
   background-color: grey;
+  color: white;
+}
+
+.done {
+  background-color: white;
+  border-radius: 5px;
+  cursor: pointer;
+  box-shadow: 0px 0px 12px -2px;
+  font-family: "Monopoly";
+  font-size: 2em;
+  margin-bottom: 1em;
+  margin-top: 1em;
+  width: 6em;
+  padding: 0.5em;
+  padding-bottom: 0.5em;
+  transition: background-color 0.3s ease;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.done:hover {
+  background-color: gray;
   color: white;
 }

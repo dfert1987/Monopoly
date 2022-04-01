@@ -146,6 +146,9 @@ const BuildModal = ({
                 </div>
               ) : null}
               <div className="property-cards-container">{propCards()}</div>
+              <button className="done" onClick={handleClose}>
+                DONE
+              </button>
             </motion.div>
           </motion.div>
         ) : null}

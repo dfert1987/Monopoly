@@ -69,7 +69,7 @@ const Visa = ({
     setNotEnough(false);
     if (onVisa && !onVisa2 && p1Money > 10) {
       let fee = p1Money * 0.1;
-      let newMoney = p1Money - fee.floor();
+      let newMoney = p1Money - Math.floor(fee);
       let newFP = freeParking + fee;
       setFreeParking(newFP);
       setP1Money(newMoney);
@@ -81,7 +81,7 @@ const Visa = ({
       }, 2000);
     } else if (onVisa2 && !onVisa && p2Money > 10) {
       let fee = p2Money * 0.1;
-      let newMoney = p2Money - fee.floor();
+      let newMoney = p2Money - Math.floor(fee);
       let newFP = freeParking + fee;
       setFreeParking(newFP);
       setP1Money(newMoney);

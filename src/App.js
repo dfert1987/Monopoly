@@ -6,8 +6,8 @@ import { RailRoads } from "./Assets/Holdings/Railroads";
 import { Utilities } from "./Assets/Holdings/Utilities";
 
 function App() {
-  const [counterP1, setCounterP1] = useState(12);
-  const [counterP2, setCounterP2] = useState(12);
+  const [counterP1, setCounterP1] = useState(10);
+  const [counterP2, setCounterP2] = useState(11);
   const [turn, setTurn] = useState(0);
   const [properties, setProperties] = useState(Properties);
   const [railRoads, setRailRoads] = useState(RailRoads);
@@ -61,13 +61,15 @@ function App() {
   const [onCard2, setOnCard2] = useState(false);
   const [skip1, setSkip1] = useState(false);
   const [skip2, setSkip2] = useState(false);
-  const [visaP1, setVisaP1] = useState(false);
-  const [visaP2, setVisaP2] = useState(false);
+  const [visa1, setVisa1] = useState(false);
+  const [visa2, setVisa2] = useState(false);
   const [totalHousesP1, setTotalHousesP1] = useState(0);
   const [totalHousesP2, setTotalHousesP2] = useState(0);
   const [hotelsP1, setHotelsP1] = useState(0);
   const [hotelsP2, setHotelsP2] = useState(0);
-  console.log(setTotalHousesP1);
+
+  console.log(totalHousesP1);
+  console.log(hotelsP1);
   return (
     <div className="App">
       <Board
@@ -176,9 +178,9 @@ function App() {
         setOnCard={setOnCard}
         setOnCard2={setOnCard2}
         setSkip1={setSkip1}
-        setSKip2={setSkip2}
-        setVisaP1={setVisaP1}
-        setVisaP2={setVisaP2}
+        setSkip2={setSkip2}
+        setVisa1={setVisa1}
+        setVisa2={setVisa2}
         hotelsP1={hotelsP1}
         hotelsP2={hotelsP2}
         setHotelsP1={setHotelsP1}
@@ -287,10 +289,10 @@ function App() {
         skip2={skip2}
         setSkip1={setSkip1}
         setSkip2={setSkip2}
-        setVisaP1={setVisaP1}
-        setVisaP2={setVisaP2}
-        visaP1={visaP1}
-        visaP2={visaP2}
+        setVisa1={setVisa1}
+        setVisa2={setVisa2}
+        visa1={visa1}
+        visa2={visa2}
       />
     </div>
   );

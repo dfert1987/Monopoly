@@ -27,6 +27,7 @@ const PropCardAndButton = ({
 }) => {
   const [houseCount, setHouseCount] = useState(0);
   const [hotel, setHotel] = useState(false);
+  const [hotelAlready, setHotelAlready] = useState(false);
 
   useEffect(() => {
     if (card.hasOneHouse === true && card.hasTwoHouses === false) {
@@ -129,6 +130,7 @@ const PropCardAndButton = ({
         return property;
       });
       setProperties(updatedProperties);
+      setHotelAlready(true);
     } else if (
       houseCount === 4 &&
       hotel &&
@@ -310,7 +312,7 @@ const PropCardAndButton = ({
         className="buy"
         onClick={buyHutong}
         key={index}
-        disabled={tooMuch}
+        disabled={tooMuch || hotelAlready}
       >
         Buy House
       </button>

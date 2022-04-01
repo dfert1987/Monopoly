@@ -66,7 +66,7 @@ export const Yunqi = [
     Number: 8,
     Text: "Le Duzi!",
     Instruction: "Skip a turn.",
-    Type: "Skip",
+    Type: "skip",
     amt: 0,
     space: 0,
     image: require("./pics/yunqi-duzi.jpeg"),
@@ -93,7 +93,7 @@ export const Yunqi = [
   {
     Number: 11,
     Text: "Baijiu Drunk!",
-    Instruction: "Go forward 3 spaces.",
+    Instruction: "Go forward 3 spaces. Presumably in the direction of chuanr.",
     Type: "forward",
     amt: 3,
     space: 0,
@@ -186,7 +186,8 @@ export const Yunqi = [
   {
     Number: 21,
     Text: "No pictures on menu!",
-    Instruction: "Order tripe or something, and Go Back 6 Spaces.",
+    Instruction:
+      "Accidentally order tripe or something, and Go Back 6 Spaces to study your hanzi.",
     Type: "back",
     amt: 6,
     space: 0,
@@ -195,8 +196,9 @@ export const Yunqi = [
   {
     Number: 22,
     Text: "You got bricked!",
-    Instruction: "Lose two random houses to government bricklayers",
-    Type: "House",
+    Instruction:
+      "Pay 30rmb per house and 50rmb to per apartment building to de-brick.",
+    Type: "pay-house",
     amt: null,
     space: null,
     image: require("./pics/yunqi-bricks.jpeg"),
@@ -206,7 +208,7 @@ export const Yunqi = [
     Text: "Visa Run",
     Instruction:
       "Head directly to home country (just visiting). Do not pass go. Pay 200rmb",
-    Type: "pay space",
+    Type: "pay-space",
     amt: 200,
     space: 11,
     image: require("./pics/yunqi-visarun.jpeg"),
@@ -273,5 +275,14 @@ export const Yunqi = [
     amt: 80,
     space: 2,
     image: require("./pics/mahjong.jpeg"),
+  },
+  {
+    Number: 31,
+    Text: "Marathon KTV sesh with the co-teachers.",
+    Instruction: "Sleep in, rest those vocal chords, and skip your next turn.",
+    Type: "skip",
+    amt: null,
+    space: null,
+    image: require("./pics/ktv.jpeg"),
   },
 ];

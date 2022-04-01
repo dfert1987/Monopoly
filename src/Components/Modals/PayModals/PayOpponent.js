@@ -28,7 +28,6 @@ export const PayOpponent = ({
     visible: { opacity: 1 },
     hidden: { opacity: 0 },
   };
-
   const modal = {
     hidden: {
       y: "-100vh",
@@ -136,7 +135,7 @@ export const PayOpponent = ({
       payTo &&
       payTo === 1 &&
       doubleProp &&
-      (onProp2.color === "blue" || "brown")
+      (onProp2.color === "blue" || onProp2.color === "brown")
     ) {
       let number = properties.filter(
         (property) =>
@@ -423,7 +422,150 @@ export const PayOpponent = ({
         setP2Money(p2New);
         setRent(onProp2.hotel);
       }
-    } else if (onProp2 && payTo && payTo === 1 && doubleProp) {
+    } else if (onProp && payTo && payTo === 2 && !doubleProp) {
+      let number = properties.filter(
+        (property) =>
+          property.color === onProp.color && property.ownedP2 === true
+      );
+      if (number && number.length === 3 && onProp.hasOneHouse === false) {
+        let p1New = p1Money - onProp.monopolyRent;
+        let p2New = p2Money + onProp.monopolyRent;
+        setP1Money(p2New);
+        setP2Money(p1New);
+        setRent(onProp.monopolyRent);
+      } else if (number.length < 3) {
+        let p1New = p1Money - onProp.rent;
+        let p2New = p2Money + onProp.rent;
+        setP1Money(p2New);
+        setP2Money(p1New);
+        setRent(onProp.rent);
+      } else if (
+        number &&
+        number.length === 3 &&
+        onProp.hasOneHouse === true &&
+        onProp.hasTwoHouses === false
+      ) {
+        let p1New = p1Money + onProp.oneHouse;
+        let p2New = p2Money - onProp.oneHouse;
+        setP1Money(p1New);
+        setP2Money(p2New);
+        setRent(onProp.oneHouse);
+      } else if (
+        number &&
+        number.length === 3 &&
+        onProp.hasTwoHouses === true &&
+        onProp.hasThreeHouses === false
+      ) {
+        let p1New = p1Money + onProp.twoHouses;
+        let p2New = p2Money - onProp.twoHouses;
+        setP1Money(p1New);
+        setP2Money(p2New);
+        setRent(onProp.twoHouses);
+      } else if (
+        number &&
+        number.length === 3 &&
+        onProp.hasThreeHouse === true &&
+        onProp.hasFourHouses === false
+      ) {
+        let p1New = p1Money + onProp.oneThreeHouses;
+        let p2New = p2Money - onProp.oneThreeHouses;
+        setP2Money(p2New);
+        setP1Money(p1New);
+        setRent(onProp.threeHouses);
+      } else if (
+        number &&
+        number.length === 3 &&
+        onProp.hasFourHouses === true &&
+        onProp.hashotel === false
+      ) {
+        let p1New = p1Money + onProp.fourHouses;
+        let p2New = p2Money - onProp.fourHouses;
+        setP1Money(p1New);
+        setP2Money(p2New);
+        setRent(onProp.fourHouses);
+      } else if (number && number.length === 3 && onProp.hasHotel === true) {
+        let p1New = p1Money + onProp.hotel;
+        let p2New = p2Money - onProp.hotel;
+        setP1Money(p1New);
+        setP2Money(p2New);
+        setRent(onProp.hotel);
+      }
+    } else if (onProp && payTo && payTo === 2 && doubleProp) {
+      let number = properties.filter(
+        (property) =>
+          property.color === onProp.color && property.ownedP2 === true
+      );
+      if (number && number.length === 3 && onProp.hasOneHouse === false) {
+        let doubled = onProp.monopolyRent * 2;
+        let p1New = p1Money - doubled;
+        let p2New = p2Money + doubled;
+        setP1Money(p1New);
+        setP2Money(p2New);
+        setRent(doubled);
+      } else if (number && number.length < 3) {
+        let doubled = onProp.rent * 2;
+        let p1New = p1Money - doubled;
+        let p2New = p2Money + doubled;
+        setP1Money(p1New);
+        setP2Money(p2New);
+        setRent(doubled);
+      } else if (
+        number &&
+        number.length === 3 &&
+        onProp.hasOneHouse === true &&
+        onProp.hasTwoHouses === false
+      ) {
+        let doubled = onProp.oneHouse * 2;
+        let p1New = p1Money - doubled;
+        let p2New = p2Money + doubled;
+        setP1Money(p1New);
+        setP2Money(p2New);
+        setRent(doubled);
+      } else if (
+        number &&
+        number.length === 3 &&
+        onProp.hasTwoHouses === true &&
+        onProp.hasThreeHouses === false
+      ) {
+        let doubled = onProp.twoHouses * 2;
+        let p1New = p1Money - doubled;
+        let p2New = p2Money + doubled;
+        setP1Money(p1New);
+        setP2Money(p2New);
+        setRent(doubled);
+      } else if (
+        number &&
+        number.length === 3 &&
+        onProp.hasThreeHouses === true &&
+        onProp.hasFourHouses === false
+      ) {
+        let doubled = onProp.threeHouses * 2;
+        let p1New = p1Money - doubled;
+        let p2New = p2Money + doubled;
+        setP1Money(p1New);
+        setP2Money(p2New);
+        setRent(doubled);
+      } else if (
+        number &&
+        number.length === 3 &&
+        onProp.hasFourHouses === true &&
+        onProp.hasHotel === false
+      ) {
+        let doubled = onProp.fourHouses * 2;
+        let p1New = p1Money - doubled;
+        let p2New = p2Money + doubled;
+        setP1Money(p1New);
+        setP2Money(p2New);
+        setRent(doubled);
+      } else if (number && number.length === 3 && onProp.hasHotel === true) {
+        let doubled = onProp.hotel * 2;
+        let p1New = p1Money - doubled;
+        let p2New = p2Money + doubled;
+        setP1Money(p1New);
+        setP2Money(p2New);
+        setRent(doubled);
+      }
+    } else if (onProp2 && payTo === 1 && doubleProp) {
       let number = properties.filter(
         (property) =>
           property.color === onProp2.color && property.ownedP1 === true
@@ -435,7 +577,7 @@ export const PayOpponent = ({
         setP1Money(p1New);
         setP2Money(p2New);
         setRent(doubled);
-      } else if (number && number.length > 3) {
+      } else if (number && number.length < 3) {
         let doubled = onProp2.rent;
         let p1New = p1Money + doubled;
         let p2New = p2Money - doubled;
@@ -498,150 +640,6 @@ export const PayOpponent = ({
         setP2Money(p2New);
         setRent(doubled);
       }
-    } else if (onProp && payTo && payTo === 2 && !doubleProp) {
-      let number = properties.filter(
-        (property) =>
-          property.color === onProp.color && property.ownedP2 === true
-      );
-      if (number && number.length === 3 && onProp.hasOneHouse === false) {
-        let p1New = p1Money - onProp.monopolyRent;
-        let p2New = p2Money + onProp.monopolyRent;
-        setP1Money(p2New);
-        setP2Money(p1New);
-        console.log(onProp.monopolyRent);
-        setRent(onProp.monopolyRent);
-      } else if (number.length < 3) {
-        let p1New = p1Money - onProp.rent;
-        let p2New = p2Money + onProp.rent;
-        setP1Money(p2New);
-        setP2Money(p1New);
-        setRent(onProp.rent);
-      } else if (
-        number &&
-        number.length === 3 &&
-        onProp.hasOneHouse === true &&
-        onProp.hasTwoHouses === false
-      ) {
-        let p1New = p1Money + onProp.oneHouse;
-        let p2New = p2Money - onProp.oneHouse;
-        setP1Money(p1New);
-        setP2Money(p2New);
-        setRent(onProp.oneHouse);
-      } else if (
-        number &&
-        number.length === 3 &&
-        onProp.hasTwoHouses === true &&
-        onProp.hasThreeHouses === false
-      ) {
-        let p1New = p1Money + onProp.twoHouses;
-        let p2New = p2Money - onProp.twoHouses;
-        setP1Money(p1New);
-        setP2Money(p2New);
-        setRent(onProp.twoHouses);
-      } else if (
-        number &&
-        number.length === 3 &&
-        onProp.hasThreeHouse === true &&
-        onProp.hasFourHouses === false
-      ) {
-        let p1New = p1Money + onProp.oneThreeHouses;
-        let p2New = p2Money - onProp.oneThreeHouses;
-        setP2Money(p2New);
-        setP1Money(p1New);
-        setRent(onProp.threeHouses);
-      } else if (
-        number &&
-        number.length === 3 &&
-        onProp.hasFourHouses === true &&
-        onProp.hashotel === false
-      ) {
-        let p1New = p1Money + onProp.fourHouses;
-        let p2New = p2Money - onProp.fourHouses;
-        setP1Money(p1New);
-        setP2Money(p2New);
-        setRent(onProp.fourHouses);
-      } else if (number && number.length === 3 && onProp.hasHotel === true) {
-        let p1New = p1Money + onProp.hotel;
-        let p2New = p2Money - onProp.hotel;
-        setP1Money(p1New);
-        setP2Money(p2New);
-        setRent(onProp.hotel);
-      }
-    } else if (onProp && payTo && payTo === 2 && doubleProp) {
-      let number = properties.filter(
-        (property) =>
-          property.color === onProp2.color && property.ownedP2 === true
-      );
-      if (number && number.length === 3 && onProp.hasOneHouse === false) {
-        let doubled = onProp.monopolyRent * 2;
-        let p1New = p1Money - doubled;
-        let p2New = p2Money + doubled;
-        setP1Money(p1New);
-        setP2Money(p2New);
-        setRent(doubled);
-      } else if (number && number.length > 3) {
-        let doubled = onProp.rent;
-        let p1New = p1Money - doubled;
-        let p2New = p2Money + doubled;
-        setP1Money(p1New);
-        setP2Money(p2New);
-        setRent(doubled);
-      } else if (
-        number &&
-        number.length === 3 &&
-        onProp.hasOneHouse === true &&
-        onProp.hasTwoHouses === false
-      ) {
-        let doubled = onProp.oneHouse * 2;
-        let p1New = p1Money - doubled;
-        let p2New = p2Money + doubled;
-        setP1Money(p1New);
-        setP2Money(p2New);
-        setRent(doubled);
-      } else if (
-        number &&
-        number.length === 3 &&
-        onProp.hasTwoHouses === true &&
-        onProp.hasThreeHouses === false
-      ) {
-        let doubled = onProp.twoHouses * 2;
-        let p1New = p1Money - doubled;
-        let p2New = p2Money + doubled;
-        setP1Money(p1New);
-        setP2Money(p2New);
-        setRent(doubled);
-      } else if (
-        number &&
-        number.length === 3 &&
-        onProp.hasThreeHouses === true &&
-        onProp.hasFourHouses === false
-      ) {
-        let doubled = onProp.threeHouses * 2;
-        let p1New = p1Money - doubled;
-        let p2New = p2Money + doubled;
-        setP1Money(p1New);
-        setP2Money(p2New);
-        setRent(doubled);
-      } else if (
-        number &&
-        number.length === 3 &&
-        onProp.hasFourHouses === true &&
-        onProp.hasHotel === false
-      ) {
-        let doubled = onProp.fourHouses * 2;
-        let p1New = p1Money - doubled;
-        let p2New = p2Money + doubled;
-        setP1Money(p1New);
-        setP2Money(p2New);
-        setRent(doubled);
-      } else if (number && number.length === 3 && onProp.hasHotel === true) {
-        let doubled = onProp.hotel * 2;
-        let p1New = p1Money - doubled;
-        let p2New = p2Money + doubled;
-        setP1Money(p1New);
-        setP2Money(p2New);
-        setRent(doubled);
-      }
     }
     return null;
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -660,7 +658,7 @@ export const PayOpponent = ({
     if (rent && rent < 100) {
       return <img className="cash-pic" alt="small bills" src={smallPay} />;
     } else if (rent && rent > 100) {
-      return <img clasName="cash-pic" alt="large bills" src={bigPay} />;
+      return <img className="cash-pic" alt="large bills" src={bigPay} />;
     }
   };
 

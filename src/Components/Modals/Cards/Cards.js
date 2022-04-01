@@ -30,8 +30,50 @@ export const Cards = ({
   setDoubleProp,
   setSkip1,
   setSkip2,
-  setVisaP1,
-  setVisaP2,
+  setVisa1,
+  setVisa2,
+  totalHousesP1,
+  totalHousesP2,
+  setTotalHousesP1,
+  setTotalHousesP2,
+  hotelsP1,
+  hotelsP2,
+  utilities,
+  setOnUtil,
+  setOnUtil2,
+  onUtil,
+  onUtil2,
+  setUtilModal2,
+  setUtilModal,
+  utilModal,
+  utilModal2,
+  payUtil,
+  setPayUtil,
+  setPayUtilTo,
+  payUtilTo,
+  setOnProp,
+  setOnProp2,
+  setPayProp,
+  setPayTo,
+  setPropertyModal1,
+  setPropertyModal2,
+  setOnAgentFee,
+  setOnAgentFee2,
+  onVisa,
+  onVisa2,
+  setOnVisa,
+  setOnVisa2,
+  setStayOn,
+  setStayOn2,
+  setOnFreeParking,
+  setOnFreeParking2,
+  payRailTo,
+  setPayRailTo,
+  setPayRail,
+  setOnRR,
+  setOnRR2,
+  setRRModal,
+  setRRModal2,
 }) => {
   const [guanxi, setGuanxi] = useState(Guanxi);
   const [yunqi, setYunqi] = useState(Yunqi);
@@ -64,24 +106,23 @@ export const Cards = ({
       onCard === true &&
       (counterP1 === 8 || counterP1 === 23 || counterP1 === 37)
     ) {
-      setCardOption("YUNQI");
+      setCardOption("FU YUAN");
     } else if (
       onCard2 === true &&
       (counterP2 === 34 || counterP2 === 3 || counterP2 === 18)
     ) {
       setCardOption("GUANXI");
-      console.log("p2 guan");
     } else if (
       onCard2 === true &&
       (counterP2 === 8 || counterP2 === 23 || counterP2 === 37)
     ) {
-      setCardOption("YUNQI");
+      setCardOption("FU YUAN");
     }
     return null;
   }, [counterP1, counterP2, onCard, onCard2]);
 
   const cardStyle = () => {
-    if (cardOption && cardOption === "YUNQI") {
+    if (cardOption && cardOption === "FU YUAN") {
       return "flex flexColumn innerModalPayRail YUNQI";
     } else if (cardOption && cardOption === "GUANXI") {
       return "flex flexColumn innerModalPayRail GUANXI";
@@ -139,8 +180,50 @@ export const Cards = ({
                 setDoubleProp={setDoubleProp}
                 setSkip1={setSkip1}
                 setSkip2={setSkip2}
-                setVisaP1={setVisaP1}
-                setVisaP2={setVisaP2}
+                setVisa1={setVisa1}
+                setVisa2={setVisa2}
+                totalHousesP1={totalHousesP1}
+                totalHousesP2={totalHousesP2}
+                hotelsP1={hotelsP1}
+                hotelsP2={hotelsP2}
+                utilities={utilities}
+                payUtilTo={payUtilTo}
+                setPayUtilTo={setPayUtilTo}
+                onUtil={onUtil}
+                onUtil2={onUtil2}
+                setOnUtil={setOnUtil}
+                setOnUtil2={setOnUtil2}
+                utilModal={utilModal}
+                utilModal2={utilModal2}
+                setUtilModal={setUtilModal}
+                setUtilModal2={setUtilModal2}
+                payUtil={payUtil}
+                setPayUtil={setPayUtil}
+                setOnProp={setOnProp}
+                setOnProp2={setOnProp2}
+                setPayTo={setPayTo}
+                setPayProp={setPayProp}
+                setPropertyModal1={setPropertyModal1}
+                setPropertyModal2={setPropertyModal2}
+                setOnAgentFee={setOnAgentFee}
+                setOnAgentFee2={setOnAgentFee2}
+                onVisa={onVisa}
+                onVisa2={onVisa2}
+                setOnVisa={setOnVisa}
+                setOnVisa2={setOnVisa2}
+                setStayOn={setStayOn}
+                setStayOn2={setStayOn2}
+                setOnFreeParking={setOnFreeParking}
+                setOnFreeParking2={setOnFreeParking2}
+                payRailTo={payRailTo}
+                setPayRailTo={setPayRailTo}
+                setPayRail={setPayRail}
+                setOnRR={setOnRR}
+                setOnRR2={setOnRR2}
+                setRRModal={setRRModal}
+                setRRModal2={setRRModal2}
+                setTotalHousesP1={setTotalHousesP1}
+                setTotalHousesP2={setTotalHousesP2}
               />
             </div>
           </motion.div>

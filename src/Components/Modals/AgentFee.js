@@ -84,6 +84,9 @@ const AgentFee = ({
                   src={homelink}
                 />
                 <h2 className="prize pay">Pay ¥75!</h2>
+                <button onClick={handleClose} className="continue-button">
+                  Continue
+                </button>
               </div>
             </motion.div>
           </motion.div>

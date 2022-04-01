@@ -137,6 +137,8 @@ export const Board = ({
   setTotalHousesP2,
   totalHousesP1,
   totalHousesP2,
+  setStayOn,
+  setStayOn2,
 }) => {
   const [viewPurchase, setViewPurchase] = useState(false);
   const [viewPurchase2, setViewPurchase2] = useState(false);
@@ -146,6 +148,7 @@ export const Board = ({
   const [viewPurchaseUtil2, setViewPurchaseUtil2] = useState(false);
   const [doubleRR, setDoubleRR] = useState(false);
   const [doubleProp, setDoubleProp] = useState(false);
+
   return (
     <div className="main-board">
       <div className="left-column">
@@ -1163,6 +1166,44 @@ export const Board = ({
           totalHousesP1={totalHousesP1}
           setTotalHousesP2={setTotalHousesP2}
           totalHousesP2={totalHousesP2}
+          utilities={utilities}
+          payUtilTo={payUtilTo}
+          setPayUtilTo={setPayUtilTo}
+          onUtil={onUtil}
+          onUtil2={onUtil2}
+          setOnUtil={setOnUtil}
+          setOnUtil2={setOnUtil2}
+          utilModal={utilModal}
+          utilModal2={utilModal2}
+          setUtilModal={setUtilModal}
+          setUtilModal2={setUtilModal2}
+          payUtil={payUtil}
+          setPayUtil={setPayUtil}
+          payRailTo={payRailTo}
+          setPayRailTo={setPayRailTo}
+          setPayRail={setPayRail}
+          setRRModal={setRRModal}
+          setRRModal2={setRRModal2}
+          onRR={onRR}
+          onRR2={onRR2}
+          setOnRR={setOnRR}
+          setOnRR2={setOnRR2}
+          setOnProp={setOnProp}
+          setOnProp2={setOnProp2}
+          setPayTo={setPayTo}
+          setPayProp={setPayProp}
+          setPropertyModal1={setPropertyModal1}
+          setPropertyModal2={setPropertyModal2}
+          setOnAgentFee={setOnAgentFee}
+          setOnAgentFee2={setOnAgentFee2}
+          onVisa={onVisa}
+          onVisa2={onVisa2}
+          setOnVisa={setOnVisa}
+          setOnVisa2={setOnVisa2}
+          setStayOn={setStayOn}
+          setStayOn2={setStayOn2}
+          setOnFreeParking={setOnFreeParking}
+          setOnFreeParking2={setOnFreeParking2}
         />
       </div>
     </div>

@@ -206,7 +206,6 @@ export const PayOpponentRail = ({
       );
     }
   };
-
   return (
     <AnimatePresence exitBeforeEnter>
       {payRail === true && (onRR || onRR2) ? (
