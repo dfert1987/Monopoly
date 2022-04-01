@@ -1176,6 +1176,28 @@ const InnerCard = ({
       setCardOption();
       setOnCard(false);
       setOnCard2(false);
+    } else if (onCard && !onCard2 && currentCard.Type === "pay-space") {
+      let newMoney = p1Money - 200;
+      setP1Money(newMoney);
+      let newParking = freeParking + 200;
+      setFreeParking(newParking);
+      setCounterP1(11);
+      setCurrentCard();
+      arrayRemovePre();
+      setCardOption();
+      setOnCard(false);
+      setOnCard2(false);
+    } else if (!onCard && onCard && currentCard.Type === "pay-space") {
+      let newMoney = p2Money - 200;
+      setP2Money(newMoney);
+      let newParking = freeParking + 200;
+      setFreeParking(newParking);
+      setCounterP2(11);
+      setCurrentCard();
+      arrayRemovePre();
+      setCardOption();
+      setOnCard(false);
+      setOnCard2(false);
     }
   };
 
