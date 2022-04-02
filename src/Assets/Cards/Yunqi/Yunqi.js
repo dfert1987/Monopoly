@@ -102,7 +102,7 @@ export const Yunqi = [
   {
     Number: 12,
     Text: "Group Chuanr night",
-    Instruction: "Split bill, and wechat pay openent 20rmb",
+    Instruction: "Split bill, and wechat pay oponent 20rmb",
     Type: "pay-opponent",
     amt: 10,
     space: 0,

@@ -107,14 +107,27 @@
 
 .money-label {
   margin: 0;
-  padding-bottom: 0.5em;
+  padding-bottom: 0.1em;
   text-decoration: underline 2px;
 }
 
-.money {
+.money.player1 {
   margin-top: 0;
   font-size: 1.25em;
   text-align: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.money.player2 {
+  margin-top: 0;
+  font-size: 1.25em;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+}
+.money {
+  margin: 0;
 }
 
 .properties {
@@ -147,4 +160,23 @@
 .properties-view-button:hover {
   background-color: grey;
   color: white;
+}
+
+.pass.left {
+  position: relative;
+  z-index: 200;
+}
+
+.pass.right {
+  position: relative;
+  z-index: 200;
+}
+
+.payday {
+  color: red;
+  font-family: "Monopoly";
+  font-size: 1em;
+  margin: 0;
+  text-shadow: white 2px 2px;
+  padding: 0;
 }

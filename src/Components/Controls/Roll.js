@@ -38,6 +38,11 @@ export const Roll = ({
   setOnCard,
   skip2,
   setSkip2,
+  setOnGoP1,
+  pass,
+  setPass,
+  p1Money,
+  setP1Money,
 }) => {
   const [die1, setDie1] = useState(1);
   const [die2, setDie2] = useState(1);
@@ -65,6 +70,11 @@ export const Roll = ({
       let highTotal = counterP1 + first + second;
       setCounterP1(highTotal - 40);
       showPropertyModal(highTotal - 40);
+      if (highTotal > 41) {
+        let newMoney = p1Money + 200;
+        setP1Money(newMoney);
+        setPass(true);
+      }
     } else {
       setCounterP1(counterP1 + first + second);
       setTimeout(() => {
@@ -125,6 +135,8 @@ export const Roll = ({
       setOnCard(true);
     } else if (space === 37) {
       setOnCard(true);
+    } else if (space === 1) {
+      setOnGoP1(true);
     }
   };
 

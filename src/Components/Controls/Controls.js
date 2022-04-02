@@ -36,7 +36,6 @@ export const Controls = ({
   setUtilities,
   setUtilModal,
   setUtilModal2,
-  payProp,
   setPayProp,
   setPayTo,
   payRail,
@@ -89,11 +88,30 @@ export const Controls = ({
   setVisa1,
   visa2,
   setVisa2,
+  onGoP1,
+  onGoP2,
+  setOnGoP1,
+  setOnGoP2,
+  pass,
+  setPass,
+  pass2,
+  setPass2,
+  setP1Money,
+  setP2Money,
 }) => {
   const [disableVisaRight, setDisableVisaRight] = useState(true);
   const [disableVisaLeft, setDisableVisaLeft] = useState(true);
-  console.log(visa1, visa2);
   useEffect(() => {
+    if (pass2) {
+      setTimeout(() => {
+        setPass2(false);
+      }, 2000);
+    }
+    if (pass) {
+      setTimeout(() => {
+        setPass(false);
+      }, 2000);
+    }
     if (visa2 === false || turn % 2 === 0) {
       setDisableVisaRight(true);
     }
@@ -116,7 +134,7 @@ export const Controls = ({
       setOnProp2();
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [turn, visa1, visa2]);
+  }, [turn, visa1, visa2, pass2, setPass2, pass, setPass]);
 
   return (
     <div className="controls-container">
@@ -124,6 +142,7 @@ export const Controls = ({
         <h3 className="player">Player 1</h3>
         <div className="player-1-stats">
           <div className="money player1">
+            {pass ? <p className="payday">Pay Day: Collect 200rmb</p> : null}
             <h3 className="money-label">Money</h3>
             <p className="money">¥{p1Money}</p>
           </div>
@@ -175,6 +194,12 @@ export const Controls = ({
             setOnCard={setOnCard}
             skip2={skip2}
             setSkip2={setSkip2}
+            onGoP1={onGoP1}
+            setOnGoP1={setOnGoP1}
+            pass={pass}
+            setPass={setPass}
+            p1Money={p1Money}
+            setP1Money={setP1Money}
           />
           <div className="properties player1">
             <button
@@ -197,9 +222,21 @@ export const Controls = ({
       <div className="p2">
         <h3 className="player">Player 2</h3>
         <div className="player-2-stats">
-          <div className="money player2">
-            <h3 className="money-label">Money</h3>
-            <p className="money">¥{p2Money}</p>
+          <div className="properties player2">
+            <button
+              className="properties-view-button"
+              disabled={disableRight}
+              onClick={() => setViewProperties2(true)}
+            >
+              VIEW ASSETS
+            </button>
+            <button
+              className="properties-view-button"
+              disabled={disableVisaRight}
+              onClick={() => setVisa2(false)}
+            >
+              USE VISA
+            </button>
           </div>
           <RollP2
             counterP2={counterP2}
@@ -249,22 +286,17 @@ export const Controls = ({
             setOnCard2={setOnCard2}
             setSkip1={setSkip1}
             skip1={skip1}
+            setOnGoP2={setOnGoP2}
+            onGoP2={onGoP2}
+            pass2={pass2}
+            setPass2={setPass2}
+            p2Money={p2Money}
+            setP2Money={setP2Money}
           />
-          <div className="properties player2">
-            <button
-              className="properties-view-button"
-              disabled={disableRight}
-              onClick={() => setViewProperties2(true)}
-            >
-              VIEW ASSETS
-            </button>
-            <button
-              className="properties-view-button"
-              disabled={disableVisaRight}
-              onClick={() => setVisa2(false)}
-            >
-              USE VISA
-            </button>
+          <div className="money player2">
+            <h3 className="money-label">Money</h3>
+            {pass2 ? <p className="payday">Pay Day: Collect 200rmb</p> : null}
+            <p className="money">¥{p2Money}</p>
           </div>
         </div>
       </div>

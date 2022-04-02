@@ -767,6 +767,7 @@
   -webkit-transform: rotate(180deg); /* Safari 3.1+, Chrome */
   position: relative;
   bottom: 0.4em;
+  padding: 0;
 }
 .all-go {
   display: flex;

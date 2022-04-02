@@ -6,8 +6,8 @@ import { RailRoads } from "./Assets/Holdings/Railroads";
 import { Utilities } from "./Assets/Holdings/Utilities";
 
 function App() {
-  const [counterP1, setCounterP1] = useState(10);
-  const [counterP2, setCounterP2] = useState(11);
+  const [counterP1, setCounterP1] = useState(33);
+  const [counterP2, setCounterP2] = useState(32);
   const [turn, setTurn] = useState(0);
   const [properties, setProperties] = useState(Properties);
   const [railRoads, setRailRoads] = useState(RailRoads);
@@ -67,9 +67,11 @@ function App() {
   const [totalHousesP2, setTotalHousesP2] = useState(0);
   const [hotelsP1, setHotelsP1] = useState(0);
   const [hotelsP2, setHotelsP2] = useState(0);
+  const [onGoP1, setOnGoP1] = useState(false);
+  const [onGoP2, setOnGoP2] = useState(false);
+  const [pass, setPass] = useState(false);
+  const [pass2, setPass2] = useState(false);
 
-  console.log(totalHousesP1);
-  console.log(hotelsP1);
   return (
     <div className="App">
       <Board
@@ -189,6 +191,14 @@ function App() {
         totalHousesP1={totalHousesP1}
         setTotalHousesP2={setTotalHousesP2}
         totalHousesP2={totalHousesP2}
+        onGoP1={onGoP1}
+        onGoP2={onGoP2}
+        setOnGoP1={setOnGoP1}
+        setOnGoP2={setOnGoP2}
+        pass={pass}
+        setPass={setPass}
+        pass2={pass2}
+        setPass2={setPass2}
       />
       <Controls
         counterP1={counterP1}
@@ -293,6 +303,14 @@ function App() {
         setVisa2={setVisa2}
         visa1={visa1}
         visa2={visa2}
+        onGoP1={onGoP1}
+        onGoP2={onGoP2}
+        setOnGoP1={setOnGoP1}
+        setOnGoP2={setOnGoP2}
+        pass={pass}
+        setPass={setPass}
+        pass2={pass2}
+        setPass2={setPass2}
       />
     </div>
   );

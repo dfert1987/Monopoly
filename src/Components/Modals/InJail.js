@@ -22,8 +22,6 @@ const InJail = ({
   setInJailModal2,
   setCounterP1,
   setCounterP2,
-  setDisableLeft,
-  setDisableRight,
 }) => {
   const [die1, setDie1] = useState(1);
   const [die2, setDie2] = useState(1);
