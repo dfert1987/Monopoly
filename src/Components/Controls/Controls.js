@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from "react";
+import { PassGo } from "./PassGo";
+import { PassGo2 } from "./PassGo2";
 import { Roll } from "./Roll";
 import { RollP2 } from "./RollP2";
 import "../../Components/Styles/Controls.css";
@@ -92,6 +94,12 @@ export const Controls = ({
   onGoP2,
   setOnGoP1,
   setOnGoP2,
+  pass,
+  setPass,
+  pass2,
+  setPass2,
+  setP1Money,
+  setP2Money,
 }) => {
   const [disableVisaRight, setDisableVisaRight] = useState(true);
   const [disableVisaLeft, setDisableVisaLeft] = useState(true);
@@ -124,6 +132,8 @@ export const Controls = ({
     <div className="controls-container">
       <div className="p1">
         <h3 className="player">Player 1</h3>
+        <PassGo setPass={setPass} pass={pass} className="pass left" />
+
         <div className="player-1-stats">
           <div className="money player1">
             <h3 className="money-label">Money</h3>
@@ -179,6 +189,10 @@ export const Controls = ({
             setSkip2={setSkip2}
             onGoP1={onGoP1}
             setOnGoP1={setOnGoP1}
+            pass={pass}
+            setPass={setPass}
+            p1Money={p1Money}
+            setP1Money={setP1Money}
           />
           <div className="properties player1">
             <button
@@ -255,6 +269,10 @@ export const Controls = ({
             skip1={skip1}
             setOnGoP2={setOnGoP2}
             onGoP2={onGoP2}
+            pass2={pass2}
+            setPass2={setPass2}
+            p2Money={p2Money}
+            setP2Money={setP2Money}
           />
           <div className="properties player2">
             <button
@@ -272,6 +290,7 @@ export const Controls = ({
               USE VISA
             </button>
           </div>
+          <PassGo2 setPass2={setPass2} pass2={pass2} className="pass right" />
         </div>
       </div>
     </div>

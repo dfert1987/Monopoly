@@ -69,6 +69,8 @@ function App() {
   const [hotelsP2, setHotelsP2] = useState(0);
   const [onGoP1, setOnGoP1] = useState(false);
   const [onGoP2, setOnGoP2] = useState(false);
+  const [pass, setPass] = useState(false);
+  const [pass2, setPass2] = useState(false);
 
   return (
     <div className="App">
@@ -193,6 +195,10 @@ function App() {
         onGoP2={onGoP2}
         setOnGoP1={setOnGoP1}
         setOnGoP2={setOnGoP2}
+        pass={pass}
+        setPass={setPass}
+        pass2={pass2}
+        setPass2={setPass2}
       />
       <Controls
         counterP1={counterP1}
@@ -301,6 +307,10 @@ function App() {
         onGoP2={onGoP2}
         setOnGoP1={setOnGoP1}
         setOnGoP2={setOnGoP2}
+        pass={pass}
+        setPass={setPass}
+        pass2={pass2}
+        setPass2={setPass2}
       />
     </div>
   );

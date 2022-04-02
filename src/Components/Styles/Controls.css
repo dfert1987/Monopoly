@@ -148,3 +148,8 @@
   background-color: grey;
   color: white;
 }
+
+.pass {
+  position: relative;
+  z-index: 20;
+}
