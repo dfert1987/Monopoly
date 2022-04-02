@@ -144,6 +144,10 @@ export const Board = ({
   onGoP2,
   setOnGoP1,
   setOnGoP2,
+  pass,
+  setPass,
+  pass2,
+  setPass2,
 }) => {
   const [viewPurchase, setViewPurchase] = useState(false);
   const [viewPurchase2, setViewPurchase2] = useState(false);
@@ -1219,6 +1223,10 @@ export const Board = ({
           setStayOn2={setStayOn2}
           setOnFreeParking={setOnFreeParking}
           setOnFreeParking2={setOnFreeParking2}
+          pass={pass}
+          pass2={pass2}
+          setPass={setPass}
+          setPass2={setPass2}
         />
       </div>
     </div>

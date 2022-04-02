@@ -74,6 +74,10 @@ export const Cards = ({
   setOnRR2,
   setRRModal,
   setRRModal2,
+  pass,
+  setPass,
+  pass2,
+  setPass2,
 }) => {
   const [guanxi, setGuanxi] = useState(Guanxi);
   const [yunqi, setYunqi] = useState(Yunqi);
@@ -224,6 +228,10 @@ export const Cards = ({
                 setRRModal2={setRRModal2}
                 setTotalHousesP1={setTotalHousesP1}
                 setTotalHousesP2={setTotalHousesP2}
+                pass={pass}
+                setPass={setPass}
+                pass2={pass2}
+                setPass2={setPass2}
               />
             </div>
           </motion.div>
