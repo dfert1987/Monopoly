@@ -1,0 +1,39 @@
+.close-button {
+  color: black;
+}
+
+.confirm-message {
+  font-family: "Monopoly";
+  font-size: 3.5em;
+  text-align: center;
+}
+
+.confirm-button-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.yes-no {
+  background-color: white;
+  border-radius: 5px;
+  cursor: pointer;
+  box-shadow: 0px 0px 12px -2px;
+  font-family: "Monopoly";
+  font-size: 2em;
+  padding-right: 1em;
+  padding-left: 1em;
+  margin: 1em;
+  transition: background-color 0.3s ease;
+}
+
+.yes-no.close {
+  width: 25%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.yes-no:hover {
+  background-color: grey;
+  color: white;
+}

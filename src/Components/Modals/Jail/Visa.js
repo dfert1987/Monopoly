@@ -2,8 +2,8 @@ import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { faXmark } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import visaPlace from "../../Assets/Misc/visaplace.jpeg";
-import "../Styles/FreeParking.css";
+import visaPlace from "../../../Assets/Misc/visaplace.jpeg";
+import "../../Styles/FreeParking.css";
 
 const Visa = ({
   onVisa,

@@ -6,7 +6,7 @@ import { RailRoads } from "./Assets/Holdings/Railroads";
 import { Utilities } from "./Assets/Holdings/Utilities";
 
 function App() {
-  const [counterP1, setCounterP1] = useState(33);
+  const [counterP1, setCounterP1] = useState(13);
   const [counterP2, setCounterP2] = useState(32);
   const [turn, setTurn] = useState(0);
   const [properties, setProperties] = useState(Properties);
@@ -61,7 +61,7 @@ function App() {
   const [onCard2, setOnCard2] = useState(false);
   const [skip1, setSkip1] = useState(false);
   const [skip2, setSkip2] = useState(false);
-  const [visa1, setVisa1] = useState(false);
+  const [visa1, setVisa1] = useState(true);
   const [visa2, setVisa2] = useState(false);
   const [totalHousesP1, setTotalHousesP1] = useState(0);
   const [totalHousesP2, setTotalHousesP2] = useState(0);
@@ -71,6 +71,7 @@ function App() {
   const [onGoP2, setOnGoP2] = useState(false);
   const [pass, setPass] = useState(false);
   const [pass2, setPass2] = useState(false);
+  const [visaModal, setVisaModal] = useState(false);
 
   return (
     <div className="App">
@@ -199,6 +200,8 @@ function App() {
         setPass={setPass}
         pass2={pass2}
         setPass2={setPass2}
+        visaModal={visaModal}
+        setVisaModal={setVisaModal}
       />
       <Controls
         counterP1={counterP1}
@@ -311,6 +314,8 @@ function App() {
         setPass={setPass}
         pass2={pass2}
         setPass2={setPass2}
+        visaModal={visaModal}
+        setVisaModal={setVisaModal}
       />
     </div>
   );
