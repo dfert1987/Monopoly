@@ -56,6 +56,18 @@ const VisaConfirm = ({
                 >
                   <FontAwesomeIcon className="x-icon free" icon={faXmark} />
                 </button>
+                <h1 className="confirm-message">
+                  Use Visa Card to Return to China?
+                </h1>
+                <div className="confirm-button-container">
+                  <button className="yes-no">YES</button>
+                  <button
+                    onClick={() => setVisaModal(false)}
+                    className="yes-no"
+                  >
+                    NO
+                  </button>
+                </div>
               </div>
             </motion.div>
           </motion.div>
