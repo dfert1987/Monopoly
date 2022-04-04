@@ -1,13 +1,13 @@
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import depressed from "../../Assets/Misc/depressed.jpeg";
-import dice1 from "../../Assets/Dice/dice1.png";
-import dice2 from "../../Assets/Dice/dice2.png";
-import dice3 from "../../Assets/Dice/dice3.png";
-import dice4 from "../../Assets/Dice/dice4.png";
-import dice5 from "../../Assets/Dice/dice5.png";
-import dice6 from "../../Assets/Dice/dice6.png";
-import "../Styles/InJail.css";
+import depressed from "../../../Assets/Misc/depressed.jpeg";
+import dice1 from "../../../Assets/Dice/dice1.png";
+import dice2 from "../../../Assets/Dice/dice2.png";
+import dice3 from "../../../Assets/Dice/dice3.png";
+import dice4 from "../../../Assets/Dice/dice4.png";
+import dice5 from "../../../Assets/Dice/dice5.png";
+import dice6 from "../../../Assets/Dice/dice6.png";
+import "../../Styles/InJail.css";
 
 const InJail = ({
   inJail,

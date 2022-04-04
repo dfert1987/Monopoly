@@ -2,8 +2,8 @@ import React from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { faXmark } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import deported from "../../Assets/Misc/deported.jpeg";
-import "../Styles/Jail.css";
+import deported from "../../../Assets/Misc/deported.jpeg";
+import "../../Styles/Jail.css";
 
 const Jail = ({
   onGoJail,

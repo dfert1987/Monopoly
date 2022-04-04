@@ -85,9 +85,7 @@ export const Controls = ({
   setSkip1,
   setSkip2,
   visa1,
-  setVisa1,
   visa2,
-  setVisa2,
   onGoP1,
   onGoP2,
   setOnGoP1,
@@ -98,6 +96,7 @@ export const Controls = ({
   setPass2,
   setP1Money,
   setP2Money,
+  setVisaModal,
 }) => {
   const [disableVisaRight, setDisableVisaRight] = useState(true);
   const [disableVisaLeft, setDisableVisaLeft] = useState(true);
@@ -212,7 +211,7 @@ export const Controls = ({
             <button
               className="properties-view-button"
               disabled={disableVisaLeft}
-              onClick={() => setVisa1(false)}
+              onClick={() => setVisaModal(true)}
             >
               USE VISA
             </button>
@@ -233,7 +232,7 @@ export const Controls = ({
             <button
               className="properties-view-button"
               disabled={disableVisaRight}
-              onClick={() => setVisa2(false)}
+              onClick={() => setVisaModal(true)}
             >
               USE VISA
             </button>

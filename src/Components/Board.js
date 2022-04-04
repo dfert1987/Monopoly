@@ -8,10 +8,11 @@ import PurchasedUtilPopUp from "./Modals/Purchased/PurchasedUtilPopUp";
 import Go from "./Modals/Go";
 import FreeParking from "./Modals/FreeParking";
 import AgentFee from "./Modals/AgentFee";
-import Visa from "./Modals/Visa";
-import Jail from "./Modals/Jail";
+import Visa from "./Modals/Jail/Visa";
+import VisaConfirm from "./Modals/Jail/VisaConfirm";
+import Jail from "./Modals/Jail/Jail";
 import Cards from "./Modals/Cards/Cards";
-import InJail from "./Modals/InJail";
+import InJail from "./Modals/Jail/InJail";
 import OwnedProperties from "./Modals/OwnedProperties";
 import PayOpponent from "./Modals/PayModals/PayOpponent";
 import PayOpponentRail from "../Components/Modals/PayModals/PayOpponentRail";
@@ -148,6 +149,8 @@ export const Board = ({
   setPass,
   pass2,
   setPass2,
+  setVisaModal,
+  visaModal,
 }) => {
   const [viewPurchase, setViewPurchase] = useState(false);
   const [viewPurchase2, setViewPurchase2] = useState(false);
@@ -1148,6 +1151,17 @@ export const Board = ({
           setCounterP2={setCounterP2}
           setDisableRight={setDisableRight}
           setDisableLeft={setDisableLeft}
+        />
+        <VisaConfirm
+          setVisaModal={setVisaModal}
+          visaModal={visaModal}
+          turn={turn}
+          setCounterP1={setCounterP1}
+          setCounterP2={setCounterP2}
+          setInJail={setInJail}
+          setInJail2={setInJail2}
+          setVisa1={setVisa1}
+          setVisa2={setVisa2}
         />
         <Cards
           onCard={onCard}
