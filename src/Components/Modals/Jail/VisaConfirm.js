@@ -1,7 +1,8 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { faXmark } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import "../../Styles/Visa.css";
 
 const VisaConfirm = ({
   turn,
@@ -9,6 +10,8 @@ const VisaConfirm = ({
   setVisa2,
   setInJail,
   setInJail2,
+  inJail,
+  inJail2,
   setCounterP1,
   setCounterP2,
   setVisaModal,
@@ -30,6 +33,17 @@ const VisaConfirm = ({
       transition: { delay: 0.5 },
     },
   };
+  const [showConfirm, setShowConfirm] = useState(false);
+
+  useEffect(() => {
+    if (turn % 2 === 0 && inJail === true) {
+      setShowConfirm(true);
+    } else if (turn % 2 !== 0 && inJail2 === true) {
+      setShowConfirm(true);
+    } else {
+      setShowConfirm(false);
+    }
+  }, [turn, inJail, inJail2]);
 
   return (
     <>
@@ -56,19 +70,35 @@ const VisaConfirm = ({
                 >
                   <FontAwesomeIcon className="x-icon free" icon={faXmark} />
                 </button>
-                <h1 className="confirm-message">
-                  Use Visa Card to Return to China?
-                </h1>
-                <div className="confirm-button-container">
-                  <button className="yes-no">YES</button>
+              </div>
+              {showConfirm ? (
+                <>
+                  <h1 className="confirm-message">
+                    Use Visa Card to Return to China?
+                  </h1>
+                  <div className="confirm-button-container">
+                    <button className="yes-no">YES</button>
+                    <button
+                      onClick={() => setVisaModal(false)}
+                      className="yes-no"
+                    >
+                      NO
+                    </button>
+                  </div>
+                </>
+              ) : (
+                <>
+                  <h1 className="confirm-message">
+                    You're still in China. Just hold on to this.
+                  </h1>
                   <button
                     onClick={() => setVisaModal(false)}
-                    className="yes-no"
+                    className="yes-no close"
                   >
-                    NO
+                    CLOSE
                   </button>
-                </div>
-              </div>
+                </>
+              )}
             </motion.div>
           </motion.div>
         ) : null}

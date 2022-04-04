@@ -4,7 +4,7 @@
 
 .confirm-message {
   font-family: "Monopoly";
-  font-size: 2em;
+  font-size: 3.5em;
   text-align: center;
 }
 
@@ -20,9 +20,17 @@
   cursor: pointer;
   box-shadow: 0px 0px 12px -2px;
   font-family: "Monopoly";
-  font-size: 1em;
+  font-size: 2em;
+  padding-right: 1em;
+  padding-left: 1em;
   margin: 1em;
   transition: background-color 0.3s ease;
+}
+
+.yes-no.close {
+  width: 25%;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .yes-no:hover {

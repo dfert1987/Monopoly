@@ -1160,6 +1160,8 @@ export const Board = ({
           setCounterP2={setCounterP2}
           setInJail={setInJail}
           setInJail2={setInJail2}
+          inJail={inJail}
+          inJail2={inJail2}
           setVisa1={setVisa1}
           setVisa2={setVisa2}
         />
