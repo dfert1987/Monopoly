@@ -39,6 +39,8 @@ export const Board = ({
   setCounterP2,
   p1Jail,
   p2Jail,
+  setP1Jail,
+  setP2Jail,
   propertyModal1,
   propertyModal2,
   setPropertyModal1,
@@ -1164,6 +1166,9 @@ export const Board = ({
           inJail2={inJail2}
           setVisa1={setVisa1}
           setVisa2={setVisa2}
+          counterP1={counterP1}
+          setP1Jail={setP1Jail}
+          setP2Jail={setP2Jail}
         />
         <Cards
           onCard={onCard}

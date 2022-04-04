@@ -16,6 +16,9 @@ const VisaConfirm = ({
   setCounterP2,
   setVisaModal,
   visaModal,
+  counterP1,
+  setP1Jail,
+  setP2Jail,
 }) => {
   const backdrop = {
     visible: { opacity: 1 },
@@ -34,16 +37,42 @@ const VisaConfirm = ({
     },
   };
   const [showConfirm, setShowConfirm] = useState(false);
+  const [player, setPlayer] = useState("");
 
   useEffect(() => {
     if (turn % 2 === 0 && inJail === true) {
       setShowConfirm(true);
+      setPlayer("one");
     } else if (turn % 2 !== 0 && inJail2 === true) {
       setShowConfirm(true);
+      setPlayer("two");
     } else {
       setShowConfirm(false);
     }
   }, [turn, inJail, inJail2]);
+
+  console.log(counterP1);
+
+  const useVisa = () => {
+    if (player === "one") {
+      setCounterP1(11);
+      setInJail(false);
+      setP1Jail(false);
+      setVisa1(false);
+      handleClose();
+    } else if (player === "two") {
+      setCounterP2(11);
+      setInJail2(false);
+      setP2Jail(false);
+      setVisa2(false);
+      handleClose();
+    }
+  };
+
+  const handleClose = () => {
+    setPlayer("");
+    setVisaModal(false);
+  };
 
   return (
     <>
@@ -64,10 +93,7 @@ const VisaConfirm = ({
               exit="hidden"
             >
               <div className="button-row">
-                <button
-                  className="close-button"
-                  onClick={() => setVisaModal(false)}
-                >
+                <button className="close-button" onClick={handleClose}>
                   <FontAwesomeIcon className="x-icon free" icon={faXmark} />
                 </button>
               </div>
@@ -77,11 +103,10 @@ const VisaConfirm = ({
                     Use Visa Card to Return to China?
                   </h1>
                   <div className="confirm-button-container">
-                    <button className="yes-no">YES</button>
-                    <button
-                      onClick={() => setVisaModal(false)}
-                      className="yes-no"
-                    >
+                    <button className="yes-no" onClick={useVisa}>
+                      YES
+                    </button>
+                    <button onClick={handleClose} className="yes-no">
                       NO
                     </button>
                   </div>
@@ -91,10 +116,7 @@ const VisaConfirm = ({
                   <h1 className="confirm-message">
                     You're still in China. Just hold on to this.
                   </h1>
-                  <button
-                    onClick={() => setVisaModal(false)}
-                    className="yes-no close"
-                  >
+                  <button onClick={handleClose} className="yes-no close">
                     CLOSE
                   </button>
                 </>

@@ -112,7 +112,7 @@ export const Yunqi = [
     Number: 13,
     Text: "It's your Chinaversary!",
     Instruction:
-      "Celebrate living where most people in the world live. Openent pays you 40rmb",
+      "Celebrate living where most people in the world live. Oponent pays you 40rmb",
     Type: "collect-opponent",
     amt: 40,
     space: 0,
@@ -216,7 +216,7 @@ export const Yunqi = [
   {
     Number: 24,
     Text: "You went to Maggies and got more than the Hot Dog",
-    Instruction: "Pay 250rmb, and feel full of regret.",
+    Instruction: "Pay 250rmb, and think about what you've done.",
     Type: "pay",
     amt: 250,
     space: 0,
