@@ -9,9 +9,11 @@ import "./index.css";
 ReactDOM.render(
   <BrowserRouter>
     <React.StrictMode>
-      <Route path="app" element={<App />} />
-      <Route path="choosepieces" element={<ChoosePieces />} />
-      <Route path="/" element={<Landing />} />
+      <Routes>
+        <Route path="app" element={<App />} />
+        <Route path="choosepieces" element={<ChoosePieces />} />
+        <Route path="/" element={<Landing />} />
+      </Routes>
     </React.StrictMode>
   </BrowserRouter>,
   document.getElementById("root")
