@@ -33,6 +33,7 @@ body {
   height: 800px;
   margin-top: 15em;
   text-align: right;
+  text-shadow: black 2px 2px 5px;
 }
 
 .logo-with-man {
