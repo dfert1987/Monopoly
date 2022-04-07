@@ -1,11 +1,11 @@
 export const pageAnimation = {
   in: {
     opacity: 1,
-    x: -300,
+    x: -400,
   },
   out: {
     opacity: 0,
-    x: 300,
+    x: 400,
   },
   end: {
     x: 0,
