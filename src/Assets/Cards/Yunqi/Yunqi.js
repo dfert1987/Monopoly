@@ -1,8 +1,9 @@
 export const Yunqi = [
   {
     Number: 1,
-    Text: "You won the Burger Cup!",
-    Instruction: "Collect 150rmb",
+    Text: "You are THE Burger King!",
+    Text2: "Congrats on winning the Burger Cup!",
+    Instruction: "Collect 150rmb in prize cash.",
     Type: "collect",
     amt: 150,
     space: 0,
@@ -10,7 +11,9 @@ export const Yunqi = [
   },
   {
     Number: 2,
-    Text: "National Holiday -- short work week.",
+    Text: "Fly that Flag!",
+    Text2:
+      "It's National Day, so check out a somewhat scary military parade, and enjoy the short work week.",
     Instruction: "Advance to Pay Day",
     Type: "advance",
     amt: 400,
@@ -19,7 +22,8 @@ export const Yunqi = [
   },
   {
     Number: 3,
-    Text: "Treat yourself!",
+    Text: "Treat Yo'self!",
+    Text2: "Make sure you get the wine pairing!",
     Instruction: "Advance to TRB",
     Type: "advance",
     amt: 0,
@@ -29,6 +33,7 @@ export const Yunqi = [
   {
     Number: 4,
     Text: "It's 3am!",
+    Text2: "This party should stop, but it wont.",
     Instruction: "Advance to Temple Bar!",
     Type: "advance",
     amt: 0,
@@ -38,6 +43,7 @@ export const Yunqi = [
   {
     Number: 5,
     Text: "Wednesday Open Mic",
+    Text2: "People will LOVE your squatter toilet story.",
     Instruction: "Advance to Hot Cat",
     Type: "advance",
     amt: 0,
@@ -47,6 +53,7 @@ export const Yunqi = [
   {
     Number: 6,
     Text: "Black Cab rips you off!",
+    Text2: "I think Chairman Mao is wearing sunglasses on this fake hundo.",
     Instruction: "Pay 100rmb",
     Type: "pay",
     amt: 100,
@@ -56,6 +63,8 @@ export const Yunqi = [
   {
     Number: 7,
     Text: "Head to the Hutongs!",
+    Text2:
+      "Because you're a Gulou expat, and not a Sanlitun expat and you let everyone know it, even if they didn't ask.",
     Instruction: "Ride Line 2",
     Type: "advance",
     amt: 0,
@@ -65,6 +74,7 @@ export const Yunqi = [
   {
     Number: 8,
     Text: "Le Duzi!",
+    Text2: "This case of the rumblies feels sinister. Better sit tonight out.",
     Instruction: "Skip a turn.",
     Type: "skip",
     amt: 0,
@@ -74,6 +84,8 @@ export const Yunqi = [
   {
     Number: 9,
     Text: "Overstay your visa!",
+    Text2:
+      "Don't worry the Chinese government is notoriously chill and accomodating!",
     Instruction: "DEPORTED. Leave country.",
     Type: "advance",
     amt: 0,
@@ -83,8 +95,9 @@ export const Yunqi = [
   {
     Number: 10,
     Text: "Hungover teaching!",
-    Instruction:
-      "8 hours of Hangman later - Go back 3 spaces and reevaluate your life.",
+    Text2:
+      "If this kindergarten doesn't want you at your worst, they don't deserve you at your best! Now assign some coloring pages and lay that head down on your desk, you noble determined educator, you!",
+    Instruction: "Go back 3 spaces and reevaluate your life.",
     Type: "back",
     amt: 3,
     space: 0,
@@ -92,7 +105,9 @@ export const Yunqi = [
   },
   {
     Number: 11,
-    Text: "Baijiu Drunk!",
+    Text: "Baijiu DRUNK!",
+    Text2:
+      "I think I'm picking up notes of gasoline and old perfume in this bottle",
     Instruction: "Go forward 3 spaces. Presumably in the direction of chuanr.",
     Type: "forward",
     amt: 3,
@@ -102,17 +117,19 @@ export const Yunqi = [
   {
     Number: 12,
     Text: "Group Chuanr night",
-    Instruction: "Split bill, and wechat pay oponent 20rmb",
+    Text2: "6 orders of chicken hearts was a bit aggressive",
+    Instruction: "Split bill, and Wechat Pay opponent 20rmb",
     Type: "pay-opponent",
-    amt: 10,
+    amt: 20,
     space: 0,
     image: require("./pics/yunqi-chuanr.jpeg"),
   },
   {
     Number: 13,
     Text: "It's your Chinaversary!",
-    Instruction:
-      "Celebrate living where most people in the world live. Oponent pays you 40rmb",
+    Text2:
+      "Celebrate another year of your Chinese adventure by grabbing cocktails with your whitest friends!",
+    Instruction: "Opponent pays you 40rmb",
     Type: "collect-opponent",
     amt: 40,
     space: 0,
@@ -120,7 +137,8 @@ export const Yunqi = [
   },
   {
     Number: 14,
-    Text: "Spring cleaning. Hire Ayi!",
+    Text: "Spring cleaning -- Hire Ayi!",
+    Text2: "God bless this woman for keeping your sorry life in order.",
     Instruction: "For each house, pay 25rmb, and each hotel pay 100rmb",
     Type: "pay",
     amt: 10,
@@ -130,6 +148,7 @@ export const Yunqi = [
   {
     Number: 15,
     Text: "Mary Chinese citizen.",
+    Text2: "Oh, so you're on of those types of expats",
     Instruction: "Take 1 Free Visa Card.",
     Type: "visa",
     amt: 0,
@@ -139,6 +158,8 @@ export const Yunqi = [
   {
     Number: 16,
     Text: "3rd Ring Traffic Jam",
+    Text2:
+      "The driver has gotten out of the car to smoke a cigarette. This appears bad.",
     Instruction:
       "Advance to nearest Subway. If unowned you may purchase. If owned pay owner double",
     Type: "nearest",
@@ -251,8 +272,8 @@ export const Yunqi = [
   },
   {
     Number: 28,
-    Text: "Buy fireworks for Chinese New Year!",
-    Instruction: "Pay 30rmb, and buy the loudest one they got.",
+    Text: "Chinese new year fireworks accident!",
+    Instruction: "Pay 100rmb in hospital bills. ",
     Type: "pay",
     amt: 30,
     space: null,
