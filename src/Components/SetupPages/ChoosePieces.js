@@ -2,6 +2,20 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { Carousel } from "3d-react-carousal";
 import baijiu from "../../Assets/Pieces/baijiu.png";
+import baoan from "../../Assets/Pieces/baoan.png";
+import baozi from "../../Assets/Pieces/baozi.png";
+import duck from "../../Assets/Pieces/duck.png";
+import fudog from "../../Assets/Pieces/fudog.png";
+import jiaozi from "../../Assets/Pieces/jiaozi.png";
+import lantern from "../../Assets/Pieces/lantern.png";
+import moboike from "../../Assets/Pieces/mobike.png";
+import morgan from "../../Assets/Pieces/morgan.png";
+import Piece1 from "../../Assets/Pieces/Piece1.png";
+import Piece2 from "../../Assets/Pieces/Piece2.png";
+import poodle from "../../Assets/Pieces/poodle.png";
+import taxi from "../../Assets/Pieces/taxi.png";
+import teapot from "../../Assets/Pieces/teapot.png";
+import yanjing from "../../Assets/Pieces/yanjing.png";
 
 import "../Styles/ChoosePieces.css";
 
