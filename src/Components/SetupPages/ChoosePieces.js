@@ -8,7 +8,7 @@ import duck from "../../Assets/Pieces/duck.png";
 import fudog from "../../Assets/Pieces/fudog.png";
 import jiaozi from "../../Assets/Pieces/jiaozi.png";
 import lantern from "../../Assets/Pieces/lantern.png";
-import moboike from "../../Assets/Pieces/mobike.png";
+import mobike from "../../Assets/Pieces/mobike.png";
 import morgan from "../../Assets/Pieces/morgan.png";
 import Piece1 from "../../Assets/Pieces/Piece1.png";
 import Piece2 from "../../Assets/Pieces/Piece2.png";
@@ -16,8 +16,25 @@ import poodle from "../../Assets/Pieces/poodle.png";
 import taxi from "../../Assets/Pieces/taxi.png";
 import teapot from "../../Assets/Pieces/teapot.png";
 import yanjing from "../../Assets/Pieces/yanjing.png";
-
 import "../Styles/ChoosePieces.css";
+
+let slides = [
+  <img src={Piece1} alt="trike" />,
+  <img src={Piece2} alt="yellow weasel" />,
+  <img src={baijiu} alt="baijiu bottle" />,
+  <img src={baoan} alt="sleeping baoan" />,
+  <img src={baozi} alt="baozi" />,
+  <img src={duck} alt="Peking duck" />,
+  <img src={fudog} alt="fu dog" />,
+  <img src={jiaozi} alt="jiaozi" />,
+  <img src={lantern} alt="lantern" />,
+  <img src={mobike} alt="Mobike" />,
+  <img src={morgan} alt="Morgan Short's head" />,
+  <img src={poodle} alt="poodle" />,
+  <img src={taxi} alt="taxi" />,
+  <img src={teapot} alt="teapopt" />,
+  <img src={yanjing} alt="yanjing" />,
+];
 
 export const ChoosePieces = () => {
   return (
