@@ -1,6 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
-import { Carousel } from "3d-react-carousal";
+import Carousel, { CarouselItem } from "../Carousel";
 import baijiu from "../../Assets/Pieces/baijiu.png";
 import baoan from "../../Assets/Pieces/baoan.png";
 import baozi from "../../Assets/Pieces/baozi.png";
@@ -16,24 +15,25 @@ import poodle from "../../Assets/Pieces/poodle.png";
 import taxi from "../../Assets/Pieces/taxi.png";
 import teapot from "../../Assets/Pieces/teapot.png";
 import yanjing from "../../Assets/Pieces/yanjing.png";
+import { Link } from "react-router-dom";
 import "../Styles/ChoosePieces.css";
 
 let slides = [
-  <img src={Piece1} alt="trike" />,
-  <img src={Piece2} alt="yellow weasel" />,
-  <img src={baijiu} alt="baijiu bottle" />,
-  <img src={baoan} alt="sleeping baoan" />,
-  <img src={baozi} alt="baozi" />,
-  <img src={duck} alt="Peking duck" />,
-  <img src={fudog} alt="fu dog" />,
-  <img src={jiaozi} alt="jiaozi" />,
-  <img src={lantern} alt="lantern" />,
-  <img src={mobike} alt="Mobike" />,
-  <img src={morgan} alt="Morgan Short's head" />,
-  <img src={poodle} alt="poodle" />,
-  <img src={taxi} alt="taxi" />,
-  <img src={teapot} alt="teapopt" />,
-  <img src={yanjing} alt="yanjing" />,
+  <img src={Piece1} alt="trike" className="carousel-pic" />,
+  <img src={Piece2} alt="yellow weasel" className="carousel-pic" />,
+  <img src={baijiu} alt="baijiu bottle" className="carousel-pic" />,
+  <img src={baoan} alt="sleeping baoan" className="carousel-pic" />,
+  <img src={baozi} alt="baozi" className="carousel-pic" />,
+  <img src={duck} alt="Peking duck" className="carousel-pic" />,
+  <img src={fudog} alt="fu dog" className="carousel-pic" />,
+  <img src={jiaozi} alt="jiaozi" className="carousel-pic" />,
+  <img src={lantern} alt="lantern" className="carousel-pic" />,
+  <img src={mobike} alt="Mobike" className="carousel-pic" />,
+  <img src={morgan} alt="Morgan Short's head" className="carousel-pic" />,
+  <img src={poodle} alt="poodle" className="carousel-pic" />,
+  <img src={taxi} alt="taxi" className="carousel-pic" />,
+  <img src={teapot} alt="teapopt" className="carousel-pic" />,
+  <img src={yanjing} alt="yanjing" className="carousel-pic" />,
 ];
 
 export const ChoosePieces = () => {
@@ -43,11 +43,45 @@ export const ChoosePieces = () => {
         <h1 className="main-title">CHOOSE YOUR PIECE</h1>
       </div>
       <div className="carousel-section">
-        <div className="carousel-container p1">
+        <div className="carousel-container player1">
           <h2 className="player-choice one">Player One</h2>
+          <Carousel className="carousel-in-pieces">
+            <CarouselItem>{slides[0]}</CarouselItem>
+            <CarouselItem>{slides[1]}</CarouselItem>
+            <CarouselItem>{slides[2]}</CarouselItem>
+            <CarouselItem>{slides[3]}</CarouselItem>
+            <CarouselItem>{slides[4]}</CarouselItem>
+            <CarouselItem>{slides[5]}</CarouselItem>
+            <CarouselItem>{slides[6]}</CarouselItem>
+            <CarouselItem>{slides[7]}</CarouselItem>
+            <CarouselItem>{slides[8]}</CarouselItem>
+            <CarouselItem>{slides[9]}</CarouselItem>
+            <CarouselItem>{slides[10]}</CarouselItem>
+            <CarouselItem>{slides[11]}</CarouselItem>
+            <CarouselItem>{slides[12]}</CarouselItem>
+            <CarouselItem>{slides[13]}</CarouselItem>
+            <CarouselItem>{slides[14]}</CarouselItem>
+          </Carousel>
         </div>
-        <div className="carousel-container p2">
+        <div className="carousel-container player2">
           <h2 className="player-choice two">Player Two</h2>
+          <Carousel className="carousel-in-pieces">
+            <CarouselItem>{slides[0]}</CarouselItem>
+            <CarouselItem>{slides[1]}</CarouselItem>
+            <CarouselItem>{slides[2]}</CarouselItem>
+            <CarouselItem>{slides[3]}</CarouselItem>
+            <CarouselItem>{slides[4]}</CarouselItem>
+            <CarouselItem>{slides[5]}</CarouselItem>
+            <CarouselItem>{slides[6]}</CarouselItem>
+            <CarouselItem>{slides[7]}</CarouselItem>
+            <CarouselItem>{slides[8]}</CarouselItem>
+            <CarouselItem>{slides[9]}</CarouselItem>
+            <CarouselItem>{slides[10]}</CarouselItem>
+            <CarouselItem>{slides[11]}</CarouselItem>
+            <CarouselItem>{slides[12]}</CarouselItem>
+            <CarouselItem>{slides[13]}</CarouselItem>
+            <CarouselItem>{slides[14]}</CarouselItem>
+          </Carousel>
         </div>
       </div>
       <div className="button-container">

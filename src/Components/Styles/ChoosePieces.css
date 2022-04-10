@@ -30,8 +30,26 @@
 
 .player-choice {
   text-align: center;
+  margin: 0;
+  margin-bottom: 0.25em;
+  font-family: "Monopoly";
+  font-size: 4em;
+  text-decoration: underline;
+}
+
+.player1 {
+  padding-right: 1.5em;
+}
+
+.player2 {
+  padding-left: 1.5em;
 }
 
 .carousel-container {
-  width: 40%;
+  margin: 1em;
+  width: 30%;
+}
+
+img {
+  height: 12em;
 }
