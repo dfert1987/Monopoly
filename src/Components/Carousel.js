@@ -55,6 +55,16 @@ const Carousel = ({ children }) => {
     setActiveIndex(newIndex);
   };
 
+  const disable = (buttonType) => {
+    if (buttonType === "back" && activeIndex === 0) {
+      console.log("true");
+
+      return true;
+    } else if (buttonType === "next" && activeIndex === 14) {
+      return true;
+    } else return false;
+  };
+
   return (
     <div className="carousel">
       <h2 className="choice-name">{setText()}</h2>
@@ -72,14 +82,16 @@ const Carousel = ({ children }) => {
           onClick={() => {
             updateIndex(activeIndex - 1);
           }}
+          disabled={disable("back")}
         >
-          PREV
+          BACK
         </button>
         <button
           className="indicators-button"
           onClick={() => {
             updateIndex(activeIndex + 1);
           }}
+          disabled={disable("next")}
         >
           NEXT
         </button>
