@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import Carousel, { CarouselItem } from "../Carousel";
 import baijiu from "../../Assets/Pieces/baijiu.png";
 import baoan from "../../Assets/Pieces/baoan.png";
@@ -37,6 +37,22 @@ let slides = [
 ];
 
 export const ChoosePieces = () => {
+  const [piecePlayer1, setPiecePlayer1] = useState(null);
+  const [piecePlayer2, setPiecePlayer2] = useState(null);
+  const [piece1, setPiece1] = useState(0);
+  const [piece2, setPiece2] = useState(0);
+
+  console.log(piecePlayer1);
+  console.log(piecePlayer2);
+
+  const disable = (side) => {
+    if (side === "left" && piecePlayer1 !== null) {
+      return true;
+    } else if (side === "right" && piecePlayer2 !== null) {
+      return true;
+    } else return false;
+  };
+
   return (
     <div className="page-container">
       <div className="title-container">
@@ -45,7 +61,11 @@ export const ChoosePieces = () => {
       <div className="carousel-section">
         <div className="carousel-container player1">
           <h2 className="player-choice one">Player One</h2>
-          <Carousel className="carousel-in-pieces">
+          <Carousel
+            className="carousel-in-pieces"
+            piece1={piece1}
+            setPiece1={setPiece1}
+          >
             <CarouselItem>{slides[0]}</CarouselItem>
             <CarouselItem>{slides[1]}</CarouselItem>
             <CarouselItem>{slides[2]}</CarouselItem>
@@ -62,10 +82,23 @@ export const ChoosePieces = () => {
             <CarouselItem>{slides[13]}</CarouselItem>
             <CarouselItem>{slides[14]}</CarouselItem>
           </Carousel>
+          <div className="select-container">
+            <button
+              className="select-piece"
+              onClick={() => setPiecePlayer1(piece1)}
+              disabled={disable("left")}
+            >
+              SELECT
+            </button>
+          </div>
         </div>
         <div className="carousel-container player2">
           <h2 className="player-choice two">Player Two</h2>
-          <Carousel className="carousel-in-pieces">
+          <Carousel
+            className="carousel-in-pieces"
+            piece2={piece2}
+            setPiece2={setPiece2}
+          >
             <CarouselItem>{slides[0]}</CarouselItem>
             <CarouselItem>{slides[1]}</CarouselItem>
             <CarouselItem>{slides[2]}</CarouselItem>
@@ -82,6 +115,15 @@ export const ChoosePieces = () => {
             <CarouselItem>{slides[13]}</CarouselItem>
             <CarouselItem>{slides[14]}</CarouselItem>
           </Carousel>
+          <div className="select-container">
+            <button
+              className="select-piece"
+              onClick={() => setPiecePlayer2(piece2)}
+              disabled={disable("right")}
+            >
+              SELECT
+            </button>
+          </div>
         </div>
       </div>
       <div className="button-container">

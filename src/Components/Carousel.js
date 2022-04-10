@@ -9,7 +9,7 @@ export const CarouselItem = ({ children, width }) => {
   );
 };
 
-const Carousel = ({ children }) => {
+const Carousel = ({ children, piece1, setPiece1, piece2, setPiece2 }) => {
   const [activeIndex, setActiveIndex] = useState(0);
 
   const setText = () => {
@@ -58,7 +58,6 @@ const Carousel = ({ children }) => {
   const disable = (buttonType) => {
     if (buttonType === "back" && activeIndex === 0) {
       console.log("true");
-
       return true;
     } else if (buttonType === "next" && activeIndex === 14) {
       return true;
@@ -81,6 +80,11 @@ const Carousel = ({ children }) => {
           className="indicators-button"
           onClick={() => {
             updateIndex(activeIndex - 1);
+            if (setPiece1) {
+              setPiece1(activeIndex - 1);
+            } else if (setPiece2) {
+              setPiece2(activeIndex - 1);
+            }
           }}
           disabled={disable("back")}
         >
@@ -90,6 +94,11 @@ const Carousel = ({ children }) => {
           className="indicators-button"
           onClick={() => {
             updateIndex(activeIndex + 1);
+            if (setPiece1) {
+              setPiece1(activeIndex + 1);
+            } else if (setPiece2) {
+              setPiece2(activeIndex + 1);
+            }
           }}
           disabled={disable("next")}
         >
