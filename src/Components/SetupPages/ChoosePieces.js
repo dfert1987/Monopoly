@@ -1,5 +1,8 @@
 import React, { useState } from "react";
 import Carousel, { CarouselItem } from "../Carousel";
+import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
+import { pageAnimation } from "../../Transitions/Index";
 import baijiu from "../../Assets/Pieces/baijiu.png";
 import baoan from "../../Assets/Pieces/baoan.png";
 import baozi from "../../Assets/Pieces/baozi.png";
@@ -15,7 +18,6 @@ import poodle from "../../Assets/Pieces/poodle.png";
 import taxi from "../../Assets/Pieces/taxi.png";
 import teapot from "../../Assets/Pieces/teapot.png";
 import yanjing from "../../Assets/Pieces/yanjing.png";
-import { Link } from "react-router-dom";
 import "../Styles/ChoosePieces.css";
 
 let slides = [
@@ -132,7 +134,13 @@ export const ChoosePieces = () => {
   };
 
   return (
-    <div className="page-container">
+    <motion.div
+      className="page-container"
+      initial="out"
+      animate="end"
+      exit="out"
+      variants={pageAnimation}
+    >
       <h1 className="main-title">CHOOSE YOUR PIECE</h1>
       <div className="carousel-section">
         <div className="carousel-container player1">
@@ -215,7 +223,7 @@ export const ChoosePieces = () => {
           </Link>
         </div>
       ) : null}
-    </div>
+    </motion.div>
   );
 };
 
