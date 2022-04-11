@@ -46,6 +46,11 @@ export const ChoosePieces = () => {
   const [piece1, setPiece1] = useState(0);
   const [piece2, setPiece2] = useState(0);
 
+  const myData = {
+    p1Piece: piecePlayer1,
+    p2Piece: piecePlayer2,
+  };
+
   const setStuff = () => {
     setChosenLeft(true);
     setPiecePlayer1(piece1);
@@ -206,7 +211,7 @@ export const ChoosePieces = () => {
         </div>
       </div>
       <div className="button-container">
-        <Link to="/App">
+        <Link to="/app" state={myData}>
           <button className="play-button">PLAY</button>
         </Link>
       </div>

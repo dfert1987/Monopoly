@@ -22,7 +22,7 @@ export const Landing = () => {
               <img className="main-logo" alt="logo" src={logomon} />
             </div>
             <div className="button-container">
-              <Link to="choosepieces">
+              <Link to="/choosepieces">
                 <button className="play-button">PLAY</button>
               </Link>
             </div>

@@ -1,9 +1,10 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Board } from "./Components/Board";
 import { Controls } from "./Components/Controls/Controls";
 import { Properties } from "./Assets/Holdings/Properties";
 import { RailRoads } from "./Assets/Holdings/Railroads";
 import { Utilities } from "./Assets/Holdings/Utilities";
+import { useLocation } from "react-router-dom";
 
 function App() {
   const [counterP1, setCounterP1] = useState(13);
@@ -72,7 +73,12 @@ function App() {
   const [pass, setPass] = useState(false);
   const [pass2, setPass2] = useState(false);
   const [visaModal, setVisaModal] = useState(false);
+  const [p1Pic, setP1Pic] = useState();
 
+  const location = useLocation();
+  console.log(location);
+  const data = location.state;
+  console.log(data);
   return (
     <div className="App">
       <Board
