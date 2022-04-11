@@ -51,8 +51,6 @@ const VisaConfirm = ({
     }
   }, [turn, inJail, inJail2]);
 
-  console.log(counterP1);
-
   const useVisa = () => {
     if (player === "one") {
       setCounterP1(11);

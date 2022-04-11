@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import PropertyModal from "./Modals/AvailableModals/PropertyModal";
 import UtilitiesModal from "./Modals/AvailableModals/UtilitiesModal";
 import RailRoadModal from "./Modals/AvailableModals/RailRoadModal";
@@ -19,6 +19,19 @@ import PayOpponentRail from "../Components/Modals/PayModals/PayOpponentRail";
 import PayOpponentUtil from "../Components/Modals/PayModals/PayOpponentUtil";
 import Piece1 from "../Assets/Pieces/Piece1.png";
 import Piece2 from "../Assets/Pieces/Piece2.png";
+import Baijiu from "../Assets/Pieces/baijiu.png";
+import Baoan from "../Assets/Pieces/baoan.png";
+import Baozi from "../Assets/Pieces/baozi.png";
+import Duck from "../Assets/Pieces/duck.png";
+import Fudog from "../Assets/Pieces/fudog.png";
+import Jiaozi from "../Assets/Pieces/jiaozi.png";
+import Lantern from "../Assets/Pieces/lantern.png";
+import Mobike from "../Assets/Pieces/mobike.png";
+import Morgan from "../Assets/Pieces/morgan.png";
+import Poodle from "../Assets/Pieces/poodle.png";
+import Taxi from "../Assets/Pieces/taxi.png";
+import Teapot from "../Assets/Pieces/teapot.png";
+import Yanjing from "../Assets/Pieces/yanjing.png";
 import ditielogo from "../Assets/PropertyImages/ditielogo.png";
 import jug from "../Assets/PropertyImages/jug.png";
 import homeLink from "../Assets/PropertyImages/homeLink.png";
@@ -153,6 +166,8 @@ export const Board = ({
   setPass2,
   setVisaModal,
   visaModal,
+  p1Pic,
+  p2Pic,
 }) => {
   const [viewPurchase, setViewPurchase] = useState(false);
   const [viewPurchase2, setViewPurchase2] = useState(false);
@@ -162,16 +177,111 @@ export const Board = ({
   const [viewPurchaseUtil2, setViewPurchaseUtil2] = useState(false);
   const [doubleRR, setDoubleRR] = useState(false);
   const [doubleProp, setDoubleProp] = useState(false);
+  const [p1Image, setP1Image] = useState();
+  const [p2Image, setP2Image] = useState();
+
+  useEffect(() => {
+    if (p1Pic === 0) {
+      setP1Image(Piece1);
+    }
+    if (p1Pic === 1) {
+      setP1Image(Piece2);
+    }
+    if (p1Pic === 2) {
+      setP1Image(Baijiu);
+    }
+    if (p1Pic === 3) {
+      setP1Image(Baoan);
+    }
+    if (p1Pic === 4) {
+      setP1Image(Baozi);
+    }
+    if (p1Pic === 5) {
+      setP1Image(Duck);
+    }
+    if (p1Pic === 6) {
+      setP1Image(Fudog);
+    }
+    if (p1Pic === 7) {
+      setP1Image(Jiaozi);
+    }
+    if (p1Pic === 8) {
+      setP1Image(Lantern);
+    }
+    if (p1Pic === 9) {
+      setP1Image(Mobike);
+    }
+    if (p1Pic === 10) {
+      setP1Image(Morgan);
+    }
+    if (p1Pic === 11) {
+      setP1Image(Poodle);
+    }
+    if (p1Pic === 12) {
+      setP1Image(Taxi);
+    }
+    if (p1Pic === 13) {
+      setP1Image(Teapot);
+    }
+    if (p1Pic === 14) {
+      setP1Image(Yanjing);
+    }
+    if (p2Pic === 0) {
+      setP2Image(Piece1);
+    }
+    if (p2Pic === 1) {
+      setP2Image(Piece2);
+    }
+    if (p2Pic === 2) {
+      setP2Image(Baijiu);
+    }
+    if (p2Pic === 3) {
+      setP2Image(Baoan);
+    }
+    if (p2Pic === 4) {
+      setP2Image(Baozi);
+    }
+    if (p2Pic === 5) {
+      setP2Image(Duck);
+    }
+    if (p2Pic === 6) {
+      setP2Image(Fudog);
+    }
+    if (p2Pic === 7) {
+      setP2Image(Jiaozi);
+    }
+    if (p2Pic === 8) {
+      setP2Image(Lantern);
+    }
+    if (p2Pic === 9) {
+      setP2Image(Mobike);
+    }
+    if (p2Pic === 10) {
+      setP2Image(Morgan);
+    }
+    if (p2Pic === 11) {
+      setP2Image(Poodle);
+    }
+    if (p2Pic === 12) {
+      setP2Image(Taxi);
+    }
+    if (p2Pic === 13) {
+      setP2Image(Teapot);
+    }
+    if (p2Pic === 14) {
+      setP2Image(Yanjing);
+    }
+  }, [p1Pic, p2Pic]);
 
   return (
     <div className="main-board">
       <div className="left-column">
         <div id="1" className="left-corner-top">
           {counterP1 === 1 ? (
-            <img className="piece" src={Piece1} alt="p1 game piece" />
+            <img className="piece" src={p1Image} alt="p1 game piece" />
           ) : null}
           {counterP2 === 1 ? (
-            <img className="piece two" src={Piece2} alt="p2 game piece" />
+            <img className="piece two" src={p2Image} alt="p2 game piece" />
           ) : null}
           <div className="go-container">
             <img src={longArrow} alt="go-arrow" className="go-arrow" />
@@ -190,10 +300,14 @@ export const Board = ({
             <div className="left-main">
               <div className="main-section-left">
                 {counterP1 === 40 ? (
-                  <img className="piece" src={Piece1} alt="p1 game piece" />
+                  <img className="piece" src={p1Image} alt="p1 game piece" />
                 ) : null}
                 {counterP2 === 40 ? (
-                  <img className="piece two" src={Piece2} alt="p2 game piece" />
+                  <img
+                    className="piece two"
+                    src={p2Image}
+                    alt="p2 game piece"
+                  />
                 ) : null}
                 <div className="prop-price-left">400rmb</div>
                 <div className="prop-name-left">TRB</div>
@@ -203,10 +317,10 @@ export const Board = ({
           </div>
           <div id="39" className="left-space">
             {counterP1 === 39 ? (
-              <img src={Piece1} className="piece" alt="p1 game piece" />
+              <img src={p1Image} className="piece" alt="p1 game piece" />
             ) : null}
             {counterP2 === 39 ? (
-              <img className="piece two" src={Piece2} alt="p2 game piece" />
+              <img className="piece two" src={p1Image} alt="p2 game piece" />
             ) : null}
             <div className="left-rr-container">
               <div>
@@ -226,10 +340,14 @@ export const Board = ({
             <div className="left-main">
               <div className="main-section-left">
                 {counterP1 === 38 ? (
-                  <img src={Piece1} className="piece" alt="p1 game piece" />
+                  <img src={p1Image} className="piece" alt="p1 game piece" />
                 ) : null}
                 {counterP2 === 38 ? (
-                  <img className="piece two" src={Piece2} alt="p2 game piece" />
+                  <img
+                    className="piece two"
+                    src={p2Image}
+                    alt="p2 game piece"
+                  />
                 ) : null}
                 <div className="prop-price-left">350rmb</div>
                 <div className="prop-name-left migas">Migas</div>
@@ -239,10 +357,10 @@ export const Board = ({
           </div>
           <div id="37" className="left-space">
             {counterP1 === 37 ? (
-              <img src={Piece1} className="piece" alt="p1 game piece" />
+              <img src={p1Image} className="piece" alt="p1 game piece" />
             ) : null}
             {counterP2 === 37 ? (
-              <img className="piece two" src={Piece2} alt="p2 game piece" />
+              <img className="piece two" src={p2Image} alt="p2 game piece" />
             ) : null}
             <div className="left-rr-container luck">
               <div>
@@ -259,10 +377,10 @@ export const Board = ({
           </div>
           <div id="36" className="left-space">
             {counterP1 === 36 ? (
-              <img src={Piece1} className="piece" alt="p1 game piece" />
+              <img src={p1Image} className="piece" alt="p1 game piece" />
             ) : null}
             {counterP2 === 36 ? (
-              <img className="piece two" src={Piece2} alt="p2 game piece" />
+              <img className="piece two" src={p2Image} alt="p2 game piece" />
             ) : null}
             <div className="left-rr-container">
               <div>
@@ -282,10 +400,14 @@ export const Board = ({
             <div className="left-main">
               <div className="main-section-left">
                 {counterP1 === 35 ? (
-                  <img src={Piece1} className="piece" alt="p1 game piece" />
+                  <img src={p1Image} className="piece" alt="p1 game piece" />
                 ) : null}
                 {counterP2 === 35 ? (
-                  <img className="piece two" src={Piece2} alt="p2 game piece" />
+                  <img
+                    className="piece two"
+                    src={p2Image}
+                    alt="p2 game piece"
+                  />
                 ) : null}
                 <div className="text-container">
                   <div className="prop-price-left">320rmb</div>
@@ -299,10 +421,10 @@ export const Board = ({
           </div>
           <div id="34" className="left-space">
             {counterP1 === 34 ? (
-              <img src={Piece1} className="piece" alt="p1 game piece" />
+              <img src={p1Image} className="piece" alt="p1 game piece" />
             ) : null}
             {counterP2 === 34 ? (
-              <img className="piece two" src={Piece2} alt="p2 game piece" />
+              <img className="piece two" src={p2Image} alt="p2 game piece" />
             ) : null}
             <div className="left-rr-container guanxi">
               <div>
@@ -321,10 +443,14 @@ export const Board = ({
             <div className="left-main">
               <div className="main-section-left">
                 {counterP1 === 33 ? (
-                  <img src={Piece1} className="piece" alt="p1 game piece" />
+                  <img src={p1Image} className="piece" alt="p1 game piece" />
                 ) : null}
                 {counterP2 === 33 ? (
-                  <img className="piece two" src={Piece2} alt="p2 game piece" />
+                  <img
+                    className="piece two"
+                    src={p2Image}
+                    alt="p2 game piece"
+                  />
                 ) : null}
                 <div className="text-container">
                   <div className="prop-price-left">300rmb</div>
@@ -340,10 +466,14 @@ export const Board = ({
             <div className="left-main">
               <div className="main-section-left">
                 {counterP1 === 32 ? (
-                  <img src={Piece1} className="piece" alt="p1 game piece" />
+                  <img src={p1Image} className="piece" alt="p1 game piece" />
                 ) : null}
                 {counterP2 === 32 ? (
-                  <img className="piece two" src={Piece2} alt="p2 game piece" />
+                  <img
+                    className="piece two"
+                    src={p2Image}
+                    alt="p2 game piece"
+                  />
                 ) : null}
                 <div className="text-container">
                   <div className="prop-price-left">300rmb</div>
@@ -358,10 +488,10 @@ export const Board = ({
         </div>
         <div id="31" className="left-corner-bottom">
           {counterP1 === 31 ? (
-            <img src={Piece1} className="piece" alt="p1 game piece" />
+            <img src={p1Image} className="piece" alt="p1 game piece" />
           ) : null}
           {counterP2 === 31 ? (
-            <img className="piece two" src={Piece2} alt="p2 game piece" />
+            <img className="piece two" src={p2Image} alt="p2 game piece" />
           ) : null}
           <div className="free-parking-container">
             <img
@@ -378,10 +508,14 @@ export const Board = ({
             <div className="top-main">
               <div className="main-section-top">
                 {counterP1 === 2 ? (
-                  <img src={Piece1} className="piece" alt="p1 game piece" />
+                  <img src={p1Image} className="piece" alt="p1 game piece" />
                 ) : null}
                 {counterP2 === 2 ? (
-                  <img className="piece two" src={Piece2} alt="p2 game piece" />
+                  <img
+                    className="piece two"
+                    src={p2Image}
+                    alt="p2 game piece"
+                  />
                 ) : null}
                 <div className="prop-price-top">60rmb</div>
                 <div className="prop-name-top">Lush</div>
@@ -391,10 +525,10 @@ export const Board = ({
           </div>
           <div id="3" className="top-space">
             {counterP1 === 3 ? (
-              <img src={Piece1} className="piece" alt="p1 game piece" />
+              <img src={p1Image} className="piece" alt="p1 game piece" />
             ) : null}
             {counterP2 === 3 ? (
-              <img className="piece two" src={Piece2} alt="p2 game piece" />
+              <img className="piece two" src={p2Image} alt="p2 game piece" />
             ) : null}
             <div className="top-rr-container guanxi">
               <div>
@@ -413,10 +547,14 @@ export const Board = ({
             <div className="top-main">
               <div className="main-section-top">
                 {counterP1 === 4 ? (
-                  <img src={Piece1} className="piece" alt="p1 game piece" />
+                  <img src={p1Image} className="piece" alt="p1 game piece" />
                 ) : null}
                 {counterP2 === 4 ? (
-                  <img className="piece two" src={Piece2} alt="p2 game piece" />
+                  <img
+                    className="piece two"
+                    src={p2Image}
+                    alt="p2 game piece"
+                  />
                 ) : null}
                 <div className="prop-price-top">80rmb</div>
                 <div className="prop-name-top-big">Propaganda</div>
@@ -426,10 +564,10 @@ export const Board = ({
           </div>
           <div id="5" className="top-space">
             {counterP1 === 5 ? (
-              <img src={Piece1} className="piece" alt="p1 game piece" />
+              <img src={p1Image} className="piece" alt="p1 game piece" />
             ) : null}
             {counterP2 === 5 ? (
-              <img className="piece two" src={Piece2} alt="p2 game piece" />
+              <img className="piece two" src={p2Image} alt="p2 game piece" />
             ) : null}
             <div className="top-rr-container tax">
               <div>
@@ -440,10 +578,10 @@ export const Board = ({
           </div>
           <div id="6" className="top-space">
             {counterP1 === 6 ? (
-              <img src={Piece1} className="piece" alt="p1 game piece" />
+              <img src={p1Image} className="piece" alt="p1 game piece" />
             ) : null}
             {counterP2 === 6 ? (
-              <img className="piece two" src={Piece2} alt="p2 game piece" />
+              <img className="piece two" src={p2Image} alt="p2 game piece" />
             ) : null}
             <div className="top-rr-container">
               <div>
@@ -463,10 +601,14 @@ export const Board = ({
             <div className="top-main">
               <div className="main-section-top">
                 {counterP1 === 7 ? (
-                  <img src={Piece1} className="piece" alt="p1 game piece" />
+                  <img src={p1Image} className="piece" alt="p1 game piece" />
                 ) : null}
                 {counterP2 === 7 ? (
-                  <img className="piece two" src={Piece2} alt="p2 game piece" />
+                  <img
+                    className="piece two"
+                    src={p2Image}
+                    alt="p2 game piece"
+                  />
                 ) : null}
                 <div className="prop-price-top">100rmb</div>
                 <div className="prop-name-top">Hot Cat</div>
@@ -477,10 +619,10 @@ export const Board = ({
           </div>
           <div id="8" className="top-space">
             {counterP1 === 8 ? (
-              <img src={Piece1} className="piece" alt="p1 game piece" />
+              <img src={p1Image} className="piece" alt="p1 game piece" />
             ) : null}
             {counterP2 === 8 ? (
-              <img className="piece two" src={Piece2} alt="p2 game piece" />
+              <img className="piece two" src={p2Image} alt="p2 game piece" />
             ) : null}
             <div className="top-rr-container luck">
               <div>
@@ -499,10 +641,10 @@ export const Board = ({
             <div className="top-main">
               <div className="main-section-top">
                 {counterP1 === 9 ? (
-                  <img src={Piece1} className="piece" alt="p1 game piece" />
+                  <img src={p1Image} className="piece" alt="p1 game piece" />
                 ) : null}
                 {counterP2 === 9 ? (
-                  <img className="piece" src={Piece2} alt="p2 game piece" />
+                  <img className="piece" src={p2Image} alt="p2 game piece" />
                 ) : null}
                 <div className="prop-price-top">100rmb</div>
                 <div className="prop-name-top-big">De La Poste</div>
@@ -515,10 +657,14 @@ export const Board = ({
             <div className="top-main">
               <div className="main-section-top">
                 {counterP1 === 10 ? (
-                  <img src={Piece1} className="piece" alt="g1 game piece" />
+                  <img src={p1Image} className="piece" alt="g1 game piece" />
                 ) : null}
                 {counterP2 === 10 ? (
-                  <img className="piece two" src={Piece2} alt="p2 game piece" />
+                  <img
+                    className="piece two"
+                    src={p2Image}
+                    alt="p2 game piece"
+                  />
                 ) : null}
                 <div className="prop-price-top">120rmb</div>
                 <div className="prop-name-top">4C</div>
@@ -544,10 +690,14 @@ export const Board = ({
               <div className="bottom-section-top yellow"></div>
               <div className="main-section-bottom">
                 {counterP1 === 30 ? (
-                  <img src={Piece1} className="piece" alt="p1 game piece" />
+                  <img src={p1Image} className="piece" alt="p1 game piece" />
                 ) : null}
                 {counterP2 === 30 ? (
-                  <img className="piece two" src={Piece2} alt="p2 game piece" />
+                  <img
+                    className="piece two"
+                    src={p2Image}
+                    alt="p2 game piece"
+                  />
                 ) : null}
                 <div className="prop-name-bottom">Dadong</div>
                 <div className="prop-price-bottom">280rmb</div>
@@ -556,10 +706,10 @@ export const Board = ({
           </div>
           <div id="29" className="bottom-space">
             {counterP1 === 29 ? (
-              <img src={Piece1} className="piece" alt="p1 game piece" />
+              <img src={p1Image} className="piece" alt="p1 game piece" />
             ) : null}
             {counterP2 === 29 ? (
-              <img className="piece two" src={Piece2} alt="p2 game piece" />
+              <img className="piece two" src={p2Image} alt="p2 game piece" />
             ) : null}
             <div className="bottom-rr-container">
               <div>
@@ -580,10 +730,14 @@ export const Board = ({
               <div className="bottom-section-top yellow"></div>
               <div className="main-section-bottom">
                 {counterP1 === 28 ? (
-                  <img src={Piece1} className="piece" alt="p1 game piece" />
+                  <img src={p1Image} className="piece" alt="p1 game piece" />
                 ) : null}
                 {counterP2 === 28 ? (
-                  <img className="piece two" src={Piece2} alt="p2 game piece" />
+                  <img
+                    className="piece two"
+                    src={p2Image}
+                    alt="p2 game piece"
+                  />
                 ) : null}
                 <div className="prop-name-bottom">HaiDiLao</div>
                 <div className="prop-price-bottom">260rmb</div>
@@ -595,10 +749,14 @@ export const Board = ({
               <div className="bottom-section-top yellow"></div>
               <div className="main-section-bottom">
                 {counterP1 === 27 ? (
-                  <img src={Piece1} className="piece" alt="p1 game piece" />
+                  <img src={p1Image} className="piece" alt="p1 game piece" />
                 ) : null}
                 {counterP2 === 27 ? (
-                  <img className="piece two" src={Piece2} alt="p2 game piece" />
+                  <img
+                    className="piece two"
+                    src={p2Image}
+                    alt="p2 game piece"
+                  />
                 ) : null}
                 <div className="prop-name-bottom-bigger">JinDingXuan</div>
                 <div className="prop-price-bottom">260rmb</div>
@@ -607,10 +765,10 @@ export const Board = ({
           </div>
           <div id="26" className="bottom-space">
             {counterP1 === 26 ? (
-              <img src={Piece1} className="piece" alt="p1 game piece" />
+              <img src={p1Image} className="piece" alt="p1 game piece" />
             ) : null}
             {counterP2 === 26 ? (
-              <img className="piece two" src={Piece2} alt="p2 game piece" />
+              <img className="piece two" src={p2Image} alt="p2 game piece" />
             ) : null}
             <div className="bottom-rr-container">
               <div>
@@ -631,10 +789,14 @@ export const Board = ({
               <div className="bottom-section-top red"></div>
               <div className="main-section-bottom">
                 {counterP1 === 25 ? (
-                  <img src={Piece1} className="piece" alt="p1 game piece" />
+                  <img src={p1Image} className="piece" alt="p1 game piece" />
                 ) : null}
                 {counterP2 === 25 ? (
-                  <img className="piece two" src={Piece2} alt="p2 game piece" />
+                  <img
+                    className="piece two"
+                    src={p2Image}
+                    alt="p2 game piece"
+                  />
                 ) : null}
                 <div className="prop-name-bottom">Lantern</div>
                 <div className="prop-price-bottom">240rmb</div>
@@ -646,10 +808,14 @@ export const Board = ({
               <div className="bottom-section-top red"></div>
               <div className="main-section-bottom">
                 {counterP1 === 24 ? (
-                  <img src={Piece1} className="piece" alt="p1 game piece" />
+                  <img src={p1Image} className="piece" alt="p1 game piece" />
                 ) : null}
                 {counterP2 === 24 ? (
-                  <img className="piece two" src={Piece2} alt="p2 game piece" />
+                  <img
+                    className="piece two"
+                    src={p2Image}
+                    alt="p2 game piece"
+                  />
                 ) : null}
                 <div className="prop-name-bottom">The Local</div>
                 <div className="prop-price-bottom">220rmb</div>
@@ -658,10 +824,10 @@ export const Board = ({
           </div>
           <div id="23" className="bottom-space">
             {counterP1 === 23 ? (
-              <img src={Piece1} className="piece" alt="p1 game piece" />
+              <img src={p1Image} className="piece" alt="p1 game piece" />
             ) : null}
             {counterP2 === 23 ? (
-              <img className="piece two" src={Piece2} alt="p2 game piece" />
+              <img className="piece two" src={p2Image} alt="p2 game piece" />
             ) : null}
             <div className="bottom-rr-container luck">
               <div>
@@ -681,10 +847,14 @@ export const Board = ({
               <div className="bottom-section-top red"></div>
               <div className="main-section-bottom">
                 {counterP1 === 22 ? (
-                  <img src={Piece1} className="piece" alt="p1 game piece" />
+                  <img src={p1Image} className="piece" alt="p1 game piece" />
                 ) : null}
                 {counterP2 === 22 ? (
-                  <img className="piece two" src={Piece2} alt="p2 game piece" />
+                  <img
+                    className="piece two"
+                    src={p2Image}
+                    alt="p2 game piece"
+                  />
                 ) : null}
                 <div className="prop-name-bottom">Annie's</div>
                 <div className="prop-price-bottom">220rmb</div>
@@ -699,19 +869,19 @@ export const Board = ({
             <p className="visiting">Visiting</p>
 
             {counterP1 === 11 ? (
-              <img src={Piece1} className="piece" alt="p1 game piece" />
+              <img src={p1Image} className="piece" alt="p1 game piece" />
             ) : null}
             {counterP2 === 11 ? (
-              <img className="piece two" src={Piece2} alt="p2 game piece" />
+              <img className="piece two" src={p2Image} alt="p2 game piece" />
             ) : null}
           </div>
           <div className="jail-right-visiting">
             <div className="jail">
               {p1Jail ? (
-                <img src={Piece1} className="piece" alt="p1 game piece" />
+                <img src={p1Image} className="piece" alt="p1 game piece" />
               ) : null}
               {p2Jail ? (
-                <img className="piece two" src={Piece2} alt="p2 game piece" />
+                <img className="piece two" src={p2Image} alt="p2 game piece" />
               ) : null}
               <p className="jail-text">Back Home</p>
             </div>
@@ -726,10 +896,14 @@ export const Board = ({
               <div className="right-section-left purple"></div>
               <div className="main-section-right">
                 {counterP1 === 12 ? (
-                  <img src={Piece1} className="piece" alt="p1 game piece" />
+                  <img src={p1Image} className="piece" alt="p1 game piece" />
                 ) : null}
                 {counterP2 === 12 ? (
-                  <img className="piece two" src={Piece2} alt="p2 game piece" />
+                  <img
+                    className="piece two"
+                    src={p2Image}
+                    alt="p2 game piece"
+                  />
                 ) : null}
                 <div className="prop-name-right-smaller">LaoMan</div>
                 <div className="prop-price-right">140rmb</div>
@@ -738,10 +912,10 @@ export const Board = ({
           </div>
           <div id="13" className="right-space">
             {counterP1 === 13 ? (
-              <img src={Piece1} className="piece" alt="p1 game piece" />
+              <img src={p1Image} className="piece" alt="p1 game piece" />
             ) : null}
             {counterP2 === 13 ? (
-              <img className="piece two" src={Piece2} alt="p2 game piece" />
+              <img className="piece two" src={p2Image} alt="p2 game piece" />
             ) : null}
             <div className="right-rr-container">
               <div>
@@ -762,10 +936,14 @@ export const Board = ({
               <div className="right-section-left purple"></div>
               <div className="main-section-right">
                 {counterP1 === 14 ? (
-                  <img src={Piece1} className="piece" alt="p1 game piece" />
+                  <img src={p1Image} className="piece" alt="p1 game piece" />
                 ) : null}
                 {counterP2 === 14 ? (
-                  <img className="piece two" src={Piece2} alt="p2 game piece" />
+                  <img
+                    className="piece two"
+                    src={p2Image}
+                    alt="p2 game piece"
+                  />
                 ) : null}
                 <div className="text-container">
                   <div className="prop-name-right-bigger">
@@ -781,10 +959,14 @@ export const Board = ({
               <div className="right-section-left purple"></div>
               <div className="main-section-right">
                 {counterP1 === 15 ? (
-                  <img src={Piece1} className="piece" alt="p1 game piece" />
+                  <img src={p1Image} className="piece" alt="p1 game piece" />
                 ) : null}
                 {counterP2 === 15 ? (
-                  <img className="piece two" src={Piece2} alt="p2 game piece" />
+                  <img
+                    className="piece two"
+                    src={p2Image}
+                    alt="p2 game piece"
+                  />
                 ) : null}
                 <div className="text-container">
                   <div className="prop-name-right-bigger">
@@ -797,10 +979,10 @@ export const Board = ({
           </div>
           <div id="16" className="right-space">
             {counterP1 === 16 ? (
-              <img src={Piece1} className="piece" alt="p1 game piece" />
+              <img src={p1Image} className="piece" alt="p1 game piece" />
             ) : null}
             {counterP2 === 16 ? (
-              <img className="piece two" src={Piece2} alt="p2 game piece" />
+              <img className="piece two" src={p2Image} alt="p2 game piece" />
             ) : null}
             <div className="right-rr-container">
               <div>
@@ -821,10 +1003,14 @@ export const Board = ({
               <div className="right-section-left orange"></div>
               <div className="main-section-right">
                 {counterP1 === 17 ? (
-                  <img src={Piece1} className="piece" alt="p1 game piece" />
+                  <img src={p1Image} className="piece" alt="p1 game piece" />
                 ) : null}
                 {counterP2 === 17 ? (
-                  <img className="piece two" src={Piece2} alt="p2 game piece" />
+                  <img
+                    className="piece two"
+                    src={p2Image}
+                    alt="p2 game piece"
+                  />
                 ) : null}
                 <div className="text-container">
                   <div className="prop-name-right">
@@ -837,10 +1023,10 @@ export const Board = ({
           </div>
           <div id="18" className="right-space">
             {counterP1 === 18 ? (
-              <img src={Piece1} className="piece" alt="p1 game piece" />
+              <img src={p1Image} className="piece" alt="p1 game piece" />
             ) : null}
             {counterP2 === 18 ? (
-              <img className="piece two" src={Piece2} alt="p2 game piece" />
+              <img className="piece two" src={p2Image} alt="p2 game piece" />
             ) : null}
             <div className="right-rr-container guanxi">
               <div>
@@ -860,10 +1046,14 @@ export const Board = ({
               <div className="right-section-left orange"></div>
               <div className="main-section-right">
                 {counterP1 === 19 ? (
-                  <img src={Piece1} className="piece" alt="p1 game piece" />
+                  <img src={p1Image} className="piece" alt="p1 game piece" />
                 ) : null}
                 {counterP2 === 19 ? (
-                  <img className="piece two" src={Piece2} alt="p2 game piece" />
+                  <img
+                    className="piece two"
+                    src={p2Image}
+                    alt="p2 game piece"
+                  />
                 ) : null}
                 <div className="text-container">
                   <div className="prop-name-right-smaller-temple">
@@ -879,10 +1069,14 @@ export const Board = ({
               <div className="right-section-left orange"></div>
               <div className="main-section-right">
                 {counterP1 === 20 ? (
-                  <img src={Piece1} className="piece" alt="p1 game piece" />
+                  <img src={p1Image} className="piece" alt="p1 game piece" />
                 ) : null}
                 {counterP2 === 20 ? (
-                  <img className="piece two" src={Piece2} alt="p2 game piece" />
+                  <img
+                    className="piece two"
+                    src={p2Image}
+                    alt="p2 game piece"
+                  />
                 ) : null}
                 <div className="text-container">
                   <div className="prop-name-right-smaller-da">
@@ -896,10 +1090,10 @@ export const Board = ({
         </div>
         <div id="21" className="right-corner-bottom">
           {counterP1 === 21 ? (
-            <img src={Piece1} className="piece" alt="p1 game piece" />
+            <img src={p1Image} className="piece" alt="p1 game piece" />
           ) : null}
           {counterP2 === 21 ? (
-            <img className="piece two" src={Piece2} alt="p2 game piece" />
+            <img className="piece two" src={p2Image} alt="p2 game piece" />
           ) : null}
           <div className="go-to-jail-container">
             <img src={police} className="police-image" alt="police" />
