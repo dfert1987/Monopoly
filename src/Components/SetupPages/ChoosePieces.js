@@ -46,8 +46,6 @@ export const ChoosePieces = () => {
   const [piece1, setPiece1] = useState(0);
   const [piece2, setPiece2] = useState(0);
 
-  console.log(chosenLeft);
-
   const setStuff = () => {
     setChosenLeft(true);
     setPiecePlayer1(piece1);
@@ -59,6 +57,75 @@ export const ChoosePieces = () => {
     setPiecePlayer2(piece2);
     setDisabledRight(true);
   };
+
+  const getText = () => {
+    if (piecePlayer1 === 0) {
+      return "Selected: TRIKE";
+    } else if (piecePlayer1 === 1) {
+      return "Selected: YELLOW WEASEL";
+    } else if (piecePlayer1 === 2) {
+      return "Selected: BAIJIU";
+    } else if (piecePlayer1 === 3) {
+      return "Selected: SLEEPY BAOAN";
+    } else if (piecePlayer1 === 4) {
+      return "Selected: BAOZI";
+    } else if (piecePlayer1 === 5) {
+      return "Selected: ROAST DUCK";
+    } else if (piecePlayer1 === 6) {
+      return "Selected: FU DOG";
+    } else if (piecePlayer1 === 7) {
+      return "Selected: JIAOZI";
+    } else if (piecePlayer1 === 8) {
+      return "Selected: LANTERN";
+    } else if (piecePlayer1 === 9) {
+      return "Selected: MOBIKE";
+    } else if (piecePlayer1 === 10) {
+      return "Selected: MORGAN";
+    } else if (piecePlayer1 === 11) {
+      return "Selected: POODLE";
+    } else if (piecePlayer1 === 12) {
+      return "Selected: TAXI";
+    } else if (piecePlayer1 === 13) {
+      return "Selected: TEAPOT";
+    } else if (piecePlayer1 === 14) {
+      return "Selected: YANJING";
+    } else return null;
+  };
+
+  const getTextRight = () => {
+    if (piecePlayer2 === 0) {
+      return "Selected: TRIKE";
+    } else if (piecePlayer2 === 1) {
+      return "Selected: YELLOW WEASEL";
+    } else if (piecePlayer2 === 2) {
+      return "Selected: BAIJIU";
+    } else if (piecePlayer2 === 3) {
+      return "Selected: SLEEPY BAOAN";
+    } else if (piecePlayer2 === 4) {
+      return "Selected: BAOZI";
+    } else if (piecePlayer2 === 5) {
+      return "Selected: ROAST DUCK";
+    } else if (piecePlayer2 === 6) {
+      return "Selected: FU DOG";
+    } else if (piecePlayer2 === 7) {
+      return "Selected: JIAOZI";
+    } else if (piecePlayer2 === 8) {
+      return "Selected: LANTERN";
+    } else if (piecePlayer2 === 9) {
+      return "Selected: MOBIKE";
+    } else if (piecePlayer2 === 10) {
+      return "Selected: MORGAN";
+    } else if (piecePlayer2 === 11) {
+      return "Selected: POODLE";
+    } else if (piecePlayer2 === 12) {
+      return "Selected: TAXI";
+    } else if (piecePlayer2 === 13) {
+      return "Selected: TEAPOT";
+    } else if (piecePlayer2 === 14) {
+      return "Selected: YANJING";
+    } else return null;
+  };
+
   return (
     <div className="page-container">
       <div className="title-container">
@@ -90,6 +157,7 @@ export const ChoosePieces = () => {
             <CarouselItem>{slides[14]}</CarouselItem>
           </Carousel>
           <div className="select-container">
+            {disabledLeft ? <h3 className="chosen-text">{getText()}</h3> : null}
             <button
               className="select-piece"
               onClick={setStuff}
@@ -124,6 +192,9 @@ export const ChoosePieces = () => {
             <CarouselItem>{slides[14]}</CarouselItem>
           </Carousel>
           <div className="select-container">
+            {chosenRight ? (
+              <h3 className="chosen-text">{getTextRight()}</h3>
+            ) : null}
             <button
               className="select-piece"
               onClick={setStuffRight}

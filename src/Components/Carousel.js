@@ -72,6 +72,8 @@ const Carousel = ({
       return true;
     } else if (buttonType === "next" && activeIndex === 14) {
       return true;
+    } else if (chosenLeft || chosenRight) {
+      return true;
     } else return false;
   };
 
