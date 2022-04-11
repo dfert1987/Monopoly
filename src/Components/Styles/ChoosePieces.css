@@ -110,6 +110,6 @@
   text-align: center;
 }
 
-img {
-  height: 12em;
+.chosen {
+  opacity: 50%;
 }

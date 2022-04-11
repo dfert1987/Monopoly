@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import Carousel, { CarouselItem } from "../Carousel";
 import baijiu from "../../Assets/Pieces/baijiu.png";
 import baoan from "../../Assets/Pieces/baoan.png";
@@ -37,22 +37,28 @@ let slides = [
 ];
 
 export const ChoosePieces = () => {
-  const [piecePlayer1, setPiecePlayer1] = useState(null);
-  const [piecePlayer2, setPiecePlayer2] = useState(null);
+  const [piecePlayer1, setPiecePlayer1] = useState(0);
+  const [piecePlayer2, setPiecePlayer2] = useState(0);
+  const [chosenLeft, setChosenLeft] = useState(false);
+  const [chosenRight, setChosenRight] = useState(false);
+  const [disabledLeft, setDisabledLeft] = useState(false);
+  const [disabledRight, setDisabledRight] = useState(false);
   const [piece1, setPiece1] = useState(0);
   const [piece2, setPiece2] = useState(0);
 
-  console.log(piecePlayer1);
-  console.log(piecePlayer2);
+  console.log(chosenLeft);
 
-  const disable = (side) => {
-    if (side === "left" && piecePlayer1 !== null) {
-      return true;
-    } else if (side === "right" && piecePlayer2 !== null) {
-      return true;
-    } else return false;
+  const setStuff = () => {
+    setChosenLeft(true);
+    setPiecePlayer1(piece1);
+    setDisabledLeft(true);
   };
 
+  const setStuffRight = () => {
+    setChosenRight(true);
+    setPiecePlayer2(piece2);
+    setDisabledRight(true);
+  };
   return (
     <div className="page-container">
       <div className="title-container">
@@ -65,6 +71,7 @@ export const ChoosePieces = () => {
             className="carousel-in-pieces"
             piece1={piece1}
             setPiece1={setPiece1}
+            chosenLeft={chosenLeft}
           >
             <CarouselItem>{slides[0]}</CarouselItem>
             <CarouselItem>{slides[1]}</CarouselItem>
@@ -85,8 +92,8 @@ export const ChoosePieces = () => {
           <div className="select-container">
             <button
               className="select-piece"
-              onClick={() => setPiecePlayer1(piece1)}
-              disabled={disable("left")}
+              onClick={setStuff}
+              disabled={disabledLeft}
             >
               SELECT
             </button>
@@ -98,6 +105,7 @@ export const ChoosePieces = () => {
             className="carousel-in-pieces"
             piece2={piece2}
             setPiece2={setPiece2}
+            chosenRight={chosenRight}
           >
             <CarouselItem>{slides[0]}</CarouselItem>
             <CarouselItem>{slides[1]}</CarouselItem>
@@ -118,8 +126,8 @@ export const ChoosePieces = () => {
           <div className="select-container">
             <button
               className="select-piece"
-              onClick={() => setPiecePlayer2(piece2)}
-              disabled={disable("right")}
+              onClick={setStuffRight}
+              disabled={disabledRight}
             >
               SELECT
             </button>

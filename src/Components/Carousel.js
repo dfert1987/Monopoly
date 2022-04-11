@@ -9,8 +9,20 @@ export const CarouselItem = ({ children, width }) => {
   );
 };
 
-const Carousel = ({ children, piece1, setPiece1, piece2, setPiece2 }) => {
+const Carousel = ({
+  children,
+  setPiece1,
+  setPiece2,
+  chosenLeft,
+  chosenRight,
+}) => {
   const [activeIndex, setActiveIndex] = useState(0);
+
+  const chosen = () => {
+    if (chosenLeft || chosenRight) {
+      return "selected";
+    } else return null;
+  };
 
   const setText = () => {
     if (activeIndex === 0) {
@@ -57,7 +69,6 @@ const Carousel = ({ children, piece1, setPiece1, piece2, setPiece2 }) => {
 
   const disable = (buttonType) => {
     if (buttonType === "back" && activeIndex === 0) {
-      console.log("true");
       return true;
     } else if (buttonType === "next" && activeIndex === 14) {
       return true;
@@ -65,7 +76,7 @@ const Carousel = ({ children, piece1, setPiece1, piece2, setPiece2 }) => {
   };
 
   return (
-    <div className="carousel">
+    <div className={`carousel ${chosen()}`}>
       <h2 className="choice-name">{setText()}</h2>
       <div
         className="inner"

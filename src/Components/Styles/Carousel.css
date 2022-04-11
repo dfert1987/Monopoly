@@ -2,7 +2,7 @@
   overflow: hidden;
   border-radius: 6px;
   border: 3px solid red;
-  background-color: black;
+  background-color: #fff;
   box-shadow: 3px 3px 6px;
 }
 
@@ -16,8 +16,8 @@
   align-items: center;
   justify-content: center;
   height: 20em;
-  background-color: black;
-  color: #fff;
+  background-color: #fff;
+  color: black;
 }
 
 .carousel-pic {
@@ -90,62 +90,13 @@
 }
 
 .choice-name {
-  color: white;
+  color: black;
   text-align: center;
+  font-family: "Monopoly";
+  font-size: 3em;
   margin-bottom: 0;
 }
 
-.select-piece {
-  color: white;
-  text-shadow: 0 0 2px rgba(0, 0, 0, 0.3);
-  box-shadow: inset 0 0 2px 0 rgba(255, 255, 255, 0.4),
-    inset 0 0 3px 0 rgba(0, 0, 0, 0.4), inset 0 0 3px 5px rgba(0, 0, 0, 0.05),
-    2px 2px 4px 0 rgba(0, 0, 0, 0.25);
-  border-radius: 4px;
-  line-height: 14px;
-  position: relative;
-  background-color: red;
-  font-family: "Monopoly";
-  font-size: 2em;
-  padding-right: 1em;
-  padding-left: 1em;
-  padding-top: 0.5em;
-  padding-bottom: 0.5em;
-  cursor: pointer;
-  transition: 0.4s;
-}
-
-.select-piece:hover {
-  background-color: rgb(180, 5, 5);
-}
-
-.select-piece:before,
-.select-piece:after {
-  content: "";
-  display: block;
-  position: absolute;
-  left: 4px;
-  right: 4px;
-  height: 6px;
-}
-
-.select-piece:before {
-  top: 0;
-  border-bottom-left-radius: 4px;
-  border-bottom-right-radius: 4px;
-  background: rgba(255, 255, 255, 0.6);
-  box-shadow: 0 1px 2px 0 rgba(255, 255, 255, 0.6);
-}
-
-.select-piece:after {
-  bottom: 0;
-  border-top-left-radius: 4px;
-  border-top-right-radius: 4px;
-  background: rgba(0, 0, 0, 0.15);
-  box-shadow: 0 -1px 2px 0 rgba(0, 0, 0, 0.15);
-}
-
-.select-container {
-  margin-top: 0.5em;
-  text-align: center;
+.selected {
+  opacity: 50%;
 }
