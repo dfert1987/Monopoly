@@ -1,11 +1,12 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Board } from "./Components/Board";
 import { Controls } from "./Components/Controls/Controls";
 import { Properties } from "./Assets/Holdings/Properties";
 import { RailRoads } from "./Assets/Holdings/Railroads";
 import { Utilities } from "./Assets/Holdings/Utilities";
+import { useLocation } from "react-router-dom";
 
-function App() {
+const App = () => {
   const [counterP1, setCounterP1] = useState(13);
   const [counterP2, setCounterP2] = useState(32);
   const [turn, setTurn] = useState(0);
@@ -72,6 +73,16 @@ function App() {
   const [pass, setPass] = useState(false);
   const [pass2, setPass2] = useState(false);
   const [visaModal, setVisaModal] = useState(false);
+  const [p1Pic, setP1Pic] = useState();
+  const [p2Pic, setP2Pic] = useState();
+
+  const location = useLocation();
+  const data = location.state;
+
+  useEffect(() => {
+    setP1Pic(data.p1Piece);
+    setP2Pic(data.p2Piece);
+  }, [data.p1Piece, data.p2Piece]);
 
   return (
     <div className="App">
@@ -202,6 +213,8 @@ function App() {
         setPass2={setPass2}
         visaModal={visaModal}
         setVisaModal={setVisaModal}
+        p1Pic={p1Pic}
+        p2Pic={p2Pic}
       />
       <Controls
         counterP1={counterP1}
@@ -319,6 +332,6 @@ function App() {
       />
     </div>
   );
-}
+};
 
 export default App;

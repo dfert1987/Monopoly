@@ -10,8 +10,8 @@ ReactDOM.render(
   <BrowserRouter>
     <React.StrictMode>
       <Routes>
-        <Route path="app" element={<App />} />
-        <Route path="choosepieces" element={<ChoosePieces />} />
+        <Route path="/app" element={<App />} />
+        <Route path="/choosepieces" element={<ChoosePieces />} />
         <Route path="/" element={<Landing />} />
       </Routes>
     </React.StrictMode>
