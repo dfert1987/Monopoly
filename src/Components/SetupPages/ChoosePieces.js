@@ -133,9 +133,7 @@ export const ChoosePieces = () => {
 
   return (
     <div className="page-container">
-      <div className="title-container">
-        <h1 className="main-title">CHOOSE YOUR PIECE</h1>
-      </div>
+      <h1 className="main-title">CHOOSE YOUR PIECE</h1>
       <div className="carousel-section">
         <div className="carousel-container player1">
           <h2 className="player-choice one">Player One</h2>
@@ -210,11 +208,13 @@ export const ChoosePieces = () => {
           </div>
         </div>
       </div>
-      <div className="button-container">
-        <Link to="/app" state={myData}>
-          <button className="play-button">PLAY</button>
-        </Link>
-      </div>
+      {chosenRight && chosenLeft ? (
+        <div className="button-container">
+          <Link to="/app" state={myData}>
+            <button className="play-button">PLAY</button>
+          </Link>
+        </div>
+      ) : null}
     </div>
   );
 };
