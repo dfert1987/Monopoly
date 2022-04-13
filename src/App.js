@@ -5,6 +5,8 @@ import { Properties } from "./Assets/Holdings/Properties";
 import { RailRoads } from "./Assets/Holdings/Railroads";
 import { Utilities } from "./Assets/Holdings/Utilities";
 import { useLocation } from "react-router-dom";
+import useSound from "use-sound";
+import play from "./Assets/Sounds/play.wav";
 
 const App = () => {
   const [counterP1, setCounterP1] = useState(13);
