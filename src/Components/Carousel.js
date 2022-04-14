@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import useSound from "use-sound";
+import Choose from "../Assets/Sounds/choose.mp3";
 import "./Styles/Carousel.css";
 
 export const CarouselItem = ({ children, width }) => {
@@ -17,6 +19,7 @@ const Carousel = ({
   chosenRight,
 }) => {
   const [activeIndex, setActiveIndex] = useState(0);
+  const [choose] = useSound(Choose);
 
   const chosen = () => {
     if (chosenLeft || chosenRight) {
@@ -65,6 +68,7 @@ const Carousel = ({
       newIndex = React.Children.count(children) - 1;
     }
     setActiveIndex(newIndex);
+    choose();
   };
 
   const disable = (buttonType) => {

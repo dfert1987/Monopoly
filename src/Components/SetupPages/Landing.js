@@ -4,35 +4,12 @@ import { motion } from "framer-motion";
 import { pageAnimation } from "../../Transitions/Index";
 import logomon from "../../Assets/Landing/logomon.png";
 import monoplaoren from "../../Assets/Landing/monoplaoren.png";
-import useSound from "use-sound";
 import Gong from "../../Assets/Sounds/GONG.mp3";
-import Erhu from "../../Assets/Sounds/Erhu.mp3";
 import "../Styles/Landing.css";
+import useSound from "use-sound";
 
-export const Landing = () => {
-  const [playOk, setPlayOk] = useState(true);
-  const [playing, setPlaying] = useState(false);
-  const [playErhu, { stop }] = useSound(Erhu);
+const Landing = () => {
   const [playGong] = useSound(Gong);
-
-  const mouseOn = () => {
-    if (playOk === true && playing === false) {
-      playErhu();
-      setPlaying(true);
-    } else return null;
-  };
-
-  const handlePlay = () => {
-    setPlayOk(true);
-    playErhu();
-    setPlaying(true);
-  };
-
-  const stopMusic = () => {
-    setPlayOk(false);
-    setPlaying(false);
-    stop();
-  };
 
   return (
     <motion.div
@@ -42,18 +19,7 @@ export const Landing = () => {
       exit="out"
       variants={pageAnimation}
     >
-      <div className="page-container" onMouseOver={mouseOn}>
-        <div className="music-button-container">
-          {playing ? (
-            <button className="play" onClick={stopMusic}>
-              STOP Music
-            </button>
-          ) : (
-            <button className="play" onClick={handlePlay}>
-              PLAY
-            </button>
-          )}
-        </div>
+      <div className="page-container">
         <div className="logo-with-man">
           <div className="logo-and-button">
             <div className="logo-container">
