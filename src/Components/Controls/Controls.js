@@ -99,6 +99,10 @@ export const Controls = ({
   setP1Money,
   setP2Money,
   setVisaModal,
+  mortgage,
+  setMortgage,
+  mortgage2,
+  setMortgage2,
 }) => {
   const [disableVisaRight, setDisableVisaRight] = useState(true);
   const [disableVisaLeft, setDisableVisaLeft] = useState(true);
@@ -143,6 +147,16 @@ export const Controls = ({
   const visaClick = () => {
     clickSound();
     setVisaModal(true);
+  };
+
+  const motrtgageClick = () => {
+    clickSound();
+    setMortgage(true);
+  };
+
+  const motrtgageClick2 = () => {
+    clickSound();
+    setMortgage2(true);
   };
 
   const visa2Click = () => {
@@ -235,6 +249,13 @@ export const Controls = ({
             </button>
             <button
               className="properties-view-button"
+              disabled={disableLeft}
+              onClick={motrtgageClick}
+            >
+              Mortgage
+            </button>
+            <button
+              className="properties-view-button"
               disabled={disableVisaLeft}
               onClick={visaClick}
             >
@@ -253,6 +274,13 @@ export const Controls = ({
               onClick={properties2Click}
             >
               VIEW ASSETS
+            </button>
+            <button
+              className="properties-view-button"
+              disabled={disableRight}
+              onClick={motrtgageClick2}
+            >
+              Mortgage
             </button>
             <button
               className="properties-view-button"

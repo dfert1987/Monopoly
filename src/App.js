@@ -75,6 +75,8 @@ const App = () => {
   const [visaModal, setVisaModal] = useState(false);
   const [p1Pic, setP1Pic] = useState();
   const [p2Pic, setP2Pic] = useState();
+  const [mortgage, setMortgage] = useState(false);
+  const [mortgage2, setMortgage2] = useState(false);
 
   const location = useLocation();
   const data = location.state;
@@ -215,6 +217,10 @@ const App = () => {
         setVisaModal={setVisaModal}
         p1Pic={p1Pic}
         p2Pic={p2Pic}
+        mortgage={mortgage}
+        setMortgage={setMortgage}
+        morgage2={mortgage2}
+        setMortgage2={setMortgage2}
       />
       <Controls
         counterP1={counterP1}
@@ -329,6 +335,10 @@ const App = () => {
         setPass2={setPass2}
         visaModal={visaModal}
         setVisaModal={setVisaModal}
+        mortgage={mortgage}
+        setMortgage={setMortgage}
+        morgage2={mortgage2}
+        setMortgage2={setMortgage2}
       />
     </div>
   );
