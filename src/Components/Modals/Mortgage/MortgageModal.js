@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { faXmark } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -16,6 +16,23 @@ const MortgageModal = ({
   properties,
   setProperties,
 }) => {
+  const [mortgageable, setMortgageable] = useState([]);
+  const [mortgageable2, setMortgageable2] = useState([]);
+
+  useEffect(() => {
+    if (mortgage) {
+      let p1Options = properties.filter(
+        (property) => property.ownedP1 === true && property.mortgaged === false
+      );
+      setMortgageable(p1Options);
+    } else if (mortgage2) {
+      let p2Options = properties.filter(
+        (property) => property.ownedP2 === true && property.mortgaged === false
+      );
+      setMortgageable2(p2Options);
+    }
+  }, [mortgage, mortgage2, properties]);
+
   const backdrop = {
     visible: { opacity: 1 },
     hidden: { opacity: 0 },
@@ -61,6 +78,9 @@ const MortgageModal = ({
                   <button className="close-button" onClick={handleClose}>
                     <FontAwesomeIcon className="x-icon free" icon={faXmark} />
                   </button>
+                  {mortgageable || mortgageable2 ? (
+                    <div className="mortgage-ui">MORTGAGE</div>
+                  ) : null}
                 </div>
               </div>
             </motion.div>
