@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import Carousel, { CarouselItem } from "../Carousel";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
