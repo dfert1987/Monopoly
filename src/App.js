@@ -335,9 +335,7 @@ const App = () => {
         setPass2={setPass2}
         visaModal={visaModal}
         setVisaModal={setVisaModal}
-        mortgage={mortgage}
         setMortgage={setMortgage}
-        morgage2={mortgage2}
         setMortgage2={setMortgage2}
       />
     </div>
