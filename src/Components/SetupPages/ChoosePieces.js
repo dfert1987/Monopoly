@@ -3,6 +3,9 @@ import Carousel, { CarouselItem } from "../Carousel";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { pageAnimation } from "../../Transitions/Index";
+import useSound from "use-sound";
+import Drum from "../../Assets/Sounds/drum.mp3";
+import Gong from "../../Assets/Sounds/GONG.mp3";
 import baijiu from "../../Assets/Pieces/baijiu.png";
 import baoan from "../../Assets/Pieces/baoan.png";
 import baozi from "../../Assets/Pieces/baozi.png";
@@ -38,7 +41,7 @@ let slides = [
   <img src={yanjing} alt="yanjing" className="carousel-pic" />,
 ];
 
-export const ChoosePieces = () => {
+const ChoosePieces = () => {
   const [piecePlayer1, setPiecePlayer1] = useState(0);
   const [piecePlayer2, setPiecePlayer2] = useState(0);
   const [chosenLeft, setChosenLeft] = useState(false);
@@ -47,6 +50,9 @@ export const ChoosePieces = () => {
   const [disabledRight, setDisabledRight] = useState(false);
   const [piece1, setPiece1] = useState(0);
   const [piece2, setPiece2] = useState(0);
+
+  const [drum] = useSound(Drum);
+  const [gong] = useSound(Gong);
 
   const myData = {
     p1Piece: piecePlayer1,
@@ -57,12 +63,14 @@ export const ChoosePieces = () => {
     setChosenLeft(true);
     setPiecePlayer1(piece1);
     setDisabledLeft(true);
+    drum();
   };
 
   const setStuffRight = () => {
     setChosenRight(true);
     setPiecePlayer2(piece2);
     setDisabledRight(true);
+    drum();
   };
 
   const getText = () => {
@@ -219,7 +227,9 @@ export const ChoosePieces = () => {
       {chosenRight && chosenLeft ? (
         <div className="button-container">
           <Link to="/app" state={myData}>
-            <button className="play-button">PLAY</button>
+            <button className="play-button" onClick={gong}>
+              PLAY
+            </button>
           </Link>
         </div>
       ) : null}

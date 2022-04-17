@@ -4,9 +4,13 @@ import { motion } from "framer-motion";
 import { pageAnimation } from "../../Transitions/Index";
 import logomon from "../../Assets/Landing/logomon.png";
 import monoplaoren from "../../Assets/Landing/monoplaoren.png";
+import Gong from "../../Assets/Sounds/GONG.mp3";
 import "../Styles/Landing.css";
+import useSound from "use-sound";
 
-export const Landing = () => {
+const Landing = () => {
+  const [playGong] = useSound(Gong);
+
   return (
     <motion.div
       className="landing"
@@ -23,7 +27,9 @@ export const Landing = () => {
             </div>
             <div className="button-container">
               <Link to="/choosepieces">
-                <button className="play-button">PLAY</button>
+                <button onClick={playGong} className="play-button">
+                  PLAY
+                </button>
               </Link>
             </div>
           </div>

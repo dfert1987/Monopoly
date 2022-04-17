@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { Roll } from "./Roll";
 import { RollP2 } from "./RollP2";
+import Click from "../../Assets/Sounds/click.mp3";
+import useSound from "use-sound";
 import "../../Components/Styles/Controls.css";
 
 export const Controls = ({
@@ -100,6 +102,9 @@ export const Controls = ({
 }) => {
   const [disableVisaRight, setDisableVisaRight] = useState(true);
   const [disableVisaLeft, setDisableVisaLeft] = useState(true);
+
+  const [clickSound] = useSound(Click);
+
   useEffect(() => {
     if (pass2) {
       setTimeout(() => {
@@ -134,6 +139,26 @@ export const Controls = ({
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [turn, visa1, visa2, pass2, setPass2, pass, setPass]);
+
+  const visaClick = () => {
+    clickSound();
+    setVisaModal(true);
+  };
+
+  const visa2Click = () => {
+    clickSound();
+    setVisaModal(true);
+  };
+
+  const propertiesClick = () => {
+    clickSound();
+    setViewProperties(true);
+  };
+
+  const properties2Click = () => {
+    clickSound();
+    setViewProperties2(true);
+  };
 
   return (
     <div className="controls-container">
@@ -204,14 +229,14 @@ export const Controls = ({
             <button
               className="properties-view-button"
               disabled={disableLeft}
-              onClick={() => setViewProperties(true)}
+              onClick={propertiesClick}
             >
               VIEW ASSETS
             </button>
             <button
               className="properties-view-button"
               disabled={disableVisaLeft}
-              onClick={() => setVisaModal(true)}
+              onClick={visaClick}
             >
               USE VISA
             </button>
@@ -225,14 +250,14 @@ export const Controls = ({
             <button
               className="properties-view-button"
               disabled={disableRight}
-              onClick={() => setViewProperties2(true)}
+              onClick={properties2Click}
             >
               VIEW ASSETS
             </button>
             <button
               className="properties-view-button"
               disabled={disableVisaRight}
-              onClick={() => setVisaModal(true)}
+              onClick={visa2Click}
             >
               USE VISA
             </button>

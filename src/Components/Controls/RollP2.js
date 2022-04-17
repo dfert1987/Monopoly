@@ -1,4 +1,16 @@
 import React, { useState } from "react";
+import useSound from "use-sound";
+import Two from "../../Assets/Sounds/Dice/Two.mp3";
+import Three from "../../Assets/Sounds/Dice/Three.mp3";
+import Four from "../../Assets/Sounds/Dice/Four.mp3";
+import Five from "../../Assets/Sounds/Dice/Five.mp3";
+import Six from "../../Assets/Sounds/Dice/SIX.mp3";
+import Seven from "../../Assets/Sounds/Dice/seven.mp3";
+import Eight from "../../Assets/Sounds/Dice/eight.mp3";
+import Nine from "../../Assets/Sounds/Dice/nine.mp3";
+import Ten from "../../Assets/Sounds/Dice/ten.mp3";
+import Eleven from "../../Assets/Sounds/Dice/eleven.mp3";
+import Twelve from "../../Assets/Sounds/Dice/twelve.mp3";
 import dice1 from "../../Assets/Dice/dice1.png";
 import dice2 from "../../Assets/Dice/dice2.png";
 import dice3 from "../../Assets/Dice/dice3.png";
@@ -39,7 +51,6 @@ export const RollP2 = ({
   skip1,
   setSkip1,
   setOnGoP2,
-  pass2,
   setPass2,
   setP2Money,
   p2Money,
@@ -48,6 +59,17 @@ export const RollP2 = ({
   const [die4, setDie4] = useState(1);
   const [p2Die1Img, setP2Die1Img] = useState();
   const [p2Die2Img, setP2Die2Img] = useState(dice1);
+  const [two] = useSound(Two);
+  const [three] = useSound(Three);
+  const [four] = useSound(Four);
+  const [five] = useSound(Five);
+  const [six] = useSound(Six);
+  const [seven] = useSound(Seven);
+  const [eight] = useSound(Eight);
+  const [nine] = useSound(Nine);
+  const [ten] = useSound(Ten);
+  const [eleven] = useSound(Eleven);
+  const [twelve] = useSound(Twelve);
 
   const dieImages1 = (first, pair) => {
     if (pair === "two") {
@@ -103,6 +125,39 @@ export const RollP2 = ({
     let second = Math.floor(Math.random() * (max - min + 1)) + min;
     if (first === second) {
       setTurn(turn + 2);
+    }
+    if (first + second === 2) {
+      two();
+    }
+    if (first + second === 3) {
+      three();
+    }
+    if (first + second === 4) {
+      four();
+    }
+    if (first + second === 5) {
+      five();
+    }
+    if (first + second === 6) {
+      six();
+    }
+    if (first + second === 7) {
+      seven();
+    }
+    if (first + second === 8) {
+      eight();
+    }
+    if (first + second === 9) {
+      nine();
+    }
+    if (first + second === 10) {
+      ten();
+    }
+    if (first + second === 11) {
+      eleven();
+    }
+    if (first + second === 12) {
+      twelve();
     }
     if (skip1 === true) {
       setTurn(turn + 2);
