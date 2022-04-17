@@ -1,0 +1,31 @@
+.carousel-item {
+  display: flex;
+  flex-direction: column;
+}
+
+.mortgage-container {
+  border: 2px black solid;
+  width: 40%;
+}
+
+.top-square.mortgage-top {
+  border-bottom: 2px solid black;
+  height: 4em;
+}
+
+.property-name {
+  margin-top: 0;
+  font-family: "Monopoly";
+  font-size: 2em;
+  padding-top: 0.25em;
+  text-shadow: white 2px 2px 2px;
+}
+
+.white-part-mortgage {
+  height: 12em;
+}
+
+.mortgage-text-container {
+  font-family: "Monopoly";
+  font-size: 2.5em;
+}

@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import MortgageCarousel, { MortgageItem } from "./MortgageCarousel";
 import { motion, AnimatePresence } from "framer-motion";
 import { faXmark } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -18,6 +19,8 @@ const MortgageModal = ({
 }) => {
   const [mortgageable, setMortgageable] = useState([]);
   const [mortgageable2, setMortgageable2] = useState([]);
+  const [mortgageProp, setMortgageProp] = useState(0);
+  const [chosenProp, setChosenProp] = useState(false);
 
   useEffect(() => {
     if (mortgage) {
@@ -32,6 +35,34 @@ const MortgageModal = ({
       setMortgageable2(p2Options);
     }
   }, [mortgage, mortgage2, properties]);
+
+  const setCarouselItems = () => {
+    if (mortgageable.length) {
+      return mortgageable.map((property, index) => {
+        console.log(property.name);
+        console.log(property);
+        return (
+          <MortgageItem
+            property={property}
+            className="mortgage-card"
+            key={index}
+          >
+            <div className="mortgage-container">
+              <div className={`top-square mortgage-top ${property.color}`}>
+                <p className="property-name">{property.Name}</p>
+              </div>
+              <div className="white-part-mortgage">
+                <div className="mortgage-text-container">
+                  <p className="mortgage-amount"> Mortgage Value: </p>
+                  <p className="mortgage-amount">{property.mortgage}RMB</p>
+                </div>
+              </div>
+            </div>
+          </MortgageItem>
+        );
+      });
+    }
+  };
 
   const backdrop = {
     visible: { opacity: 1 },
@@ -67,21 +98,38 @@ const MortgageModal = ({
             exit="hidden"
           >
             <motion.div
-              className="flex flexColumn innerModalPurchase"
+              className="flex flexColumn innerModal"
               variants={modal}
               initial="hidden"
               animate="visible"
               exit="hidden"
             >
-              <div className="main-mortgage">
-                <div className="button-row">
-                  <button className="close-button" onClick={handleClose}>
-                    <FontAwesomeIcon className="x-icon free" icon={faXmark} />
-                  </button>
-                  {mortgageable || mortgageable2 ? (
-                    <div className="mortgage-ui">MORTGAGE</div>
-                  ) : null}
-                </div>
+              <div className="button-row">
+                <button className="close-button" onClick={handleClose}>
+                  <FontAwesomeIcon className="x-icon free" icon={faXmark} />
+                </button>
+              </div>
+              <h3 className="mortgage-title">Choose A Property:</h3>
+              <div className="main-part">
+                {mortgageable || mortgageable2 ? (
+                  <div className="mortgage-ui">
+                    <MortgageCarousel
+                      className="carousel-in-pieces mortgage-car"
+                      mortgageable={mortgageable}
+                      mortgageProp={mortgageProp}
+                      setMortgageProp={setMortgageProp}
+                      chosenProp={chosenProp}
+                    >
+                      {setCarouselItems()}
+                    </MortgageCarousel>
+                  </div>
+                ) : (
+                  <>
+                    <h3 className="no-props-text">
+                      You don't have any poroperties to mortgage.
+                    </h3>
+                  </>
+                )}
               </div>
             </motion.div>
           </motion.div>
