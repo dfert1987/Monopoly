@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import MortgageCarousel, { MortgageItem } from "./MortgageCarousel";
+import ConfirmModal from "./ConfirmModal";
 import { motion, AnimatePresence } from "framer-motion";
 import { faXmark } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -21,6 +22,8 @@ const MortgageModal = ({
   const [mortgageable2, setMortgageable2] = useState([]);
   const [mortgageProp, setMortgageProp] = useState(0);
   const [chosenProp, setChosenProp] = useState(false);
+  const [mortgageMoney, setMortgageMoney] = useState(0);
+  const [confirmModalView, setConfirmModalView] = useState(false);
 
   useEffect(() => {
     if (mortgage) {
@@ -39,13 +42,12 @@ const MortgageModal = ({
   const setCarouselItems = () => {
     if (mortgageable.length) {
       return mortgageable.map((property, index) => {
-        console.log(property.name);
-        console.log(property);
         return (
           <MortgageItem
             property={property}
             className="mortgage-card"
             key={index}
+            setMortgageMoney={setMortgageMoney}
           >
             <div className="mortgage-container">
               <div className={`top-square mortgage-top ${property.color}`}>
@@ -112,17 +114,25 @@ const MortgageModal = ({
               <h3 className="mortgage-title">Choose A Property:</h3>
               <div className="main-part">
                 {mortgageable || mortgageable2 ? (
-                  <div className="mortgage-ui">
-                    <MortgageCarousel
-                      className="carousel-in-pieces mortgage-car"
-                      mortgageable={mortgageable}
-                      mortgageProp={mortgageProp}
-                      setMortgageProp={setMortgageProp}
-                      chosenProp={chosenProp}
+                  <>
+                    <div className="mortgage-ui">
+                      <MortgageCarousel
+                        className="carousel-in-pieces mortgage-car"
+                        mortgageable={mortgageable}
+                        mortgageProp={mortgageProp}
+                        setMortgageProp={setMortgageProp}
+                        chosenProp={chosenProp}
+                      >
+                        {setCarouselItems()}
+                      </MortgageCarousel>
+                    </div>
+                    <button
+                      className="select-piece"
+                      onClick={() => setConfirmModalView(true)}
                     >
-                      {setCarouselItems()}
-                    </MortgageCarousel>
-                  </div>
+                      SELECT
+                    </button>
+                  </>
                 ) : (
                   <>
                     <h3 className="no-props-text">
@@ -135,6 +145,18 @@ const MortgageModal = ({
           </motion.div>
         ) : null}
       </AnimatePresence>
+      <ConfirmModal
+        confirmModalView={confirmModalView}
+        setConfirmModalView={setConfirmModalView}
+        p1Money={p1Money}
+        p2Money={p2Money}
+        setP1Money={setP1Money}
+        setP2Money={setP2Money}
+        properties={properties}
+        setProperties={setProperties}
+        mortgageable={mortgageable}
+        mortgageProp={mortgageProp}
+      />
     </>
   );
 };
