@@ -77,6 +77,7 @@ const App = () => {
   const [p2Pic, setP2Pic] = useState();
   const [mortgage, setMortgage] = useState(false);
   const [mortgage2, setMortgage2] = useState(false);
+  console.log(properties);
 
   const location = useLocation();
   const data = location.state;

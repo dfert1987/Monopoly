@@ -18,6 +18,8 @@ const ConfirmModal = ({
   setProperties,
   mortgageProp,
   mortgageable,
+  setMortgageable,
+  activeIndex,
 }) => {
   const [click] = useSound(Click);
   const [drum] = useSound(Drum);
@@ -46,24 +48,19 @@ const ConfirmModal = ({
 
   const handleOK = () => {
     if (mortgageable) {
-      let changedProperty = mortgageable[mortgageProp];
-      console.log(changedProperty);
-      console.log(mortgageable, mortgageProp);
+      let changedProperty = mortgageable[activeIndex];
       let updatedProperties = properties.map((property) => {
         if (property.Name === changedProperty.Name) {
-          console.log(property.Name);
           return { ...property, mortgaged: true };
         }
         return property;
       });
-      console.log(updatedProperties);
+      setMortgageable([]);
       setProperties(updatedProperties);
       setConfirmModalView(false);
       drum();
     }
   };
-
-  console.log(properties);
 
   return (
     <AnimatePresence exitBeforeEnter>

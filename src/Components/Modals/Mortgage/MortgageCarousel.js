@@ -16,12 +16,12 @@ const MortgageCarousel = ({
   mortgageProp,
   chosenProp,
   mortgageable,
+  activeIndex,
+  setActiveIndex,
 }) => {
-  const [activeIndex, setActiveIndex] = useState(0);
   const [choose] = useSound(Choose);
 
   const chosen = () => {
-    console.log(chosenProp);
     if (chosenProp) {
       return "selected";
     } else return null;

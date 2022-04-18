@@ -24,6 +24,7 @@ const MortgageModal = ({
   const [chosenProp, setChosenProp] = useState(false);
   const [mortgageMoney, setMortgageMoney] = useState(0);
   const [confirmModalView, setConfirmModalView] = useState(false);
+  const [activeIndex, setActiveIndex] = useState(0);
 
   useEffect(() => {
     if (mortgage) {
@@ -122,6 +123,8 @@ const MortgageModal = ({
                         mortgageProp={mortgageProp}
                         setMortgageProp={setMortgageProp}
                         chosenProp={chosenProp}
+                        activeIndex={activeIndex}
+                        setActiveIndex={setActiveIndex}
                       >
                         {setCarouselItems()}
                       </MortgageCarousel>
@@ -156,6 +159,8 @@ const MortgageModal = ({
         setProperties={setProperties}
         mortgageable={mortgageable}
         mortgageProp={mortgageProp}
+        setMortgageable={setMortgageable}
+        activeIndex={activeIndex}
       />
     </>
   );
