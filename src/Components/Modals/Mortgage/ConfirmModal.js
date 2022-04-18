@@ -18,7 +18,7 @@ const ConfirmModal = ({
   setProperties,
   mortgageable,
   mortgageable2,
-  setMorgageable2,
+  setMortgageable2,
   setMortgageable,
   activeIndex,
   setMortgagedPropName,
@@ -51,13 +51,16 @@ const ConfirmModal = ({
 
   const handleClose = () => {
     setConfirmModalView(false);
-    setMortgageable([]);
-    setMorgageable2([]);
+    setMortgageable();
+    setMortgageable2();
     click();
   };
 
+  console.log(mortgageable, mortgageable2);
+
   const handleOK = () => {
-    if (mortgageable) {
+    console.log(mortgageable);
+    if (mortgageable !== undefined) {
       let changedProperty = mortgageable[activeIndex];
       let updatedProperties = properties.map((property) => {
         if (property.Name === changedProperty.Name) {
@@ -65,7 +68,7 @@ const ConfirmModal = ({
         }
         return property;
       });
-      setMortgageable([]);
+      setMortgageable();
       let updatedMoney = p1Money + changedProperty.mortgage;
       setP1Money(updatedMoney);
       setProperties(updatedProperties);
@@ -84,7 +87,7 @@ const ConfirmModal = ({
         }
         return property;
       });
-      setMorgageable2([]);
+      setMortgageable2();
       let updatedMoney = p2Money + changedProperty.mortgage;
       setP2Money(updatedMoney);
       setProperties(updatedProperties);

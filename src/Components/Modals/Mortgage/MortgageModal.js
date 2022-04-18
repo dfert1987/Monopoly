@@ -18,8 +18,8 @@ const MortgageModal = ({
   properties,
   setProperties,
 }) => {
-  const [mortgageable, setMortgageable] = useState([]);
-  const [mortgageable2, setMortgageable2] = useState([]);
+  const [mortgageable, setMortgageable] = useState();
+  const [mortgageable2, setMortgageable2] = useState();
   const [mortgageProp, setMortgageProp] = useState(0);
   const [confirmModalView, setConfirmModalView] = useState(false);
   const [activeIndex, setActiveIndex] = useState(0);
@@ -41,7 +41,7 @@ const MortgageModal = ({
   }, [mortgage, mortgage2, properties]);
 
   const setCarouselItems = () => {
-    if (mortgageable.length) {
+    if (mortgageable) {
       return mortgageable.map((property, index) => {
         return (
           <MortgageItem
@@ -63,7 +63,7 @@ const MortgageModal = ({
           </MortgageItem>
         );
       });
-    } else if (mortgageable2.length) {
+    } else if (mortgageable2) {
       return mortgageable2.map((property, index) => {
         return (
           <MortgageItem
@@ -108,8 +108,8 @@ const MortgageModal = ({
   const handleClose = (e) => {
     setMortgage(false);
     setMortgage2(false);
-    setMortgageable([]);
-    setMortgageable2([]);
+    setMortgageable();
+    setMortgageable2();
   };
 
   return (
@@ -142,7 +142,7 @@ const MortgageModal = ({
                 </h3>
               ) : null}
               <div className="main-part">
-                {mortgageable.length ? (
+                {mortgageable ? (
                   <>
                     <div className="mortgage-ui">
                       <MortgageCarousel
@@ -164,7 +164,7 @@ const MortgageModal = ({
                     </button>
                   </>
                 ) : null}
-                {mortgageable2.length ? (
+                {mortgageable2 ? (
                   <>
                     <div className="mortgage-ui">
                       <MortgageCarousel
@@ -186,7 +186,7 @@ const MortgageModal = ({
                     </button>
                   </>
                 ) : null}
-                {!mortgageable2.length && !mortgageable.length ? (
+                {!mortgageable2 && !mortgageable ? (
                   <>
                     <h3 className="no-props-text">
                       You don't have any poroperties to mortgage.
@@ -208,9 +208,10 @@ const MortgageModal = ({
         properties={properties}
         setProperties={setProperties}
         mortgageable={mortgageable}
+        mortgageable2={mortgageable2}
         mortgageProp={mortgageProp}
         setMortgageable={setMortgageable}
-        setMorgageable2={setMortgageable2}
+        setMortgageable2={setMortgageable2}
         activeIndex={activeIndex}
         setMortgagedPropName={setMortgagedPropName}
         setMortgagedMessage={setMortgagedMessage}
