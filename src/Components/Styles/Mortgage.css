@@ -1,6 +1,7 @@
 .carousel-item {
   display: flex;
   flex-direction: column;
+  padding-top: 1em;
 }
 
 .mortgage-container {
@@ -28,4 +29,28 @@
 .mortgage-text-container {
   font-family: "Monopoly";
   font-size: 2.5em;
+}
+
+.mortgage-title {
+  font-family: "Monopoly";
+  font-size: 2.5em;
+  padding-bottom: 0.5em;
+  margin: 0;
+  text-align: center;
+}
+
+.select-piece.mortgage-select {
+  margin-top: 0.5em;
+}
+
+.no-propes-text {
+  font-size: 3em;
+  font-family: "Monopoly";
+  text-align: center;
+}
+
+.mortgaged-message {
+  font-family: "Monopoly";
+  color: red;
+  font-size: 2em;
 }

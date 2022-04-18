@@ -16,10 +16,13 @@ const ConfirmModal = ({
   setP2Money,
   properties,
   setProperties,
-  mortgageProp,
   mortgageable,
+  mortgageable2,
+  setMorgageable2,
   setMortgageable,
   activeIndex,
+  setMortgagedPropName,
+  setMortgagedMessage,
 }) => {
   const [click] = useSound(Click);
   const [drum] = useSound(Drum);
@@ -41,8 +44,15 @@ const ConfirmModal = ({
     },
   };
 
+  const deMessage = () => {
+    setMortgagedMessage(false);
+    setMortgagedPropName();
+  };
+
   const handleClose = () => {
     setConfirmModalView(false);
+    setMortgageable([]);
+    setMorgageable2([]);
     click();
   };
 
@@ -56,9 +66,32 @@ const ConfirmModal = ({
         return property;
       });
       setMortgageable([]);
+      let updatedMoney = p1Money + changedProperty.mortgage;
+      setP1Money(updatedMoney);
       setProperties(updatedProperties);
       setConfirmModalView(false);
       drum();
+      setMortgagedPropName(changedProperty.Name);
+      setMortgagedMessage(true);
+      setTimeout(() => {
+        deMessage();
+      }, 2000);
+    } else if (mortgageable2) {
+      let changedProperty = mortgageable2[activeIndex];
+      let updatedProperties = properties.map((property) => {
+        if (property.Name === changedProperty.Name) {
+          return { ...property, mortgaged: true };
+        }
+        return property;
+      });
+      setMorgageable2([]);
+      let updatedMoney = p2Money + changedProperty.mortgage;
+      setP2Money(updatedMoney);
+      setProperties(updatedProperties);
+      setConfirmModalView(false);
+      drum();
+      setMortgagedPropName(changedProperty.Name);
+      setMortgagedMessage(true);
     }
   };
 

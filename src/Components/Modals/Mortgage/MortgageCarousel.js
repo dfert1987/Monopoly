@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import useSound from "use-sound";
 import Choose from "../../../Assets/Sounds/choose.mp3";
 
@@ -12,20 +12,13 @@ export const MortgageItem = ({ children, width }) => {
 
 const MortgageCarousel = ({
   children,
-  setMortgageProperty,
-  mortgageProp,
-  chosenProp,
+  setMortgageProp,
   mortgageable,
   activeIndex,
   setActiveIndex,
+  mortgageable2,
 }) => {
   const [choose] = useSound(Choose);
-
-  const chosen = () => {
-    if (chosenProp) {
-      return "selected";
-    } else return null;
-  };
 
   const updateIndex = (newIndex) => {
     if (newIndex < 0) {
@@ -41,17 +34,22 @@ const MortgageCarousel = ({
     if (buttonType === "back" && activeIndex === 0) {
       return true;
     } else if (
+      mortgageable &&
       buttonType === "next" &&
       activeIndex === mortgageable.length - 1
     ) {
       return true;
-    } else if (chosenProp) {
+    } else if (
+      mortgageable2 &&
+      buttonType === "next" &&
+      activeIndex === mortgageable2.length - 1
+    ) {
       return true;
     } else return false;
   };
 
   return (
-    <div className={`carousel ${chosen()}`}>
+    <div className="carousel">
       <div
         className="inner"
         style={{ transform: `translateX(-${activeIndex * 100}%)` }}
@@ -65,8 +63,8 @@ const MortgageCarousel = ({
           className="indicators-button"
           onClick={() => {
             updateIndex(activeIndex - 1);
-            if (setMortgageProperty) {
-              setMortgageProperty(activeIndex - 1);
+            if (setMortgageProp) {
+              setMortgageProp(activeIndex - 1);
             }
             return null;
           }}
@@ -78,8 +76,8 @@ const MortgageCarousel = ({
           className="indicators-button"
           onClick={() => {
             updateIndex(activeIndex + 1);
-            if (setMortgageProperty) {
-              setMortgageProperty(activeIndex + 1);
+            if (setMortgageProp) {
+              setMortgageProp(activeIndex + 1);
             }
             return null;
           }}

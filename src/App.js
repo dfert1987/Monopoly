@@ -220,7 +220,7 @@ const App = () => {
         p2Pic={p2Pic}
         mortgage={mortgage}
         setMortgage={setMortgage}
-        morgage2={mortgage2}
+        mortgage2={mortgage2}
         setMortgage2={setMortgage2}
       />
       <Controls

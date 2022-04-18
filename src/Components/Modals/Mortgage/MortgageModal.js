@@ -21,10 +21,10 @@ const MortgageModal = ({
   const [mortgageable, setMortgageable] = useState([]);
   const [mortgageable2, setMortgageable2] = useState([]);
   const [mortgageProp, setMortgageProp] = useState(0);
-  const [chosenProp, setChosenProp] = useState(false);
-  const [mortgageMoney, setMortgageMoney] = useState(0);
   const [confirmModalView, setConfirmModalView] = useState(false);
   const [activeIndex, setActiveIndex] = useState(0);
+  const [mortgagedMessage, setMortgagedMessage] = useState(false);
+  const [mortgagedPropName, setMortgagedPropName] = useState();
 
   useEffect(() => {
     if (mortgage) {
@@ -48,7 +48,6 @@ const MortgageModal = ({
             property={property}
             className="mortgage-card"
             key={index}
-            setMortgageMoney={setMortgageMoney}
           >
             <div className="mortgage-container">
               <div className={`top-square mortgage-top ${property.color}`}>
@@ -56,7 +55,29 @@ const MortgageModal = ({
               </div>
               <div className="white-part-mortgage">
                 <div className="mortgage-text-container">
-                  <p className="mortgage-amount"> Mortgage Value: </p>
+                  <p className="mortgage-amount">Mortgage Value: </p>
+                  <p className="mortgage-amount">{property.mortgage}RMB</p>
+                </div>
+              </div>
+            </div>
+          </MortgageItem>
+        );
+      });
+    } else if (mortgageable2.length) {
+      return mortgageable2.map((property, index) => {
+        return (
+          <MortgageItem
+            property={property}
+            className="mortgage-card"
+            key={index}
+          >
+            <div className="mortgage-container">
+              <div className={`top-square mortgage-top ${property.color}`}>
+                <p className="property-name">{property.Name}</p>
+              </div>
+              <div className="white-part-mortgage">
+                <div className="mortgage-text-container">
+                  <p className="mortgage-amount">Mortgage Value: </p>
                   <p className="mortgage-amount">{property.mortgage}RMB</p>
                 </div>
               </div>
@@ -87,6 +108,8 @@ const MortgageModal = ({
   const handleClose = (e) => {
     setMortgage(false);
     setMortgage2(false);
+    setMortgageable([]);
+    setMortgageable2([]);
   };
 
   return (
@@ -112,9 +135,14 @@ const MortgageModal = ({
                   <FontAwesomeIcon className="x-icon free" icon={faXmark} />
                 </button>
               </div>
-              <h3 className="mortgage-title">Choose A Property:</h3>
+              <h3 className="mortgage-title">Choose A Property to Mortgage</h3>
+              {mortgagedMessage ? (
+                <h3 className="mortgaged-message">
+                  You Mortgaged {mortgagedPropName}
+                </h3>
+              ) : null}
               <div className="main-part">
-                {mortgageable || mortgageable2 ? (
+                {mortgageable.length ? (
                   <>
                     <div className="mortgage-ui">
                       <MortgageCarousel
@@ -122,7 +150,6 @@ const MortgageModal = ({
                         mortgageable={mortgageable}
                         mortgageProp={mortgageProp}
                         setMortgageProp={setMortgageProp}
-                        chosenProp={chosenProp}
                         activeIndex={activeIndex}
                         setActiveIndex={setActiveIndex}
                       >
@@ -130,19 +157,42 @@ const MortgageModal = ({
                       </MortgageCarousel>
                     </div>
                     <button
-                      className="select-piece"
+                      className="select-piece mortgage-select"
                       onClick={() => setConfirmModalView(true)}
                     >
                       SELECT
                     </button>
                   </>
-                ) : (
+                ) : null}
+                {mortgageable2.length ? (
+                  <>
+                    <div className="mortgage-ui">
+                      <MortgageCarousel
+                        className="carousel-in-pieces mortgage-car"
+                        mortgageable2={mortgageable2}
+                        mortgageProp={mortgageProp}
+                        setMortgageProp={setMortgageProp}
+                        activeIndex={activeIndex}
+                        setActiveIndex={setActiveIndex}
+                      >
+                        {setCarouselItems()}
+                      </MortgageCarousel>
+                    </div>
+                    <button
+                      className="select-piece mortgage-select"
+                      onClick={() => setConfirmModalView(true)}
+                    >
+                      SELECT
+                    </button>
+                  </>
+                ) : null}
+                {!mortgageable2.length && !mortgageable.length ? (
                   <>
                     <h3 className="no-props-text">
                       You don't have any poroperties to mortgage.
                     </h3>
                   </>
-                )}
+                ) : null}
               </div>
             </motion.div>
           </motion.div>
@@ -160,7 +210,10 @@ const MortgageModal = ({
         mortgageable={mortgageable}
         mortgageProp={mortgageProp}
         setMortgageable={setMortgageable}
+        setMorgageable2={setMortgageable2}
         activeIndex={activeIndex}
+        setMortgagedPropName={setMortgagedPropName}
+        setMortgagedMessage={setMortgagedMessage}
       />
     </>
   );
