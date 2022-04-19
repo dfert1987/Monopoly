@@ -53,4 +53,40 @@
   font-family: "Monopoly";
   color: red;
   font-size: 2em;
+  margin: 0;
+}
+
+.confirm-text {
+  font-family: "Monopoly";
+  font-size: 3em;
+  text-align: center;
+}
+
+.confirm-button-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.ok {
+  margin-right: 1em;
+}
+
+.confirm-button {
+  background-color: white;
+  border-radius: 5px;
+  cursor: pointer;
+  box-shadow: 0px 0px 12px -2px;
+  font-family: "Monopoly";
+  font-size: 1.5em;
+  margin-bottom: 1em;
+  margin-top: 0em;
+  width: 8em;
+  overflow: hidden;
+  transition: background-color 0.3s ease;
+}
+
+.confirm-button:hover {
+  background-color: grey;
+  color: white;
 }

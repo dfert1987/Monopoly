@@ -22,6 +22,7 @@ const ConfirmModal = ({
   setMortgageable,
   activeIndex,
   setMortgagedPropName,
+  mortgagedPropName,
   setMortgagedMessage,
 }) => {
   const [click] = useSound(Click);
@@ -51,15 +52,10 @@ const ConfirmModal = ({
 
   const handleClose = () => {
     setConfirmModalView(false);
-    setMortgageable();
-    setMortgageable2();
     click();
   };
 
-  console.log(mortgageable, mortgageable2);
-
   const handleOK = () => {
-    console.log(mortgageable);
     if (mortgageable !== undefined) {
       let changedProperty = mortgageable[activeIndex];
       let updatedProperties = properties.map((property) => {
@@ -95,6 +91,19 @@ const ConfirmModal = ({
       drum();
       setMortgagedPropName(changedProperty.Name);
       setMortgagedMessage(true);
+      setTimeout(() => {
+        deMessage();
+      }, 2000);
+    }
+  };
+
+  const getName = () => {
+    if (mortgageable !== undefined) {
+      let changedProperty = mortgageable[activeIndex];
+      return changedProperty.Name;
+    } else if (mortgageable2) {
+      let changedProperty = mortgageable2[activeIndex];
+      return changedProperty.Name;
     }
   };
 
@@ -120,11 +129,14 @@ const ConfirmModal = ({
                 <FontAwesomeIcon className="x-icon free" icon={faXmark} />
               </button>
             </div>
+            <h3 className="confirm-text">
+              Are you sure you want to mortgage {getName()}?
+            </h3>
             <div className="confirm-button-container">
-              <button onClick={handleOK} className="ok-button">
+              <button onClick={handleOK} className="confirm-button ok">
                 CONFIRM
               </button>
-              <button onClick={handleClose} className="cancel-button">
+              <button onClick={handleClose} className="confirm-button cancel">
                 CANCEL
               </button>
             </div>

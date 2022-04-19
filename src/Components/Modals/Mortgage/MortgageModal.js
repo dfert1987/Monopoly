@@ -213,6 +213,7 @@ const MortgageModal = ({
         setMortgageable={setMortgageable}
         setMortgageable2={setMortgageable2}
         activeIndex={activeIndex}
+        mortgagedPropName={mortgagedPropName}
         setMortgagedPropName={setMortgagedPropName}
         setMortgagedMessage={setMortgagedMessage}
       />
