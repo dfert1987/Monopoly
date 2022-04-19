@@ -99,9 +99,7 @@ export const Controls = ({
   setP1Money,
   setP2Money,
   setVisaModal,
-  mortgage,
   setMortgage,
-  mortgage2,
   setMortgage2,
 }) => {
   const [disableVisaRight, setDisableVisaRight] = useState(true);
@@ -252,7 +250,7 @@ export const Controls = ({
               disabled={disableLeft}
               onClick={motrtgageClick}
             >
-              Mortgage
+              MORTGAGE
             </button>
             <button
               className="properties-view-button"
@@ -280,7 +278,7 @@ export const Controls = ({
               disabled={disableRight}
               onClick={motrtgageClick2}
             >
-              Mortgage
+              MORTGAGE
             </button>
             <button
               className="properties-view-button"

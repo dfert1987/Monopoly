@@ -22,8 +22,10 @@ const ConfirmModal = ({
   setMortgageable,
   activeIndex,
   setMortgagedPropName,
-  mortgagedPropName,
   setMortgagedMessage,
+  setMortUtils,
+  setMortProps,
+  setMortRRs,
 }) => {
   const [click] = useSound(Click);
   const [drum] = useSound(Drum);
