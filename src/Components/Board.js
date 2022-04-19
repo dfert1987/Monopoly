@@ -1347,6 +1347,10 @@ export const Board = ({
           setP1Money={setP1Money}
           setP2Money={setP2Money}
           properties={properties}
+          railRoads={railRoads}
+          utilities={utilities}
+          setRailRoads={setRailRoads}
+          setUtilities={setUtilities}
           setProperties={setProperties}
         />
         <InJail

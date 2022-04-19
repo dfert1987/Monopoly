@@ -18,10 +18,18 @@ const MortgageModal = ({
   p2Money,
   setP2Money,
   properties,
+  utilities,
+  railRoads,
+  setUtilities,
+  setRailRoads,
   setProperties,
 }) => {
   const [mortgageable, setMortgageable] = useState();
   const [mortgageable2, setMortgageable2] = useState();
+  const [mortgageableRRs, setMortgageableRRs] = useState();
+  const [mortgageableRRs2, setMortgageableRRs2] = useState();
+  const [mortgageableUtils, setMortgageableUtils] = useState();
+  const [mortgageableUtils2, setMortgageableUtils2] = useState();
   const [mortgageProp, setMortgageProp] = useState(0);
   const [confirmModalView, setConfirmModalView] = useState(false);
   const [activeIndex, setActiveIndex] = useState(0);
@@ -40,13 +48,29 @@ const MortgageModal = ({
         (property) => property.ownedP1 === true && property.mortgaged === false
       );
       setMortgageable(p1Options);
+      let p1RROptions = railRoads.filter(
+        (rr) => rr.ownedP1 === true && rr.mortgaged === false
+      );
+      setMortgageableRRs(p1RROptions);
+      let p1UtilOptions = utilities.filter(
+        (util) => util.ownedP1 === true && util.mortgaged === false
+      );
+      setMortgageableUtils(p1UtilOptions);
     } else if (mortgage2) {
       let p2Options = properties.filter(
         (property) => property.ownedP2 === true && property.mortgaged === false
       );
       setMortgageable2(p2Options);
+      let p2RROptions = railRoads.filter(
+        (rr) => rr.ownedP2 === true && rr.mortgaged === false
+      );
+      setMortgageableRRs2(p2RROptions);
+      let p2UtilOptions = utilities.filter(
+        (util) => util.ownedP2 === true && util.mortgaged === false
+      );
+      setMortgageableUtils2(p2UtilOptions);
     }
-  }, [mortgage, mortgage2, properties]);
+  }, [mortgage, mortgage2, properties, railRoads, utilities]);
 
   const showProps = () => {
     setChooseType(false);
