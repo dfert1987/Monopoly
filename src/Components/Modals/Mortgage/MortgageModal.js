@@ -193,6 +193,7 @@ const MortgageModal = ({
     clickSound();
   };
 
+  console.log(mortgageableRRs, mortgageableRRs2);
   return (
     <>
       <AnimatePresence exitBeforeEnter>
@@ -242,7 +243,7 @@ const MortgageModal = ({
                     </h3>
                   ) : null}
                   <div className="main-part">
-                    {mortgageableRRs && mortRRs ? (
+                    {mortgageableRRs && mortgageableRRs.length && mortRRs ? (
                       <>
                         <div className="mortgage-ui">
                           <MortgageCarousel
@@ -264,7 +265,7 @@ const MortgageModal = ({
                         </button>
                       </>
                     ) : null}
-                    {mortgageable && mortProps ? (
+                    {mortgageable && mortgageable.length && mortProps ? (
                       <>
                         <div className="mortgage-ui">
                           <MortgageCarousel
@@ -286,7 +287,7 @@ const MortgageModal = ({
                         </button>
                       </>
                     ) : null}
-                    {mortgageable2 && mortProps ? (
+                    {mortgageable2 && mortgageable2.length && mortProps ? (
                       <>
                         <div className="mortgage-ui">
                           <MortgageCarousel
@@ -308,21 +309,27 @@ const MortgageModal = ({
                         </button>
                       </>
                     ) : null}
-                    {!mortgageable2 && !mortgageable && mortProps ? (
+                    {(!mortgageable2 || !mortgageable2.length) &&
+                    (!mortgageable || !mortgageable.length) &&
+                    mortProps ? (
                       <>
                         <h3 className="no-props-text">
                           You don't have any poroperties to mortgage.
                         </h3>
                       </>
                     ) : null}
-                    {!mortgageableRRs && !mortgageableRRs2 && mortRRs ? (
+                    {(!mortgageableRRs || !mortgageableRRs.length) &&
+                    (!mortgageableRRs2 || !mortgageableRRs2.length) &&
+                    mortRRs ? (
                       <>
                         <h3 className="no-props-text">
                           You don't have any railroads to mortgage.
                         </h3>
                       </>
                     ) : null}
-                    {!mortgageableUtils && !mortgageableUtils2 && mortUtils ? (
+                    {(!mortgageableUtils || !mortgageableUtils.length) &&
+                    (!mortgageableUtils2 || !mortgageableUtils2.length) &&
+                    mortUtils ? (
                       <>
                         <h3 className="no-props-text">
                           You don't have any Utilities to mortgage.
