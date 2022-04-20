@@ -1,0 +1,110 @@
+.carousel-item {
+  display: flex;
+  flex-direction: column;
+  padding-top: 1em;
+}
+
+.mortgage-container {
+  border: 2px black solid;
+  width: 40%;
+}
+
+.top-square.mortgage-top {
+  border-bottom: 2px solid black;
+  height: 4em;
+}
+
+.property-name {
+  margin-top: 0;
+  font-family: "Monopoly";
+  font-size: 2em;
+  padding-top: 0.25em;
+  text-shadow: white 2px 2px 2px;
+}
+
+.white-part-mortgage {
+  height: 12em;
+}
+
+.mortgage-text-container {
+  font-family: "Monopoly";
+  font-size: 2.5em;
+}
+
+.mortgage-title {
+  font-family: "Monopoly";
+  font-size: 2.5em;
+  padding-bottom: 0.5em;
+  margin: 0;
+  text-align: center;
+}
+
+.select-piece.mortgage-select {
+  margin-top: 0.5em;
+}
+
+.no-propes-text {
+  font-size: 3em;
+  font-family: "Monopoly";
+  text-align: center;
+}
+
+.mortgaged-message {
+  font-family: "Monopoly";
+  color: red;
+  font-size: 2em;
+  margin: 0;
+}
+
+.confirm-text {
+  font-family: "Monopoly";
+  font-size: 3em;
+  text-align: center;
+}
+
+.confirm-button-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.ok {
+  margin-right: 1em;
+}
+
+.confirm-button {
+  background-color: white;
+  border-radius: 5px;
+  cursor: pointer;
+  box-shadow: 0px 0px 12px -2px;
+  font-family: "Monopoly";
+  font-size: 1.5em;
+  margin-bottom: 1em;
+  margin-top: 0em;
+  width: 8em;
+  overflow: hidden;
+  transition: background-color 0.3s ease;
+}
+
+.confirm-button:hover {
+  background-color: grey;
+  color: white;
+}
+
+.choices-container {
+  text-align: center;
+}
+
+.choice-text {
+  font-family: "Monopoly";
+  font-size: 2.5em;
+  margin-bottom: 0.5em;
+  text-align: center;
+}
+
+.no-props-text {
+  color: red;
+  font-family: "Monopoly";
+  font-size: 2.5em;
+  margin-top: 0.5em;
+}
