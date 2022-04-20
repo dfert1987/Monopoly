@@ -77,7 +77,8 @@ const App = () => {
   const [p2Pic, setP2Pic] = useState();
   const [mortgage, setMortgage] = useState(false);
   const [mortgage2, setMortgage2] = useState(false);
-  console.log(properties);
+  const [unMortgage, setUnMortgage] = useState(false);
+  const [unMortgage2, setUnMortgage2] = useState(false);
 
   const location = useLocation();
   const data = location.state;
@@ -222,6 +223,10 @@ const App = () => {
         setMortgage={setMortgage}
         mortgage2={mortgage2}
         setMortgage2={setMortgage2}
+        unMortgage={unMortgage}
+        setUnMortgage={setUnMortgage}
+        unMortgage2={unMortgage2}
+        setUnMortgage2={setUnMortgage2}
       />
       <Controls
         counterP1={counterP1}
@@ -338,6 +343,10 @@ const App = () => {
         setVisaModal={setVisaModal}
         setMortgage={setMortgage}
         setMortgage2={setMortgage2}
+        unMortgage={unMortgage}
+        setUnMortgage={setUnMortgage}
+        unMortgage2={unMortgage2}
+        setUnMortgage2={setUnMortgage2}
       />
     </div>
   );

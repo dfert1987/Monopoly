@@ -193,7 +193,6 @@ const MortgageModal = ({
     clickSound();
   };
 
-  console.log(mortgageableRRs, mortgageableRRs2);
   return (
     <>
       <AnimatePresence exitBeforeEnter>
