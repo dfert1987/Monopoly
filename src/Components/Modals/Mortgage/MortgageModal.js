@@ -308,11 +308,24 @@ const MortgageModal = ({
                         </button>
                       </>
                     ) : null}
-
                     {!mortgageable2 && !mortgageable && mortProps ? (
                       <>
                         <h3 className="no-props-text">
                           You don't have any poroperties to mortgage.
+                        </h3>
+                      </>
+                    ) : null}
+                    {!mortgageableRRs && !mortgageableRRs2 && mortRRs ? (
+                      <>
+                        <h3 className="no-props-text">
+                          You don't have any railroads to mortgage.
+                        </h3>
+                      </>
+                    ) : null}
+                    {!mortgageableUtils && !mortgageableUtils2 && mortUtils ? (
+                      <>
+                        <h3 className="no-props-text">
+                          You don't have any Utilities to mortgage.
                         </h3>
                       </>
                     ) : null}
@@ -332,6 +345,10 @@ const MortgageModal = ({
         setP2Money={setP2Money}
         properties={properties}
         setProperties={setProperties}
+        railRoads={railRoads}
+        setRailRoads={setRailRoads}
+        utilities={utilities}
+        setUtilities={setUtilities}
         mortgageable={mortgageable}
         mortgageable2={mortgageable2}
         mortgageableRRs={mortgageableRRs}

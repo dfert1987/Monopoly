@@ -27,9 +27,6 @@ const ConfirmModal = ({
   activeIndex,
   setMortgagedPropName,
   setMortgagedMessage,
-  setMortUtils,
-  setMortProps,
-  setMortRRs,
   setMortgageableUtils,
   setMortgageableRRs,
   setMortgageableRRs2,
@@ -41,6 +38,8 @@ const ConfirmModal = ({
 }) => {
   const [click] = useSound(Click);
   const [drum] = useSound(Drum);
+
+  console.log(railRoads);
 
   const backdrop = {
     visible: { opacity: 1 },
@@ -157,7 +156,7 @@ const ConfirmModal = ({
       setMortgageableUtils();
       let updatedMoney = p1Money + changedUtil.mortgage;
       setP1Money(updatedMoney);
-      setRailRoads(updatedUtils);
+      setUtilities(updatedUtils);
       setConfirmModalView(false);
       drum();
       setMortgagedPropName(changedUtil.Name);
@@ -176,7 +175,7 @@ const ConfirmModal = ({
       setMortgageableUtils2();
       let updatedMoney = p1Money + changedUtils.mortgage;
       setP1Money(updatedMoney);
-      setRailRoads(updatedUtils);
+      setUtilities(updatedUtils);
       setConfirmModalView(false);
       drum();
       setMortgagedPropName(changedUtils.Name);
