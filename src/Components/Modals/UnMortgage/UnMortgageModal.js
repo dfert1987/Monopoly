@@ -24,6 +24,13 @@ const UnMortgageModal = ({
   freeParking,
   setFreeParking,
 }) => {
+  const [chooseType, setChooseType] = useState(true);
+  const [mortProps, setMortProps] = useState(false);
+  const [mortRRs, setMortRRs] = useState(false);
+  const [mortUtils, setMortUtils] = useState(false);
+
+  const [clickSound] = useSound(Click);
+
   const backdrop = {
     visible: { opacity: 1 },
     hidden: { opacity: 0 },
@@ -41,11 +48,27 @@ const UnMortgageModal = ({
     },
   };
 
-  const [clickSound] = useSound(Click);
-
   const handleClose = () => {
     setUnMortgage(false);
     setUnMortgage2(false);
+    clickSound();
+  };
+
+  const showProps = () => {
+    setChooseType(false);
+    setMortProps(true);
+    clickSound();
+  };
+
+  const showRRs = () => {
+    setChooseType(false);
+    setMortRRs(true);
+    clickSound();
+  };
+
+  const showUtils = () => {
+    setChooseType(false);
+    setMortUtils(true);
     clickSound();
   };
 
@@ -72,6 +95,24 @@ const UnMortgageModal = ({
                   <FontAwesomeIcon className="x-icon free" icon={faXmark} />
                 </button>
               </div>
+              {chooseType ? (
+                <div className="main-choice-container">
+                  <h3 className="unMortgage-title">
+                    Which type of asset do you want to buy back from the bank?
+                  </h3>
+                  <div className="choices-container">
+                    <button className="choice-button" onClick={showProps}>
+                      PROPERTIES
+                    </button>
+                    <button className="choice-button" onClick={showRRs}>
+                      RAILROADS
+                    </button>
+                    <button className="choice-button" onClick={showUtils}>
+                      UTILITIES
+                    </button>
+                  </div>
+                </div>
+              ) : null}
             </motion.div>
           </motion.div>
         ) : null}

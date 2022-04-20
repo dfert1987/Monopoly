@@ -96,6 +96,12 @@ const MortgageModal = ({
     setMortRRs(true);
     clickSound();
   };
+
+  const showUtils = () => {
+    setChooseType(false);
+    setMortUtils(true);
+    clickSound();
+  };
   const setCarouselItems = () => {
     if (mortgageable) {
       console.log(mortgageableRRs);
@@ -228,7 +234,9 @@ const MortgageModal = ({
                     <button className="choice-button" onClick={showRRs}>
                       RAILROADS
                     </button>
-                    <button className="choice-button">UTILITIES</button>
+                    <button className="choice-button" onClick={showUtils}>
+                      UTILITIES
+                    </button>
                   </div>
                 </div>
               ) : (
