@@ -43,34 +43,47 @@ const MortgageModal = ({
   const [clickSound] = useSound(Click);
 
   useEffect(() => {
-    if (mortgage) {
+    if (mortgage && mortProps) {
       let p1Options = properties.filter(
         (property) => property.ownedP1 === true && property.mortgaged === false
       );
       setMortgageable(p1Options);
+    } else if (mortgage && mortRRs) {
       let p1RROptions = railRoads.filter(
         (rr) => rr.ownedP1 === true && rr.mortgaged === false
       );
       setMortgageableRRs(p1RROptions);
+    } else if (mortgage && mortUtils) {
       let p1UtilOptions = utilities.filter(
         (util) => util.ownedP1 === true && util.mortgaged === false
       );
       setMortgageableUtils(p1UtilOptions);
-    } else if (mortgage2) {
+    } else if (mortgage2 && mortProps) {
       let p2Options = properties.filter(
         (property) => property.ownedP2 === true && property.mortgaged === false
       );
       setMortgageable2(p2Options);
+    } else if (mortgage2 && mortRRs) {
       let p2RROptions = railRoads.filter(
         (rr) => rr.ownedP2 === true && rr.mortgaged === false
       );
       setMortgageableRRs2(p2RROptions);
+    } else if (mortgage2 && mortUtils) {
       let p2UtilOptions = utilities.filter(
         (util) => util.ownedP2 === true && util.mortgaged === false
       );
       setMortgageableUtils2(p2UtilOptions);
     }
-  }, [mortgage, mortgage2, properties, railRoads, utilities]);
+  }, [
+    mortgage,
+    mortgage2,
+    properties,
+    railRoads,
+    utilities,
+    mortProps,
+    mortRRs,
+    mortUtils,
+  ]);
 
   const showProps = () => {
     setChooseType(false);
@@ -78,8 +91,15 @@ const MortgageModal = ({
     clickSound();
   };
 
+  const showRRs = () => {
+    setChooseType(false);
+    setMortRRs(true);
+    clickSound();
+  };
   const setCarouselItems = () => {
     if (mortgageable) {
+      console.log(mortgageableRRs);
+
       return mortgageable.map((property, index) => {
         return (
           <MortgageItem
@@ -117,6 +137,24 @@ const MortgageModal = ({
                 <div className="mortgage-text-container">
                   <p className="mortgage-amount">Mortgage Value: </p>
                   <p className="mortgage-amount">{property.mortgage}RMB</p>
+                </div>
+              </div>
+            </div>
+          </MortgageItem>
+        );
+      });
+    } else if (mortgageableRRs) {
+      return mortgageableRRs.map((rr, index) => {
+        return (
+          <MortgageItem property={rr} className="mortgage-card" key={index}>
+            <div className="mortgage-container">
+              <div className={`top-square mortgage-top ${rr.color}`}>
+                <p className="property-name">{rr.Name}</p>
+              </div>
+              <div className="white-part-mortgage">
+                <div className="mortgage-text-container">
+                  <p className="mortgage-amount">Mortgage Value: </p>
+                  <p className="mortgage-amount">{rr.mortgage}RMB</p>
                 </div>
               </div>
             </div>
@@ -187,7 +225,9 @@ const MortgageModal = ({
                     <button className="choice-button" onClick={showProps}>
                       PROPERTIES
                     </button>
-                    <button className="choice-button">RAILROADS</button>
+                    <button className="choice-button" onClick={showRRs}>
+                      RAILROADS
+                    </button>
                     <button className="choice-button">UTILITIES</button>
                   </div>
                 </div>
@@ -202,6 +242,28 @@ const MortgageModal = ({
                     </h3>
                   ) : null}
                   <div className="main-part">
+                    {mortgageableRRs && mortRRs ? (
+                      <>
+                        <div className="mortgage-ui">
+                          <MortgageCarousel
+                            className="carousel-in-pieces mortgage-car"
+                            mortgageable={mortgageableRRs}
+                            mortgageProp={mortgageProp}
+                            setMortgageProp={setMortgageProp}
+                            activeIndex={activeIndex}
+                            setActiveIndex={setActiveIndex}
+                          >
+                            {setCarouselItems()}
+                          </MortgageCarousel>
+                        </div>
+                        <button
+                          className="select-piece mortgage-select"
+                          onClick={() => setConfirmModalView(true)}
+                        >
+                          SELECT
+                        </button>
+                      </>
+                    ) : null}
                     {mortgageable && mortProps ? (
                       <>
                         <div className="mortgage-ui">
@@ -272,9 +334,17 @@ const MortgageModal = ({
         setProperties={setProperties}
         mortgageable={mortgageable}
         mortgageable2={mortgageable2}
+        mortgageableRRs={mortgageableRRs}
+        mortgageableRRs2={mortgageableRRs2}
+        mortgageableUtils={mortgageableUtils}
+        mortgageableUtils2={mortgageableUtils2}
         mortgageProp={mortgageProp}
         setMortgageable={setMortgageable}
         setMortgageable2={setMortgageable2}
+        setMortgageableRRs={setMortgageableRRs}
+        setMortgageableRRs2={setMortgageableRRs2}
+        setMortgageableUtils={setMortgageableUtils}
+        setMortgageableUtils2={setMortgageableUtils2}
         activeIndex={activeIndex}
         mortgagedPropName={mortgagedPropName}
         setMortgagedPropName={setMortgagedPropName}

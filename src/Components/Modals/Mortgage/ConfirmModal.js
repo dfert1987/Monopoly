@@ -15,6 +15,10 @@ const ConfirmModal = ({
   setP1Money,
   setP2Money,
   properties,
+  railRoads,
+  utilities,
+  setRailRoads,
+  setUtilities,
   setProperties,
   mortgageable,
   mortgageable2,
@@ -26,6 +30,14 @@ const ConfirmModal = ({
   setMortUtils,
   setMortProps,
   setMortRRs,
+  setMortgageableUtils,
+  setMortgageableRRs,
+  setMortgageableRRs2,
+  setMortgageableUtils2,
+  mortgageableUtils,
+  mortgageableUtils2,
+  mortgageableRRs,
+  mortgageableRRs2,
 }) => {
   const [click] = useSound(Click);
   const [drum] = useSound(Drum);
@@ -96,6 +108,82 @@ const ConfirmModal = ({
       setTimeout(() => {
         deMessage();
       }, 2000);
+    } else if (mortgageableRRs) {
+      let changedRR = mortgageableRRs[activeIndex];
+      let updatedRRs = railRoads.map((rr) => {
+        if (rr.Name === changedRR.Name) {
+          return { ...rr, mortgaged: true };
+        }
+        return rr;
+      });
+      setMortgageableRRs();
+      let updatedMoney = p1Money + changedRR.mortgage;
+      setP1Money(updatedMoney);
+      setRailRoads(updatedRRs);
+      setConfirmModalView(false);
+      drum();
+      setMortgagedPropName(changedRR.Name);
+      setMortgagedMessage(true);
+      setTimeout(() => {
+        deMessage();
+      }, 2000);
+    } else if (mortgageableRRs2) {
+      let changedRR = mortgageableRRs2[activeIndex];
+      let updatedRRs = railRoads.map((rr) => {
+        if (rr.Name === changedRR.Name) {
+          return { ...rr, mortgaged: true };
+        }
+        return rr;
+      });
+      setMortgageableRRs2();
+      let updatedMoney = p2Money + changedRR.mortgage;
+      setP2Money(updatedMoney);
+      setRailRoads(updatedRRs);
+      setConfirmModalView(false);
+      drum();
+      setMortgagedPropName(changedRR.Name);
+      setMortgagedMessage(true);
+      setTimeout(() => {
+        deMessage();
+      }, 2000);
+    } else if (mortgageableUtils) {
+      let changedUtil = mortgageableUtils[activeIndex];
+      let updatedUtils = utilities.map((util) => {
+        if (util.Name === changedUtil.Name) {
+          return { ...util, mortgaged: true };
+        }
+        return util;
+      });
+      setMortgageableUtils();
+      let updatedMoney = p1Money + changedUtil.mortgage;
+      setP1Money(updatedMoney);
+      setRailRoads(updatedUtils);
+      setConfirmModalView(false);
+      drum();
+      setMortgagedPropName(changedUtil.Name);
+      setMortgagedMessage(true);
+      setTimeout(() => {
+        deMessage();
+      }, 2000);
+    } else if (mortgageableUtils2) {
+      let changedUtils = mortgageableUtils2[activeIndex];
+      let updatedUtils = utilities.map((util) => {
+        if (util.Name === changedUtils.Name) {
+          return { ...util, mortgaged: true };
+        }
+        return util;
+      });
+      setMortgageableUtils2();
+      let updatedMoney = p1Money + changedUtils.mortgage;
+      setP1Money(updatedMoney);
+      setRailRoads(updatedUtils);
+      setConfirmModalView(false);
+      drum();
+      setMortgagedPropName(changedUtils.Name);
+      setMortgagedMessage(true);
+      setTimeout(() => {
+        deMessage();
+      }, 2000);
     }
   };
 
@@ -106,6 +194,18 @@ const ConfirmModal = ({
     } else if (mortgageable2) {
       let changedProperty = mortgageable2[activeIndex];
       return changedProperty.Name;
+    } else if (mortgageableRRs) {
+      let changedRR = mortgageableRRs[activeIndex];
+      return changedRR.Name;
+    } else if (mortgageableRRs2) {
+      let changedRR = mortgageableRRs2[activeIndex];
+      return changedRR.Name;
+    } else if (mortgageableUtils) {
+      let changedUtil = mortgageableUtils[activeIndex];
+      return changedUtil.Name;
+    } else if (mortgageableUtils2) {
+      let changedUtil = mortgageableUtils2[activeIndex];
+      return changedUtil.Name;
     }
   };
 

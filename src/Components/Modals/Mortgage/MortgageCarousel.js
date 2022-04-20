@@ -19,7 +19,6 @@ const MortgageCarousel = ({
   mortgageable2,
 }) => {
   const [choose] = useSound(Choose);
-
   const updateIndex = (newIndex) => {
     if (newIndex < 0) {
       newIndex = 0;
