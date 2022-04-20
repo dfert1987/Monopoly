@@ -243,6 +243,76 @@ const MortgageModal = ({
                     </h3>
                   ) : null}
                   <div className="main-part">
+                    {mortgageableUtils2 &&
+                    mortgageableUtils2.length &&
+                    mortUtils ? (
+                      <>
+                        <div className="mortgage-ui">
+                          <MortgageCarousel
+                            className="carousel-in-pieces mortgage-car"
+                            mortgageable={mortgageableUtils2}
+                            mortgageProp={mortgageProp}
+                            setMortgageProp={setMortgageProp}
+                            activeIndex={activeIndex}
+                            setActiveIndex={setActiveIndex}
+                          >
+                            {setCarouselItems()}
+                          </MortgageCarousel>
+                        </div>
+                        <button
+                          className="select-piece mortgage-select"
+                          onClick={() => setConfirmModalView(true)}
+                        >
+                          SELECT
+                        </button>
+                      </>
+                    ) : null}
+                    {mortgageableUtils &&
+                    mortgageableUtils.length &&
+                    mortUtils ? (
+                      <>
+                        <div className="mortgage-ui">
+                          <MortgageCarousel
+                            className="carousel-in-pieces mortgage-car"
+                            mortgageable={mortgageableUtils}
+                            mortgageProp={mortgageProp}
+                            setMortgageProp={setMortgageProp}
+                            activeIndex={activeIndex}
+                            setActiveIndex={setActiveIndex}
+                          >
+                            {setCarouselItems()}
+                          </MortgageCarousel>
+                        </div>
+                        <button
+                          className="select-piece mortgage-select"
+                          onClick={() => setConfirmModalView(true)}
+                        >
+                          SELECT
+                        </button>
+                      </>
+                    ) : null}
+                    {mortgageableRRs2 && mortgageableRRs2.length && mortRRs ? (
+                      <>
+                        <div className="mortgage-ui">
+                          <MortgageCarousel
+                            className="carousel-in-pieces mortgage-car"
+                            mortgageable={mortgageableRRs2}
+                            mortgageProp={mortgageProp}
+                            setMortgageProp={setMortgageProp}
+                            activeIndex={activeIndex}
+                            setActiveIndex={setActiveIndex}
+                          >
+                            {setCarouselItems()}
+                          </MortgageCarousel>
+                        </div>
+                        <button
+                          className="select-piece mortgage-select"
+                          onClick={() => setConfirmModalView(true)}
+                        >
+                          SELECT
+                        </button>
+                      </>
+                    ) : null}
                     {mortgageableRRs && mortgageableRRs.length && mortRRs ? (
                       <>
                         <div className="mortgage-ui">
