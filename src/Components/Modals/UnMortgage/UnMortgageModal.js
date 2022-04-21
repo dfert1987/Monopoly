@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from "react";
+import MortgageCarousel, { MortgageItem } from "../Mortgage/MortgageCarousel";
 import { motion, AnimatePresence } from "framer-motion";
 import { faXmark } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Click from "../../../Assets/Sounds/click.mp3";
 import useSound from "use-sound";
 import "../../Styles/UnMortgage.css";
+import { a } from "react-spring";
 
 const UnMortgageModal = ({
   unMortgage,
@@ -33,7 +35,11 @@ const UnMortgageModal = ({
   const [allMortgagedUtils, setAllMortgagedUtils] = useState();
   const [allMortgaged2, setAllMortgaged2] = useState();
   const [allMortgagedRRs2, setAllMortgagedRRs2] = useState();
+  const [mortgageProp, setMortgageProp] = useState(0);
+  const [activeIndex, setActiveIndex] = useState(0);
   const [allMortgagedUtils2, setAllMortgagedUtils2] = useState();
+  const [mortgagedMessage, setMortgagedMessage] = useState(false);
+  const [unMortgagedPropName, setUnMortgagePropName] = useState();
 
   const [clickSound] = useSound(Click);
 
@@ -121,6 +127,138 @@ const UnMortgageModal = ({
     clickSound();
   };
 
+  const setCarouselItems = () => {
+    if (allMortgaged) {
+      return allMortgaged.map((property, index) => {
+        return (
+          <MortgageItem
+            property={property}
+            className="mortgage-card"
+            key={index}
+          >
+            <div className="mortgage-container">
+              <div className={`top-square mortgage-top ${property.color}`}>
+                <p className="property-name">{property.Name}</p>
+              </div>
+              <div className="white-part-mortgage">
+                <div className="mortgage-text-container">
+                  <p className="mortgage-amount">Buyback Cost: </p>
+                  <p className="mortgage-amount">
+                    {property.mortgage * 0.1 + property.mortgage}RMB
+                  </p>
+                </div>
+              </div>
+            </div>
+          </MortgageItem>
+        );
+      });
+    } else if (allMortgaged2) {
+      return allMortgaged2.map((property, index) => {
+        return (
+          <MortgageItem
+            property={property}
+            className="mortgage-card"
+            key={index}
+          >
+            <div className="mortgage-container">
+              <div className={`top-square mortgage-top ${property.color}`}>
+                <p className="property-name">{property.Name}</p>
+              </div>
+              <div className="white-part-mortgage">
+                <div className="mortgage-text-container">
+                  <p className="mortgage-amount">Buyback Cost: </p>
+                  <p className="mortgage-amount">
+                    {property.mortgage * 0.1 + property.mortgage}RMB
+                  </p>
+                </div>
+              </div>
+            </div>
+          </MortgageItem>
+        );
+      });
+    } else if (allMortgagedRRs) {
+      return allMortgagedRRs.map((rr, index) => {
+        return (
+          <MortgageItem property={rr} className="mortgage-card" key={index}>
+            <div className="mortgage-container">
+              <div className={`top-square mortgage-top ${rr.color}`}>
+                <p className="property-name">{rr.Name}</p>
+              </div>
+              <div className="white-part-mortgage">
+                <div className="mortgage-text-container">
+                  <p className="mortgage-amount">Buyback Cost: </p>
+                  <p className="mortgage-amount">
+                    {rr.mortgage * 0.1 + rr.mortgage}RMB
+                  </p>
+                </div>
+              </div>
+            </div>
+          </MortgageItem>
+        );
+      });
+    } else if (allMortgagedRRs2) {
+      return allMortgagedRRs2.map((rr, index) => {
+        return (
+          <MortgageItem property={rr} className="mortgage-card" key={index}>
+            <div className="mortgage-container">
+              <div className={`top-square mortgage-top ${rr.color}`}>
+                <p className="property-name">{rr.Name}</p>
+              </div>
+              <div className="white-part-mortgage">
+                <div className="mortgage-text-container">
+                  <p className="mortgage-amount">Buyback Cost: </p>
+                  <p className="mortgage-amount">
+                    {rr.mortgage * 0.1 + rr.mortgage}RMB
+                  </p>
+                </div>
+              </div>
+            </div>
+          </MortgageItem>
+        );
+      });
+    } else if (allMortgagedUtils) {
+      return allMortgagedUtils.map((util, index) => {
+        return (
+          <MortgageItem property={util} className="mortgage-card" key={index}>
+            <div className="mortgage-container">
+              <div className={`top-square mortgage-top ${util.color}`}>
+                <p className="property-name">{util.Name}</p>
+              </div>
+              <div className="white-part-mortgage">
+                <div className="mortgage-text-container">
+                  <p className="mortgage-amount">Buyback Cost: </p>
+                  <p className="mortgage-amount">
+                    {util.mortgage * 0.1 + util.mortgage}RMB
+                  </p>
+                </div>
+              </div>
+            </div>
+          </MortgageItem>
+        );
+      });
+    } else if (allMortgagedUtils2) {
+      return allMortgagedUtils2.map((util, index) => {
+        return (
+          <MortgageItem property={util} className="mortgage-card" key={index}>
+            <div className="mortgage-container">
+              <div className={`top-square mortgage-top ${util.color}`}>
+                <p className="property-name">{util.Name}</p>
+              </div>
+              <div className="white-part-mortgage">
+                <div className="mortgage-text-container">
+                  <p className="mortgage-amount">Buyback Cost: </p>
+                  <p className="mortgage-amount">
+                    {util.mortgage * 0.1 + util.mortgage}RMB
+                  </p>
+                </div>
+              </div>
+            </div>
+          </MortgageItem>
+        );
+      });
+    }
+  };
+
   return (
     <>
       <AnimatePresence exitBeforeEnter>
@@ -161,7 +299,67 @@ const UnMortgageModal = ({
                     </button>
                   </div>
                 </div>
-              ) : null}
+              ) : (
+                <>
+                  <h3 className="mortgage-title">
+                    Choose an Asset to Buy Back
+                  </h3>
+                  {mortgagedMessage ? (
+                    <h3 className="mortgaged-message">
+                      You Mortgaged {unMortgagedPropName}.
+                    </h3>
+                  ) : null}
+                  <div className="main-part">
+                    {allMortgagedUtils2 &&
+                    allMortgagedUtils2.length &&
+                    mortUtils ? (
+                      <>
+                        <div className="mortgage-ui">
+                          <MortgageCarousel
+                            className="carousel-in-pieces mortgage-car"
+                            mortgageable={allMortgagedUtils2}
+                            setMortgageProp={setMortgageProp}
+                            activeIndex={activeIndex}
+                            setActiveIndex={setActiveIndex}
+                          >
+                            {setCarouselItems()}
+                          </MortgageCarousel>
+                        </div>
+                        <button className="select-piece mortgage-select">
+                          SELECT
+                        </button>
+                      </>
+                    ) : null}
+                    {(!allMortgaged2 || !allMortgaged2.length) &&
+                    (!allMortgaged || !allMortgaged.length) &&
+                    mortProps ? (
+                      <>
+                        <h3 className="no-props-text">
+                          You don't have any mortgaged properties.
+                        </h3>
+                      </>
+                    ) : null}
+                    {(!allMortgagedUtils2 || !allMortgagedUtils2.length) &&
+                    (!allMortgagedUtils || !allMortgagedUtils.length) &&
+                    mortUtils ? (
+                      <>
+                        <h3 className="no-props-text">
+                          You don't have any mortgaged utilities.
+                        </h3>
+                      </>
+                    ) : null}
+                    {(!allMortgagedRRs2 || !allMortgagedRRs2.length) &&
+                    (!allMortgagedRRs || !allMortgagedRRs.length) &&
+                    mortRRs ? (
+                      <>
+                        <h3 className="no-props-text">
+                          You don't have any mortgaged railroads.
+                        </h3>
+                      </>
+                    ) : null}
+                  </div>
+                </>
+              )}
             </motion.div>
           </motion.div>
         ) : null}

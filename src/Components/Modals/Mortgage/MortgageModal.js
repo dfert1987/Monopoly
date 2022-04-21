@@ -102,10 +102,9 @@ const MortgageModal = ({
     setMortUtils(true);
     clickSound();
   };
+
   const setCarouselItems = () => {
     if (mortgageable) {
-      console.log(mortgageableRRs);
-
       return mortgageable.map((property, index) => {
         return (
           <MortgageItem
