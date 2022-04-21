@@ -28,8 +28,57 @@ const UnMortgageModal = ({
   const [mortProps, setMortProps] = useState(false);
   const [mortRRs, setMortRRs] = useState(false);
   const [mortUtils, setMortUtils] = useState(false);
+  const [allMortgaged, setAllMortgaged] = useState();
+  const [allMortgagedRRs, setAllMortgagedRRs] = useState();
+  const [allMortgagedUtils, setAllMortgagedUtils] = useState();
+  const [allMortgaged2, setAllMortgaged2] = useState();
+  const [allMortgagedRRs2, setAllMortgagedRRs2] = useState();
+  const [allMortgagedUtils2, setAllMortgagedUtils2] = useState();
 
   const [clickSound] = useSound(Click);
+
+  useEffect(() => {
+    if (unMortgage && mortProps) {
+      let p1Options = properties.filter(
+        (property) => property.ownedP1 === true && property.mortgaged === true
+      );
+      setAllMortgaged(p1Options);
+    } else if (unMortgage && mortRRs) {
+      let p1RROptions = railRoads.filter(
+        (rr) => rr.ownedP1 === true && rr.mortgaged === true
+      );
+      setAllMortgagedRRs(p1RROptions);
+    } else if (unMortgage && mortUtils) {
+      let p1UtilOptions = utilities.filter(
+        (util) => util.ownedP1 === true && util.mortgaged === true
+      );
+      setAllMortgagedUtils(p1UtilOptions);
+    } else if (unMortgage2 && mortProps) {
+      let p2Options = properties.filter(
+        (property) => property.ownedP2 === true && property.mortgaged === true
+      );
+      setAllMortgaged2(p2Options);
+    } else if (unMortgage2 && mortRRs) {
+      let p2RROptions = railRoads.filter(
+        (rr) => rr.ownedP2 === true && rr.mortgaged === true
+      );
+      setAllMortgagedRRs2(p2RROptions);
+    } else if (unMortgage2 && mortUtils) {
+      let p2UtilOptions = utilities.filter(
+        (util) => util.ownedP2 === true && util.mortgaged === true
+      );
+      setAllMortgagedUtils2(p2UtilOptions);
+    }
+  }, [
+    unMortgage,
+    unMortgage2,
+    properties,
+    railRoads,
+    utilities,
+    mortProps,
+    mortRRs,
+    mortUtils,
+  ]);
 
   const backdrop = {
     visible: { opacity: 1 },
