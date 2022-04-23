@@ -6,7 +6,6 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Click from "../../../Assets/Sounds/click.mp3";
 import useSound from "use-sound";
 import "../../Styles/UnMortgage.css";
-import { a } from "react-spring";
 
 const UnMortgageModal = ({
   unMortgage,
@@ -318,6 +317,98 @@ const UnMortgageModal = ({
                           <MortgageCarousel
                             className="carousel-in-pieces mortgage-car"
                             mortgageable={allMortgagedUtils2}
+                            setMortgageProp={setMortgageProp}
+                            activeIndex={activeIndex}
+                            setActiveIndex={setActiveIndex}
+                          >
+                            {setCarouselItems()}
+                          </MortgageCarousel>
+                        </div>
+                        <button className="select-piece mortgage-select">
+                          SELECT
+                        </button>
+                      </>
+                    ) : null}
+                    {allMortgagedUtils &&
+                    allMortgagedUtils.length &&
+                    mortUtils ? (
+                      <>
+                        <div className="mortgage-ui">
+                          <MortgageCarousel
+                            className="carousel-in-pieces mortgage-car"
+                            mortgageable={allMortgagedUtils}
+                            setMortgageProp={setMortgageProp}
+                            activeIndex={activeIndex}
+                            setActiveIndex={setActiveIndex}
+                          >
+                            {setCarouselItems()}
+                          </MortgageCarousel>
+                        </div>
+                        <button className="select-piece mortgage-select">
+                          SELECT
+                        </button>
+                      </>
+                    ) : null}
+                    {allMortgaged && allMortgaged.length && mortProps ? (
+                      <>
+                        <div className="mortgage-ui">
+                          <MortgageCarousel
+                            className="carousel-in-pieces mortgage-car"
+                            mortgageable={allMortgaged}
+                            setMortgageProp={setMortgageProp}
+                            activeIndex={activeIndex}
+                            setActiveIndex={setActiveIndex}
+                          >
+                            {setCarouselItems()}
+                          </MortgageCarousel>
+                        </div>
+                        <button className="select-piece mortgage-select">
+                          SELECT
+                        </button>
+                      </>
+                    ) : null}
+                    {allMortgaged2 && allMortgaged2.length && mortProps ? (
+                      <>
+                        <div className="mortgage-ui">
+                          <MortgageCarousel
+                            className="carousel-in-pieces mortgage-car"
+                            mortgageable={allMortgaged2}
+                            setMortgageProp={setMortgageProp}
+                            activeIndex={activeIndex}
+                            setActiveIndex={setActiveIndex}
+                          >
+                            {setCarouselItems()}
+                          </MortgageCarousel>
+                        </div>
+                        <button className="select-piece mortgage-select">
+                          SELECT
+                        </button>
+                      </>
+                    ) : null}
+                    {allMortgagedRRs2 && allMortgagedRRs2.length && mortRRs ? (
+                      <>
+                        <div className="mortgage-ui">
+                          <MortgageCarousel
+                            className="carousel-in-pieces mortgage-car"
+                            mortgageable={allMortgagedRRs2}
+                            setMortgageProp={setMortgageProp}
+                            activeIndex={activeIndex}
+                            setActiveIndex={setActiveIndex}
+                          >
+                            {setCarouselItems()}
+                          </MortgageCarousel>
+                        </div>
+                        <button className="select-piece mortgage-select">
+                          SELECT
+                        </button>
+                      </>
+                    ) : null}
+                    {allMortgagedRRs && allMortgagedRRs.length && mortRRs ? (
+                      <>
+                        <div className="mortgage-ui">
+                          <MortgageCarousel
+                            className="carousel-in-pieces mortgage-car"
+                            mortgageable={allMortgagedRRs}
                             setMortgageProp={setMortgageProp}
                             activeIndex={activeIndex}
                             setActiveIndex={setActiveIndex}

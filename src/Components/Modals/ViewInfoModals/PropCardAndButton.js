@@ -50,9 +50,6 @@ const PropCardAndButton = ({
     card.hasHotel,
   ]);
 
-  console.log(totalHousesP1);
-  console.log(hotelsP1);
-
   const buyHutong = (event) => {
     event.preventDefault();
     if (houseModal && card.buidlingCost > p1Money) {

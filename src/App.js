@@ -80,9 +80,6 @@ const App = () => {
   const [unMortgage, setUnMortgage] = useState(false);
   const [unMortgage2, setUnMortgage2] = useState(false);
 
-  console.log(counterP2);
-  console.log(setCounterP2);
-
   const location = useLocation();
   const data = location.state;
 
