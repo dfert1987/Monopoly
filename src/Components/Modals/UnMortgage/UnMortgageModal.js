@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import MortgageCarousel, { MortgageItem } from "../Mortgage/MortgageCarousel";
+import { ConfirmUnMort } from "./ConfirmUnMort";
 import { motion, AnimatePresence } from "framer-motion";
 import { faXmark } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -12,7 +13,7 @@ const UnMortgageModal = ({
   setUnMortgage,
   unMortgage2,
   setUnMortgage2,
-  p1Mopney,
+  p1Money,
   p2Money,
   setP1Money,
   setP2Money,
@@ -39,6 +40,7 @@ const UnMortgageModal = ({
   const [allMortgagedUtils2, setAllMortgagedUtils2] = useState();
   const [mortgagedMessage, setMortgagedMessage] = useState(false);
   const [unMortgagedPropName, setUnMortgagePropName] = useState();
+  const [confirmModalView, setConfirmModalView] = useState(false);
 
   const [clickSound] = useSound(Click);
 
@@ -455,6 +457,35 @@ const UnMortgageModal = ({
           </motion.div>
         ) : null}
       </AnimatePresence>
+      <ConfirmUnMort
+        confirmModalView={confirmModalView}
+        setConfirmModalView={setConfirmModalView}
+        p1Money={p1Money}
+        p2Money={p2Money}
+        setP1Money={setP1Money}
+        setP2Money={setP2Money}
+        properties={properties}
+        setProperties={setProperties}
+        railRoads={railRoads}
+        setRailRoads={setRailRoads}
+        utilities={utilities}
+        setUtilities={setUtilities}
+        allMortgaged={allMortgaged}
+        setAllMortgaged={setAllMortgaged}
+        allMortgaged2={setAllMortgaged2}
+        setAllMortgaged2={setAllMortgaged2}
+        allMortgagedRRs={allMortgagedRRs}
+        allMortgagedRRs2={allMortgagedRRs2}
+        allMortgagedUtils={allMortgagedUtils}
+        setAllMortgagedUtils2={setAllMortgagedUtils2}
+        allMortgagedUtils2={allMortgagedUtils2}
+        setAllMortgagedRRs={setAllMortgagedRRs}
+        setAllMortgagedRRs2={setAllMortgagedRRs2}
+        setAllMortgagedUtils={setAllMortgagedUtils}
+        freeParking={freeParking}
+        setFreeParking={setFreeParking}
+        activeIndex={activeIndex}
+      />
     </>
   );
 };

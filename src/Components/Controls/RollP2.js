@@ -171,7 +171,6 @@ export const RollP2 = ({
       let highTotal = counterP2 + first + second;
       setCounterP2(highTotal - 40);
       showPropertyModal(highTotal - 40);
-      console.log(highTotal);
       if (highTotal > 41) {
         let newMoney = p2Money + 200;
         setP2Money(newMoney);
