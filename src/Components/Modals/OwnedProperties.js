@@ -121,112 +121,160 @@ const OwnedProperties = ({
   };
 
   const checkYellowsP1 = (yellows) => {
-    if (yellows && yellows.length === 3) {
+    let mortgagedProp = yellows.find((property) => {
+      return property.mortgaged === true;
+    });
+    if (yellows && yellows.length === 3 && !mortgagedProp) {
       setCanBuildP1(true);
       setBuildYellowP1(true);
     } else setBuildYellowP1(false);
   };
 
   const checkYellowsP2 = (yellows) => {
-    if (yellows && yellows.length === 3) {
+    let mortgagedProp = yellows.find((property) => {
+      return property.mortgaged === true;
+    });
+    if (yellows && yellows.length === 3 && !mortgagedProp) {
       setCanBuildP2(true);
       setBuildYellowP2(true);
     } else setBuildYellowP2(false);
   };
 
   const checkGreensP1 = (greens) => {
-    if (greens && greens.length === 3) {
+    let mortgagedProp = greens.find((property) => {
+      return property.mortgaged === true;
+    });
+    if (greens && greens.length === 3 && !mortgagedProp) {
       setCanBuildP1(true);
       setBuildGreenP1(true);
     } else setBuildGreenP1(false);
   };
 
   const checkGreensP2 = (greens) => {
-    if (greens && greens.length === 3) {
+    let mortgagedProp = greens.find((property) => {
+      return property.mortgaged === true;
+    });
+    if (greens && greens.length === 3 && !mortgagedProp) {
       setCanBuildP2(true);
       setBuildGreenP2(true);
     } else setBuildGreenP2(false);
   };
 
   const checkBluesP1 = (blues) => {
-    if (blues && blues.length === 2) {
+    let mortgagedProp = blues.find((property) => {
+      return property.mortgaged === true;
+    });
+    if (blues && blues.length === 2 && !mortgagedProp) {
       setCanBuildP1(true);
       setBuildBlueP1(true);
     } else setBuildBlueP1(false);
   };
 
   const checkBluesP2 = (blues) => {
-    if (blues && blues.length === 2) {
+    let mortgagedProp = blues.find((property) => {
+      return property.mortgaged === true;
+    });
+    if (blues && blues.length === 2 && !mortgagedProp) {
       setCanBuildP2(true);
       setBuildBlueP2(true);
     } else setBuildBlueP2(false);
   };
 
   const checkBrownsP1 = (browns) => {
-    if (browns && browns.length === 2) {
+    let mortgagedProp = browns.find((property) => {
+      return property.mortgaged === true;
+    });
+    if (browns && browns.length === 2 && !mortgagedProp) {
       setCanBuildP1(true);
       setBuildBrownP1(true);
     } else setBuildBrownP1(false);
   };
 
   const checkBrownsP2 = (browns) => {
-    if (browns && browns.length === 2) {
+    let mortgagedProp = browns.find((property) => {
+      return property.mortgaged === true;
+    });
+    if (browns && browns.length === 2 && !mortgagedProp) {
       setCanBuildP2(true);
       setBuildBrownP2(true);
     } else setBuildBrownP2(false);
   };
 
   const checkOrangesP1 = (oranges) => {
-    if (oranges && oranges.length === 3) {
+    let mortgagedProp = oranges.find((property) => {
+      return property.mortgaged === true;
+    });
+    if (oranges && oranges.length === 3 && !mortgagedProp) {
       setCanBuildP1(true);
       setBuildOrangeP1(true);
     } else setBuildOrangeP1(false);
   };
 
   const checkOrangesP2 = (oranges) => {
-    if (oranges && oranges.length === 3) {
+    let mortgagedProp = oranges.find((property) => {
+      return property.mortgaged === true;
+    });
+    if (oranges && oranges.length === 3 && !mortgagedProp) {
       setCanBuildP2(true);
       setBuildOrangeP2(true);
     } else setBuildOrangeP2(false);
   };
 
   const checkRedsP1 = (reds) => {
-    if (reds && reds.length === 3) {
+    let mortgagedProp = reds.find((property) => {
+      return property.mortgaged === true;
+    });
+    if (reds && reds.length === 3 && !mortgagedProp) {
       setCanBuildP1(true);
       setBuildRedP1(true);
     } else setBuildRedP1(false);
   };
 
   const checkRedsP2 = (reds) => {
-    if (reds && reds.length === 3) {
+    let mortgagedProp = reds.find((property) => {
+      return property.mortgaged === true;
+    });
+    if (reds && reds.length === 3 && !mortgagedProp) {
       setCanBuildP2(true);
       setBuildRedP2(true);
     } else setBuildRedP2(false);
   };
 
   const checkLightBluesP1 = (lbs) => {
-    if (lbs && lbs.length === 3) {
+    let mortgagedProp = lbs.find((property) => {
+      return property.mortgaged === true;
+    });
+    if (lbs && lbs.length === 3 && !mortgagedProp) {
       setCanBuildP1(true);
       setBuildLightBlueP1(true);
     } else setBuildLightBlueP1(false);
   };
 
   const checkLightBluesP2 = (lbs) => {
-    if (lbs && lbs.length === 3) {
+    let mortgagedProp = lbs.find((property) => {
+      return property.mortgaged === true;
+    });
+    if (lbs && lbs.length === 3 && !mortgagedProp) {
       setCanBuildP2(true);
       setBuildLightBlueP2(true);
     } else setBuildLightBlueP2(false);
   };
 
   const checkVioletsP1 = (violets) => {
-    if (violets && violets.length === 3) {
+    let mortgagedProp = violets.find((property) => {
+      return property.mortgaged === true;
+    });
+    if (violets && violets.length === 3 && !mortgagedProp) {
       setCanBuildP1(true);
       setBuildVioletP1(true);
     } else setBuildVioletP1(false);
   };
 
   const checkVioletsP2 = (violets) => {
-    if (violets && violets.length === 3) {
+    let mortgagedProp = violets.find((property) => {
+      return property.mortgaged === true;
+    });
+    if (violets && violets.length === 3 && !mortgagedProp) {
       setCanBuildP2(true);
       setBuildVioletP2(true);
     } else setBuildVioletP2(false);
@@ -332,7 +380,11 @@ const OwnedProperties = ({
                                 }
                               >
                                 <div className="top-square brown"></div>
-                                <div className="white-part"></div>
+                                <div className="white-part">
+                                  {properties[21].mortgaged ? (
+                                    <p className="m">M</p>
+                                  ) : null}
+                                </div>
                               </div>
                             ) : null}
                           </div>
@@ -354,7 +406,11 @@ const OwnedProperties = ({
                                 }
                               >
                                 <div className="top-square brown"></div>
-                                <div className="white-part"></div>
+                                <div className="white-part">
+                                  {properties[20].mortgaged ? (
+                                    <p className="m">M</p>
+                                  ) : null}
+                                </div>
                               </div>
                             ) : null}
                           </div>
@@ -388,7 +444,11 @@ const OwnedProperties = ({
                                 }
                               >
                                 <div className="top-square lightBlue"></div>
-                                <div className="white-part"></div>
+                                <div className="white-part">
+                                  {properties[19].mortgaged ? (
+                                    <p className="m">M</p>
+                                  ) : null}
+                                </div>
                               </div>
                             ) : null}
                           </div>
@@ -414,7 +474,11 @@ const OwnedProperties = ({
                                 }
                               >
                                 <div className="top-square lightBlue"></div>
-                                <div className="white-part"></div>
+                                <div className="white-part">
+                                  {properties[18].mortgaged ? (
+                                    <p className="m">M</p>
+                                  ) : null}
+                                </div>
                               </div>
                             ) : null}
                           </div>
@@ -440,7 +504,11 @@ const OwnedProperties = ({
                                 }
                               >
                                 <div className="top-square lightBlue"></div>
-                                <div className="white-part"></div>
+                                <div className="white-part">
+                                  {properties[17].mortgaged ? (
+                                    <p className="m">M</p>
+                                  ) : null}
+                                </div>
                               </div>
                             ) : null}
                           </div>
@@ -472,7 +540,11 @@ const OwnedProperties = ({
                                 }
                               >
                                 <div className="top-square violet"></div>
-                                <div className="white-part"></div>
+                                <div className="white-part">
+                                  {properties[16].mortgaged ? (
+                                    <p className="m">M</p>
+                                  ) : null}
+                                </div>
                               </div>
                             ) : null}
                           </div>
@@ -494,7 +566,11 @@ const OwnedProperties = ({
                                 }
                               >
                                 <div className="top-square violet"></div>
-                                <div className="white-part"></div>
+                                <div className="white-part">
+                                  {properties[15].mortgaged ? (
+                                    <p className="m">M</p>
+                                  ) : null}
+                                </div>
                               </div>
                             ) : null}
                           </div>
@@ -516,7 +592,11 @@ const OwnedProperties = ({
                                 }
                               >
                                 <div className="top-square violet"></div>
-                                <div className="white-part"></div>
+                                <div className="white-part">
+                                  {properties[14].mortgaged ? (
+                                    <p className="m">M</p>
+                                  ) : null}
+                                </div>
                               </div>
                             ) : null}
                           </div>
@@ -546,7 +626,11 @@ const OwnedProperties = ({
                                 }
                               >
                                 <div className="top-square orange"></div>
-                                <div className="white-part"></div>
+                                <div className="white-part">
+                                  {properties[13].mortgaged ? (
+                                    <p className="m">M</p>
+                                  ) : null}
+                                </div>
                               </div>
                             ) : null}
                           </div>
@@ -568,7 +652,11 @@ const OwnedProperties = ({
                                 }
                               >
                                 <div className="top-square orange"></div>
-                                <div className="white-part"></div>
+                                <div className="white-part">
+                                  {properties[12].mortgaged ? (
+                                    <p className="m">M</p>
+                                  ) : null}
+                                </div>
                               </div>
                             ) : null}
                           </div>
@@ -590,7 +678,11 @@ const OwnedProperties = ({
                                 }
                               >
                                 <div className="top-square orange"></div>
-                                <div className="white-part"></div>
+                                <div className="white-part">
+                                  {properties[11].mortgaged ? (
+                                    <p className="m">M</p>
+                                  ) : null}
+                                </div>
                               </div>
                             ) : null}
                           </div>
@@ -620,7 +712,11 @@ const OwnedProperties = ({
                                 }
                               >
                                 <div className="top-square red"></div>
-                                <div className="white-part"></div>
+                                <div className="white-part">
+                                  {properties[10].mortgaged ? (
+                                    <p className="m">M</p>
+                                  ) : null}
+                                </div>
                               </div>
                             ) : null}
                           </div>
@@ -642,7 +738,11 @@ const OwnedProperties = ({
                                 }
                               >
                                 <div className="top-square red"></div>
-                                <div className="white-part"></div>
+                                <div className="white-part">
+                                  {properties[9].mortgaged ? (
+                                    <p className="m">M</p>
+                                  ) : null}
+                                </div>
                               </div>
                             ) : null}
                           </div>
@@ -664,7 +764,11 @@ const OwnedProperties = ({
                                 }
                               >
                                 <div className="top-square red"></div>
-                                <div className="white-part"></div>
+                                <div className="white-part">
+                                  {properties[8].mortgaged ? (
+                                    <p className="m">M</p>
+                                  ) : null}
+                                </div>
                               </div>
                             ) : null}
                           </div>
@@ -694,7 +798,11 @@ const OwnedProperties = ({
                                 }
                               >
                                 <div className="top-square yellow"></div>
-                                <div className="white-part"></div>
+                                <div className="white-part">
+                                  {properties[7].mortgaged ? (
+                                    <p className="m">M</p>
+                                  ) : null}
+                                </div>
                               </div>
                             ) : null}
                           </div>
@@ -716,7 +824,11 @@ const OwnedProperties = ({
                                 }
                               >
                                 <div className="top-square yellow"></div>
-                                <div className="white-part"></div>
+                                <div className="white-part">
+                                  {properties[6].mortgaged ? (
+                                    <p className="m">M</p>
+                                  ) : null}
+                                </div>
                               </div>
                             ) : null}
                           </div>
@@ -738,7 +850,11 @@ const OwnedProperties = ({
                                 }
                               >
                                 <div className="top-square yellow"></div>
-                                <div className="white-part"></div>
+                                <div className="white-part">
+                                  {properties[5].mortgaged ? (
+                                    <p className="m">M</p>
+                                  ) : null}
+                                </div>
                               </div>
                             ) : null}
                           </div>
@@ -770,7 +886,11 @@ const OwnedProperties = ({
                                 }
                               >
                                 <div className="top-square green"></div>
-                                <div className="white-part"></div>
+                                <div className="white-part">
+                                  {properties[4].mortgaged ? (
+                                    <p className="m">M</p>
+                                  ) : null}
+                                </div>
                               </div>
                             ) : null}
                           </div>
@@ -792,7 +912,11 @@ const OwnedProperties = ({
                                 }
                               >
                                 <div className="top-square green"></div>
-                                <div className="white-part"></div>
+                                <div className="white-part">
+                                  {properties[3].mortgaged ? (
+                                    <p className="m">M</p>
+                                  ) : null}
+                                </div>
                               </div>
                             ) : null}
                           </div>
@@ -814,7 +938,11 @@ const OwnedProperties = ({
                                 }
                               >
                                 <div className="top-square green"></div>
-                                <div className="white-part"></div>
+                                <div className="white-part">
+                                  {properties[2].mortgaged ? (
+                                    <p className="m">M</p>
+                                  ) : null}
+                                </div>
                               </div>
                             ) : null}
                           </div>
@@ -844,7 +972,11 @@ const OwnedProperties = ({
                                 }
                               >
                                 <div className="top-square blue"></div>
-                                <div className="white-part"></div>
+                                <div className="white-part">
+                                  {properties[1].mortgaged ? (
+                                    <p className="m">M</p>
+                                  ) : null}
+                                </div>
                               </div>
                             ) : null}
                           </div>
@@ -866,7 +998,11 @@ const OwnedProperties = ({
                                 }
                               >
                                 <div className="top-square blue"></div>
-                                <div className="white-part"></div>
+                                <div className="white-part">
+                                  {properties[0].mortgaged ? (
+                                    <p className="m">M</p>
+                                  ) : null}
+                                </div>
                               </div>
                             ) : null}
                           </div>
@@ -885,11 +1021,15 @@ const OwnedProperties = ({
                                 onClick={() => showRR(railRoads[0])}
                               >
                                 <div className="white-part-rr">
-                                  <img
-                                    className="small-ditie"
-                                    alt="small subway logo"
-                                    src={ditielogo}
-                                  />
+                                  {railRoads[0].mortgaged ? (
+                                    <p className="m">M</p>
+                                  ) : (
+                                    <img
+                                      className="small-ditie"
+                                      alt="small subway logo"
+                                      src={ditielogo}
+                                    />
+                                  )}
                                 </div>
                               </div>
                             ) : null}
@@ -904,11 +1044,15 @@ const OwnedProperties = ({
                                 onClick={() => showRR(railRoads[1])}
                               >
                                 <div className="white-part-rr">
-                                  <img
-                                    className="small-ditie"
-                                    alt="small subway logo"
-                                    src={ditielogo}
-                                  />
+                                  {railRoads[1].mortgaged ? (
+                                    <p className="m">M</p>
+                                  ) : (
+                                    <img
+                                      className="small-ditie"
+                                      alt="small subway logo"
+                                      src={ditielogo}
+                                    />
+                                  )}
                                 </div>
                               </div>
                             ) : null}
@@ -923,11 +1067,15 @@ const OwnedProperties = ({
                                 onClick={() => showRR(railRoads[2])}
                               >
                                 <div className="white-part-rr">
-                                  <img
-                                    className="small-ditie"
-                                    alt="small subway logo"
-                                    src={ditielogo}
-                                  />
+                                  {railRoads[2].mortgaged ? (
+                                    <p className="m">M</p>
+                                  ) : (
+                                    <img
+                                      className="small-ditie"
+                                      alt="small subway logo"
+                                      src={ditielogo}
+                                    />
+                                  )}
                                 </div>
                               </div>
                             ) : null}
@@ -942,11 +1090,15 @@ const OwnedProperties = ({
                                 onClick={() => showRR(railRoads[0])}
                               >
                                 <div className="white-part-rr">
-                                  <img
-                                    className="small-ditie"
-                                    alt="small subway logo"
-                                    src={ditielogo}
-                                  />
+                                  {railRoads[3].mortgaged ? (
+                                    <p className="m">M</p>
+                                  ) : (
+                                    <img
+                                      className="small-ditie"
+                                      alt="small subway logo"
+                                      src={ditielogo}
+                                    />
+                                  )}
                                 </div>
                               </div>
                             ) : null}
@@ -966,11 +1118,15 @@ const OwnedProperties = ({
                                 onClick={() => showUtil(utilities[0])}
                               >
                                 <div className="white-part-rr">
-                                  <img
-                                    className="small-ditie"
-                                    alt="water jug"
-                                    src={jug}
-                                  />
+                                  {utilities[0].mortgaged ? (
+                                    <p className="m">M</p>
+                                  ) : (
+                                    <img
+                                      className="small-ditie"
+                                      alt="water jug"
+                                      src={jug}
+                                    />
+                                  )}
                                 </div>
                               </div>
                             ) : null}
@@ -985,11 +1141,15 @@ const OwnedProperties = ({
                                 onClick={() => showUtil(utilities[1])}
                               >
                                 <div className="white-part-rr">
-                                  <img
-                                    className="small-ditie"
-                                    alt="mop"
-                                    src={mopAyi}
-                                  />
+                                  {utilities[1].mortgaged ? (
+                                    <p className="m">M</p>
+                                  ) : (
+                                    <img
+                                      className="small-ditie"
+                                      alt="mop"
+                                      src={mopAyi}
+                                    />
+                                  )}
                                 </div>
                               </div>
                             ) : null}
@@ -1039,7 +1199,11 @@ const OwnedProperties = ({
                                 }
                               >
                                 <div className="top-square brown"></div>
-                                <div className="white-part"></div>
+                                <div className="white-part">
+                                  {properties[21].mortgaged ? (
+                                    <p className="m">M</p>
+                                  ) : null}
+                                </div>
                               </div>
                             ) : null}
                           </div>
@@ -1061,7 +1225,11 @@ const OwnedProperties = ({
                                 }
                               >
                                 <div className="top-square brown"></div>
-                                <div className="white-part"></div>
+                                <div className="white-part">
+                                  {properties[20].mortgaged ? (
+                                    <p className="m">M</p>
+                                  ) : null}
+                                </div>
                               </div>
                             ) : null}
                           </div>
@@ -1095,7 +1263,11 @@ const OwnedProperties = ({
                                 }
                               >
                                 <div className="top-square lightBlue"></div>
-                                <div className="white-part"></div>
+                                <div className="white-part">
+                                  {properties[19].mortgaged ? (
+                                    <p className="m">M</p>
+                                  ) : null}
+                                </div>
                               </div>
                             ) : null}
                           </div>
@@ -1121,7 +1293,11 @@ const OwnedProperties = ({
                                 }
                               >
                                 <div className="top-square lightBlue"></div>
-                                <div className="white-part"></div>
+                                <div className="white-part">
+                                  {properties[18].mortgaged ? (
+                                    <p className="m">M</p>
+                                  ) : null}
+                                </div>
                               </div>
                             ) : null}
                           </div>
@@ -1147,7 +1323,11 @@ const OwnedProperties = ({
                                 }
                               >
                                 <div className="top-square lightBlue"></div>
-                                <div className="white-part"></div>
+                                <div className="white-part">
+                                  {properties[17].mortgaged ? (
+                                    <p className="m">M</p>
+                                  ) : null}
+                                </div>
                               </div>
                             ) : null}
                           </div>
@@ -1179,7 +1359,11 @@ const OwnedProperties = ({
                                 }
                               >
                                 <div className="top-square violet"></div>
-                                <div className="white-part"></div>
+                                <div className="white-part">
+                                  {properties[16].mortgaged ? (
+                                    <p className="m">M</p>
+                                  ) : null}
+                                </div>
                               </div>
                             ) : null}
                           </div>
@@ -1201,7 +1385,11 @@ const OwnedProperties = ({
                                 }
                               >
                                 <div className="top-square violet"></div>
-                                <div className="white-part"></div>
+                                <div className="white-part">
+                                  {properties[15].mortgaged ? (
+                                    <p className="m">M</p>
+                                  ) : null}
+                                </div>
                               </div>
                             ) : null}
                           </div>
@@ -1223,7 +1411,11 @@ const OwnedProperties = ({
                                 }
                               >
                                 <div className="top-square violet"></div>
-                                <div className="white-part"></div>
+                                <div className="white-part">
+                                  {properties[14].mortgaged ? (
+                                    <p className="m">M</p>
+                                  ) : null}
+                                </div>
                               </div>
                             ) : null}
                           </div>
@@ -1255,7 +1447,11 @@ const OwnedProperties = ({
                                 }`}
                               >
                                 <div className="top-square orange"></div>
-                                <div className="white-part"></div>
+                                <div className="white-part">
+                                  {properties[13].mortgaged ? (
+                                    <p className="m">M</p>
+                                  ) : null}
+                                </div>
                               </div>
                             ) : null}
                           </div>
@@ -1277,7 +1473,11 @@ const OwnedProperties = ({
                                 }
                               >
                                 <div className="top-square orange"></div>
-                                <div className="white-part"></div>
+                                <div className="white-part">
+                                  {properties[12].mortgaged ? (
+                                    <p className="m">M</p>
+                                  ) : null}
+                                </div>
                               </div>
                             ) : null}
                           </div>
@@ -1299,7 +1499,11 @@ const OwnedProperties = ({
                                 }
                               >
                                 <div className="top-square orange"></div>
-                                <div className="white-part"></div>
+                                <div className="white-part">
+                                  {properties[11].mortgaged ? (
+                                    <p className="m">M</p>
+                                  ) : null}
+                                </div>
                               </div>
                             ) : null}
                           </div>
@@ -1329,7 +1533,11 @@ const OwnedProperties = ({
                                 }
                               >
                                 <div className="top-square red"></div>
-                                <div className="white-part"></div>
+                                <div className="white-part">
+                                  {properties[10].mortgaged ? (
+                                    <p className="m">M</p>
+                                  ) : null}
+                                </div>
                               </div>
                             ) : null}
                           </div>
@@ -1351,7 +1559,11 @@ const OwnedProperties = ({
                                 }
                               >
                                 <div className="top-square red"></div>
-                                <div className="white-part"></div>
+                                <div className="white-part">
+                                  {properties[9].mortgaged ? (
+                                    <p className="m">M</p>
+                                  ) : null}
+                                </div>
                               </div>
                             ) : null}
                           </div>
@@ -1373,7 +1585,11 @@ const OwnedProperties = ({
                                 }
                               >
                                 <div className="top-square red"></div>
-                                <div className="white-part"></div>
+                                <div className="white-part">
+                                  {properties[8].mortgaged ? (
+                                    <p className="m">M</p>
+                                  ) : null}
+                                </div>
                               </div>
                             ) : null}
                           </div>
@@ -1403,7 +1619,11 @@ const OwnedProperties = ({
                                 }
                               >
                                 <div className="top-square yellow"></div>
-                                <div className="white-part"></div>
+                                <div className="white-part">
+                                  {properties[7].mortgaged ? (
+                                    <p className="m">M</p>
+                                  ) : null}
+                                </div>
                               </div>
                             ) : null}
                           </div>
@@ -1425,7 +1645,11 @@ const OwnedProperties = ({
                                 }
                               >
                                 <div className="top-square yellow"></div>
-                                <div className="white-part"></div>
+                                <div className="white-part">
+                                  {properties[6].mortgaged ? (
+                                    <p className="m">M</p>
+                                  ) : null}
+                                </div>
                               </div>
                             ) : null}
                           </div>
@@ -1447,7 +1671,11 @@ const OwnedProperties = ({
                                 }
                               >
                                 <div className="top-square yellow"></div>
-                                <div className="white-part"></div>
+                                <div className="white-part">
+                                  {properties[5].mortgaged ? (
+                                    <p className="m">M</p>
+                                  ) : null}
+                                </div>
                               </div>
                             ) : null}
                           </div>
@@ -1479,7 +1707,11 @@ const OwnedProperties = ({
                                 }
                               >
                                 <div className="top-square green"></div>
-                                <div className="white-part"></div>
+                                <div className="white-part">
+                                  {properties[4].mortgaged ? (
+                                    <p className="m">M</p>
+                                  ) : null}
+                                </div>
                               </div>
                             ) : null}
                           </div>
@@ -1501,7 +1733,11 @@ const OwnedProperties = ({
                                 }
                               >
                                 <div className="top-square green"></div>
-                                <div className="white-part"></div>
+                                <div className="white-part">
+                                  {properties[3].mortgaged ? (
+                                    <p className="m">M</p>
+                                  ) : null}
+                                </div>
                               </div>
                             ) : null}
                           </div>
@@ -1523,7 +1759,11 @@ const OwnedProperties = ({
                                 }
                               >
                                 <div className="top-square green"></div>
-                                <div className="white-part"></div>
+                                <div className="white-part">
+                                  {properties[2].mortgaged ? (
+                                    <p className="m">M</p>
+                                  ) : null}
+                                </div>
                               </div>
                             ) : null}
                           </div>
@@ -1555,7 +1795,11 @@ const OwnedProperties = ({
                                 }`}
                               >
                                 <div className="top-square blue"></div>
-                                <div className="white-part"></div>
+                                <div className="white-part">
+                                  {properties[1].mortgaged ? (
+                                    <p className="m">M</p>
+                                  ) : null}
+                                </div>
                               </div>
                             ) : null}
                           </div>
@@ -1577,7 +1821,11 @@ const OwnedProperties = ({
                                 }
                               >
                                 <div className="top-square blue"></div>
-                                <div className="white-part"></div>
+                                <div className="white-part">
+                                  {properties[0].mortgaged ? (
+                                    <p className="m">M</p>
+                                  ) : null}
+                                </div>
                               </div>
                             ) : null}
                           </div>
@@ -1596,11 +1844,15 @@ const OwnedProperties = ({
                                 onClick={() => showRR(railRoads[0])}
                               >
                                 <div className="white-part-rr">
-                                  <img
-                                    className="small-ditie"
-                                    alt="small subway logo"
-                                    src={ditielogo}
-                                  />
+                                  {railRoads[0].mortgaged ? (
+                                    <p className="m">M</p>
+                                  ) : (
+                                    <img
+                                      className="small-ditie"
+                                      alt="small subway logo"
+                                      src={ditielogo}
+                                    />
+                                  )}
                                 </div>
                               </div>
                             ) : null}
@@ -1615,11 +1867,15 @@ const OwnedProperties = ({
                                 onClick={() => showRR(railRoads[1])}
                               >
                                 <div className="white-part-rr">
-                                  <img
-                                    className="small-ditie"
-                                    alt="small subway logo"
-                                    src={ditielogo}
-                                  />
+                                  {railRoads[1].mortgaged ? (
+                                    <p className="m">M</p>
+                                  ) : (
+                                    <img
+                                      className="small-ditie"
+                                      alt="small subway logo"
+                                      src={ditielogo}
+                                    />
+                                  )}
                                 </div>
                               </div>
                             ) : null}
@@ -1634,11 +1890,15 @@ const OwnedProperties = ({
                                 onClick={() => showRR(railRoads[2])}
                               >
                                 <div className="white-part-rr">
-                                  <img
-                                    className="small-ditie"
-                                    alt="small subway logo"
-                                    src={ditielogo}
-                                  />
+                                  {railRoads[2].mortgaged ? (
+                                    <p className="m">M</p>
+                                  ) : (
+                                    <img
+                                      className="small-ditie"
+                                      alt="small subway logo"
+                                      src={ditielogo}
+                                    />
+                                  )}
                                 </div>
                               </div>
                             ) : null}
@@ -1653,11 +1913,15 @@ const OwnedProperties = ({
                                 onClick={() => showRR(railRoads[3])}
                               >
                                 <div className="white-part-rr">
-                                  <img
-                                    className="small-ditie"
-                                    alt="small subway logo"
-                                    src={ditielogo}
-                                  />
+                                  {railRoads[3].mortgaged ? (
+                                    <p className="m">M</p>
+                                  ) : (
+                                    <img
+                                      className="small-ditie"
+                                      alt="small subway logo"
+                                      src={ditielogo}
+                                    />
+                                  )}
                                 </div>
                               </div>
                             ) : null}
@@ -1677,11 +1941,15 @@ const OwnedProperties = ({
                                 onClick={() => showUtil(utilities[0])}
                               >
                                 <div className="white-part-rr">
-                                  <img
-                                    className="small-ditie"
-                                    alt="water jug"
-                                    src={jug}
-                                  />
+                                  {utilities[0].mortgaged ? (
+                                    <p className="m">M</p>
+                                  ) : (
+                                    <img
+                                      className="small-ditie"
+                                      alt="water jug"
+                                      src={jug}
+                                    />
+                                  )}
                                 </div>
                               </div>
                             ) : null}
@@ -1696,11 +1964,15 @@ const OwnedProperties = ({
                                 onClick={() => showUtil(utilities[1])}
                               >
                                 <div className="white-part-rr">
-                                  <img
-                                    className="small-ditie"
-                                    alt="mop"
-                                    src={mopAyi}
-                                  />
+                                  {utilities[1].mortgaged ? (
+                                    <p className="m">M</p>
+                                  ) : (
+                                    <img
+                                      className="small-ditie"
+                                      alt="mop"
+                                      src={mopAyi}
+                                    />
+                                  )}
                                 </div>
                               </div>
                             ) : null}

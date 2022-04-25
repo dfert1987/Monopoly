@@ -156,15 +156,30 @@ export const Roll = ({
     } else if (currentUtil && !currentUtil.ownedP1 && !currentUtil.ownedP2) {
       setUtilModal(true);
       setOnUtil(currentUtil);
-    } else if (currentProp && !currentProp.ownedP1 && currentProp.ownedP2) {
+    } else if (
+      currentProp &&
+      !currentProp.ownedP1 &&
+      currentProp.ownedP2 &&
+      currentProp.mortgaged === false
+    ) {
       setOnProp(currentProp);
       setPayProp(true);
       setPayTo(2);
-    } else if (currentRR && !currentRR.ownedP1 && currentRR.ownedP2) {
+    } else if (
+      currentRR &&
+      !currentRR.ownedP1 &&
+      currentRR.ownedP2 &&
+      currentRR.mortgaged === false
+    ) {
       setOnRR(currentRR);
       setPayRail(true);
       setPayRailTo(2);
-    } else if (currentUtil && !currentUtil.ownedP1 && currentUtil.ownedP2) {
+    } else if (
+      currentUtil &&
+      !currentUtil.ownedP1 &&
+      currentUtil.ownedP2 &&
+      currentUtil.mortgaged === false
+    ) {
       setOnUtil(currentUtil);
       setPayUtil(true);
       setPayUtilTo(2);
