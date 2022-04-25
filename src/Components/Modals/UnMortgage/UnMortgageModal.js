@@ -39,7 +39,7 @@ const UnMortgageModal = ({
   const [activeIndex, setActiveIndex] = useState(0);
   const [allMortgagedUtils2, setAllMortgagedUtils2] = useState();
   const [mortgagedMessage, setMortgagedMessage] = useState(false);
-  const [unMortgagedPropName, setUnMortgagePropName] = useState();
+  const [unMortgagedPropName, setUnMortgagedPropName] = useState();
   const [confirmModalView, setConfirmModalView] = useState(false);
 
   const [clickSound] = useSound(Click);
@@ -365,7 +365,10 @@ const UnMortgageModal = ({
                             {setCarouselItems()}
                           </MortgageCarousel>
                         </div>
-                        <button className="select-piece mortgage-select">
+                        <button
+                          className="select-piece mortgage-select"
+                          onClick={() => setConfirmModalView(true)}
+                        >
                           SELECT
                         </button>
                       </>
@@ -401,7 +404,10 @@ const UnMortgageModal = ({
                             {setCarouselItems()}
                           </MortgageCarousel>
                         </div>
-                        <button className="select-piece mortgage-select">
+                        <button
+                          className="select-piece mortgage-select"
+                          onClick={() => setConfirmModalView(true)}
+                        >
                           SELECT
                         </button>
                       </>
@@ -486,7 +492,7 @@ const UnMortgageModal = ({
         freeParking={freeParking}
         setFreeParking={setFreeParking}
         activeIndex={activeIndex}
-        setUnMortgagePropName={setUnMortgagePropName}
+        setUnMortgagedPropName={setUnMortgagedPropName}
         setMortgagedMessage={setMortgagedMessage}
       />
     </>
