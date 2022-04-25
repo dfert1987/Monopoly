@@ -400,7 +400,8 @@ export const PayOpponent = ({
         onProp2.hasFourHouses === false
       ) {
         let p1New = p1Money + onProp2.threeHouses;
-        let p2New = p2Money - onProp2.threeHosuses;
+        console.log(p1New);
+        let p2New = p2Money - onProp2.threeHouses;
         setP1Money(p1New);
         setP2Money(p2New);
         setRent(onProp2.threeHouses);

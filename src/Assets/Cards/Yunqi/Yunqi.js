@@ -153,7 +153,7 @@ export const Yunqi = [
     Type: "visa",
     amt: 0,
     space: 0,
-    image: require("./pics/yunqi-burger.jpeg"),
+    image: require("./pics/yunqi-marry.jpeg"),
   },
   {
     Number: 16,

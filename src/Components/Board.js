@@ -15,6 +15,7 @@ import Cards from "./Modals/Cards/Cards";
 import InJail from "./Modals/Jail/InJail";
 import OwnedProperties from "./Modals/OwnedProperties";
 import MortgageModal from "./Modals/Mortgage/MortgageModal";
+import UnMortgageModal from "./Modals/UnMortgage/UnMortgageModal";
 import PayOpponent from "./Modals/PayModals/PayOpponent";
 import PayOpponentRail from "../Components/Modals/PayModals/PayOpponentRail";
 import PayOpponentUtil from "../Components/Modals/PayModals/PayOpponentUtil";
@@ -173,6 +174,10 @@ export const Board = ({
   setMortgage,
   mortgage2,
   setMortgage2,
+  unMortgage,
+  setUnMortgage,
+  unMortgage2,
+  setUnMortgage2,
 }) => {
   const [viewPurchase, setViewPurchase] = useState(false);
   const [viewPurchase2, setViewPurchase2] = useState(false);
@@ -1352,6 +1357,24 @@ export const Board = ({
           setRailRoads={setRailRoads}
           setUtilities={setUtilities}
           setProperties={setProperties}
+        />
+        <UnMortgageModal
+          unMortgage={unMortgage}
+          setUnMortgage={setUnMortgage}
+          unMortgage2={unMortgage2}
+          setUnMortgage2={setUnMortgage2}
+          p1Money={p1Money}
+          p2Money={p2Money}
+          setP1Money={setP1Money}
+          setP2Money={setP1Money}
+          freeParking={freeParking}
+          setFreeParking={setFreeParking}
+          properties={properties}
+          railRoads={railRoads}
+          utilities={utilities}
+          setProperties={setProperties}
+          setRailRoads={setRailRoads}
+          setUtilities={setUtilities}
         />
         <InJail
           inJail={inJail}

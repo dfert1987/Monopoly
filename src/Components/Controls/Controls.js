@@ -101,6 +101,8 @@ export const Controls = ({
   setVisaModal,
   setMortgage,
   setMortgage2,
+  setUnMortgage,
+  setUnMortgage2,
 }) => {
   const [disableVisaRight, setDisableVisaRight] = useState(true);
   const [disableVisaLeft, setDisableVisaLeft] = useState(true);
@@ -147,14 +149,24 @@ export const Controls = ({
     setVisaModal(true);
   };
 
-  const motrtgageClick = () => {
+  const mortgageClick = () => {
     clickSound();
     setMortgage(true);
   };
 
-  const motrtgageClick2 = () => {
+  const mortgageClick2 = () => {
     clickSound();
     setMortgage2(true);
+  };
+
+  const unMortgageClick = () => {
+    clickSound();
+    setUnMortgage(true);
+  };
+
+  const unMortgageClick2 = () => {
+    clickSound();
+    setUnMortgage2(true);
   };
 
   const visa2Click = () => {
@@ -238,27 +250,38 @@ export const Controls = ({
             setP1Money={setP1Money}
           />
           <div className="properties player1">
-            <button
-              className="properties-view-button"
-              disabled={disableLeft}
-              onClick={propertiesClick}
-            >
-              VIEW ASSETS
-            </button>
-            <button
-              className="properties-view-button"
-              disabled={disableLeft}
-              onClick={motrtgageClick}
-            >
-              MORTGAGE
-            </button>
-            <button
-              className="properties-view-button"
-              disabled={disableVisaLeft}
-              onClick={visaClick}
-            >
-              USE VISA
-            </button>
+            <div className="button-row">
+              <button
+                className="properties-view-button leftButton"
+                disabled={disableLeft}
+                onClick={propertiesClick}
+              >
+                VIEW ASSETS
+              </button>
+              <button
+                className="properties-view-button"
+                disabled={disableVisaLeft}
+                onClick={visaClick}
+              >
+                USE VISA
+              </button>
+            </div>
+            <div className="button-row">
+              <button
+                className="properties-view-button leftButton"
+                disabled={disableLeft}
+                onClick={mortgageClick}
+              >
+                MORTGAGE
+              </button>
+              <button
+                className="properties-view-button"
+                disabled={disableLeft}
+                onClick={unMortgageClick}
+              >
+                UNMORTGAGE
+              </button>
+            </div>
           </div>
         </div>
       </div>
@@ -266,27 +289,38 @@ export const Controls = ({
         <h3 className="player">Player 2</h3>
         <div className="player-2-stats">
           <div className="properties player2">
-            <button
-              className="properties-view-button"
-              disabled={disableRight}
-              onClick={properties2Click}
-            >
-              VIEW ASSETS
-            </button>
-            <button
-              className="properties-view-button"
-              disabled={disableRight}
-              onClick={motrtgageClick2}
-            >
-              MORTGAGE
-            </button>
-            <button
-              className="properties-view-button"
-              disabled={disableVisaRight}
-              onClick={visa2Click}
-            >
-              USE VISA
-            </button>
+            <div className="button-row">
+              <button
+                className="properties-view-button leftButton"
+                disabled={disableRight}
+                onClick={properties2Click}
+              >
+                VIEW ASSETS
+              </button>
+              <button
+                className="properties-view-button"
+                disabled={disableVisaRight}
+                onClick={visa2Click}
+              >
+                USE VISA
+              </button>
+            </div>
+            <div className="button-row">
+              <button
+                className="properties-view-button leftButton"
+                disabled={disableRight}
+                onClick={mortgageClick2}
+              >
+                MORTGAGE
+              </button>
+              <button
+                className="properties-view-button"
+                disabled={disableRight}
+                onClick={unMortgageClick2}
+              >
+                UNMORTGAGE
+              </button>
+            </div>
           </div>
           <RollP2
             counterP2={counterP2}
