@@ -11,6 +11,7 @@ Unfortunately, since I didn't initially plan on coming close to finishing this p
 - [Installation](#installation)
 - [Usage](#usage)
 - [Features](#features)
+- [Demo](#demo)
 - [Contact](#contact)
 
 ## Installation
@@ -34,6 +35,10 @@ Once you're in the game you click Play to enter on the landing screen.
 Then choose your pieces on the next screen (you have quite a few Beijing inspired options)
 
 After this you can view the main board.
+
+## Demo
+
+Check out a quick video demo here!
 
 ## Features
 
