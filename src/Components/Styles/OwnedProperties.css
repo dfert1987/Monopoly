@@ -36,11 +36,14 @@
   border-radius: 20px;
   background-color: #c0e2ca;
   overflow-y: auto;
-  width: 70em;
-  height: 60em;
+
   box-shadow: 0px 0px 12px -2px;
 }
 
+.main-part {
+  padding: 1em;
+  padding-left: 3em;
+}
 .x-icon {
   height: 2em;
 }
@@ -233,6 +236,7 @@
 .exit-container {
   margin-right: auto;
   margin-left: auto;
+  padding-bottom: 1em;
   display: flex;
   flex-direction: column;
 }
