@@ -1154,6 +1154,9 @@ export const Board = ({
           properties={properties}
           railRoads={railRoads}
           utilities={utilities}
+          setProperties={setProperties}
+          setRailRoads={setRailRoads}
+          setUtilities={setUtilities}
           doubleProp={doubleProp}
           setDoubleProp={setDoubleProp}
         />

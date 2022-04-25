@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import MustModal from "./MustModal";
 import { motion, AnimatePresence } from "framer-motion";
 import { faXmark } from "@fortawesome/free-solid-svg-icons";
 import smallPay from "../../../Assets/Misc/smallpay.jpeg";
@@ -18,6 +19,9 @@ export const PayOpponent = ({
   properties,
   railRoads,
   utilities,
+  setProperties,
+  setUtilities,
+  setRailRoads,
   setP1Money,
   setP2Money,
   setOnProp,
@@ -1282,39 +1286,67 @@ export const PayOpponent = ({
   };
 
   return (
-    <AnimatePresence exitBeforeEnter>
-      {payProp === true && (onProp || onProp2) ? (
-        <motion.div
-          className="outerModal flex centerFlex"
-          variants={backdrop}
-          initial="hidden"
-          animate="visible"
-          exit="hidden"
-        >
+    <>
+      <AnimatePresence exitBeforeEnter>
+        {payProp === true && (onProp || onProp2) ? (
           <motion.div
-            className="flex flexColumn innerModalPay"
-            variants={modal}
+            className="outerModal flex centerFlex"
+            variants={backdrop}
             initial="hidden"
             animate="visible"
             exit="hidden"
           >
-            <div className="button-row">
-              <button className="close-button" onClick={handleClose}>
-                <FontAwesomeIcon className="x-icon" icon={faXmark} />
-              </button>
-            </div>
-            <div className="main-content-container">
-              <h2 className="line-1">{`${player()} Owns ${propName()}`}</h2>
-              {cashPic()}
-              <h2 className="ammount">
-                Pay <span className="rent">{`¥${rent}`}</span> in Rent.
-              </h2>
-              <h4 className="pay-saying">{saying()}</h4>
-            </div>
+            <motion.div
+              className="flex flexColumn innerModalPay"
+              variants={modal}
+              initial="hidden"
+              animate="visible"
+              exit="hidden"
+            >
+              <div className="button-row">
+                <button className="close-button" onClick={handleClose}>
+                  <FontAwesomeIcon className="x-icon" icon={faXmark} />
+                </button>
+              </div>
+              <div className="main-content-container">
+                <h2 className="line-1">{`${player()} Owns ${propName()}`}</h2>
+                {cashPic()}
+                <h2 className="ammount">
+                  Pay <span className="rent">{`¥${rent}`}</span> in Rent.
+                </h2>
+                <h4 className="pay-saying">{saying()}</h4>
+              </div>
+            </motion.div>
           </motion.div>
-        </motion.div>
-      ) : null}
-    </AnimatePresence>
+        ) : null}
+      </AnimatePresence>
+      <MustModal
+        rent={rent}
+        setRent={setRent}
+        p1MoneyAvailable={p1MoneyAvailable}
+        setP1MoneyAvailable={setP1MoneyAvailable}
+        p2MoneyAvailable={p2MoneyAvailable}
+        setP2MoneyAvailable={setP2MoneyAvailable}
+        mustMortgage={mustMortgage}
+        setMustMortgage={setMustMortgage}
+        setMustMortgage2={setMustMortgage2}
+        mustMortgage2={mustMortgage2}
+        gameOver={gameOver}
+        setGameOver={setGameOver}
+        gameOver2={gameOver2}
+        setGameOver2={setGameOver2}
+        properties={properties}
+        railRoads={railRoads}
+        utilities={utilities}
+        setProperties={setProperties}
+        setUtilities={setUtilities}
+        setRailRoads={setRailRoads}
+        p1Money={p1Money}
+        p2Money={p2Money}
+        setP1Money={setP1Money}
+        setP2Money={setP2Money}
+      />
+    </>
   );
 };
 
