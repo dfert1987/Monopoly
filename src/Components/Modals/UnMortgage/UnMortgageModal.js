@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import MortgageCarousel, { MortgageItem } from "../Mortgage/MortgageCarousel";
-import { ConfirmUnMort } from "./ConfirmUnMort";
+import ConfirmUnMort from "./ConfirmUnMort";
 import { motion, AnimatePresence } from "framer-motion";
 import { faXmark } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -321,6 +321,7 @@ const UnMortgageModal = ({
                             mortgageable={allMortgagedUtils2}
                             setMortgageProp={setMortgageProp}
                             activeIndex={activeIndex}
+                            mortgageProp={mortgageProp}
                             setActiveIndex={setActiveIndex}
                           >
                             {setCarouselItems()}
@@ -485,6 +486,8 @@ const UnMortgageModal = ({
         freeParking={freeParking}
         setFreeParking={setFreeParking}
         activeIndex={activeIndex}
+        setUnMortgagePropName={setUnMortgagePropName}
+        setMortgagedMessage={setMortgagedMessage}
       />
     </>
   );

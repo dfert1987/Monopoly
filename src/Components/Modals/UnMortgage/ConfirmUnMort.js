@@ -35,6 +35,8 @@ const ConfirmUnMort = ({
   setFreeParking,
   freeParking,
   activeIndex,
+  setUnMortgagedPropName,
+  setMortgagedMessage,
 }) => {
   const [click] = useSound(Click);
   const [drum] = useSound(Drum);
@@ -54,6 +56,11 @@ const ConfirmUnMort = ({
       opacity: 1,
       transition: { delay: 0.5 },
     },
+  };
+
+  const deMessage = () => {
+    setMortgagedMessage(false);
+    setUnMortgagedPropName();
   };
 
   const handleClose = () => {
@@ -80,6 +87,136 @@ const ConfirmUnMort = ({
     } else if (allMortgagedUtils2) {
       let changedUtil = allMortgagedUtils2[activeIndex];
       return changedUtil.Name;
+    }
+  };
+
+  const handleOK = () => {
+    if (allMortgaged !== undefined) {
+      let changedProperty = allMortgaged[activeIndex];
+      let updatedProperties = properties.map((property) => {
+        if (property.Name === changedProperty.Name) {
+          return { ...property, mortgaged: false };
+        }
+        return property;
+      });
+      setAllMortgaged();
+      let updatedMoney = p1Money - changedProperty.mortgage * 1.1;
+      setP1Money(updatedMoney);
+      let newFreeParking = freeParking + changedProperty.mortgage * 1.1;
+      setFreeParking(newFreeParking);
+      setProperties(updatedProperties);
+      setConfirmModalView(false);
+      drum();
+      setUnMortgagedPropName(changedProperty.Name);
+      setMortgagedMessage(true);
+      setTimeout(() => {
+        deMessage();
+      }, 2000);
+    } else if (allMortgaged2) {
+      let changedProperty = allMortgaged2[activeIndex];
+      let updatedProperties = properties.map((property) => {
+        if (property.Name === changedProperty.Name) {
+          return { ...property, mortgaged: false };
+        }
+        return property;
+      });
+      setAllMortgaged2();
+      let updatedMoney = p2Money - changedProperty.mortgage * 1.1;
+      setP2Money(updatedMoney);
+      let newFreeParking = freeParking + changedProperty.mortgage * 1.1;
+      setFreeParking(newFreeParking);
+      setProperties(updatedProperties);
+      setConfirmModalView(false);
+      drum();
+      setUnMortgagedPropName(changedProperty.Name);
+      setMortgagedMessage(true);
+      setTimeout(() => {
+        deMessage();
+      }, 2000);
+    } else if (allMortgagedRRs) {
+      let changedRR = allMortgagedRRs[activeIndex];
+      let updatedRRs = railRoads.map((rr) => {
+        if (rr.Name === changedRR.Name) {
+          return { ...rr, mortgaged: false };
+        }
+        return rr;
+      });
+      setAllMortgagedRRs();
+      let updatedMoney = p1Money - changedRR.mortgage * 1.1;
+      setP1Money(updatedMoney);
+      let newFreeParking = freeParking + changedRR.mortgage * 1.1;
+      setFreeParking(newFreeParking);
+      setRailRoads(updatedRRs);
+      setConfirmModalView(false);
+      drum();
+      setUnMortgagedPropName(changedRR.Name);
+      setMortgagedMessage(true);
+      setTimeout(() => {
+        deMessage();
+      }, 2000);
+    } else if (allMortgagedRRs2) {
+      let changedRR = allMortgagedRRs2[activeIndex];
+      let updatedRRs = railRoads.map((rr) => {
+        if (rr.Name === changedRR.Name) {
+          return { ...rr, mortgaged: false };
+        }
+        return rr;
+      });
+      setAllMortgagedRRs2();
+      let updatedMoney = p2Money - changedRR.mortgage * 1.1;
+      setP2Money(updatedMoney);
+      let newFreeParking = freeParking + changedRR.mortgage * 1.1;
+      setFreeParking(newFreeParking);
+      setRailRoads(updatedRRs);
+      setConfirmModalView(false);
+      drum();
+      setUnMortgagedPropName(changedRR.Name);
+      setMortgagedMessage(true);
+      setTimeout(() => {
+        deMessage();
+      }, 2000);
+    } else if (allMortgagedUtils) {
+      let changedUtil = allMortgagedUtils[activeIndex];
+      let updatedUtils = utilities.map((util) => {
+        if (util.Name === changedUtil.Name) {
+          return { ...util, mortgaged: false };
+        }
+        return util;
+      });
+      setAllMortgagedUtils();
+      let updatedMoney = p1Money - changedUtil.mortgage * 1.1;
+      setP1Money(updatedMoney);
+      let newFreeParking = freeParking + changedUtil.mortgage * 1.1;
+      setFreeParking(newFreeParking);
+      setUtilities(updatedUtils);
+      setConfirmModalView(false);
+      drum();
+      setUnMortgagedPropName(changedUtil.Name);
+      setMortgagedMessage(true);
+      setTimeout(() => {
+        deMessage();
+      }, 2000);
+    } else if (allMortgagedUtils2) {
+      let changedUtil = allMortgagedUtils2[activeIndex];
+      let updatedUtils = utilities.map((util) => {
+        if (util.Name === changedUtil.Name) {
+          return { ...util, mortgaged: false };
+        }
+        return util;
+      });
+      setAllMortgagedUtils2();
+      let updatedMoney = p2Money - changedUtil.mortgage * 1.1;
+      setP2Money(updatedMoney);
+      let newFreeParking = freeParking + changedUtil.mortgage * 1.1;
+      setFreeParking(newFreeParking);
+      setUtilities(updatedUtils);
+      setConfirmModalView(false);
+      drum();
+      setUnMortgagedPropName(changedUtil.Name);
+      setMortgagedMessage(true);
+      setTimeout(() => {
+        deMessage();
+      }, 2000);
     }
   };
 
