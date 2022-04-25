@@ -29,6 +29,8 @@ const PropCardAndButton = ({
   const [hotel, setHotel] = useState(false);
   const [hotelAlready, setHotelAlready] = useState(false);
 
+  console.log(houseModal, houseModal2);
+
   useEffect(() => {
     if (card.hasOneHouse === true && card.hasTwoHouses === false) {
       setHouseCount(1);
@@ -41,6 +43,7 @@ const PropCardAndButton = ({
     } else if (card.hasHotel === true) {
       setHouseCount(0);
       setHotel(true);
+      setHotelAlready(true);
     }
   }, [
     card.hasOneHouse,
@@ -129,7 +132,7 @@ const PropCardAndButton = ({
       setProperties(updatedProperties);
       setHotelAlready(true);
     } else if (
-      houseCount === 4 &&
+      houseCount === 0 &&
       hotel &&
       houseModal &&
       card.buidlingCost < p1Money
