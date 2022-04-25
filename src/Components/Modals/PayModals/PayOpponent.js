@@ -36,6 +36,12 @@ export const PayOpponent = ({
   const [mustMortgage, setMustMortgage] = useState(false);
   const [gameOver, setGameOver] = useState(false);
   const [gameOver2, setGameOver2] = useState(false);
+  const [p1MortProps, setP1MortProps] = useState();
+  const [p2MortProps, setP2MortProps] = useState();
+  const [p1MortUtils, setP1MortUtils] = useState();
+  const [p2MortUtils, setP2MortUtils] = useState();
+  const [p1MortRailRoads, setP1MortRailRoads] = useState();
+  const [p2MortRailRoads, setP2MortRailRoads] = useState();
 
   const backdrop = {
     visible: { opacity: 1 },
@@ -76,12 +82,15 @@ export const PayOpponent = ({
     let p1PropsToMort = properties.filter(
       (property) => property.ownedP1 && property.mortgaged === false
     );
+    setP1MortProps(p1PropsToMort);
     let p1RRsToMort = railRoads.filter(
       (rr) => rr.ownedP1 && rr.mortgaged === false
     );
+    setP1MortRailRoads(p1RRsToMort);
     let p1UtilsToMort = utilities.filter(
       (util) => util.ownedP1 && util.mortgaged === false
     );
+    setP1MortUtils(p1UtilsToMort);
 
     let mortMoneyArrayProps = p1PropsToMort.map((property) => {
       return property.mortgage;
@@ -120,12 +129,15 @@ export const PayOpponent = ({
     let p2PropsToMort = properties.filter(
       (property) => property.ownedP2 && property.mortgaged === false
     );
+    setP2MortProps(p2PropsToMort);
     let p2RRsToMort = railRoads.filter(
       (rr) => rr.ownedP2 && rr.mortgaged === false
     );
+    setP2MortRailRoads(p2RRsToMort);
     let p2UtilsToMort = utilities.filter(
       (util) => util.ownedP2 && util.mortgaged === false
     );
+    setP2MortUtils(p2UtilsToMort);
 
     let mortMoneyArrayProps2 = p2PropsToMort.map((property) => {
       return property.mortgage;
@@ -1345,6 +1357,18 @@ export const PayOpponent = ({
         p2Money={p2Money}
         setP1Money={setP1Money}
         setP2Money={setP2Money}
+        p1MortProps={p1MortProps}
+        setP1MortProps={setP1MortProps}
+        p2MortProps={p2MortProps}
+        setP2MortProps={setP2MortProps}
+        p1MortRailRoads={p1MortRailRoads}
+        setP1MortRailRoads={setP1MortRailRoads}
+        p2MortRailRoads={p2MortRailRoads}
+        setP2MortRailRoads={setP2MortRailRoads}
+        p1MortUtils={p1MortUtils}
+        p2MortUtils={p2MortUtils}
+        setP1MortUtils={setP1MortUtils}
+        setP2MortUtils={setP2MortUtils}
       />
     </>
   );

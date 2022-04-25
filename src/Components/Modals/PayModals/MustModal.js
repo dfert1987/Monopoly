@@ -29,6 +29,18 @@ export const MustModal = ({
   p1Money,
   setP1Money,
   setP2Money,
+  p1MortProps,
+  p2MortProps,
+  setP1MortProps,
+  setP2MortProps,
+  p1MortRailRoads,
+  setP1MortRailroads,
+  p2MortRailRoads,
+  setP2MortRailRoads,
+  p1MortUtils,
+  p2MortUtils,
+  setP1MortUtils,
+  setP2MortUtils,
 }) => {
   const backdrop = {
     visible: { opacity: 1 },
@@ -73,6 +85,17 @@ export const MustModal = ({
                 <button className="close-button" onClick={handleClose}>
                   <FontAwesomeIcon className="x-icon" icon={faXmark} />
                 </button>
+              </div>
+              <div className="main-part">
+                <div className="text-container">
+                  <h2 className="must-instructions">
+                    You don't have enough money to pay rent!
+                  </h2>
+                  <h4 className="must-instructions explain">
+                    You can mortgage assets to continue playing, or you can
+                    concede.
+                  </h4>
+                </div>
               </div>
             </motion.div>
           </motion.div>
