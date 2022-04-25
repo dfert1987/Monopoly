@@ -28,6 +28,11 @@ export const PayOpponent = ({
   const [rent, setRent] = useState();
   const [p1MoneyAvailable, setP1MoneyAvailable] = useState();
   const [p2MoneyAvailable, setP2MoneyAvailable] = useState();
+  const [mustMortgage2, setMustMortgage2] = useState(false);
+  const [mustMortgage, setMustMortgage] = useState(false);
+  const [gameOver, setGameOver] = useState(false);
+  const [gameOver2, setGameOver2] = useState(false);
+
   const backdrop = {
     visible: { opacity: 1 },
     hidden: { opacity: 0 },
@@ -166,15 +171,33 @@ export const PayOpponent = ({
       if (number.length === 2 && onProp2.hasOneHouse === false) {
         let p1New = p1Money + onProp2.monopolyRent;
         let p2New = p2Money - onProp2.monopolyRent;
-        setP1Money(p1New);
-        setP2Money(p2New);
         setRent(onProp2.monopolyRent);
+        if (p2New < 0 && p2MoneyAvailable > -1 * p2New) {
+          setMustMortgage2(true);
+        } else if (p2New < 0 && p2MoneyAvailable < -1 * p2New) {
+          setP2Money(0);
+          let newP1 = p1Money + p2Money;
+          setP1Money(newP1);
+          setGameOver2(true);
+        } else {
+          setP1Money(p1New);
+          setP2Money(p2New);
+        }
       } else if (number.length < 2) {
         let p1New = p1Money + onProp2.rent;
         let p2New = p2Money - onProp2.rent;
-        setP1Money(p1New);
-        setP2Money(p2New);
-        setRent(onProp2.rent);
+        setRent(onProp2.monopolyRent);
+        if (p2New < 0 && p2MoneyAvailable > -1 * p2New) {
+          setMustMortgage2(true);
+        } else if (p2New < 0 && p2MoneyAvailable < -1 * p2New) {
+          setP2Money(0);
+          let newP1 = p1Money + p2Money;
+          setP1Money(newP1);
+          setGameOver2(true);
+        } else {
+          setP1Money(p1New);
+          setP2Money(p2New);
+        }
       } else if (
         number.length === 2 &&
         onProp2.hasOneHouse === true &&
@@ -182,9 +205,18 @@ export const PayOpponent = ({
       ) {
         let p1New = p1Money + onProp2.oneHouse;
         let p2New = p2Money - onProp2.oneHouse;
-        setP1Money(p1New);
-        setP2Money(p2New);
-        setRent(onProp2.oneHouse);
+        setRent(onProp2.monopolyRent);
+        if (p2New < 0 && p2MoneyAvailable > -1 * p2New) {
+          setMustMortgage2(true);
+        } else if (p2New < 0 && p2MoneyAvailable < -1 * p2New) {
+          setP2Money(0);
+          let newP1 = p1Money + p2Money;
+          setP1Money(newP1);
+          setGameOver2(true);
+        } else {
+          setP1Money(p1New);
+          setP2Money(p2New);
+        }
       } else if (
         number.length === 2 &&
         onProp2.hasTwoHouses === true &&
@@ -192,9 +224,18 @@ export const PayOpponent = ({
       ) {
         let p1New = p1Money + onProp2.twoHouses;
         let p2New = p2Money - onProp2.twoHouses;
-        setP1Money(p1New);
-        setP2Money(p2New);
-        setRent(onProp2.twoHouses);
+        setRent(onProp2.monopolyRent);
+        if (p2New < 0 && p2MoneyAvailable > -1 * p2New) {
+          setMustMortgage2(true);
+        } else if (p2New < 0 && p2MoneyAvailable < -1 * p2New) {
+          setP2Money(0);
+          let newP1 = p1Money + p2Money;
+          setP1Money(newP1);
+          setGameOver2(true);
+        } else {
+          setP1Money(p1New);
+          setP2Money(p2New);
+        }
       } else if (
         number.length === 2 &&
         onProp2.hasThreeHouses === true &&
@@ -202,9 +243,18 @@ export const PayOpponent = ({
       ) {
         let p1New = p1Money + onProp2.threeHouses;
         let p2New = p2Money - onProp2.threeHouses;
-        setP1Money(p1New);
-        setP2Money(p2New);
-        setRent(onProp2.threeHouses);
+        setRent(onProp2.monopolyRent);
+        if (p2New < 0 && p2MoneyAvailable > -1 * p2New) {
+          setMustMortgage2(true);
+        } else if (p2New < 0 && p2MoneyAvailable < -1 * p2New) {
+          setP2Money(0);
+          let newP1 = p1Money + p2Money;
+          setP1Money(newP1);
+          setGameOver2(true);
+        } else {
+          setP1Money(p1New);
+          setP2Money(p2New);
+        }
       } else if (
         number.length === 2 &&
         onProp2.hasFourHouses === true &&
@@ -212,15 +262,33 @@ export const PayOpponent = ({
       ) {
         let p1New = p1Money + onProp2.fourHouses;
         let p2New = p2Money - onProp2.fourHouses;
-        setP1Money(p1New);
-        setP2Money(p2New);
-        setRent(onProp2.fourHouses);
+        setRent(onProp2.monopolyRent);
+        if (p2New < 0 && p2MoneyAvailable > -1 * p2New) {
+          setMustMortgage2(true);
+        } else if (p2New < 0 && p2MoneyAvailable < -1 * p2New) {
+          setP2Money(0);
+          let newP1 = p1Money + p2Money;
+          setP1Money(newP1);
+          setGameOver2(true);
+        } else {
+          setP1Money(p1New);
+          setP2Money(p2New);
+        }
       } else if (number.length === 2 && onProp2.hasHotel === true) {
         let p1New = p1Money + onProp2.hotel;
         let p2New = p2Money - onProp2.hotel;
-        setP1Money(p1New);
-        setP2Money(p2New);
-        setRent(onProp2.hotel);
+        setRent(onProp2.monopolyRent);
+        if (p2New < 0 && p2MoneyAvailable > -1 * p2New) {
+          setMustMortgage2(true);
+        } else if (p2New < 0 && p2MoneyAvailable < -1 * p2New) {
+          setP2Money(0);
+          let newP1 = p1Money + p2Money;
+          setP1Money(newP1);
+          setGameOver2(true);
+        } else {
+          setP1Money(p1New);
+          setP2Money(p2New);
+        }
       }
     } else if (
       onProp2 &&
@@ -237,16 +305,34 @@ export const PayOpponent = ({
         let doubled = onProp2.monopolyRent * 2;
         let p1New = p1Money + doubled;
         let p2New = p2Money - doubled;
-        setP1Money(p1New);
-        setP2Money(p2New);
-        setRent(doubled);
+        setRent(onProp2.doubled);
+        if (p2New < 0 && p2MoneyAvailable > -1 * p2New) {
+          setMustMortgage2(true);
+        } else if (p2New < 0 && p2MoneyAvailable < -1 * p2New) {
+          setP2Money(0);
+          let newP1 = p1Money + p2Money;
+          setP1Money(newP1);
+          setGameOver2(true);
+        } else {
+          setP1Money(p1New);
+          setP2Money(p2New);
+        }
       } else if (number.length < 2) {
         let doubled = onProp2.rent * 2;
         let p1New = p1Money + doubled;
         let p2New = p2Money - doubled;
-        setP1Money(p1New);
-        setP2Money(p2New);
-        setRent(doubled);
+        setRent(onProp2.doubled);
+        if (p2New < 0 && p2MoneyAvailable > -1 * p2New) {
+          setMustMortgage2(true);
+        } else if (p2New < 0 && p2MoneyAvailable < -1 * p2New) {
+          setP2Money(0);
+          let newP1 = p1Money + p2Money;
+          setP1Money(newP1);
+          setGameOver2(true);
+        } else {
+          setP1Money(p1New);
+          setP2Money(p2New);
+        }
       } else if (
         number.length === 2 &&
         onProp2.hasOneHouse === true &&
@@ -255,9 +341,18 @@ export const PayOpponent = ({
         let doubled = onProp2.oneHouse * 2;
         let p1New = p1Money + doubled;
         let p2New = p2Money - doubled;
-        setP1Money(p1New);
-        setP2Money(p2New);
-        setRent(doubled);
+        setRent(onProp2.doubled);
+        if (p2New < 0 && p2MoneyAvailable > -1 * p2New) {
+          setMustMortgage2(true);
+        } else if (p2New < 0 && p2MoneyAvailable < -1 * p2New) {
+          setP2Money(0);
+          let newP1 = p1Money + p2Money;
+          setP1Money(newP1);
+          setGameOver2(true);
+        } else {
+          setP1Money(p1New);
+          setP2Money(p2New);
+        }
       } else if (
         number.length === 2 &&
         onProp2.hasTwoHouses === true &&
@@ -266,9 +361,18 @@ export const PayOpponent = ({
         let doubled = onProp2.twoHouses * 2;
         let p1New = p1Money + doubled;
         let p2New = p2Money - doubled;
-        setP1Money(p1New);
-        setP2Money(p2New);
-        setRent(doubled);
+        setRent(onProp2.doubled);
+        if (p2New < 0 && p2MoneyAvailable > -1 * p2New) {
+          setMustMortgage2(true);
+        } else if (p2New < 0 && p2MoneyAvailable < -1 * p2New) {
+          setP2Money(0);
+          let newP1 = p1Money + p2Money;
+          setP1Money(newP1);
+          setGameOver2(true);
+        } else {
+          setP1Money(p1New);
+          setP2Money(p2New);
+        }
       } else if (
         number.length === 2 &&
         onProp2.hasThreeHouses === true &&
@@ -277,9 +381,18 @@ export const PayOpponent = ({
         let doubled = onProp2.threeHouses * 2;
         let p1New = p1Money + doubled;
         let p2New = p2Money - doubled;
-        setP1Money(p1New);
-        setP2Money(p2New);
-        setRent(doubled);
+        setRent(onProp2.doubled);
+        if (p2New < 0 && p2MoneyAvailable > -1 * p2New) {
+          setMustMortgage2(true);
+        } else if (p2New < 0 && p2MoneyAvailable < -1 * p2New) {
+          setP2Money(0);
+          let newP1 = p1Money + p2Money;
+          setP1Money(newP1);
+          setGameOver2(true);
+        } else {
+          setP1Money(p1New);
+          setP2Money(p2New);
+        }
       } else if (
         number.length === 2 &&
         onProp2.hasFourHouses === true &&
@@ -288,16 +401,34 @@ export const PayOpponent = ({
         let doubled = onProp2.fourHouses * 2;
         let p1New = p1Money + doubled;
         let p2New = p2Money - doubled;
-        setP1Money(p1New);
-        setP2Money(p2New);
-        setRent(doubled);
+        setRent(onProp2.doubled);
+        if (p2New < 0 && p2MoneyAvailable > -1 * p2New) {
+          setMustMortgage2(true);
+        } else if (p2New < 0 && p2MoneyAvailable < -1 * p2New) {
+          setP2Money(0);
+          let newP1 = p1Money + p2Money;
+          setP1Money(newP1);
+          setGameOver2(true);
+        } else {
+          setP1Money(p1New);
+          setP2Money(p2New);
+        }
       } else if (number.length === 2 && onProp2.hasHotel === true) {
         let doubled = onProp2.hotel * 2;
         let p1New = p1Money + doubled;
         let p2New = p2Money - doubled;
-        setP1Money(p1New);
-        setP2Money(p2New);
-        setRent(doubled);
+        setRent(onProp2.doubled);
+        if (p2New < 0 && p2MoneyAvailable > -1 * p2New) {
+          setMustMortgage2(true);
+        } else if (p2New < 0 && p2MoneyAvailable < -1 * p2New) {
+          setP2Money(0);
+          let newP1 = p1Money + p2Money;
+          setP1Money(newP1);
+          setGameOver2(true);
+        } else {
+          setP1Money(p1New);
+          setP2Money(p2New);
+        }
       }
     } else if (
       onProp &&
@@ -313,15 +444,33 @@ export const PayOpponent = ({
       if (number.length === 2 && onProp.hasOneHouse === false) {
         let p1New = p1Money - onProp.monopolyRent;
         let p2New = p2Money + onProp.monopolyRent;
-        setP1Money(p1New);
-        setP2Money(p2New);
         setRent(onProp.monopolyRent);
+        if (p1New < 0 && p1MoneyAvailable > -1 * p1New) {
+          setMustMortgage(true);
+        } else if (p1New < 0 && p1MoneyAvailable < -1 * p1New) {
+          setP1Money(0);
+          let newP2 = p1Money + p2Money;
+          setP2Money(newP2);
+          setGameOver(true);
+        } else {
+          setP1Money(p1New);
+          setP2Money(p2New);
+        }
       } else if (number.length < 2) {
         let p1New = p1Money - onProp.rent;
         let p2New = p2Money + onProp.rent;
-        setP1Money(p1New);
-        setP2Money(p2New);
-        setRent(onProp.rent);
+        setRent(onProp.monopolyRent);
+        if (p1New < 0 && p1MoneyAvailable > -1 * p1New) {
+          setMustMortgage(true);
+        } else if (p1New < 0 && p1MoneyAvailable < -1 * p1New) {
+          setP1Money(0);
+          let newP2 = p1Money + p2Money;
+          setP2Money(newP2);
+          setGameOver(true);
+        } else {
+          setP1Money(p1New);
+          setP2Money(p2New);
+        }
       } else if (
         number.length === 2 &&
         onProp.hasOneHouse === true &&
@@ -329,9 +478,18 @@ export const PayOpponent = ({
       ) {
         let p1New = p1Money - onProp.oneHouse;
         let p2New = p2Money + onProp.oneHouse;
-        setP1Money(p1New);
-        setP2Money(p2New);
-        setRent(onProp.oneHouse);
+        setRent(onProp.monopolyRent);
+        if (p1New < 0 && p1MoneyAvailable > -1 * p1New) {
+          setMustMortgage(true);
+        } else if (p1New < 0 && p1MoneyAvailable < -1 * p1New) {
+          setP1Money(0);
+          let newP2 = p1Money + p2Money;
+          setP2Money(newP2);
+          setGameOver(true);
+        } else {
+          setP1Money(p1New);
+          setP2Money(p2New);
+        }
       } else if (
         number.length === 2 &&
         onProp.hasTwoHouse === true &&
@@ -339,9 +497,18 @@ export const PayOpponent = ({
       ) {
         let p1New = p1Money - onProp.twoHouses;
         let p2New = p2Money + onProp.twoHouses;
-        setP1Money(p1New);
-        setP2Money(p2New);
-        setRent(onProp.twoHouses);
+        setRent(onProp.monopolyRent);
+        if (p1New < 0 && p1MoneyAvailable > -1 * p1New) {
+          setMustMortgage(true);
+        } else if (p1New < 0 && p1MoneyAvailable < -1 * p1New) {
+          setP1Money(0);
+          let newP2 = p1Money + p2Money;
+          setP2Money(newP2);
+          setGameOver(true);
+        } else {
+          setP1Money(p1New);
+          setP2Money(p2New);
+        }
       } else if (
         number.length === 2 &&
         onProp.hasThreeHouse === true &&
@@ -349,9 +516,18 @@ export const PayOpponent = ({
       ) {
         let p1New = p1Money - onProp.threeHouses;
         let p2New = p2Money + onProp.threeHouses;
-        setP1Money(p1New);
-        setP2Money(p2New);
-        setRent(onProp.threeHouses);
+        setRent(onProp.monopolyRent);
+        if (p1New < 0 && p1MoneyAvailable > -1 * p1New) {
+          setMustMortgage(true);
+        } else if (p1New < 0 && p1MoneyAvailable < -1 * p1New) {
+          setP1Money(0);
+          let newP2 = p1Money + p2Money;
+          setP2Money(newP2);
+          setGameOver(true);
+        } else {
+          setP1Money(p1New);
+          setP2Money(p2New);
+        }
       } else if (
         number.length === 2 &&
         onProp.hasFourHouses === true &&
@@ -359,15 +535,33 @@ export const PayOpponent = ({
       ) {
         let p1New = p1Money - onProp.fourHouses;
         let p2New = p2Money + onProp.fourHouses;
-        setP1Money(p1New);
-        setP2Money(p2New);
-        setRent(onProp.fourHouses);
+        setRent(onProp.monopolyRent);
+        if (p1New < 0 && p1MoneyAvailable > -1 * p1New) {
+          setMustMortgage(true);
+        } else if (p1New < 0 && p1MoneyAvailable < -1 * p1New) {
+          setP1Money(0);
+          let newP2 = p1Money + p2Money;
+          setP2Money(newP2);
+          setGameOver(true);
+        } else {
+          setP1Money(p1New);
+          setP2Money(p2New);
+        }
       } else if (number.length === 2 && onProp.hasHotel === true) {
         let p1New = p1Money - onProp.hotel;
         let p2New = p2Money + onProp.hotel;
-        setP1Money(p1New);
-        setP2Money(p2New);
-        setRent(onProp.hotel);
+        setRent(onProp.monopolyRent);
+        if (p1New < 0 && p1MoneyAvailable > -1 * p1New) {
+          setMustMortgage(true);
+        } else if (p1New < 0 && p1MoneyAvailable < -1 * p1New) {
+          setP1Money(0);
+          let newP2 = p1Money + p2Money;
+          setP2Money(newP2);
+          setGameOver(true);
+        } else {
+          setP1Money(p1New);
+          setP2Money(p2New);
+        }
       }
     } else if (
       onProp &&
@@ -384,16 +578,34 @@ export const PayOpponent = ({
         let doubled = onProp.monopolyRent * 2;
         let p1New = p1Money - doubled;
         let p2New = p2Money + doubled;
-        setP1Money(p1New);
-        setP2Money(p2New);
-        setRent(doubled);
+        setRent(onProp.doubled);
+        if (p1New < 0 && p1MoneyAvailable > -1 * p1New) {
+          setMustMortgage(true);
+        } else if (p1New < 0 && p1MoneyAvailable < -1 * p1New) {
+          setP1Money(0);
+          let newP2 = p1Money + p2Money;
+          setP2Money(newP2);
+          setGameOver(true);
+        } else {
+          setP1Money(p1New);
+          setP2Money(p2New);
+        }
       } else if (number.length < 2) {
         let doubled = onProp.rent * 2;
         let p1New = p1Money - doubled;
         let p2New = p2Money + doubled;
-        setP1Money(p1New);
-        setP2Money(p2New);
-        setRent(doubled);
+        setRent(onProp.doubled);
+        if (p1New < 0 && p1MoneyAvailable > -1 * p1New) {
+          setMustMortgage(true);
+        } else if (p1New < 0 && p1MoneyAvailable < -1 * p1New) {
+          setP1Money(0);
+          let newP2 = p1Money + p2Money;
+          setP2Money(newP2);
+          setGameOver(true);
+        } else {
+          setP1Money(p1New);
+          setP2Money(p2New);
+        }
       } else if (
         number.length === 2 &&
         onProp.hasOneHouse === true &&
@@ -402,9 +614,18 @@ export const PayOpponent = ({
         let doubled = onProp.oneHouse * 2;
         let p1New = p1Money - doubled;
         let p2New = p2Money + doubled;
-        setP1Money(p1New);
-        setP2Money(p2New);
-        setRent(doubled);
+        setRent(onProp.doubled);
+        if (p1New < 0 && p1MoneyAvailable > -1 * p1New) {
+          setMustMortgage(true);
+        } else if (p1New < 0 && p1MoneyAvailable < -1 * p1New) {
+          setP1Money(0);
+          let newP2 = p1Money + p2Money;
+          setP2Money(newP2);
+          setGameOver(true);
+        } else {
+          setP1Money(p1New);
+          setP2Money(p2New);
+        }
       } else if (
         number.length === 2 &&
         onProp.hasTwoHouses === true &&
@@ -413,9 +634,18 @@ export const PayOpponent = ({
         let doubled = onProp.twoHouse * 2;
         let p1New = p1Money - doubled;
         let p2New = p2Money + doubled;
-        setP1Money(p1New);
-        setP2Money(p2New);
-        setRent(doubled);
+        setRent(onProp.doubled);
+        if (p1New < 0 && p1MoneyAvailable > -1 * p1New) {
+          setMustMortgage(true);
+        } else if (p1New < 0 && p1MoneyAvailable < -1 * p1New) {
+          setP1Money(0);
+          let newP2 = p1Money + p2Money;
+          setP2Money(newP2);
+          setGameOver(true);
+        } else {
+          setP1Money(p1New);
+          setP2Money(p2New);
+        }
       } else if (
         number.length === 2 &&
         onProp.hasThreeHouses === true &&
@@ -424,9 +654,18 @@ export const PayOpponent = ({
         let doubled = onProp.threeHouses * 2;
         let p1New = p1Money - doubled;
         let p2New = p2Money + doubled;
-        setP1Money(p1New);
-        setP2Money(p2New);
-        setRent(doubled);
+        setRent(onProp.doubled);
+        if (p1New < 0 && p1MoneyAvailable > -1 * p1New) {
+          setMustMortgage(true);
+        } else if (p1New < 0 && p1MoneyAvailable < -1 * p1New) {
+          setP1Money(0);
+          let newP2 = p1Money + p2Money;
+          setP2Money(newP2);
+          setGameOver(true);
+        } else {
+          setP1Money(p1New);
+          setP2Money(p2New);
+        }
       } else if (
         number.length === 2 &&
         onProp.hasFourHouses === true &&
@@ -435,16 +674,34 @@ export const PayOpponent = ({
         let doubled = onProp.fourHouses * 2;
         let p1New = p1Money - doubled;
         let p2New = p2Money + doubled;
-        setP1Money(p1New);
-        setP2Money(p2New);
-        setRent(doubled);
+        setRent(onProp.doubled);
+        if (p1New < 0 && p1MoneyAvailable > -1 * p1New) {
+          setMustMortgage(true);
+        } else if (p1New < 0 && p1MoneyAvailable < -1 * p1New) {
+          setP1Money(0);
+          let newP2 = p1Money + p2Money;
+          setP2Money(newP2);
+          setGameOver(true);
+        } else {
+          setP1Money(p1New);
+          setP2Money(p2New);
+        }
       } else if (number.length === 2 && onProp.hasHotel === true) {
         let doubled = onProp.hotel * 2;
         let p1New = p1Money - doubled;
         let p2New = p2Money + doubled;
-        setP1Money(p1New);
-        setP2Money(p2New);
-        setRent(doubled);
+        setRent(onProp.doubled);
+        if (p1New < 0 && p1MoneyAvailable > -1 * p1New) {
+          setMustMortgage(true);
+        } else if (p1New < 0 && p1MoneyAvailable < -1 * p1New) {
+          setP1Money(0);
+          let newP2 = p1Money + p2Money;
+          setP2Money(newP2);
+          setGameOver(true);
+        } else {
+          setP1Money(p1New);
+          setP2Money(p2New);
+        }
       }
     } else if (onProp2 && payTo && payTo === 1 && !doubleProp) {
       let number = properties.filter(
@@ -454,15 +711,33 @@ export const PayOpponent = ({
       if (number && number.length === 3 && onProp2.hasOneHouse === false) {
         let p1New = p1Money + onProp2.monopolyRent;
         let p2New = p2Money - onProp2.monopolyRent;
-        setP1Money(p1New);
-        setP2Money(p2New);
         setRent(onProp2.monopolyRent);
+        if (p2New < 0 && p2MoneyAvailable > -1 * p2New) {
+          setMustMortgage2(true);
+        } else if (p2New < 0 && p2MoneyAvailable < -1 * p2New) {
+          setP2Money(0);
+          let newP1 = p1Money + p2Money;
+          setP1Money(newP1);
+          setGameOver(true);
+        } else {
+          setP1Money(p1New);
+          setP2Money(p2New);
+        }
       } else if (number.length < 3) {
         let p1New = p1Money + onProp2.rent;
         let p2New = p2Money - onProp2.rent;
-        setP1Money(p1New);
-        setP2Money(p2New);
         setRent(onProp2.rent);
+        if (p2New < 0 && p2MoneyAvailable > -1 * p2New) {
+          setMustMortgage2(true);
+        } else if (p2New < 0 && p2MoneyAvailable < -1 * p2New) {
+          setP2Money(0);
+          let newP1 = p1Money + p2Money;
+          setP1Money(newP1);
+          setGameOver2(true);
+        } else {
+          setP1Money(p1New);
+          setP2Money(p2New);
+        }
       } else if (
         number &&
         number.length === 3 &&
@@ -470,10 +745,19 @@ export const PayOpponent = ({
         onProp2.hasTwoHouses === false
       ) {
         let p1New = p1Money + onProp2.oneHouse;
-        let p2New = p2Money - onProp2.oneHOuse;
-        setP1Money(p1New);
-        setP2Money(p2New);
-        setRent(onProp2.oneHouse);
+        let p2New = p2Money - onProp2.oneHouse;
+        setRent(onProp2.hasOneHouse);
+        if (p2New < 0 && p2MoneyAvailable > -1 * p2New) {
+          setMustMortgage2(true);
+        } else if (p2New < 0 && p2MoneyAvailable < -1 * p2New) {
+          setP2Money(0);
+          let newP1 = p1Money + p2Money;
+          setP1Money(newP1);
+          setGameOver2(true);
+        } else {
+          setP1Money(p1New);
+          setP2Money(p2New);
+        }
       } else if (
         number &&
         number.length === 3 &&
@@ -482,9 +766,18 @@ export const PayOpponent = ({
       ) {
         let p1New = p1Money + onProp2.twoHouses;
         let p2New = p2Money - onProp2.twoHouses;
-        setP1Money(p1New);
-        setP2Money(p2New);
-        setRent(onProp2.twoHouse);
+        setRent(onProp2.hasTwoHouses);
+        if (p2New < 0 && p2MoneyAvailable > -1 * p2New) {
+          setMustMortgage2(true);
+        } else if (p2New < 0 && p2MoneyAvailable < -1 * p2New) {
+          setP2Money(0);
+          let newP1 = p1Money + p2Money;
+          setP1Money(newP1);
+          setGameOver2(true);
+        } else {
+          setP1Money(p1New);
+          setP2Money(p2New);
+        }
       } else if (
         number &&
         number.length === 3 &&
@@ -492,11 +785,19 @@ export const PayOpponent = ({
         onProp2.hasFourHouses === false
       ) {
         let p1New = p1Money + onProp2.threeHouses;
-        console.log(p1New);
         let p2New = p2Money - onProp2.threeHouses;
-        setP1Money(p1New);
-        setP2Money(p2New);
-        setRent(onProp2.threeHouses);
+        setRent(onProp2.hasThreeHouses);
+        if (p2New < 0 && p2MoneyAvailable > -1 * p2New) {
+          setMustMortgage2(true);
+        } else if (p2New < 0 && p2MoneyAvailable < -1 * p2New) {
+          setP2Money(0);
+          let newP1 = p1Money + p2Money;
+          setP1Money(newP1);
+          setGameOver2(true);
+        } else {
+          setP1Money(p1New);
+          setP2Money(p2New);
+        }
       } else if (
         number &&
         number.length === 3 &&
@@ -505,15 +806,33 @@ export const PayOpponent = ({
       ) {
         let p1New = p1Money + onProp2.fourHouses;
         let p2New = p2Money - onProp2.fourHouses;
-        setP1Money(p1New);
-        setP2Money(p2New);
-        setRent(onProp2.fourHouses);
+        setRent(onProp2.hasFourHouses);
+        if (p2New < 0 && p2MoneyAvailable > -1 * p2New) {
+          setMustMortgage2(true);
+        } else if (p2New < 0 && p2MoneyAvailable < -1 * p2New) {
+          setP2Money(0);
+          let newP1 = p1Money + p2Money;
+          setP1Money(newP1);
+          setGameOver2(true);
+        } else {
+          setP1Money(p1New);
+          setP2Money(p2New);
+        }
       } else if (number && number.length === 3 && onProp2.hasHotel === true) {
         let p1New = p1Money + onProp2.hotel;
         let p2New = p2Money - onProp2.hotel;
-        setP1Money(p1New);
-        setP2Money(p2New);
-        setRent(onProp2.hotel);
+        setRent(onProp2.hasHotel);
+        if (p2New < 0 && p2MoneyAvailable > -1 * p2New) {
+          setMustMortgage2(true);
+        } else if (p2New < 0 && p2MoneyAvailable < -1 * p2New) {
+          setP2Money(0);
+          let newP1 = p1Money + p2Money;
+          setP1Money(newP1);
+          setGameOver2(true);
+        } else {
+          setP1Money(p1New);
+          setP2Money(p2New);
+        }
       }
     } else if (onProp && payTo && payTo === 2 && !doubleProp) {
       let number = properties.filter(
@@ -523,48 +842,93 @@ export const PayOpponent = ({
       if (number && number.length === 3 && onProp.hasOneHouse === false) {
         let p1New = p1Money - onProp.monopolyRent;
         let p2New = p2Money + onProp.monopolyRent;
-        setP1Money(p2New);
-        setP2Money(p1New);
         setRent(onProp.monopolyRent);
+        if (p1New < 0 && p1MoneyAvailable > -1 * p1New) {
+          setMustMortgage(true);
+        } else if (p1New < 0 && p1MoneyAvailable < -1 * p1New) {
+          setP1Money(0);
+          let newP2 = p1Money + p2Money;
+          setP2Money(newP2);
+          setGameOver(true);
+        } else {
+          setP1Money(p1New);
+          setP2Money(p2New);
+        }
       } else if (number.length < 3) {
         let p1New = p1Money - onProp.rent;
         let p2New = p2Money + onProp.rent;
-        setP1Money(p2New);
-        setP2Money(p1New);
         setRent(onProp.rent);
+        if (p1New < 0 && p1MoneyAvailable > -1 * p1New) {
+          setMustMortgage(true);
+        } else if (p1New < 0 && p1MoneyAvailable < -1 * p1New) {
+          setP1Money(0);
+          let newP2 = p1Money + p2Money;
+          setP2Money(newP2);
+          setGameOver(true);
+        } else {
+          setP1Money(p1New);
+          setP2Money(p2New);
+        }
       } else if (
         number &&
         number.length === 3 &&
         onProp.hasOneHouse === true &&
         onProp.hasTwoHouses === false
       ) {
-        let p1New = p1Money + onProp.oneHouse;
-        let p2New = p2Money - onProp.oneHouse;
-        setP1Money(p1New);
-        setP2Money(p2New);
-        setRent(onProp.oneHouse);
+        let p1New = p1Money - onProp.oneHouse;
+        let p2New = p2Money + onProp.oneHouse;
+        setRent(onProp.hasOneHouse);
+        if (p1New < 0 && p1MoneyAvailable > -1 * p1New) {
+          setMustMortgage(true);
+        } else if (p1New < 0 && p1MoneyAvailable < -1 * p1New) {
+          setP1Money(0);
+          let newP2 = p1Money + p2Money;
+          setP2Money(newP2);
+          setGameOver(true);
+        } else {
+          setP1Money(p1New);
+          setP2Money(p2New);
+        }
       } else if (
         number &&
         number.length === 3 &&
         onProp.hasTwoHouses === true &&
         onProp.hasThreeHouses === false
       ) {
-        let p1New = p1Money + onProp.twoHouses;
-        let p2New = p2Money - onProp.twoHouses;
-        setP1Money(p1New);
-        setP2Money(p2New);
-        setRent(onProp.twoHouses);
+        let p1New = p1Money - onProp.twoHouses;
+        let p2New = p2Money + onProp.twoHouses;
+        setRent(onProp.hasTwoHouses);
+        if (p1New < 0 && p1MoneyAvailable > -1 * p1New) {
+          setMustMortgage(true);
+        } else if (p1New < 0 && p1MoneyAvailable < -1 * p1New) {
+          setP1Money(0);
+          let newP2 = p1Money + p2Money;
+          setP2Money(newP2);
+          setGameOver(true);
+        } else {
+          setP1Money(p1New);
+          setP2Money(p2New);
+        }
       } else if (
         number &&
         number.length === 3 &&
         onProp.hasThreeHouse === true &&
         onProp.hasFourHouses === false
       ) {
-        let p1New = p1Money + onProp.oneThreeHouses;
-        let p2New = p2Money - onProp.oneThreeHouses;
-        setP2Money(p2New);
-        setP1Money(p1New);
-        setRent(onProp.threeHouses);
+        let p1New = p1Money - onProp.oneThreeHouses;
+        let p2New = p2Money + onProp.oneThreeHouses;
+        setRent(onProp.hasThreeHouses);
+        if (p1New < 0 && p1MoneyAvailable > -1 * p1New) {
+          setMustMortgage(true);
+        } else if (p1New < 0 && p1MoneyAvailable < -1 * p1New) {
+          setP1Money(0);
+          let newP2 = p1Money + p2Money;
+          setP2Money(newP2);
+          setGameOver(true);
+        } else {
+          setP1Money(p1New);
+          setP2Money(p2New);
+        }
       } else if (
         number &&
         number.length === 3 &&
@@ -573,15 +937,33 @@ export const PayOpponent = ({
       ) {
         let p1New = p1Money + onProp.fourHouses;
         let p2New = p2Money - onProp.fourHouses;
-        setP1Money(p1New);
-        setP2Money(p2New);
-        setRent(onProp.fourHouses);
+        setRent(onProp.hasFourHouses);
+        if (p1New < 0 && p1MoneyAvailable > -1 * p1New) {
+          setMustMortgage(true);
+        } else if (p1New < 0 && p1MoneyAvailable < -1 * p1New) {
+          setP1Money(0);
+          let newP2 = p1Money + p2Money;
+          setP2Money(newP2);
+          setGameOver(true);
+        } else {
+          setP1Money(p1New);
+          setP2Money(p2New);
+        }
       } else if (number && number.length === 3 && onProp.hasHotel === true) {
         let p1New = p1Money + onProp.hotel;
         let p2New = p2Money - onProp.hotel;
-        setP1Money(p1New);
-        setP2Money(p2New);
-        setRent(onProp.hotel);
+        setRent(onProp.hasHotel);
+        if (p1New < 0 && p1MoneyAvailable > -1 * p1New) {
+          setMustMortgage(true);
+        } else if (p1New < 0 && p1MoneyAvailable < -1 * p1New) {
+          setP1Money(0);
+          let newP2 = p1Money + p2Money;
+          setP2Money(newP2);
+          setGameOver(true);
+        } else {
+          setP1Money(p1New);
+          setP2Money(p2New);
+        }
       }
     } else if (onProp && payTo && payTo === 2 && doubleProp) {
       let number = properties.filter(
@@ -592,16 +974,34 @@ export const PayOpponent = ({
         let doubled = onProp.monopolyRent * 2;
         let p1New = p1Money - doubled;
         let p2New = p2Money + doubled;
-        setP1Money(p1New);
-        setP2Money(p2New);
         setRent(doubled);
+        if (p1New < 0 && p1MoneyAvailable > -1 * p1New) {
+          setMustMortgage(true);
+        } else if (p1New < 0 && p1MoneyAvailable < -1 * p1New) {
+          setP1Money(0);
+          let newP2 = p1Money + p2Money;
+          setP2Money(newP2);
+          setGameOver(true);
+        } else {
+          setP1Money(p1New);
+          setP2Money(p2New);
+        }
       } else if (number && number.length < 3) {
         let doubled = onProp.rent * 2;
         let p1New = p1Money - doubled;
         let p2New = p2Money + doubled;
-        setP1Money(p1New);
-        setP2Money(p2New);
         setRent(doubled);
+        if (p1New < 0 && p1MoneyAvailable > -1 * p1New) {
+          setMustMortgage(true);
+        } else if (p1New < 0 && p1MoneyAvailable < -1 * p1New) {
+          setP1Money(0);
+          let newP2 = p1Money + p2Money;
+          setP2Money(newP2);
+          setGameOver(true);
+        } else {
+          setP1Money(p1New);
+          setP2Money(p2New);
+        }
       } else if (
         number &&
         number.length === 3 &&
@@ -611,9 +1011,18 @@ export const PayOpponent = ({
         let doubled = onProp.oneHouse * 2;
         let p1New = p1Money - doubled;
         let p2New = p2Money + doubled;
-        setP1Money(p1New);
-        setP2Money(p2New);
         setRent(doubled);
+        if (p1New < 0 && p1MoneyAvailable > -1 * p1New) {
+          setMustMortgage(true);
+        } else if (p1New < 0 && p1MoneyAvailable < -1 * p1New) {
+          setP1Money(0);
+          let newP2 = p1Money + p2Money;
+          setP2Money(newP2);
+          setGameOver(true);
+        } else {
+          setP1Money(p1New);
+          setP2Money(p2New);
+        }
       } else if (
         number &&
         number.length === 3 &&
@@ -623,9 +1032,18 @@ export const PayOpponent = ({
         let doubled = onProp.twoHouses * 2;
         let p1New = p1Money - doubled;
         let p2New = p2Money + doubled;
-        setP1Money(p1New);
-        setP2Money(p2New);
         setRent(doubled);
+        if (p1New < 0 && p1MoneyAvailable > -1 * p1New) {
+          setMustMortgage(true);
+        } else if (p1New < 0 && p1MoneyAvailable < -1 * p1New) {
+          setP1Money(0);
+          let newP2 = p1Money + p2Money;
+          setP2Money(newP2);
+          setGameOver(true);
+        } else {
+          setP1Money(p1New);
+          setP2Money(p2New);
+        }
       } else if (
         number &&
         number.length === 3 &&
@@ -635,9 +1053,18 @@ export const PayOpponent = ({
         let doubled = onProp.threeHouses * 2;
         let p1New = p1Money - doubled;
         let p2New = p2Money + doubled;
-        setP1Money(p1New);
-        setP2Money(p2New);
         setRent(doubled);
+        if (p1New < 0 && p1MoneyAvailable > -1 * p1New) {
+          setMustMortgage(true);
+        } else if (p1New < 0 && p1MoneyAvailable < -1 * p1New) {
+          setP1Money(0);
+          let newP2 = p1Money + p2Money;
+          setP2Money(newP2);
+          setGameOver(true);
+        } else {
+          setP1Money(p1New);
+          setP2Money(p2New);
+        }
       } else if (
         number &&
         number.length === 3 &&
@@ -647,16 +1074,34 @@ export const PayOpponent = ({
         let doubled = onProp.fourHouses * 2;
         let p1New = p1Money - doubled;
         let p2New = p2Money + doubled;
-        setP1Money(p1New);
-        setP2Money(p2New);
         setRent(doubled);
+        if (p1New < 0 && p1MoneyAvailable > -1 * p1New) {
+          setMustMortgage(true);
+        } else if (p1New < 0 && p1MoneyAvailable < -1 * p1New) {
+          setP1Money(0);
+          let newP2 = p1Money + p2Money;
+          setP2Money(newP2);
+          setGameOver(true);
+        } else {
+          setP1Money(p1New);
+          setP2Money(p2New);
+        }
       } else if (number && number.length === 3 && onProp.hasHotel === true) {
         let doubled = onProp.hotel * 2;
         let p1New = p1Money - doubled;
         let p2New = p2Money + doubled;
-        setP1Money(p1New);
-        setP2Money(p2New);
         setRent(doubled);
+        if (p1New < 0 && p1MoneyAvailable > -1 * p1New) {
+          setMustMortgage(true);
+        } else if (p1New < 0 && p1MoneyAvailable < -1 * p1New) {
+          setP1Money(0);
+          let newP2 = p1Money + p2Money;
+          setP2Money(newP2);
+          setGameOver(true);
+        } else {
+          setP1Money(p1New);
+          setP2Money(p2New);
+        }
       }
     } else if (onProp2 && payTo === 1 && doubleProp) {
       let number = properties.filter(
@@ -667,16 +1112,34 @@ export const PayOpponent = ({
         let doubled = onProp2.monopolyRent * 2;
         let p1New = p1Money + doubled;
         let p2New = p2Money - doubled;
-        setP1Money(p1New);
-        setP2Money(p2New);
         setRent(doubled);
+        if (p2New < 0 && p2MoneyAvailable > -1 * p2New) {
+          setMustMortgage2(true);
+        } else if (p2New < 0 && p2MoneyAvailable < -2 * p1New) {
+          setP1Money(0);
+          let newP1 = p1Money + p2Money;
+          setP1Money(newP1);
+          setGameOver2(true);
+        } else {
+          setP1Money(p1New);
+          setP2Money(p2New);
+        }
       } else if (number && number.length < 3) {
         let doubled = onProp2.rent;
         let p1New = p1Money + doubled;
         let p2New = p2Money - doubled;
-        setP1Money(p1New);
-        setP2Money(p2New);
         setRent(doubled);
+        if (p2New < 0 && p2MoneyAvailable > -1 * p2New) {
+          setMustMortgage2(true);
+        } else if (p2New < 0 && p2MoneyAvailable < -2 * p1New) {
+          setP1Money(0);
+          let newP1 = p1Money + p2Money;
+          setP1Money(newP1);
+          setGameOver2(true);
+        } else {
+          setP1Money(p1New);
+          setP2Money(p2New);
+        }
       } else if (
         number &&
         number.length === 3 &&
@@ -686,9 +1149,18 @@ export const PayOpponent = ({
         let doubled = onProp2.oneHouse * 2;
         let p1New = p1Money + doubled;
         let p2New = p2Money - doubled;
-        setP1Money(p1New);
-        setP2Money(p2New);
         setRent(doubled);
+        if (p2New < 0 && p2MoneyAvailable > -1 * p2New) {
+          setMustMortgage2(true);
+        } else if (p2New < 0 && p2MoneyAvailable < -2 * p1New) {
+          setP1Money(0);
+          let newP1 = p1Money + p2Money;
+          setP1Money(newP1);
+          setGameOver2(true);
+        } else {
+          setP1Money(p1New);
+          setP2Money(p2New);
+        }
       } else if (
         number &&
         number.length === 3 &&
@@ -698,9 +1170,18 @@ export const PayOpponent = ({
         let doubled = onProp2.twoHouses * 2;
         let p1New = p1Money + doubled;
         let p2New = p2Money - doubled;
-        setP1Money(p1New);
-        setP2Money(p2New);
         setRent(doubled);
+        if (p2New < 0 && p2MoneyAvailable > -1 * p2New) {
+          setMustMortgage2(true);
+        } else if (p2New < 0 && p2MoneyAvailable < -2 * p1New) {
+          setP1Money(0);
+          let newP1 = p1Money + p2Money;
+          setP1Money(newP1);
+          setGameOver2(true);
+        } else {
+          setP1Money(p1New);
+          setP2Money(p2New);
+        }
       } else if (
         number &&
         number.length === 3 &&
@@ -710,9 +1191,18 @@ export const PayOpponent = ({
         let doubled = onProp2.threeHouses * 2;
         let p1New = p1Money + doubled;
         let p2New = p2Money - doubled;
-        setP1Money(p1New);
-        setP2Money(p2New);
         setRent(doubled);
+        if (p2New < 0 && p2MoneyAvailable > -1 * p2New) {
+          setMustMortgage2(true);
+        } else if (p2New < 0 && p2MoneyAvailable < -2 * p1New) {
+          setP1Money(0);
+          let newP1 = p1Money + p2Money;
+          setP1Money(newP1);
+          setGameOver2(true);
+        } else {
+          setP1Money(p1New);
+          setP2Money(p2New);
+        }
       } else if (
         number &&
         number.length === 3 &&
@@ -722,16 +1212,34 @@ export const PayOpponent = ({
         let doubled = onProp2.fourHouses * 2;
         let p1New = p1Money + doubled;
         let p2New = p2Money - doubled;
-        setP1Money(p1New);
-        setP2Money(p2New);
         setRent(doubled);
+        if (p2New < 0 && p2MoneyAvailable > -1 * p2New) {
+          setMustMortgage2(true);
+        } else if (p2New < 0 && p2MoneyAvailable < -2 * p1New) {
+          setP1Money(0);
+          let newP1 = p1Money + p2Money;
+          setP1Money(newP1);
+          setGameOver2(true);
+        } else {
+          setP1Money(p1New);
+          setP2Money(p2New);
+        }
       } else if (number && number.length === 3 && onProp2.hasHotel === true) {
         let doubled = onProp2.hotel * 2;
         let p1New = p1Money + doubled;
         let p2New = p2Money - doubled;
-        setP1Money(p1New);
-        setP2Money(p2New);
         setRent(doubled);
+        if (p2New < 0 && p2MoneyAvailable > -1 * p2New) {
+          setMustMortgage2(true);
+        } else if (p2New < 0 && p2MoneyAvailable < -2 * p1New) {
+          setP1Money(0);
+          let newP1 = p1Money + p2Money;
+          setP1Money(newP1);
+          setGameOver2(true);
+        } else {
+          setP1Money(p1New);
+          setP2Money(p2New);
+        }
       }
     }
     return null;
