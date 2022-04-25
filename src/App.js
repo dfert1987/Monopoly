@@ -23,6 +23,8 @@ const App = () => {
   const [onProp2, setOnProp2] = useState();
   const [p1Props, setP1Props] = useState();
   const [p2Props, setP2Props] = useState();
+  const [p1PropsNotMort, setP1PropsNotMort] = useState();
+  const [p2PropsNotMort, setP2PropsNotMort] = useState();
   const [viewProperties, setViewProperties] = useState(false);
   const [viewProperties2, setViewProperties2] = useState(false);
   const [viewRRs, setViewRRs] = useState(false);
@@ -118,6 +120,10 @@ const App = () => {
         p2Props={p2Props}
         setP1Props={setP1Props}
         setP2Props={setP2Props}
+        p1PropsNotMort={p1PropsNotMort}
+        p2PropsNotMOrt={p2PropsNotMort}
+        setP1PropsNotMort={setP1PropsNotMort}
+        setP2PropsNotMort={setP2PropsNotMort}
         viewProperties={viewProperties}
         viewProperties2={viewProperties2}
         setViewProperties={setViewProperties}

@@ -72,6 +72,10 @@ export const Board = ({
   p2Props,
   setP1Props,
   setP2Props,
+  p1PropsNotMort,
+  p2PropsNotMort,
+  setP1PropsNotMort,
+  setP2PropsNotMort,
   properties,
   setProperties,
   viewProperties,
@@ -877,7 +881,6 @@ export const Board = ({
         <div className="right-corner-top">
           <div id="11" className="just-visiting-top">
             <p className="visiting">Visiting</p>
-
             {counterP1 === 11 ? (
               <img src={p1Image} className="piece" alt="p1 game piece" />
             ) : null}
@@ -1149,6 +1152,8 @@ export const Board = ({
           setOnProp={setOnProp}
           setOnProp2={setOnProp2}
           properties={properties}
+          railRoads={railRoads}
+          utilities={utilities}
           doubleProp={doubleProp}
           setDoubleProp={setDoubleProp}
         />
