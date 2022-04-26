@@ -837,7 +837,7 @@ export const PayOpponent = ({
       } else if (number && number.length === 3 && onProp2.hasHotel === true) {
         let p1New = p1Money + onProp2.hotel;
         let p2New = p2Money - onProp2.hotel;
-        setRent(onProp2.hasHotel);
+        setRent(onProp2.hotel);
         if (p2New < 0 && p2MoneyAvailable > -1 * p2New) {
           setMustMortgage2(true);
         } else if (p2New < 0 && p2MoneyAvailable < -1 * p2New) {
@@ -968,7 +968,7 @@ export const PayOpponent = ({
       } else if (number && number.length === 3 && onProp.hasHotel === true) {
         let p1New = p1Money + onProp.hotel;
         let p2New = p2Money - onProp.hotel;
-        setRent(onProp.hasHotel);
+        setRent(onProp.hotel);
         if (p1New < 0 && p1MoneyAvailable > -1 * p1New) {
           setMustMortgage(true);
         } else if (p1New < 0 && p1MoneyAvailable < -1 * p1New) {
