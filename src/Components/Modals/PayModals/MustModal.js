@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { faXmark } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import ditieLogo from "../../../Assets/PropertyImages/ditielogo.png";
 import "../../Styles/Must.css";
 
 export const MustModal = ({
@@ -67,18 +68,64 @@ export const MustModal = ({
     if (mustMortgage && p1MortProps.length > 0) {
       return p1MortProps.map((property, index) => {
         return (
-          <div className="prop-card">
-            <div className={`top-prop ${property.color}`}></div>
-            <div className="white-prop"></div>
+          <div className="container-prop">
+            <p className="propname">{property.Name}</p>
+            <div className="prop-card" id={index}>
+              <div className={`top-prop ${property.color}`}></div>
+              <div className="white-prop"></div>
+            </div>
           </div>
         );
       });
     } else if (mustMortgage2 && p2MortProps.length > 0) {
       return p2MortProps.map((property, index) => {
         return (
-          <div className="prop-card">
-            <div className={`top-prop ${property.color}`}></div>
-            <div className="white-prop"></div>
+          <div className="container-prop">
+            <p className="propname">{property.Name}</p>
+            <div className="prop-card" id={index}>
+              <div className={`top-prop ${property.color}`}></div>
+              <div className="white-prop"></div>
+            </div>
+          </div>
+        );
+      });
+    }
+  };
+
+  const getRRs = () => {
+    if (mustMortgage && p1MortRailRoads.length > 0) {
+      return p1MortRailRoads.map((rr, index) => {
+        return (
+          <div className="container-prop">
+            <p className="propname">{rr.Name}</p>
+            <div className="rr-card" id={index}>
+              <div className="top-rr"></div>
+              <div className="white-prop">
+                <img
+                  className="subway-logo-left"
+                  src={ditieLogo}
+                  alt="subway-logo"
+                />
+              </div>
+            </div>
+          </div>
+        );
+      });
+    } else if (mustMortgage && p2MortRailRoads.length > 0) {
+      return p2MortRailRoads.map((rr, index) => {
+        return (
+          <div className="container-prop">
+            <p className="propname">{rr.Name}</p>
+            <div className="rr-card" id={index}>
+              <div className="top-rr"></div>
+              <div className="white-prop">
+                <img
+                  className="subway-logo-left"
+                  src={ditieLogo}
+                  alt="subway-logo"
+                />
+              </div>
+            </div>
           </div>
         );
       });
@@ -118,7 +165,10 @@ export const MustModal = ({
                     You can mortgage assets to continue playing, or you can
                     concede.
                   </h4>
-                  <div className="asset-section">{getProperties()}</div>
+                  <div className="asset-section">
+                    {getProperties()}
+                    {getRRs()}
+                  </div>
                 </div>
               </div>
             </motion.div>

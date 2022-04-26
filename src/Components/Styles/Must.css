@@ -63,3 +63,7 @@
   flex-direction: row;
   justify-content: space-around;
 }
+
+.propname {
+  margin-bottom: 0.1em;
+}
