@@ -41,6 +41,7 @@ After this you can view the main board.
 ## Demo
 
 Check out a quick video demo here!
+https://youtu.be/iHZ5OoFbCAo
 
 ## Features
 ![board](./src/Assets/ReadMePics/board.png)
