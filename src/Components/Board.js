@@ -1177,6 +1177,11 @@ export const Board = ({
           railRoads={railRoads}
           setDoubleRR={setDoubleRR}
           doubleRR={doubleRR}
+          utilities={utilities}
+          setUtilities={setUtilities}
+          setRailRailRoads={setRailRoads}
+          properties={properties}
+          setProperties={setProperties}
         />
         <PayOpponentUtil
           className="pay-opponent"
