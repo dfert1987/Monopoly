@@ -1198,6 +1198,11 @@ export const Board = ({
           setOnUtil={setOnUtil}
           setOnUtil2={setOnUtil2}
           utilities={utilities}
+          properties={properties}
+          railRoads={railRoads}
+          setUtilities={setUtilities}
+          setProperties={setProperties}
+          setRailRoads={setRailRoads}
         />
         <PurchasedPopUp
           className="purchased"

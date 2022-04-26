@@ -447,7 +447,16 @@ export const PayOpponentRail = ({
       }
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [onRR2, payRailTo, onRR, railRoads, setP1Money, setP2Money]);
+  }, [
+    onRR2,
+    payRailTo,
+    onRR,
+    railRoads,
+    properties,
+    utilities,
+    setP1Money,
+    setP2Money,
+  ]);
 
   const ticketPic = () => {
     if (fare && fare <= 75) {

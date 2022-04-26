@@ -21,6 +21,11 @@ export const PayOpponentUtil = ({
   setPayUtilTo,
   payUtilTo,
   utilities,
+  properties,
+  railRoads,
+  setUtilities,
+  setRailRoads,
+  setProperties,
   setP1Money,
   setP2Money,
 }) => {
@@ -30,6 +35,19 @@ export const PayOpponentUtil = ({
   const [die1Img, setDie1Img] = useState(dice1);
   const [die2Img, setDie2Img] = useState(dice1);
   const [multiplier, setMultiplier] = useState(4);
+  const [p1MoneyAvailable, setP1MoneyAvailable] = useState();
+  const [p2MoneyAvailable, setP2MoneyAvailable] = useState();
+  const [p1MortRailRoads, setP1MortRailRoads] = useState();
+  const [p2MortRailRoads, setP2MortRailRoads] = useState();
+  const [mustMortgage2, setMustMortgage2] = useState(false);
+  const [mustMortgage, setMustMortgage] = useState(false);
+  const [gameOver, setGameOver] = useState(false);
+  const [gameOver2, setGameOver2] = useState(false);
+  const [p1MortProps, setP1MortProps] = useState();
+  const [p2MortProps, setP2MortProps] = useState();
+  const [p1MortUtils, setP1MortUtils] = useState();
+  const [p2MortUtils, setP2MortUtils] = useState();
+
   const backdrop = {
     visible: { opacity: 1 },
     hidden: { opacity: 0 },
@@ -48,6 +66,99 @@ export const PayOpponentUtil = ({
   };
 
   useEffect(() => {
+    let p1PropsToMort = properties.filter(
+      (property) => property.ownedP1 && property.mortgaged === false
+    );
+    setP1MortProps(p1PropsToMort);
+    let p1RRsToMort = railRoads.filter(
+      (rr) => rr.ownedP1 && rr.mortgaged === false
+    );
+    setP1MortRailRoads(p1RRsToMort);
+    let p1UtilsToMort = utilities.filter(
+      (util) => util.ownedP1 && util.mortgaged === false
+    );
+    setP1MortUtils(p1UtilsToMort);
+
+    let mortMoneyArrayProps = p1PropsToMort.map((property) => {
+      return property.mortgage;
+    });
+    let mortMoneyArrayRRs = p1RRsToMort.map((rr) => {
+      return rr.mortgage;
+    });
+    let mortMoneyArrayUtils = p1UtilsToMort.map((util) => {
+      return util.mortgage;
+    });
+
+    const propSum = () => {
+      if (mortMoneyArrayProps.length) {
+        let totalPropMoney = mortMoneyArrayProps.reduce((x, y) => x + y);
+        return totalPropMoney;
+      }
+      return 0;
+    };
+    const rrSum = () => {
+      if (mortMoneyArrayRRs.length) {
+        let totalRRMoney = mortMoneyArrayRRs.reduce((x, y) => x + y);
+        return totalRRMoney;
+      }
+      return 0;
+    };
+    const utilSum = () => {
+      if (mortMoneyArrayUtils.length) {
+        let totalUtilMoney = mortMoneyArrayUtils.reduce((x, y) => x + y);
+        return totalUtilMoney;
+      }
+      return 0;
+    };
+    let totalSum = utilSum() + rrSum() + propSum();
+    setP1MoneyAvailable(totalSum);
+
+    let p2PropsToMort = properties.filter(
+      (property) => property.ownedP2 && property.mortgaged === false
+    );
+    setP2MortProps(p2PropsToMort);
+    let p2RRsToMort = railRoads.filter(
+      (rr) => rr.ownedP2 && rr.mortgaged === false
+    );
+    setP2MortRailRoads(p2RRsToMort);
+    let p2UtilsToMort = utilities.filter(
+      (util) => util.ownedP2 && util.mortgaged === false
+    );
+    setP2MortUtils(p2UtilsToMort);
+
+    let mortMoneyArrayProps2 = p2PropsToMort.map((property) => {
+      return property.mortgage;
+    });
+    let mortMoneyArrayRRs2 = p2RRsToMort.map((rr) => {
+      return rr.mortgage;
+    });
+    let mortMoneyArrayUtils2 = p2UtilsToMort.map((util) => {
+      return util.mortgage;
+    });
+
+    const propSum2 = () => {
+      if (mortMoneyArrayProps2.length) {
+        let totalPropMoney = mortMoneyArrayProps.reduce((x, y) => x + y);
+        return totalPropMoney;
+      }
+      return 0;
+    };
+    const rrSum2 = () => {
+      if (mortMoneyArrayRRs2.length) {
+        let totalRRMoney = mortMoneyArrayRRs.reduce((x, y) => x + y);
+        return totalRRMoney;
+      }
+      return 0;
+    };
+    const utilSum2 = () => {
+      if (mortMoneyArrayUtils2.length) {
+        let totalUtilMoney = mortMoneyArrayUtils.reduce((x, y) => x + y);
+        return totalUtilMoney;
+      }
+      return 0;
+    };
+    let totalSum2 = utilSum2() + rrSum2() + propSum2();
+    setP2MoneyAvailable(totalSum2);
     if (onUtil2 && payUtilTo) {
       let number = utilities.filter((util) => util.ownedP1 === true);
       if (number.length === 1) {
@@ -63,7 +174,7 @@ export const PayOpponentUtil = ({
         setMultiplier(10);
       }
     }
-  }, [onUtil2, payUtilTo, onUtil, utilities]);
+  }, [onUtil2, payUtilTo, onUtil, utilities, properties, railRoads]);
 
   const handleClose = (e) => {
     e.preventDefault();
