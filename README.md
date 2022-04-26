@@ -2,6 +2,7 @@
 
 ```md
 ![landing page](./src/Assets/ReadMePics/landing.png)
+```
 
 ## Description
 
@@ -63,4 +64,3 @@ Your controls are on the bottom of the screen. Here you can:
 Thanks for checking out my game! It's not quite done yet, but should be finished in the next couple of weeks. So come back and check out the finished product!
 
 Until then, if you have any questions or comments shoot me a message at DavidJ.Fertitta@gmail.com
-```
