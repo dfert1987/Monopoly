@@ -1,7 +1,7 @@
 # Laowai Monopoly
 
 ```md
-![landing page](./src/Assets/ReadMePics/landing.png)
+! [landing page](./src/Assets/ReadMePics/landing.png)
 ```
 
 ## Description
