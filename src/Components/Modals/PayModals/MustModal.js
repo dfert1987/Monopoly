@@ -64,6 +64,15 @@ export const MustModal = ({
     setMustMortgage2(false);
   };
 
+  const needed = () => {
+    if (mustMortgage) {
+      return rent - p1Money;
+    } else if (mustMortgage2) {
+      return rent - p2Money;
+    }
+    return null;
+  };
+
   const getProperties = () => {
     if (mustMortgage && p1MortProps.length > 0) {
       return p1MortProps.map((property, index) => {
@@ -198,8 +207,8 @@ export const MustModal = ({
               <div className="main-area">
                 <div className="text-container-money">
                   <h2 className="must-instructions">
-                    You don't have enough money to pay rent! You need{" "}
-                    <span className="red-text">{rent}rmb.</span>
+                    You don't have enough money to pay rent! You need
+                    <span className="red-text"> {needed()}rmb more.</span>
                   </h2>
                   <h4 className="must-instructions explain">
                     You can mortgage assets to continue playing, or you can
