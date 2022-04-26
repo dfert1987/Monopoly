@@ -31,7 +31,7 @@ or
 ### `yarn` and `yarn start`
 
 ## Usage
-
+![bpiecesoard](./src/Assets/ReadMePics/choose-piece.png)
 Once you're in the game you click Play to enter on the landing screen.
 
 Then choose your pieces on the next screen (you have quite a few Beijing inspired options)
