@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import MustModal from "./MustModal";
 import { motion, AnimatePresence } from "framer-motion";
 import bigPay from "../../../Assets/Misc/bigPay.jpeg";
 import dice1 from "../../../Assets/Dice/dice1.png";
@@ -196,13 +197,33 @@ export const PayOpponentUtil = ({
     if (onUtil) {
       let p1New = p1Money - amount;
       let p2New = p2Money + amount;
-      setP1Money(p1New);
-      setP2Money(p2New);
+      setRent(amount);
+      if (p1New < 0 && p1MoneyAvailable > -1 * p1New) {
+        setMustMortgage(true);
+      } else if (p1New < 0 && p1MoneyAvailable < -1 * p1New) {
+        setP1Money(0);
+        let newP2 = p1Money + p2Money;
+        setP2Money(newP2);
+        setGameOver(true);
+      } else {
+        setP1Money(p1New);
+        setP2Money(p2New);
+      }
     } else if (onUtil2) {
       let p1New = p1Money + amount;
       let p2New = p2Money - amount;
-      setP1Money(p1New);
-      setP2Money(p2New);
+      setRent(amount);
+      if (p2New < 0 && p2MoneyAvailable > -1 * p2New) {
+        setMustMortgage2(true);
+      } else if (p2New < 0 && p2MoneyAvailable < -1 * p2New) {
+        setP2Money(0);
+        let newP1 = p1Money + p2Money;
+        setP1Money(newP1);
+        setGameOver2(true);
+      } else {
+        setP1Money(p1New);
+        setP2Money(p2New);
+      }
     }
   };
 
@@ -301,81 +322,122 @@ export const PayOpponentUtil = ({
   };
 
   return (
-    <AnimatePresence exitBeforeEnter>
-      {payUtil === true && (onUtil || onUtil2) ? (
-        <motion.div
-          className="outerModal flex centerFlex"
-          variants={backdrop}
-          initial="hidden"
-          animate="visible"
-          exit="hidden"
-        >
+    <>
+      <AnimatePresence exitBeforeEnter>
+        {payUtil === true && (onUtil || onUtil2) ? (
           <motion.div
-            className="flex flexColumn innerModalPayUtil"
-            variants={modal}
+            className="outerModal flex centerFlex"
+            variants={backdrop}
             initial="hidden"
             animate="visible"
             exit="hidden"
           >
-            <div className="main-content-container">
-              <h2 className="line-1">{`${player()} Owns ${propName()}`}</h2>
-              <img
-                clasaName="money"
-                alt="large bills"
-                src={bigPay}
-                style={{ height: "4em" }}
-              />
-              <h3 className="roll-instruction">
-                Roll dice to determine what you owe.
-              </h3>
-              {multiplier === 4 ? (
-                <p className="explanation">
-                  Pay <span className="number">4x</span> the amount on the die
-                </p>
-              ) : (
-                <p className="explanation">
-                  Pay <span className="number">10x</span> the amount on the die
-                </p>
-              )}
-              <div className="p1-dice-button">
-                <div className="roll-section">
-                  {die1 && die2 ? (
-                    <>
-                      {die1Img ? (
-                        <img className="die" src={die1Img} alt="die" />
-                      ) : null}
-                      {die2Img ? (
-                        <img className="die" src={die2Img} alt="die" />
-                      ) : null}
-                    </>
-                  ) : null}
+            <motion.div
+              className="flex flexColumn innerModalPayUtil"
+              variants={modal}
+              initial="hidden"
+              animate="visible"
+              exit="hidden"
+            >
+              <div className="main-content-container">
+                <h2 className="line-1">{`${player()} Owns ${propName()}`}</h2>
+                <img
+                  clasaName="money"
+                  alt="large bills"
+                  src={bigPay}
+                  style={{ height: "4em" }}
+                />
+                <h3 className="roll-instruction">
+                  Roll dice to determine what you owe.
+                </h3>
+                {multiplier === 4 ? (
+                  <p className="explanation">
+                    Pay <span className="number">4x</span> the amount on the die
+                  </p>
+                ) : (
+                  <p className="explanation">
+                    Pay <span className="number">10x</span> the amount on the
+                    die
+                  </p>
+                )}
+                <div className="p1-dice-button">
+                  <div className="roll-section">
+                    {die1 && die2 ? (
+                      <>
+                        {die1Img ? (
+                          <img className="die" src={die1Img} alt="die" />
+                        ) : null}
+                        {die2Img ? (
+                          <img className="die" src={die2Img} alt="die" />
+                        ) : null}
+                      </>
+                    ) : null}
+                  </div>
+                  <div className="button-container">
+                    <button
+                      onClick={rollDice}
+                      className="roll-button"
+                      disabled={disabled()}
+                    >
+                      ROLL DICE
+                    </button>
+                  </div>
                 </div>
-                <div className="button-container">
-                  <button
-                    onClick={rollDice}
-                    className="roll-button"
-                    disabled={disabled()}
-                  >
-                    ROLL DICE
-                  </button>
-                </div>
+                <h4 className="pay-saying">{saying()}</h4>
+                {rent ? (
+                  <>
+                    <h2 className="ammount">
+                      Pay <span className="rent">{`¥${rent}`}</span> in Rent.
+                    </h2>
+                    <button onClick={handleClose} className="continue-button">
+                      Pay and Continue
+                    </button>
+                  </>
+                ) : null}
               </div>
-              <h4 className="pay-saying">{saying()}</h4>
-              {rent ? (
-                <>
-                  <h2 className="ammount">
-                    Pay <span className="rent">{`¥${rent}`}</span> in Rent.
-                  </h2>
-                  <button onClick={handleClose} className="continue-button">
-                    Pay and Continue
-                  </button>
-                </>
-              ) : null}
-            </div>
+            </motion.div>
           </motion.div>
-        </motion.div>
-      ) : null}
-    </AnimatePresence>
+        ) : null}
+      </AnimatePresence>
+      <MustModal
+        rent={rent}
+        setRent={setRent}
+        p1MoneyAvailable={p1MoneyAvailable}
+        setP1MoneyAvailable={setP1MoneyAvailable}
+        p2MoneyAvailable={p2MoneyAvailable}
+        setP2MoneyAvailable={setP2MoneyAvailable}
+        mustMortgage={mustMortgage}
+        setMustMortgage={setMustMortgage}
+        setMustMortgage2={setMustMortgage2}
+        mustMortgage2={mustMortgage2}
+        gameOver={gameOver}
+        setGameOver={setGameOver}
+        gameOver2={gameOver2}
+        setGameOver2={setGameOver2}
+        properties={properties}
+        railRoads={railRoads}
+        utilities={utilities}
+        setProperties={setProperties}
+        setUtilities={setUtilities}
+        setRailRoads={setRailRoads}
+        p1Money={p1Money}
+        p2Money={p2Money}
+        setP1Money={setP1Money}
+        setP2Money={setP2Money}
+        p1MortProps={p1MortProps}
+        setP1MortProps={setP1MortProps}
+        p2MortProps={p2MortProps}
+        setP2MortProps={setP2MortProps}
+        p1MortRailRoads={p1MortRailRoads}
+        setP1MortRailRoads={setP1MortRailRoads}
+        p2MortRailRoads={p2MortRailRoads}
+        setP2MortRailRoads={setP2MortRailRoads}
+        p1MortUtils={p1MortUtils}
+        p2MortUtils={p2MortUtils}
+        setP1MortUtils={setP1MortUtils}
+        setP2MortUtils={setP2MortUtils}
+      />
+    </>
   );
 };
 
