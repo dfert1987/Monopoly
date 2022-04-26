@@ -43,17 +43,24 @@ After this you can view the main board.
 Check out a quick video demo here!
 
 ## Features
-
+![board](./src/Assets/ReadMePics/board.png)
 Your controls are on the bottom of the screen. Here you can:
 
 - See how much money you have.
 - Roll the dice (you roll twice in a row on doubles)
+![view assets](./src/Assets/ReadMePics/check-assets.png)
 - View all of the assets that you and your opponents own.
-  - Clicking this will allow you build houses/hotels as well.
+![buy houses](./src/Assets/ReadMePics/buy-houses.png)
+- Clicking this will allow you build houses/hotels as well.
 - Use your visa (get out of jail free card) if you have one.
+![mortgage](./src/Assets/ReadMePics/mortgage-carousel.png)
 - Mortgage and Buy Back Properties.
 - After rolling you will be prompted by modals based on where you landed.
+![buy property](./src/Assets/ReadMePics/buy-prop.png)
+![buy ayi](./src/Assets/ReadMePics/buy-ayi.png)
+![pay rent](./src/Assets/ReadMePics/pay-util.png)
 - If properties are unowned you may buy them, if owned by the other player you'll have to pay rent.
+![chance](./src/Assets/ReadMePics/fuyuan.png)
 - Just like regular monopoly players can 'Go to Jail (get deoported)', 'Pass GO and collect 200', pay various taxes and fees, win a pot from a "Free Parking" equivelant, as well as draw Chance/Community Chest type cards with other instructions.
 - If you dont have enough money to pay a specific fee/rent, you'll be prompted with a modal asking if you wish to mortgage properties to continue playing, or just concede. (This is a work in progress!)
 
