@@ -1,0 +1,65 @@
+.text-container-money {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+.red-text {
+  color: red;
+}
+
+.top-prop.yellow {
+  background-color: yellow;
+}
+
+.top-prop.red {
+  background-color: red;
+}
+
+.top-prop.orange {
+  background-color: orange;
+}
+
+.top-prop.green {
+  background-color: green;
+}
+
+.top-prop.blue {
+  background-color: blue;
+}
+
+.top-prop.violet {
+  background-color: violet;
+}
+
+.top-prop.brown {
+  background-color: rgba(134, 56, 4, 0.993);
+}
+
+.top-prop.light-blue {
+  background-color: rgb(137, 174, 245);
+}
+
+.prop-card {
+  border: 2px black solid;
+  display: flex;
+  flex-direction: column;
+  height: 4.5em;
+  width: 4em;
+}
+
+.top-prop {
+  height: 35%;
+}
+
+.white-prop {
+  background-color: white;
+  height: 65%;
+}
+
+.asset-section {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-around;
+}

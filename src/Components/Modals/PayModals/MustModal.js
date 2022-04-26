@@ -63,6 +63,28 @@ export const MustModal = ({
     setMustMortgage2(false);
   };
 
+  const getProperties = () => {
+    if (mustMortgage && p1MortProps.length > 0) {
+      return p1MortProps.map((property, index) => {
+        return (
+          <div className="prop-card">
+            <div className={`top-prop ${property.color}`}></div>
+            <div className="white-prop"></div>
+          </div>
+        );
+      });
+    } else if (mustMortgage2 && p2MortProps.length > 0) {
+      return p2MortProps.map((property, index) => {
+        return (
+          <div className="prop-card">
+            <div className={`top-prop ${property.color}`}></div>
+            <div className="white-prop"></div>
+          </div>
+        );
+      });
+    }
+  };
+
   return (
     <>
       <AnimatePresence exitBeforeEnter>
@@ -86,15 +108,17 @@ export const MustModal = ({
                   <FontAwesomeIcon className="x-icon" icon={faXmark} />
                 </button>
               </div>
-              <div className="main-part">
-                <div className="text-container">
+              <div className="main-area">
+                <div className="text-container-money">
                   <h2 className="must-instructions">
-                    You don't have enough money to pay rent!
+                    You don't have enough money to pay rent! You need{" "}
+                    <span className="red-text">{rent}rmb.</span>
                   </h2>
                   <h4 className="must-instructions explain">
                     You can mortgage assets to continue playing, or you can
                     concede.
                   </h4>
+                  <div className="asset-section">{getProperties()}</div>
                 </div>
               </div>
             </motion.div>
