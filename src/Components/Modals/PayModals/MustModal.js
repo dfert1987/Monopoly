@@ -132,6 +132,46 @@ export const MustModal = ({
     }
   };
 
+  const getUtils = () => {
+    if (mustMortgage && p1MortUtils.length > 0) {
+      return p1MortUtils.map((util, index) => {
+        return (
+          <div className="container-prop">
+            <p className="propname">{util.Name}</p>
+            <div className="rr-card" id={index}>
+              <div className="top-rr"></div>
+              <div className="white-prop">
+                <img
+                  className="subway-logo-left"
+                  src={util.bannerImage}
+                  alt="subway-logo"
+                />
+              </div>
+            </div>
+          </div>
+        );
+      });
+    } else if (mustMortgage && p2MortUtils.length > 0) {
+      return p2MortUtils.map((util, index) => {
+        return (
+          <div className="container-prop">
+            <p className="propname">{util.Name}</p>
+            <div className="rr-card" id={index}>
+              <div className="top-rr"></div>
+              <div className="white-prop">
+                <img
+                  className="subway-logo-left"
+                  src={util.bannerImage}
+                  alt="subway-logo"
+                />
+              </div>
+            </div>
+          </div>
+        );
+      });
+    }
+  };
+
   return (
     <>
       <AnimatePresence exitBeforeEnter>
@@ -168,6 +208,7 @@ export const MustModal = ({
                   <div className="asset-section">
                     {getProperties()}
                     {getRRs()}
+                    {getUtils()}
                   </div>
                 </div>
               </div>
