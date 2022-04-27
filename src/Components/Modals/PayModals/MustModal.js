@@ -103,7 +103,7 @@ export const MustModal = ({
           <div className="container-prop">
             <p className="propname">{rr.Name}</p>
             <div className="rr-card" id={index}>
-              <div className="top-rr"></div>
+              <div className="top-rr-must"></div>
               <div className="white-prop">
                 <img
                   className="subway-logo"
@@ -121,7 +121,7 @@ export const MustModal = ({
           <div className="container-prop">
             <p className="propname">{rr.Name}</p>
             <div className="rr-card" id={index}>
-              <div className="top-rr"></div>
+              <div className="top-rr-must"></div>
               <div className="white-prop">
                 <img
                   className="subway-logo"
@@ -143,7 +143,7 @@ export const MustModal = ({
           <div className="container-prop">
             <p className="propname">{util.Name}</p>
             <div className="rr-card" id={index}>
-              <div className="top-rr"></div>
+              <div className="top-rr-must"></div>
               <div className="white-prop">
                 <img
                   className="subway-logo-left"
@@ -161,7 +161,7 @@ export const MustModal = ({
           <div className="container-prop">
             <p className="propname">{util.Name}</p>
             <div className="rr-card" id={index}>
-              <div className="top-rr"></div>
+              <div className="top-rr-must"></div>
               <div className="white-prop">
                 <img
                   className="subway-logo"
@@ -205,11 +205,21 @@ export const MustModal = ({
                     playing, or you can concede.
                   </h4>
                   <div className="asset-section">
-                    <h3 className="asset-title">Properties</h3>
+                    {(mustMortgage && p1MortProps.length > 0) ||
+                    (mustMortgage2 && p2MortProps.length > 0) ? (
+                      <h3 className="asset-title">Properties</h3>
+                    ) : null}
                     <div className="asset-type">{getProperties()}</div>
-                    <h3 className="asset-title">Railroads</h3>
+                    {(mustMortgage && p1MortRailRoads.length > 0) ||
+                    (mustMortgage2 && p2MortRailRoads.length > 0) ? (
+                      <h3 className="asset-title">Railroads</h3>
+                    ) : null}
                     <div className="asset-type">{getRRs()}</div>
-                    <h3 className="asset-title">Utilities</h3>
+
+                    {(mustMortgage && p1MortUtils.length > 0) ||
+                    (mustMortgage2 && p2MortUtils.length > 0) ? (
+                      <h3 className="asset-title">Utilities</h3>
+                    ) : null}
                     <div className="asset-type">{getUtils()}</div>
                   </div>
                   <div className="button-area">
