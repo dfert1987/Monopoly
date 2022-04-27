@@ -74,6 +74,10 @@
   background-color: white;
   height: 65%;
 }
+.value {
+  margin-top: 0.1em;
+  text-align: left;
+}
 
 .container-prop {
   text-align: center;

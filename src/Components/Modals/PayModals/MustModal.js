@@ -78,6 +78,7 @@ export const MustModal = ({
               <div className={`top-prop ${property.color}`}></div>
               <div className="white-prop"></div>
             </div>
+            <p className="value">{property.mortgage}</p>
           </div>
         );
       });
@@ -90,6 +91,7 @@ export const MustModal = ({
               <div className={`top-prop ${property.color}`}></div>
               <div className="white-prop"></div>
             </div>
+            <p className="value">{property.mortgage}RMB</p>
           </div>
         );
       });
@@ -112,6 +114,7 @@ export const MustModal = ({
                 />
               </div>
             </div>
+            <p className="value">{rr.mortgage}RMB</p>
           </div>
         );
       });
@@ -130,6 +133,7 @@ export const MustModal = ({
                 />
               </div>
             </div>
+            <p className="value">{rr.mortgage}RMB</p>
           </div>
         );
       });
@@ -152,6 +156,7 @@ export const MustModal = ({
                 />
               </div>
             </div>
+            <p className="value">{util.mortgage}RMB</p>
           </div>
         );
       });
@@ -170,6 +175,7 @@ export const MustModal = ({
                 />
               </div>
             </div>
+            <p className="value">{util.mortgage}RMB</p>
           </div>
         );
       });
@@ -197,7 +203,7 @@ export const MustModal = ({
               <div className="main-area">
                 <div className="text-container-money">
                   <h2 className="must-instructions">
-                    You don't have enough money to pay rent! You need
+                    You don't have enough money to pay this! You need
                     <span className="red-text"> {needed()}rmb more.</span>
                   </h2>
                   <h4 className="must-instructions explain">
