@@ -1,7 +1,5 @@
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { faXmark } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import ditieLogo from "../../../Assets/PropertyImages/ditielogo.png";
 import "../../Styles/Must.css";
 
@@ -44,6 +42,7 @@ export const MustModal = ({
   setP2MortUtils,
 }) => {
   const [enoughMoney, setEnoughMoney] = useState(false);
+
   const backdrop = {
     visible: { opacity: 1 },
     hidden: { opacity: 0 },
@@ -58,11 +57,6 @@ export const MustModal = ({
       opacity: 1,
       transition: { delay: 0.5 },
     },
-  };
-
-  const handleClose = () => {
-    setMustMortgage(false);
-    setMustMortgage2(false);
   };
 
   const needed = () => {
@@ -112,7 +106,7 @@ export const MustModal = ({
               <div className="top-rr"></div>
               <div className="white-prop">
                 <img
-                  className="subway-logo-left"
+                  className="subway-logo"
                   src={ditieLogo}
                   alt="subway-logo"
                 />
@@ -130,7 +124,7 @@ export const MustModal = ({
               <div className="top-rr"></div>
               <div className="white-prop">
                 <img
-                  className="subway-logo-left"
+                  className="subway-logo"
                   src={ditieLogo}
                   alt="subway-logo"
                 />
@@ -170,7 +164,7 @@ export const MustModal = ({
               <div className="top-rr"></div>
               <div className="white-prop">
                 <img
-                  className="subway-logo-left"
+                  className="subway-logo"
                   src={util.bannerImage}
                   alt="subway-logo"
                 />
@@ -194,17 +188,12 @@ export const MustModal = ({
             exit="hidden"
           >
             <motion.div
-              className="flex flexColumn innerModalPay"
+              className="flex flexColumn innerModalPay mustPay"
               variants={modal}
               initial="hidden"
               animate="visible"
               exit="hidden"
             >
-              <div className="button-row">
-                <button className="close-button" onClick={handleClose}>
-                  <FontAwesomeIcon className="x-icon" icon={faXmark} />
-                </button>
-              </div>
               <div className="main-area">
                 <div className="text-container-money">
                   <h2 className="must-instructions">
@@ -216,9 +205,12 @@ export const MustModal = ({
                     playing, or you can concede.
                   </h4>
                   <div className="asset-section">
-                    {getProperties()}
-                    {getRRs()}
-                    {getUtils()}
+                    <h3 className="asset-title">Properties</h3>
+                    <div className="asset-type">{getProperties()}</div>
+                    <h3 className="asset-title">Railroads</h3>
+                    <div className="asset-type">{getRRs()}</div>
+                    <h3 className="asset-title">Utilities</h3>
+                    <div className="asset-type">{getUtils()}</div>
                   </div>
                   <div className="button-area">
                     <button className="must-button" disabled={!enoughMoney}>

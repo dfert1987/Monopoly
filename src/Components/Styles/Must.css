@@ -4,6 +4,10 @@
   text-align: center;
 }
 
+.innerModalPay.mustPay {
+  max-width: 70em;
+}
+
 .red-text {
   color: red;
 }
@@ -28,7 +32,7 @@
   background-color: blue;
 }
 
-.top-prop.violet {
+.top-prop.purple {
   background-color: violet;
 }
 
@@ -44,12 +48,26 @@
   border: 2px black solid;
   display: flex;
   flex-direction: column;
-  height: 4.5em;
-  width: 4em;
+  height: 5.5em;
+  width: 5em;
+}
+
+.rr-card {
+  border: 2px black solid;
+  display: flex;
+  flex-direction: column;
+  height: 5.5em;
+  width: 5em;
 }
 
 .top-prop {
   height: 35%;
+}
+
+.top-rr {
+  height: 35%;
+  background-color: white;
+  border-bottom: 2px black solid;
 }
 
 .white-prop {
@@ -57,15 +75,32 @@
   height: 65%;
 }
 
+.container-prop {
+  text-align: center;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+  padding-left: 1em;
+  padding-right: 1em;
+}
+
 .asset-section {
   display: flex;
   flex-wrap: wrap;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: space-around;
+}
+
+.asset-type {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: left;
 }
 
 .propname {
   margin-bottom: 0.1em;
+  text-align: left;
 }
 
 .must-instructions {
@@ -75,6 +110,13 @@
   margin-top: 0.25em;
   padding-left: 1em;
   padding-right: 1em;
+}
+
+.asset-title {
+  font-size: 1.5em;
+  margin-bottom: 0;
+  padding-left: 0.75em;
+  text-align: left;
 }
 
 .must-instructions.explain {
@@ -110,4 +152,11 @@
 .must-button:disabled {
   background-color: gray;
   cursor: default;
+}
+
+.subway-logo {
+  height: 4.25em;
+  padding: 0.5em;
+  position: relative;
+  bottom: 0.75em;
 }
