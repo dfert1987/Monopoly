@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { faXmark } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -43,6 +43,7 @@ export const MustModal = ({
   setP1MortUtils,
   setP2MortUtils,
 }) => {
+  const [enoughMoney, setEnoughMoney] = useState(false);
   const backdrop = {
     visible: { opacity: 1 },
     hidden: { opacity: 0 },
@@ -211,13 +212,19 @@ export const MustModal = ({
                     <span className="red-text"> {needed()}rmb more.</span>
                   </h2>
                   <h4 className="must-instructions explain">
-                    You can mortgage assets to continue playing, or you can
-                    concede.
+                    Click assets to mortgage them if you wish to continue
+                    playing, or you can concede.
                   </h4>
                   <div className="asset-section">
                     {getProperties()}
                     {getRRs()}
                     {getUtils()}
+                  </div>
+                  <div className="button-area">
+                    <button className="must-button" disabled={!enoughMoney}>
+                      COMPLETE
+                    </button>
+                    <button className="must-button">CONCEDE</button>
                   </div>
                 </div>
               </div>
