@@ -1,6 +1,6 @@
 import React, { useState } from "react";
+import PropMorts from "./PropMorts";
 import { motion, AnimatePresence } from "framer-motion";
-import ditieLogo from "../../../Assets/PropertyImages/ditielogo.png";
 import "../../Styles/Must.css";
 
 export const MustModal = ({
@@ -72,27 +72,37 @@ export const MustModal = ({
     if (mustMortgage && p1MortProps.length > 0) {
       return p1MortProps.map((property, index) => {
         return (
-          <div className="container-prop">
-            <p className="propname">{property.Name}</p>
-            <div className="prop-card" id={index}>
-              <div className={`top-prop ${property.color}`}></div>
-              <div className="white-prop"></div>
-            </div>
-            <p className="value">{property.mortgage}</p>
-          </div>
+          <PropMorts
+            assets={properties}
+            asset={property}
+            money={p1Money}
+            key={index}
+            setMoney={setP1Money}
+            rent={rent}
+            setRent={setRent}
+            type="property"
+            player="p1"
+            enougMoney={enoughMoney}
+            setEnoughMoney={setEnoughMoney}
+          />
         );
       });
     } else if (mustMortgage2 && p2MortProps.length > 0) {
       return p2MortProps.map((property, index) => {
         return (
-          <div className="container-prop">
-            <p className="propname">{property.Name}</p>
-            <div className="prop-card" id={index}>
-              <div className={`top-prop ${property.color}`}></div>
-              <div className="white-prop"></div>
-            </div>
-            <p className="value">{property.mortgage}RMB</p>
-          </div>
+          <PropMorts
+            assets={properties}
+            asset={property}
+            money={p2Money}
+            key={index}
+            setMoney={setP2Money}
+            rent={rent}
+            setRent={setRent}
+            type="property"
+            player="p2"
+            enougMoney={enoughMoney}
+            setEnoughMoney={setEnoughMoney}
+          />
         );
       });
     }
@@ -102,39 +112,37 @@ export const MustModal = ({
     if (mustMortgage && p1MortRailRoads.length > 0) {
       return p1MortRailRoads.map((rr, index) => {
         return (
-          <div className="container-prop">
-            <p className="propname">{rr.Name}</p>
-            <div className="rr-card" id={index}>
-              <div className="top-rr-must"></div>
-              <div className="white-prop">
-                <img
-                  className="subway-logo"
-                  src={ditieLogo}
-                  alt="subway-logo"
-                />
-              </div>
-            </div>
-            <p className="value">{rr.mortgage}RMB</p>
-          </div>
+          <PropMorts
+            assets={railRoads}
+            asset={rr}
+            money={p1Money}
+            key={index}
+            setMoney={setP1Money}
+            rent={rent}
+            setRent={setRent}
+            type="rail"
+            player="p1"
+            enougMoney={enoughMoney}
+            setEnoughMoney={setEnoughMoney}
+          />
         );
       });
     } else if (mustMortgage && p2MortRailRoads.length > 0) {
       return p2MortRailRoads.map((rr, index) => {
         return (
-          <div className="container-prop">
-            <p className="propname">{rr.Name}</p>
-            <div className="rr-card" id={index}>
-              <div className="top-rr-must"></div>
-              <div className="white-prop">
-                <img
-                  className="subway-logo"
-                  src={ditieLogo}
-                  alt="subway-logo"
-                />
-              </div>
-            </div>
-            <p className="value">{rr.mortgage}RMB</p>
-          </div>
+          <PropMorts
+            assets={railRoads}
+            asset={rr}
+            money={p2Money}
+            key={index}
+            setMoney={setP2Money}
+            rent={rent}
+            setRent={setRent}
+            type="rail"
+            player="p2"
+            enougMoney={enoughMoney}
+            setEnoughMoney={setEnoughMoney}
+          />
         );
       });
     }
@@ -144,39 +152,51 @@ export const MustModal = ({
     if (mustMortgage && p1MortUtils.length > 0) {
       return p1MortUtils.map((util, index) => {
         return (
-          <div className="container-prop">
-            <p className="propname">{util.Name}</p>
-            <div className="rr-card" id={index}>
-              <div className="top-rr-must"></div>
-              <div className="white-prop">
-                <img
-                  className="subway-logo-left"
-                  src={util.bannerImage}
-                  alt="subway-logo"
-                />
-              </div>
-            </div>
-            <p className="value">{util.mortgage}RMB</p>
-          </div>
+          //   <div className="container-prop">
+          //     <p className="propname">{util.Name}</p>
+          //     <div className="rr-card" id={index}>
+          //       <div className="top-rr-must"></div>
+          //       <div className="white-prop">
+          //         <img
+          //           className="subway-logo-left"
+          //           src={util.bannerImage}
+          //           alt="subway-logo"
+          //         />
+          //       </div>
+          //     </div>
+          //     <p className="value">{util.mortgage}RMB</p>
+          //   </div>
+          <PropMorts
+            assets={utilities}
+            asset={util}
+            money={p1Money}
+            key={index}
+            setMoney={setP1Money}
+            rent={rent}
+            setRent={setRent}
+            type="utility"
+            player="p1"
+            enougMoney={enoughMoney}
+            setEnoughMoney={setEnoughMoney}
+          />
         );
       });
     } else if (mustMortgage && p2MortUtils.length > 0) {
       return p2MortUtils.map((util, index) => {
         return (
-          <div className="container-prop">
-            <p className="propname">{util.Name}</p>
-            <div className="rr-card" id={index}>
-              <div className="top-rr-must"></div>
-              <div className="white-prop">
-                <img
-                  className="subway-logo"
-                  src={util.bannerImage}
-                  alt="subway-logo"
-                />
-              </div>
-            </div>
-            <p className="value">{util.mortgage}RMB</p>
-          </div>
+          <PropMorts
+            assets={utilities}
+            asset={util}
+            money={p2Money}
+            key={index}
+            setMoney={setP2Money}
+            rent={rent}
+            setRent={setRent}
+            type="utility"
+            player="p2"
+            enougMoney={enoughMoney}
+            setEnoughMoney={setEnoughMoney}
+          />
         );
       });
     }
