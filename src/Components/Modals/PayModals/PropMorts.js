@@ -17,6 +17,9 @@ export const PropMorts = ({
   player,
   enoughMoney,
   setEnoughMoney,
+  setAssets,
+  needed,
+  setNeeded,
 }) => {
   const [purchased, setPurchased] = useState("normal");
   const [click] = useSound(Click);
@@ -32,6 +35,20 @@ export const PropMorts = ({
         }
         return property;
       });
+      setAssets(updatedProperties);
+      let updatedMoney = money + asset.mortgage;
+      setMoney(updatedMoney);
+      setAmountNeeded(updatedMoney);
+    }
+  };
+
+  const setAmountNeeded = (current) => {
+    if (current >= rent) {
+      setNeeded(0);
+      setEnoughMoney(true);
+    } else if (current < rent) {
+      let amt = rent - current;
+      setNeeded(amt);
     }
   };
 

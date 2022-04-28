@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import PropMorts from "./PropMorts";
 import { motion, AnimatePresence } from "framer-motion";
 import "../../Styles/Must.css";
@@ -42,6 +42,8 @@ export const MustModal = ({
   setP2MortUtils,
 }) => {
   const [enoughMoney, setEnoughMoney] = useState(false);
+  const [neededAmt, setNeededAmt] = useState();
+  const [neededAmt2, setNeededAmt2] = useState();
 
   const backdrop = {
     visible: { opacity: 1 },
@@ -59,13 +61,22 @@ export const MustModal = ({
     },
   };
 
+  useEffect(() => {
+    if (mustMortgage) {
+      let needed = rent - p1Money;
+      setNeededAmt(needed);
+    } else if (mustMortgage2) {
+      let needed = rent - p2Money;
+      setNeededAmt2(needed);
+    }
+  }, [mustMortgage, mustMortgage2, rent, p1Money, p2Money]);
+
   const needed = () => {
     if (mustMortgage) {
-      return rent - p1Money;
+      return neededAmt;
     } else if (mustMortgage2) {
-      return rent - p2Money;
+      return neededAmt2;
     }
-    return null;
   };
 
   const getProperties = () => {
@@ -83,8 +94,10 @@ export const MustModal = ({
             setRent={setRent}
             type="property"
             player="p1"
-            enougMoney={enoughMoney}
+            enoughMoney={enoughMoney}
             setEnoughMoney={setEnoughMoney}
+            needed={neededAmt}
+            setNeeded={setNeededAmt}
           />
         );
       });
@@ -102,8 +115,10 @@ export const MustModal = ({
             setRent={setRent}
             type="property"
             player="p2"
-            enougMoney={enoughMoney}
+            enoughMoney={enoughMoney}
             setEnoughMoney={setEnoughMoney}
+            needed={neededAmt2}
+            setNeeded={setNeededAmt2}
           />
         );
       });
@@ -125,8 +140,10 @@ export const MustModal = ({
             setRent={setRent}
             type="rail"
             player="p1"
-            enougMoney={enoughMoney}
+            enoughMoney={enoughMoney}
             setEnoughMoney={setEnoughMoney}
+            needed={neededAmt}
+            setNeeded={setNeededAmt}
           />
         );
       });
@@ -144,8 +161,10 @@ export const MustModal = ({
             setRent={setRent}
             type="rail"
             player="p2"
-            enougMoney={enoughMoney}
+            enoughMoney={enoughMoney}
             setEnoughMoney={setEnoughMoney}
+            needed={neededAmt2}
+            setNeeded={setNeededAmt2}
           />
         );
       });
@@ -167,8 +186,10 @@ export const MustModal = ({
             setRent={setRent}
             type="utility"
             player="p1"
-            enougMoney={enoughMoney}
+            enoughMoney={enoughMoney}
             setEnoughMoney={setEnoughMoney}
+            needed={neededAmt}
+            setNeeded={setNeededAmt}
           />
         );
       });
@@ -186,8 +207,10 @@ export const MustModal = ({
             setRent={setRent}
             type="utility"
             player="p2"
-            enougMoney={enoughMoney}
+            enoughMoney={enoughMoney}
             setEnoughMoney={setEnoughMoney}
+            needed={neededAmt2}
+            setNeeded={setNeededAmt2}
           />
         );
       });

@@ -29,8 +29,6 @@ const PropCardAndButton = ({
   const [hotel, setHotel] = useState(false);
   const [hotelAlready, setHotelAlready] = useState(false);
 
-  console.log(houseModal, houseModal2);
-
   useEffect(() => {
     if (card.hasOneHouse === true && card.hasTwoHouses === false) {
       setHouseCount(1);
