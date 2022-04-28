@@ -75,6 +75,7 @@ export const MustModal = ({
           <PropMorts
             assets={properties}
             asset={property}
+            setAssets={setProperties}
             money={p1Money}
             key={index}
             setMoney={setP1Money}
@@ -93,6 +94,7 @@ export const MustModal = ({
           <PropMorts
             assets={properties}
             asset={property}
+            setAssets={setProperties}
             money={p2Money}
             key={index}
             setMoney={setP2Money}
@@ -115,6 +117,7 @@ export const MustModal = ({
           <PropMorts
             assets={railRoads}
             asset={rr}
+            setAssets={setRailRoads}
             money={p1Money}
             key={index}
             setMoney={setP1Money}
@@ -136,6 +139,7 @@ export const MustModal = ({
             money={p2Money}
             key={index}
             setMoney={setP2Money}
+            setAssets={setRailRoads}
             rent={rent}
             setRent={setRent}
             type="rail"
@@ -152,26 +156,13 @@ export const MustModal = ({
     if (mustMortgage && p1MortUtils.length > 0) {
       return p1MortUtils.map((util, index) => {
         return (
-          //   <div className="container-prop">
-          //     <p className="propname">{util.Name}</p>
-          //     <div className="rr-card" id={index}>
-          //       <div className="top-rr-must"></div>
-          //       <div className="white-prop">
-          //         <img
-          //           className="subway-logo-left"
-          //           src={util.bannerImage}
-          //           alt="subway-logo"
-          //         />
-          //       </div>
-          //     </div>
-          //     <p className="value">{util.mortgage}RMB</p>
-          //   </div>
           <PropMorts
             assets={utilities}
             asset={util}
             money={p1Money}
             key={index}
             setMoney={setP1Money}
+            setAssets={setUtilities}
             rent={rent}
             setRent={setRent}
             type="utility"
@@ -190,6 +181,7 @@ export const MustModal = ({
             money={p2Money}
             key={index}
             setMoney={setP2Money}
+            setAssets={setUtilities}
             rent={rent}
             setRent={setRent}
             type="utility"

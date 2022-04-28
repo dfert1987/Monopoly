@@ -12,6 +12,12 @@
   color: red;
 }
 
+.m.big {
+  font-size: 2em;
+  position: relative;
+  bottom: 0.5em;
+}
+
 .top-prop.yellow {
   background-color: yellow;
 }
@@ -44,12 +50,48 @@
   background-color: rgb(137, 174, 245);
 }
 
+.top-prop.blue.grey {
+  background-color: gray;
+}
+
+.top-prop.purple.grey {
+  background-color: gray;
+}
+
+.top-prop.light-blue.grey {
+  background-color: gray;
+}
+
+.top-prop.brown.grey {
+  background-color: grey;
+}
+
+.top-prop.green.grey {
+  background-color: gray;
+}
+
+.top-prop.yellow.grey {
+  background-color: grey;
+}
+
+.top-prop.orange.grey {
+  background-color: grey;
+}
+
+.top-prop.red.grey {
+  background-color: grey;
+}
+
 .prop-card {
   border: 2px black solid;
   display: flex;
   flex-direction: column;
   height: 5.5em;
   width: 5em;
+  cursor: pointer;
+}
+.prop-card.grey {
+  cursor: default;
 }
 
 .rr-card {
@@ -105,13 +147,14 @@
 
 .propname {
   margin-bottom: 0.1em;
+  margin-top: 0.1em;
   text-align: left;
 }
 
 .must-instructions {
   font-family: "Monopoly";
   font-size: 2.5em;
-  margin-bottom: 0.25em;
+  margin-bottom: 0;
   margin-top: 0.25em;
   padding-left: 1em;
   padding-right: 1em;
@@ -119,13 +162,14 @@
 
 .asset-title {
   font-size: 1.5em;
-  margin-bottom: 0;
+  margin: 0;
   padding-left: 0.75em;
   text-align: left;
 }
 
 .must-instructions.explain {
   font-size: 2em;
+  margin-bottom: 0.5em;
   margin-top: 0.25em;
 }
 
@@ -134,7 +178,7 @@
 }
 
 .must-button {
-  margin: 1em;
+  margin-left: 1em;
   color: white;
   text-shadow: 0 0 2px rgba(0, 0, 0, 0.3);
   box-shadow: inset 0 0 2px 0 rgba(255, 255, 255, 0.4),
