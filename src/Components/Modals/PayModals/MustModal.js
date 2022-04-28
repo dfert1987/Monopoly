@@ -64,10 +64,16 @@ export const MustModal = ({
   useEffect(() => {
     if (mustMortgage) {
       let needed = rent - p1Money;
-      setNeededAmt(needed);
+      if (needed > 0) {
+        setNeededAmt(needed);
+      }
+      setNeededAmt(0);
     } else if (mustMortgage2) {
       let needed = rent - p2Money;
-      setNeededAmt2(needed);
+      if (needed > 0) {
+        setNeededAmt2(needed);
+      }
+      setNeededAmt2(0);
     }
   }, [mustMortgage, mustMortgage2, rent, p1Money, p2Money]);
 
@@ -237,14 +243,28 @@ export const MustModal = ({
             >
               <div className="main-area">
                 <div className="text-container-money">
-                  <h2 className="must-instructions">
-                    You don't have enough money to pay this! You need
-                    <span className="red-text"> {needed()}rmb more.</span>
-                  </h2>
-                  <h4 className="must-instructions explain">
-                    Click assets to mortgage them if you wish to continue
-                    playing, or you can concede.
-                  </h4>
+                  {!enoughMoney ? (
+                    <>
+                      <h2 className="must-instructions">
+                        You don't have enough money to pay this! You need
+                        <span className="red-text"> {needed()}rmb more.</span>
+                      </h2>
+                      <h4 className="must-instructions explain">
+                        Click assets to mortgage them if you wish to continue
+                        playing, or you can concede.
+                      </h4>
+                    </>
+                  ) : (
+                    <>
+                      <h2 className="must-instructions">
+                        You've mortgaged enough to pay!
+                      </h2>
+                      <h4 className="must-instructions explain">
+                        You can keep mortgaging if you want some more wiggle
+                        room, or click complete to continue playing!
+                      </h4>
+                    </>
+                  )}
                   <div className="asset-section">
                     {(mustMortgage && p1MortProps.length > 0) ||
                     (mustMortgage2 && p2MortProps.length > 0) ? (

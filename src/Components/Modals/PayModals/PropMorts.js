@@ -39,6 +39,19 @@ export const PropMorts = ({
       let updatedMoney = money + asset.mortgage;
       setMoney(updatedMoney);
       setAmountNeeded(updatedMoney);
+    } else if (player === "p2" && purchased === "normal") {
+      setPurchased("grey");
+      drum();
+      let updatedProperties = assets.map((property) => {
+        if (property.Name === asset.Name) {
+          return { ...property, mortgaged: true };
+        }
+        return property;
+      });
+      setAssets(updatedProperties);
+      let updatedMoney = money + asset.mortgage;
+      setMoney(updatedMoney);
+      setAmountNeeded(updatedMoney);
     }
   };
 
