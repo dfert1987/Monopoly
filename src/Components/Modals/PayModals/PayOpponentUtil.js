@@ -194,7 +194,7 @@ export const PayOpponentUtil = ({
   };
 
   const changeMoney = (amount) => {
-    if (onUtil) {
+    if (onUtil && onUtil.mortgaged === false) {
       let p1New = p1Money - amount;
       let p2New = p2Money + amount;
       setRent(amount);
@@ -324,7 +324,9 @@ export const PayOpponentUtil = ({
   return (
     <>
       <AnimatePresence exitBeforeEnter>
-        {payUtil === true && (onUtil || onUtil2) ? (
+        {payUtil === true &&
+        ((onUtil && onUtil.mortgaged === false) ||
+          (onUtil2 && onUtil2.mortgaged === false)) ? (
           <motion.div
             className="outerModal flex centerFlex"
             variants={backdrop}

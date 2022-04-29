@@ -190,7 +190,7 @@ export const PayOpponentRail = ({
     };
     let totalSum2 = utilSum2() + rrSum2() + propSum2();
     setP2MoneyAvailable(totalSum2);
-    if (onRR2 && payRailTo) {
+    if (onRR2 && payRailTo && onRR2.mortgaged === false) {
       let number = railRoads.filter(
         (rr) => rr.ownedP1 === true && rr.mortgaged === false
       );
@@ -320,7 +320,7 @@ export const PayOpponentRail = ({
           setP2Money(p2New);
         }
       }
-    } else if (onRR && payRailTo) {
+    } else if (onRR && payRailTo && onRR.mortgaged === false) {
       let number = railRoads.filter(
         (rr) => rr.ownedP2 === true && rr.mortgaged === false
       );
@@ -479,7 +479,9 @@ export const PayOpponentRail = ({
   return (
     <>
       <AnimatePresence exitBeforeEnter>
-        {payRail === true && (onRR || onRR2) ? (
+        {payRail === true &&
+        ((onRR && onRR.mortgaged === false) ||
+          (onRR2 && onRR.mortgaged === false)) ? (
           <motion.div
             className="outerModal flex centerFlex"
             variants={backdrop}
