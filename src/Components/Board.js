@@ -1338,6 +1338,12 @@ export const Board = ({
           p2Money={p2Money}
           setFreeParking={setFreeParking}
           freeParking={freeParking}
+          properties={properties}
+          railRoads={railRoads}
+          utilities={utilities}
+          setProperties={setProperties}
+          setUtilities={setUtilities}
+          setRailRoads={setRailRoads}
         />
         <Visa
           onVisa={onVisa}

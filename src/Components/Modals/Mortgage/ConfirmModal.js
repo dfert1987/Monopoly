@@ -39,8 +39,6 @@ const ConfirmModal = ({
   const [click] = useSound(Click);
   const [drum] = useSound(Drum);
 
-  console.log(railRoads);
-
   const backdrop = {
     visible: { opacity: 1 },
     hidden: { opacity: 0 },
