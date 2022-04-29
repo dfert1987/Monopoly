@@ -411,6 +411,7 @@
   font-size: 11px;
   text-align: center;
   padding-top: 3.5em;
+  margin-left: 0.75em;
   -moz-transform: rotate(90deg); /* FF3.5+ */
   -o-transform: rotate(90deg); /* Opera 10.5 */
   -webkit-transform: rotate(90deg); /* Safari 3.1+, Chrome */
@@ -473,6 +474,7 @@
   -webkit-transform: rotate(270deg);
   font-size: 11px;
   padding-top: 1.75em;
+  margin-left: 0.75em;
   z-index: 1;
 }
 
@@ -517,6 +519,7 @@
   font-size: 11px;
   z-index: 1;
   padding-top: 3em;
+  margin-left: 0.75em;
 }
 
 .prop-price-right-tem {
@@ -527,6 +530,7 @@
   font-size: 11px;
   z-index: 1;
   padding-top: 2em;
+  margin-left: 0.75em;
 }
 
 .subway-logo-right {
@@ -589,6 +593,7 @@
   font-size: 11px;
   padding-right: 0.25em;
   padding-top: 0.5em;
+  margin-left: 0.75em;
   z-index: 1;
 }
 
@@ -599,6 +604,7 @@
   -webkit-transform: rotate(270deg);
   font-size: 11px;
   z-index: 1;
+  margin-left: 0.75em;
 }
 
 .text-container.right {
