@@ -69,7 +69,7 @@ const Jail = ({
                 </button>
               </div>
               <div className="main-part">
-                <h1 className="main-title">YOU'RE DEPORTED!</h1>
+                <h1 className="main-title deported">YOU'RE DEPORTED!</h1>
                 <h2 className="instructions-jail">
                   Go back to your home country!
                 </h2>
@@ -88,7 +88,7 @@ const Jail = ({
                   />
                 </div>
                 <button onClick={handleClose} className="contin-button">
-                  Pack Your Bags
+                  Head Home
                 </button>
               </div>
             </motion.div>

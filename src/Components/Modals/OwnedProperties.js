@@ -348,7 +348,7 @@ const OwnedProperties = ({
                 </button>
               </div>
               <h1 className="title">ASSETS</h1>
-              <div>
+              <div className="main-part">
                 <div className="square-columns">
                   <div className="property-squares">
                     <div className="player-row">

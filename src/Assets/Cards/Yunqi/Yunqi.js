@@ -255,11 +255,11 @@ export const Yunqi = [
   {
     Number: 26,
     Text: "Promoted to head teacher!",
-    Instruction: "The XiaoPengYous have spoken! Collect a 150rmb pay raise",
+    Instruction: "The XiaoPengyous have spoken! Collect a 150rmb pay raise",
     Type: "collect",
     amt: 150,
     space: null,
-    image: require("./pics/yunqi-maggies.jpeg"),
+    image: require("./pics/yunqi-head-teacher.jpeg"),
   },
   {
     Number: 27,

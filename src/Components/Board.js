@@ -72,6 +72,10 @@ export const Board = ({
   p2Props,
   setP1Props,
   setP2Props,
+  p1PropsNotMort,
+  p2PropsNotMort,
+  setP1PropsNotMort,
+  setP2PropsNotMort,
   properties,
   setProperties,
   viewProperties,
@@ -877,7 +881,6 @@ export const Board = ({
         <div className="right-corner-top">
           <div id="11" className="just-visiting-top">
             <p className="visiting">Visiting</p>
-
             {counterP1 === 11 ? (
               <img src={p1Image} className="piece" alt="p1 game piece" />
             ) : null}
@@ -1149,6 +1152,11 @@ export const Board = ({
           setOnProp={setOnProp}
           setOnProp2={setOnProp2}
           properties={properties}
+          railRoads={railRoads}
+          utilities={utilities}
+          setProperties={setProperties}
+          setRailRoads={setRailRoads}
+          setUtilities={setUtilities}
           doubleProp={doubleProp}
           setDoubleProp={setDoubleProp}
         />
@@ -1169,6 +1177,11 @@ export const Board = ({
           railRoads={railRoads}
           setDoubleRR={setDoubleRR}
           doubleRR={doubleRR}
+          utilities={utilities}
+          setUtilities={setUtilities}
+          setRailRailRoads={setRailRoads}
+          properties={properties}
+          setProperties={setProperties}
         />
         <PayOpponentUtil
           className="pay-opponent"
@@ -1185,6 +1198,11 @@ export const Board = ({
           setOnUtil={setOnUtil}
           setOnUtil2={setOnUtil2}
           utilities={utilities}
+          properties={properties}
+          railRoads={railRoads}
+          setUtilities={setUtilities}
+          setProperties={setProperties}
+          setRailRoads={setRailRoads}
         />
         <PurchasedPopUp
           className="purchased"
@@ -1391,6 +1409,8 @@ export const Board = ({
           setCounterP2={setCounterP2}
           setDisableRight={setDisableRight}
           setDisableLeft={setDisableLeft}
+          setP1Jail={setP1Jail}
+          setP2Jail={setP2Jail}
         />
         <VisaConfirm
           setVisaModal={setVisaModal}

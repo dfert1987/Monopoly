@@ -2,14 +2,15 @@
   text-align: center;
   padding-top: 2em;
   padding: 1em;
+  display: flex;
+  flex-direction: column;
 }
 
 .main-agent {
   text-align: center;
   padding-bottom: 10em;
   background-color: #c0e2ca;
-  width: 70em;
-  height: 48em;
+  padding: 1.5em;
   border-radius: 6px;
   box-shadow: 0px 0px 12px -2px;
 }
@@ -18,7 +19,7 @@
   font-family: "Monopoly";
   font-size: 4em;
   margin: 0;
-  color: white;
+  color: black;
   text-shadow: 2px 2px black;
 }
 
@@ -42,10 +43,11 @@
 }
 
 .manInMoney {
-  height: 30em;
   border: 2px yellow solid;
   border-radius: 8px;
+  padding: 1em;
   box-shadow: 2px 2px 2px black;
+  text-align: center;
 }
 
 .prize {
@@ -76,10 +78,11 @@
   border-radius: 20px;
   background-color: #c0e2ca;
   box-shadow: 0px 0px 12px -2px;
+  padding: 2em;
+  text-align: center;
 }
 
 .building-pic {
-  max-width: 30em;
   border-radius: 8px;
   border: 3px red solid;
   box-shadow: 2px 2px black;
