@@ -63,6 +63,14 @@ const RailRoadModal = ({
     }
   };
 
+  const activeInactive = () => {
+    if (!inSufficientFunds) {
+      return "buy-button";
+    } else if (inSufficientFunds) {
+      return "inactive-buy-button";
+    }
+  };
+
   const rrImage = () => {
     if (onRR && rrModal && !rrModal2 && close === false) {
       return (
@@ -217,7 +225,11 @@ const RailRoadModal = ({
             <div>{saying()}</div>
             <h4 className={viewInsufficient()}>INSUFFICIENT FUNDS</h4>
             <div className="options-container">
-              <button className="buy-button" onClick={buyRR}>
+              <button
+                className={activeInactive()}
+                disabled={inSufficientFunds}
+                onClick={buyRR}
+              >
                 PURCHASE
               </button>
               <button className="pass-button" onClick={handleClose}>
