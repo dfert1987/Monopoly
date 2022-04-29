@@ -1,5 +1,9 @@
 import React, { useState, useEffect } from "react";
 import PropMorts from "./PropMorts";
+import useSound from "use-sound";
+import Click from "../../../Assets/Sounds/click.mp3";
+import Drum from "../../../Assets/Sounds/drum.mp3";
+import Gong from "../../../Assets/Sounds/GONG.mp3";
 import { motion, AnimatePresence } from "framer-motion";
 import "../../Styles/Must.css";
 
@@ -44,6 +48,13 @@ export const MustModal = ({
   const [enoughMoney, setEnoughMoney] = useState(false);
   const [neededAmt, setNeededAmt] = useState();
   const [neededAmt2, setNeededAmt2] = useState();
+  const [updatedProperties, setUpdatedProperties] = useState(properties);
+  const [updateUtils, setUpdatedUtils] = useState(utilities);
+  const [updatedRRs, setUpdatedRRs] = useState(railRoads);
+
+  const [click] = useSound(Click);
+  const [drum] = useSound(Drum);
+  const [gong] = useSound(Gong);
 
   const backdrop = {
     visible: { opacity: 1 },
@@ -66,14 +77,16 @@ export const MustModal = ({
       let needed = rent - p1Money;
       if (needed > 0) {
         setNeededAmt(needed);
+      } else {
+        setNeededAmt(0);
       }
-      setNeededAmt(0);
     } else if (mustMortgage2) {
       let needed = rent - p2Money;
       if (needed > 0) {
         setNeededAmt2(needed);
+      } else {
+        setNeededAmt2(0);
       }
-      setNeededAmt2(0);
     }
   }, [mustMortgage, mustMortgage2, rent, p1Money, p2Money]);
 
@@ -104,6 +117,7 @@ export const MustModal = ({
             setEnoughMoney={setEnoughMoney}
             needed={neededAmt}
             setNeeded={setNeededAmt}
+            setUpdated={setUpdatedProperties}
           />
         );
       });
@@ -125,6 +139,7 @@ export const MustModal = ({
             setEnoughMoney={setEnoughMoney}
             needed={neededAmt2}
             setNeeded={setNeededAmt2}
+            setUpdated={setUpdatedProperties}
           />
         );
       });
@@ -150,6 +165,7 @@ export const MustModal = ({
             setEnoughMoney={setEnoughMoney}
             needed={neededAmt}
             setNeeded={setNeededAmt}
+            setUpdated={setUpdatedRRs}
           />
         );
       });
@@ -171,6 +187,7 @@ export const MustModal = ({
             setEnoughMoney={setEnoughMoney}
             needed={neededAmt2}
             setNeeded={setNeededAmt2}
+            setUpdated={setUpdatedRRs}
           />
         );
       });
@@ -196,6 +213,7 @@ export const MustModal = ({
             setEnoughMoney={setEnoughMoney}
             needed={neededAmt}
             setNeeded={setNeededAmt}
+            setUpdated={setUpdatedUtils}
           />
         );
       });
@@ -217,9 +235,28 @@ export const MustModal = ({
             setEnoughMoney={setEnoughMoney}
             needed={neededAmt2}
             setNeeded={setNeededAmt2}
+            setUpdated={setUpdatedUtils}
           />
         );
       });
+    }
+  };
+
+  const complete = () => {
+    setProperties(updatedProperties);
+    setRailRoads(updatedRRs);
+    setUtilities(updateUtils);
+    drum();
+    setMustMortgage(false);
+    setMustMortgage2(false);
+  };
+
+  const endGame = () => {
+    gong();
+    if (mustMortgage) {
+      setGameOver(true);
+    } else if (mustMortgage2) {
+      setGameOver2(true);
     }
   };
 
@@ -284,10 +321,16 @@ export const MustModal = ({
                     <div className="asset-type">{getUtils()}</div>
                   </div>
                   <div className="button-area">
-                    <button className="must-button" disabled={!enoughMoney}>
+                    <button
+                      className="must-button"
+                      disabled={!enoughMoney}
+                      onClick={complete}
+                    >
                       COMPLETE
                     </button>
-                    <button className="must-button">CONCEDE</button>
+                    <button className="must-button" onClick={endGame()}>
+                      CONCEDE
+                    </button>
                   </div>
                 </div>
               </div>

@@ -20,6 +20,7 @@ export const PropMorts = ({
   setAssets,
   needed,
   setNeeded,
+  setUpdated,
 }) => {
   const [purchased, setPurchased] = useState("normal");
   const [click] = useSound(Click);
@@ -35,7 +36,7 @@ export const PropMorts = ({
         }
         return property;
       });
-      setAssets(updatedProperties);
+      setUpdated(updatedProperties);
       let updatedMoney = money + asset.mortgage;
       setMoney(updatedMoney);
       setAmountNeeded(updatedMoney);
@@ -48,7 +49,7 @@ export const PropMorts = ({
         }
         return property;
       });
-      setAssets(updatedProperties);
+      setUpdated(updatedProperties);
       let updatedMoney = money + asset.mortgage;
       setMoney(updatedMoney);
       setAmountNeeded(updatedMoney);
