@@ -22,6 +22,8 @@ const InJail = ({
   setInJailModal2,
   setCounterP1,
   setCounterP2,
+  setP1Jail,
+  setP2Jail,
 }) => {
   const [die1, setDie1] = useState(1);
   const [die2, setDie2] = useState(1);
@@ -74,10 +76,12 @@ const InJail = ({
       setCounterP1(11);
       setInJail(false);
       setInJailModal(false);
+      setP1Jail(false);
     } else if (inJail2) {
       setCounterP2(11);
       setInJail2(false);
       setInJailModal2(false);
+      setP2Jail(false);
     }
   };
 

@@ -236,6 +236,7 @@ export const MustModal = ({
     setProperties(updatedProperties);
     setRailRoads(updatedRRs);
     setUtilities(updateUtils);
+    setEnoughMoney(false);
     drum();
   };
 

@@ -1409,6 +1409,8 @@ export const Board = ({
           setCounterP2={setCounterP2}
           setDisableRight={setDisableRight}
           setDisableLeft={setDisableLeft}
+          setP1Jail={setP1Jail}
+          setP2Jail={setP2Jail}
         />
         <VisaConfirm
           setVisaModal={setVisaModal}
