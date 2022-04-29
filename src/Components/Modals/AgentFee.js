@@ -147,23 +147,27 @@ const AgentFee = ({
     };
     let totalSum2 = utilSum2() + rrSum2() + propSum2();
     setP2MoneyAvailable(totalSum2);
-  }, []);
+  }, [properties, utilities, railRoads]);
 
   const handleClose = (e) => {
     let newFP = freeParking + 75;
     e.preventDefault();
-    if (setOnAgentFee) {
+    if (setOnAgentFee && p1Money > 75) {
       let newMoney = p1Money - 75;
       setP1Money(newMoney);
       setOnAgentFee(false);
       setOnAgentFee2(false);
       setFreeParking(newFP);
-    } else if (setOnAgentFee2) {
+    } else if (setOnAgentFee2 && p2Money > 75) {
       let newMoney = p2Money - 75;
       setP2Money(newMoney);
       setOnAgentFee(false);
       setOnAgentFee2(false);
       setFreeParking(newFP);
+    } else if (setOnAgentFee && p1Money < 75) {
+      setMustMortgage(true);
+    } else if (setOnAgentFee2 && p2Money < 75) {
+      setMustMortgage2(true);
     }
     return null;
   };
