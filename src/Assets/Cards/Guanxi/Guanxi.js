@@ -2,7 +2,7 @@ export const Guanxi = [
   {
     Number: 1,
     Text: "Airport Express",
-    Instruction: "Advance to Go, and collect 400rmb",
+    Instruction: "No stops for you! Advance to Go, and collect 400rmb",
     Type: "advance",
     amt: 0,
     space: 1,
@@ -11,7 +11,7 @@ export const Guanxi = [
   {
     Number: 2,
     Text: "Xin Nian Kuai Le!",
-    Instruction: "Get 200rmb in hong bao!",
+    Instruction: "Get 200rmb in hong bao! Don't let your parents take any!",
     Type: "collect",
     amt: 200,
     space: 0,
@@ -19,8 +19,9 @@ export const Guanxi = [
   },
   {
     Number: 3,
-    Text: "Full on bender",
-    Instruction: "Head to Lantern!",
+    Text: "Full on bender!",
+    Instruction:
+      "Head to Lantern, because there's no way you'll regret this decision.",
     Type: "advance",
     amt: 0,
     space: 25,
@@ -46,8 +47,9 @@ export const Guanxi = [
   },
   {
     Number: 6,
-    Text: "Tutoring gig.",
-    Instruction: "Get 150rmb!",
+    Text: "Get a Tutoring gig.",
+    Instruction:
+      "Get 150rmb! You could save it, or spend it immediately on drinks tonight!",
     Type: "collect",
     amt: 150,
     space: 0,
@@ -56,7 +58,8 @@ export const Guanxi = [
   {
     Number: 7,
     Text: "Jumble sale!",
-    Instruction: "Make 25rmb",
+    Instruction:
+      "Make 25rmb from selling a Third Eye Blind CD and a semi-functional rice cooker.",
     Type: "collect",
     amt: 25,
     space: 0,
@@ -66,7 +69,8 @@ export const Guanxi = [
   {
     Number: 9,
     Text: "Ill advised late night meet up with Nigerian homie.",
-    Instruction: "Pay 500rmb",
+    Instruction:
+      "Pay 500rmb now, and look forward to a week of sneezing at your desk.",
     Type: "pay",
     amt: 500,
     space: 0,
@@ -74,7 +78,7 @@ export const Guanxi = [
   },
   {
     Number: 10,
-    Text: "Stuck on NanLouGuxiang",
+    Text: "Stuck on NanLouGuxiang.",
     Instruction:
       "Skip next turn, while you shove, and squish your way to freedom.",
     Type: "skip",
@@ -94,7 +98,7 @@ export const Guanxi = [
   {
     Number: 13,
     Text: "Duck dinner with visiting friend.",
-    Instruction: "Head to Dadong",
+    Instruction: "Head to Dadong. Save the neck for me Clark!",
     Type: "advance",
     amt: 0,
     space: 30,
@@ -104,7 +108,8 @@ export const Guanxi = [
   {
     Number: 15,
     Text: "Coffee Shots!",
-    Instruction: "Roll Again!",
+    Instruction:
+      "Roll Again, because your feeling fucking amped to be at Cafe De La Poste!",
     Type: "reroll",
     amt: 0,
     space: 0,
@@ -112,8 +117,8 @@ export const Guanxi = [
   },
   {
     Number: 16,
-    Text: "Fake alcohol!",
-    Instruction: "Go back 5 spaces.",
+    Text: "Fake alcohol at Smugglers!",
+    Instruction: "Go back 5 spaces. And use better judgement next time.",
     Type: "back",
     amt: 5,
     space: 0,
@@ -122,8 +127,9 @@ export const Guanxi = [
 
   {
     Number: 18,
-    Text: "Asshole Landlord!",
-    Instruction: "Head to nearest opponent owned property and pay double.",
+    Text: "Asshole Landlord raises the rent!",
+    Instruction:
+      "Head to nearest opponent owned property and pay double. Maybe Mao was onto something with these guys.",
     Type: "nearest",
     amt: 0,
     space: 0,
@@ -132,7 +138,8 @@ export const Guanxi = [
   {
     Number: 19,
     Text: "Awarded A-Tier Z-Visa!",
-    Instruction: "Gain a Visa Card (If you don't already have one.)",
+    Instruction:
+      "Gain a Visa Card. You are the creme de la creme of waiguoren, baby!",
     Type: "visa",
     amt: 0,
     space: 0,
@@ -141,7 +148,8 @@ export const Guanxi = [
   {
     Number: 20,
     Text: "Congrats, you passed HSK 5!",
-    Instruction: "Collect Visa Card! (If you don't already have one.)",
+    Instruction:
+      "Collect Visa Card! Look at you, shou-ing that zhongwen like a motherfucker!",
     Type: "visa",
     amt: 200,
     space: 0,
@@ -159,7 +167,7 @@ export const Guanxi = [
   {
     Number: 14,
     Text: "Run into old man on scooter.",
-    Instruction: "Pay 200rmb to him for injuries sustained",
+    Instruction: "Pay 200rmb to him for 'injuries sustained'.",
     Type: "pay",
     amt: 200,
     space: 0,
@@ -168,7 +176,8 @@ export const Guanxi = [
   {
     Number: 12,
     Text: "Teacher's day!",
-    Instruction: "Collect 40rmb from opposing player for your services.",
+    Instruction:
+      "Collect 40rmb and some fake flowers from opposing player for your services.",
     Type: "collect-opponent",
     amt: 40,
     space: 0,
@@ -206,7 +215,8 @@ export const Guanxi = [
   {
     Number: 24,
     Text: "Join the Beijing Beatles",
-    Instruction: "Play FuBar for the 40th time and make 100rmb",
+    Instruction:
+      "Slap on that wig, and play FuBar for the 40th time and make 100rmb",
     Type: "collect",
     amt: 100,
     space: 0,
@@ -216,7 +226,7 @@ export const Guanxi = [
     Number: 25,
     Text: "Gongti bottle service",
     Instruction:
-      "Those champagnes with the sparklers at Mix were worth it though, right? Pay 150rmb",
+      "Those champagnes with the sparklers at Mix were worth it though, right? Pay 150rmb.",
     Type: "pay",
     amt: 150,
     space: 0,
@@ -225,7 +235,7 @@ export const Guanxi = [
   {
     Number: 26,
     Text: "Hutong Bathroom has no TP!",
-    Instruction: "Urgently use 15rmb for ... LOOK, YOU NEEDED IT!",
+    Instruction: "Urgently use 15rmb for... LOOK, YOU NEEDED IT!",
     Type: "pay",
     amt: 15,
     space: 0,
@@ -253,7 +263,8 @@ export const Guanxi = [
   {
     Number: 29,
     Text: "The rooftop is open!",
-    Instruction: "Advance to Migas",
+    Instruction:
+      "Advance to Migas, and realize you're not hot enough to be there!",
     Type: "advance",
     amt: null,
     space: 38,
@@ -267,5 +278,15 @@ export const Guanxi = [
     amt: 50,
     space: 0,
     image: require("./Pics/bill.jpeg"),
+  },
+  {
+    Number: 31,
+    Text: "Damn girl, you really live like this?",
+    Instruction:
+      "Immediately hire ayi, to clean up after your nasty ass. Pay 40rmb",
+    Type: "pay",
+    amt: 40,
+    space: 0,
+    image: require("./Pics/damn.jpeg"),
   },
 ];
