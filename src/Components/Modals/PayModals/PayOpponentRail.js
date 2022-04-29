@@ -191,7 +191,9 @@ export const PayOpponentRail = ({
     let totalSum2 = utilSum2() + rrSum2() + propSum2();
     setP2MoneyAvailable(totalSum2);
     if (onRR2 && payRailTo) {
-      let number = railRoads.filter((rr) => rr.ownedP1 === true);
+      let number = railRoads.filter(
+        (rr) => rr.ownedP1 === true && rr.mortgaged === false
+      );
       if (number.length === 1 && !doubleRR) {
         let p1New = p1Money + onRR2.rent;
         let p2New = p2Money - onRR2.rent;
@@ -319,7 +321,9 @@ export const PayOpponentRail = ({
         }
       }
     } else if (onRR && payRailTo) {
-      let number = railRoads.filter((rr) => rr.ownedP2 === true);
+      let number = railRoads.filter(
+        (rr) => rr.ownedP2 === true && rr.mortgaged === false
+      );
       if (number.length === 1 && !doubleRR) {
         let p1New = p1Money - onRR.rent;
         let p2New = p2Money + onRR.rent;
@@ -445,6 +449,7 @@ export const PayOpponentRail = ({
           setP2Money(p2New);
         }
       }
+      return null;
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [
