@@ -18,7 +18,6 @@ const UtilitiesModal = ({
   setP2Money,
   setViewPurchaseUtil,
   setViewPurchaseUtil2,
-  viewPurchaseUtil,
 }) => {
   const [close, setClose] = useState(false);
   const [inSufficientFunds, setInsufficientFunds] = useState(false);
@@ -44,6 +43,14 @@ const UtilitiesModal = ({
     setUtilModal(false);
     setUtilModal2(false);
     setClose(false);
+  };
+
+  const activeInactive = () => {
+    if (!inSufficientFunds) {
+      return "buy-button";
+    } else if (inSufficientFunds) {
+      return "inactive-buy-button";
+    }
   };
 
   useEffect(() => {
@@ -236,7 +243,11 @@ const UtilitiesModal = ({
             <div>{saying()}</div>
             <h4 className={viewInsufficient()}>INSUFFICIENT FUNDS</h4>
             <div className="options-container">
-              <button className="buy-button" onClick={buyUtil}>
+              <button
+                className={activeInactive()}
+                disabled={inSufficientFunds}
+                onClick={buyUtil}
+              >
                 PURCHASE
               </button>
               <button className="pass-button" onClick={handleClose}>

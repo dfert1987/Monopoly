@@ -319,7 +319,7 @@ const PropertyModal = ({
             <h4 className={viewInsufficient()}>INSUFFICIENT FUNDS</h4>
             <div className="options-container">
               <button
-                className={activeInactive()}
+                className={activeInactive}
                 onClick={buyProperty}
                 disabled={inSufficientFunds}
               >

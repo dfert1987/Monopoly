@@ -182,7 +182,9 @@ export const PayOpponent = ({
     ) {
       let number = properties.filter(
         (property) =>
-          property.color === onProp2.color && property.ownedP1 === true
+          property.color === onProp2.color &&
+          property.ownedP1 === true &&
+          property.mortgaged === false
       );
       if (number.length === 2 && onProp2.hasOneHouse === false) {
         let p1New = p1Money + onProp2.monopolyRent;
@@ -315,7 +317,9 @@ export const PayOpponent = ({
     ) {
       let number = properties.filter(
         (property) =>
-          property.color === onProp2.color && property.ownedP1 === true
+          property.color === onProp2.color &&
+          property.ownedP1 === true &&
+          property.mortgaged === false
       );
       if (number.length === 2 && onProp2.hasOneHouse === false) {
         let doubled = onProp2.monopolyRent * 2;
@@ -455,7 +459,9 @@ export const PayOpponent = ({
     ) {
       let number = properties.filter(
         (property) =>
-          property.color === onProp.color && property.ownedP2 === true
+          property.color === onProp.color &&
+          property.ownedP2 === true &&
+          property.mortgaged === false
       );
       if (number.length === 2 && onProp.hasOneHouse === false) {
         let p1New = p1Money - onProp.monopolyRent;
@@ -588,7 +594,9 @@ export const PayOpponent = ({
     ) {
       let number = properties.filter(
         (property) =>
-          property.color === onProp.color && property.ownedP2 === true
+          property.color === onProp.color &&
+          property.ownedP2 === true &&
+          property.mortgaged === false
       );
       if (number.length === 2 && onProp.hasOneHouse === false) {
         let doubled = onProp.monopolyRent * 2;
@@ -722,7 +730,9 @@ export const PayOpponent = ({
     } else if (onProp2 && payTo && payTo === 1 && !doubleProp) {
       let number = properties.filter(
         (property) =>
-          property.color === onProp2.color && property.ownedP1 === true
+          property.color === onProp2.color &&
+          property.ownedP1 === true &&
+          property.mortgaged === false
       );
       if (number && number.length === 3 && onProp2.hasOneHouse === false) {
         let p1New = p1Money + onProp2.monopolyRent;
@@ -853,7 +863,9 @@ export const PayOpponent = ({
     } else if (onProp && payTo && payTo === 2 && !doubleProp) {
       let number = properties.filter(
         (property) =>
-          property.color === onProp.color && property.ownedP2 === true
+          property.color === onProp.color &&
+          property.ownedP2 === true &&
+          property.mortgaged === false
       );
       if (number && number.length === 3 && onProp.hasOneHouse === false) {
         let p1New = p1Money - onProp.monopolyRent;
@@ -984,7 +996,9 @@ export const PayOpponent = ({
     } else if (onProp && payTo && payTo === 2 && doubleProp) {
       let number = properties.filter(
         (property) =>
-          property.color === onProp.color && property.ownedP2 === true
+          property.color === onProp.color &&
+          property.ownedP2 === true &&
+          property.mortgaged === false
       );
       if (number && number.length === 3 && onProp.hasOneHouse === false) {
         let doubled = onProp.monopolyRent * 2;
@@ -1122,7 +1136,9 @@ export const PayOpponent = ({
     } else if (onProp2 && payTo === 1 && doubleProp) {
       let number = properties.filter(
         (property) =>
-          property.color === onProp2.color && property.ownedP1 === true
+          property.color === onProp2.color &&
+          property.ownedP1 === true &&
+          property.mortgaged === false
       );
       if (number && number.length === 3 && onProp2.hasOneHouse === false) {
         let doubled = onProp2.monopolyRent * 2;
@@ -1300,7 +1316,9 @@ export const PayOpponent = ({
   return (
     <>
       <AnimatePresence exitBeforeEnter>
-        {payProp === true && (onProp || onProp2) ? (
+        {payProp === true &&
+        ((onProp && onProp.mortgaged === false) ||
+          (onProp2 && onProp2.mortgaged === false)) ? (
           <motion.div
             className="outerModal flex centerFlex"
             variants={backdrop}

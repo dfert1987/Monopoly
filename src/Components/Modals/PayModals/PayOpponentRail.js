@@ -190,8 +190,10 @@ export const PayOpponentRail = ({
     };
     let totalSum2 = utilSum2() + rrSum2() + propSum2();
     setP2MoneyAvailable(totalSum2);
-    if (onRR2 && payRailTo) {
-      let number = railRoads.filter((rr) => rr.ownedP1 === true);
+    if (onRR2 && payRailTo && onRR2.mortgaged === false) {
+      let number = railRoads.filter(
+        (rr) => rr.ownedP1 === true && rr.mortgaged === false
+      );
       if (number.length === 1 && !doubleRR) {
         let p1New = p1Money + onRR2.rent;
         let p2New = p2Money - onRR2.rent;
@@ -318,8 +320,10 @@ export const PayOpponentRail = ({
           setP2Money(p2New);
         }
       }
-    } else if (onRR && payRailTo) {
-      let number = railRoads.filter((rr) => rr.ownedP2 === true);
+    } else if (onRR && payRailTo && onRR.mortgaged === false) {
+      let number = railRoads.filter(
+        (rr) => rr.ownedP2 === true && rr.mortgaged === false
+      );
       if (number.length === 1 && !doubleRR) {
         let p1New = p1Money - onRR.rent;
         let p2New = p2Money + onRR.rent;
@@ -445,6 +449,7 @@ export const PayOpponentRail = ({
           setP2Money(p2New);
         }
       }
+      return null;
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [
@@ -474,7 +479,9 @@ export const PayOpponentRail = ({
   return (
     <>
       <AnimatePresence exitBeforeEnter>
-        {payRail === true && (onRR || onRR2) ? (
+        {payRail === true &&
+        ((onRR && onRR.mortgaged === false) ||
+          (onRR2 && onRR.mortgaged === false)) ? (
           <motion.div
             className="outerModal flex centerFlex"
             variants={backdrop}

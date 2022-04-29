@@ -161,14 +161,18 @@ export const PayOpponentUtil = ({
     let totalSum2 = utilSum2() + rrSum2() + propSum2();
     setP2MoneyAvailable(totalSum2);
     if (onUtil2 && payUtilTo) {
-      let number = utilities.filter((util) => util.ownedP1 === true);
+      let number = utilities.filter(
+        (util) => util.ownedP1 === true && util.mortgaged === false
+      );
       if (number.length === 1) {
         setMultiplier(4);
       } else if (number.length === 2) {
         setMultiplier(10);
       }
     } else if (onUtil && payUtilTo) {
-      let number = utilities.filter((util) => util.ownedP1 === true);
+      let number = utilities.filter(
+        (util) => util.ownedP1 === true && util.mortgaged === false
+      );
       if (number.length === 1) {
         setMultiplier(4);
       } else if (number.length === 2) {
@@ -194,7 +198,7 @@ export const PayOpponentUtil = ({
   };
 
   const changeMoney = (amount) => {
-    if (onUtil) {
+    if (onUtil && onUtil.mortgaged === false) {
       let p1New = p1Money - amount;
       let p2New = p2Money + amount;
       setRent(amount);
@@ -209,7 +213,7 @@ export const PayOpponentUtil = ({
         setP1Money(p1New);
         setP2Money(p2New);
       }
-    } else if (onUtil2) {
+    } else if (onUtil2 && onUtil2.mortgaged === false) {
       let p1New = p1Money + amount;
       let p2New = p2Money - amount;
       setRent(amount);
@@ -324,7 +328,9 @@ export const PayOpponentUtil = ({
   return (
     <>
       <AnimatePresence exitBeforeEnter>
-        {payUtil === true && (onUtil || onUtil2) ? (
+        {payUtil === true &&
+        ((onUtil && onUtil.mortgaged === false) ||
+          (onUtil2 && onUtil2.mortgaged === false)) ? (
           <motion.div
             className="outerModal flex centerFlex"
             variants={backdrop}
