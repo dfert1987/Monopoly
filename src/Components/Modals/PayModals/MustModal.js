@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import PropMorts from "./PropMorts";
 import useSound from "use-sound";
-import Click from "../../../Assets/Sounds/click.mp3";
 import Drum from "../../../Assets/Sounds/drum.mp3";
 import Gong from "../../../Assets/Sounds/GONG.mp3";
 import { motion, AnimatePresence } from "framer-motion";
@@ -10,10 +9,6 @@ import "../../Styles/Must.css";
 export const MustModal = ({
   rent,
   setRent,
-  p1MoneyAvailable,
-  setP1MoneyAvailable,
-  p2MoneyAvailable,
-  setP2MoneyAvailable,
   mustMortgage,
   setMustMortgage,
   setMustMortgage2,
@@ -34,16 +29,10 @@ export const MustModal = ({
   setP2Money,
   p1MortProps,
   p2MortProps,
-  setP1MortProps,
-  setP2MortProps,
   p1MortRailRoads,
-  setP1MortRailroads,
   p2MortRailRoads,
-  setP2MortRailRoads,
   p1MortUtils,
   p2MortUtils,
-  setP1MortUtils,
-  setP2MortUtils,
 }) => {
   const [enoughMoney, setEnoughMoney] = useState(false);
   const [neededAmt, setNeededAmt] = useState();
@@ -52,7 +41,6 @@ export const MustModal = ({
   const [updateUtils, setUpdatedUtils] = useState(utilities);
   const [updatedRRs, setUpdatedRRs] = useState(railRoads);
 
-  const [click] = useSound(Click);
   const [drum] = useSound(Drum);
   const [gong] = useSound(Gong);
 
@@ -243,12 +231,12 @@ export const MustModal = ({
   };
 
   const complete = () => {
+    setMustMortgage(false);
+    setMustMortgage2(false);
     setProperties(updatedProperties);
     setRailRoads(updatedRRs);
     setUtilities(updateUtils);
     drum();
-    setMustMortgage(false);
-    setMustMortgage2(false);
   };
 
   const endGame = () => {
@@ -328,7 +316,7 @@ export const MustModal = ({
                     >
                       COMPLETE
                     </button>
-                    <button className="must-button" onClick={endGame()}>
+                    <button className="must-button" onClick={endGame}>
                       CONCEDE
                     </button>
                   </div>

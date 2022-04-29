@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import useSound from "use-sound";
-import Click from "../../../Assets/Sounds/click.mp3";
 import Drum from "../../../Assets/Sounds/drum.mp3";
 import ditieLogo from "../../../Assets/PropertyImages/ditielogo.png";
 import "../../Styles/Must.css";
@@ -10,37 +9,18 @@ export const PropMorts = ({
   asset,
   money,
   setMoney,
-  key,
   rent,
-  setRent,
   type,
   player,
-  enoughMoney,
   setEnoughMoney,
-  setAssets,
-  needed,
   setNeeded,
   setUpdated,
 }) => {
   const [purchased, setPurchased] = useState("normal");
-  const [click] = useSound(Click);
   const [drum] = useSound(Drum);
 
   const mortgageProp = () => {
-    if (player === "p1" && purchased === "normal") {
-      setPurchased("grey");
-      drum();
-      let updatedProperties = assets.map((property) => {
-        if (property.Name === asset.Name) {
-          return { ...property, mortgaged: true };
-        }
-        return property;
-      });
-      setUpdated(updatedProperties);
-      let updatedMoney = money + asset.mortgage;
-      setMoney(updatedMoney);
-      setAmountNeeded(updatedMoney);
-    } else if (player === "p2" && purchased === "normal") {
+    if (purchased === "normal") {
       setPurchased("grey");
       drum();
       let updatedProperties = assets.map((property) => {
@@ -71,7 +51,7 @@ export const PropMorts = ({
       {type === "property" ? (
         <div className="container-prop" onClick={mortgageProp}>
           <p className="propname">{asset.Name}</p>
-          <div className={`prop-card ${purchased}`} id={key}>
+          <div className={`prop-card ${purchased}`}>
             <div className={`top-prop ${asset.color} ${purchased}`}></div>
             <div className={`white-prop ${purchased}`}>
               {purchased === "grey" ? <p className="m big">M</p> : null}
@@ -81,9 +61,9 @@ export const PropMorts = ({
         </div>
       ) : null}
       {type === "rail" ? (
-        <div className="container-prop">
+        <div className="container-prop" onClick={mortgageProp}>
           <p className="propname">{asset.Name}</p>
-          <div className="rr-card" id={key}>
+          <div className="rr-card">
             <div className="top-rr-must"></div>
             <div className="white-prop">
               <img className="subway-logo" src={ditieLogo} alt="subway-logo" />
@@ -93,9 +73,9 @@ export const PropMorts = ({
         </div>
       ) : null}
       {type === "utility" ? (
-        <div className="container-prop">
+        <div className="container-prop" onClick={mortgageProp}>
           <p className="propname">{asset.Name}</p>
-          <div className="rr-card" id={key}>
+          <div className="rr-card">
             <div className="top-rr-must"></div>
             <div className="white-prop">
               <img

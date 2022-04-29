@@ -210,7 +210,7 @@ export const PayOpponentRail = ({
       } else if (number.length === 2 && !doubleRR) {
         let p1New = p1Money + onRR2.twoRRs;
         let p2New = p2Money - onRR2.twoRRs;
-        setFare(onRR2.rent);
+        setFare(onRR2.twoRRs);
         if (p2New < 0 && p2MoneyAvailable > -1 * p2New) {
           setMustMortgage2(true);
         } else if (p2New < 0 && p2MoneyAvailable < -1 * p2New) {
@@ -225,7 +225,7 @@ export const PayOpponentRail = ({
       } else if (number.length === 3 && !doubleRR) {
         let p1New = p1Money + onRR2.threeRRs;
         let p2New = p2Money - onRR2.threeRRs;
-        setFare(onRR2.rent);
+        setFare(onRR2.threeRRs);
         if (p2New < 0 && p2MoneyAvailable > -1 * p2New) {
           setMustMortgage2(true);
         } else if (p2New < 0 && p2MoneyAvailable < -1 * p2New) {
@@ -240,7 +240,7 @@ export const PayOpponentRail = ({
       } else if (number.length === 4 && !doubleRR) {
         let p1New = p1Money + onRR2.fourRRs;
         let p2New = p2Money - onRR2.fourRRs;
-        setFare(onRR2.rent);
+        setFare(onRR2.fourRRs);
         if (p2New < 0 && p2MoneyAvailable > -1 * p2New) {
           setMustMortgage2(true);
         } else if (p2New < 0 && p2MoneyAvailable < -1 * p2New) {
@@ -338,7 +338,7 @@ export const PayOpponentRail = ({
       } else if (number.length === 2 && !doubleRR) {
         let p1New = p1Money - onRR.twoRRs;
         let p2New = p2Money + onRR.twoRRs;
-        setFare(onRR.rent);
+        setFare(onRR.twoRRs);
         if (p1New < 0 && p1MoneyAvailable > -1 * p1New) {
           setMustMortgage(true);
         } else if (p1New < 0 && p1MoneyAvailable < -1 * p1New) {
@@ -353,7 +353,7 @@ export const PayOpponentRail = ({
       } else if (number.length === 3 && !doubleRR) {
         let p1New = p1Money - onRR.threeRRs;
         let p2New = p2Money + onRR.threeRRs;
-        setFare(onRR.rent);
+        setFare(onRR.threeRRs);
         if (p1New < 0 && p1MoneyAvailable > -1 * p1New) {
           setMustMortgage(true);
         } else if (p1New < 0 && p1MoneyAvailable < -1 * p1New) {
@@ -368,7 +368,7 @@ export const PayOpponentRail = ({
       } else if (number.length === 4 && !doubleRR) {
         let p1New = p1Money - onRR.fourRRs;
         let p2New = p2Money + onRR.fourRRs;
-        setFare(onRR.rent);
+        setFare(onRR.fourRRs);
         if (p1New < 0 && p1MoneyAvailable > -1 * p1New) {
           setMustMortgage(true);
         } else if (p1New < 0 && p1MoneyAvailable < -1 * p1New) {
