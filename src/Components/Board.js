@@ -303,7 +303,7 @@ export const Board = ({
               <h1 className="go">GO</h1>
               <div className="go-text-container">
                 <span className="go-instructions">COLLECT</span>
-                <span className="go-instructions">$200 SALARY</span>
+                <span className="go-instructions">¥200 SALARY</span>
                 <span className="go-instructions">AS YOU PASS</span>
               </div>
             </div>
@@ -323,7 +323,7 @@ export const Board = ({
                     alt="p2 game piece"
                   />
                 ) : null}
-                <div className="prop-price-left">400rmb</div>
+                <div className="prop-price-left">¥400</div>
                 <div className="prop-name-left">TRB</div>
               </div>
               <div className="top-section-left blue"></div>
@@ -347,7 +347,7 @@ export const Board = ({
                   alt="subway-logo"
                 />
               </div>
-              <p className="left-rr-price agent">Pay 75rmb</p>
+              <p className="left-rr-price agent">Pay ¥75</p>
             </div>
           </div>
           <div id="38" className="left-space">
@@ -363,7 +363,7 @@ export const Board = ({
                     alt="p2 game piece"
                   />
                 ) : null}
-                <div className="prop-price-left">350rmb</div>
+                <div className="prop-price-left">¥350</div>
                 <div className="prop-name-left migas">Migas</div>
               </div>
               <div className="top-section-left blue"></div>
@@ -407,7 +407,7 @@ export const Board = ({
                   alt="subway-logo"
                 />
               </div>
-              <p className="left-rr-price">200rmb</p>
+              <p className="left-rr-price">¥200</p>
             </div>
           </div>
           <div id="35" className="left-space">
@@ -424,7 +424,7 @@ export const Board = ({
                   />
                 ) : null}
                 <div className="text-container">
-                  <div className="prop-price-left">320rmb</div>
+                  <div className="prop-price-left">¥320</div>
                   <div className="prop-name-left-bigger">
                     <p className="gl">Great Leap</p>
                   </div>
@@ -467,7 +467,7 @@ export const Board = ({
                   />
                 ) : null}
                 <div className="text-container">
-                  <div className="prop-price-left">300rmb</div>
+                  <div className="prop-price-left">¥300</div>
                   <div className="prop-name-left-bigger">
                     <p className="gl">Slow Boat</p>
                   </div>
@@ -490,7 +490,7 @@ export const Board = ({
                   />
                 ) : null}
                 <div className="text-container">
-                  <div className="prop-price-left">300rmb</div>
+                  <div className="prop-price-left">¥300</div>
                   <div className="prop-name-left jing">
                     <p className="gl">Jing-A</p>
                   </div>
@@ -531,7 +531,7 @@ export const Board = ({
                     alt="p2 game piece"
                   />
                 ) : null}
-                <div className="prop-price-top">60rmb</div>
+                <div className="prop-price-top">¥60</div>
                 <div className="prop-name-top">Lush</div>
               </div>
               <div className="top-section-bottom brown"></div>
@@ -570,7 +570,7 @@ export const Board = ({
                     alt="p2 game piece"
                   />
                 ) : null}
-                <div className="prop-price-top">80rmb</div>
+                <div className="prop-price-top">¥80</div>
                 <div className="prop-name-top-big">Propaganda</div>
               </div>
               <div className="top-section-bottom brown"></div>
@@ -586,7 +586,7 @@ export const Board = ({
             <div className="top-rr-container tax">
               <div>
                 <h3 className="top-rr">RENEW VISA</h3>
-                <p className="top-rr instructions">Pay 10% or $200</p>
+                <p className="top-rr instructions">Pay 10% or ¥200</p>
               </div>
             </div>
           </div>
@@ -608,7 +608,7 @@ export const Board = ({
                   alt="subway-logo"
                 />
               </div>
-              <p className="top-rr-price">200rmb</p>
+              <p className="top-rr-price">¥200</p>
             </div>
           </div>
           <div id="7" className="top-space">
@@ -624,7 +624,7 @@ export const Board = ({
                     alt="p2 game piece"
                   />
                 ) : null}
-                <div className="prop-price-top">100rmb</div>
+                <div className="prop-price-top">¥100</div>
                 <div className="prop-name-top">Hot Cat</div>
                 <div className="main-section-top"></div>
               </div>
@@ -660,7 +660,7 @@ export const Board = ({
                 {counterP2 === 9 ? (
                   <img className="piece" src={p2Image} alt="p2 game piece" />
                 ) : null}
-                <div className="prop-price-top">100rmb</div>
+                <div className="prop-price-top">¥100</div>
                 <div className="prop-name-top-big">De La Poste</div>
                 <div className="main-section-top"></div>
               </div>
@@ -680,7 +680,7 @@ export const Board = ({
                     alt="p2 game piece"
                   />
                 ) : null}
-                <div className="prop-price-top">120rmb</div>
+                <div className="prop-price-top">¥120</div>
                 <div className="prop-name-top">4C</div>
               </div>
               <div className="top-section-bottom light-blue"></div>
@@ -714,7 +714,7 @@ export const Board = ({
                   />
                 ) : null}
                 <div className="prop-name-bottom">Dadong</div>
-                <div className="prop-price-bottom">280rmb</div>
+                <div className="prop-price-bottom">¥280</div>
               </div>
             </div>
           </div>
@@ -736,7 +736,7 @@ export const Board = ({
                   alt="subway-logo"
                 />
               </div>
-              <p className="bottom-rr-price">150rmb</p>
+              <p className="bottom-rr-price">¥150</p>
             </div>
           </div>
           <div id="28" className="bottom-space">
@@ -754,7 +754,7 @@ export const Board = ({
                   />
                 ) : null}
                 <div className="prop-name-bottom">HaiDiLao</div>
-                <div className="prop-price-bottom">260rmb</div>
+                <div className="prop-price-bottom">¥260</div>
               </div>
             </div>
           </div>
@@ -773,7 +773,7 @@ export const Board = ({
                   />
                 ) : null}
                 <div className="prop-name-bottom-bigger">JinDingXuan</div>
-                <div className="prop-price-bottom">260rmb</div>
+                <div className="prop-price-bottom">¥260</div>
               </div>
             </div>
           </div>
@@ -795,7 +795,7 @@ export const Board = ({
                   alt="subway-logo"
                 />
               </div>
-              <p className="bottom-rr-price">200rmb</p>
+              <p className="bottom-rr-price">¥200</p>
             </div>
           </div>
           <div id="25" className="bottom-space">
@@ -813,7 +813,7 @@ export const Board = ({
                   />
                 ) : null}
                 <div className="prop-name-bottom">Lantern</div>
-                <div className="prop-price-bottom">240rmb</div>
+                <div className="prop-price-bottom">¥240</div>
               </div>
             </div>
           </div>
@@ -832,7 +832,7 @@ export const Board = ({
                   />
                 ) : null}
                 <div className="prop-name-bottom">The Local</div>
-                <div className="prop-price-bottom">220rmb</div>
+                <div className="prop-price-bottom">¥220</div>
               </div>
             </div>
           </div>
@@ -871,7 +871,7 @@ export const Board = ({
                   />
                 ) : null}
                 <div className="prop-name-bottom">Annie's</div>
-                <div className="prop-price-bottom">220rmb</div>
+                <div className="prop-price-bottom">¥220</div>
               </div>
             </div>
           </div>
@@ -919,7 +919,7 @@ export const Board = ({
                   />
                 ) : null}
                 <div className="prop-name-right-smaller">LaoMan</div>
-                <div className="prop-price-right">140rmb</div>
+                <div className="prop-price-right">¥140</div>
               </div>
             </div>
           </div>
@@ -941,7 +941,7 @@ export const Board = ({
                   alt="water-jug"
                 />
               </div>
-              <p className="right-rr-price water">150rmb</p>
+              <p className="right-rr-price water">¥150</p>
             </div>
           </div>
           <div id="14" className="right-space">
@@ -962,7 +962,7 @@ export const Board = ({
                   <div className="prop-name-right-bigger">
                     <p className="dr">Dali Renjia</p>
                   </div>
-                  <div className="prop-price-right-dr">140rmb</div>
+                  <div className="prop-price-right-dr">¥140</div>
                 </div>
               </div>
             </div>
@@ -985,7 +985,7 @@ export const Board = ({
                   <div className="prop-name-right-bigger">
                     <p className="dr">Zhang Mama</p>
                   </div>
-                  <div className="prop-price-right-dr">160rmb</div>
+                  <div className="prop-price-right-dr">¥160</div>
                 </div>
               </div>
             </div>
@@ -1008,7 +1008,7 @@ export const Board = ({
                   alt="subway-logo"
                 />
               </div>
-              <p className="right-rr-price">200rmb</p>
+              <p className="right-rr-price">¥200</p>
             </div>
           </div>
           <div id="17" className="right-space">
@@ -1029,7 +1029,7 @@ export const Board = ({
                   <div className="prop-name-right">
                     <p className="dr">Modernista</p>
                   </div>
-                  <div className="prop-price-right-mod">180rmb</div>
+                  <div className="prop-price-right-mod">¥180</div>
                 </div>
               </div>
             </div>
@@ -1072,7 +1072,7 @@ export const Board = ({
                   <div className="prop-name-right-smaller-temple">
                     <p className="dr">Temple</p>
                   </div>
-                  <div className="prop-price-right-tem">180rmb</div>
+                  <div className="prop-price-right-tem">¥180</div>
                 </div>
               </div>
             </div>
@@ -1095,7 +1095,7 @@ export const Board = ({
                   <div className="prop-name-right-smaller-da">
                     <p className="dr">Dada</p>
                   </div>
-                  <div className="prop-price-right-da">200rmb</div>
+                  <div className="prop-price-right-da">¥200</div>
                 </div>
               </div>
             </div>
