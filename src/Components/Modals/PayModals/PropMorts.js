@@ -63,10 +63,18 @@ export const PropMorts = ({
       {type === "rail" ? (
         <div className="container-prop" onClick={mortgageProp}>
           <p className="propname">{asset.Name}</p>
-          <div className="rr-card">
-            <div className="top-rr-must"></div>
-            <div className="white-prop">
-              <img className="subway-logo" src={ditieLogo} alt="subway-logo" />
+          <div className={`rr-card ${purchased}`}>
+            <div className={`top-rr-must ${purchased}`}></div>
+            <div className={`white-prop ${purchased}`}>
+              {purchased === "grey" ? (
+                <p className="m big">M</p>
+              ) : (
+                <img
+                  className="subway-logo"
+                  src={ditieLogo}
+                  alt="subway-logo"
+                />
+              )}
             </div>
           </div>
           <p className="value">{asset.mortgage} RMB</p>
@@ -75,14 +83,18 @@ export const PropMorts = ({
       {type === "utility" ? (
         <div className="container-prop" onClick={mortgageProp}>
           <p className="propname">{asset.Name}</p>
-          <div className="rr-card">
-            <div className="top-rr-must"></div>
-            <div className="white-prop">
-              <img
-                className="subway-logo-left"
-                src={asset.bannerImage}
-                alt="subway-logo"
-              />
+          <div className={`rr-card ${purchased}`}>
+            <div className={`top-rr-must ${purchased}`}></div>
+            <div className={`white-prop ${purchased}`}>
+              {purchased === "grey" ? (
+                <p className="m big">M</p>
+              ) : (
+                <img
+                  className="subway-logo-left"
+                  src={asset.bannerImage}
+                  alt="subway-logo"
+                />
+              )}
             </div>
           </div>
           <p className="value">{asset.mortgage} RMB</p>

@@ -99,11 +99,24 @@
   display: flex;
   flex-direction: column;
   height: 5.5em;
+  cursor: pointer;
   width: 5em;
 }
 
 .top-prop {
   height: 35%;
+}
+
+.rr-card.grey {
+  cursor: default;
+}
+
+.top-rr-must.grey {
+  background-color: grey;
+}
+
+.white-prop.grey {
+  background-color: grey;
 }
 
 .top-rr-must {
