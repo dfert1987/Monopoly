@@ -24,7 +24,7 @@ const AgentFee = ({
   setRailRoads,
   setUtilities,
 }) => {
-  const [owed, setOwed] = useState();
+  const [owed, setOwed] = useState(75);
   const [p1MoneyAvailable, setP1MoneyAvailable] = useState();
   const [p2MoneyAvailable, setP2MoneyAvailable] = useState();
   const [mustMortgage2, setMustMortgage2] = useState(false);

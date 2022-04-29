@@ -7,8 +7,8 @@ import { Utilities } from "./Assets/Holdings/Utilities";
 import { useLocation } from "react-router-dom";
 
 const App = () => {
-  const [counterP1, setCounterP1] = useState(1);
-  const [counterP2, setCounterP2] = useState(1);
+  const [counterP1, setCounterP1] = useState(31);
+  const [counterP2, setCounterP2] = useState(31);
   const [turn, setTurn] = useState(0);
   const [properties, setProperties] = useState(Properties);
   const [railRoads, setRailRoads] = useState(RailRoads);
