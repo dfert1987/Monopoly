@@ -1512,6 +1512,9 @@ export const Board = ({
           pass2={pass2}
           setPass={setPass}
           setPass2={setPass2}
+          setRailRoads={setRailRoads}
+          setProperties={setProperties}
+          setUtilities={setUtilities}
         />
       </div>
     </div>

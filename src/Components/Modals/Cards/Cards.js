@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import InnerCard from "./InnerCard";
+import MustModal from "../PayModals/MustModal";
 import { motion, AnimatePresence } from "framer-motion";
 import { Guanxi } from "../../../Assets/Cards/Guanxi/Guanxi";
 import { Yunqi } from "../../../Assets/Cards/Yunqi/Yunqi";
@@ -78,10 +79,26 @@ export const Cards = ({
   setPass,
   pass2,
   setPass2,
+  setUtilities,
+  setProperties,
+  setRailRoads,
 }) => {
   const [guanxi, setGuanxi] = useState(Guanxi);
   const [yunqi, setYunqi] = useState(Yunqi);
   const [cardOption, setCardOption] = useState();
+  const [rent, setRent] = useState();
+  const [p1MoneyAvailable, setP1MoneyAvailable] = useState();
+  const [p2MoneyAvailable, setP2MoneyAvailable] = useState();
+  const [p1MortRailRoads, setP1MortRailRoads] = useState();
+  const [p2MortRailRoads, setP2MortRailRoads] = useState();
+  const [mustMortgage2, setMustMortgage2] = useState(false);
+  const [mustMortgage, setMustMortgage] = useState(false);
+  const [gameOver, setGameOver] = useState(false);
+  const [gameOver2, setGameOver2] = useState(false);
+  const [p1MortProps, setP1MortProps] = useState();
+  const [p2MortProps, setP2MortProps] = useState();
+  const [p1MortUtils, setP1MortUtils] = useState();
+  const [p2MortUtils, setP2MortUtils] = useState();
 
   const backdrop = {
     visible: { opacity: 1 },
@@ -134,110 +151,174 @@ export const Cards = ({
   };
 
   return (
-    <AnimatePresence exitBeforeEnter>
-      {onCard || onCard2 ? (
-        <motion.div
-          className="outerModal flex centerFlex"
-          variants={backdrop}
-          initial="hidden"
-          animate="visible"
-          exit="hidden"
-        >
+    <>
+      <AnimatePresence exitBeforeEnter>
+        {onCard || onCard2 ? (
           <motion.div
-            className={cardStyle()}
-            variants={modal}
+            className="outerModal flex centerFlex"
+            variants={backdrop}
             initial="hidden"
             animate="visible"
             exit="hidden"
           >
-            <div className="main-part">
-              <h1 className="card-type">{cardOption}</h1>
-              <InnerCard
-                className="card-section"
-                guanxi={guanxi}
-                yunqi={yunqi}
-                cardOption={cardOption}
-                setCardOption={setCardOption}
-                setYunqi={setYunqi}
-                setGuanxi={setGuanxi}
-                setOnCard={setOnCard}
-                setOnCard2={setOnCard2}
-                onCard={onCard}
-                onCard2={onCard2}
-                setFreeParking={setFreeParking}
-                freeParking={freeParking}
-                p1Money={p1Money}
-                p2Money={p2Money}
-                setP1Money={setP1Money}
-                setP2Money={setP2Money}
-                setInJail={setInJail}
-                setInJail2={setInJail2}
-                counterP1={counterP1}
-                counterP2={counterP2}
-                setCounterP1={setCounterP1}
-                setCounterP2={setCounterP2}
-                setTurn={setTurn}
-                turn={turn}
-                railRoads={railRoads}
-                properties={properties}
-                setDoubleRR={setDoubleRR}
-                setDoubleProp={setDoubleProp}
-                setSkip1={setSkip1}
-                setSkip2={setSkip2}
-                setVisa1={setVisa1}
-                setVisa2={setVisa2}
-                totalHousesP1={totalHousesP1}
-                totalHousesP2={totalHousesP2}
-                hotelsP1={hotelsP1}
-                hotelsP2={hotelsP2}
-                utilities={utilities}
-                payUtilTo={payUtilTo}
-                setPayUtilTo={setPayUtilTo}
-                onUtil={onUtil}
-                onUtil2={onUtil2}
-                setOnUtil={setOnUtil}
-                setOnUtil2={setOnUtil2}
-                utilModal={utilModal}
-                utilModal2={utilModal2}
-                setUtilModal={setUtilModal}
-                setUtilModal2={setUtilModal2}
-                payUtil={payUtil}
-                setPayUtil={setPayUtil}
-                setOnProp={setOnProp}
-                setOnProp2={setOnProp2}
-                setPayTo={setPayTo}
-                setPayProp={setPayProp}
-                setPropertyModal1={setPropertyModal1}
-                setPropertyModal2={setPropertyModal2}
-                setOnAgentFee={setOnAgentFee}
-                setOnAgentFee2={setOnAgentFee2}
-                onVisa={onVisa}
-                onVisa2={onVisa2}
-                setOnVisa={setOnVisa}
-                setOnVisa2={setOnVisa2}
-                setStayOn={setStayOn}
-                setStayOn2={setStayOn2}
-                setOnFreeParking={setOnFreeParking}
-                setOnFreeParking2={setOnFreeParking2}
-                payRailTo={payRailTo}
-                setPayRailTo={setPayRailTo}
-                setPayRail={setPayRail}
-                setOnRR={setOnRR}
-                setOnRR2={setOnRR2}
-                setRRModal={setRRModal}
-                setRRModal2={setRRModal2}
-                setTotalHousesP1={setTotalHousesP1}
-                setTotalHousesP2={setTotalHousesP2}
-                pass={pass}
-                setPass={setPass}
-                pass2={pass2}
-                setPass2={setPass2}
-              />
-            </div>
+            <motion.div
+              className={cardStyle()}
+              variants={modal}
+              initial="hidden"
+              animate="visible"
+              exit="hidden"
+            >
+              <div className="main-part">
+                <h1 className="card-type">{cardOption}</h1>
+                <InnerCard
+                  className="card-section"
+                  guanxi={guanxi}
+                  yunqi={yunqi}
+                  cardOption={cardOption}
+                  setCardOption={setCardOption}
+                  setYunqi={setYunqi}
+                  setGuanxi={setGuanxi}
+                  setOnCard={setOnCard}
+                  setOnCard2={setOnCard2}
+                  onCard={onCard}
+                  onCard2={onCard2}
+                  setFreeParking={setFreeParking}
+                  freeParking={freeParking}
+                  p1Money={p1Money}
+                  p2Money={p2Money}
+                  setP1Money={setP1Money}
+                  setP2Money={setP2Money}
+                  setInJail={setInJail}
+                  setInJail2={setInJail2}
+                  counterP1={counterP1}
+                  counterP2={counterP2}
+                  setCounterP1={setCounterP1}
+                  setCounterP2={setCounterP2}
+                  setTurn={setTurn}
+                  turn={turn}
+                  railRoads={railRoads}
+                  properties={properties}
+                  setDoubleRR={setDoubleRR}
+                  setDoubleProp={setDoubleProp}
+                  setSkip1={setSkip1}
+                  setSkip2={setSkip2}
+                  setVisa1={setVisa1}
+                  setVisa2={setVisa2}
+                  totalHousesP1={totalHousesP1}
+                  totalHousesP2={totalHousesP2}
+                  hotelsP1={hotelsP1}
+                  hotelsP2={hotelsP2}
+                  utilities={utilities}
+                  payUtilTo={payUtilTo}
+                  setPayUtilTo={setPayUtilTo}
+                  onUtil={onUtil}
+                  onUtil2={onUtil2}
+                  setOnUtil={setOnUtil}
+                  setOnUtil2={setOnUtil2}
+                  utilModal={utilModal}
+                  utilModal2={utilModal2}
+                  setUtilModal={setUtilModal}
+                  setUtilModal2={setUtilModal2}
+                  payUtil={payUtil}
+                  setPayUtil={setPayUtil}
+                  setOnProp={setOnProp}
+                  setOnProp2={setOnProp2}
+                  setPayTo={setPayTo}
+                  setPayProp={setPayProp}
+                  setPropertyModal1={setPropertyModal1}
+                  setPropertyModal2={setPropertyModal2}
+                  setOnAgentFee={setOnAgentFee}
+                  setOnAgentFee2={setOnAgentFee2}
+                  onVisa={onVisa}
+                  onVisa2={onVisa2}
+                  setOnVisa={setOnVisa}
+                  setOnVisa2={setOnVisa2}
+                  setStayOn={setStayOn}
+                  setStayOn2={setStayOn2}
+                  setOnFreeParking={setOnFreeParking}
+                  setOnFreeParking2={setOnFreeParking2}
+                  payRailTo={payRailTo}
+                  setPayRailTo={setPayRailTo}
+                  setPayRail={setPayRail}
+                  setOnRR={setOnRR}
+                  setOnRR2={setOnRR2}
+                  setRRModal={setRRModal}
+                  setRRModal2={setRRModal2}
+                  setTotalHousesP1={setTotalHousesP1}
+                  setTotalHousesP2={setTotalHousesP2}
+                  pass={pass}
+                  setPass={setPass}
+                  pass2={pass2}
+                  setPass2={setPass2}
+                  p1MortUtils={p1MortUtils}
+                  setP1MortUtils={setP1MortUtils}
+                  p2MortUtils={p2MortUtils}
+                  setP2MortUtils={setP2MortUtils}
+                  p1MortProps={p1MortProps}
+                  setP1MortProps={setP1MortProps}
+                  p2MortProps={p2MortProps}
+                  setP2MortProps={setP2MortProps}
+                  p1MortRailRoads={p1MortRailRoads}
+                  setP1MortRailRoads={setP1MortRailRoads}
+                  p2MortRailRoads={p2MortRailRoads}
+                  setP2MortRailRoads={setP1MortRailRoads}
+                  mustMortgage={mustMortgage}
+                  setMustMortgage={setMustMortgage}
+                  setMustMortgage2={setMustMortgage2}
+                  mustMortgage2={mustMortgage2}
+                  gameOver={gameOver}
+                  setGameOver={setGameOver}
+                  gameOver2={gameOver2}
+                  setGameOver2={setGameOver2}
+                  p1MoneyAvailable={p1MoneyAvailable}
+                  p2MoneyAvailable={p2MoneyAvailable}
+                  setP1MoneyAvailable={setP1MoneyAvailable}
+                  setP2MoneyAvailable={setP2MoneyAvailable}
+                />
+              </div>
+            </motion.div>
           </motion.div>
-        </motion.div>
-      ) : null}
-    </AnimatePresence>
+        ) : null}
+      </AnimatePresence>
+      <MustModal
+        rent={rent}
+        setRent={setRent}
+        p1MoneyAvailable={p1MoneyAvailable}
+        setP1MoneyAvailable={setP1MoneyAvailable}
+        p2MoneyAvailable={p2MoneyAvailable}
+        setP2MoneyAvailable={setP2MoneyAvailable}
+        mustMortgage={mustMortgage}
+        setMustMortgage={setMustMortgage}
+        setMustMortgage2={setMustMortgage2}
+        mustMortgage2={mustMortgage2}
+        gameOver={gameOver}
+        setGameOver={setGameOver}
+        gameOver2={gameOver2}
+        setGameOver2={setGameOver2}
+        properties={properties}
+        railRoads={railRoads}
+        utilities={utilities}
+        setProperties={setProperties}
+        setUtilities={setUtilities}
+        setRailRoads={setRailRoads}
+        p1Money={p1Money}
+        p2Money={p2Money}
+        setP1Money={setP1Money}
+        setP2Money={setP2Money}
+        p1MortProps={p1MortProps}
+        setP1MortProps={setP1MortProps}
+        p2MortProps={p2MortProps}
+        setP2MortProps={setP2MortProps}
+        p1MortRailRoads={p1MortRailRoads}
+        setP1MortRailRoads={setP1MortRailRoads}
+        p2MortRailRoads={p2MortRailRoads}
+        setP2MortRailRoads={setP2MortRailRoads}
+        p1MortUtils={p1MortUtils}
+        p2MortUtils={p2MortUtils}
+        setP1MortUtils={setP1MortUtils}
+        setP2MortUtils={setP2MortUtils}
+      />
+    </>
   );
 };
 

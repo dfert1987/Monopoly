@@ -65,9 +65,7 @@ const InnerCard = ({
   setOnRR2,
   setRRModal,
   setRRModal2,
-  pass,
   setPass,
-  pass2,
   setPass2,
 }) => {
   const [currentCard, setCurrentCard] = useState();
@@ -1341,7 +1339,7 @@ const InnerCard = ({
       setYunqi(cardChoice);
     }
     return null;
-  }, [cardOption, guanxi, yunqi]);
+  }, [cardOption, guanxi, setGuanxi, setYunqi, yunqi]);
 
   const close = () => {
     cardFunctionSorter();
