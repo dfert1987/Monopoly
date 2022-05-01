@@ -118,6 +118,99 @@ export const Cards = ({
   };
 
   useEffect(() => {
+    let p1PropsToMort = properties.filter(
+      (property) => property.ownedP1 && property.mortgaged === false
+    );
+    setP1MortProps(p1PropsToMort);
+    let p1RRsToMort = railRoads.filter(
+      (rr) => rr.ownedP1 && rr.mortgaged === false
+    );
+    setP1MortRailRoads(p1RRsToMort);
+    let p1UtilsToMort = utilities.filter(
+      (util) => util.ownedP1 && util.mortgaged === false
+    );
+    setP1MortUtils(p1UtilsToMort);
+
+    let mortMoneyArrayProps = p1PropsToMort.map((property) => {
+      return property.mortgage;
+    });
+    let mortMoneyArrayRRs = p1RRsToMort.map((rr) => {
+      return rr.mortgage;
+    });
+    let mortMoneyArrayUtils = p1UtilsToMort.map((util) => {
+      return util.mortgage;
+    });
+
+    const propSum = () => {
+      if (mortMoneyArrayProps.length) {
+        let totalPropMoney = mortMoneyArrayProps.reduce((x, y) => x + y);
+        return totalPropMoney;
+      }
+      return 0;
+    };
+    const rrSum = () => {
+      if (mortMoneyArrayRRs.length) {
+        let totalRRMoney = mortMoneyArrayRRs.reduce((x, y) => x + y);
+        return totalRRMoney;
+      }
+      return 0;
+    };
+    const utilSum = () => {
+      if (mortMoneyArrayUtils.length) {
+        let totalUtilMoney = mortMoneyArrayUtils.reduce((x, y) => x + y);
+        return totalUtilMoney;
+      }
+      return 0;
+    };
+    let totalSum = utilSum() + rrSum() + propSum();
+    setP1MoneyAvailable(totalSum);
+
+    let p2PropsToMort = properties.filter(
+      (property) => property.ownedP2 && property.mortgaged === false
+    );
+    setP2MortProps(p2PropsToMort);
+    let p2RRsToMort = railRoads.filter(
+      (rr) => rr.ownedP2 && rr.mortgaged === false
+    );
+    setP2MortRailRoads(p2RRsToMort);
+    let p2UtilsToMort = utilities.filter(
+      (util) => util.ownedP2 && util.mortgaged === false
+    );
+    setP2MortUtils(p2UtilsToMort);
+
+    let mortMoneyArrayProps2 = p2PropsToMort.map((property) => {
+      return property.mortgage;
+    });
+    let mortMoneyArrayRRs2 = p2RRsToMort.map((rr) => {
+      return rr.mortgage;
+    });
+    let mortMoneyArrayUtils2 = p2UtilsToMort.map((util) => {
+      return util.mortgage;
+    });
+
+    const propSum2 = () => {
+      if (mortMoneyArrayProps2.length) {
+        let totalPropMoney = mortMoneyArrayProps.reduce((x, y) => x + y);
+        return totalPropMoney;
+      }
+      return 0;
+    };
+    const rrSum2 = () => {
+      if (mortMoneyArrayRRs2.length) {
+        let totalRRMoney = mortMoneyArrayRRs.reduce((x, y) => x + y);
+        return totalRRMoney;
+      }
+      return 0;
+    };
+    const utilSum2 = () => {
+      if (mortMoneyArrayUtils2.length) {
+        let totalUtilMoney = mortMoneyArrayUtils.reduce((x, y) => x + y);
+        return totalUtilMoney;
+      }
+      return 0;
+    };
+    let totalSum2 = utilSum2() + rrSum2() + propSum2();
+    setP2MoneyAvailable(totalSum2);
     if (
       onCard === true &&
       (counterP1 === 34 || counterP1 === 3 || counterP1 === 18)
@@ -140,7 +233,7 @@ export const Cards = ({
       setCardOption("FU YUAN");
     }
     return null;
-  }, [counterP1, counterP2, onCard, onCard2]);
+  }, [counterP1, counterP2, onCard, onCard2, properties, railRoads, utilities]);
 
   const cardStyle = () => {
     if (cardOption && cardOption === "FU YUAN") {
