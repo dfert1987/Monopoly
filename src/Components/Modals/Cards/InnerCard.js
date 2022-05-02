@@ -67,30 +67,53 @@ const InnerCard = ({
   setRRModal2,
   setPass,
   setPass2,
+  setGameOver,
+  setGameOver2,
+  setMustMortgage,
+  setMustMortgage2,
+  p1MoneyAvailable,
+  p2MoneyAvailable,
+  setRent,
 }) => {
   const [currentCard, setCurrentCard] = useState();
 
   const cardFunctionSorter = () => {
     if (onCard && !onCard2 && currentCard.Type === "pay") {
       let newMoney = p1Money - currentCard.amt;
-      setP1Money(newMoney);
-      let newFP = freeParking + currentCard.amt;
-      setFreeParking(newFP);
-      setCurrentCard();
-      arrayRemovePre();
-      setCardOption();
-      setOnCard(false);
-      setOnCard2(false);
+      if (newMoney < 0 && p1MoneyAvailable > -1 * newMoney) {
+        setMustMortgage(true);
+        setRent(currentCard.amt);
+      } else if (newMoney < 0 && p1MoneyAvailable < -1 * newMoney) {
+        setP1Money(0);
+        setGameOver(true);
+      } else {
+        setP1Money(newMoney);
+        let newFP = freeParking + currentCard.amt;
+        setFreeParking(newFP);
+        setCurrentCard();
+        arrayRemovePre();
+        setCardOption();
+        setOnCard(false);
+        setOnCard2(false);
+      }
     } else if (!onCard && onCard2 && currentCard.Type === "pay") {
       let newMoney = p2Money - currentCard.amt;
-      setP2Money(newMoney);
-      let newFP = freeParking + currentCard.amt;
-      setFreeParking(newFP);
-      setCurrentCard();
-      arrayRemovePre();
-      setCardOption();
-      setOnCard(false);
-      setOnCard2(false);
+      if (newMoney < 0 && p2MoneyAvailable > -1 * newMoney) {
+        setMustMortgage2(true);
+        setRent(currentCard.amt);
+      } else if (newMoney < 0 && p2MoneyAvailable < -1 * newMoney) {
+        setP2Money(0);
+        setGameOver2(true);
+      } else {
+        setP2Money(newMoney);
+        let newFP = freeParking + currentCard.amt;
+        setFreeParking(newFP);
+        setCurrentCard();
+        arrayRemovePre();
+        setCardOption();
+        setOnCard(false);
+        setOnCard2(false);
+      }
     } else if (onCard && !onCard2 && currentCard.Type === "collect") {
       let newMoney = p1Money + currentCard.amt;
       setP1Money(newMoney);
@@ -110,23 +133,41 @@ const InnerCard = ({
     } else if (onCard && !onCard2 && currentCard.Type === "collect-opponent") {
       let newMoney = p1Money + currentCard.amt;
       let newMoney2 = p2Money - currentCard.amt;
-      setP1Money(newMoney);
-      setP2Money(newMoney2);
-      setCurrentCard();
-      arrayRemovePre();
-      setCardOption();
-      setOnCard(false);
-      setOnCard2(false);
+      if (newMoney2 < 0 && p2MoneyAvailable > -1 * newMoney2) {
+        setP1Money(newMoney);
+        setRent(currentCard.amt);
+        setMustMortgage2(true);
+      } else if (newMoney2 < 0 && p2MoneyAvailable < -1 * newMoney2) {
+        setP2Money(0);
+        setGameOver2(true);
+      } else {
+        setP1Money(newMoney);
+        setP2Money(newMoney2);
+        setCurrentCard();
+        arrayRemovePre();
+        setCardOption();
+        setOnCard(false);
+        setOnCard2(false);
+      }
     } else if (!onCard && onCard2 && currentCard.Type === "collect-opponent") {
       let newMoney = p2Money + currentCard.amt;
       let newMoney2 = p1Money - currentCard.amt;
-      setP2Money(newMoney);
-      setP1Money(newMoney2);
-      setCurrentCard();
-      arrayRemovePre();
-      setCardOption();
-      setOnCard(false);
-      setOnCard2(false);
+      if (newMoney2 < 0 && p1MoneyAvailable > -1 * newMoney2) {
+        setP2Money(newMoney);
+        setRent(currentCard.amt);
+        setMustMortgage(true);
+      } else if (newMoney2 < 0 && p1MoneyAvailable < -1 * newMoney2) {
+        setP1Money(0);
+        setGameOver(true);
+      } else {
+        setP2Money(newMoney);
+        setP1Money(newMoney2);
+        setCurrentCard();
+        arrayRemovePre();
+        setCardOption();
+        setOnCard(false);
+        setOnCard2(false);
+      }
     } else if (onCard && !onCard2 && currentCard.Type === "pay-opponent") {
       let newMoney = p1Money - currentCard.amt;
       let newMoney2 = p2Money + currentCard.amt;
@@ -1256,46 +1297,78 @@ const InnerCard = ({
       let cost = totalHousesP1 * 30 + hotelsP1 * 50;
       let newMoney = p1Money - cost;
       let newParking = freeParking + cost;
-      setP1Money(newMoney);
-      setFreeParking(newParking);
-      setCurrentCard();
-      arrayRemovePre();
-      setCardOption();
-      setOnCard(false);
-      setOnCard2(false);
+      if (newMoney < 0 && p1MoneyAvailable > -1 * newMoney) {
+        setMustMortgage(true);
+        setRent(cost);
+      } else if (newMoney < 0 && p1MoneyAvailable < -1 * newMoney) {
+        setP1Money(0);
+        setGameOver(true);
+      } else {
+        setP1Money(newMoney);
+        setFreeParking(newParking);
+        setCurrentCard();
+        arrayRemovePre();
+        setCardOption();
+        setOnCard(false);
+        setOnCard2(false);
+      }
     } else if (!onCard && onCard2 && currentCard.Type === "pay-house") {
       let cost = totalHousesP2 * 30 + hotelsP2 * 50;
       let newMoney = p2Money - cost;
       let newParking = freeParking + cost;
-      setP2Money(newMoney);
-      setFreeParking(newParking);
-      setCurrentCard();
-      arrayRemovePre();
-      setCardOption();
-      setOnCard(false);
-      setOnCard2(false);
+      if (newMoney < 0 && p2MoneyAvailable > -1 * newMoney) {
+        setMustMortgage2(true);
+        setRent(cost);
+      } else if (newMoney < 0 && p2MoneyAvailable < -1 * newMoney) {
+        setP2Money(0);
+        setGameOver2(true);
+      } else {
+        setP2Money(newMoney);
+        setFreeParking(newParking);
+        setCurrentCard();
+        arrayRemovePre();
+        setCardOption();
+        setOnCard(false);
+        setOnCard2(false);
+      }
     } else if (onCard && !onCard2 && currentCard.Type === "pay-space") {
       let newMoney = p1Money - 200;
       setP1Money(newMoney);
       let newParking = freeParking + 200;
-      setFreeParking(newParking);
-      setCounterP1(11);
-      setCurrentCard();
-      arrayRemovePre();
-      setCardOption();
-      setOnCard(false);
-      setOnCard2(false);
+      if (newMoney < 0 && p1MoneyAvailable > -1 * newMoney) {
+        setMustMortgage(true);
+        setRent(200);
+      } else if (newMoney < 0 && p1MoneyAvailable < -1 * newMoney) {
+        setP1Money(0);
+        setGameOver(true);
+      } else {
+        setFreeParking(newParking);
+        setCounterP1(11);
+        setCurrentCard();
+        arrayRemovePre();
+        setCardOption();
+        setOnCard(false);
+        setOnCard2(false);
+      }
     } else if (!onCard && onCard2 && currentCard.Type === "pay-space") {
       let newMoney = p2Money - 200;
       setP2Money(newMoney);
       let newParking = freeParking + 200;
-      setFreeParking(newParking);
-      setCounterP2(11);
-      setCurrentCard();
-      arrayRemovePre();
-      setCardOption();
-      setOnCard(false);
-      setOnCard2(false);
+      if (newMoney < 0 && p2MoneyAvailable > -1 * newMoney) {
+        setMustMortgage2(true);
+        setRent(200);
+      } else if (newMoney < 0 && p2MoneyAvailable < -1 * newMoney) {
+        setP2Money(0);
+        setGameOver2(true);
+      } else {
+        setFreeParking(newParking);
+        setCounterP2(11);
+        setCurrentCard();
+        arrayRemovePre();
+        setCardOption();
+        setOnCard(false);
+        setOnCard2(false);
+      }
     }
   };
 
