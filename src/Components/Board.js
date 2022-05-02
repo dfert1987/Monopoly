@@ -45,6 +45,8 @@ import hutongbathroom from "../Assets/PropertyImages/hutongbathroom.png";
 import police from "../Assets/PropertyImages/gotojailguy.png";
 import guanxiCard from "../Assets/Cards/Guanxi/guanxicard.png";
 import fuYuanCard from "../Assets/Cards/Yunqi/fuyuancards.png";
+import apartment from "../Assets/Misc/apartment.png";
+import hutong from "../Assets/Misc/hutong.png";
 import "./Styles/Board.css";
 
 export const Board = ({
@@ -72,10 +74,6 @@ export const Board = ({
   p2Props,
   setP1Props,
   setP2Props,
-  p1PropsNotMort,
-  p2PropsNotMort,
-  setP1PropsNotMort,
-  setP2PropsNotMort,
   properties,
   setProperties,
   viewProperties,
@@ -193,6 +191,50 @@ export const Board = ({
   const [doubleProp, setDoubleProp] = useState(false);
   const [p1Image, setP1Image] = useState();
   const [p2Image, setP2Image] = useState();
+  const [lushHouses, setLushHouses] = useState(0);
+  const [lushHotel, setLushHotel] = useState(false);
+  const [propagandaHouses, setPropagandaHouses] = useState(0);
+  const [propagandaHotel, setPropagandaHotel] = useState(false);
+  const [hotCatHouses, setHotCatHouses] = useState(0);
+  const [hotCatHotel, setHotCatHotel] = useState(false);
+  const [cdlpHouses, setCdlpHouses] = useState(0);
+  const [cdlpHotel, setCdlpHotel] = useState(false);
+  const [fourCHouses, setFourCHouses] = useState(0);
+  const [fourCHotel, setFourCHotel] = useState(false);
+  const [laoManHouses, setLaoManHouses] = useState(0);
+  const [laoManHotel, setLaoManHotel] = useState(false);
+  const [daliHouses, setDaliHouses] = useState(0);
+  const [daliHotel, setDaliHotel] = useState(false);
+  const [zhangHouses, setZhangHouses] = useState(0);
+  const [zhangHotel, setZhangHotel] = useState(false);
+  const [modernistaHouses, setModernistaHouses] = useState(0);
+  const [modernistaHotel, setModernistaHotel] = useState(false);
+  const [templeHouses, setTempleHouses] = useState(0);
+  const [templeHotel, setTempleHotel] = useState(false);
+  const [dadaHouses, setDadaHouses] = useState(0);
+  const [dadaHotel, setDadaHotel] = useState(false);
+  const [anniesHouses, setAnniesHouses] = useState(0);
+  const [anniesHotel, setAnniesHotel] = useState(false);
+  const [localHouses, setLocalHouses] = useState(0);
+  const [localHotel, setLocalHotel] = useState(false);
+  const [lanternHouses, setLanternHouses] = useState(0);
+  const [lanternHotel, setLanternHotel] = useState(false);
+  const [jdxHouses, setJdxHouses] = useState(0);
+  const [jdxHotel, setJdxHotel] = useState(false);
+  const [haidilaoHouses, setHaidilaoHouses] = useState(0);
+  const [haidilaoHotel, setHaidilaoHotel] = useState(false);
+  const [dadongHouses, setDadongHouses] = useState(0);
+  const [dadongHotel, setDadongHotel] = useState(false);
+  const [jingAHouses, setJingAHouses] = useState(0);
+  const [jingAHotel, setJingAHotel] = useState(false);
+  const [slowBoatHouses, setSlowBoatHouses] = useState(0);
+  const [slowBoatHotel, setSlowBoatHotel] = useState(false);
+  const [greatLeapHouses, setGreatLeapHouses] = useState(0);
+  const [greatLeapHotel, setGreatLeapHotel] = useState(false);
+  const [migasHouses, setMigasHouses] = useState(0);
+  const [migasHotel, setMigasHotel] = useState(false);
+  const [trbHouses, setTrbHouses] = useState(0);
+  const [trbHotel, setTrbHotel] = useState(false);
 
   useEffect(() => {
     if (p1Pic === 0) {
