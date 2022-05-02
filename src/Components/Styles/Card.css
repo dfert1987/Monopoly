@@ -9,7 +9,7 @@
 .card-horizontal {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: space-around;
   padding-right: 1em;
   padding-left: 1em;
 }
@@ -34,9 +34,9 @@
 
 .card-image {
   border-radius: 6px;
-  max-width: 24em;
+  max-width: 19em;
   box-shadow: 2px 2px 8px;
-  margin-left: 3em;
+  margin-left: 0;
 }
 
 .continue-button {
