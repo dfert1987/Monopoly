@@ -123,8 +123,7 @@ const PropertyModal = ({
     handleClose(e);
   };
 
-  const buyProperty = (e) => {
-    e.preventDefault();
+  const buyProperty = () => {
     if (
       properties &&
       onProp &&
@@ -137,11 +136,11 @@ const PropertyModal = ({
           obj.ownedP1 = true;
           setP1Money(p1Money - obj.Price);
           setViewPurchase(true);
-          setMonop(e);
+          setMonop();
           return properties;
         } else if (obj.Price > p1Money) {
           setInsufficientFunds(true);
-          handleClose(e);
+          handleClose();
         }
         return null;
       });
@@ -157,11 +156,11 @@ const PropertyModal = ({
           obj.ownedP2 = true;
           setP2Money(p2Money - obj.Price);
           setViewPurchase2(true);
-          setMonop2(e);
+          setMonop2();
           return properties;
         } else if (obj.Price > p2Money) {
           setInsufficientFunds(true);
-          handleClose(e);
+          handleClose();
         }
         return null;
       });
@@ -319,7 +318,7 @@ const PropertyModal = ({
             <h4 className={viewInsufficient()}>INSUFFICIENT FUNDS</h4>
             <div className="options-container">
               <button
-                className={activeInactive}
+                className={activeInactive()}
                 onClick={buyProperty}
                 disabled={inSufficientFunds}
               >
