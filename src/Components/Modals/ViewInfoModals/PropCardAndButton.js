@@ -259,7 +259,7 @@ const PropCardAndButton = ({
       return (
         <div className="house-container">
           <img
-            className="hutong-piece hotel"
+            className="hutong-piece hotel-example"
             alt="hotel-icon"
             src={apartment}
           />

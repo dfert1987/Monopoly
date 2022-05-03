@@ -60,8 +60,6 @@ export const MustModal = ({
     },
   };
 
-  console.log(rent);
-
   useEffect(() => {
     if (mustMortgage) {
       let needed = rent - p1Money;

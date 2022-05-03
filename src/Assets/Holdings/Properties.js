@@ -520,7 +520,7 @@ export const Properties = [
     hasTwoHouses: false,
     hasThreeHouses: false,
     hasFourHouses: false,
-    hasHotel: true,
+    hasHotel: false,
     mortgaged: false,
     inMonopoly: false,
     image: require("../PropertyImages/image-4c.jpeg"),
