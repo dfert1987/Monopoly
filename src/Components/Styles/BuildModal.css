@@ -16,6 +16,10 @@
   cursor: grab;
 }
 
+.hotel-example {
+  margin-bottom: 0;
+}
+
 .main-card.propCard.houses {
   height: 25em;
 }

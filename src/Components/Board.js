@@ -856,6 +856,7 @@ export const Board = ({
   }, [p1Pic, p2Pic, properties]);
 
   const showHouses = (property) => {
+    console.log(dadaHouses);
     if (property === 0) {
       if (trbHotel === true) {
         return (
@@ -1329,6 +1330,7 @@ export const Board = ({
           </div>
         );
       } else if (dadaHouses && dadaHouses === 3) {
+        console.log("fart");
         return (
           <div className="house-container side">
             <img className="house" alt="house" src={hutong} />
@@ -2531,7 +2533,7 @@ export const Board = ({
           </div>
           <div id="20" className="right-space">
             <div className="right-main">
-              <div className="right-section-left orange">{showHouses(17)}</div>
+              <div className="right-section-left orange">{showHouses(11)}</div>
               <div className="main-section-right">
                 {counterP1 === 20 ? (
                   <img src={p1Image} className="piece" alt="p1 game piece" />
