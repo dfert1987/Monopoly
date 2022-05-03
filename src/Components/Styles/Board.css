@@ -876,3 +876,18 @@
 .hotel {
   height: 1em;
 }
+
+.hotel-container {
+  display: flex;
+  justify-content: center;
+}
+
+.house-container.side {
+  display: flex;
+  flex-direction: column;
+}
+
+.hotel-container.side {
+  display: flex;
+  flex-direction: column;
+}
