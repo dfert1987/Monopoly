@@ -342,21 +342,24 @@ export const Board = ({
       setJingAHouses(0);
     }
 
-    if (properties[5].hasFourHouses && properties[5].hasThreeHouses === false) {
+    if (properties[5].hasFourHouses && properties[5].hasHotel === false) {
       setDadongHouses(4);
     } else if (
       properties[5].hasThreeHouses &&
-      properties[5].hasTwoHouses === false
+      properties[5].hasFourHouses === false
     ) {
       setDadongHouses(3);
     } else if (
       properties[5].hasTwoHouses &&
-      properties[5].hasOneHouse === false
+      properties[5].hasThreeHouses === false
     ) {
       setDadongHouses(2);
-    } else if (properties[2].hasOneHouse) {
+    } else if (
+      properties[5].hasOneHouse &&
+      properties[5].hasTwoHouses === false
+    ) {
       setDadongHouses(1);
-    } else if (properties[2].hasHotel) {
+    } else if (properties[5].hasHotel) {
       setDadongHotel(true);
       setDadongHouses(0);
     } else {
@@ -827,6 +830,50 @@ export const Board = ({
     }
   }, [p1Pic, p2Pic, properties]);
 
+  console.log(properties[5]);
+
+  const showHouses = (property) => {
+    if (property === 5) {
+      if (dadongHotel === true) {
+        return (
+          <div className="hotel-container">
+            <img className="hotel" alt="hotel" src={apartment} />
+          </div>
+        );
+      } else if (dadongHouses && dadongHouses === 4) {
+        return (
+          <div className="house-container">
+            <img className="house" alt="house" src={hutong} />
+            <img className="house" alt="house" src={hutong} />
+            <img className="house" alt="house" src={hutong} />
+            <img className="house" alt="house" src={hutong} />
+          </div>
+        );
+      } else if (dadongHouses && dadongHouses === 3) {
+        return (
+          <div className="house-container">
+            <img className="house" alt="house" src={hutong} />
+            <img className="house" alt="house" src={hutong} />
+            <img className="house" alt="house" src={hutong} />
+          </div>
+        );
+      } else if (dadongHouses && dadongHouses === 2) {
+        return (
+          <div className="house-container">
+            <img className="house" alt="house" src={hutong} />
+            <img className="house" alt="house" src={hutong} />
+          </div>
+        );
+      } else if (dadongHouses && dadongHouses === 1) {
+        return (
+          <div className="house-container">
+            <img className="house yellow-house" alt="house" src={hutong} />
+          </div>
+        );
+      }
+    }
+  };
+
   return (
     <div className="main-board">
       <div className="left-column">
@@ -1241,7 +1288,7 @@ export const Board = ({
         <div className="bottom-row">
           <div id="30" className="bottom-space">
             <div className="bottom-main">
-              <div className="bottom-section-top yellow"></div>
+              <div className="bottom-section-top yellow">{showHouses(5)}</div>
               <div className="main-section-bottom">
                 {counterP1 === 30 ? (
                   <img src={p1Image} className="piece" alt="p1 game piece" />
