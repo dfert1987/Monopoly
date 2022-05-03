@@ -855,10 +855,198 @@ export const Board = ({
     }
   }, [p1Pic, p2Pic, properties]);
 
-  console.log(properties[5]);
-
   const showHouses = (property) => {
-    if (property === 5) {
+    if (property === 0) {
+      if (trbHotel === true) {
+        return (
+          <div className="hotel-container">
+            <img className="hotel" alt="hotel" src={apartment} />
+          </div>
+        );
+      } else if (trbHouses && trbHouses === 4) {
+        return (
+          <div className="house-container">
+            <img className="house" alt="house" src={hutong} />
+            <img className="house" alt="house" src={hutong} />
+            <img className="house" alt="house" src={hutong} />
+            <img className="house" alt="house" src={hutong} />
+          </div>
+        );
+      } else if (trbHouses && trbHouses === 3) {
+        return (
+          <div className="house-container">
+            <img className="house" alt="house" src={hutong} />
+            <img className="house" alt="house" src={hutong} />
+            <img className="house" alt="house" src={hutong} />
+          </div>
+        );
+      } else if (trbHouses && trbHouses === 2) {
+        return (
+          <div className="house-container">
+            <img className="house" alt="house" src={hutong} />
+            <img className="house" alt="house" src={hutong} />
+          </div>
+        );
+      } else if (trbHouses && trbHouses === 1) {
+        return (
+          <div className="house-container">
+            <img className="house yellow-house" alt="house" src={hutong} />
+          </div>
+        );
+      }
+    } else if (property === 1) {
+      if (migasHotel === true) {
+        return (
+          <div className="hotel-container">
+            <img className="hotel" alt="hotel" src={apartment} />
+          </div>
+        );
+      } else if (migasHouses && migasHouses === 4) {
+        return (
+          <div className="house-container">
+            <img className="house" alt="house" src={hutong} />
+            <img className="house" alt="house" src={hutong} />
+            <img className="house" alt="house" src={hutong} />
+            <img className="house" alt="house" src={hutong} />
+          </div>
+        );
+      } else if (migasHouses && migasHouses === 3) {
+        return (
+          <div className="house-container">
+            <img className="house" alt="house" src={hutong} />
+            <img className="house" alt="house" src={hutong} />
+            <img className="house" alt="house" src={hutong} />
+          </div>
+        );
+      } else if (migasHouses && migasHouses === 2) {
+        return (
+          <div className="house-container">
+            <img className="house" alt="house" src={hutong} />
+            <img className="house" alt="house" src={hutong} />
+          </div>
+        );
+      } else if (migasHouses && migasHouses === 1) {
+        return (
+          <div className="house-container">
+            <img className="house yellow-house" alt="house" src={hutong} />
+          </div>
+        );
+      }
+    } else if (property === 2) {
+      if (greatLeapHotel === true) {
+        return (
+          <div className="hotel-container">
+            <img className="hotel" alt="hotel" src={apartment} />
+          </div>
+        );
+      } else if (greatLeapHouses && greatLeapHouses === 4) {
+        return (
+          <div className="house-container">
+            <img className="house" alt="house" src={hutong} />
+            <img className="house" alt="house" src={hutong} />
+            <img className="house" alt="house" src={hutong} />
+            <img className="house" alt="house" src={hutong} />
+          </div>
+        );
+      } else if (greatLeapHouses && greatLeapHouses === 3) {
+        return (
+          <div className="house-container">
+            <img className="house" alt="house" src={hutong} />
+            <img className="house" alt="house" src={hutong} />
+            <img className="house" alt="house" src={hutong} />
+          </div>
+        );
+      } else if (greatLeapHouses && greatLeapHouses === 2) {
+        return (
+          <div className="house-container">
+            <img className="house" alt="house" src={hutong} />
+            <img className="house" alt="house" src={hutong} />
+          </div>
+        );
+      } else if (greatLeapHouses && greatLeapHouses === 1) {
+        return (
+          <div className="house-container">
+            <img className="house yellow-house" alt="house" src={hutong} />
+          </div>
+        );
+      }
+    } else if (property === 3) {
+      if (slowBoatHotel === true) {
+        return (
+          <div className="hotel-container">
+            <img className="hotel" alt="hotel" src={apartment} />
+          </div>
+        );
+      } else if (slowBoatHouses && slowBoatHouses === 4) {
+        return (
+          <div className="house-container">
+            <img className="house" alt="house" src={hutong} />
+            <img className="house" alt="house" src={hutong} />
+            <img className="house" alt="house" src={hutong} />
+            <img className="house" alt="house" src={hutong} />
+          </div>
+        );
+      } else if (slowBoatHouses && slowBoatHouses === 3) {
+        return (
+          <div className="house-container">
+            <img className="house" alt="house" src={hutong} />
+            <img className="house" alt="house" src={hutong} />
+            <img className="house" alt="house" src={hutong} />
+          </div>
+        );
+      } else if (slowBoatHouses && slowBoatHouses === 2) {
+        return (
+          <div className="house-container">
+            <img className="house" alt="house" src={hutong} />
+            <img className="house" alt="house" src={hutong} />
+          </div>
+        );
+      } else if (slowBoatHouses && slowBoatHouses === 1) {
+        return (
+          <div className="house-container">
+            <img className="house yellow-house" alt="house" src={hutong} />
+          </div>
+        );
+      }
+    } else if (property === 4) {
+      if (jingAHotel === true) {
+        return (
+          <div className="hotel-container">
+            <img className="hotel" alt="hotel" src={apartment} />
+          </div>
+        );
+      } else if (jingAHouses && jingAHouses === 4) {
+        return (
+          <div className="house-container">
+            <img className="house" alt="house" src={hutong} />
+            <img className="house" alt="house" src={hutong} />
+            <img className="house" alt="house" src={hutong} />
+            <img className="house" alt="house" src={hutong} />
+          </div>
+        );
+      } else if (jingAHouses && jingAHouses === 3) {
+        return (
+          <div className="house-container">
+            <img className="house" alt="house" src={hutong} />
+            <img className="house" alt="house" src={hutong} />
+            <img className="house" alt="house" src={hutong} />
+          </div>
+        );
+      } else if (jingAHouses && jingAHouses === 2) {
+        return (
+          <div className="house-container">
+            <img className="house" alt="house" src={hutong} />
+            <img className="house" alt="house" src={hutong} />
+          </div>
+        );
+      } else if (jingAHouses && jingAHouses === 1) {
+        return (
+          <div className="house-container">
+            <img className="house yellow-house" alt="house" src={hutong} />
+          </div>
+        );
+      }
+    } else if (property === 5) {
       if (dadongHotel === true) {
         return (
           <div className="hotel-container">
@@ -890,6 +1078,82 @@ export const Board = ({
           </div>
         );
       } else if (dadongHouses && dadongHouses === 1) {
+        return (
+          <div className="house-container">
+            <img className="house yellow-house" alt="house" src={hutong} />
+          </div>
+        );
+      }
+    } else if (property === 6) {
+      if (haidilaoHotel === true) {
+        return (
+          <div className="hotel-container">
+            <img className="hotel" alt="hotel" src={apartment} />
+          </div>
+        );
+      } else if (haidilaoHouses && haidilaoHouses === 4) {
+        return (
+          <div className="house-container">
+            <img className="house" alt="house" src={hutong} />
+            <img className="house" alt="house" src={hutong} />
+            <img className="house" alt="house" src={hutong} />
+            <img className="house" alt="house" src={hutong} />
+          </div>
+        );
+      } else if (haidilaoHouses && haidilaoHouses === 3) {
+        return (
+          <div className="house-container">
+            <img className="house" alt="house" src={hutong} />
+            <img className="house" alt="house" src={hutong} />
+            <img className="house" alt="house" src={hutong} />
+          </div>
+        );
+      } else if (haidilaoHouses && haidilaoHouses === 2) {
+        return (
+          <div className="house-container">
+            <img className="house" alt="house" src={hutong} />
+            <img className="house" alt="house" src={hutong} />
+          </div>
+        );
+      } else if (haidilaoHouses && haidilaoHouses === 1) {
+        return (
+          <div className="house-container">
+            <img className="house yellow-house" alt="house" src={hutong} />
+          </div>
+        );
+      }
+    } else if (property === 7) {
+      if (jdxHotel === true) {
+        return (
+          <div className="hotel-container">
+            <img className="hotel" alt="hotel" src={apartment} />
+          </div>
+        );
+      } else if (jdxHouses && jdxHouses === 4) {
+        return (
+          <div className="house-container">
+            <img className="house" alt="house" src={hutong} />
+            <img className="house" alt="house" src={hutong} />
+            <img className="house" alt="house" src={hutong} />
+            <img className="house" alt="house" src={hutong} />
+          </div>
+        );
+      } else if (jdxHouses && jdxHouses === 3) {
+        return (
+          <div className="house-container">
+            <img className="house" alt="house" src={hutong} />
+            <img className="house" alt="house" src={hutong} />
+            <img className="house" alt="house" src={hutong} />
+          </div>
+        );
+      } else if (jdxHouses && jdxHouses === 2) {
+        return (
+          <div className="house-container">
+            <img className="house" alt="house" src={hutong} />
+            <img className="house" alt="house" src={hutong} />
+          </div>
+        );
+      } else if (jdxHouses && jdxHouses === 1) {
         return (
           <div className="house-container">
             <img className="house yellow-house" alt="house" src={hutong} />
