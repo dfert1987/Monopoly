@@ -48,6 +48,7 @@ import fuYuanCard from "../Assets/Cards/Yunqi/fuyuancards.png";
 import apartment from "../Assets/Misc/apartment.png";
 import hutong from "../Assets/Misc/hutong.png";
 import "./Styles/Board.css";
+import { faL } from "@fortawesome/free-solid-svg-icons";
 
 export const Board = ({
   counterP1,
@@ -237,19 +238,22 @@ export const Board = ({
   const [trbHotel, setTrbHotel] = useState(false);
 
   useEffect(() => {
-    if (properties[0].hasFourHouses && properties[0].hasThreeHouses === false) {
+    if (properties[0].hasFourHouses && properties[0].hasHotel === false) {
       setTrbHouses(4);
     } else if (
       properties[0].hasThreeHouses &&
-      properties[0].hasTwoHouses === false
+      properties[0].hasFourHouses === false
     ) {
       setTrbHouses(3);
     } else if (
       properties[0].hasTwoHouses &&
-      properties[0].hasOneHouse === false
+      properties[0].hasThreeHouses === false
     ) {
       setTrbHouses(2);
-    } else if (properties[0].hasOneHouse) {
+    } else if (
+      properties[0].hasOneHouse &&
+      properties[0].hasTwoHouses === false
+    ) {
       setTrbHouses(1);
     } else if (properties[0].hasHotel) {
       setTrbHotel(true);
@@ -258,19 +262,19 @@ export const Board = ({
       setTrbHouses(0);
     }
 
-    if (properties[1].hasFourHouses && properties[1].hasThreeHouses === false) {
+    if (properties[1].hasFourHouses && properties[1].hasHotel === false) {
       setMigasHouses(4);
     } else if (
       properties[1].hasThreeHouses &&
-      properties[1].hasTwoHouses === false
+      properties[1].hasFourHouses === false
     ) {
       setMigasHouses(3);
     } else if (
       properties[1].hasTwoHouses &&
-      properties[1].hasOneHouse === false
+      properties[1].hasThreeHouses === false
     ) {
       setMigasHouses(2);
-    } else if (properties[1].hasOneHouse) {
+    } else if (properties[1].hasOneHouse && properties.hasTwoHouses === false) {
       setMigasHouses(1);
     } else if (properties[1].hasHotel) {
       setMigasHotel(true);
@@ -279,19 +283,22 @@ export const Board = ({
       setMigasHouses(0);
     }
 
-    if (properties[2].hasFourHouses && properties[2].hasThreeHouses === false) {
+    if (properties[2].hasFourHouses && properties[2].hasHotel === false) {
       setGreatLeapHouses(4);
     } else if (
       properties[2].hasThreeHouses &&
-      properties[2].hasTwoHouses === false
+      properties[2].hasFourHouses === false
     ) {
       setGreatLeapHouses(3);
     } else if (
       properties[2].hasTwoHouses &&
-      properties[2].hasOneHouse === false
+      properties[2].hasThreeHouses === false
     ) {
       setGreatLeapHouses(2);
-    } else if (properties[2].hasOneHouse) {
+    } else if (
+      properties[2].hasOneHouse &&
+      properties[2].hasTwoHouses === false
+    ) {
       setGreatLeapHouses(1);
     } else if (properties[2].hasHotel) {
       setGreatLeapHotel(true);
@@ -300,19 +307,22 @@ export const Board = ({
       setGreatLeapHouses(0);
     }
 
-    if (properties[3].hasFourHouses && properties[3].hasThreeHouses === false) {
+    if (properties[3].hasFourHouses && properties[3].hasHotel === false) {
       setSlowBoatHouses(4);
     } else if (
       properties[3].hasThreeHouses &&
-      properties[3].hasTwoHouses === false
+      properties[3].hasFourHouses === false
     ) {
       setSlowBoatHouses(3);
     } else if (
       properties[3].hasTwoHouses &&
-      properties[3].hasOneHouse === false
+      properties[3].hasThreeHouses === false
     ) {
       setSlowBoatHouses(2);
-    } else if (properties[3].hasOneHouse) {
+    } else if (
+      properties[3].hasOneHouse &&
+      properties[3].hasTwoHouses === false
+    ) {
       setSlowBoatHouses(1);
     } else if (properties[3].hasHotel) {
       setSlowBoatHotel(true);
@@ -321,19 +331,22 @@ export const Board = ({
       setSlowBoatHouses(0);
     }
 
-    if (properties[4].hasFourHouses && properties[4].hasThreeHouses === false) {
+    if (properties[4].hasFourHouses && properties[4].hasHotel === false) {
       setJingAHouses(4);
     } else if (
       properties[4].hasThreeHouses &&
-      properties[4].hasTwoHouses === false
+      properties[4].hasFourHouses === false
     ) {
       setJingAHouses(3);
     } else if (
       properties[4].hasTwoHouses &&
-      properties[4].hasOneHouse === false
+      properties[4].hasThreeHouses === false
     ) {
       setJingAHouses(2);
-    } else if (properties[4].hasOneHouse) {
+    } else if (
+      properties[4].hasOneHouse &&
+      properties[4].hasTwoHouses === false
+    ) {
       setJingAHouses(1);
     } else if (properties[4].hasHotel) {
       setJingAHotel(true);
@@ -366,19 +379,22 @@ export const Board = ({
       setDadongHouses(0);
     }
 
-    if (properties[6].hasFourHouses && properties[6].hasThreeHouses === false) {
+    if (properties[6].hasFourHouses && properties[6].hasHotel === false) {
       setHaidilaoHouses(4);
     } else if (
       properties[6].hasThreeHouses &&
-      properties[6].hasTwoHouses === false
+      properties[6].hasFourHouses === false
     ) {
       setHaidilaoHouses(3);
     } else if (
       properties[6].hasTwoHouses &&
-      properties[6].hasOneHouse === false
+      properties[6].hasThreeHouses === false
     ) {
       setHaidilaoHouses(2);
-    } else if (properties[6].hasOneHouse) {
+    } else if (
+      properties[6].hasOneHouse &&
+      properties[6].hasTwoHouses === false
+    ) {
       setHaidilaoHouses(1);
     } else if (properties[6].hasHotel) {
       setHaidilaoHotel(true);
@@ -387,19 +403,22 @@ export const Board = ({
       setHaidilaoHouses(0);
     }
 
-    if (properties[7].hasFourHouses && properties[7].hasThreeHouses === false) {
+    if (properties[7].hasFourHouses && properties[7].hasHotel === false) {
       setJdxHouses(4);
     } else if (
       properties[7].hasThreeHouses &&
-      properties[7].hasTwoHouses === false
+      properties[7].hasFourHouses === false
     ) {
       setJdxHouses(3);
     } else if (
       properties[7].hasTwoHouses &&
-      properties[7].hasOneHouse === false
+      properties[7].hasThreeHouses === false
     ) {
       setJdxHouses(2);
-    } else if (properties[7].hasOneHouse) {
+    } else if (
+      properties[7].hasOneHouse &&
+      properties[7].hasTwoHouses === false
+    ) {
       setJdxHouses(1);
     } else if (properties[7].hasHotel) {
       setJdxHotel(true);
@@ -408,19 +427,22 @@ export const Board = ({
       setJdxHouses(0);
     }
 
-    if (properties[8].hasFourHouses && properties[8].hasThreeHouses === false) {
+    if (properties[8].hasFourHouses && properties[8].hasHotel === false) {
       setLanternHouses(4);
     } else if (
       properties[8].hasThreeHouses &&
-      properties[8].hasTwoHouses === false
+      properties[8].hasFourHouses === false
     ) {
       setLanternHouses(3);
     } else if (
       properties[8].hasTwoHouses &&
-      properties[8].hasOneHouse === false
+      properties[8].hasThreeHouses === false
     ) {
       setLanternHouses(2);
-    } else if (properties[8].hasOneHouse) {
+    } else if (
+      properties[8].hasOneHouse &&
+      properties[8].hasTwoHouses === false
+    ) {
       setLanternHouses(1);
     } else if (properties[8].hasHotel) {
       setLanternHotel(true);
@@ -429,19 +451,22 @@ export const Board = ({
       setLanternHouses(0);
     }
 
-    if (properties[9].hasFourHouses && properties[9].hasThreeHouses === false) {
+    if (properties[9].hasFourHouses && properties[9].hasHotel === false) {
       setLocalHouses(4);
     } else if (
       properties[9].hasThreeHouses &&
-      properties[9].hasTwoHouses === false
+      properties[9].hasFourHouses === false
     ) {
       setLocalHouses(3);
     } else if (
       properties[9].hasTwoHouses &&
-      properties[9].hasOneHouse === false
+      properties[9].hasThreeHouses === false
     ) {
       setLocalHouses(2);
-    } else if (properties[9].hasOneHouse) {
+    } else if (
+      properties[9].hasOneHouse &&
+      properties[9].hasTwoHouses === false
+    ) {
       setLocalHouses(1);
     } else if (properties[9].hasHotel) {
       setLocalHotel(true);
@@ -450,22 +475,22 @@ export const Board = ({
       setLocalHouses(0);
     }
 
-    if (
-      properties[10].hasFourHouses &&
-      properties[10].hasThreeHouses === false
-    ) {
+    if (properties[10].hasFourHouses && properties[10].hasHotel === false) {
       setAnniesHouses(4);
     } else if (
       properties[10].hasThreeHouses &&
-      properties[10].hasTwoHouses === false
+      properties[10].hasFourHouses === false
     ) {
       setAnniesHouses(3);
     } else if (
       properties[10].hasTwoHouses &&
-      properties[10].hasOneHouse === false
+      properties[10].hasThreeHouses === false
     ) {
       setAnniesHouses(2);
-    } else if (properties[10].hasOneHouse) {
+    } else if (
+      properties[10].hasOneHouse &&
+      properties[10].hasTwoHouses === false
+    ) {
       setAnniesHouses(1);
     } else if (properties[10].hasHotel) {
       setAnniesHotel(true);
@@ -474,22 +499,22 @@ export const Board = ({
       setAnniesHouses(0);
     }
 
-    if (
-      properties[11].hasFourHouses &&
-      properties[11].hasThreeHouses === false
-    ) {
+    if (properties[11].hasFourHouses && properties[11].hasHotel === false) {
       setDadaHouses(4);
     } else if (
       properties[11].hasThreeHouses &&
-      properties[11].hasTwoHouses === false
+      properties[11].hasFourHouses === false
     ) {
       setDadaHouses(3);
     } else if (
       properties[11].hasTwoHouses &&
-      properties[11].hasOneHouse === false
+      properties[11].hasThreeHouses === false
     ) {
       setDadaHouses(2);
-    } else if (properties[11].hasOneHouse) {
+    } else if (
+      properties[11].hasOneHouse &&
+      properties[11].hasTwoHouses === false
+    ) {
       setDadaHouses(1);
     } else if (properties[11].hasHotel) {
       setDadaHotel(true);
@@ -498,22 +523,22 @@ export const Board = ({
       setDadaHouses(0);
     }
 
-    if (
-      properties[12].hasFourHouses &&
-      properties[12].hasThreeHouses === false
-    ) {
+    if (properties[12].hasFourHouses && properties[12].hasHotel === false) {
       setTempleHouses(4);
     } else if (
       properties[12].hasThreeHouses &&
-      properties[12].hasTwoHouses === false
+      properties[12].hasFourHouses === false
     ) {
       setTempleHouses(3);
     } else if (
       properties[12].hasTwoHouses &&
-      properties[12].hasOneHouse === false
+      properties[12].hasThreeHouses === false
     ) {
       setTempleHouses(2);
-    } else if (properties[12].hasOneHouse) {
+    } else if (
+      properties[12].hasOneHouse &&
+      properties[12].hasTwoHouses === false
+    ) {
       setTempleHouses(1);
     } else if (properties[12].hasHotel) {
       setTempleHotel(true);
@@ -522,22 +547,22 @@ export const Board = ({
       setTempleHouses(0);
     }
 
-    if (
-      properties[13].hasFourHouses &&
-      properties[13].hasThreeHouses === false
-    ) {
+    if (properties[13].hasFourHouses && properties[13].hasHotel === false) {
       setModernistaHouses(4);
     } else if (
       properties[13].hasThreeHouses &&
-      properties[13].hasTwoHouses === false
+      properties[13].hasFourHouses === false
     ) {
       setModernistaHouses(3);
     } else if (
       properties[13].hasTwoHouses &&
-      properties[13].hasOneHouse === false
+      properties[13].hasThreeHouses === false
     ) {
       setModernistaHouses(2);
-    } else if (properties[13].hasOneHouse) {
+    } else if (
+      properties[13].hasOneHouse &&
+      properties[13].hasTwoHouses === false
+    ) {
       setModernistaHouses(1);
     } else if (properties[13].hasHotel) {
       setModernistaHotel(true);
@@ -546,22 +571,22 @@ export const Board = ({
       setModernistaHouses(0);
     }
 
-    if (
-      properties[14].hasFourHouses &&
-      properties[14].hasThreeHouses === false
-    ) {
+    if (properties[14].hasFourHouses && properties[14].hasHotel === false) {
       setZhangHouses(4);
     } else if (
       properties[14].hasThreeHouses &&
-      properties[14].hasTwoHouses === false
+      properties[14].hasFourHouses === false
     ) {
       setZhangHouses(3);
     } else if (
       properties[14].hasTwoHouses &&
-      properties[14].hasOneHouse === false
+      properties[14].hasThreeHouses === false
     ) {
       setZhangHouses(2);
-    } else if (properties[14].hasOneHouse) {
+    } else if (
+      properties[14].hasOneHouse &&
+      properties[14].hasTwoHouses === false
+    ) {
       setZhangHouses(1);
     } else if (properties[14].hasHotel) {
       setZhangHotel(true);
@@ -570,22 +595,22 @@ export const Board = ({
       setZhangHouses(0);
     }
 
-    if (
-      properties[15].hasFourHouses &&
-      properties[15].hasThreeHouses === false
-    ) {
+    if (properties[15].hasFourHouses && properties[15].hasHotel === false) {
       setDaliHouses(4);
     } else if (
       properties[15].hasThreeHouses &&
-      properties[15].hasTwoHouses === false
+      properties[15].hasFourHouses === false
     ) {
       setDaliHouses(3);
     } else if (
       properties[15].hasTwoHouses &&
-      properties[15].hasOneHouse === false
+      properties[15].hasThreeHouses === false
     ) {
       setDaliHouses(2);
-    } else if (properties[15].hasOneHouse) {
+    } else if (
+      properties[15].hasOneHouse &&
+      properties[15].hasTwoHouses === false
+    ) {
       setDaliHouses(1);
     } else if (properties[15].hasHotel) {
       setDaliHotel(true);
@@ -594,22 +619,22 @@ export const Board = ({
       setDaliHouses(0);
     }
 
-    if (
-      properties[16].hasFourHouses &&
-      properties[16].hasThreeHouses === false
-    ) {
+    if (properties[16].hasFourHouses && properties[16].hasHotel === false) {
       setLaomanHouses(4);
     } else if (
       properties[16].hasThreeHouses &&
-      properties[16].hasTwoHouses === false
+      properties[16].hasFourHouses === false
     ) {
       setLaomanHouses(3);
     } else if (
       properties[16].hasTwoHouses &&
-      properties[16].hasOneHouse === false
+      properties[16].hasThreeHouses === false
     ) {
       setLaomanHouses(2);
-    } else if (properties[16].hasOneHouse) {
+    } else if (
+      properties[16].hasOneHouse &&
+      properties[16].hasTwoHouses === false
+    ) {
       setLaomanHouses(1);
     } else if (properties[16].hasHotel) {
       setLaomanHotel(true);
@@ -618,22 +643,22 @@ export const Board = ({
       setLaomanHouses(0);
     }
 
-    if (
-      properties[17].hasFourHouses &&
-      properties[17].hasThreeHouses === false
-    ) {
+    if (properties[17].hasFourHouses && properties[17].hasHotel === false) {
       setFourCHouses(4);
     } else if (
       properties[17].hasThreeHouses &&
-      properties[17].hasTwoHouses === false
+      properties[17].hasFourHouses === false
     ) {
       setFourCHouses(3);
     } else if (
       properties[17].hasTwoHouses &&
-      properties[17].hasOneHouse === false
+      properties[17].hasThreeHouses === false
     ) {
       setFourCHouses(2);
-    } else if (properties[17].hasOneHouse) {
+    } else if (
+      properties[17].hasOneHouse &&
+      properties[17].hasTwoHouses === false
+    ) {
       setFourCHouses(1);
     } else if (properties[17].hasHotel) {
       setFourCHotel(true);
@@ -642,22 +667,22 @@ export const Board = ({
       setFourCHouses(0);
     }
 
-    if (
-      properties[18].hasFourHouses &&
-      properties[18].hasThreeHouses === false
-    ) {
+    if (properties[18].hasFourHouses && properties[18].hasHotel === false) {
       setCdlpHouses(4);
     } else if (
       properties[18].hasThreeHouses &&
-      properties[18].hasTwoHouses === false
+      properties[18].hasFourHouses === false
     ) {
       setCdlpHouses(3);
     } else if (
       properties[18].hasTwoHouses &&
-      properties[18].hasOneHouse === false
+      properties[18].hasThreeHouses === false
     ) {
       setCdlpHouses(2);
-    } else if (properties[18].hasOneHouse) {
+    } else if (
+      properties[18].hasOneHouse &&
+      properties[18].hasTwoHouses === false
+    ) {
       setCdlpHouses(1);
     } else if (properties[18].hasHotel) {
       setCdlpHotel(true);
@@ -666,22 +691,22 @@ export const Board = ({
       setCdlpHouses(0);
     }
 
-    if (
-      properties[19].hasFourHouses &&
-      properties[19].hasThreeHouses === false
-    ) {
+    if (properties[19].hasFourHouses && properties[19].hasHotel === false) {
       setHotCatHouses(4);
     } else if (
       properties[19].hasThreeHouses &&
-      properties[19].hasTwoHouses === false
+      properties[19].hasFourHouses === false
     ) {
       setHotCatHouses(3);
     } else if (
       properties[19].hasTwoHouses &&
-      properties[19].hasOneHouse === false
+      properties[19].hasThreeHouses === false
     ) {
       setHotCatHouses(2);
-    } else if (properties[19].hasOneHouse) {
+    } else if (
+      properties[19].hasOneHouse &&
+      properties[19].hasTwoHouses === false
+    ) {
       setHotCatHouses(1);
     } else if (properties[19].hasHotel) {
       setHotCatHotel(true);
@@ -690,22 +715,22 @@ export const Board = ({
       setHotCatHouses(0);
     }
 
-    if (
-      properties[20].hasFourHouses &&
-      properties[20].hasThreeHouses === false
-    ) {
+    if (properties[20].hasFourHouses && properties[20].hasHotel === false) {
       setPropagandaHouses(4);
     } else if (
       properties[20].hasThreeHouses &&
-      properties[20].hasTwoHouses === false
+      properties[20].hasFourHouses === false
     ) {
       setPropagandaHouses(3);
     } else if (
       properties[20].hasTwoHouses &&
-      properties[20].hasOneHouse === false
+      properties[20].hasThreeHouses === false
     ) {
       setPropagandaHouses(2);
-    } else if (properties[20].hasOneHouse) {
+    } else if (
+      properties[20].hasOneHouse &&
+      properties[20].hasTwoHouses === false
+    ) {
       setPropagandaHouses(1);
     } else if (properties[20].hasHotel) {
       setPropagandaHotel(true);
@@ -714,22 +739,22 @@ export const Board = ({
       setPropagandaHouses(0);
     }
 
-    if (
-      properties[21].hasFourHouses &&
-      properties[21].hasThreeHouses === false
-    ) {
+    if (properties[21].hasFourHouses && properties[21].hasHotel === false) {
       setLushHouses(4);
     } else if (
       properties[21].hasThreeHouses &&
-      properties[21].hasTwoHouses === false
+      properties[21].hasFourHouses === false
     ) {
       setLushHouses(3);
     } else if (
       properties[21].hasTwoHouses &&
-      properties[21].hasOneHouse === false
+      properties[21].hasThreeHouses === false
     ) {
       setLushHouses(2);
-    } else if (properties[21].hasOneHouse) {
+    } else if (
+      properties[21].hasOneHouse &&
+      properties[14].hasTwoHouses === false
+    ) {
       setLushHouses(1);
     } else if (properties[21].hasHotel) {
       setLushHotel(true);
