@@ -753,7 +753,7 @@ export const Board = ({
       setLushHouses(2);
     } else if (
       properties[21].hasOneHouse &&
-      properties[14].hasTwoHouses === false
+      properties[21].hasTwoHouses === false
     ) {
       setLushHouses(1);
     } else if (properties[21].hasHotel) {
@@ -938,7 +938,7 @@ export const Board = ({
                 <div className="prop-price-left">¥400</div>
                 <div className="prop-name-left">TRB</div>
               </div>
-              <div className="top-section-left blue"></div>
+              <div className="top-section-left blue">{showHouses(0)}</div>
             </div>
           </div>
           <div id="39" className="left-space">
@@ -978,7 +978,7 @@ export const Board = ({
                 <div className="prop-price-left">¥350</div>
                 <div className="prop-name-left migas">Migas</div>
               </div>
-              <div className="top-section-left blue"></div>
+              <div className="top-section-left blue">{showHouses(1)}</div>
             </div>
           </div>
           <div id="37" className="left-space">
@@ -1042,7 +1042,7 @@ export const Board = ({
                   </div>
                 </div>
               </div>
-              <div className="top-section-left green"></div>
+              <div className="top-section-left green">{showHouses(2)}</div>
             </div>
           </div>
           <div id="34" className="left-space">
@@ -1085,7 +1085,7 @@ export const Board = ({
                   </div>
                 </div>
               </div>
-              <div className="top-section-left green"></div>
+              <div className="top-section-left green">{showHouses(3)}</div>
             </div>
           </div>
           <div id="32" className="left-space">
@@ -1108,7 +1108,7 @@ export const Board = ({
                   </div>
                 </div>
               </div>
-              <div className="top-section-left green"></div>
+              <div className="top-section-left green">{showHouses(4)}</div>
             </div>
           </div>
         </div>
@@ -1146,7 +1146,7 @@ export const Board = ({
                 <div className="prop-price-top">¥60</div>
                 <div className="prop-name-top">Lush</div>
               </div>
-              <div className="top-section-bottom brown"></div>
+              <div className="top-section-bottom brown">{showHouses(21)}</div>
             </div>
           </div>
           <div id="3" className="top-space">
@@ -1185,7 +1185,7 @@ export const Board = ({
                 <div className="prop-price-top">¥80</div>
                 <div className="prop-name-top-big">Propaganda</div>
               </div>
-              <div className="top-section-bottom brown"></div>
+              <div className="top-section-bottom brown">{showHouses(20)}</div>
             </div>
           </div>
           <div id="5" className="top-space">
@@ -1240,7 +1240,9 @@ export const Board = ({
                 <div className="prop-name-top">Hot Cat</div>
                 <div className="main-section-top"></div>
               </div>
-              <div className="top-section-bottom light-blue"></div>
+              <div className="top-section-bottom light-blue">
+                {showHouses(19)}
+              </div>
             </div>
           </div>
           <div id="8" className="top-space">
@@ -1276,7 +1278,9 @@ export const Board = ({
                 <div className="prop-name-top-big">De La Poste</div>
                 <div className="main-section-top"></div>
               </div>
-              <div className="top-section-bottom light-blue"></div>
+              <div className="top-section-bottom light-blue">
+                {showHouses(18)}
+              </div>
             </div>
           </div>
           <div id="10" className="right">
@@ -1295,7 +1299,9 @@ export const Board = ({
                 <div className="prop-price-top">¥120</div>
                 <div className="prop-name-top">4C</div>
               </div>
-              <div className="top-section-bottom light-blue"></div>
+              <div className="top-section-bottom light-blue">
+                {showHouses(17)}
+              </div>
             </div>
           </div>
         </div>
@@ -1353,7 +1359,7 @@ export const Board = ({
           </div>
           <div id="28" className="bottom-space">
             <div className="bottom-main">
-              <div className="bottom-section-top yellow"></div>
+              <div className="bottom-section-top yellow">{showHouses(6)}</div>
               <div className="main-section-bottom">
                 {counterP1 === 28 ? (
                   <img src={p1Image} className="piece" alt="p1 game piece" />
@@ -1372,7 +1378,7 @@ export const Board = ({
           </div>
           <div id="27" className="bottom-space">
             <div className="bottom-main">
-              <div className="bottom-section-top yellow"></div>
+              <div className="bottom-section-top yellow">{showHouses(7)}</div>
               <div className="main-section-bottom">
                 {counterP1 === 27 ? (
                   <img src={p1Image} className="piece" alt="p1 game piece" />
@@ -1412,7 +1418,7 @@ export const Board = ({
           </div>
           <div id="25" className="bottom-space">
             <div className="bottom-main">
-              <div className="bottom-section-top red"></div>
+              <div className="bottom-section-top red">{showHouses(8)}</div>
               <div className="main-section-bottom">
                 {counterP1 === 25 ? (
                   <img src={p1Image} className="piece" alt="p1 game piece" />
@@ -1431,7 +1437,7 @@ export const Board = ({
           </div>
           <div id="24" className="bottom-space">
             <div className="bottom-main">
-              <div className="bottom-section-top red"></div>
+              <div className="bottom-section-top red">{showHouses(9)}</div>
               <div className="main-section-bottom">
                 {counterP1 === 24 ? (
                   <img src={p1Image} className="piece" alt="p1 game piece" />
@@ -1470,7 +1476,7 @@ export const Board = ({
           </div>
           <div id="22" className="right">
             <div className="bottom-main">
-              <div className="bottom-section-top red"></div>
+              <div className="bottom-section-top red">{showHouses(10)}</div>
               <div className="main-section-bottom">
                 {counterP1 === 22 ? (
                   <img src={p1Image} className="piece" alt="p1 game piece" />
@@ -1518,7 +1524,7 @@ export const Board = ({
         <div className="right-spaces">
           <div id="12" className="right-space">
             <div className="right-main">
-              <div className="right-section-left purple"></div>
+              <div className="right-section-left purple">{showHouses(12)}</div>
               <div className="main-section-right">
                 {counterP1 === 12 ? (
                   <img src={p1Image} className="piece" alt="p1 game piece" />
@@ -1558,7 +1564,7 @@ export const Board = ({
           </div>
           <div id="14" className="right-space">
             <div className="right-main">
-              <div className="right-section-left purple"></div>
+              <div className="right-section-left purple">{showHouses(13)}</div>
               <div className="main-section-right">
                 {counterP1 === 14 ? (
                   <img src={p1Image} className="piece" alt="p1 game piece" />
@@ -1581,7 +1587,7 @@ export const Board = ({
           </div>
           <div id="15" className="right-space">
             <div className="right-main">
-              <div className="right-section-left purple"></div>
+              <div className="right-section-left purple">{showHouses(14)}</div>
               <div className="main-section-right">
                 {counterP1 === 15 ? (
                   <img src={p1Image} className="piece" alt="p1 game piece" />
@@ -1625,7 +1631,7 @@ export const Board = ({
           </div>
           <div id="17" className="right-space">
             <div className="right-main">
-              <div className="right-section-left orange"></div>
+              <div className="right-section-left orange">{showHouses(15)}</div>
               <div className="main-section-right">
                 {counterP1 === 17 ? (
                   <img src={p1Image} className="piece" alt="p1 game piece" />
@@ -1668,7 +1674,7 @@ export const Board = ({
           </div>
           <div id="19" className="right-space">
             <div className="right-main">
-              <div className="right-section-left orange"></div>
+              <div className="right-section-left orange">{showHouses(16)}</div>
               <div className="main-section-right">
                 {counterP1 === 19 ? (
                   <img src={p1Image} className="piece" alt="p1 game piece" />
@@ -1691,7 +1697,7 @@ export const Board = ({
           </div>
           <div id="20" className="right-space">
             <div className="right-main">
-              <div className="right-section-left orange"></div>
+              <div className="right-section-left orange">{showHouses(17)}</div>
               <div className="main-section-right">
                 {counterP1 === 20 ? (
                   <img src={p1Image} className="piece" alt="p1 game piece" />
