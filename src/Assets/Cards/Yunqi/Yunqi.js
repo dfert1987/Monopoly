@@ -7,6 +7,7 @@ export const Yunqi = [
     amt: 150,
     space: 0,
     image: require("./pics/yunqi-burger.jpeg"),
+    sound: "jaiyou",
   },
   {
     Number: 2,
@@ -17,6 +18,7 @@ export const Yunqi = [
     amt: 400,
     space: 1,
     image: require("./pics/yunqi-national.jpeg"),
+    sound: "anthem",
   },
   {
     Number: 3,
@@ -26,6 +28,7 @@ export const Yunqi = [
     amt: 0,
     space: 40,
     image: require("./pics/yunqi-trb.jpeg"),
+    sound: "hao-chi",
   },
   {
     Number: 4,
@@ -35,6 +38,7 @@ export const Yunqi = [
     amt: 0,
     space: 19,
     image: require("./pics/yunqi-temple.jpeg"),
+    sound: "rock",
   },
   {
     Number: 5,
@@ -45,6 +49,7 @@ export const Yunqi = [
     amt: 0,
     space: 7,
     image: require("./pics/yunqi-lincoln.jpeg"),
+    sound: "laughter",
   },
   {
     Number: 6,
@@ -55,6 +60,7 @@ export const Yunqi = [
     amt: 100,
     space: 0,
     image: require("./pics/yunqi-blackcab.jpeg"),
+    sound: "sad",
   },
   {
     Number: 7,
@@ -65,6 +71,7 @@ export const Yunqi = [
     amt: 0,
     space: 16,
     image: require("./pics/yunqi-line2.jpeg"),
+    sound: "subway",
   },
   {
     Number: 8,
@@ -75,6 +82,7 @@ export const Yunqi = [
     amt: 0,
     space: 0,
     image: require("./pics/yunqi-duzi.jpeg"),
+    sound: "sad",
   },
   {
     Number: 9,
@@ -85,6 +93,7 @@ export const Yunqi = [
     amt: 0,
     space: 41,
     image: require("./pics/yunqi-overstay.png"),
+    sound: "bad",
   },
   {
     Number: 10,
@@ -94,6 +103,7 @@ export const Yunqi = [
     amt: 3,
     space: 0,
     image: require("./pics/yunqi-hangover.jpeg"),
+    sound: "sad",
   },
   {
     Number: 11,
@@ -103,6 +113,7 @@ export const Yunqi = [
     amt: 3,
     space: 0,
     image: require("./pics/yunqi-baijiu.jpeg"),
+    sound: "gambei",
   },
   {
     Number: 12,
@@ -113,6 +124,7 @@ export const Yunqi = [
     amt: 20,
     space: 0,
     image: require("./pics/yunqi-chuanr.jpeg"),
+    sound: "hao-chi",
   },
   {
     Number: 13,
@@ -123,6 +135,7 @@ export const Yunqi = [
     amt: 40,
     space: 0,
     image: require("./pics/yunqi-chinaversary.jpeg"),
+    sound: "happy",
   },
   {
     Number: 14,
@@ -133,6 +146,7 @@ export const Yunqi = [
     amt: 10,
     space: 0,
     image: require("./pics/yunqi-spring.jpeg"),
+    sound: "aya",
   },
   {
     Number: 15,
@@ -143,6 +157,7 @@ export const Yunqi = [
     amt: 0,
     space: 0,
     image: require("./pics/yunqi-marry.jpeg"),
+    sound: "wedding",
   },
   {
     Number: 16,
@@ -153,6 +168,7 @@ export const Yunqi = [
     amt: 0,
     space: 0,
     image: require("./pics/yunqi-traffic.jpeg"),
+    sound: "aya",
   },
   {
     Number: 17,
@@ -162,6 +178,7 @@ export const Yunqi = [
     amt: 50,
     space: 0,
     image: require("./pics/yunqi-yashow.jpeg"),
+    sound: "sad",
   },
   {
     Number: 18,
@@ -171,6 +188,7 @@ export const Yunqi = [
     amt: 0,
     space: 0,
     image: require("./pics/yunqi-business.jpeg"),
+    sound: "money",
   },
   {
     Number: 19,
@@ -181,6 +199,7 @@ export const Yunqi = [
     amt: 50,
     space: 0,
     image: require("./pics/yunqi-bank.jpeg"),
+    sound: "sad",
   },
   {
     Number: 20,
@@ -190,6 +209,7 @@ export const Yunqi = [
     amt: 0,
     space: 35,
     image: require("./pics/beers.jpeg"),
+    sound: "bar-big",
   },
   {
     Number: 21,
@@ -200,6 +220,7 @@ export const Yunqi = [
     amt: 6,
     space: 0,
     image: require("./pics/yunqi-menu.jpeg"),
+    sound: "zhega",
   },
   {
     Number: 22,
@@ -210,6 +231,7 @@ export const Yunqi = [
     amt: null,
     space: null,
     image: require("./pics/yunqi-bricks.jpeg"),
+    sound: "bad",
   },
   {
     Number: 23,
@@ -220,6 +242,7 @@ export const Yunqi = [
     amt: 200,
     space: 11,
     image: require("./pics/yunqi-visarun.jpeg"),
+    sound: "plane",
   },
   {
     Number: 24,
@@ -229,6 +252,7 @@ export const Yunqi = [
     amt: 250,
     space: 0,
     image: require("./pics/yunqi-maggies.jpeg"),
+    sound: "bar-big",
   },
   {
     Number: 25,
@@ -238,6 +262,7 @@ export const Yunqi = [
     amt: null,
     space: 20,
     image: require("./pics/guanxi-dealer.jpeg"),
+    sound: "snort",
   },
   {
     Number: 26,
@@ -248,6 +273,7 @@ export const Yunqi = [
     amt: 150,
     space: null,
     image: require("./pics/yunqi-head-teacher.jpeg"),
+    sound: "triumph",
   },
   {
     Number: 27,
@@ -257,6 +283,7 @@ export const Yunqi = [
     amt: 80,
     space: null,
     image: require("./pics/tutor-pic.png"),
+    sound: "pay",
   },
   {
     Number: 28,
@@ -267,6 +294,7 @@ export const Yunqi = [
     amt: 30,
     space: null,
     image: require("./pics/yunqi-firework.png"),
+    sound: "explosion",
   },
   {
     Number: 29,
@@ -276,6 +304,7 @@ export const Yunqi = [
     amt: null,
     space: 2,
     image: require("./pics/yunqi-lush.png"),
+    sound: "bar-big",
   },
   {
     Number: 30,
@@ -286,6 +315,7 @@ export const Yunqi = [
     amt: 80,
     space: 2,
     image: require("./pics/mahjong.jpeg"),
+    sound: "sad",
   },
   {
     Number: 31,
@@ -295,5 +325,6 @@ export const Yunqi = [
     amt: null,
     space: null,
     image: require("./pics/ktv.jpeg"),
+    sound: "backstreet",
   },
 ];

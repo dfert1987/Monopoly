@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { Guanxi } from "../../../Assets/Cards/Guanxi/Guanxi";
 import { Yunqi } from "../../../Assets/Cards/Yunqi/Yunqi";
+import useSound from "use-sound";
+import Drum from "../../../Assets/Sounds/drum.mp3";
 import "../../Styles/Card.css";
 
 const InnerCard = ({
@@ -76,6 +78,8 @@ const InnerCard = ({
   setRent,
 }) => {
   const [currentCard, setCurrentCard] = useState();
+
+  const [drum] = useSound(Drum);
 
   const cardFunctionSorter = () => {
     if (onCard && !onCard2 && currentCard.Type === "pay") {
@@ -1415,6 +1419,7 @@ const InnerCard = ({
   }, [cardOption, guanxi, setGuanxi, setYunqi, yunqi]);
 
   const close = () => {
+    drum();
     cardFunctionSorter();
   };
 

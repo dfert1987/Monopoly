@@ -4,6 +4,8 @@ import MustModal from "../PayModals/MustModal";
 import { motion, AnimatePresence } from "framer-motion";
 import { Guanxi } from "../../../Assets/Cards/Guanxi/Guanxi";
 import { Yunqi } from "../../../Assets/Cards/Yunqi/Yunqi";
+import useSound from "use-sound";
+import Click from "../../../Assets/Sounds/click.mp3";
 import "../../Styles/Card.css";
 
 export const Cards = ({
@@ -99,6 +101,8 @@ export const Cards = ({
   const [p2MortProps, setP2MortProps] = useState();
   const [p1MortUtils, setP1MortUtils] = useState();
   const [p2MortUtils, setP2MortUtils] = useState();
+
+  const [click] = useSound(Click);
 
   const backdrop = {
     visible: { opacity: 1 },
