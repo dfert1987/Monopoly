@@ -3,6 +3,24 @@ import { Guanxi } from "../../../Assets/Cards/Guanxi/Guanxi";
 import { Yunqi } from "../../../Assets/Cards/Yunqi/Yunqi";
 import useSound from "use-sound";
 import Drum from "../../../Assets/Sounds/drum.mp3";
+import Airplane from "../../Assets/Sounds/airplane.mp3";
+import Alert from "../../Assets/Sounds/alert.mp3";
+import Bar from "../../Assets/Sounds/bar.mp3";
+import Bike from "../../Assets/Sounds/bike.mp3";
+import Burn from "../../Assets/Sounds/burn.mp3";
+import Check from "../../Asset/Sounds/check.mp3";
+import Jude from "../../Assets/Sounds/jude.mp3";
+import KTV from "../../Assets/Sounds/ktv.mp3";
+import Lantern from "../../Assets/Sounds/lantern.mp3";
+import Laugh from "../../Assets/Sounds/laugh.mp3";
+import Lush from "../../Assets/Sounds/lush.mp3";
+import Marry from "../../Assets/Sounds/marry.mp3";
+import Sad from "../../Assets/Sounds/sad.mp3";
+import Temple from "../../Assets/Sounds/temple.mp3";
+import Triumph from "../../Assets/Sounds/triumph.mp3";
+import XinNian from "../../Assets/Sounds/xinnian.mp3";
+import Zhege from "../../Assets/Sounds/zhege.mp3";
+
 import "../../Styles/Card.css";
 
 const InnerCard = ({
