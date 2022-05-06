@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { faXmark } from "@fortawesome/free-solid-svg-icons";
+import useSound from "use-sound";
+import Click from "../../../Assets/Sounds/click.mp3";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import "../../Styles/Visa.css";
 
@@ -20,6 +22,7 @@ const VisaConfirm = ({
   setP1Jail,
   setP2Jail,
 }) => {
+  const [click] = useSound(Click);
   const backdrop = {
     visible: { opacity: 1 },
     hidden: { opacity: 0 },
@@ -69,6 +72,7 @@ const VisaConfirm = ({
 
   const handleClose = () => {
     setPlayer("");
+    click();
     setVisaModal(false);
   };
 

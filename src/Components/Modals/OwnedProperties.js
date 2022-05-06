@@ -69,11 +69,14 @@ const OwnedProperties = ({
   const [click] = useSound(Click);
 
   const buildModal = (color) => {
+    click();
     setHouseModal(true);
     setSelectedGroup(color);
   };
 
   const buildModal2 = (color) => {
+    click();
+
     setHouseModal2(true);
     setSelectedGroup2(color);
   };
@@ -85,6 +88,7 @@ const OwnedProperties = ({
   };
 
   const showRR = (rr) => {
+    click();
     setChosenProp(rr);
     setRRCard(true);
   };
@@ -110,6 +114,7 @@ const OwnedProperties = ({
   };
 
   const showUtil = (util) => {
+    click();
     setChosenProp(util);
     setUtilCard(true);
   };

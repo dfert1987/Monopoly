@@ -1,6 +1,10 @@
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import depressed from "../../../Assets/Misc/depressed.jpeg";
+import useSound from "use-sound";
+import Click from "../../../Assets/Sounds/click.mp3";
+import Triumph from "../../../Assets/Sounds/triumph.mp3";
+import Sad from "../../../Assets/Sounds/sad.mp3";
 import dice1 from "../../../Assets/Dice/dice1.png";
 import dice2 from "../../../Assets/Dice/dice2.png";
 import dice3 from "../../../Assets/Dice/dice3.png";
@@ -31,6 +35,10 @@ const InJail = ({
   const [die2Img, setDie2Img] = useState(dice1);
   const [freedom, setFreedom] = useState(null);
   const [disabledButton, setDisabledButton] = useState(false);
+  const [click] = useSound(Click);
+  const [sad] = useSound(Sad);
+  const [triumph] = useSound(Triumph);
+
   const backdrop = {
     visible: { opacity: 1 },
     hidden: { opacity: 0 },
@@ -56,6 +64,7 @@ const InJail = ({
     setDie1Img(dice1);
     setDie2Img(dice1);
     setTurn(turn + 1);
+    click();
     if (inJail) {
       setInJail(true);
       setInJailModal(false);
@@ -72,6 +81,7 @@ const InJail = ({
     setDie2(1);
     setDie1Img(dice1);
     setDie2Img(dice1);
+    click();
     if (inJail) {
       setCounterP1(11);
       setInJail(false);
@@ -144,14 +154,18 @@ const InJail = ({
     if (first === second) {
       setFreedom("Free");
       setDisabledButton("Free");
+      triumph();
     } else if (first + second === 7) {
       setFreedom("Free");
       setDisabledButton(true);
+      triumph();
     } else if (first + second === 11) {
       setFreedom("Free");
       setDisabledButton(true);
+      triumph();
     } else setFreedom("Stuck");
     setDisabledButton(true);
+    sad();
   };
 
   return (

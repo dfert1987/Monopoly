@@ -2,6 +2,10 @@ import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { faXmark } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import useSound from "use-sound";
+import Click from "../../../Assets/Sounds/click.mp3";
+import Drum from "../../../Assets/Sounds/drum.mp3";
+import Alert from "../../../Assets/Sounds/alert.mp3";
 import visaPlace from "../../../Assets/Misc/visaplace.jpeg";
 import "../../Styles/FreeParking.css";
 
@@ -21,6 +25,9 @@ const Visa = ({
   const [disabledLeft, setDisabledLeft] = useState(false);
   const [notEnough, setNotEnough] = useState(false);
   const [poorMessage, setPoorMessage] = useState(false);
+  const [click] = useSound(Click);
+  const [alert] = useSound(Alert);
+  const [drum] = useSound(Drum);
   const backdrop = {
     visible: { opacity: 1 },
     hidden: { opacity: 0 },
@@ -41,25 +48,29 @@ const Visa = ({
   const pay200 = () => {
     if (onVisa && !onVisa2) {
       let newFP = freeParking + 200;
-      setFreeParking(newFP);
       if (p1Money < 200) {
         setDisabledLeft(true);
         setNotEnough(true);
+        alert();
       } else if (p1Money > 200) {
         let newMoney = p1Money - 200;
         setP1Money(newMoney);
         handleClose();
+        drum();
+        setFreeParking(newFP);
       }
     } else if (onVisa2 && !onVisa) {
       let newFP = freeParking + 200;
-      setFreeParking(newFP);
       if (p2Money < 200) {
         setDisabledLeft(true);
         setNotEnough(true);
+        alert();
       } else if (p2Money > 200) {
         let newMoney = p2Money - 200;
         setP2Money(newMoney);
         handleClose();
+        setFreeParking(newFP);
+        drum();
       }
     }
     return null;
@@ -73,9 +84,11 @@ const Visa = ({
       let newFP = freeParking + fee;
       setFreeParking(newFP);
       setP1Money(newMoney);
+      drum();
       handleClose();
     } else if (onVisa && !onVisa2 && p1Money < 10) {
       setPoorMessage(true);
+      click();
       setTimeout(() => {
         handleClose();
       }, 2000);
@@ -86,8 +99,10 @@ const Visa = ({
       setFreeParking(newFP);
       setP1Money(newMoney);
       handleClose();
+      drum();
     } else if (onVisa2 && !onVisa && p2Money < 10) {
       setPoorMessage(true);
+      click();
       setTimeout(() => {
         handleClose();
       }, 2000);
