@@ -54,8 +54,7 @@ const PropertyModal = ({
     }
   };
 
-  const handleClose = (e) => {
-    e.preventDefault();
+  const handleClose = () => {
     setClose(true);
     setPropertyModal1(false);
     setPropertyModal2(false);

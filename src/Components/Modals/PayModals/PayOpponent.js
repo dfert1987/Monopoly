@@ -6,6 +6,7 @@ import smallPay from "../../../Assets/Misc/smallpay.jpeg";
 import bigPay from "../../../Assets/Misc/bigPay.jpeg";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import "../../Styles/PayOpponentModal.css";
+import { inferTo } from "react-spring";
 
 export const PayOpponent = ({
   payProp,
@@ -90,7 +91,7 @@ export const PayOpponent = ({
     let p1UtilsToMort = utilities.filter(
       (util) => util.ownedP1 && util.mortgaged === false
     );
-    setP1MortUtils(p1UtilsToMort);
+    setP1MortRailRoads(p1UtilsToMort);
 
     let mortMoneyArrayProps = p1PropsToMort.map((property) => {
       return property.mortgage;

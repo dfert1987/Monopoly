@@ -6,6 +6,7 @@ import Drum from "../../../Assets/Sounds/drum.mp3";
 import Airplane from "../../../Assets/Sounds/airplane.mp3";
 import Alert from "../../../Assets/Sounds/alert.mp3";
 import Bar from "../../../Assets/Sounds/bar.mp3";
+import Bell from "../../../Assets/Sounds/bell.mp3";
 import Bike from "../../../Assets/Sounds/bike.mp3";
 import Burn from "../../../Assets/Sounds/burn.mp3";
 import Check from "../../../Assets/Sounds/check.mp3";
@@ -15,7 +16,10 @@ import Lantern from "../../../Assets/Sounds/lantern.mp3";
 import Laugh from "../../../Assets/Sounds/laugh.mp3";
 import Lush from "../../../Assets/Sounds/lush.mp3";
 import Marry from "../../../Assets/Sounds/marry.mp3";
+import Money from "../../../Assets/Sounds/money.mp3";
+import Police from "../../../Assets/Sounds/police.mp3";
 import Sad from "../../../Assets/Sounds/sad.mp3";
+import Snorting from "../../../Assets/Sounds/snort.mp3";
 import Temple from "../../../Assets/Sounds/temple.mp3";
 import Triumph from "../../../Assets/Sounds/triumph.mp3";
 import XinNian from "../../../Assets/Sounds/xinnian.mp3";
@@ -100,6 +104,7 @@ const InnerCard = ({
   const [airplane] = useSound(Airplane);
   const [alert] = useSound(Alert);
   const [bar] = useSound(Bar);
+  const [bell] = useSound(Bell);
   const [bike] = useSound(Bike);
   const [burn] = useSound(Burn);
   const [check] = useSound(Check);
@@ -109,13 +114,40 @@ const InnerCard = ({
   const [laugh] = useSound(Laugh);
   const [lush] = useSound(Lush);
   const [marry] = useSound(Marry);
+  const [money] = useSound(Money);
+  const [police] = useSound(Police);
   const [sad] = useSound(Sad);
+  const [snorting] = useSound(Snorting);
   const [temple] = useSound(Temple);
   const [triumph] = useSound(Triumph);
   const [xinNian] = useSound(XinNian);
   const [zhege] = useSound(Zhege);
 
   const cardFunctionSorter = () => {
+    if ((onCard || onCard2) && currentCard.sound === "plane") {
+      airplane();
+    }
+    if ((onCard || onCard2) && currentCard.sound === "xin-nian") {
+      xinNian();
+    }
+    if ((onCard || onCard2) && currentCard.sound === "techno") {
+      lantern();
+    }
+    if ((onCard || onCard2) && currentCard.sound === "police") {
+      police();
+    }
+    if ((onCard || onCard2) && currentCard.sound === "bar-small") {
+      bar();
+    }
+    if ((onCard || onCard2) && currentCard.sound === "teach") {
+      bell();
+    }
+    if ((onCard || onCard2) && currentCard.sound === "money") {
+      money();
+    }
+    if ((onCard || onCard2) && currentCard.sound === "snort") {
+      snorting();
+    }
     if (onCard && !onCard2 && currentCard.Type === "pay") {
       let newMoney = p1Money - currentCard.amt;
       if (newMoney < 0 && p1MoneyAvailable > -1 * newMoney) {
