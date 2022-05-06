@@ -3,6 +3,9 @@ import MustModal from "./PayModals/MustModal";
 import { motion, AnimatePresence } from "framer-motion";
 import { faXmark } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import useSound from "use-sound";
+import Click from "../../Assets/Sounds/click.mp3";
+import Alert from "../../Assets/Sounds/alert.mp3";
 import homelink from "../../Assets/Misc/homelink.jpeg";
 import "../Styles/FreeParking.css";
 
@@ -53,6 +56,9 @@ const AgentFee = ({
       transition: { delay: 0.5 },
     },
   };
+
+  const [click] = useSound(Click);
+  const [alert] = useSound(Alert);
 
   useEffect(() => {
     let p1PropsToMort = properties.filter(
@@ -155,6 +161,7 @@ const AgentFee = ({
     if (setOnAgentFee && p1Money > 75) {
       let newMoney = p1Money - 75;
       setP1Money(newMoney);
+      click();
       setOnAgentFee(false);
       setOnAgentFee2(false);
       setFreeParking(newFP);
@@ -162,12 +169,15 @@ const AgentFee = ({
       let newMoney = p2Money - 75;
       setP2Money(newMoney);
       setOnAgentFee(false);
+      click();
       setOnAgentFee2(false);
       setFreeParking(newFP);
     } else if (setOnAgentFee && p1Money < 75) {
       setMustMortgage(true);
+      alert();
     } else if (setOnAgentFee2 && p2Money < 75) {
       setMustMortgage2(true);
+      alert();
     }
     return null;
   };

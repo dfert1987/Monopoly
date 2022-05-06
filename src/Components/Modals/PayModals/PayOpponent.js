@@ -2,11 +2,12 @@ import React, { useState, useEffect } from "react";
 import MustModal from "./MustModal";
 import { motion, AnimatePresence } from "framer-motion";
 import { faXmark } from "@fortawesome/free-solid-svg-icons";
+import useSound from "use-sound";
+import Click from "../../../Assets/Sounds/click.mp3";
 import smallPay from "../../../Assets/Misc/smallpay.jpeg";
 import bigPay from "../../../Assets/Misc/bigPay.jpeg";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import "../../Styles/PayOpponentModal.css";
-import { inferTo } from "react-spring";
 
 export const PayOpponent = ({
   payProp,
@@ -43,6 +44,7 @@ export const PayOpponent = ({
   const [p2MortUtils, setP2MortUtils] = useState();
   const [p1MortRailRoads, setP1MortRailRoads] = useState();
   const [p2MortRailRoads, setP2MortRailRoads] = useState();
+  const [click] = useSound(Click);
 
   const backdrop = {
     visible: { opacity: 1 },
@@ -66,6 +68,7 @@ export const PayOpponent = ({
     setPayTo();
     setRent();
     setOnProp();
+    click();
     setOnProp2();
     setDoubleProp(false);
   };

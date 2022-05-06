@@ -3,6 +3,8 @@ import { motion, AnimatePresence } from "framer-motion";
 import { faXmark } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useWindowSize } from "@react-hook/window-size";
+import useSound from "use-sound";
+import Click from "../../Assets/Sounds/click.mp3";
 import Confetti from "react-confetti";
 import manInMoney from "../../Assets/Misc/manInMoney.jpeg";
 import "../Styles/FreeParking.css";
@@ -20,6 +22,7 @@ const FreeParking = ({
   p2Money,
 }) => {
   const [width, height] = useWindowSize();
+  const [click] = useSound(Click);
 
   const backdrop = {
     visible: { opacity: 1 },
@@ -44,6 +47,7 @@ const FreeParking = ({
       let newMoney = p1Money + freeParking;
       setP1Money(newMoney);
       setOnFreeParking(false);
+      click();
       setOnFreeParking2(false);
       setFreeParking(500);
     } else if (setOnFreeParking2) {
@@ -51,6 +55,7 @@ const FreeParking = ({
       setP2Money(newMoney);
       setOnFreeParking(false);
       setOnFreeParking2(false);
+      click();
       setFreeParking(500);
     }
     return null;
