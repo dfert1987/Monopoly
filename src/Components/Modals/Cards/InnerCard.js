@@ -244,6 +244,9 @@ const InnerCard = ({
     if ((onCard || onCard2) && currentCard.sound === "backstreet") {
       ktv();
     }
+    if ((onCard || onCard2) && currentCard.sound === "lush") {
+      lush();
+    }
     if (onCard && !onCard2 && currentCard.Type === "pay") {
       let newMoney = p1Money - currentCard.amt;
       if (newMoney < 0 && p1MoneyAvailable > -1 * newMoney) {

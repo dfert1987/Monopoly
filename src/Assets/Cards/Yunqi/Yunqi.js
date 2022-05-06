@@ -252,7 +252,7 @@ export const Yunqi = [
     amt: 250,
     space: 0,
     image: require("./pics/yunqi-maggies.jpeg"),
-    sound: "bar-big",
+    sound: "bar-small",
   },
   {
     Number: 25,
@@ -283,7 +283,7 @@ export const Yunqi = [
     amt: 80,
     space: null,
     image: require("./pics/tutor-pic.png"),
-    sound: "pay",
+    sound: "money",
   },
   {
     Number: 28,
@@ -304,7 +304,7 @@ export const Yunqi = [
     amt: null,
     space: 2,
     image: require("./pics/yunqi-lush.png"),
-    sound: "bar-big",
+    sound: "lush",
   },
   {
     Number: 30,
