@@ -2,6 +2,10 @@ import React, { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { faXmark } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import useSound from "use-sound";
+import Money from "../../../Assets/Sounds/money.mp3";
+import Click from "../../../Assets/Sounds/click.mp3";
+import Alert from "../../../Assets/Sounds/alert.mp3";
 import "../../Styles/PropertyModal.css";
 
 const PropertyModal = ({
@@ -21,6 +25,10 @@ const PropertyModal = ({
 }) => {
   const [close, setClose] = useState(false);
   const [inSufficientFunds, setInsufficientFunds] = useState(false);
+  const [click] = useSound(Click);
+  const [money] = useSound(Money);
+  const [alert] = useSound(Alert);
+
   const backdrop = {
     visible: { opacity: 1 },
     hidden: { opacity: 0 },
@@ -52,6 +60,11 @@ const PropertyModal = ({
     } else if (inSufficientFunds) {
       return "inactive-buy-button";
     }
+  };
+
+  const justClose = () => {
+    handleClose();
+    click();
   };
 
   const handleClose = () => {
@@ -136,10 +149,12 @@ const PropertyModal = ({
           setP1Money(p1Money - obj.Price);
           setViewPurchase(true);
           setMonop();
+          money();
           return properties;
         } else if (obj.Price > p1Money) {
           setInsufficientFunds(true);
           handleClose();
+          alert();
         }
         return null;
       });
@@ -323,7 +338,7 @@ const PropertyModal = ({
               >
                 PURCHASE
               </button>
-              <button className="pass-button" onClick={handleClose}>
+              <button className="pass-button" onClick={justClose}>
                 PASS
               </button>
             </div>
