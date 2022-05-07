@@ -3,6 +3,8 @@ import MustModal from "./MustModal";
 import { motion, AnimatePresence } from "framer-motion";
 import { faXmark } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import useSound from "use-sound";
+import Click from "../../../Assets/Sounds/click.mp3";
 import subwaypic1 from "../../../Assets/Misc/subwaypic1.jpeg";
 import subwayPictwo from "../../../Assets/Misc/subwayPictwo.jpeg";
 import "../../Styles/PayOpponentModal.css";
@@ -28,6 +30,8 @@ export const PayOpponentRail = ({
   setP2Money,
   setDoubleRR,
   doubleRR,
+  endGame,
+  setEndGame,
 }) => {
   const [fare, setFare] = useState();
   const [p1MoneyAvailable, setP1MoneyAvailable] = useState();
@@ -42,6 +46,7 @@ export const PayOpponentRail = ({
   const [p2MortProps, setP2MortProps] = useState();
   const [p1MortUtils, setP1MortUtils] = useState();
   const [p2MortUtils, setP2MortUtils] = useState();
+  const [click] = useSound(Click);
 
   const backdrop = {
     visible: { opacity: 1 },
@@ -63,6 +68,7 @@ export const PayOpponentRail = ({
   const handleClose = (e) => {
     e.preventDefault();
     setPayRail(false);
+    click();
     setPayRailTo();
     setOnRR2();
     setOnRR();
@@ -205,6 +211,7 @@ export const PayOpponentRail = ({
           let newP1 = p1Money + p2Money;
           setP1Money(newP1);
           setGameOver2(true);
+          setEndGame(true);
         } else {
           setP1Money(p1New);
           setP2Money(p2New);
@@ -220,6 +227,7 @@ export const PayOpponentRail = ({
           let newP1 = p1Money + p2Money;
           setP1Money(newP1);
           setGameOver2(true);
+          setEndGame(true);
         } else {
           setP1Money(p1New);
           setP2Money(p2New);
@@ -235,6 +243,7 @@ export const PayOpponentRail = ({
           let newP1 = p1Money + p2Money;
           setP1Money(newP1);
           setGameOver2(true);
+          setEndGame(true);
         } else {
           setP1Money(p1New);
           setP2Money(p2New);
@@ -250,6 +259,7 @@ export const PayOpponentRail = ({
           let newP1 = p1Money + p2Money;
           setP1Money(newP1);
           setGameOver2(true);
+          setEndGame(true);
         } else {
           setP1Money(p1New);
           setP2Money(p2New);
@@ -266,6 +276,7 @@ export const PayOpponentRail = ({
           let newP1 = p1Money + p2Money;
           setP1Money(newP1);
           setGameOver2(true);
+          setEndGame(true);
         } else {
           setP1Money(p1New);
           setP2Money(p2New);
@@ -282,6 +293,7 @@ export const PayOpponentRail = ({
           let newP1 = p1Money + p2Money;
           setP1Money(newP1);
           setGameOver2(true);
+          setEndGame(true);
         } else {
           setP1Money(p1New);
           setP2Money(p2New);
@@ -299,6 +311,7 @@ export const PayOpponentRail = ({
           let newP1 = p1Money + p2Money;
           setP1Money(newP1);
           setGameOver2(true);
+          setEndGame(true);
         } else {
           setP1Money(p1New);
           setP2Money(p2New);
@@ -315,6 +328,7 @@ export const PayOpponentRail = ({
           let newP1 = p1Money + p2Money;
           setP1Money(newP1);
           setGameOver2(true);
+          setEndGame(true);
         } else {
           setP1Money(p1New);
           setP2Money(p2New);
@@ -335,6 +349,7 @@ export const PayOpponentRail = ({
           let newP2 = p1Money + p2Money;
           setP2Money(newP2);
           setGameOver(true);
+          setEndGame(true);
         } else {
           setP1Money(p1New);
           setP2Money(p2New);
@@ -350,6 +365,7 @@ export const PayOpponentRail = ({
           let newP2 = p1Money + p2Money;
           setP2Money(newP2);
           setGameOver(true);
+          setEndGame(true);
         } else {
           setP1Money(p1New);
           setP2Money(p2New);
@@ -365,6 +381,7 @@ export const PayOpponentRail = ({
           let newP2 = p1Money + p2Money;
           setP2Money(newP2);
           setGameOver(true);
+          setEndGame(true);
         } else {
           setP1Money(p1New);
           setP2Money(p2New);
@@ -380,6 +397,7 @@ export const PayOpponentRail = ({
           let newP2 = p1Money + p2Money;
           setP2Money(newP2);
           setGameOver(true);
+          setEndGame(true);
         } else {
           setP1Money(p1New);
           setP2Money(p2New);
@@ -396,6 +414,7 @@ export const PayOpponentRail = ({
           let newP2 = p1Money + p2Money;
           setP2Money(newP2);
           setGameOver(true);
+          setEndGame(true);
         } else {
           setP1Money(p1New);
           setP2Money(p2New);
@@ -412,6 +431,7 @@ export const PayOpponentRail = ({
           let newP2 = p1Money + p2Money;
           setP2Money(newP2);
           setGameOver(true);
+          setEndGame(true);
         } else {
           setP1Money(p1New);
           setP2Money(p2New);
@@ -428,6 +448,7 @@ export const PayOpponentRail = ({
           let newP2 = p1Money + p2Money;
           setP2Money(newP2);
           setGameOver(true);
+          setEndGame(true);
         } else {
           setP1Money(p1New);
           setP2Money(p2New);
@@ -444,6 +465,7 @@ export const PayOpponentRail = ({
           let newP2 = p1Money + p2Money;
           setP2Money(newP2);
           setGameOver(true);
+          setEndGame(true);
         } else {
           setP1Money(p1New);
           setP2Money(p2New);
@@ -550,6 +572,8 @@ export const PayOpponentRail = ({
         p2MortUtils={p2MortUtils}
         setP1MortUtils={setP1MortUtils}
         setP2MortUtils={setP2MortUtils}
+        setQuit={setEndGame}
+        quit={endGame}
       />
     </>
   );
