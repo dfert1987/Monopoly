@@ -6,7 +6,6 @@ import useSound from "use-sound";
 import Click from "../../../Assets/Sounds/click.mp3";
 import ditielogo from "../../../Assets/PropertyImages/ditielogo.png";
 import "../../Styles/RailRoadModal.css";
-import { click } from "@testing-library/user-event/dist/click";
 
 const RRCard = ({
   setRRCard,
@@ -16,8 +15,8 @@ const RRCard = ({
   railRoads,
 }) => {
   const [close, setClose] = useState(false);
-
   const [click] = useSound(Click);
+
   const backdrop = {
     visible: { opacity: 1 },
     hidden: { opacity: 0 },
