@@ -13,9 +13,7 @@ export const MustModal = ({
   setMustMortgage,
   setMustMortgage2,
   mustMortgage2,
-  gameOver,
   setGameOver,
-  gameOver2,
   setGameOver2,
   properties,
   setProperties,
@@ -33,6 +31,8 @@ export const MustModal = ({
   p2MortRailRoads,
   p1MortUtils,
   p2MortUtils,
+  quit,
+  setQuit,
 }) => {
   const [enoughMoney, setEnoughMoney] = useState(false);
   const [neededAmt, setNeededAmt] = useState();
@@ -242,11 +242,7 @@ export const MustModal = ({
 
   const endGame = () => {
     gong();
-    if (mustMortgage) {
-      setGameOver(true);
-    } else if (mustMortgage2) {
-      setGameOver2(true);
-    }
+    setQuit(true);
   };
 
   return (
