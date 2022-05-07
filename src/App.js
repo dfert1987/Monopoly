@@ -81,6 +81,7 @@ const App = () => {
   const [mortgage2, setMortgage2] = useState(false);
   const [unMortgage, setUnMortgage] = useState(false);
   const [unMortgage2, setUnMortgage2] = useState(false);
+  const [endGame, setEndGame] = useState(false);
 
   const location = useLocation();
   const data = location.state;
@@ -233,6 +234,8 @@ const App = () => {
         setUnMortgage={setUnMortgage}
         unMortgage2={unMortgage2}
         setUnMortgage2={setUnMortgage2}
+        endGame={endGame}
+        setEndGame={setEndGame}
       />
       <Controls
         counterP1={counterP1}

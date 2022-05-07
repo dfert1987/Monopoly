@@ -13,6 +13,7 @@ import VisaConfirm from "./Modals/Jail/VisaConfirm";
 import Jail from "./Modals/Jail/Jail";
 import Cards from "./Modals/Cards/Cards";
 import InJail from "./Modals/Jail/InJail";
+import EndGame from "./Modals/EndGame";
 import OwnedProperties from "./Modals/OwnedProperties";
 import MortgageModal from "./Modals/Mortgage/MortgageModal";
 import UnMortgageModal from "./Modals/UnMortgage/UnMortgageModal";
@@ -48,7 +49,6 @@ import fuYuanCard from "../Assets/Cards/Yunqi/fuyuancards.png";
 import apartment from "../Assets/Misc/apartment.png";
 import hutong from "../Assets/Misc/hutong.png";
 import "./Styles/Board.css";
-import { faL } from "@fortawesome/free-solid-svg-icons";
 
 export const Board = ({
   counterP1,
@@ -181,6 +181,8 @@ export const Board = ({
   setUnMortgage,
   unMortgage2,
   setUnMortgage2,
+  endGame,
+  setEndGame,
 }) => {
   const [viewPurchase, setViewPurchase] = useState(false);
   const [viewPurchase2, setViewPurchase2] = useState(false);
@@ -2360,7 +2362,7 @@ export const Board = ({
         <div className="right-spaces">
           <div id="12" className="right-space">
             <div className="right-main">
-              <div className="right-section-left purple">{showHouses(12)}</div>
+              <div className="right-section-left purple">{showHouses(16)}</div>
               <div className="main-section-right">
                 {counterP1 === 12 ? (
                   <img src={p1Image} className="piece" alt="p1 game piece" />
@@ -2400,7 +2402,7 @@ export const Board = ({
           </div>
           <div id="14" className="right-space">
             <div className="right-main">
-              <div className="right-section-left purple">{showHouses(13)}</div>
+              <div className="right-section-left purple">{showHouses(15)}</div>
               <div className="main-section-right">
                 {counterP1 === 14 ? (
                   <img src={p1Image} className="piece" alt="p1 game piece" />
@@ -2467,7 +2469,7 @@ export const Board = ({
           </div>
           <div id="17" className="right-space">
             <div className="right-main">
-              <div className="right-section-left orange">{showHouses(15)}</div>
+              <div className="right-section-left orange">{showHouses(13)}</div>
               <div className="main-section-right">
                 {counterP1 === 17 ? (
                   <img src={p1Image} className="piece" alt="p1 game piece" />
@@ -2510,7 +2512,7 @@ export const Board = ({
           </div>
           <div id="19" className="right-space">
             <div className="right-main">
-              <div className="right-section-left orange">{showHouses(16)}</div>
+              <div className="right-section-left orange">{showHouses(12)}</div>
               <div className="main-section-right">
                 {counterP1 === 19 ? (
                   <img src={p1Image} className="piece" alt="p1 game piece" />
@@ -2613,6 +2615,8 @@ export const Board = ({
           setUtilities={setUtilities}
           doubleProp={doubleProp}
           setDoubleProp={setDoubleProp}
+          endGame={endGame}
+          setEndGame={setEndGame}
         />
         <PayOpponentRail
           className="pay-opponent"
@@ -2636,6 +2640,8 @@ export const Board = ({
           setRailRailRoads={setRailRoads}
           properties={properties}
           setProperties={setProperties}
+          endGame={endGame}
+          setEndGame={setEndGame}
         />
         <PayOpponentUtil
           className="pay-opponent"
@@ -2657,6 +2663,8 @@ export const Board = ({
           setUtilities={setUtilities}
           setProperties={setProperties}
           setRailRoads={setRailRoads}
+          endGame={endGame}
+          setEndGame={setEndGame}
         />
         <PurchasedPopUp
           className="purchased"
@@ -2771,6 +2779,7 @@ export const Board = ({
           p1Money={p1Money}
           p2Money={p2Money}
         />
+        <EndGame endGame={endGame} setEndGame={setEndGame} />
         <Go
           onGoP1={onGoP1}
           onGoP2={onGoP2}
@@ -2798,6 +2807,8 @@ export const Board = ({
           setProperties={setProperties}
           setUtilities={setUtilities}
           setRailRoads={setRailRoads}
+          endGame={endGame}
+          setEndGame={setEndGame}
         />
         <Visa
           onVisa={onVisa}
@@ -2810,6 +2821,8 @@ export const Board = ({
           setP2Money={setP2Money}
           setFreeParking={setFreeParking}
           freeParking={freeParking}
+          endGame={endGame}
+          setEndGame={setEndGame}
         />
         <Jail
           onGoJail={onGoJail}
@@ -2969,6 +2982,8 @@ export const Board = ({
           setRailRoads={setRailRoads}
           setProperties={setProperties}
           setUtilities={setUtilities}
+          endGame={endGame}
+          setEndGame={setEndGame}
         />
       </div>
     </div>
