@@ -481,7 +481,7 @@ export const PayOpponentRail = ({
       <AnimatePresence exitBeforeEnter>
         {payRail === true &&
         ((onRR && onRR.mortgaged === false) ||
-          (onRR2 && onRR.mortgaged === false)) ? (
+          (onRR2 && onRR2.mortgaged === false)) ? (
           <motion.div
             className="outerModal flex centerFlex"
             variants={backdrop}

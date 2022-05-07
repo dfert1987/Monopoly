@@ -7,6 +7,7 @@ export const Guanxi = [
     amt: 0,
     space: 1,
     image: require("./Pics/guanxi-airport.jpeg"),
+    sound: "plane",
   },
   {
     Number: 2,
@@ -16,6 +17,7 @@ export const Guanxi = [
     amt: 200,
     space: 0,
     image: require("./Pics/guanxi-hongbao.jpeg"),
+    sound: "xin-nian",
   },
   {
     Number: 3,
@@ -26,6 +28,7 @@ export const Guanxi = [
     amt: 0,
     space: 25,
     image: require("./Pics/guanxi-lantern.jpeg"),
+    sound: "techno",
   },
   {
     Number: 4,
@@ -35,6 +38,7 @@ export const Guanxi = [
     amt: 0,
     space: 17,
     image: require("./Pics/guanxi-modernista.jpeg"),
+    sound: "bar-small",
   },
   {
     Number: 5,
@@ -44,6 +48,7 @@ export const Guanxi = [
     amt: 0,
     space: 41,
     image: require("./Pics/guanxi-drug.jpeg"),
+    sound: "police",
   },
   {
     Number: 6,
@@ -54,6 +59,7 @@ export const Guanxi = [
     amt: 150,
     space: 0,
     image: require("./Pics/guanxi-tutor.jpeg"),
+    sound: "teach",
   },
   {
     Number: 7,
@@ -64,6 +70,7 @@ export const Guanxi = [
     amt: 25,
     space: 0,
     image: require("./Pics/guanxi-Jumble.jpeg"),
+    sound: "money",
   },
 
   {
@@ -75,6 +82,7 @@ export const Guanxi = [
     amt: 500,
     space: 0,
     image: require("./Pics/guanxi-dealer.jpeg"),
+    sound: "snort",
   },
   {
     Number: 10,
@@ -85,6 +93,7 @@ export const Guanxi = [
     amt: 0,
     space: 0,
     image: require("./Pics/guanxi-nanluo.jpeg"),
+    sound: "crowd",
   },
   {
     Number: 11,
@@ -94,6 +103,7 @@ export const Guanxi = [
     amt: 4,
     space: 0,
     image: require("./Pics/guanxi-aqi.jpeg"),
+    sound: "cough",
   },
   {
     Number: 13,
@@ -103,6 +113,7 @@ export const Guanxi = [
     amt: 0,
     space: 30,
     image: require("./Pics/guanxi-duck.jpeg"),
+    sound: "hao-chi",
   },
 
   {
@@ -114,15 +125,18 @@ export const Guanxi = [
     amt: 0,
     space: 0,
     image: require("./Pics/guanxi-cdlp.jpeg"),
+    sound: "bar-small",
   },
   {
     Number: 16,
     Text: "Fake alcohol at Smugglers!",
-    Instruction: "Go back 5 spaces. And use better judgement next time.",
+    Instruction:
+      "Go back 5 spaces. And use better judgement next time you're on dirty bar street.",
     Type: "back",
     amt: 5,
     space: 0,
     image: require("./Pics/guanxi-fake-alcohol.jpeg"),
+    sound: "sick",
   },
 
   {
@@ -134,6 +148,7 @@ export const Guanxi = [
     amt: 0,
     space: 0,
     image: require("./Pics/guanxi-landlord.jpeg"),
+    sound: "sad",
   },
   {
     Number: 19,
@@ -144,6 +159,7 @@ export const Guanxi = [
     amt: 0,
     space: 0,
     image: require("./Pics/guanxi-visa.jpeg"),
+    sound: "jaiyou",
   },
   {
     Number: 20,
@@ -154,6 +170,7 @@ export const Guanxi = [
     amt: 200,
     space: 0,
     image: require("./Pics/guanxi-hsk.png"),
+    sound: "jaiyou",
   },
   {
     Number: 17,
@@ -163,6 +180,7 @@ export const Guanxi = [
     amt: 100,
     space: 0,
     image: require("./Pics/guanxi-qinming.jpeg"),
+    sound: "burn",
   },
   {
     Number: 14,
@@ -172,6 +190,7 @@ export const Guanxi = [
     amt: 200,
     space: 0,
     image: require("./Pics/guanxi-scooter.jpeg"),
+    sound: "crash",
   },
   {
     Number: 12,
@@ -182,6 +201,7 @@ export const Guanxi = [
     amt: 40,
     space: 0,
     image: require("./Pics/guanxi-teach.jpeg"),
+    sound: "teach",
   },
   {
     Number: 8,
@@ -192,6 +212,7 @@ export const Guanxi = [
     amt: null,
     space: 0,
     image: require("./Pics/guanxi-moving.jpeg"),
+    sound: "sad",
   },
   {
     Number: 22,
@@ -202,6 +223,7 @@ export const Guanxi = [
     amt: 10,
     space: 0,
     image: require("./Pics/guanxi-soda.jpeg"),
+    sound: "bar-small",
   },
   {
     Number: 23,
@@ -211,6 +233,7 @@ export const Guanxi = [
     amt: 4,
     space: 0,
     image: require("./Pics/guanxi-mobike.jpeg"),
+    sound: "bike-bell",
   },
   {
     Number: 24,
@@ -221,6 +244,7 @@ export const Guanxi = [
     amt: 100,
     space: 0,
     image: require("./Pics/guanxi-beatles.jpeg"),
+    sound: "hey-jude",
   },
   {
     Number: 25,
@@ -231,6 +255,7 @@ export const Guanxi = [
     amt: 150,
     space: 0,
     image: require("./Pics/guanxi-gongti.jpeg"),
+    sound: "bottle-pop",
   },
   {
     Number: 26,
@@ -240,6 +265,7 @@ export const Guanxi = [
     amt: 15,
     space: 0,
     image: require("./Pics/poopmoney.jpeg"),
+    sound: "sad",
   },
   {
     Number: 27,
@@ -250,6 +276,7 @@ export const Guanxi = [
     amt: 25,
     space: 0,
     image: require("./Pics/guanxi-beijinger.jpeg"),
+    sound: "triumph",
   },
   {
     Number: 28,
@@ -259,6 +286,7 @@ export const Guanxi = [
     amt: 100,
     space: 0,
     image: require("./Pics/guanxi-wechat.jpeg"),
+    sound: "triumph",
   },
   {
     Number: 29,
@@ -269,6 +297,7 @@ export const Guanxi = [
     amt: null,
     space: 38,
     image: require("./Pics/guanxi-migas.jpeg"),
+    sound: "disco",
   },
   {
     Number: 30,
@@ -278,6 +307,7 @@ export const Guanxi = [
     amt: 50,
     space: 0,
     image: require("./Pics/bill.jpeg"),
+    sound: "bill-fight",
   },
   {
     Number: 31,
@@ -288,5 +318,6 @@ export const Guanxi = [
     amt: 40,
     space: 0,
     image: require("./Pics/damn.jpeg"),
+    sound: "sad",
   },
 ];

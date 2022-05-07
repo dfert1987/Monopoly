@@ -2,6 +2,8 @@ import React from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { faXmark } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import useSound from "use-sound";
+import Drum from "../../../Assets/Sounds/drum.mp3";
 import deported from "../../../Assets/Misc/deported.jpeg";
 import "../../Styles/Jail.css";
 
@@ -13,6 +15,7 @@ const Jail = ({
   setInJail,
   setInJail2,
 }) => {
+  const [drum] = useSound(Drum);
   const backdrop = {
     visible: { opacity: 1 },
     hidden: { opacity: 0 },
@@ -35,6 +38,7 @@ const Jail = ({
     goToJail();
     setOnGoJail(false);
     setOnGoJail2(false);
+    drum();
   };
 
   const goToJail = () => {

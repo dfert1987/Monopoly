@@ -2,8 +2,11 @@ import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { faXmark } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import useSound from "use-sound";
+import Click from "../../../Assets/Sounds/click.mp3";
 import ditielogo from "../../../Assets/PropertyImages/ditielogo.png";
 import "../../Styles/RailRoadModal.css";
+import { click } from "@testing-library/user-event/dist/click";
 
 const RRCard = ({
   setRRCard,
@@ -13,6 +16,8 @@ const RRCard = ({
   railRoads,
 }) => {
   const [close, setClose] = useState(false);
+
+  const [click] = useSound(Click);
   const backdrop = {
     visible: { opacity: 1 },
     hidden: { opacity: 0 },
@@ -35,6 +40,7 @@ const RRCard = ({
     setClose(true);
     setRRCard(false);
     setChosenProp();
+    click();
     setClose(false);
   };
 

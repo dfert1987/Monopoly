@@ -1,6 +1,41 @@
 import React, { useState, useEffect } from "react";
 import { Guanxi } from "../../../Assets/Cards/Guanxi/Guanxi";
 import { Yunqi } from "../../../Assets/Cards/Yunqi/Yunqi";
+import useSound from "use-sound";
+import Drum from "../../../Assets/Sounds/drum.mp3";
+import Airplane from "../../../Assets/Sounds/airplane.mp3";
+import Alert from "../../../Assets/Sounds/alert.mp3";
+import Bar from "../../../Assets/Sounds/bar.mp3";
+import Bell from "../../../Assets/Sounds/bell.mp3";
+import Bike from "../../../Assets/Sounds/bike.mp3";
+import Bottle from "../../../Assets/Sounds/bottle.mp3";
+import Burn from "../../../Assets/Sounds/burn.mp3";
+import Check from "../../../Assets/Sounds/check.mp3";
+import Cough from "../../../Assets/Sounds/cough.mp3";
+import Crash from "../../../Assets/Sounds/crash.mp3";
+import Firework from "../../../Assets/Sounds/firework.mp3";
+import Gambei from "../../../Assets/Sounds/gambei.mp3";
+import Haochi from "../../../Assets/Sounds/haochi.mp3";
+import Jiayou from "../../../Assets/Sounds/jiayou.mp3";
+import Jude from "../../../Assets/Sounds/jude.mp3";
+import Ktv from "../../../Assets/Sounds/ktv.mp3";
+import Lantern from "../../../Assets/Sounds/lantern.mp3";
+import Laugh from "../../../Assets/Sounds/laugh.mp3";
+import Lush from "../../../Assets/Sounds/lush.mp3";
+import Marry from "../../../Assets/Sounds/marry.mp3";
+import Migas from "../../../Assets/Sounds/migas.mp3";
+import Money from "../../../Assets/Sounds/money.mp3";
+import National from "../../../Assets/Sounds/national.mp3";
+import Nglx from "../../../Assets/Sounds/nlgx.mp3";
+import Police from "../../../Assets/Sounds/police.mp3";
+import Sad from "../../../Assets/Sounds/sad.mp3";
+import Snorting from "../../../Assets/Sounds/snort.mp3";
+import Subway from "../../../Assets/Sounds/subway.mp3";
+import Temple from "../../../Assets/Sounds/temple.mp3";
+import Triumph from "../../../Assets/Sounds/triumph.mp3";
+import Vomit from "../../../Assets/Sounds/vomit.mp3";
+import XinNian from "../../../Assets/Sounds/xinnian.mp3";
+import Zhege from "../../../Assets/Sounds/zhege.mp3";
 import "../../Styles/Card.css";
 
 const InnerCard = ({
@@ -77,7 +112,141 @@ const InnerCard = ({
 }) => {
   const [currentCard, setCurrentCard] = useState();
 
+  const [drum] = useSound(Drum);
+  const [airplane] = useSound(Airplane);
+  const [alert] = useSound(Alert);
+  const [bar] = useSound(Bar);
+  const [bell] = useSound(Bell);
+  const [bike] = useSound(Bike);
+  const [bottle] = useSound(Bottle);
+  const [burn] = useSound(Burn);
+  const [check] = useSound(Check);
+  const [cough] = useSound(Cough);
+  const [crash] = useSound(Crash);
+  const [firework] = useSound(Firework);
+  const [gambei] = useSound(Gambei);
+  const [haochi] = useSound(Haochi);
+  const [jiayou] = useSound(Jiayou);
+  const [jude] = useSound(Jude);
+  const [ktv] = useSound(Ktv);
+  const [lantern] = useSound(Lantern);
+  const [laugh] = useSound(Laugh);
+  const [lush] = useSound(Lush);
+  const [marry] = useSound(Marry);
+  const [migas] = useSound(Migas);
+  const [money] = useSound(Money);
+  const [national] = useSound(National);
+  const [nglx] = useSound(Nglx);
+  const [police] = useSound(Police);
+  const [sad] = useSound(Sad);
+  const [snorting] = useSound(Snorting);
+  const [subway] = useSound(Subway);
+  const [temple] = useSound(Temple);
+  const [triumph] = useSound(Triumph);
+  const [vomit] = useSound(Vomit);
+  const [xinNian] = useSound(XinNian);
+  const [zhege] = useSound(Zhege);
+
   const cardFunctionSorter = () => {
+    if ((onCard || onCard2) && currentCard.sound === "plane") {
+      airplane();
+    }
+    if ((onCard || onCard2) && currentCard.sound === "xin-nian") {
+      xinNian();
+    }
+    if ((onCard || onCard2) && currentCard.sound === "techno") {
+      lantern();
+    }
+    if ((onCard || onCard2) && currentCard.sound === "police") {
+      police();
+    }
+    if ((onCard || onCard2) && currentCard.sound === "bar-small") {
+      bar();
+    }
+    if ((onCard || onCard2) && currentCard.sound === "teach") {
+      bell();
+    }
+    if ((onCard || onCard2) && currentCard.sound === "money") {
+      money();
+    }
+    if ((onCard || onCard2) && currentCard.sound === "snort") {
+      snorting();
+    }
+    if ((onCard || onCard2) && currentCard.sound === "crowd") {
+      nglx();
+    }
+    if ((onCard || onCard2) && currentCard.sound === "hao-chi") {
+      haochi();
+    }
+    if ((onCard || onCard2) && currentCard.sound === "cough") {
+      cough();
+    }
+    if ((onCard || onCard2) && currentCard.sound === "sick") {
+      vomit();
+    }
+    if ((onCard || onCard2) && currentCard.sound === "sad") {
+      sad();
+    }
+    if ((onCard || onCard2) && currentCard.sound === "triumph") {
+      triumph();
+    }
+    if ((onCard || onCard2) && currentCard.sound === "jiayou") {
+      jiayou();
+    }
+    if ((onCard || onCard2) && currentCard.sound === "burn") {
+      burn();
+    }
+    if ((onCard || onCard2) && currentCard.sound === "crash") {
+      crash();
+    }
+    if ((onCard || onCard2) && currentCard.sound === "bike-bell") {
+      bike();
+    }
+    if ((onCard || onCard2) && currentCard.sound === "hey-jude") {
+      jude();
+    }
+    if ((onCard || onCard2) && currentCard.sound === "bottle-pop") {
+      bottle();
+    }
+    if ((onCard || onCard2) && currentCard.sound === "disco") {
+      migas();
+    }
+    if ((onCard || onCard2) && currentCard.sound === "bill-fight") {
+      check();
+    }
+    if ((onCard || onCard2) && currentCard.sound === "anthem") {
+      national();
+    }
+    if ((onCard || onCard2) && currentCard.sound === "rock") {
+      temple();
+    }
+    if ((onCard || onCard2) && currentCard.sound === "laughter") {
+      laugh();
+    }
+    if ((onCard || onCard2) && currentCard.sound === "subway") {
+      subway();
+    }
+    if ((onCard || onCard2) && currentCard.sound === "alert") {
+      alert();
+    }
+    if ((onCard || onCard2) && currentCard.sound === "gambei") {
+      gambei();
+    }
+    if ((onCard || onCard2) && currentCard.sound === "marry") {
+      marry();
+    }
+    if ((onCard || onCard2) && currentCard.sound === "zhege") {
+      zhege();
+    }
+    if ((onCard || onCard2) && currentCard.sound === "firework") {
+      firework();
+    }
+    if ((onCard || onCard2) && currentCard.sound === "backstreet") {
+      ktv();
+    }
+    if ((onCard || onCard2) && currentCard.sound === "lush") {
+      lush();
+    }
     if (onCard && !onCard2 && currentCard.Type === "pay") {
       let newMoney = p1Money - currentCard.amt;
       if (newMoney < 0 && p1MoneyAvailable > -1 * newMoney) {
@@ -1415,6 +1584,7 @@ const InnerCard = ({
   }, [cardOption, guanxi, setGuanxi, setYunqi, yunqi]);
 
   const close = () => {
+    drum();
     cardFunctionSorter();
   };
 

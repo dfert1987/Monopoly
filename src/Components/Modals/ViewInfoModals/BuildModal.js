@@ -3,6 +3,8 @@ import PropCardAndButton from "./PropCardAndButton";
 import { motion, AnimatePresence } from "framer-motion";
 import { faXmark } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import useSound from "use-sound";
+import Click from "../../../Assets/Sounds/click.mp3";
 import "../../Styles/BuildModal.css";
 
 const BuildModal = ({
@@ -29,11 +31,14 @@ const BuildModal = ({
 }) => {
   const [tooMuch, setTooMuch] = useState(false);
 
+  const [click] = useSound(Click);
+
   const handleClose = (e) => {
     e.preventDefault();
     setHouseModal2(false);
     setHouseModal(false);
     setTooMuch(false);
+    click();
   };
 
   const backdrop = {

@@ -1,6 +1,9 @@
 import React, { useState, useEffect } from "react";
 import hutong from "../../../Assets/Misc/hutong.png";
 import apartment from "../../../Assets/Misc/apartment.png";
+import useSound from "use-sound";
+import Choose from "../../../Assets/Sounds/choose.mp3";
+import Alert from "../../../Assets/Sounds/alert.mp3";
 import "../../Styles/BuildModal.css";
 
 const PropCardAndButton = ({
@@ -29,6 +32,9 @@ const PropCardAndButton = ({
   const [hotel, setHotel] = useState(false);
   const [hotelAlready, setHotelAlready] = useState(false);
 
+  const [choose] = useSound(Choose);
+  const [alert] = useSound(Alert);
+
   useEffect(() => {
     if (card.hasOneHouse === true && card.hasTwoHouses === false) {
       setHouseCount(1);
@@ -54,10 +60,12 @@ const PropCardAndButton = ({
   const buyHutong = (event) => {
     event.preventDefault();
     if (houseModal && card.buidlingCost > p1Money) {
+      alert();
       setTooMuch(true);
       return null;
     } else if (houseCount === 0 && houseModal && card.buidlingCost < p1Money) {
       setHouseCount(1);
+      choose();
       let newHouses = totalHousesP1 + 1;
       setTotalHousesP1(newHouses);
       let newMoney = p1Money - card.buidlingCost;
@@ -71,6 +79,7 @@ const PropCardAndButton = ({
       setProperties(updatedProperties);
     } else if (houseCount === 1 && houseModal && card.buidlingCost < p1Money) {
       setHouseCount(2);
+      choose();
       let newHouses = totalHousesP1 + 1;
       setTotalHousesP1(newHouses);
       let newMoney = p1Money - card.buidlingCost;
@@ -84,6 +93,7 @@ const PropCardAndButton = ({
       setProperties(updatedProperties);
     } else if (houseCount === 2 && houseModal && card.buidlingCost < p1Money) {
       setHouseCount(3);
+      choose();
       let newHouses = totalHousesP1 + 1;
       setTotalHousesP1(newHouses);
       let newMoney = p1Money - card.buidlingCost;
@@ -97,6 +107,7 @@ const PropCardAndButton = ({
       setProperties(updatedProperties);
     } else if (houseCount === 3 && houseModal && card.buidlingCost < p1Money) {
       setHouseCount(4);
+      choose();
       let newHouses = totalHousesP1 + 1;
       setTotalHousesP1(newHouses);
       let newMoney = p1Money - card.buidlingCost;
@@ -115,6 +126,7 @@ const PropCardAndButton = ({
       card.buidlingCost < p1Money
     ) {
       setHotel(true);
+      choose();
       let newHouses = totalHousesP1 - 4;
       let newHotels = hotelsP1 + 1;
       setTotalHousesP1(newHouses);
@@ -139,9 +151,11 @@ const PropCardAndButton = ({
     }
     if (houseModal2 && card.buidlingCost > p2Money) {
       setTooMuch(true);
+      alert();
       return null;
     } else if (houseCount === 0 && houseModal2 && card.buidlingCost < p2Money) {
       setHouseCount(1);
+      choose();
       let newHouses = totalHousesP2 + 1;
       setTotalHousesP2(newHouses);
       let newMoney = p2Money - card.buidlingCost;
@@ -155,6 +169,7 @@ const PropCardAndButton = ({
       setProperties(updatedProperties);
     } else if (houseCount === 1 && houseModal2 && card.buidlingCost < p2Money) {
       setHouseCount(2);
+      choose();
       let newHouses = totalHousesP2 + 1;
       setTotalHousesP2(newHouses);
       let newMoney = p2Money - card.buidlingCost;
@@ -168,6 +183,7 @@ const PropCardAndButton = ({
       setProperties(updatedProperties);
     } else if (houseCount === 2 && houseModal2 && card.buidlingCost < p2Money) {
       setHouseCount(3);
+      choose();
       let newHouses = totalHousesP2 + 1;
       setTotalHousesP2(newHouses);
       let newMoney = p2Money - card.buidlingCost;
@@ -181,6 +197,7 @@ const PropCardAndButton = ({
       setProperties(updatedProperties);
     } else if (houseCount === 3 && houseModal2 && card.buidlingCost < p2Money) {
       setHouseCount(4);
+      choose();
       let newHouses = totalHousesP2 + 1;
       setTotalHousesP2(newHouses);
       let newMoney = p2Money - card.buidlingCost;
@@ -199,6 +216,7 @@ const PropCardAndButton = ({
       card.buidlingCost < p2Money
     ) {
       setHotel(true);
+      choose();
       let newHouses = totalHousesP2 - 4;
       let newHotels = hotelsP2 + 1;
       setTotalHousesP2(newHouses);

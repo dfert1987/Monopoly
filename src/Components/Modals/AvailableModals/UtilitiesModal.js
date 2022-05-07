@@ -2,6 +2,10 @@ import React, { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { faXmark } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import useSound from "use-sound";
+import Money from "../../../Assets/Sounds/money.mp3";
+import Click from "../../../Assets/Sounds/click.mp3";
+import Alert from "../../../Assets/Sounds/alert.mp3";
 import "../../Styles/RailRoadModal.css";
 
 const UtilitiesModal = ({
@@ -21,6 +25,9 @@ const UtilitiesModal = ({
 }) => {
   const [close, setClose] = useState(false);
   const [inSufficientFunds, setInsufficientFunds] = useState(false);
+  const [click] = useSound(Click);
+  const [money] = useSound(Money);
+  const [alert] = useSound(Alert);
   const backdrop = {
     visible: { opacity: 1 },
     hidden: { opacity: 0 },
@@ -35,6 +42,11 @@ const UtilitiesModal = ({
       opacity: 1,
       transition: { delay: 0.5 },
     },
+  };
+
+  const justClose = () => {
+    handleClose();
+    click();
   };
 
   const handleClose = (e) => {
@@ -185,9 +197,11 @@ const UtilitiesModal = ({
           setP1Money(p1Money - obj.Price);
           handleClose(e);
           setViewPurchaseUtil(true);
+          money();
           return utilities;
         } else if (obj.Price > p1Money) {
           setInsufficientFunds(true);
+          alert();
         }
         return null;
       });
@@ -203,10 +217,12 @@ const UtilitiesModal = ({
           obj.ownedP2 = true;
           setP2Money(p2Money - obj.Price);
           handleClose(e);
+          money();
           setViewPurchaseUtil2(true);
           return utilities;
         } else if (obj.Price > p2Money) {
           setInsufficientFunds(true);
+          alert();
         }
         return null;
       });
@@ -250,7 +266,7 @@ const UtilitiesModal = ({
               >
                 PURCHASE
               </button>
-              <button className="pass-button" onClick={handleClose}>
+              <button className="pass-button" onClick={justClose}>
                 PASS
               </button>
             </div>

@@ -3,6 +3,8 @@ import { motion, AnimatePresence } from "framer-motion";
 import yuanSign from "../../../Assets/Misc/yuan.png";
 import { faXmark } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import useSound from "use-sound";
+import Click from "../../../Assets/Sounds/click.mp3";
 import "../../Styles/Purchased.css";
 
 const backdrop = {
@@ -32,13 +34,17 @@ const RRPurchasedPopUp = ({
   setOnRR,
   setOnRR2,
 }) => {
+  const [click] = useSound(Click);
+
   const handleClose = (e) => {
     e.preventDefault();
     setViewPurchaseRR(false);
     setViewPurchaseRR2(false);
     setOnRR();
     setOnRR2();
+    click();
   };
+
   return (
     <>
       <AnimatePresence exitBeforeEnter>

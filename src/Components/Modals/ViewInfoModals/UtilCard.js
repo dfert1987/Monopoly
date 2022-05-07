@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { faXmark } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import useSound from "use-sound";
+import Click from "../../../Assets/Sounds/click.mp3";
 import jug from "../../../Assets/PropertyImages/jug.png";
 import mop from "../../../Assets/PropertyImages/mopAyi.png";
 import "../../Styles/RailRoadModal.css";
@@ -14,6 +16,8 @@ const UtilCard = ({
   utilities,
 }) => {
   const [close, setClose] = useState(false);
+  const [click] = useSound(Click);
+
   const backdrop = {
     visible: { opacity: 1 },
     hidden: { opacity: 0 },
@@ -46,6 +50,7 @@ const UtilCard = ({
     setUtilCard(false);
     setChosenProp();
     setClose(false);
+    click();
   };
 
   const mortgage = () => {

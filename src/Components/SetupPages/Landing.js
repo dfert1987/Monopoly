@@ -5,12 +5,18 @@ import { pageAnimation } from "../../Transitions/Index";
 import logomon from "../../Assets/Landing/logomon.png";
 import monoplaoren from "../../Assets/Landing/monoplaoren.png";
 import Gong from "../../Assets/Sounds/GONG.mp3";
+import Erhu from "../../Assets/Sounds/erhu.mp3";
 import "../Styles/Landing.css";
 import useSound from "use-sound";
 
 const Landing = () => {
   const [playGong] = useSound(Gong);
+  const [erhu] = useSound(Erhu);
 
+  const sounds = () => {
+    playGong();
+    erhu();
+  };
   return (
     <motion.div
       className="landing"
@@ -27,7 +33,7 @@ const Landing = () => {
             </div>
             <div className="button-container">
               <Link to="/choosepieces">
-                <button onClick={playGong} className="play-button">
+                <button onClick={sounds} className="play-button">
                   PLAY
                 </button>
               </Link>

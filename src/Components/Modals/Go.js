@@ -2,6 +2,8 @@ import React from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { faXmark } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import useSound from "use-sound";
+import Click from "../../Assets/Sounds/click.mp3";
 import moneyStack from "../../Assets/Misc/moneystack.jpeg";
 import "../Styles/Go.css";
 
@@ -31,6 +33,7 @@ const Go = ({
       transition: { delay: 0.5 },
     },
   };
+  const [click] = useSound(Click);
 
   const handleClose = (e) => {
     e.preventDefault();
@@ -38,10 +41,12 @@ const Go = ({
       let newMoney = p1Money + 400;
       setP1Money(newMoney);
       setOnGoP1(false);
+      click();
     } else if (onGoP2) {
       let newMoney = p2Money + 400;
       setP2Money(newMoney);
       setOnGoP2(false);
+      click();
     }
   };
 

@@ -2,6 +2,10 @@ import React, { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { faXmark } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import useSound from "use-sound";
+import Money from "../../../Assets/Sounds/money.mp3";
+import Click from "../../../Assets/Sounds/click.mp3";
+import Alert from "../../../Assets/Sounds/alert.mp3";
 import ditielogo from "../../../Assets/PropertyImages/ditielogo.png";
 import "../../Styles/RailRoadModal.css";
 
@@ -22,6 +26,9 @@ const RailRoadModal = ({
 }) => {
   const [close, setClose] = useState(false);
   const [inSufficientFunds, setInsufficientFunds] = useState(false);
+  const [click] = useSound(Click);
+  const [money] = useSound(Money);
+  const [alert] = useSound(Alert);
 
   const backdrop = {
     visible: { opacity: 1 },
@@ -37,6 +44,11 @@ const RailRoadModal = ({
       opacity: 1,
       transition: { delay: 0.5 },
     },
+  };
+
+  const justClose = () => {
+    handleClose();
+    click();
   };
 
   const handleClose = (e) => {
@@ -173,9 +185,11 @@ const RailRoadModal = ({
           setP1Money(p1Money - obj.Price);
           handleClose(e);
           setViewPurchaseRR(true);
+          money();
           return railRoads;
         } else if (obj.Price > p1Money) {
           setInsufficientFunds(true);
+          alert();
         }
         return null;
       });
@@ -186,9 +200,11 @@ const RailRoadModal = ({
           setP2Money(p2Money - obj.Price);
           handleClose(e);
           setViewPurchaseRR2(true);
+          money();
           return railRoads;
         } else if (obj.Price > p2Money) {
           setInsufficientFunds(true);
+          alert();
         }
         return null;
       });
@@ -232,7 +248,7 @@ const RailRoadModal = ({
               >
                 PURCHASE
               </button>
-              <button className="pass-button" onClick={handleClose}>
+              <button className="pass-button" onClick={justClose}>
                 PASS
               </button>
             </div>

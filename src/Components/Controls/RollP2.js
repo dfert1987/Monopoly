@@ -11,6 +11,11 @@ import Nine from "../../Assets/Sounds/Dice/nine.mp3";
 import Ten from "../../Assets/Sounds/Dice/ten.mp3";
 import Eleven from "../../Assets/Sounds/Dice/eleven.mp3";
 import Twelve from "../../Assets/Sounds/Dice/twelve.mp3";
+import Treasure from "../../Assets/Sounds/treasure.mp3";
+import Sad from "../../Assets/Sounds/sad.mp3";
+import Triumph from "../../Assets/Sounds/triumph.mp3";
+import Police from "../../Assets/Sounds/police.mp3";
+import Alert from "../../Assets/Sounds/alert.mp3";
 import dice1 from "../../Assets/Dice/dice1.png";
 import dice2 from "../../Assets/Dice/dice2.png";
 import dice3 from "../../Assets/Dice/dice3.png";
@@ -70,6 +75,11 @@ export const RollP2 = ({
   const [ten] = useSound(Ten);
   const [eleven] = useSound(Eleven);
   const [twelve] = useSound(Twelve);
+  const [treasure] = useSound(Treasure);
+  const [sad] = useSound(Sad);
+  const [triumph] = useSound(Triumph);
+  const [alert] = useSound(Alert);
+  const [police] = useSound(Police);
 
   const dieImages1 = (first, pair) => {
     if (pair === "two") {
@@ -196,12 +206,15 @@ export const RollP2 = ({
     if (currentProp && !currentProp.ownedP1 && !currentProp.ownedP2) {
       setPropertyModal2(true);
       setOnProp2(currentProp);
+      treasure();
     } else if (currentRR && !currentRR.ownedP1 && !currentRR.ownedP2) {
       setRRModal2(true);
       setOnRR2(currentRR);
+      treasure();
     } else if (currentUtil && !currentUtil.ownedP1 && !currentUtil.ownedP2) {
       setUtilModal2(true);
       setOnUtil2(currentUtil);
+      treasure();
     } else if (
       currentProp &&
       !currentProp.ownedP2 &&
@@ -210,6 +223,7 @@ export const RollP2 = ({
     ) {
       setOnProp2(currentProp);
       setPayProp(true);
+      sad();
       setPayTo(1);
     } else if (
       currentRR &&
@@ -220,6 +234,7 @@ export const RollP2 = ({
       setOnRR2(currentRR);
       setPayRail(true);
       setPayRailTo(1);
+      sad();
     } else if (
       currentUtil &&
       !currentUtil.ownedP2 &&
@@ -229,15 +244,20 @@ export const RollP2 = ({
       setOnUtil2(currentUtil);
       setPayUtil(true);
       setPayUtilTo(1);
+      sad();
     } else if (space === 31) {
       setOnFreeParking2(true);
+      triumph();
     } else if (space === 39) {
       setOnAgentFee2(true);
+      alert();
     } else if (space === 5) {
       setOnVisa2(true);
+      alert();
     } else if (space === 21) {
       setOnGoJail2(true);
       setCounterP2(41);
+      police();
       setP2Jail(true);
     } else if (space === 34) {
       setOnCard2(true);
@@ -253,6 +273,7 @@ export const RollP2 = ({
       setOnCard2(true);
     } else if (space === 1) {
       setOnGoP2(true);
+      triumph();
     }
   };
 

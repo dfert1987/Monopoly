@@ -5,6 +5,9 @@ import UtilCard from "../Modals/ViewInfoModals/UtilCard";
 import BuildModal from "../Modals/ViewInfoModals/BuildModal";
 import { motion, AnimatePresence } from "framer-motion";
 import { faXmark } from "@fortawesome/free-solid-svg-icons";
+import useSound from "use-sound";
+import Click from "../../Assets/Sounds/click.mp3";
+import Drum from "../../Assets/Sounds/drum.mp3";
 import ditielogo from "../../Assets/PropertyImages/ditielogo.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import mopAyi from "../../Assets/PropertyImages/mopAyi.png";
@@ -62,33 +65,63 @@ const OwnedProperties = ({
   const [selectedGroup, setSelectedGroup] = useState();
   const [selectedGroup2, setSelectedGroup2] = useState();
 
+  const [drum] = useSound(Drum);
+  const [click] = useSound(Click);
+
   const buildModal = (color) => {
+    click();
     setHouseModal(true);
     setSelectedGroup(color);
   };
 
   const buildModal2 = (color) => {
+    click();
+
     setHouseModal2(true);
     setSelectedGroup2(color);
   };
 
   const showProp = (prop) => {
+    click();
     setChosenProp(prop);
     setPropertyCard(true);
   };
 
   const showRR = (rr) => {
+    click();
     setChosenProp(rr);
     setRRCard(true);
   };
 
+  const determineOutlines1 = () => {
+    if (showOutlines1 === true) {
+      setShowOutlines1(false);
+      drum();
+    } else if (showOutlines1 === false) {
+      setShowOutlines1(true);
+      drum();
+    }
+  };
+
+  const determineOutlines2 = () => {
+    if (showOutlines2 === true) {
+      setShowOutlines2(false);
+      drum();
+    } else if (showOutlines2 === false) {
+      setShowOutlines2(true);
+      drum();
+    }
+  };
+
   const showUtil = (util) => {
+    click();
     setChosenProp(util);
     setUtilCard(true);
   };
 
   const handleClose = (e) => {
     e.preventDefault();
+    click();
     setViewProperties(false);
     setViewProperties2(false);
     setCanBuildP2(false);
@@ -1159,11 +1192,7 @@ const OwnedProperties = ({
                     </div>
                     <button
                       className="buy-houses"
-                      onClick={
-                        !showOutlines1
-                          ? () => setShowOutlines1(true)
-                          : () => setShowOutlines1(false)
-                      }
+                      onClick={determineOutlines1}
                       disabled={!canBuildP1}
                     >
                       {!showOutlines1 ? "Build Houses" : "Cancel Build"}
@@ -1982,11 +2011,7 @@ const OwnedProperties = ({
                     </div>
                     <button
                       className="buy-houses"
-                      onClick={
-                        !showOutlines2
-                          ? () => setShowOutlines2(true)
-                          : () => setShowOutlines2(false)
-                      }
+                      onClick={determineOutlines2}
                       disabled={!canBuildP2}
                     >
                       {!showOutlines2 ? "Build Houses" : "Cancel Build"}
