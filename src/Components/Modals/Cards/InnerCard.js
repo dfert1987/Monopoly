@@ -109,6 +109,7 @@ const InnerCard = ({
   p1MoneyAvailable,
   p2MoneyAvailable,
   setRent,
+  setEndGame,
 }) => {
   const [currentCard, setCurrentCard] = useState();
 
@@ -255,6 +256,7 @@ const InnerCard = ({
       } else if (newMoney < 0 && p1MoneyAvailable < -1 * newMoney) {
         setP1Money(0);
         setGameOver(true);
+        setEndGame(true);
       } else {
         setP1Money(newMoney);
         let newFP = freeParking + currentCard.amt;
@@ -273,6 +275,7 @@ const InnerCard = ({
       } else if (newMoney < 0 && p2MoneyAvailable < -1 * newMoney) {
         setP2Money(0);
         setGameOver2(true);
+        setEndGame(true);
       } else {
         setP2Money(newMoney);
         let newFP = freeParking + currentCard.amt;
@@ -309,6 +312,7 @@ const InnerCard = ({
       } else if (newMoney2 < 0 && p2MoneyAvailable < -1 * newMoney2) {
         setP2Money(0);
         setGameOver2(true);
+        setEndGame(true);
       } else {
         setP1Money(newMoney);
         setP2Money(newMoney2);
@@ -328,6 +332,7 @@ const InnerCard = ({
       } else if (newMoney2 < 0 && p1MoneyAvailable < -1 * newMoney2) {
         setP1Money(0);
         setGameOver(true);
+        setEndGame(true);
       } else {
         setP2Money(newMoney);
         setP1Money(newMoney2);
@@ -1472,6 +1477,7 @@ const InnerCard = ({
       } else if (newMoney < 0 && p1MoneyAvailable < -1 * newMoney) {
         setP1Money(0);
         setGameOver(true);
+        setEndGame(true);
       } else {
         setP1Money(newMoney);
         setFreeParking(newParking);
@@ -1491,6 +1497,7 @@ const InnerCard = ({
       } else if (newMoney < 0 && p2MoneyAvailable < -1 * newMoney) {
         setP2Money(0);
         setGameOver2(true);
+        setEndGame(true);
       } else {
         setP2Money(newMoney);
         setFreeParking(newParking);
@@ -1510,6 +1517,7 @@ const InnerCard = ({
       } else if (newMoney < 0 && p1MoneyAvailable < -1 * newMoney) {
         setP1Money(0);
         setGameOver(true);
+        setEndGame(true);
       } else {
         setFreeParking(newParking);
         setCounterP1(11);
@@ -1529,6 +1537,7 @@ const InnerCard = ({
       } else if (newMoney < 0 && p2MoneyAvailable < -1 * newMoney) {
         setP2Money(0);
         setGameOver2(true);
+        setEndGame(true);
       } else {
         setFreeParking(newParking);
         setCounterP2(11);
