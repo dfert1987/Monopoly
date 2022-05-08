@@ -283,6 +283,9 @@ const AgentFee = ({
         p2MortUtils={p2MortUtils}
         setP1MortUtils={setP1MortUtils}
         setP2MortUtils={setP2MortUtils}
+        setQuit={setEndGame}
+        setOtherModal={setOnAgentFee}
+        setOtherModal2={setOnAgentFee2}
       />
     </>
   );

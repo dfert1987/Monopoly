@@ -153,7 +153,6 @@ const PropertyModal = ({
           return properties;
         } else if (obj.Price > p1Money) {
           setInsufficientFunds(true);
-          handleClose();
           alert();
         }
         return null;
@@ -171,10 +170,11 @@ const PropertyModal = ({
           setP2Money(p2Money - obj.Price);
           setViewPurchase2(true);
           setMonop2();
+          money();
           return properties;
         } else if (obj.Price > p2Money) {
           setInsufficientFunds(true);
-          handleClose();
+          alert();
         }
         return null;
       });

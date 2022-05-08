@@ -212,6 +212,7 @@ export const PayOpponentRail = ({
           setP1Money(newP1);
           setGameOver2(true);
           setEndGame("p2");
+          setOnRR2(false);
         } else {
           setP1Money(p1New);
           setP2Money(p2New);
@@ -228,6 +229,7 @@ export const PayOpponentRail = ({
           setP1Money(newP1);
           setGameOver2(true);
           setEndGame("p2");
+          setOnRR2(false);
         } else {
           setP1Money(p1New);
           setP2Money(p2New);
@@ -244,6 +246,7 @@ export const PayOpponentRail = ({
           setP1Money(newP1);
           setGameOver2(true);
           setEndGame("p2");
+          setOnRR2(false);
         } else {
           setP1Money(p1New);
           setP2Money(p2New);
@@ -260,6 +263,7 @@ export const PayOpponentRail = ({
           setP1Money(newP1);
           setGameOver2(true);
           setEndGame("p2");
+          setOnRR2(false);
         } else {
           setP1Money(p1New);
           setP2Money(p2New);
@@ -277,6 +281,7 @@ export const PayOpponentRail = ({
           setP1Money(newP1);
           setGameOver2(true);
           setEndGame("p2");
+          setOnRR2(false);
         } else {
           setP1Money(p1New);
           setP2Money(p2New);
@@ -294,6 +299,7 @@ export const PayOpponentRail = ({
           setP1Money(newP1);
           setGameOver2(true);
           setEndGame("p2");
+          setOnRR2(false);
         } else {
           setP1Money(p1New);
           setP2Money(p2New);
@@ -312,6 +318,7 @@ export const PayOpponentRail = ({
           setP1Money(newP1);
           setGameOver2(true);
           setEndGame("p2");
+          setOnRR2(false);
         } else {
           setP1Money(p1New);
           setP2Money(p2New);
@@ -329,6 +336,7 @@ export const PayOpponentRail = ({
           setP1Money(newP1);
           setGameOver2(true);
           setEndGame("p2");
+          setOnRR2(false);
         } else {
           setP1Money(p1New);
           setP2Money(p2New);
@@ -350,6 +358,7 @@ export const PayOpponentRail = ({
           setP2Money(newP2);
           setGameOver(true);
           setEndGame("p1");
+          setOnRR(false);
         } else {
           setP1Money(p1New);
           setP2Money(p2New);
@@ -366,6 +375,7 @@ export const PayOpponentRail = ({
           setP2Money(newP2);
           setGameOver(true);
           setEndGame("p1");
+          setOnRR(false);
         } else {
           setP1Money(p1New);
           setP2Money(p2New);
@@ -382,6 +392,7 @@ export const PayOpponentRail = ({
           setP2Money(newP2);
           setGameOver(true);
           setEndGame("p1");
+          setOnRR(false);
         } else {
           setP1Money(p1New);
           setP2Money(p2New);
@@ -398,6 +409,7 @@ export const PayOpponentRail = ({
           setP2Money(newP2);
           setGameOver(true);
           setEndGame("p1");
+          setOnRR(false);
         } else {
           setP1Money(p1New);
           setP2Money(p2New);
@@ -415,6 +427,7 @@ export const PayOpponentRail = ({
           setP2Money(newP2);
           setGameOver(true);
           setEndGame("p1");
+          setOnRR(false);
         } else {
           setP1Money(p1New);
           setP2Money(p2New);
@@ -432,6 +445,7 @@ export const PayOpponentRail = ({
           setP2Money(newP2);
           setGameOver(true);
           setEndGame("p1");
+          setOnRR(false);
         } else {
           setP1Money(p1New);
           setP2Money(p2New);
@@ -449,6 +463,7 @@ export const PayOpponentRail = ({
           setP2Money(newP2);
           setGameOver(true);
           setEndGame("p1");
+          setOnRR(false);
         } else {
           setP1Money(p1New);
           setP2Money(p2New);
@@ -466,6 +481,7 @@ export const PayOpponentRail = ({
           setP2Money(newP2);
           setGameOver(true);
           setEndGame("p1");
+          setOnRR(false);
         } else {
           setP1Money(p1New);
           setP2Money(p2New);
@@ -574,6 +590,8 @@ export const PayOpponentRail = ({
         setP2MortUtils={setP2MortUtils}
         setQuit={setEndGame}
         quit={endGame}
+        setOtherModal={setOnRR}
+        setOtherModal2={setOnRR2}
       />
     </>
   );

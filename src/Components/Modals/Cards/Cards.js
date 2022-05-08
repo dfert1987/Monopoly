@@ -82,6 +82,7 @@ export const Cards = ({
   setUtilities,
   setProperties,
   setRailRoads,
+  setEndGame,
 }) => {
   const [guanxi, setGuanxi] = useState(Guanxi);
   const [yunqi, setYunqi] = useState(Yunqi);
@@ -369,6 +370,7 @@ export const Cards = ({
                   p2MoneyAvailable={p2MoneyAvailable}
                   setP1MoneyAvailable={setP1MoneyAvailable}
                   setP2MoneyAvailable={setP2MoneyAvailable}
+                  setEndGame={setEndGame}
                 />
               </div>
             </motion.div>

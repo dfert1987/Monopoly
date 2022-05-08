@@ -217,6 +217,7 @@ export const PayOpponentUtil = ({
         setP2Money(newP2);
         setGameOver(true);
         setEndGame("p1");
+        setOnUtil(false);
       } else {
         setP1Money(p1New);
         setP2Money(p2New);
@@ -233,6 +234,7 @@ export const PayOpponentUtil = ({
         setP1Money(newP1);
         setGameOver2(true);
         setEndGame("p2");
+        setOnUtil2(false);
       } else {
         setP1Money(p1New);
         setP2Money(p2New);
@@ -453,6 +455,8 @@ export const PayOpponentUtil = ({
         setP2MortUtils={setP2MortUtils}
         quit={endGame}
         setQuit={setEndGame}
+        setOtherModal={setOnUtil}
+        setOtherModal2={setOnUtil2}
       />
     </>
   );

@@ -9,6 +9,11 @@ import Seven from "../../Assets/Sounds/Dice/seven.mp3";
 import Eight from "../../Assets/Sounds/Dice/eight.mp3";
 import Nine from "../../Assets/Sounds/Dice/nine.mp3";
 import Ten from "../../Assets/Sounds/Dice/ten.mp3";
+import Treasure from "../../Assets/Sounds/treasure.mp3";
+import Sad from "../../Assets/Sounds/sad.mp3";
+import Triumph from "../../Assets/Sounds/triumph.mp3";
+import Police from "../../Assets/Sounds/police.mp3";
+import Alert from "../../Assets/Sounds/alert.mp3";
 import Eleven from "../../Assets/Sounds/Dice/eleven.mp3";
 import Twelve from "../../Assets/Sounds/Dice/twelve.mp3";
 import dice1 from "../../Assets/Dice/dice1.png";
@@ -70,6 +75,11 @@ export const Roll = ({
   const [ten] = useSound(Ten);
   const [eleven] = useSound(Eleven);
   const [twelve] = useSound(Twelve);
+  const [treasure] = useSound(Treasure);
+  const [sad] = useSound(Sad);
+  const [triumph] = useSound(Triumph);
+  const [alert] = useSound(Alert);
+  const [police] = useSound(Police);
 
   const rollDice = (e) => {
     e.preventDefault();
@@ -150,11 +160,14 @@ export const Roll = ({
     if (currentProp && !currentProp.ownedP1 && !currentProp.ownedP2) {
       setPropertyModal1(true);
       setOnProp(currentProp);
+      treasure();
     } else if (currentRR && !currentRR.ownedP1 && !currentRR.ownedP2) {
       setRRModal(true);
       setOnRR(currentRR);
+      treasure();
     } else if (currentUtil && !currentUtil.ownedP1 && !currentUtil.ownedP2) {
       setUtilModal(true);
+      treasure();
       setOnUtil(currentUtil);
     } else if (
       currentProp &&
@@ -165,15 +178,18 @@ export const Roll = ({
       setOnProp(currentProp);
       setPayProp(true);
       setPayTo(2);
+      sad();
     } else if (
       currentRR &&
       !currentRR.ownedP1 &&
       currentRR.ownedP2 &&
       currentRR.mortgaged === false
     ) {
+      console.log("fart");
       setOnRR(currentRR);
       setPayRail(true);
       setPayRailTo(2);
+      sad();
     } else if (
       currentUtil &&
       !currentUtil.ownedP1 &&
@@ -183,15 +199,20 @@ export const Roll = ({
       setOnUtil(currentUtil);
       setPayUtil(true);
       setPayUtilTo(2);
+      sad();
     } else if (space === 31) {
       setOnFreeParking(true);
+      triumph();
     } else if (space === 39) {
       setOnAgentFee(true);
+      alert();
     } else if (space === 5) {
       setOnVisa(true);
+      alert();
     } else if (space === 21) {
       setOnGoJail(true);
       setCounterP1(41);
+      police();
       setP1Jail(true);
     } else if (space === 34) {
       setOnCard(true);
@@ -207,6 +228,7 @@ export const Roll = ({
       setOnCard(true);
     } else if (space === 1) {
       setOnGoP1(true);
+      triumph();
     }
   };
 

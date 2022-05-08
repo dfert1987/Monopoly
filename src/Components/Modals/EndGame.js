@@ -22,7 +22,7 @@ export const EndGame = ({ endGame, setEndGame }) => {
   return (
     <>
       <AnimatePresence exitBeforeEnter>
-        {endGame ? (
+        {endGame === "p1" || endGame === "p2" ? (
           <motion.div
             className="outerModal flex centerFlex"
             variants={backdrop}

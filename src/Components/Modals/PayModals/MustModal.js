@@ -29,8 +29,9 @@ export const MustModal = ({
   p2MortRailRoads,
   p1MortUtils,
   p2MortUtils,
-  quit,
   setQuit,
+  setOtherModal,
+  setOtherModal2,
 }) => {
   const [enoughMoney, setEnoughMoney] = useState(false);
   const [neededAmt, setNeededAmt] = useState();
@@ -240,6 +241,10 @@ export const MustModal = ({
 
   const endGame = () => {
     gong();
+    setMustMortgage(false);
+    setMustMortgage2(false);
+    setOtherModal(false);
+    setOtherModal2(false);
     if (mustMortgage) {
       setQuit("p1");
     } else if (mustMortgage2) {
