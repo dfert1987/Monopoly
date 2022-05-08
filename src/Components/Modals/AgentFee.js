@@ -26,7 +26,6 @@ const AgentFee = ({
   setProperties,
   setRailRoads,
   setUtilities,
-  endGame,
   setEndGame,
 }) => {
   const [owed, setOwed] = useState(75);
@@ -195,14 +194,14 @@ const AgentFee = ({
       newMoney1 < 0 &&
       p1MoneyAvailable < -1 * newMoney1
     ) {
-      setEndGame(true);
+      setEndGame("p1");
       setP1Money(0);
     } else if (
       setOnAgentFee2 &&
       newMoney2 < 0 &&
       p2MoneyAvailable < -1 * newMoney2
     ) {
-      setEndGame(true);
+      setEndGame("p2");
       setP2Money(0);
     }
     return null;

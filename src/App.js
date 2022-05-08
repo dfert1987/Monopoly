@@ -81,7 +81,7 @@ const App = () => {
   const [mortgage2, setMortgage2] = useState(false);
   const [unMortgage, setUnMortgage] = useState(false);
   const [unMortgage2, setUnMortgage2] = useState(false);
-  const [endGame, setEndGame] = useState(false);
+  const [endGame, setEndGame] = useState();
 
   const location = useLocation();
   const data = location.state;

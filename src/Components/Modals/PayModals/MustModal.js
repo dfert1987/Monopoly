@@ -13,8 +13,6 @@ export const MustModal = ({
   setMustMortgage,
   setMustMortgage2,
   mustMortgage2,
-  setGameOver,
-  setGameOver2,
   properties,
   setProperties,
   utilities,
@@ -242,7 +240,11 @@ export const MustModal = ({
 
   const endGame = () => {
     gong();
-    setQuit(true);
+    if (mustMortgage) {
+      setQuit("p1");
+    } else if (mustMortgage2) {
+      setQuit("p2");
+    }
   };
 
   return (
