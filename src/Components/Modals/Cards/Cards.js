@@ -414,6 +414,9 @@ export const Cards = ({
         p2MortUtils={p2MortUtils}
         setP1MortUtils={setP1MortUtils}
         setP2MortUtils={setP2MortUtils}
+        setQuit={setEndGame}
+        setOtherModal={setOnCard}
+        setOtherModal2={setOnCard2}
       />
     </>
   );

@@ -257,6 +257,8 @@ const InnerCard = ({
         setP1Money(0);
         setGameOver(true);
         setEndGame(true);
+        setOnCard(false);
+        setOnCard2(false);
       } else {
         setP1Money(newMoney);
         let newFP = freeParking + currentCard.amt;
@@ -276,6 +278,8 @@ const InnerCard = ({
         setP2Money(0);
         setGameOver2(true);
         setEndGame(true);
+        setOnCard(false);
+        setOnCard2(false);
       } else {
         setP2Money(newMoney);
         let newFP = freeParking + currentCard.amt;
@@ -313,6 +317,8 @@ const InnerCard = ({
         setP2Money(0);
         setGameOver2(true);
         setEndGame(true);
+        setOnCard(false);
+        setOnCard2(false);
       } else {
         setP1Money(newMoney);
         setP2Money(newMoney2);
@@ -333,6 +339,8 @@ const InnerCard = ({
         setP1Money(0);
         setGameOver(true);
         setEndGame(true);
+        setOnCard(false);
+        setOnCard2(false);
       } else {
         setP2Money(newMoney);
         setP1Money(newMoney2);
@@ -1478,6 +1486,8 @@ const InnerCard = ({
         setP1Money(0);
         setGameOver(true);
         setEndGame(true);
+        setOnCard(false);
+        setOnCard2(false);
       } else {
         setP1Money(newMoney);
         setFreeParking(newParking);
@@ -1498,6 +1508,8 @@ const InnerCard = ({
         setP2Money(0);
         setGameOver2(true);
         setEndGame(true);
+        setOnCard(false);
+        setOnCard2(false);
       } else {
         setP2Money(newMoney);
         setFreeParking(newParking);
@@ -1518,6 +1530,8 @@ const InnerCard = ({
         setP1Money(0);
         setGameOver(true);
         setEndGame(true);
+        setOnCard(false);
+        setOnCard2(false);
       } else {
         setFreeParking(newParking);
         setCounterP1(11);
@@ -1538,6 +1552,8 @@ const InnerCard = ({
         setP2Money(0);
         setGameOver2(true);
         setEndGame(true);
+        setOnCard(false);
+        setOnCard2(false);
       } else {
         setFreeParking(newParking);
         setCounterP2(11);
