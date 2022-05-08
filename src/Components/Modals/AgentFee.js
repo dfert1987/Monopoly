@@ -26,6 +26,8 @@ const AgentFee = ({
   setProperties,
   setRailRoads,
   setUtilities,
+  endGame,
+  setEndGame,
 }) => {
   const [owed, setOwed] = useState(75);
   const [p1MoneyAvailable, setP1MoneyAvailable] = useState();
@@ -157,6 +159,8 @@ const AgentFee = ({
 
   const handleClose = (e) => {
     let newFP = freeParking + 75;
+    let newMoney1 = p1Money - 75;
+    let newMoney2 = p2Money - 75;
     e.preventDefault();
     if (setOnAgentFee && p1Money > 75) {
       let newMoney = p1Money - 75;
@@ -172,12 +176,34 @@ const AgentFee = ({
       click();
       setOnAgentFee2(false);
       setFreeParking(newFP);
-    } else if (setOnAgentFee && p1Money < 75) {
+    } else if (
+      setOnAgentFee &&
+      newMoney1 < 0 &&
+      p1MoneyAvailable > -1 * newMoney1
+    ) {
       setMustMortgage(true);
       alert();
-    } else if (setOnAgentFee2 && p2Money < 75) {
+    } else if (
+      setOnAgentFee2 &&
+      newMoney2 < 0 &&
+      p2MoneyAvailable > -1 * newMoney2
+    ) {
       setMustMortgage2(true);
       alert();
+    } else if (
+      setOnAgentFee &&
+      newMoney1 < 0 &&
+      p1MoneyAvailable < -1 * newMoney1
+    ) {
+      setEndGame(true);
+      setP1Money(0);
+    } else if (
+      setOnAgentFee2 &&
+      newMoney2 < 0 &&
+      p2MoneyAvailable < -1 * newMoney2
+    ) {
+      setEndGame(true);
+      setP2Money(0);
     }
     return null;
   };

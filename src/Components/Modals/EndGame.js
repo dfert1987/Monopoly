@@ -1,7 +1,7 @@
 import React from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
-export const EndGame = () => {
+export const EndGame = ({ endGame, setEndGame }) => {
   const backdrop = {
     visible: { opacity: 1 },
     hidden: { opacity: 0 },
@@ -22,23 +22,25 @@ export const EndGame = () => {
   return (
     <>
       <AnimatePresence exitBeforeEnter>
-        <motion.div
-          className="outerModal flex centerFlex"
-          variants={backdrop}
-          initial="hidden"
-          animate="visible"
-          exit="hidden"
-        >
+        {endGame ? (
           <motion.div
-            className="flex flexColumn innerModalPurchase"
-            variants={modal}
+            className="outerModal flex centerFlex"
+            variants={backdrop}
             initial="hidden"
             animate="visible"
             exit="hidden"
           >
-            <div>FART</div>
+            <motion.div
+              className="flex flexColumn innerModalPurchase"
+              variants={modal}
+              initial="hidden"
+              animate="visible"
+              exit="hidden"
+            >
+              <div>FART</div>
+            </motion.div>
           </motion.div>
-        </motion.div>
+        ) : null}
       </AnimatePresence>
     </>
   );
