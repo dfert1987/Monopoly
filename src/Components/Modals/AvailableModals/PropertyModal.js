@@ -89,50 +89,50 @@ const PropertyModal = ({
     setPropertyModal2,
   ]);
 
-  const setMonop = (e) => {
+  const setMonop = () => {
     if (onProp.color === "blue" || onProp.color === "brown") {
       let number = properties.filter(
         (property) =>
           property.color === onProp.color && property.ownedP1 === true
       );
       if (number.length === 2) {
-        onProp.isMonopoly = true;
+        onProp.inMonopoly = true;
       }
-      onProp.isMonopoly = false;
+      onProp.inMonopoly = false;
     } else {
       let number = properties.filter(
         (property) =>
           property.color === onProp.color && property.ownedP1 === true
       );
       if (number.length === 3) {
-        onProp.isMonopoly = true;
+        onProp.inMonopoly = true;
       }
-      onProp.isMonopoly = false;
+      onProp.inMonopoly = false;
     }
-    handleClose(e);
+    handleClose();
   };
 
-  const setMonop2 = (e) => {
+  const setMonop2 = () => {
     if (onProp2.color === "blue" || onProp2.color === "brown") {
       let number = properties.filter(
         (property) =>
           property.color === onProp2.color && property.ownedP2 === true
       );
       if (number.length === 2) {
-        onProp2.isMonopoly = true;
+        onProp2.inMonopoly = true;
       }
-      onProp2.isMonopoly = false;
+      onProp2.inMonopoly = false;
     } else {
       let number = properties.filter(
         (property) =>
           property.color === onProp2.color && property.ownedP2 === true
       );
       if (number.length === 3) {
-        onProp2.isMonopoly = true;
+        onProp2.inMonopoly = true;
       }
-      onProp2.isMonopoly = false;
+      onProp2.inMonopoly = false;
     }
-    handleClose(e);
+    handleClose();
   };
 
   const buyProperty = () => {

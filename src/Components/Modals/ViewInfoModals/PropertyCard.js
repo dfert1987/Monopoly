@@ -62,11 +62,14 @@ const PropertyCard = ({
   };
 
   const hotel = () => {
-    if (chosenProp.hasHotel) {
+    if (chosenProp.hasHotel === true) {
       return "Yes";
+    } else {
+      return "No";
     }
-    return "No";
   };
+
+  console.log(chosenProp);
 
   const mortgage = () => {
     if (chosenProp.mortgaged) {
