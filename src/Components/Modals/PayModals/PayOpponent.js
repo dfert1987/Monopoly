@@ -4,6 +4,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { faXmark } from "@fortawesome/free-solid-svg-icons";
 import useSound from "use-sound";
 import Click from "../../../Assets/Sounds/click.mp3";
+import Victory from "../../../Assets/Sounds/victory.mp3";
 import smallPay from "../../../Assets/Misc/smallpay.jpeg";
 import bigPay from "../../../Assets/Misc/bigPay.jpeg";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -47,6 +48,7 @@ export const PayOpponent = ({
   const [p1MortRailRoads, setP1MortRailRoads] = useState();
   const [p2MortRailRoads, setP2MortRailRoads] = useState();
   const [click] = useSound(Click);
+  const [victory] = useSound(Victory);
 
   const backdrop = {
     visible: { opacity: 1 },
@@ -204,6 +206,7 @@ export const PayOpponent = ({
           setP1Money(newP1);
           setGameOver2(true);
           setEndGame(true);
+          victory();
         } else {
           setP1Money(p1New);
           setP2Money(p2New);
@@ -211,7 +214,7 @@ export const PayOpponent = ({
       } else if (number.length < 2) {
         let p1New = p1Money + onProp2.rent;
         let p2New = p2Money - onProp2.rent;
-        setRent(onProp2.monopolyRent);
+        setRent(onProp2.rent);
         if (p2New < 0 && p2MoneyAvailable > -1 * p2New) {
           setMustMortgage2(true);
         } else if (p2New < 0 && p2MoneyAvailable < -1 * p2New) {
@@ -230,7 +233,7 @@ export const PayOpponent = ({
       ) {
         let p1New = p1Money + onProp2.oneHouse;
         let p2New = p2Money - onProp2.oneHouse;
-        setRent(onProp2.monopolyRent);
+        setRent(onProp2.oneHouse);
         if (p2New < 0 && p2MoneyAvailable > -1 * p2New) {
           setMustMortgage2(true);
         } else if (p2New < 0 && p2MoneyAvailable < -1 * p2New) {
@@ -240,6 +243,7 @@ export const PayOpponent = ({
           setGameOver2(true);
           setEndGame("p2");
           setOnProp2(false);
+          victory();
         } else {
           setP1Money(p1New);
           setP2Money(p2New);
@@ -261,6 +265,7 @@ export const PayOpponent = ({
           setGameOver2(true);
           setEndGame("p2");
           setOnProp2(false);
+          victory();
         } else {
           setP1Money(p1New);
           setP2Money(p2New);
@@ -282,6 +287,7 @@ export const PayOpponent = ({
           setGameOver2(true);
           setEndGame("p2");
           setOnProp2(false);
+          victory();
         } else {
           setP1Money(p1New);
           setP2Money(p2New);
@@ -302,6 +308,7 @@ export const PayOpponent = ({
           setP1Money(newP1);
           setGameOver2(true);
           setEndGame("p2");
+          victory();
           setOnProp2(false);
         } else {
           setP1Money(p1New);
@@ -320,6 +327,7 @@ export const PayOpponent = ({
           setGameOver2(true);
           setEndGame("p2");
           setOnProp2(false);
+          victory();
         } else {
           setP1Money(p1New);
           setP2Money(p2New);
@@ -350,6 +358,7 @@ export const PayOpponent = ({
           let newP1 = p1Money + p2Money;
           setP1Money(newP1);
           setGameOver2(true);
+          victory();
           setEndGame("p2");
           setOnProp2(false);
         } else {
@@ -367,6 +376,7 @@ export const PayOpponent = ({
           setP2Money(0);
           let newP1 = p1Money + p2Money;
           setP1Money(newP1);
+          victory();
           setGameOver2(true);
           setEndGame("p2");
           setOnProp2(false);
@@ -390,6 +400,7 @@ export const PayOpponent = ({
           let newP1 = p1Money + p2Money;
           setP1Money(newP1);
           setGameOver2(true);
+          victory();
           setEndGame("p2");
           setOnProp2(false);
         } else {
@@ -411,6 +422,7 @@ export const PayOpponent = ({
           setP2Money(0);
           let newP1 = p1Money + p2Money;
           setP1Money(newP1);
+          victory();
           setGameOver2(true);
           setEndGame("p2");
           setOnProp2(false);
@@ -433,6 +445,7 @@ export const PayOpponent = ({
           setP2Money(0);
           let newP1 = p1Money + p2Money;
           setP1Money(newP1);
+          victory();
           setGameOver2(true);
           setEndGame("p2");
           setOnProp2(false);
@@ -455,6 +468,7 @@ export const PayOpponent = ({
           setP2Money(0);
           let newP1 = p1Money + p2Money;
           setP1Money(newP1);
+          victory();
           setGameOver2(true);
           setEndGame("p2");
           setOnProp2(false);
@@ -474,6 +488,7 @@ export const PayOpponent = ({
           let newP1 = p1Money + p2Money;
           setP1Money(newP1);
           setGameOver2(true);
+          victory();
           setEndGame("p2");
           setOnProp2(false);
         } else {
@@ -506,6 +521,7 @@ export const PayOpponent = ({
           setP2Money(newP2);
           setGameOver(true);
           setEndGame("p1");
+          victory();
           setOnProp(false);
         } else {
           setP1Money(p1New);
@@ -514,7 +530,7 @@ export const PayOpponent = ({
       } else if (number.length < 2) {
         let p1New = p1Money - onProp.rent;
         let p2New = p2Money + onProp.rent;
-        setRent(onProp.monopolyRent);
+        setRent(onProp.rent);
         if (p1New < 0 && p1MoneyAvailable > -1 * p1New) {
           setMustMortgage(true);
         } else if (p1New < 0 && p1MoneyAvailable < -1 * p1New) {
@@ -522,6 +538,7 @@ export const PayOpponent = ({
           let newP2 = p1Money + p2Money;
           setP2Money(newP2);
           setGameOver(true);
+          victory();
           setEndGame("p1");
           setOnProp(false);
         } else {
@@ -535,7 +552,7 @@ export const PayOpponent = ({
       ) {
         let p1New = p1Money - onProp.oneHouse;
         let p2New = p2Money + onProp.oneHouse;
-        setRent(onProp.monopolyRent);
+        setRent(onProp.oneHouse);
         if (p1New < 0 && p1MoneyAvailable > -1 * p1New) {
           setMustMortgage(true);
         } else if (p1New < 0 && p1MoneyAvailable < -1 * p1New) {
@@ -544,6 +561,7 @@ export const PayOpponent = ({
           setP2Money(newP2);
           setGameOver(true);
           setEndGame("p1");
+          victory();
           setOnProp(false);
         } else {
           setP1Money(p1New);
@@ -564,6 +582,7 @@ export const PayOpponent = ({
           let newP2 = p1Money + p2Money;
           setP2Money(newP2);
           setGameOver(true);
+          victory();
           setEndGame("p1");
           setOnProp(false);
         } else {
@@ -585,6 +604,7 @@ export const PayOpponent = ({
           let newP2 = p1Money + p2Money;
           setP2Money(newP2);
           setGameOver(true);
+          victory();
           setEndGame("p1");
           setOnProp(false);
         } else {
@@ -606,6 +626,7 @@ export const PayOpponent = ({
           let newP2 = p1Money + p2Money;
           setP2Money(newP2);
           setGameOver(true);
+          victory();
           setEndGame("p1");
           setOnProp(false);
         } else {
@@ -624,6 +645,7 @@ export const PayOpponent = ({
           setP2Money(newP2);
           setGameOver(true);
           setOnProp(false);
+          victory();
           setEndGame("p1");
         } else {
           setP1Money(p1New);
@@ -656,6 +678,7 @@ export const PayOpponent = ({
           setP2Money(newP2);
           setGameOver(true);
           setEndGame("p1");
+          victory();
           setOnProp(false);
         } else {
           setP1Money(p1New);
@@ -673,6 +696,7 @@ export const PayOpponent = ({
           let newP2 = p1Money + p2Money;
           setP2Money(newP2);
           setGameOver(true);
+          victory();
           setEndGame("p1");
           setOnProp(false);
         } else {
@@ -696,6 +720,7 @@ export const PayOpponent = ({
           setP2Money(newP2);
           setGameOver(true);
           setEndGame("p1");
+          victory();
           setOnProp(false);
         } else {
           setP1Money(p1New);
@@ -718,6 +743,7 @@ export const PayOpponent = ({
           setP2Money(newP2);
           setGameOver(true);
           setEndGame("p1");
+          victory();
           setOnProp(false);
         } else {
           setP1Money(p1New);
@@ -739,6 +765,7 @@ export const PayOpponent = ({
           let newP2 = p1Money + p2Money;
           setP2Money(newP2);
           setGameOver(true);
+          victory();
           setEndGame("p1");
           setOnProp(false);
         } else {
@@ -763,6 +790,7 @@ export const PayOpponent = ({
           setGameOver(true);
           setEndGame("p1");
           setOnProp(false);
+          victory();
         } else {
           setP1Money(p1New);
           setP2Money(p2New);
@@ -779,6 +807,7 @@ export const PayOpponent = ({
           let newP2 = p1Money + p2Money;
           setP2Money(newP2);
           setGameOver(true);
+          victory();
           setEndGame("p1");
           setOnProp(false);
         } else {
@@ -804,6 +833,7 @@ export const PayOpponent = ({
           let newP1 = p1Money + p2Money;
           setP1Money(newP1);
           setGameOver(true);
+          victory();
           setEndGame("p2");
           setOnProp2(false);
         } else {
@@ -821,6 +851,7 @@ export const PayOpponent = ({
           let newP1 = p1Money + p2Money;
           setP1Money(newP1);
           setGameOver2(true);
+          victory();
           setEndGame("p2");
           setOnProp2(false);
         } else {
@@ -845,6 +876,7 @@ export const PayOpponent = ({
           setGameOver2(true);
           setEndGame("p2");
           setOnProp2(false);
+          victory();
         } else {
           setP1Money(p1New);
           setP2Money(p2New);
@@ -867,6 +899,7 @@ export const PayOpponent = ({
           setGameOver2(true);
           setEndGame("p2");
           setOnProp2(false);
+          victory();
         } else {
           setP1Money(p1New);
           setP2Money(p2New);
@@ -888,6 +921,7 @@ export const PayOpponent = ({
           setP1Money(newP1);
           setGameOver2(true);
           setEndGame("p2");
+          victory();
           setOnProp2(false);
         } else {
           setP1Money(p1New);
@@ -911,6 +945,7 @@ export const PayOpponent = ({
           setGameOver2(true);
           setEndGame("p2");
           setOnProp2(false);
+          victory();
         } else {
           setP1Money(p1New);
           setP2Money(p2New);
@@ -928,6 +963,7 @@ export const PayOpponent = ({
           setGameOver2(true);
           setEndGame("p2");
           setOnProp2(false);
+          victory();
         } else {
           setP1Money(p1New);
           setP2Money(p2New);
@@ -953,6 +989,7 @@ export const PayOpponent = ({
           setGameOver(true);
           setEndGame("p1");
           setOnProp(false);
+          victory();
         } else {
           setP1Money(p1New);
           setP2Money(p2New);
@@ -969,6 +1006,7 @@ export const PayOpponent = ({
           setP2Money(newP2);
           setGameOver(true);
           setEndGame("p1");
+          victory();
           setOnProp(false);
         } else {
           setP1Money(p1New);
@@ -990,6 +1028,7 @@ export const PayOpponent = ({
           let newP2 = p1Money + p2Money;
           setP2Money(newP2);
           setGameOver(true);
+          victory();
           setEndGame("p1");
           setOnProp(false);
         } else {
@@ -1014,6 +1053,7 @@ export const PayOpponent = ({
           setGameOver(true);
           setEndGame("p1");
           setOnProp(false);
+          victory();
         } else {
           setP1Money(p1New);
           setP2Money(p2New);
@@ -1034,6 +1074,7 @@ export const PayOpponent = ({
           let newP2 = p1Money + p2Money;
           setP2Money(newP2);
           setGameOver(true);
+          victory();
           setEndGame("p1");
           setOnProp(false);
         } else {
@@ -1056,6 +1097,7 @@ export const PayOpponent = ({
           let newP2 = p1Money + p2Money;
           setP2Money(newP2);
           setGameOver(true);
+          victory();
           setEndGame("p1");
           setOnProp(false);
         } else {
@@ -1072,6 +1114,7 @@ export const PayOpponent = ({
           setP1Money(0);
           let newP2 = p1Money + p2Money;
           setP2Money(newP2);
+          victory();
           setGameOver("p1");
           setOnProp(false);
         } else {
@@ -1099,6 +1142,7 @@ export const PayOpponent = ({
           setP2Money(newP2);
           setGameOver(true);
           setEndGame("p1");
+          victory();
           setOnProp(false);
         } else {
           setP1Money(p1New);
@@ -1118,6 +1162,7 @@ export const PayOpponent = ({
           setGameOver(true);
           setEndGame("p1");
           setOnProp(false);
+          victory();
         } else {
           setP1Money(p1New);
           setP2Money(p2New);
@@ -1140,6 +1185,7 @@ export const PayOpponent = ({
           setP2Money(newP2);
           setGameOver(true);
           setEndGame("p1");
+          victory();
           setOnProp(false);
         } else {
           setP1Money(p1New);
@@ -1163,6 +1209,7 @@ export const PayOpponent = ({
           setP2Money(newP2);
           setGameOver(true);
           setEndGame("p1");
+          victory();
           setOnProp(false);
         } else {
           setP1Money(p1New);
@@ -1187,6 +1234,7 @@ export const PayOpponent = ({
           setGameOver(true);
           setEndGame("p1");
           setOnProp(false);
+          victory();
         } else {
           setP1Money(p1New);
           setP2Money(p2New);
@@ -1209,6 +1257,8 @@ export const PayOpponent = ({
           setP2Money(newP2);
           setGameOver(true);
           setEndGame("p1");
+          victory();
+
           setOnProp(false);
         } else {
           setP1Money(p1New);
@@ -1226,6 +1276,7 @@ export const PayOpponent = ({
           let newP2 = p1Money + p2Money;
           setP2Money(newP2);
           setGameOver(true);
+          victory();
           setEndGame("p1");
           setOnProp(false);
         } else {
@@ -1253,6 +1304,7 @@ export const PayOpponent = ({
           setP1Money(newP1);
           setGameOver2(true);
           setEndGame("p2");
+          victory();
           setOnProp2(false);
         } else {
           setP1Money(p1New);
@@ -1270,6 +1322,7 @@ export const PayOpponent = ({
           let newP1 = p1Money + p2Money;
           setP1Money(newP1);
           setGameOver2(true);
+          victory();
           setEndGame("p2");
           setOnProp2(false);
         } else {
@@ -1295,6 +1348,7 @@ export const PayOpponent = ({
           setGameOver2(true);
           setEndGame("p2");
           setOnProp2(false);
+          victory();
         } else {
           setP1Money(p1New);
           setP2Money(p2New);
@@ -1316,6 +1370,7 @@ export const PayOpponent = ({
           let newP1 = p1Money + p2Money;
           setP1Money(newP1);
           setGameOver2(true);
+          victory();
           setEndGame("p2");
           setOnProp2(false);
         } else {
@@ -1341,6 +1396,7 @@ export const PayOpponent = ({
           setGameOver2(true);
           setEndGame("p2");
           setOnProp2(false);
+          victory();
         } else {
           setP1Money(p1New);
           setP2Money(p2New);
@@ -1364,6 +1420,7 @@ export const PayOpponent = ({
           setGameOver2(true);
           setEndGame("p2");
           setOnProp2(false);
+          victory();
         } else {
           setP1Money(p1New);
           setP2Money(p2New);
@@ -1382,6 +1439,7 @@ export const PayOpponent = ({
           setGameOver2(true);
           setEndGame("p2");
           setOnProp2(false);
+          victory();
         } else {
           setP1Money(p1New);
           setP2Money(p2New);

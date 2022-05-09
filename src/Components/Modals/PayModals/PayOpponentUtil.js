@@ -3,6 +3,7 @@ import MustModal from "./MustModal";
 import { motion, AnimatePresence } from "framer-motion";
 import useSound from "use-sound";
 import Click from "../../../Assets/Sounds/click.mp3";
+import Victory from "../../../Assets/Sounds/victory.mp3";
 import bigPay from "../../../Assets/Misc/bigPay.jpeg";
 import dice1 from "../../../Assets/Dice/dice1.png";
 import dice2 from "../../../Assets/Dice/dice2.png";
@@ -54,6 +55,7 @@ export const PayOpponentUtil = ({
   const [p2MortUtils, setP2MortUtils] = useState();
 
   const [click] = useSound(Click);
+  const [victory] = useSound(Victory);
 
   const backdrop = {
     visible: { opacity: 1 },
@@ -218,6 +220,7 @@ export const PayOpponentUtil = ({
         setGameOver(true);
         setEndGame("p1");
         setOnUtil(false);
+        victory();
       } else {
         setP1Money(p1New);
         setP2Money(p2New);
@@ -235,6 +238,7 @@ export const PayOpponentUtil = ({
         setGameOver2(true);
         setEndGame("p2");
         setOnUtil2(false);
+        victory();
       } else {
         setP1Money(p1New);
         setP2Money(p2New);

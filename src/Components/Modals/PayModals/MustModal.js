@@ -3,6 +3,7 @@ import PropMorts from "./PropMorts";
 import useSound from "use-sound";
 import Drum from "../../../Assets/Sounds/drum.mp3";
 import Gong from "../../../Assets/Sounds/GONG.mp3";
+import Victory from "../../../Assets/Sounds/victory.mp3";
 import { motion, AnimatePresence } from "framer-motion";
 import "../../Styles/Must.css";
 
@@ -42,6 +43,7 @@ export const MustModal = ({
 
   const [drum] = useSound(Drum);
   const [gong] = useSound(Gong);
+  const [victory] = useSound(Victory);
 
   const backdrop = {
     visible: { opacity: 1 },
@@ -245,6 +247,7 @@ export const MustModal = ({
     setMustMortgage2(false);
     setOtherModal(false);
     setOtherModal2(false);
+    victory();
     if (mustMortgage) {
       setQuit("p1");
     } else if (mustMortgage2) {

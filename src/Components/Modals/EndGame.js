@@ -1,15 +1,12 @@
 import React from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import Confetti from "react-confetti";
+import { useWindowSize } from "@react-hook/window-size";
+import logo from "../../Assets/Misc/chinesegrandmarich.gif";
 import "../Styles/EndGame.css";
 
-export const EndGame = ({
-  endGame,
-  setEndGame,
-  p1Image,
-  p2Image,
-  p1SRC,
-  p2SRC,
-}) => {
+export const EndGame = ({ endGame, setEndGame }) => {
+  const [width, height] = useWindowSize();
   const backdrop = {
     visible: { opacity: 1 },
     hidden: { opacity: 0 },
@@ -29,17 +26,9 @@ export const EndGame = ({
 
   const getTitle = () => {
     if (endGame && endGame === "p1") {
-      return <h1 className="win-title">Player 1 Wins</h1>;
+      return "Player 1!";
     } else if (endGame && endGame === "p2") {
-      return <h1 className="win-title">Player 2 Wins</h1>;
-    }
-  };
-
-  const getSRC = () => {
-    if (endGame && endGame === "p1") {
-      return p1Image;
-    } else if (endGame && endGame === "p2") {
-      return p2Image;
+      return "Player 2!";
     }
   };
 
@@ -48,26 +37,32 @@ export const EndGame = ({
       <AnimatePresence exitBeforeEnter>
         {endGame === "p1" || endGame === "p2" ? (
           <motion.div
-            className="outerModal flex centerFlex"
+            className="outerModal2 flex centerFlex"
             variants={backdrop}
             initial="hidden"
             animate="visible"
             exit="hidden"
           >
+            <Confetti width={width} height={height} />
             <motion.div
-              className="flex flexColumn innerModalPurchase"
+              className="flex flexColumn innerModalPurchase2"
               variants={modal}
               initial="hidden"
               animate="visible"
               exit="hidden"
             >
               <div className="main-container">
-                <div className="title-win-section">{getTitle()}</div>
-                <img
-                  className="winner-pic"
-                  alt="Winner Pic Piece"
-                  src={getSRC()}
-                />
+                <div className="title-win-section">
+                  <h1 className="congrats">{`Congratulations ${getTitle()}`}</h1>
+                  <h1 className="congrats2">You Win!</h1>
+                </div>
+                <div className="win-image-container">
+                  <img
+                    className="win-gif"
+                    alt="grandma with money guns"
+                    src={logo}
+                  />
+                </div>
               </div>
             </motion.div>
           </motion.div>

@@ -5,6 +5,7 @@ import { faXmark } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import useSound from "use-sound";
 import Click from "../../Assets/Sounds/click.mp3";
+import Victory from "../../Assets/Sounds/victory.mp3";
 import Alert from "../../Assets/Sounds/alert.mp3";
 import homelink from "../../Assets/Misc/homelink.jpeg";
 import "../Styles/FreeParking.css";
@@ -60,6 +61,7 @@ const AgentFee = ({
 
   const [click] = useSound(Click);
   const [alert] = useSound(Alert);
+  const [victory] = useSound(Victory);
 
   useEffect(() => {
     let p1PropsToMort = properties.filter(
@@ -196,6 +198,7 @@ const AgentFee = ({
     ) {
       setEndGame("p1");
       setP1Money(0);
+      victory();
     } else if (
       setOnAgentFee2 &&
       newMoney2 < 0 &&
@@ -203,6 +206,7 @@ const AgentFee = ({
     ) {
       setEndGame("p2");
       setP2Money(0);
+      victory();
     }
     return null;
   };
