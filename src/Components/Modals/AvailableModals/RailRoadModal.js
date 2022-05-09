@@ -51,8 +51,7 @@ const RailRoadModal = ({
     click();
   };
 
-  const handleClose = (e) => {
-    e.preventDefault();
+  const handleClose = () => {
     setClose(true);
     setRRModal(false);
     setRRModal2(false);

@@ -141,8 +141,7 @@ const InJail = ({
     }
   };
 
-  const rollDice = (e) => {
-    e.preventDefault();
+  const rollDice = () => {
     let min = 1;
     let max = 6;
     let first = Math.floor(Math.random() * (max - min + 1)) + min;
@@ -163,9 +162,14 @@ const InJail = ({
       setFreedom("Free");
       setDisabledButton(true);
       triumph();
-    } else setFreedom("Stuck");
-    setDisabledButton(true);
-    sad();
+    } else if (
+      first !== second &&
+      (first + second === 3 || 4 || 5 || 6 || 8 || 9 || 10)
+    ) {
+      setFreedom("Stuck");
+      setDisabledButton(true);
+      sad();
+    } else return null;
   };
 
   return (

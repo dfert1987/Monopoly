@@ -2779,7 +2779,12 @@ export const Board = ({
           p1Money={p1Money}
           p2Money={p2Money}
         />
-        <EndGame endGame={endGame} setEndGame={setEndGame} />
+        <EndGame
+          endGame={endGame}
+          setEndGame={setEndGame}
+          p1Image={p1Image}
+          p2Image={p2Image}
+        />
         <Go
           onGoP1={onGoP1}
           onGoP2={onGoP2}

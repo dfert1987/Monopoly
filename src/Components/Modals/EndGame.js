@@ -1,7 +1,9 @@
 import React from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import "../Styles/EndGame.css";
+import { getByTitle } from "@testing-library/react";
 
-export const EndGame = ({ endGame, setEndGame }) => {
+export const EndGame = ({ endGame, setEndGame, p1Image, p2Image }) => {
   const backdrop = {
     visible: { opacity: 1 },
     hidden: { opacity: 0 },
@@ -17,6 +19,14 @@ export const EndGame = ({ endGame, setEndGame }) => {
       opacity: 1,
       transition: { delay: 0.5 },
     },
+  };
+
+  const getTitle = () => {
+    if (endGame && endGame === "p1") {
+      return <h1 className="win-title">Player 1 Wins</h1>;
+    } else if (endGame && endGame === "p2") {
+      return <h1 className="win-title">Player 2 Wins</h1>;
+    }
   };
 
   return (
@@ -37,7 +47,9 @@ export const EndGame = ({ endGame, setEndGame }) => {
               animate="visible"
               exit="hidden"
             >
-              <div>FART</div>
+              <div className="main-container">
+                <div className="title-win-section">{getTitle()}</div>
+              </div>
             </motion.div>
           </motion.div>
         ) : null}

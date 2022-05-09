@@ -65,8 +65,7 @@ export const PayOpponentRail = ({
     },
   };
 
-  const handleClose = (e) => {
-    e.preventDefault();
+  const handleClose = () => {
     setPayRail(false);
     click();
     setPayRailTo();

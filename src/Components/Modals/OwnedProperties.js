@@ -76,7 +76,6 @@ const OwnedProperties = ({
 
   const buildModal2 = (color) => {
     click();
-
     setHouseModal2(true);
     setSelectedGroup2(color);
   };

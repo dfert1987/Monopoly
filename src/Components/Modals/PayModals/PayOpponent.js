@@ -251,7 +251,7 @@ export const PayOpponent = ({
       ) {
         let p1New = p1Money + onProp2.twoHouses;
         let p2New = p2Money - onProp2.twoHouses;
-        setRent(onProp2.monopolyRent);
+        setRent(onProp2.twoHouses);
         if (p2New < 0 && p2MoneyAvailable > -1 * p2New) {
           setMustMortgage2(true);
         } else if (p2New < 0 && p2MoneyAvailable < -1 * p2New) {
@@ -272,7 +272,7 @@ export const PayOpponent = ({
       ) {
         let p1New = p1Money + onProp2.threeHouses;
         let p2New = p2Money - onProp2.threeHouses;
-        setRent(onProp2.monopolyRent);
+        setRent(onProp2.threeHouses);
         if (p2New < 0 && p2MoneyAvailable > -1 * p2New) {
           setMustMortgage2(true);
         } else if (p2New < 0 && p2MoneyAvailable < -1 * p2New) {
@@ -293,7 +293,7 @@ export const PayOpponent = ({
       ) {
         let p1New = p1Money + onProp2.fourHouses;
         let p2New = p2Money - onProp2.fourHouses;
-        setRent(onProp2.monopolyRent);
+        setRent(onProp2.fourHouses);
         if (p2New < 0 && p2MoneyAvailable > -1 * p2New) {
           setMustMortgage2(true);
         } else if (p2New < 0 && p2MoneyAvailable < -1 * p2New) {
@@ -310,7 +310,7 @@ export const PayOpponent = ({
       } else if (number.length === 2 && onProp2.hasHotel === true) {
         let p1New = p1Money + onProp2.hotel;
         let p2New = p2Money - onProp2.hotel;
-        setRent(onProp2.monopolyRent);
+        setRent(onProp2.hotel);
         if (p2New < 0 && p2MoneyAvailable > -1 * p2New) {
           setMustMortgage2(true);
         } else if (p2New < 0 && p2MoneyAvailable < -1 * p2New) {
@@ -556,7 +556,7 @@ export const PayOpponent = ({
       ) {
         let p1New = p1Money - onProp.twoHouses;
         let p2New = p2Money + onProp.twoHouses;
-        setRent(onProp.monopolyRent);
+        setRent(onProp.twoHouses);
         if (p1New < 0 && p1MoneyAvailable > -1 * p1New) {
           setMustMortgage(true);
         } else if (p1New < 0 && p1MoneyAvailable < -1 * p1New) {
@@ -577,7 +577,7 @@ export const PayOpponent = ({
       ) {
         let p1New = p1Money - onProp.threeHouses;
         let p2New = p2Money + onProp.threeHouses;
-        setRent(onProp.monopolyRent);
+        setRent(onProp.threeHouses);
         if (p1New < 0 && p1MoneyAvailable > -1 * p1New) {
           setMustMortgage(true);
         } else if (p1New < 0 && p1MoneyAvailable < -1 * p1New) {
@@ -598,7 +598,7 @@ export const PayOpponent = ({
       ) {
         let p1New = p1Money - onProp.fourHouses;
         let p2New = p2Money + onProp.fourHouses;
-        setRent(onProp.monopolyRent);
+        setRent(onProp.fourHouses);
         if (p1New < 0 && p1MoneyAvailable > -1 * p1New) {
           setMustMortgage(true);
         } else if (p1New < 0 && p1MoneyAvailable < -1 * p1New) {
@@ -615,7 +615,7 @@ export const PayOpponent = ({
       } else if (number.length === 2 && onProp.hasHotel === true) {
         let p1New = p1Money - onProp.hotel;
         let p2New = p2Money + onProp.hotel;
-        setRent(onProp.monopolyRent);
+        setRent(onProp.hotel);
         if (p1New < 0 && p1MoneyAvailable > -1 * p1New) {
           setMustMortgage(true);
         } else if (p1New < 0 && p1MoneyAvailable < -1 * p1New) {
@@ -706,7 +706,7 @@ export const PayOpponent = ({
         onProp.hasTwoHouses === true &&
         onProp.hasThreeHouses === false
       ) {
-        let doubled = onProp.twoHouse * 2;
+        let doubled = onProp.twoHouses * 2;
         let p1New = p1Money - doubled;
         let p2New = p2Money + doubled;
         setRent(onProp.doubled);
@@ -835,7 +835,7 @@ export const PayOpponent = ({
       ) {
         let p1New = p1Money + onProp2.oneHouse;
         let p2New = p2Money - onProp2.oneHouse;
-        setRent(onProp2.hasOneHouse);
+        setRent(onProp2.oneHouse);
         if (p2New < 0 && p2MoneyAvailable > -1 * p2New) {
           setMustMortgage2(true);
         } else if (p2New < 0 && p2MoneyAvailable < -1 * p2New) {
@@ -857,7 +857,7 @@ export const PayOpponent = ({
       ) {
         let p1New = p1Money + onProp2.twoHouses;
         let p2New = p2Money - onProp2.twoHouses;
-        setRent(onProp2.hasTwoHouses);
+        setRent(onProp2.twoHouses);
         if (p2New < 0 && p2MoneyAvailable > -1 * p2New) {
           setMustMortgage2(true);
         } else if (p2New < 0 && p2MoneyAvailable < -1 * p2New) {
@@ -879,7 +879,7 @@ export const PayOpponent = ({
       ) {
         let p1New = p1Money + onProp2.threeHouses;
         let p2New = p2Money - onProp2.threeHouses;
-        setRent(onProp2.hasThreeHouses);
+        setRent(onProp2.threeHouses);
         if (p2New < 0 && p2MoneyAvailable > -1 * p2New) {
           setMustMortgage2(true);
         } else if (p2New < 0 && p2MoneyAvailable < -1 * p2New) {
@@ -901,7 +901,7 @@ export const PayOpponent = ({
       ) {
         let p1New = p1Money + onProp2.fourHouses;
         let p2New = p2Money - onProp2.fourHouses;
-        setRent(onProp2.hasFourHouses);
+        setRent(onProp2.fourHouses);
         if (p2New < 0 && p2MoneyAvailable > -1 * p2New) {
           setMustMortgage2(true);
         } else if (p2New < 0 && p2MoneyAvailable < -1 * p2New) {
@@ -1004,7 +1004,7 @@ export const PayOpponent = ({
       ) {
         let p1New = p1Money - onProp.twoHouses;
         let p2New = p2Money + onProp.twoHouses;
-        setRent(onProp.hasTwoHouses);
+        setRent(onProp.twoHouses);
         if (p1New < 0 && p1MoneyAvailable > -1 * p1New) {
           setMustMortgage(true);
         } else if (p1New < 0 && p1MoneyAvailable < -1 * p1New) {
