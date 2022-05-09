@@ -24,6 +24,7 @@ import Laugh from "../../../Assets/Sounds/laugh.mp3";
 import Lush from "../../../Assets/Sounds/lush.mp3";
 import Marry from "../../../Assets/Sounds/marry.mp3";
 import Migas from "../../../Assets/Sounds/migas.mp3";
+import Victory from "../../../Assets/Sounds/victory.mp3";
 import Money from "../../../Assets/Sounds/money.mp3";
 import National from "../../../Assets/Sounds/national.mp3";
 import Nglx from "../../../Assets/Sounds/nlgx.mp3";
@@ -147,6 +148,7 @@ const InnerCard = ({
   const [vomit] = useSound(Vomit);
   const [xinNian] = useSound(XinNian);
   const [zhege] = useSound(Zhege);
+  const [victory] = useSound(Victory);
 
   const cardFunctionSorter = () => {
     console.log(currentCard.Type);
@@ -296,6 +298,7 @@ const InnerCard = ({
         setEndGame(true);
         setOnCard(false);
         setOnCard2(false);
+        victory();
       } else {
         setP1Money(newMoney);
         let newFP = freeParking + currentCard.amt;
@@ -317,6 +320,7 @@ const InnerCard = ({
         setOnCard2(false);
         setGameOver2(true);
         setEndGame(true);
+        victory();
       } else {
         setP2Money(newMoney);
         let newFP = freeParking + currentCard.amt;
@@ -355,6 +359,7 @@ const InnerCard = ({
         setGameOver2(true);
         setEndGame(true);
         setOnCard(false);
+        victory();
         setOnCard2(false);
       } else {
         setP1Money(newMoney);
@@ -376,6 +381,7 @@ const InnerCard = ({
         setP1Money(0);
         setGameOver(true);
         setEndGame(true);
+        victory();
         setOnCard(false);
         setOnCard2(false);
       } else {
@@ -1527,6 +1533,7 @@ const InnerCard = ({
         setP1Money(0);
         setGameOver(true);
         setEndGame(true);
+        victory();
       } else {
         setOnCard(false);
         setOnCard2(false);
@@ -1548,12 +1555,14 @@ const InnerCard = ({
         setOnCard(false);
         setOnCard2(false);
         setP2Money(0);
+        victory();
         setGameOver2(true);
       } else {
         setEndGame(true);
         setOnCard(false);
         setOnCard2(false);
         setP2Money(newMoney);
+        victory();
         setFreeParking(newParking);
         setCurrentCard();
         arrayRemovePre();
@@ -1571,6 +1580,7 @@ const InnerCard = ({
         setOnCard(false);
         setOnCard2(false);
         setP1Money(0);
+        victory();
         setGameOver(true);
         setEndGame(true);
       } else {
@@ -1595,6 +1605,7 @@ const InnerCard = ({
         setP2Money(0);
         setGameOver2(true);
         setEndGame(true);
+        victory();
       } else {
         setOnCard(false);
         setOnCard2(false);
