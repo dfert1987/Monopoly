@@ -36,8 +36,7 @@ const RRPurchasedPopUp = ({
 }) => {
   const [click] = useSound(Click);
 
-  const handleClose = (e) => {
-    e.preventDefault();
+  const handleClose = () => {
     setViewPurchaseRR(false);
     setViewPurchaseRR2(false);
     setOnRR();

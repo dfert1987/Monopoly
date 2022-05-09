@@ -59,7 +59,7 @@ export const Guanxi = [
     amt: 150,
     space: 0,
     image: require("./Pics/guanxi-tutor.jpeg"),
-    sound: "teach",
+    sound: "money",
   },
   {
     Number: 7,
@@ -159,7 +159,7 @@ export const Guanxi = [
     amt: 0,
     space: 0,
     image: require("./Pics/guanxi-visa.jpeg"),
-    sound: "jaiyou",
+    sound: "jiayou",
   },
   {
     Number: 20,
@@ -170,7 +170,7 @@ export const Guanxi = [
     amt: 200,
     space: 0,
     image: require("./Pics/guanxi-hsk.png"),
-    sound: "jaiyou",
+    sound: "jiayou",
   },
   {
     Number: 17,
@@ -201,7 +201,7 @@ export const Guanxi = [
     amt: 40,
     space: 0,
     image: require("./Pics/guanxi-teach.jpeg"),
-    sound: "teach",
+    sound: "triumph",
   },
   {
     Number: 8,

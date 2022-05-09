@@ -20,6 +20,7 @@ const Visa = ({
   setP2Money,
   freeParking,
   setFreeParking,
+  setEndGame,
 }) => {
   const [disabled, setDisabled] = useState(false);
   const [disabledLeft, setDisabledLeft] = useState(false);

@@ -5,6 +5,7 @@ import { faXmark } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import useSound from "use-sound";
 import Click from "../../Assets/Sounds/click.mp3";
+import Victory from "../../Assets/Sounds/victory.mp3";
 import Alert from "../../Assets/Sounds/alert.mp3";
 import homelink from "../../Assets/Misc/homelink.jpeg";
 import "../Styles/FreeParking.css";
@@ -26,6 +27,7 @@ const AgentFee = ({
   setProperties,
   setRailRoads,
   setUtilities,
+  setEndGame,
 }) => {
   const [owed, setOwed] = useState(75);
   const [p1MoneyAvailable, setP1MoneyAvailable] = useState();
@@ -59,6 +61,7 @@ const AgentFee = ({
 
   const [click] = useSound(Click);
   const [alert] = useSound(Alert);
+  const [victory] = useSound(Victory);
 
   useEffect(() => {
     let p1PropsToMort = properties.filter(
@@ -157,6 +160,8 @@ const AgentFee = ({
 
   const handleClose = (e) => {
     let newFP = freeParking + 75;
+    let newMoney1 = p1Money - 75;
+    let newMoney2 = p2Money - 75;
     e.preventDefault();
     if (setOnAgentFee && p1Money > 75) {
       let newMoney = p1Money - 75;
@@ -172,12 +177,36 @@ const AgentFee = ({
       click();
       setOnAgentFee2(false);
       setFreeParking(newFP);
-    } else if (setOnAgentFee && p1Money < 75) {
+    } else if (
+      setOnAgentFee &&
+      newMoney1 < 0 &&
+      p1MoneyAvailable > -1 * newMoney1
+    ) {
       setMustMortgage(true);
       alert();
-    } else if (setOnAgentFee2 && p2Money < 75) {
+    } else if (
+      setOnAgentFee2 &&
+      newMoney2 < 0 &&
+      p2MoneyAvailable > -1 * newMoney2
+    ) {
       setMustMortgage2(true);
       alert();
+    } else if (
+      setOnAgentFee &&
+      newMoney1 < 0 &&
+      p1MoneyAvailable < -1 * newMoney1
+    ) {
+      setEndGame("p1");
+      setP1Money(0);
+      victory();
+    } else if (
+      setOnAgentFee2 &&
+      newMoney2 < 0 &&
+      p2MoneyAvailable < -1 * newMoney2
+    ) {
+      setEndGame("p2");
+      setP2Money(0);
+      victory();
     }
     return null;
   };
@@ -258,6 +287,9 @@ const AgentFee = ({
         p2MortUtils={p2MortUtils}
         setP1MortUtils={setP1MortUtils}
         setP2MortUtils={setP2MortUtils}
+        setQuit={setEndGame}
+        setOtherModal={setOnAgentFee}
+        setOtherModal2={setOnAgentFee2}
       />
     </>
   );

@@ -53,9 +53,8 @@
 .prize {
   font-size: 3.5em;
   font-family: "Monopoly";
-  color: white;
+  color: black;
   margin: 0;
-  text-shadow: 2px 2px black;
 }
 
 .x-icon.free {

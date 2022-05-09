@@ -3,6 +3,7 @@ import PropMorts from "./PropMorts";
 import useSound from "use-sound";
 import Drum from "../../../Assets/Sounds/drum.mp3";
 import Gong from "../../../Assets/Sounds/GONG.mp3";
+import Victory from "../../../Assets/Sounds/victory.mp3";
 import { motion, AnimatePresence } from "framer-motion";
 import "../../Styles/Must.css";
 
@@ -13,10 +14,6 @@ export const MustModal = ({
   setMustMortgage,
   setMustMortgage2,
   mustMortgage2,
-  gameOver,
-  setGameOver,
-  gameOver2,
-  setGameOver2,
   properties,
   setProperties,
   utilities,
@@ -33,6 +30,9 @@ export const MustModal = ({
   p2MortRailRoads,
   p1MortUtils,
   p2MortUtils,
+  setQuit,
+  setOtherModal,
+  setOtherModal2,
 }) => {
   const [enoughMoney, setEnoughMoney] = useState(false);
   const [neededAmt, setNeededAmt] = useState();
@@ -43,6 +43,7 @@ export const MustModal = ({
 
   const [drum] = useSound(Drum);
   const [gong] = useSound(Gong);
+  const [victory] = useSound(Victory);
 
   const backdrop = {
     visible: { opacity: 1 },
@@ -87,7 +88,7 @@ export const MustModal = ({
   };
 
   const getProperties = () => {
-    if (mustMortgage && p1MortProps.length > 0) {
+    if (mustMortgage && p1MortProps && p1MortProps.length > 0) {
       return p1MortProps.map((property, index) => {
         return (
           <PropMorts
@@ -109,7 +110,7 @@ export const MustModal = ({
           />
         );
       });
-    } else if (mustMortgage2 && p2MortProps.length > 0) {
+    } else if (mustMortgage2 && p2MortProps && p2MortProps.length > 0) {
       return p2MortProps.map((property, index) => {
         return (
           <PropMorts
@@ -135,7 +136,7 @@ export const MustModal = ({
   };
 
   const getRRs = () => {
-    if (mustMortgage && p1MortRailRoads.length > 0) {
+    if (mustMortgage && p1MortRailRoads && p1MortRailRoads.length > 0) {
       return p1MortRailRoads.map((rr, index) => {
         return (
           <PropMorts
@@ -157,7 +158,7 @@ export const MustModal = ({
           />
         );
       });
-    } else if (mustMortgage && p2MortRailRoads.length > 0) {
+    } else if (mustMortgage && p2MortRailRoads && p2MortRailRoads.length > 0) {
       return p2MortRailRoads.map((rr, index) => {
         return (
           <PropMorts
@@ -183,7 +184,7 @@ export const MustModal = ({
   };
 
   const getUtils = () => {
-    if (mustMortgage && p1MortUtils.length > 0) {
+    if (mustMortgage && p1MortUtils && p1MortUtils.length > 0) {
       return p1MortUtils.map((util, index) => {
         return (
           <PropMorts
@@ -205,7 +206,7 @@ export const MustModal = ({
           />
         );
       });
-    } else if (mustMortgage && p2MortUtils.length > 0) {
+    } else if (mustMortgage && p2MortUtils && p2MortUtils.length > 0) {
       return p2MortUtils.map((util, index) => {
         return (
           <PropMorts
@@ -242,10 +243,15 @@ export const MustModal = ({
 
   const endGame = () => {
     gong();
+    setMustMortgage(false);
+    setMustMortgage2(false);
+    setOtherModal(false);
+    setOtherModal2(false);
+    victory();
     if (mustMortgage) {
-      setGameOver(true);
+      setQuit("p1");
     } else if (mustMortgage2) {
-      setGameOver2(true);
+      setQuit("p2");
     }
   };
 
@@ -292,19 +298,22 @@ export const MustModal = ({
                     </>
                   )}
                   <div className="asset-section">
-                    {(mustMortgage && p1MortProps.length > 0) ||
-                    (mustMortgage2 && p2MortProps.length > 0) ? (
+                    {(mustMortgage && p2MortProps && p1MortProps.length > 0) ||
+                    (mustMortgage2 && p2MortProps && p2MortProps.length > 0) ? (
                       <h3 className="asset-title">Properties</h3>
                     ) : null}
                     <div className="asset-type">{getProperties()}</div>
-                    {(mustMortgage && p1MortRailRoads.length > 0) ||
-                    (mustMortgage2 && p2MortRailRoads.length > 0) ? (
+                    {(mustMortgage &&
+                      p1MortRailRoads &&
+                      p1MortRailRoads.length > 0) ||
+                    (mustMortgage2 &&
+                      p1MortRailRoads &&
+                      p2MortRailRoads.length > 0) ? (
                       <h3 className="asset-title">Railroads</h3>
                     ) : null}
                     <div className="asset-type">{getRRs()}</div>
-
-                    {(mustMortgage && p1MortUtils.length > 0) ||
-                    (mustMortgage2 && p2MortUtils.length > 0) ? (
+                    {(mustMortgage && p1MortUtils && p1MortUtils.length > 0) ||
+                    (mustMortgage2 && p2MortUtils && p2MortUtils.length > 0) ? (
                       <h3 className="asset-title">Utilities</h3>
                     ) : null}
                     <div className="asset-type">{getUtils()}</div>

@@ -49,8 +49,7 @@ const UtilitiesModal = ({
     click();
   };
 
-  const handleClose = (e) => {
-    e.preventDefault();
+  const handleClose = () => {
     setClose(true);
     setUtilModal(false);
     setUtilModal2(false);

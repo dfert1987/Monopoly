@@ -24,6 +24,7 @@ import Laugh from "../../../Assets/Sounds/laugh.mp3";
 import Lush from "../../../Assets/Sounds/lush.mp3";
 import Marry from "../../../Assets/Sounds/marry.mp3";
 import Migas from "../../../Assets/Sounds/migas.mp3";
+import Victory from "../../../Assets/Sounds/victory.mp3";
 import Money from "../../../Assets/Sounds/money.mp3";
 import National from "../../../Assets/Sounds/national.mp3";
 import Nglx from "../../../Assets/Sounds/nlgx.mp3";
@@ -109,6 +110,7 @@ const InnerCard = ({
   p1MoneyAvailable,
   p2MoneyAvailable,
   setRent,
+  setEndGame,
 }) => {
   const [currentCard, setCurrentCard] = useState();
 
@@ -146,105 +148,143 @@ const InnerCard = ({
   const [vomit] = useSound(Vomit);
   const [xinNian] = useSound(XinNian);
   const [zhege] = useSound(Zhege);
+  const [victory] = useSound(Victory);
 
   const cardFunctionSorter = () => {
-    if ((onCard || onCard2) && currentCard.sound === "plane") {
+    console.log(currentCard.Type);
+    if ((onCard || onCard2) && currentCard && currentCard.sound === "plane") {
       airplane();
     }
-    if ((onCard || onCard2) && currentCard.sound === "xin-nian") {
+    if (
+      (onCard || onCard2) &&
+      currentCard &&
+      currentCard.sound === "xin-nian"
+    ) {
       xinNian();
     }
-    if ((onCard || onCard2) && currentCard.sound === "techno") {
+    if ((onCard || onCard2) && currentCard && currentCard.sound === "techno") {
       lantern();
     }
-    if ((onCard || onCard2) && currentCard.sound === "police") {
+    if ((onCard || onCard2) && currentCard && currentCard.sound === "police") {
       police();
     }
-    if ((onCard || onCard2) && currentCard.sound === "bar-small") {
+    if (
+      (onCard || onCard2) &&
+      currentCard &&
+      currentCard.sound === "bar-small"
+    ) {
       bar();
     }
-    if ((onCard || onCard2) && currentCard.sound === "teach") {
+    if ((onCard || onCard2) && currentCard && currentCard.sound === "teach") {
       bell();
     }
-    if ((onCard || onCard2) && currentCard.sound === "money") {
+    if ((onCard || onCard2) && currentCard && currentCard.sound === "money") {
       money();
     }
-    if ((onCard || onCard2) && currentCard.sound === "snort") {
+    if ((onCard || onCard2) && currentCard && currentCard.sound === "snort") {
       snorting();
     }
-    if ((onCard || onCard2) && currentCard.sound === "crowd") {
+    if ((onCard || onCard2) && currentCard && currentCard.sound === "crowd") {
       nglx();
     }
-    if ((onCard || onCard2) && currentCard.sound === "hao-chi") {
+    if ((onCard || onCard2) && currentCard && currentCard.sound === "hao-chi") {
       haochi();
     }
-    if ((onCard || onCard2) && currentCard.sound === "cough") {
+    if ((onCard || onCard2) && currentCard && currentCard.sound === "cough") {
       cough();
     }
-    if ((onCard || onCard2) && currentCard.sound === "sick") {
+    if ((onCard || onCard2) && currentCard && currentCard.sound === "sick") {
       vomit();
     }
-    if ((onCard || onCard2) && currentCard.sound === "sad") {
+    if ((onCard || onCard2) && currentCard && currentCard.sound === "sad") {
       sad();
     }
-    if ((onCard || onCard2) && currentCard.sound === "triumph") {
+    if ((onCard || onCard2) && currentCard && currentCard.sound === "triumph") {
       triumph();
     }
-    if ((onCard || onCard2) && currentCard.sound === "jiayou") {
+    if ((onCard || onCard2) && currentCard && currentCard.sound === "jiayou") {
       jiayou();
     }
-    if ((onCard || onCard2) && currentCard.sound === "burn") {
+    if ((onCard || onCard2) && currentCard && currentCard.sound === "burn") {
       burn();
     }
-    if ((onCard || onCard2) && currentCard.sound === "crash") {
+    if ((onCard || onCard2) && currentCard && currentCard.sound === "crash") {
       crash();
     }
-    if ((onCard || onCard2) && currentCard.sound === "bike-bell") {
+    if (
+      (onCard || onCard2) &&
+      currentCard &&
+      currentCard.sound === "bike-bell"
+    ) {
       bike();
     }
-    if ((onCard || onCard2) && currentCard.sound === "hey-jude") {
+    if (
+      (onCard || onCard2) &&
+      currentCard &&
+      currentCard.sound === "hey-jude"
+    ) {
       jude();
     }
-    if ((onCard || onCard2) && currentCard.sound === "bottle-pop") {
+    if (
+      (onCard || onCard2) &&
+      currentCard &&
+      currentCard.sound === "bottle-pop"
+    ) {
       bottle();
     }
-    if ((onCard || onCard2) && currentCard.sound === "disco") {
+    if ((onCard || onCard2) && currentCard && currentCard.sound === "disco") {
       migas();
     }
-    if ((onCard || onCard2) && currentCard.sound === "bill-fight") {
+    if (
+      (onCard || onCard2) &&
+      currentCard &&
+      currentCard.sound === "bill-fight"
+    ) {
       check();
     }
-    if ((onCard || onCard2) && currentCard.sound === "anthem") {
+    if ((onCard || onCard2) && currentCard && currentCard.sound === "anthem") {
       national();
     }
-    if ((onCard || onCard2) && currentCard.sound === "rock") {
+    if ((onCard || onCard2) && currentCard && currentCard.sound === "rock") {
       temple();
     }
-    if ((onCard || onCard2) && currentCard.sound === "laughter") {
+    if (
+      (onCard || onCard2) &&
+      currentCard &&
+      currentCard.sound === "laughter"
+    ) {
       laugh();
     }
-    if ((onCard || onCard2) && currentCard.sound === "subway") {
+    if ((onCard || onCard2) && currentCard && currentCard.sound === "subway") {
       subway();
     }
-    if ((onCard || onCard2) && currentCard.sound === "alert") {
+    if ((onCard || onCard2) && currentCard && currentCard.sound === "alert") {
       alert();
     }
-    if ((onCard || onCard2) && currentCard.sound === "gambei") {
+    if ((onCard || onCard2) && currentCard && currentCard.sound === "gambei") {
       gambei();
     }
-    if ((onCard || onCard2) && currentCard.sound === "marry") {
+    if ((onCard || onCard2) && currentCard && currentCard.sound === "marry") {
       marry();
     }
-    if ((onCard || onCard2) && currentCard.sound === "zhege") {
+    if ((onCard || onCard2) && currentCard && currentCard.sound === "zhege") {
       zhege();
     }
-    if ((onCard || onCard2) && currentCard.sound === "firework") {
+    if (
+      (onCard || onCard2) &&
+      currentCard &&
+      currentCard.sound === "firework"
+    ) {
       firework();
     }
-    if ((onCard || onCard2) && currentCard.sound === "backstreet") {
+    if (
+      (onCard || onCard2) &&
+      currentCard &&
+      currentCard.sound === "backstreet"
+    ) {
       ktv();
     }
-    if ((onCard || onCard2) && currentCard.sound === "lush") {
+    if ((onCard || onCard2) && currentCard && currentCard.sound === "lush") {
       lush();
     }
     if (onCard && !onCard2 && currentCard.Type === "pay") {
@@ -255,15 +295,19 @@ const InnerCard = ({
       } else if (newMoney < 0 && p1MoneyAvailable < -1 * newMoney) {
         setP1Money(0);
         setGameOver(true);
+        setEndGame(true);
+        setOnCard(false);
+        setOnCard2(false);
+        victory();
       } else {
         setP1Money(newMoney);
         let newFP = freeParking + currentCard.amt;
         setFreeParking(newFP);
+        setOnCard(false);
+        setOnCard2(false);
         setCurrentCard();
         arrayRemovePre();
         setCardOption();
-        setOnCard(false);
-        setOnCard2(false);
       }
     } else if (!onCard && onCard2 && currentCard.Type === "pay") {
       let newMoney = p2Money - currentCard.amt;
@@ -272,33 +316,37 @@ const InnerCard = ({
         setRent(currentCard.amt);
       } else if (newMoney < 0 && p2MoneyAvailable < -1 * newMoney) {
         setP2Money(0);
+        setOnCard(false);
+        setOnCard2(false);
         setGameOver2(true);
+        setEndGame(true);
+        victory();
       } else {
         setP2Money(newMoney);
         let newFP = freeParking + currentCard.amt;
         setFreeParking(newFP);
+        setOnCard(false);
+        setOnCard2(false);
         setCurrentCard();
         arrayRemovePre();
         setCardOption();
-        setOnCard(false);
-        setOnCard2(false);
       }
     } else if (onCard && !onCard2 && currentCard.Type === "collect") {
       let newMoney = p1Money + currentCard.amt;
       setP1Money(newMoney);
+      setOnCard(false);
+      setOnCard2(false);
       setCurrentCard();
       arrayRemovePre();
       setCardOption();
-      setOnCard(false);
-      setOnCard2(false);
     } else if (!onCard && onCard2 && currentCard.Type === "collect") {
       let newMoney = p2Money + currentCard.amt;
       setP2Money(newMoney);
+      setOnCard(false);
+      setOnCard2(false);
       setCurrentCard();
       arrayRemovePre();
       setCardOption();
-      setOnCard(false);
-      setOnCard2(false);
     } else if (onCard && !onCard2 && currentCard.Type === "collect-opponent") {
       let newMoney = p1Money + currentCard.amt;
       let newMoney2 = p2Money - currentCard.amt;
@@ -309,14 +357,18 @@ const InnerCard = ({
       } else if (newMoney2 < 0 && p2MoneyAvailable < -1 * newMoney2) {
         setP2Money(0);
         setGameOver2(true);
+        setEndGame(true);
+        setOnCard(false);
+        victory();
+        setOnCard2(false);
       } else {
         setP1Money(newMoney);
         setP2Money(newMoney2);
+        setOnCard(false);
+        setOnCard2(false);
         setCurrentCard();
         arrayRemovePre();
         setCardOption();
-        setOnCard(false);
-        setOnCard2(false);
       }
     } else if (!onCard && onCard2 && currentCard.Type === "collect-opponent") {
       let newMoney = p2Money + currentCard.amt;
@@ -328,35 +380,39 @@ const InnerCard = ({
       } else if (newMoney2 < 0 && p1MoneyAvailable < -1 * newMoney2) {
         setP1Money(0);
         setGameOver(true);
+        setEndGame(true);
+        victory();
+        setOnCard(false);
+        setOnCard2(false);
       } else {
         setP2Money(newMoney);
         setP1Money(newMoney2);
+        setOnCard(false);
+        setOnCard2(false);
         setCurrentCard();
         arrayRemovePre();
         setCardOption();
-        setOnCard(false);
-        setOnCard2(false);
       }
     } else if (onCard && !onCard2 && currentCard.Type === "pay-opponent") {
       let newMoney = p1Money - currentCard.amt;
       let newMoney2 = p2Money + currentCard.amt;
       setP1Money(newMoney);
       setP2Money(newMoney2);
+      setOnCard(false);
+      setOnCard2(false);
       setCurrentCard();
       arrayRemovePre();
       setCardOption();
-      setOnCard(false);
-      setOnCard2(false);
     } else if (!onCard && onCard2 && currentCard.Type === "pay-opponent") {
       let newMoney = p2Money - currentCard.amt;
       let newMoney2 = p1Money + currentCard.amt;
       setP1Money(newMoney2);
       setP2Money(newMoney);
+      setOnCard(false);
+      setOnCard2(false);
       setCurrentCard();
       arrayRemovePre();
       setCardOption();
-      setOnCard(false);
-      setOnCard2(false);
     } else if (onCard && !onCard2 && currentCard.Type === "forward") {
       let newSpace = counterP1 + currentCard.amt;
       setCounterP1(newSpace);
@@ -367,60 +423,60 @@ const InnerCard = ({
       let currentRR = railRoads.find((rr) => rr.Number === newSpace);
       if (newSpace === 11) {
         setCounterP1(newSpace);
-        arrayRemovePre();
-        setCardOption();
         setOnCard(false);
         setOnCard2(false);
+        arrayRemovePre();
+        setCardOption();
       }
       if (currentRR) {
         if (!currentRR.ownedP1 && !currentRR.ownedP2) {
           setRRModal(true);
           setOnRR(currentRR);
-          arrayRemovePre();
-          setCardOption();
           setOnCard(false);
           setOnCard2(false);
+          arrayRemovePre();
+          setCardOption();
         } else if (!currentRR.ownedP1 && currentRR.ownedP2) {
           setOnRR(currentRR);
           setPayRail(true);
+          setOnCard(false);
+          setOnCard2(false);
           setPayRailTo(2);
           arrayRemovePre();
           setCardOption();
+        } else {
           setOnCard(false);
           setOnCard2(false);
-        } else {
           arrayRemovePre();
           setCardOption();
-          setOnCard(false);
-          setOnCard2(false);
         }
       } else if (currentProp) {
         if (!currentProp.ownedP1 && !currentProp.ownedP2) {
           setPropertyModal1(true);
           setOnProp(currentProp);
-          arrayRemovePre();
-          setCardOption();
           setOnCard(false);
           setOnCard2(false);
+          arrayRemovePre();
+          setCardOption();
         } else if (!currentProp.ownedP1 && currentProp.ownedP2) {
           setOnProp(currentProp);
           setPayProp(true);
           setPayTo(2);
-          arrayRemovePre();
-          setCardOption();
           setOnCard(false);
           setOnCard2(false);
+          arrayRemovePre();
+          setCardOption();
         } else {
-          arrayRemovePre();
-          setCardOption();
           setOnCard(false);
           setOnCard2(false);
+          arrayRemovePre();
+          setCardOption();
         }
       } else {
-        arrayRemovePre();
-        setCardOption();
         setOnCard(false);
         setOnCard2(false);
+        arrayRemovePre();
+        setCardOption();
       }
     } else if (!onCard && onCard2 && currentCard.Type === "forward") {
       let newSpace = counterP2 + currentCard.amt;
@@ -432,53 +488,53 @@ const InnerCard = ({
       let currentRR = railRoads.find((rr) => rr.Number === newSpace);
       if (newSpace === 11) {
         setCounterP2(newSpace);
-        arrayRemovePre();
-        setCardOption();
         setOnCard(false);
         setOnCard2(false);
+        arrayRemovePre();
+        setCardOption();
       } else if (currentRR) {
         if (!currentRR.ownedP1 && !currentRR.ownedP2) {
           setRRModal2(true);
           setOnRR2(currentRR);
-          arrayRemovePre();
-          setCardOption();
           setOnCard(false);
           setOnCard2(false);
+          arrayRemovePre();
+          setCardOption();
         } else if (currentRR.ownedP1 && !currentRR.ownedP2) {
           setOnRR2(currentRR);
           setPayRail(true);
           setPayRailTo(1);
-          arrayRemovePre();
-          setCardOption();
           setOnCard(false);
           setOnCard2(false);
+          arrayRemovePre();
+          setCardOption();
         } else {
-          arrayRemovePre();
-          setCardOption();
           setOnCard(false);
           setOnCard2(false);
+          arrayRemovePre();
+          setCardOption();
         }
       } else if (currentProp) {
         if (!currentProp.ownedP1 && !currentProp.ownedP2) {
           setPropertyModal2(true);
           setOnProp2(currentProp);
-          arrayRemovePre();
-          setCardOption();
           setOnCard(false);
           setOnCard2(false);
+          arrayRemovePre();
+          setCardOption();
         } else if (currentProp.ownedP1 && !currentProp.ownedP2) {
           setOnProp2(currentProp);
           setPayProp(true);
           setPayTo(1);
-          arrayRemovePre();
-          setCardOption();
           setOnCard(false);
           setOnCard2(false);
+          arrayRemovePre();
+          setCardOption();
         } else {
-          arrayRemovePre();
-          setCardOption();
           setOnCard(false);
           setOnCard2(false);
+          arrayRemovePre();
+          setCardOption();
         }
       }
     } else if (onCard && !onCard2 && currentCard.Type === "back") {
@@ -491,53 +547,55 @@ const InnerCard = ({
         if (currentProp && !currentProp.ownedP1 && !currentProp.ownedP2) {
           setPropertyModal1(true);
           setOnProp(currentProp);
-          arrayRemovePre();
-          setCardOption();
           setOnCard(false);
           setOnCard2(false);
+          arrayRemovePre();
+          setCardOption();
         } else if (currentProp && !currentProp.ownedP1 && currentProp.ownedP2) {
           setOnProp(currentProp);
           setPayProp(true);
           setPayTo(2);
-          arrayRemovePre();
-          setCardOption();
           setOnCard(false);
           setOnCard2(false);
+          arrayRemovePre();
+          setCardOption();
         } else {
-          arrayRemovePre();
-          setCardOption();
           setOnCard(false);
           setOnCard2(false);
+          arrayRemovePre();
+          setCardOption();
         }
       } else if (newSpace === -1) {
         setCounterP1(39);
+        setOnCard(false);
+        setOnCard2(false);
         setCurrentCard();
         setOnAgentFee(true);
         arrayRemovePre();
         setCardOption();
-        setOnCard(false);
-        setOnCard2(false);
       } else if (newSpace === 5) {
         setOnVisa(true);
+        setOnCard(false);
+        setOnCard2(false);
         setCurrentCard();
         arrayRemovePre();
         setCardOption();
-        setOnCard(false);
-        setOnCard2(false);
       } else if (newSpace === 34) {
         setCounterP1(newSpace);
         setOnCard(true);
+        setOnCard(false);
+        setOnCard2(false);
         setCurrentCard();
         arrayRemovePre();
         setCardOption();
       } else if (newSpace === 31) {
         setCounterP1(newSpace);
         setOnFreeParking(true);
+        setOnCard(false);
+        setOnCard2(false);
         setCurrentCard();
         arrayRemovePre();
         setCardOption();
-        setOnCard(false);
-        setOnCard2(false);
       } else if (newSpace > 0) {
         setCounterP1(newSpace);
         setCurrentCard();
@@ -546,43 +604,43 @@ const InnerCard = ({
         );
         if (currentProp && !currentProp.ownedP1 && !currentProp.ownedP2) {
           setPropertyModal1(true);
+          setOnCard(false);
+          setOnCard2(false);
           setOnProp(currentProp);
           arrayRemovePre();
           setCardOption();
-          setOnCard(false);
-          setOnCard2(false);
         } else if (currentProp && !currentProp.ownedP1 && currentProp.ownedP2) {
           setOnProp(currentProp);
+          setOnCard(false);
+          setOnCard2(false);
           setPayProp(true);
           setPayTo(2);
           arrayRemovePre();
           setCardOption();
-          setOnCard(false);
-          setOnCard2(false);
         } else if (
           currentUtil &&
           !currentUtil.ownedP1 &&
           !currentUtil.ownedP2
         ) {
+          setOnCard(false);
+          setOnCard2(false);
           setUtilModal(true);
           setOnUtil(currentUtil);
           arrayRemovePre();
           setCardOption();
+        } else if (currentUtil && !currentUtil.ownedP1 && currentUtil.ownedP2) {
           setOnCard(false);
           setOnCard2(false);
-        } else if (currentUtil && !currentUtil.ownedP1 && currentUtil.ownedP2) {
           setOnUtil(currentUtil);
           setPayUtil(true);
           setPayUtilTo(2);
           arrayRemovePre();
           setCardOption();
+        } else {
           setOnCard(false);
           setOnCard2(false);
-        } else {
           arrayRemovePre();
           setCardOption();
-          setOnCard(false);
-          setOnCard2(false);
         }
       }
     } else if (!onCard && onCard2 && currentCard.Type === "back") {
@@ -593,41 +651,41 @@ const InnerCard = ({
         setCurrentCard();
         let currentProp = properties.find((property) => property.Number === 38);
         if (currentProp && !currentProp.ownedP1 && !currentProp.ownedP2) {
+          setOnCard(false);
+          setOnCard2(false);
           setPropertyModal2(true);
           setOnProp2(currentProp);
           arrayRemovePre();
           setCardOption();
+        } else if (currentProp && currentProp.ownedP1 && !currentProp.ownedP2) {
           setOnCard(false);
           setOnCard2(false);
-        } else if (currentProp && currentProp.ownedP1 && !currentProp.ownedP2) {
           setOnProp2(currentProp);
           setPayProp(true);
           setPayTo(1);
           arrayRemovePre();
           setCardOption();
+        } else {
           setOnCard(false);
           setOnCard2(false);
-        } else {
           arrayRemovePre();
           setCardOption();
-          setOnCard(false);
-          setOnCard2(false);
         }
       } else if (newSpace === -1) {
+        setOnCard(false);
+        setOnCard2(false);
         setCounterP2(39);
         setCurrentCard();
         setOnAgentFee2(true);
         arrayRemovePre();
         setCardOption();
+      } else if (newSpace === 5) {
         setOnCard(false);
         setOnCard2(false);
-      } else if (newSpace === 5) {
         setOnVisa2(true);
         setCurrentCard();
         arrayRemovePre();
         setCardOption();
-        setOnCard(false);
-        setOnCard2(false);
       } else if (newSpace === 34) {
         setCounterP2(newSpace);
         setOnCard2(true);
@@ -636,13 +694,13 @@ const InnerCard = ({
         setCardOption();
         setOnCard(false);
       } else if (newSpace === 31) {
+        setOnCard(false);
+        setOnCard2(false);
         setCounterP1(newSpace);
         setOnFreeParking2(true);
         setCurrentCard();
         arrayRemovePre();
         setCardOption();
-        setOnCard(false);
-        setOnCard2(false);
       } else if (newSpace > 0) {
         setCounterP2(newSpace);
         setCurrentCard();
@@ -650,54 +708,54 @@ const InnerCard = ({
           (property) => property.Number === newSpace
         );
         if (currentProp && !currentProp.ownedP1 && !currentProp.ownedP2) {
+          setOnCard(false);
+          setOnCard2(false);
           setPropertyModal2(true);
           setOnProp2(currentProp);
           arrayRemovePre();
           setCardOption();
+        } else if (currentProp && currentProp.ownedP1 && !currentProp.ownedP2) {
           setOnCard(false);
           setOnCard2(false);
-        } else if (currentProp && currentProp.ownedP1 && !currentProp.ownedP2) {
           setOnProp2(currentProp);
           setPayProp(true);
           setPayTo(1);
           arrayRemovePre();
           setCardOption();
-          setOnCard(false);
-          setOnCard2(false);
         } else if (
           currentUtil &&
           !currentUtil.ownedP1 &&
           !currentUtil.ownedP2
         ) {
+          setOnCard(false);
+          setOnCard2(false);
           setUtilModal2(true);
           setOnUtil2(currentUtil);
           arrayRemovePre();
           setCardOption();
+        } else if (currentUtil && currentUtil.ownedP1 && !currentUtil.ownedP2) {
           setOnCard(false);
           setOnCard2(false);
-        } else if (currentUtil && currentUtil.ownedP1 && !currentUtil.ownedP2) {
           setOnUtil2(currentUtil);
           setPayUtil(true);
           setPayUtilTo(1);
           arrayRemovePre();
           setCardOption();
-          setOnCard(false);
-          setOnCard2(false);
         }
       } else {
-        arrayRemovePre();
-        setCardOption();
         setOnCard(false);
         setOnCard2(false);
+        arrayRemovePre();
+        setCardOption();
       }
     } else if (currentCard.Type === "reroll") {
       let newTurn = turn + 1;
+      setOnCard(false);
+      setOnCard2(false);
       setTurn(newTurn);
       setCurrentCard();
       arrayRemovePre();
       setCardOption();
-      setOnCard(false);
-      setOnCard2(false);
     } else if (onCard && !onCard2 && currentCard.Type === "advance") {
       let currentProp = properties.find(
         (property) => property.Number === currentCard.space
@@ -714,69 +772,69 @@ const InnerCard = ({
       }
       setCounterP1(currentCard.space);
       if (currentProp && !currentProp.ownedP1 && !currentProp.ownedP2) {
+        setOnCard(false);
+        setOnCard2(false);
         setPropertyModal1(true);
         setOnProp2(currentProp);
         arrayRemovePre();
         setCardOption();
+      } else if (currentProp && !currentProp.ownedP1 && currentProp.ownedP2) {
         setOnCard(false);
         setOnCard2(false);
-      } else if (currentProp && !currentProp.ownedP1 && currentProp.ownedP2) {
         setOnProp(currentProp);
         setPayProp(true);
         setPayTo(2);
         arrayRemovePre();
         setCardOption();
+      } else if (currentUtil && !currentUtil.ownedP1 && !currentUtil.ownedP2) {
         setOnCard(false);
         setOnCard2(false);
-      } else if (currentUtil && !currentUtil.ownedP1 && !currentUtil.ownedP2) {
         setUtilModal(true);
         setOnUtil(currentUtil);
         arrayRemovePre();
         setCardOption();
+      } else if (currentUtil && !currentUtil.ownedP1 && currentUtil.ownedP2) {
         setOnCard(false);
         setOnCard2(false);
-      } else if (currentUtil && !currentUtil.ownedP1 && currentUtil.ownedP2) {
         setOnUtil(currentUtil);
         setPayUtil(true);
         setPayUtilTo(2);
         arrayRemovePre();
         setCardOption();
+      } else if (currentRR && !currentRR.ownedP1 && !currentRR.ownedP2) {
         setOnCard(false);
         setOnCard2(false);
-      } else if (currentRR && !currentRR.ownedP1 && !currentRR.ownedP2) {
         setRRModal(true);
         setOnRR(currentRR);
         arrayRemovePre();
         setCardOption();
-        setOnCard(false);
-        setOnCard2(false);
       } else if (currentRR && !currentRR.ownedP1 && currentRR.ownedP2) {
         setOnRR(currentRR);
+        setOnCard(false);
+        setOnCard2(false);
         setPayRail(true);
         setPayRailTo(2);
         arrayRemovePre();
         setCardOption();
+      } else {
         setOnCard(false);
         setOnCard2(false);
-      } else {
         arrayRemovePre();
         setCardOption();
-        setOnCard(false);
-        setOnCard2(false);
       }
       if (currentCard.space === 41) {
+        setOnCard(false);
+        setOnCard2(false);
         setInJail(true);
         setCurrentCard();
         arrayRemovePre();
         setCardOption();
-        setOnCard(false);
-        setOnCard2(false);
       }
+      setOnCard(false);
+      setOnCard2(false);
       setCurrentCard();
       arrayRemovePre();
       setCardOption();
-      setOnCard(false);
-      setOnCard2(false);
     } else if (!onCard && onCard2 && currentCard.Type === "advance") {
       let currentProp = properties.find(
         (property) => property.Number === currentCard.space
@@ -795,68 +853,68 @@ const InnerCard = ({
 
       if (currentProp && !currentProp.ownedP1 && !currentProp.ownedP2) {
         setPropertyModal2(true);
+        setOnCard(false);
+        setOnCard2(false);
         setOnProp2(currentProp);
         arrayRemovePre();
         setCardOption();
+      } else if (currentProp && currentProp.ownedP1 && !currentProp.ownedP2) {
         setOnCard(false);
         setOnCard2(false);
-      } else if (currentProp && currentProp.ownedP1 && !currentProp.ownedP2) {
         setOnProp2(currentProp);
         setPayProp(true);
         setPayTo(1);
         arrayRemovePre();
         setCardOption();
+      } else if (currentUtil && !currentUtil.ownedP1 && !currentUtil.ownedP2) {
         setOnCard(false);
         setOnCard2(false);
-      } else if (currentUtil && !currentUtil.ownedP1 && !currentUtil.ownedP2) {
         setUtilModal2(true);
         setOnUtil2(currentUtil);
         arrayRemovePre();
         setCardOption();
+      } else if (currentUtil && currentUtil.ownedP1 && !currentUtil.ownedP2) {
         setOnCard(false);
         setOnCard2(false);
-      } else if (currentUtil && currentUtil.ownedP1 && !currentUtil.ownedP2) {
         setOnUtil2(currentUtil);
         setPayUtil(true);
         setPayUtilTo(1);
         arrayRemovePre();
         setCardOption();
+      } else if (currentRR && !currentRR.ownedP1 && !currentRR.ownedP2) {
         setOnCard(false);
         setOnCard2(false);
-      } else if (currentRR && !currentRR.ownedP1 && !currentRR.ownedP2) {
         setRRModal2(true);
         setOnRR2(currentRR);
         arrayRemovePre();
         setCardOption();
+      } else if (currentRR && currentRR.ownedP1 && !currentRR.ownedP2) {
         setOnCard(false);
         setOnCard2(false);
-      } else if (currentRR && currentRR.ownedP1 && !currentRR.ownedP2) {
         setOnRR2(currentRR);
         setPayRail(true);
         setPayRailTo(1);
         arrayRemovePre();
         setCardOption();
+      } else {
         setOnCard(false);
         setOnCard2(false);
-      } else {
         arrayRemovePre();
         setCardOption();
-        setOnCard(false);
-        setOnCard2(false);
       }
       if (currentCard.space === 41) {
+        setOnCard(false);
+        setOnCard2(false);
         setInJail2(true);
         setCurrentCard();
         arrayRemovePre();
         setCardOption();
-        setOnCard(false);
-        setOnCard2(false);
       }
+      setOnCard(false);
+      setOnCard2(false);
       setCurrentCard();
       arrayRemovePre();
       setCardOption();
-      setOnCard(false);
-      setOnCard2(false);
     } else if (
       onCard &&
       !onCard2 &&
@@ -869,80 +927,80 @@ const InnerCard = ({
         setP1Money(newMoney);
         setCounterP1(6);
         if (railRoads[0].ownedP2) {
+          setOnCard(false);
+          setOnCard2(false);
           setDoubleRR(true);
           setOnRR(railRoads[0]);
           setPayRail(true);
           setPayRailTo(2);
           arrayRemovePre();
           setCardOption();
+        } else if (!railRoads[0].ownedP2 && !railRoads[0].ownedP1) {
           setOnCard(false);
           setOnCard2(false);
-        } else if (!railRoads[0].ownedP2 && !railRoads[0].ownedP1) {
           setRRModal(true);
           setOnRR(railRoads[0]);
           setCurrentCard();
           arrayRemovePre();
           setCardOption();
+        } else {
           setOnCard(false);
           setOnCard2(false);
-        } else {
           setCurrentCard();
           arrayRemovePre();
           setCardOption();
-          setOnCard(false);
-          setOnCard2(false);
         }
       } else if (counterP1 === 8) {
         setCounterP1(16);
         if (railRoads[1].ownedP2) {
+          setOnCard(false);
+          setOnCard2(false);
           setDoubleRR(true);
           setOnRR(railRoads[1]);
           setPayRail(true);
           setPayRailTo(2);
           arrayRemovePre();
           setCardOption();
+        } else if (!railRoads[1].owned2 && !railRoads[1].ownedP1) {
           setOnCard(false);
           setOnCard2(false);
-        } else if (!railRoads[1].owned2 && !railRoads[1].ownedP1) {
           setOnRR(railRoads[1]);
           setRRModal(true);
           setCurrentCard();
           arrayRemovePre();
           setCardOption();
+        } else {
           setOnCard(false);
           setOnCard2(false);
-        } else {
           setCurrentCard();
           arrayRemovePre();
           setCardOption();
-          setOnCard(false);
-          setOnCard2(false);
         }
       } else if (counterP1 === 23) {
         setCounterP1(26);
         if (railRoads[2].ownedP2) {
+          setOnCard(false);
+          setOnCard2(false);
           setDoubleRR(true);
           setOnRR(railRoads[2]);
           setPayRail(true);
           setPayRailTo(2);
           arrayRemovePre();
           setCardOption();
+        } else if (!railRoads[2].ownedP2 && !railRoads[2].ownedP1) {
           setOnCard(false);
           setOnCard2(false);
-        } else if (!railRoads[2].ownedP2 && !railRoads[2].ownedP1) {
           setRRModal(true);
           setOnRR(railRoads[2]);
           setCurrentCard();
           arrayRemovePre();
           setCardOption();
+        } else {
           setOnCard(false);
           setOnCard2(false);
-        } else {
           setCurrentCard();
           arrayRemovePre();
           setCardOption();
-          setOnCard(false);
-          setOnCard2(false);
         }
       }
     } else if (
@@ -957,80 +1015,80 @@ const InnerCard = ({
         let newMoney = p2Money + 200;
         setP2Money(newMoney);
         if (railRoads[0].ownedP1) {
+          setOnCard(false);
+          setOnCard2(false);
           setDoubleRR(true);
           setOnRR2(railRoads[0]);
           setPayRail(true);
           setPayRailTo(1);
           arrayRemovePre();
           setCardOption();
+        } else if (!railRoads[0].ownedP1 && !railRoads[0].ownedP2) {
           setOnCard(false);
           setOnCard2(false);
-        } else if (!railRoads[0].ownedP1 && !railRoads[0].ownedP2) {
           setOnRR2(railRoads[0]);
           setRRModal2(true);
           setCurrentCard();
           arrayRemovePre();
           setCardOption();
+        } else {
           setOnCard(false);
           setOnCard2(false);
-        } else {
           setCurrentCard();
           arrayRemovePre();
           setCardOption();
-          setOnCard(false);
-          setOnCard2(false);
         }
       } else if (counterP2 === 8) {
         setCounterP2(16);
         if (railRoads[1].ownedP1) {
+          setOnCard(false);
+          setOnCard2(false);
           setDoubleRR(true);
           setOnRR2(railRoads[1]);
           setPayRail(true);
           setPayRailTo(1);
           arrayRemovePre();
           setCardOption();
+        } else if (!railRoads[1].ownedP2 && !railRoads[1].ownedP1) {
           setOnCard(false);
           setOnCard2(false);
-        } else if (!railRoads[1].ownedP2 && !railRoads[1].ownedP1) {
           setOnRR2(railRoads[1]);
           setRRModal2(true);
           setCurrentCard();
           arrayRemovePre();
           setCardOption();
+        } else {
           setOnCard(false);
           setOnCard2(false);
-        } else {
           setCurrentCard();
           arrayRemovePre();
           setCardOption();
-          setOnCard(false);
-          setOnCard2(false);
         }
       } else if (counterP2 === 23) {
         setCounterP2(26);
         if (railRoads[2].ownedP1) {
+          setOnCard(false);
+          setOnCard2(false);
           setDoubleRR(true);
           setOnRR2(railRoads[2]);
           setPayRail(true);
           setPayRailTo(1);
           arrayRemovePre();
           setCardOption();
+        } else if (!railRoads[2].ownedP1 && !railRoads[2].ownedP2) {
           setOnCard(false);
           setOnCard2(false);
-        } else if (!railRoads[2].ownedP1 && !railRoads[2].ownedP2) {
           setOnRR2(railRoads[2]);
           setRRModal2(true);
           setCurrentCard();
           arrayRemovePre();
           setCardOption();
+        } else {
           setOnCard(false);
           setOnCard2(false);
-        } else {
           setCurrentCard();
           arrayRemovePre();
           setCardOption();
-          setOnCard(false);
-          setOnCard2(false);
         }
       }
     } else if (
@@ -1073,6 +1131,8 @@ const InnerCard = ({
           if (moveTo < counterP1) {
             let newMoney = p1Money + 200;
             setP1Money(newMoney);
+            setOnCard(false);
+            setOnCard2(false);
             setPass(true);
             setDoubleProp(true);
             setCounterP1(moveTo);
@@ -1082,9 +1142,9 @@ const InnerCard = ({
             setCurrentCard();
             arrayRemovePre();
             setCardOption();
+          } else {
             setOnCard(false);
             setOnCard2(false);
-          } else {
             setDoubleProp(true);
             setCounterP1(moveTo);
             setOnProp(firstOwned);
@@ -1093,16 +1153,14 @@ const InnerCard = ({
             setCurrentCard();
             arrayRemovePre();
             setCardOption();
-            setOnCard(false);
-            setOnCard2(false);
           }
         } else {
+          setOnCard(false);
+          setOnCard2(false);
           setCounterP1(counterP1);
           setCurrentCard();
           arrayRemovePre();
           setCardOption();
-          setOnCard(false);
-          setOnCard2(false);
         }
       } else if (counterP1 === 18) {
         let orderedProps = [
@@ -1136,6 +1194,8 @@ const InnerCard = ({
           let moveTo = firstOwned.Number;
           if (moveTo < firstOwned) {
             let newMoney = p1Money + 200;
+            setOnCard(false);
+            setOnCard2(false);
             setP1Money(newMoney);
             setPass(true);
             setDoubleProp(true);
@@ -1146,9 +1206,9 @@ const InnerCard = ({
             setCurrentCard();
             arrayRemovePre();
             setCardOption();
+          } else {
             setOnCard(false);
             setOnCard2(false);
-          } else {
             setDoubleProp(true);
             setCounterP1(moveTo);
             setPayProp(true);
@@ -1157,16 +1217,14 @@ const InnerCard = ({
             setCurrentCard();
             arrayRemovePre();
             setCardOption();
-            setOnCard(false);
-            setOnCard2(false);
           }
         } else {
+          setOnCard(false);
+          setOnCard2(false);
           setCounterP1(counterP1);
           setCurrentCard();
           arrayRemovePre();
           setCardOption();
-          setOnCard(false);
-          setOnCard2(false);
         }
       } else if (counterP1 === 34) {
         let orderedProps = [
@@ -1200,6 +1258,8 @@ const InnerCard = ({
           let moveTo = firstOwned.Number;
           if (moveTo < firstOwned) {
             let newMoney = p1Money + 200;
+            setOnCard(false);
+            setOnCard2(false);
             setP1Money(newMoney);
             setPass(true);
             setDoubleProp(true);
@@ -1210,9 +1270,9 @@ const InnerCard = ({
             setCurrentCard();
             arrayRemovePre();
             setCardOption();
+          } else {
             setOnCard(false);
             setOnCard2(false);
-          } else {
             setDoubleProp(true);
             setCounterP1(moveTo);
             setOnProp(firstOwned);
@@ -1221,16 +1281,14 @@ const InnerCard = ({
             setCurrentCard();
             arrayRemovePre();
             setCardOption();
-            setOnCard(false);
-            setOnCard2(false);
           }
         } else {
+          setOnCard(false);
+          setOnCard2(false);
           setCounterP1(counterP1);
           setCurrentCard();
           arrayRemovePre();
           setCardOption();
-          setOnCard(false);
-          setOnCard2(false);
         }
       }
     } else if (
@@ -1272,6 +1330,8 @@ const InnerCard = ({
           let moveTo = firstOwned.Number;
           if (moveTo < counterP2) {
             let newMoney = p2Money + 200;
+            setOnCard(false);
+            setOnCard2(false);
             setP2Money(newMoney);
             setPass2(true);
             setDoubleProp(false);
@@ -1282,9 +1342,9 @@ const InnerCard = ({
             setCurrentCard();
             arrayRemovePre();
             setCardOption();
+          } else {
             setOnCard(false);
             setOnCard2(false);
-          } else {
             setDoubleProp(false);
             setCounterP2(moveTo);
             setOnProp2(firstOwned);
@@ -1293,16 +1353,14 @@ const InnerCard = ({
             setCurrentCard();
             arrayRemovePre();
             setCardOption();
-            setOnCard(false);
-            setOnCard2(false);
           }
         } else {
+          setOnCard(false);
+          setOnCard2(false);
           setCounterP2(counterP2);
           setCurrentCard();
           arrayRemovePre();
           setCardOption();
-          setOnCard(false);
-          setOnCard2(false);
         }
       } else if (counterP2 === 18) {
         let orderedProps = [
@@ -1337,6 +1395,8 @@ const InnerCard = ({
           let moveTo = firstOwned.Number;
           if (moveTo < counterP2) {
             let newMoney = p2Money + 200;
+            setOnCard(false);
+            setOnCard2(false);
             setP2Money(newMoney);
             setPass(true);
             setDoubleProp(true);
@@ -1347,9 +1407,9 @@ const InnerCard = ({
             setCurrentCard();
             arrayRemovePre();
             setCardOption();
+          } else {
             setOnCard(false);
             setOnCard2(false);
-          } else {
             setDoubleProp(true);
             setOnProp2(firstOwned);
             setPayProp(true);
@@ -1358,16 +1418,14 @@ const InnerCard = ({
             setCurrentCard();
             arrayRemovePre();
             setCardOption();
-            setOnCard(false);
-            setOnCard2(false);
           }
         } else {
+          setOnCard(false);
+          setOnCard2(false);
           setCounterP2(counterP2);
           setCurrentCard();
           arrayRemovePre();
           setCardOption();
-          setOnCard(false);
-          setOnCard2(false);
         }
       } else if (counterP2 === 34) {
         let orderedProps = [
@@ -1401,6 +1459,8 @@ const InnerCard = ({
           let moveTo = firstOwned.Number;
           if (moveTo < counterP2) {
             let newMoney = p2Money + 200;
+            setOnCard(false);
+            setOnCard2(false);
             setP2Money(newMoney);
             setPass(true);
             setDoubleProp(true);
@@ -1411,9 +1471,9 @@ const InnerCard = ({
             setCurrentCard();
             arrayRemovePre();
             setCardOption();
+          } else {
             setOnCard(false);
             setOnCard2(false);
-          } else {
             setDoubleProp(true);
             setOnProp2(firstOwned);
             setPayProp(true);
@@ -1422,46 +1482,44 @@ const InnerCard = ({
             setCurrentCard();
             arrayRemovePre();
             setCardOption();
-            setOnCard(false);
-            setOnCard2(false);
           }
         } else {
+          setOnCard(false);
+          setOnCard2(false);
           setCounterP2(counterP2);
           setCurrentCard();
           arrayRemovePre();
           setCardOption();
-          setOnCard(false);
-          setOnCard2(false);
         }
       }
     } else if (onCard && !onCard2 && currentCard.Type === "skip") {
+      setOnCard(false);
+      setOnCard2(false);
       setSkip1(true);
       setCurrentCard();
       arrayRemovePre();
       setCardOption();
+    } else if (!onCard && onCard2 && currentCard.Type === "skip") {
       setOnCard(false);
       setOnCard2(false);
-    } else if (!onCard && onCard2 && currentCard.Type === "skip") {
       setSkip2(true);
       setCurrentCard();
       arrayRemovePre();
       setCardOption();
+    } else if (onCard && !onCard2 && currentCard.Type === "visa") {
       setOnCard(false);
       setOnCard2(false);
-    } else if (onCard && !onCard2 && currentCard.Type === "visa") {
       setVisa1(true);
       setCurrentCard();
       arrayRemovePre();
       setCardOption();
+    } else if (!onCard && onCard2 && currentCard.Type === "visa") {
       setOnCard(false);
       setOnCard2(false);
-    } else if (!onCard && onCard2 && currentCard.Type === "visa") {
       setVisa2(true);
       setCurrentCard();
       arrayRemovePre();
       setCardOption();
-      setOnCard(false);
-      setOnCard2(false);
     } else if (onCard && !onCard2 && currentCard.Type === "pay-house") {
       let cost = totalHousesP1 * 30 + hotelsP1 * 50;
       let newMoney = p1Money - cost;
@@ -1470,16 +1528,20 @@ const InnerCard = ({
         setMustMortgage(true);
         setRent(cost);
       } else if (newMoney < 0 && p1MoneyAvailable < -1 * newMoney) {
+        setOnCard(false);
+        setOnCard2(false);
         setP1Money(0);
         setGameOver(true);
+        setEndGame(true);
+        victory();
       } else {
+        setOnCard(false);
+        setOnCard2(false);
         setP1Money(newMoney);
         setFreeParking(newParking);
         setCurrentCard();
         arrayRemovePre();
         setCardOption();
-        setOnCard(false);
-        setOnCard2(false);
       }
     } else if (!onCard && onCard2 && currentCard.Type === "pay-house") {
       let cost = totalHousesP2 * 30 + hotelsP2 * 50;
@@ -1489,16 +1551,22 @@ const InnerCard = ({
         setMustMortgage2(true);
         setRent(cost);
       } else if (newMoney < 0 && p2MoneyAvailable < -1 * newMoney) {
+        setEndGame(true);
+        setOnCard(false);
+        setOnCard2(false);
         setP2Money(0);
+        victory();
         setGameOver2(true);
       } else {
+        setEndGame(true);
+        setOnCard(false);
+        setOnCard2(false);
         setP2Money(newMoney);
+        victory();
         setFreeParking(newParking);
         setCurrentCard();
         arrayRemovePre();
         setCardOption();
-        setOnCard(false);
-        setOnCard2(false);
       }
     } else if (onCard && !onCard2 && currentCard.Type === "pay-space") {
       let newMoney = p1Money - 200;
@@ -1508,16 +1576,21 @@ const InnerCard = ({
         setMustMortgage(true);
         setRent(200);
       } else if (newMoney < 0 && p1MoneyAvailable < -1 * newMoney) {
+        setEndGame(true);
+        setOnCard(false);
+        setOnCard2(false);
         setP1Money(0);
+        victory();
         setGameOver(true);
+        setEndGame(true);
       } else {
+        setOnCard(false);
+        setOnCard2(false);
         setFreeParking(newParking);
         setCounterP1(11);
         setCurrentCard();
         arrayRemovePre();
         setCardOption();
-        setOnCard(false);
-        setOnCard2(false);
       }
     } else if (!onCard && onCard2 && currentCard.Type === "pay-space") {
       let newMoney = p2Money - 200;
@@ -1527,19 +1600,25 @@ const InnerCard = ({
         setMustMortgage2(true);
         setRent(200);
       } else if (newMoney < 0 && p2MoneyAvailable < -1 * newMoney) {
+        setOnCard(false);
+        setOnCard2(false);
         setP2Money(0);
         setGameOver2(true);
+        setEndGame(true);
+        victory();
       } else {
+        setOnCard(false);
+        setOnCard2(false);
         setFreeParking(newParking);
         setCounterP2(11);
         setCurrentCard();
         arrayRemovePre();
         setCardOption();
-        setOnCard(false);
-        setOnCard2(false);
       }
     }
   };
+
+  console.log(currentCard);
 
   const arrayRemovePre = () => {
     if (cardOption === "GUANXI") {
@@ -1580,8 +1659,7 @@ const InnerCard = ({
       let cardChoice = yunqi[Math.floor(Math.random() * yunqi.length)];
       setYunqi(cardChoice);
     }
-    return null;
-  }, [cardOption, guanxi, setGuanxi, setYunqi, yunqi]);
+  }, [cardOption, onCard, onCard2, setGuanxi, setYunqi, guanxi, yunqi]);
 
   const close = () => {
     drum();
