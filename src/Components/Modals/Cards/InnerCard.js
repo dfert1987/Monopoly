@@ -149,6 +149,7 @@ const InnerCard = ({
   const [zhege] = useSound(Zhege);
 
   const cardFunctionSorter = () => {
+    console.log(currentCard.Type);
     if ((onCard || onCard2) && currentCard && currentCard.sound === "plane") {
       airplane();
     }

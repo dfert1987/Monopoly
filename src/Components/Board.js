@@ -194,6 +194,8 @@ export const Board = ({
   const [doubleProp, setDoubleProp] = useState(false);
   const [p1Image, setP1Image] = useState();
   const [p2Image, setP2Image] = useState();
+  const [p1SRC, setP1SRC] = useState();
+  const [p2SRC, setP2SRC] = useState();
   const [lushHouses, setLushHouses] = useState(0);
   const [lushHotel, setLushHotel] = useState(false);
   const [propagandaHouses, setPropagandaHouses] = useState(0);
@@ -767,98 +769,128 @@ export const Board = ({
 
     if (p1Pic === 0) {
       setP1Image(Piece1);
+      setP1SRC("../../Assets/Pieces/Piece1.png");
     }
     if (p1Pic === 1) {
       setP1Image(Piece2);
+      setP1SRC("../../Assets/Pieces/Piece2.png");
     }
     if (p1Pic === 2) {
       setP1Image(Baijiu);
+      setP1SRC("../../Assets/Pieces/Piece2.png");
     }
     if (p1Pic === 3) {
       setP1Image(Baoan);
+      setP1SRC("../../Assets/Pieces/piece1.png");
     }
     if (p1Pic === 4) {
       setP1Image(Baozi);
+      setP1SRC("../../Assets/Pieces/baozi.png");
     }
     if (p1Pic === 5) {
       setP1Image(Duck);
+      setP1SRC("../../Assets/Pieces/duck.png");
     }
     if (p1Pic === 6) {
       setP1Image(Fudog);
+      setP1SRC("../../Assets/Pieces/fudog.png");
     }
     if (p1Pic === 7) {
       setP1Image(Jiaozi);
+      setP1SRC("../../Assets/Pieces/jiaozi.png");
     }
     if (p1Pic === 8) {
       setP1Image(Lantern);
+      setP1SRC("../../Assets/Pieces/lantern.png");
     }
     if (p1Pic === 9) {
       setP1Image(Mobike);
+      setP1SRC("../../Assets/Pieces/mobike.png");
     }
     if (p1Pic === 10) {
       setP1Image(Morgan);
+      setP1SRC("../../Assets/Pieces/morgan.png");
     }
     if (p1Pic === 11) {
       setP1Image(Poodle);
+      setP1SRC("../../Assets/Pieces/poodle.png");
     }
     if (p1Pic === 12) {
       setP1Image(Taxi);
+      setP1SRC("../../Assets/Pieces/taxi.png");
     }
     if (p1Pic === 13) {
       setP1Image(Teapot);
+      setP1SRC("../../Assets/Pieces/teapot.png");
     }
     if (p1Pic === 14) {
       setP1Image(Yanjing);
+      setP1SRC("../../Assets/Pieces/yanjing.png");
     }
     if (p2Pic === 0) {
       setP2Image(Piece1);
+      setP2SRC("../../Assets/Pieces/Piece1.png");
     }
     if (p2Pic === 1) {
       setP2Image(Piece2);
+      setP1SRC("../../Assets/Pieces/Piece2.png");
     }
     if (p2Pic === 2) {
       setP2Image(Baijiu);
+      setP1SRC("../../Assets/Pieces/Piece2.png");
     }
     if (p2Pic === 3) {
       setP2Image(Baoan);
+      setP1SRC("../../Assets/Pieces/piece1.png");
     }
     if (p2Pic === 4) {
       setP2Image(Baozi);
+      setP1SRC("../../Assets/Pieces/baozi.png");
     }
     if (p2Pic === 5) {
       setP2Image(Duck);
+
+      setP1SRC("../../Assets/Pieces/duck.png");
     }
     if (p2Pic === 6) {
       setP2Image(Fudog);
+      setP1SRC("../../Assets/Pieces/fudog.png");
     }
     if (p2Pic === 7) {
       setP2Image(Jiaozi);
+      setP1SRC("../../Assets/Pieces/jiaozi.png");
     }
     if (p2Pic === 8) {
       setP2Image(Lantern);
+      setP1SRC("../../Assets/Pieces/lantern.png");
     }
     if (p2Pic === 9) {
       setP2Image(Mobike);
+      setP1SRC("../../Assets/Pieces/mobike.png");
     }
     if (p2Pic === 10) {
       setP2Image(Morgan);
+      setP1SRC("../../Assets/Pieces/morgan.png");
     }
     if (p2Pic === 11) {
       setP2Image(Poodle);
+      setP1SRC("../../Assets/Pieces/poodle.png");
     }
     if (p2Pic === 12) {
       setP2Image(Taxi);
+      setP1SRC("../../Assets/Pieces/taxi.png");
     }
     if (p2Pic === 13) {
       setP2Image(Teapot);
+      setP1SRC("../../Assets/Pieces/teapot.png");
     }
     if (p2Pic === 14) {
       setP2Image(Yanjing);
+      setP1SRC("../../Assets/Pieces/yanjing.png");
     }
   }, [p1Pic, p2Pic, properties]);
 
   const showHouses = (property) => {
-    console.log(dadaHouses);
     if (property === 0) {
       if (trbHotel === true) {
         return (
@@ -2784,6 +2816,8 @@ export const Board = ({
           setEndGame={setEndGame}
           p1Image={p1Image}
           p2Image={p2Image}
+          p1SRC={p1SRC}
+          p2SRC={p2SRC}
         />
         <Go
           onGoP1={onGoP1}

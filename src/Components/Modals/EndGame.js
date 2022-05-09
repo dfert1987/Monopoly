@@ -1,9 +1,15 @@
 import React from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import "../Styles/EndGame.css";
-import { getByTitle } from "@testing-library/react";
 
-export const EndGame = ({ endGame, setEndGame, p1Image, p2Image }) => {
+export const EndGame = ({
+  endGame,
+  setEndGame,
+  p1Image,
+  p2Image,
+  p1SRC,
+  p2SRC,
+}) => {
   const backdrop = {
     visible: { opacity: 1 },
     hidden: { opacity: 0 },
@@ -29,6 +35,14 @@ export const EndGame = ({ endGame, setEndGame, p1Image, p2Image }) => {
     }
   };
 
+  const getSRC = () => {
+    if (endGame && endGame === "p1") {
+      return p1Image;
+    } else if (endGame && endGame === "p2") {
+      return p2Image;
+    }
+  };
+
   return (
     <>
       <AnimatePresence exitBeforeEnter>
@@ -49,6 +63,11 @@ export const EndGame = ({ endGame, setEndGame, p1Image, p2Image }) => {
             >
               <div className="main-container">
                 <div className="title-win-section">{getTitle()}</div>
+                <img
+                  className="winner-pic"
+                  alt="Winner Pic Piece"
+                  src={getSRC()}
+                />
               </div>
             </motion.div>
           </motion.div>
