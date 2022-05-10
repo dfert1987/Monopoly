@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Roll } from "./Roll";
 import { RollP2 } from "./RollP2";
 import Click from "../../Assets/Sounds/click.mp3";
+import Drum from "../../Assets/Sounds/drum.mp3";
 import useSound from "use-sound";
 import "../../Components/Styles/Controls.css";
 
@@ -103,13 +104,15 @@ export const Controls = ({
   setMortgage2,
   setUnMortgage,
   setUnMortgage2,
-  endGame,
-  setEndGame,
+  setConfirmConcedeView,
+  setPlayerOneConcede,
+  setPlayerTwoConcede,
 }) => {
   const [disableVisaRight, setDisableVisaRight] = useState(true);
   const [disableVisaLeft, setDisableVisaLeft] = useState(true);
 
   const [clickSound] = useSound(Click);
+  const [drum] = useSound(Drum);
 
   useEffect(() => {
     if (pass2) {
@@ -186,9 +189,17 @@ export const Controls = ({
     setViewProperties2(true);
   };
 
-  const concedeP1 = () => {};
+  const concedeP1 = () => {
+    drum();
+    setConfirmConcedeView(true);
+    setPlayerOneConcede(true);
+  };
 
-  const concedeP2 = () => {};
+  const concedeP2 = () => {
+    drum();
+    setConfirmConcedeView(true);
+    setPlayerTwoConcede(true);
+  };
 
   return (
     <div className="controls-container">

@@ -13,6 +13,7 @@ import VisaConfirm from "./Modals/Jail/VisaConfirm";
 import Jail from "./Modals/Jail/Jail";
 import Cards from "./Modals/Cards/Cards";
 import InJail from "./Modals/Jail/InJail";
+import ConfirmConcede from "./Modals/ConfirmConcede";
 import EndGame from "./Modals/EndGame";
 import OwnedProperties from "./Modals/OwnedProperties";
 import MortgageModal from "./Modals/Mortgage/MortgageModal";
@@ -183,6 +184,12 @@ export const Board = ({
   setUnMortgage2,
   endGame,
   setEndGame,
+  setConfirmConcedeView,
+  confirmConcedeView,
+  playerOneConcede,
+  setPlayerOneConcede,
+  playerTwoConcede,
+  setPlayerTwoConcede,
 }) => {
   const [viewPurchase, setViewPurchase] = useState(false);
   const [viewPurchase2, setViewPurchase2] = useState(false);
@@ -2731,6 +2738,7 @@ export const Board = ({
           setViewPurchaseUtil={setViewPurchaseUtil}
           setViewPurchaseUtil2={setViewPurchaseUtil2}
         />
+
         <PropertyModal
           className="modal"
           setPropertyModal1={setPropertyModal1}
@@ -2828,6 +2836,16 @@ export const Board = ({
           setP2Money={setP2Money}
           p1Money={p1Money}
           p2Money={p2Money}
+        />
+        <ConfirmConcede
+          endGame={endGame}
+          setEndGame={setEndGame}
+          confirmConcedeView={confirmConcedeView}
+          setConfirmConcedeView={setConfirmConcedeView}
+          playerOneConcede={playerOneConcede}
+          setPlayerOneConcede={setPlayerOneConcede}
+          playerTwoConcede={playerTwoConcede}
+          setPlayerTwoConcede={setPlayerTwoConcede}
         />
         <AgentFee
           onAgentFee={onAgentFee}

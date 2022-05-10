@@ -5,18 +5,15 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import useSound from "use-sound";
 import Click from "../../Assets/Sounds/click.mp3";
 import Victory from "../../Assets/Sounds/victory.mp3";
-import Gong from "../../Assets/Sounds/gong.mp3";
+import Gong from "../../Assets/Sounds/GONG.mp3";
 import "../Styles/Mortgage.css";
 
 const ConfirmConcede = ({
   confirmConcedeView,
   setConfirmConcedeView,
-  endGame,
   setEndGame,
   playerOneConcede,
-  setPlayerOneConcede,
   playerTwoConcede,
-  setPlayerTwoConcede,
 }) => {
   const [click] = useSound(Click);
   const [victory] = useSound(Victory);

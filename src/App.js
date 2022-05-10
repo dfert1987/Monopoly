@@ -82,6 +82,9 @@ const App = () => {
   const [unMortgage, setUnMortgage] = useState(false);
   const [unMortgage2, setUnMortgage2] = useState(false);
   const [endGame, setEndGame] = useState();
+  const [confirmConcedeView, setConfirmConcedView] = useState(false);
+  const [playerOneConcede, setPlayerOneConcede] = useState();
+  const [playerTwoConcede, setPlayerTwoConcede] = useState();
 
   const location = useLocation();
   const data = location.state;
@@ -236,6 +239,12 @@ const App = () => {
         setUnMortgage2={setUnMortgage2}
         endGame={endGame}
         setEndGame={setEndGame}
+        setConfirmConcedeView={setConfirmConcedView}
+        confirmConcedeView={confirmConcedeView}
+        playerOneConcede={playerOneConcede}
+        playerTwoConcede={playerTwoConcede}
+        setPlayerOneConcede={setPlayerOneConcede}
+        setPlayerTwoConcede={setPlayerTwoConcede}
       />
       <Controls
         counterP1={counterP1}
@@ -358,7 +367,9 @@ const App = () => {
         setUnMortgage2={setUnMortgage2}
         endGame={endGame}
         setEndGame={setEndGame}
-      />
+        setConfirmConcedeView={setConfirmConcedView}
+        setPlayerOneConcede={setPlayerOneConcede}
+        setPlayerTwoConcede={setPlayerTwoConcede}
       />
     </div>
   );
