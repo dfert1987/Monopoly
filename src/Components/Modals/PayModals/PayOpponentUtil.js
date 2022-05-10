@@ -106,14 +106,14 @@ export const PayOpponentUtil = ({
       return 0;
     };
     const rrSum = () => {
-      if (mortMoneyArrayRRs.length) {
+      if (mortMoneyArrayRRs.length > 0) {
         let totalRRMoney = mortMoneyArrayRRs.reduce((x, y) => x + y);
         return totalRRMoney;
       }
       return 0;
     };
     const utilSum = () => {
-      if (mortMoneyArrayUtils.length) {
+      if (mortMoneyArrayUtils.length > 0) {
         let totalUtilMoney = mortMoneyArrayUtils.reduce((x, y) => x + y);
         return totalUtilMoney;
       }
@@ -146,21 +146,21 @@ export const PayOpponentUtil = ({
     });
 
     const propSum2 = () => {
-      if (mortMoneyArrayProps2.length) {
+      if (mortMoneyArrayProps2.length > 0) {
         let totalPropMoney = mortMoneyArrayProps.reduce((x, y) => x + y);
         return totalPropMoney;
       }
       return 0;
     };
     const rrSum2 = () => {
-      if (mortMoneyArrayRRs2.length) {
+      if (mortMoneyArrayRRs2.length > 0) {
         let totalRRMoney = mortMoneyArrayRRs.reduce((x, y) => x + y);
         return totalRRMoney;
       }
       return 0;
     };
     const utilSum2 = () => {
-      if (mortMoneyArrayUtils2.length) {
+      if (mortMoneyArrayUtils2.length > 0) {
         let totalUtilMoney = mortMoneyArrayUtils.reduce((x, y) => x + y);
         return totalUtilMoney;
       }

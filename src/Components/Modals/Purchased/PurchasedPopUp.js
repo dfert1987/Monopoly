@@ -35,8 +35,7 @@ const PurchasedPopUp = ({
   };
   const [click] = useSound(Click);
 
-  const handleClose = (e) => {
-    e.preventDefault();
+  const handleClose = () => {
     setViewPurchase(false);
     setViewPurchase2(false);
     setOnProp();

@@ -381,7 +381,7 @@ export const Properties = [
     image: require("../PropertyImages/image-temp.jpeg"),
     color: "orange",
     purchased: "You've been officially crowned king of the party monsters!",
-    saying: "You didn't call it a night at a reasonable hours, so you're here.",
+    saying: "You didn't call it a night at a reasonable hour, so you're here.",
     paySaying: "Nothing good happens after 3am. When will you learn this?",
   },
   {
