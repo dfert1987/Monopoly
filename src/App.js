@@ -15,8 +15,8 @@ const App = () => {
   const [utilities, setUtilities] = useState(Utilities);
   const [p1Jail, setP1Jail] = useState(false);
   const [p2Jail, setP2Jail] = useState(false);
-  const [p1Money, setP1Money] = useState(1);
-  const [p2Money, setP2Money] = useState(1);
+  const [p1Money, setP1Money] = useState(1500);
+  const [p2Money, setP2Money] = useState(1500);
   const [propertyModal1, setPropertyModal1] = useState(false);
   const [propertyModal2, setPropertyModal2] = useState(false);
   const [onProp, setOnProp] = useState();
@@ -356,6 +356,9 @@ const App = () => {
         setUnMortgage={setUnMortgage}
         unMortgage2={unMortgage2}
         setUnMortgage2={setUnMortgage2}
+        endGame={endGame}
+        setEndGame={setEndGame}
+      />
       />
     </div>
   );

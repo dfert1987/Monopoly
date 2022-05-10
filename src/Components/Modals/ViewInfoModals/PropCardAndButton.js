@@ -55,10 +55,10 @@ const PropCardAndButton = ({
     card.hasThreeHouses,
     card.hasFourHouses,
     card.hasHotel,
+    properties,
   ]);
 
-  const buyHutong = (event) => {
-    event.preventDefault();
+  const buyHutong = () => {
     if (houseModal && card.buidlingCost > p1Money) {
       alert();
       setTooMuch(true);

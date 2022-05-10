@@ -10,10 +10,10 @@ import Eight from "../../Assets/Sounds/Dice/eight.mp3";
 import Nine from "../../Assets/Sounds/Dice/nine.mp3";
 import Ten from "../../Assets/Sounds/Dice/ten.mp3";
 import Treasure from "../../Assets/Sounds/treasure.mp3";
-import Sad from "../../Assets/Sounds/sad.mp3";
 import Triumph from "../../Assets/Sounds/triumph.mp3";
 import Police from "../../Assets/Sounds/police.mp3";
 import Alert from "../../Assets/Sounds/alert.mp3";
+import Wrong from "../../Assets/Sounds/wrong.mp3";
 import Eleven from "../../Assets/Sounds/Dice/eleven.mp3";
 import Twelve from "../../Assets/Sounds/Dice/twelve.mp3";
 import dice1 from "../../Assets/Dice/dice1.png";
@@ -76,10 +76,10 @@ export const Roll = ({
   const [eleven] = useSound(Eleven);
   const [twelve] = useSound(Twelve);
   const [treasure] = useSound(Treasure);
-  const [sad] = useSound(Sad);
   const [triumph] = useSound(Triumph);
   const [alert] = useSound(Alert);
   const [police] = useSound(Police);
+  const [wrong] = useSound(Wrong);
 
   const rollDice = (e) => {
     e.preventDefault();
@@ -148,8 +148,7 @@ export const Roll = ({
     }
   };
 
-  const jailRoll = (e) => {
-    e.preventDefault();
+  const jailRoll = () => {
     setInJailModal(true);
   };
 
@@ -178,18 +177,17 @@ export const Roll = ({
       setOnProp(currentProp);
       setPayProp(true);
       setPayTo(2);
-      sad();
+      wrong();
     } else if (
       currentRR &&
       !currentRR.ownedP1 &&
       currentRR.ownedP2 &&
       currentRR.mortgaged === false
     ) {
-      console.log("fart");
       setOnRR(currentRR);
       setPayRail(true);
       setPayRailTo(2);
-      sad();
+      wrong();
     } else if (
       currentUtil &&
       !currentUtil.ownedP1 &&
@@ -199,7 +197,7 @@ export const Roll = ({
       setOnUtil(currentUtil);
       setPayUtil(true);
       setPayUtilTo(2);
-      sad();
+      wrong();
     } else if (space === 31) {
       setOnFreeParking(true);
       triumph();

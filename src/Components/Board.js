@@ -240,7 +240,7 @@ export const Board = ({
   const [migasHotel, setMigasHotel] = useState(false);
   const [trbHouses, setTrbHouses] = useState(0);
   const [trbHotel, setTrbHotel] = useState(false);
-
+  console.log(properties);
   useEffect(() => {
     if (properties[0].hasFourHouses && properties[0].hasHotel === false) {
       setTrbHouses(4);

@@ -151,7 +151,7 @@ const PropertyModal = ({
           setMonop();
           money();
           return properties;
-        } else if (obj.Price > p1Money) {
+        } else if (obj && obj.Name === onProp.Name && obj.Price > p1Money) {
           setInsufficientFunds(true);
           alert();
         }
@@ -172,7 +172,7 @@ const PropertyModal = ({
           setMonop2();
           money();
           return properties;
-        } else if (obj.Price > p2Money) {
+        } else if (obj && obj.Name === onProp2.Name && obj.Price > p2Money) {
           setInsufficientFunds(true);
           alert();
         }

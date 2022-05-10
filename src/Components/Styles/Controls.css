@@ -52,7 +52,8 @@
 }
 
 .die {
-  height: 4em;
+  height: 2.5em;
+  margin-top: 0;
 }
 
 .player {
@@ -98,7 +99,12 @@
   flex-direction: row;
   justify-content: space-evenly;
 }
-
+.properties.player1 {
+  padding-top: 0.25em;
+}
+.properties.player2 {
+  padding-top: 0.25em;
+}
 .player-2-stats {
   display: flex;
   flex-direction: row;
@@ -111,28 +117,40 @@
   text-decoration: underline 2px;
 }
 
-.money.player1 {
+.money-player1 {
   margin-top: 0;
   font-size: 1.25em;
   text-align: center;
-  display: flex;
-  flex-direction: column;
   padding-right: 0;
+  margin-bottom: 0;
 }
 
-.money.player2 {
+.button-row.bottom {
+  text-align: center;
+}
+
+.money-player2 {
   margin-top: 0;
   font-size: 1.25em;
   text-align: center;
-  display: flex;
-  flex-direction: column;
   padding-left: 0;
 }
-.money {
-  margin: 0;
+
+.money-p2 {
+  margin-bottom: 0.25em;
+  padding-right: 0;
+  margin-top: 0.75em;
+  font-size: 1.4em;
 }
 
-.properties {
+.money-p1 {
+  margin-bottom: 0.25em;
+  padding-right: 0;
+  margin-top: 0.75em;
+  font-size: 1.4em;
+}
+
+.mone .properties {
   margin-top: 0;
   text-align: center;
   display: flex;
@@ -144,6 +162,14 @@
   font-size: 1.25em;
   margin-top: 0;
   text-decoration: underline;
+}
+
+.roll-money {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1em;
+  position: relative;
+  bottom: 2em;
 }
 
 .leftButton {
