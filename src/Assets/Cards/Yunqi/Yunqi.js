@@ -183,7 +183,7 @@ export const Yunqi = [
   {
     Number: 18,
     Text: "Land job as fake businessman at conference in Tianjin",
-    Instruction: "Earn $300 for your international expertise",
+    Instruction: "Earn 300RMB for your international expertise",
     Type: "collect",
     amt: 300,
     space: 0,
