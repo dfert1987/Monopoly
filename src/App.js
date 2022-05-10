@@ -89,6 +89,8 @@ const App = () => {
   const location = useLocation();
   const data = location.state;
 
+  console.log(turn);
+
   useEffect(() => {
     setP1Pic(data.p1Piece);
     setP2Pic(data.p2Piece);

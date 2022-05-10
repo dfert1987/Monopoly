@@ -81,15 +81,12 @@ export const Roll = ({
   const [police] = useSound(Police);
   const [wrong] = useSound(Wrong);
 
-  const rollDice = (e) => {
-    e.preventDefault();
+  const rollDice = () => {
     let min = 1;
     let max = 6;
     let first = Math.floor(Math.random() * (max - min + 1)) + min;
     let second = Math.floor(Math.random() * (max - min + 1)) + min;
-    if (first === second) {
-      setTurn(turn + 2);
-    }
+    console.log(first, second);
     if (first + second === 2) {
       two();
     }
@@ -123,6 +120,11 @@ export const Roll = ({
     if (first + second === 12) {
       twelve();
     }
+    if (first === second) {
+      let newTurn = turn + 2;
+      setTurn(newTurn);
+      console.log("double");
+    } else setTurn(turn + 1);
     if (skip2 === true) {
       setTurn(turn + 2);
       setSkip2(false);

@@ -69,8 +69,6 @@ const PropertyCard = ({
     }
   };
 
-  console.log(chosenProp);
-
   const mortgage = () => {
     if (chosenProp.mortgaged) {
       return "Yes";
