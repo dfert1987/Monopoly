@@ -1335,7 +1335,7 @@ const InnerCard = ({
             setOnCard2(false);
             setP2Money(newMoney);
             setPass2(true);
-            setDoubleProp(false);
+            setDoubleProp(true);
             setCounterP2(moveTo);
             setOnProp2(firstOwned);
             setPayProp(true);
@@ -1346,7 +1346,7 @@ const InnerCard = ({
           } else {
             setOnCard(false);
             setOnCard2(false);
-            setDoubleProp(false);
+            setDoubleProp(true);
             setCounterP2(moveTo);
             setOnProp2(firstOwned);
             setPayProp(true);

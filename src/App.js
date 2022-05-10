@@ -64,7 +64,7 @@ const App = () => {
   const [onCard2, setOnCard2] = useState(false);
   const [skip1, setSkip1] = useState(false);
   const [skip2, setSkip2] = useState(false);
-  const [visa1, setVisa1] = useState(true);
+  const [visa1, setVisa1] = useState(false);
   const [visa2, setVisa2] = useState(false);
   const [totalHousesP1, setTotalHousesP1] = useState(0);
   const [totalHousesP2, setTotalHousesP2] = useState(0);
@@ -88,8 +88,6 @@ const App = () => {
 
   const location = useLocation();
   const data = location.state;
-
-  console.log(turn);
 
   useEffect(() => {
     setP1Pic(data.p1Piece);
