@@ -125,10 +125,13 @@ export const Controls = ({
         setPass(false);
       }, 2000);
     }
+    console.log(turn % 2);
+
     if (visa2 === false || turn % 2 === 0) {
+      console.log("ooo");
       setDisableVisaRight(true);
     }
-    if (visa2 === true && (turn !== 0 || turn % 2 === 0)) {
+    if (visa2 === true && turn % 2 !== 0) {
       setDisableVisaRight(false);
     }
     if (visa1 === false || turn !== 0 || turn % 2 !== 0) {
