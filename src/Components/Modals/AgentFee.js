@@ -88,21 +88,21 @@ const AgentFee = ({
     });
 
     const propSum = () => {
-      if (mortMoneyArrayProps.length) {
+      if (mortMoneyArrayProps.length > 0) {
         let totalPropMoney = mortMoneyArrayProps.reduce((x, y) => x + y);
         return totalPropMoney;
       }
       return 0;
     };
     const rrSum = () => {
-      if (mortMoneyArrayRRs.length) {
+      if (mortMoneyArrayRRs.length > 0) {
         let totalRRMoney = mortMoneyArrayRRs.reduce((x, y) => x + y);
         return totalRRMoney;
       }
       return 0;
     };
     const utilSum = () => {
-      if (mortMoneyArrayUtils.length) {
+      if (mortMoneyArrayUtils.length > 0) {
         let totalUtilMoney = mortMoneyArrayUtils.reduce((x, y) => x + y);
         return totalUtilMoney;
       }
@@ -134,22 +134,22 @@ const AgentFee = ({
       return util.mortgage;
     });
     const propSum2 = () => {
-      if (mortMoneyArrayProps2.length) {
-        let totalPropMoney = mortMoneyArrayProps.reduce((x, y) => x + y);
+      if (mortMoneyArrayProps2.length > 0) {
+        let totalPropMoney = mortMoneyArrayProps2.reduce((x, y) => x + y);
         return totalPropMoney;
       }
       return 0;
     };
     const rrSum2 = () => {
-      if (mortMoneyArrayRRs2.length) {
-        let totalRRMoney = mortMoneyArrayRRs.reduce((x, y) => x + y);
+      if (mortMoneyArrayRRs2.length > 0) {
+        let totalRRMoney = mortMoneyArrayRRs2.reduce((x, y) => x + y);
         return totalRRMoney;
       }
       return 0;
     };
     const utilSum2 = () => {
-      if (mortMoneyArrayUtils2.length) {
-        let totalUtilMoney = mortMoneyArrayUtils.reduce((x, y) => x + y);
+      if (mortMoneyArrayUtils2.length > 0) {
+        let totalUtilMoney = mortMoneyArrayUtils2.reduce((x, y) => x + y);
         return totalUtilMoney;
       }
       return 0;
