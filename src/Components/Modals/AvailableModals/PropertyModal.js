@@ -181,6 +181,8 @@ const PropertyModal = ({
     }
   };
 
+  console.log(onProp);
+
   const frontCard = () => {
     if (onProp && propertyModal1 && !propertyModal2 && close === false) {
       return (
@@ -302,8 +304,8 @@ const PropertyModal = ({
 
   return (
     <AnimatePresence exitBeforeEnter>
-      {(propertyModal1 === true && !close) ||
-      (propertyModal2 === true && !close) ? (
+      {(propertyModal1 === true && onProp && !close) ||
+      (propertyModal2 === true && onProp2 && !close) ? (
         <motion.div
           className="outerModal flex centerFlex"
           variants={backdrop}

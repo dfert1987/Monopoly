@@ -151,7 +151,6 @@ const InnerCard = ({
   const [victory] = useSound(Victory);
 
   const cardFunctionSorter = () => {
-    console.log(currentCard.Type);
     if ((onCard || onCard2) && currentCard && currentCard.sound === "plane") {
       airplane();
     }
@@ -775,7 +774,7 @@ const InnerCard = ({
         setOnCard(false);
         setOnCard2(false);
         setPropertyModal1(true);
-        setOnProp2(currentProp);
+        setOnProp(currentProp);
         arrayRemovePre();
         setCardOption();
       } else if (currentProp && !currentProp.ownedP1 && currentProp.ownedP2) {
@@ -1617,8 +1616,6 @@ const InnerCard = ({
       }
     }
   };
-
-  console.log(currentCard);
 
   const arrayRemovePre = () => {
     if (cardOption === "GUANXI") {
