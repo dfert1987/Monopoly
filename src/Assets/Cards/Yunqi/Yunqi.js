@@ -278,7 +278,8 @@ export const Yunqi = [
   {
     Number: 27,
     Text: "Hire Chinese Tutor!",
-    Instruction: "Pay 80rmb, bettering yourself isn't free.",
+    Instruction:
+      "Pay 80rmb, to your laoshi because bettering yourself isn't free.",
     Type: "pay",
     amt: 80,
     space: null,

@@ -158,11 +158,10 @@ const AgentFee = ({
     setP2MoneyAvailable(totalSum2);
   }, [properties, utilities, railRoads]);
 
-  const handleClose = (e) => {
+  const handleClose = () => {
     let newFP = freeParking + 75;
     let newMoney1 = p1Money - 75;
     let newMoney2 = p2Money - 75;
-    e.preventDefault();
     if (setOnAgentFee && p1Money > 75) {
       let newMoney = p1Money - 75;
       setP1Money(newMoney);

@@ -1384,7 +1384,6 @@ export const Board = ({
           </div>
         );
       } else if (dadaHouses && dadaHouses === 3) {
-        console.log("fart");
         return (
           <div className="house-container side">
             <img className="house" alt="house" src={hutong} />
@@ -1836,7 +1835,7 @@ export const Board = ({
               <img src={p1Image} className="piece" alt="p1 game piece" />
             ) : null}
             {counterP2 === 39 ? (
-              <img className="piece two" src={p1Image} alt="p2 game piece" />
+              <img className="piece two" src={p2Image} alt="p2 game piece" />
             ) : null}
             <div className="left-rr-container">
               <div>

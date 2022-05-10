@@ -239,7 +239,7 @@ export const Guanxi = [
     Number: 24,
     Text: "Join the Beijing Beatles",
     Instruction:
-      "Slap on that wig, and play FuBar for the 40th time and make 100rmb",
+      "Slap on your wig, play FuBar for the 40th time and make 100rmb",
     Type: "collect",
     amt: 100,
     space: 0,

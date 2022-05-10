@@ -132,11 +132,9 @@ export const RollP2 = ({
     let max = 6;
     let first = Math.floor(Math.random() * (max - min + 1)) + min;
     let second = Math.floor(Math.random() * (max - min + 1)) + min;
-    console.log(first, second);
     if (first === second) {
       let newTurn = turn + 2;
       setTurn(newTurn);
-      console.log("double");
     }
     if (first + second === 2) {
       two();
@@ -174,7 +172,6 @@ export const RollP2 = ({
     if (first === second) {
       let newTurn = turn + 2;
       setTurn(newTurn);
-      console.log("double");
     } else if (skip1 === true) {
       setTurn(turn + 2);
       setSkip1(false);
