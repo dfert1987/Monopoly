@@ -768,8 +768,9 @@ const InnerCard = ({
         let newMoney = p1Money + 200;
         setP1Money(newMoney);
         setCounterP1(currentCard.space);
+      } else if (currentCard.space !== 41) {
+        setCounterP1(currentCard.space);
       }
-      setCounterP1(currentCard.space);
       if (currentProp && !currentProp.ownedP1 && !currentProp.ownedP2) {
         setOnCard(false);
         setOnCard2(false);
@@ -847,8 +848,9 @@ const InnerCard = ({
         let newMoney = p2Money + 200;
         setP2Money(newMoney);
         setCounterP2(currentCard.space);
+      } else if (currentCard.space !== 41) {
+        setCounterP2(currentCard.space);
       }
-      setCounterP2(currentCard.space);
 
       if (currentProp && !currentProp.ownedP1 && !currentProp.ownedP2) {
         setPropertyModal2(true);
