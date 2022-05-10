@@ -95,8 +95,9 @@ const Visa = ({
       }, 2000);
     } else if (onVisa2 && !onVisa && p2Money > 10) {
       let fee = p2Money * 0.1;
+      let roundedFee = Math.floor(fee);
       let newMoney = p2Money - Math.floor(fee);
-      let newFP = freeParking + fee;
+      let newFP = freeParking + roundedFee;
       setFreeParking(newFP);
       setP1Money(newMoney);
       handleClose();

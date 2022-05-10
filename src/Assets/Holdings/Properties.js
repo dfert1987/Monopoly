@@ -57,7 +57,7 @@ export const Properties = [
     purchased:
       "Woohoo, Let's take something that will make us dance until sunrise!",
     saying: "Why do I always feel like the ugliest person here?",
-    paySaying: "Jesus, how many Gin Tonics did you have?",
+    paySaying: "Woah, how many Gin Tonics did you have?",
   },
   {
     order: 2,
@@ -497,7 +497,7 @@ export const Properties = [
     image: require("../PropertyImages/image-laoman.jpeg"),
     color: "purple",
     purchased: "Dumps like what, what!",
-    saying: "Big ole' dumpling and maybe the best Gongbao Jidin in the city.",
+    saying: "Big ole' dumplings and maybe the best Gongbao Jidin in the city.",
     paySaying: "It's Chinese custom to try and cover the bill.",
   },
   {
@@ -558,7 +558,7 @@ export const Properties = [
     purchased: "Coffee shots on you!",
     saying:
       "Respectable French restaurant by day. The drunkest place on earth by night.",
-    paySaying: "Was that you dancing on the tables? Jesus...",
+    paySaying: "Was that you dancing on the tables? Get it together...",
   },
   {
     order: 19,

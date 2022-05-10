@@ -54,6 +54,7 @@ const UtilitiesModal = ({
     setUtilModal(false);
     setUtilModal2(false);
     setClose(false);
+    setInsufficientFunds(false);
   };
 
   const activeInactive = () => {
@@ -187,14 +188,13 @@ const UtilitiesModal = ({
     return null;
   };
 
-  const buyUtil = (e) => {
-    e.preventDefault();
+  const buyUtil = () => {
     if (utilities && onUtil && utilModal && !utilModal2 && close === false) {
       utilities.map((obj) => {
         if (obj && obj.Name === onUtil.Name && obj.Price <= p1Money) {
           obj.ownedP1 = true;
           setP1Money(p1Money - obj.Price);
-          handleClose(e);
+          handleClose();
           setViewPurchaseUtil(true);
           money();
           return utilities;
@@ -215,7 +215,7 @@ const UtilitiesModal = ({
         if (obj && obj.Name === onUtil2.Name && obj.Price <= p2Money) {
           obj.ownedP2 = true;
           setP2Money(p2Money - obj.Price);
-          handleClose(e);
+          handleClose();
           money();
           setViewPurchaseUtil2(true);
           return utilities;
