@@ -21,6 +21,8 @@ import poodle from "../../Assets/Pieces/poodle.png";
 import taxi from "../../Assets/Pieces/taxi.png";
 import teapot from "../../Assets/Pieces/teapot.png";
 import yanjing from "../../Assets/Pieces/yanjing.png";
+import moneycat from "../../Assets/Pieces/moneycat.png";
+import paddle from "../../Assets/Pieces/paddle.png";
 import "../Styles/ChoosePieces.css";
 
 let slides = [
@@ -39,6 +41,8 @@ let slides = [
   <img src={taxi} alt="taxi" className="carousel-pic" />,
   <img src={teapot} alt="teapopt" className="carousel-pic" />,
   <img src={yanjing} alt="yanjing" className="carousel-pic" />,
+  <img src={moneycat} alt="money cat" className="carousel-pic" />,
+  <img src={paddle} alt="ping pong paddle" className="carousel-pic" />,
 ];
 
 const ChoosePieces = () => {
@@ -104,6 +108,10 @@ const ChoosePieces = () => {
       return "Selected: TEAPOT";
     } else if (piecePlayer1 === 14) {
       return "Selected: YANJING";
+    } else if (piecePlayer1 === 15) {
+      return "Selected: MONEY CAT";
+    } else if (piecePlayer1 === 16) {
+      return "Selected: PADDLE";
     } else return null;
   };
 
@@ -138,6 +146,10 @@ const ChoosePieces = () => {
       return "Selected: TEAPOT";
     } else if (piecePlayer2 === 14) {
       return "Selected: YANJING";
+    } else if (piecePlayer1 === 15) {
+      return "Selected: MONEY CAT";
+    } else if (piecePlayer1 === 16) {
+      return "Selected: PADDLE";
     } else return null;
   };
 
@@ -174,6 +186,8 @@ const ChoosePieces = () => {
             <CarouselItem>{slides[12]}</CarouselItem>
             <CarouselItem>{slides[13]}</CarouselItem>
             <CarouselItem>{slides[14]}</CarouselItem>
+            <CarouselItem>{slides[15]}</CarouselItem>
+            <CarouselItem>{slides[16]}</CarouselItem>
           </Carousel>
           <div className="select-container">
             {disabledLeft ? <h3 className="chosen-text">{getText()}</h3> : null}
@@ -209,6 +223,8 @@ const ChoosePieces = () => {
             <CarouselItem>{slides[12]}</CarouselItem>
             <CarouselItem>{slides[13]}</CarouselItem>
             <CarouselItem>{slides[14]}</CarouselItem>
+            <CarouselItem>{slides[15]}</CarouselItem>
+            <CarouselItem>{slides[16]}</CarouselItem>
           </Carousel>
           <div className="select-container">
             {chosenRight ? (

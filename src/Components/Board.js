@@ -35,6 +35,8 @@ import Morgan from "../Assets/Pieces/morgan.png";
 import Poodle from "../Assets/Pieces/poodle.png";
 import Taxi from "../Assets/Pieces/taxi.png";
 import Teapot from "../Assets/Pieces/teapot.png";
+import MoneyCat from "../Assets/Pieces/moneycat.png";
+import Paddle from "../Assets/Pieces/paddle.png";
 import Yanjing from "../Assets/Pieces/yanjing.png";
 import ditielogo from "../Assets/PropertyImages/ditielogo.png";
 import jug from "../Assets/PropertyImages/jug.png";
@@ -247,7 +249,6 @@ export const Board = ({
   const [migasHotel, setMigasHotel] = useState(false);
   const [trbHouses, setTrbHouses] = useState(0);
   const [trbHotel, setTrbHotel] = useState(false);
-  console.log(properties);
   useEffect(() => {
     if (properties[0].hasFourHouses && properties[0].hasHotel === false) {
       setTrbHouses(4);
@@ -834,6 +835,14 @@ export const Board = ({
       setP1Image(Yanjing);
       setP1SRC("../../Assets/Pieces/yanjing.png");
     }
+    if (p1Pic === 15) {
+      setP1Image(MoneyCat);
+      setP1SRC("../../Assets/Pieces/moneycat.png");
+    }
+    if (p1Pic === 16) {
+      setP1Image(Paddle);
+      setP1SRC("../../Assets/Pieces/paddle.png");
+    }
     if (p2Pic === 0) {
       setP2Image(Piece1);
       setP2SRC("../../Assets/Pieces/Piece1.png");
@@ -891,9 +900,13 @@ export const Board = ({
       setP2Image(Teapot);
       setP1SRC("../../Assets/Pieces/teapot.png");
     }
-    if (p2Pic === 14) {
-      setP2Image(Yanjing);
-      setP1SRC("../../Assets/Pieces/yanjing.png");
+    if (p2Pic === 15) {
+      setP2Image(MoneyCat);
+      setP1SRC("../../Assets/Pieces/moneycat.png");
+    }
+    if (p1Pic === 16) {
+      setP1Image(Paddle);
+      setP1SRC("../../Assets/Pieces/paddle.png");
     }
   }, [p1Pic, p2Pic, properties]);
 
