@@ -185,7 +185,7 @@ export const Yunqi = [
     Text: "Land job as fake businessman at conference in Tianjin",
     Instruction: "Earn $300 for your international expertise",
     Type: "collect",
-    amt: 0,
+    amt: 300,
     space: 0,
     image: require("./pics/yunqi-business.jpeg"),
     sound: "money",
