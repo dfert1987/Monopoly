@@ -176,7 +176,7 @@ export const PayOpponentRail = ({
 
     const propSum2 = () => {
       if (mortMoneyArrayProps2.length > 0) {
-        let totalPropMoney = mortMoneyArrayProps.reduce((x, y) => x + y);
+        let totalPropMoney = mortMoneyArrayProps2.reduce((x, y) => x + y);
         return totalPropMoney;
       }
       return 0;
@@ -190,7 +190,7 @@ export const PayOpponentRail = ({
     };
     const utilSum2 = () => {
       if (mortMoneyArrayUtils2.length > 0) {
-        let totalUtilMoney = mortMoneyArrayUtils.reduce((x, y) => x + y);
+        let totalUtilMoney = mortMoneyArrayUtils2.reduce((x, y) => x + y);
         return totalUtilMoney;
       }
       return 0;
