@@ -124,8 +124,7 @@ export const Roll = ({
       let newTurn = turn + 2;
       setTurn(newTurn);
       console.log("double");
-    } else setTurn(turn + 1);
-    if (skip2 === true) {
+    } else if (skip2 === true) {
       setTurn(turn + 2);
       setSkip2(false);
     } else setTurn(turn + 1);

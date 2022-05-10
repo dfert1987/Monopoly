@@ -171,7 +171,11 @@ export const RollP2 = ({
     if (first + second === 12) {
       twelve();
     }
-    if (skip1 === true) {
+    if (first === second) {
+      let newTurn = turn + 2;
+      setTurn(newTurn);
+      console.log("double");
+    } else if (skip1 === true) {
       setTurn(turn + 2);
       setSkip1(false);
     } else setTurn(turn + 1);
