@@ -868,7 +868,6 @@ export const Board = ({
     }
     if (p2Pic === 5) {
       setP2Image(Duck);
-
       setP1SRC("../../Assets/Pieces/duck.png");
     }
     if (p2Pic === 6) {
@@ -903,13 +902,17 @@ export const Board = ({
       setP2Image(Teapot);
       setP1SRC("../../Assets/Pieces/teapot.png");
     }
+    if (p2Pic === 14) {
+      setP2Image(Yanjing);
+      setP1SRC("../../Assets/Pieces/yanjing.png");
+    }
     if (p2Pic === 15) {
       setP2Image(MoneyCat);
-      setP1SRC("../../Assets/Pieces/moneycat.png");
+      setP2SRC("../../Assets/Pieces/moneycat.png");
     }
-    if (p1Pic === 16) {
-      setP1Image(Paddle);
-      setP1SRC("../../Assets/Pieces/paddle.png");
+    if (p2Pic === 16) {
+      setP2Image(Paddle);
+      setP2SRC("../../Assets/Pieces/paddle.png");
     }
   }, [p1Pic, p2Pic, properties]);
 
