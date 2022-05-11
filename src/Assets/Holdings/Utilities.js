@@ -1,6 +1,7 @@
 export const Utilities = [
   {
     Number: 13,
+    trade: false,
     Name: "Water Delivery Man",
     Price: 150,
     rent: 4,
@@ -17,6 +18,7 @@ export const Utilities = [
   },
   {
     Number: 29,
+    trade: false,
     Name: "Ayi Services",
     Price: 150,
     rent: 4,
