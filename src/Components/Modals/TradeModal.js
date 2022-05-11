@@ -39,11 +39,11 @@ const TradeModal = ({
 
   useEffect(() => {
     getFilteredP1Props();
-    // getFilteredP1Utils();
-    // getFilteredP1RRs();
-    // getFilteredP2Props();
-    // getFilteredP2Utils();
-    // getFilteredP2RRs();
+    getFilteredP1Utils();
+    getFilteredP1RRs();
+    getFilteredP2Props();
+    getFilteredP2Utils();
+    getFilteredP2RRs();
 
     // let availableP1Props = properties.filter(
     //   (property) => property.ownedP1 === true && !property.mortgaged
@@ -78,6 +78,40 @@ const TradeModal = ({
     setP1Props(availableP1Props);
   };
 
+  const getFilteredP1Utils = () => {
+    let availableP1Utils = utilities.filter(
+      (util) => util.ownedP1 === true && !util.mortgaged
+    );
+    setP1Utils(availableP1Utils);
+  };
+
+  const getFilteredP1RRs = () => {
+    let availableP1RRs = railRoads.filter(
+      (rr) => rr.ownedP1 === true && !rr.mortgaged
+    );
+    setP1RRs(availableP1RRs);
+  };
+
+  const getFilteredP2Props = () => {
+    let availableP2Props = properties.filter(
+      (property) => property.ownedP2 === true && !property.mortgaged
+    );
+    setP2Props(availableP2Props);
+  };
+
+  const getFilteredP2Utils = () => {
+    let availableP2Utils = utilities.filter(
+      (util) => util.ownedP2 === true && !util.mortgaged
+    );
+    setP2Utils(availableP2Utils);
+  };
+
+  const getFilteredP2RRs = () => {
+    let availableP2RRs = railRoads.filter(
+      (rr) => rr.ownedP2 === true && !rr.mortgaged
+    );
+    setP1RRs(availableP2RRs);
+  };
   const handleClose = () => {
     setShowTrade();
     click();
