@@ -6,6 +6,12 @@
   padding-right: 1em;
   border-radius: 20px;
   background-color: #c0e2ca;
+  margin-left: auto;
+  margin-right: auto;
+  width: 60%;
+}
+.innerModalPurchase.trade {
+  width: 100%;
 }
 
 .close-button {
@@ -15,6 +21,8 @@
 .trade-title {
   font-family: "Monopoly";
   font-size: 3em;
+  margin-bottom: 0.5em;
+  text-align: center;
 }
 
 .trade-columns {
@@ -26,9 +34,23 @@
 .trade-column {
   display: flex;
   flex-direction: column;
+  margin-left: auto;
+  margin-right: auto;
+  width: 45%;
 }
 
 .divider-line {
   border-left: 6px solid black;
-  /* height: 90%; */
+}
+.player-title {
+  font-family: "Monopoly";
+  font-size: 2.25em;
+  margin: 0.5em;
+  text-align: center;
+}
+.properties-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
 }
