@@ -7,16 +7,16 @@ import { Utilities } from "./Assets/Holdings/Utilities";
 import { useLocation } from "react-router-dom";
 
 const App = () => {
-  const [counterP1, setCounterP1] = useState(13);
-  const [counterP2, setCounterP2] = useState(13);
+  const [counterP1, setCounterP1] = useState(1);
+  const [counterP2, setCounterP2] = useState(1);
   const [turn, setTurn] = useState(0);
   const [properties, setProperties] = useState(Properties);
   const [railRoads, setRailRoads] = useState(RailRoads);
   const [utilities, setUtilities] = useState(Utilities);
   const [p1Jail, setP1Jail] = useState(false);
   const [p2Jail, setP2Jail] = useState(false);
-  const [p1Money, setP1Money] = useState(1);
-  const [p2Money, setP2Money] = useState(1);
+  const [p1Money, setP1Money] = useState(1500);
+  const [p2Money, setP2Money] = useState(1500);
   const [propertyModal1, setPropertyModal1] = useState(false);
   const [propertyModal2, setPropertyModal2] = useState(false);
   const [onProp, setOnProp] = useState();
@@ -64,7 +64,7 @@ const App = () => {
   const [onCard2, setOnCard2] = useState(false);
   const [skip1, setSkip1] = useState(false);
   const [skip2, setSkip2] = useState(false);
-  const [visa1, setVisa1] = useState(true);
+  const [visa1, setVisa1] = useState(false);
   const [visa2, setVisa2] = useState(false);
   const [totalHousesP1, setTotalHousesP1] = useState(0);
   const [totalHousesP2, setTotalHousesP2] = useState(0);
@@ -82,6 +82,9 @@ const App = () => {
   const [unMortgage, setUnMortgage] = useState(false);
   const [unMortgage2, setUnMortgage2] = useState(false);
   const [endGame, setEndGame] = useState();
+  const [confirmConcedeView, setConfirmConcedView] = useState(false);
+  const [playerOneConcede, setPlayerOneConcede] = useState();
+  const [playerTwoConcede, setPlayerTwoConcede] = useState();
 
   const location = useLocation();
   const data = location.state;
@@ -236,6 +239,12 @@ const App = () => {
         setUnMortgage2={setUnMortgage2}
         endGame={endGame}
         setEndGame={setEndGame}
+        setConfirmConcedeView={setConfirmConcedView}
+        confirmConcedeView={confirmConcedeView}
+        playerOneConcede={playerOneConcede}
+        playerTwoConcede={playerTwoConcede}
+        setPlayerOneConcede={setPlayerOneConcede}
+        setPlayerTwoConcede={setPlayerTwoConcede}
       />
       <Controls
         counterP1={counterP1}
@@ -356,6 +365,11 @@ const App = () => {
         setUnMortgage={setUnMortgage}
         unMortgage2={unMortgage2}
         setUnMortgage2={setUnMortgage2}
+        endGame={endGame}
+        setEndGame={setEndGame}
+        setConfirmConcedeView={setConfirmConcedView}
+        setPlayerOneConcede={setPlayerOneConcede}
+        setPlayerTwoConcede={setPlayerTwoConcede}
       />
     </div>
   );

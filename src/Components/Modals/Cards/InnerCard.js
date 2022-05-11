@@ -151,7 +151,6 @@ const InnerCard = ({
   const [victory] = useSound(Victory);
 
   const cardFunctionSorter = () => {
-    console.log(currentCard.Type);
     if ((onCard || onCard2) && currentCard && currentCard.sound === "plane") {
       airplane();
     }
@@ -769,13 +768,14 @@ const InnerCard = ({
         let newMoney = p1Money + 200;
         setP1Money(newMoney);
         setCounterP1(currentCard.space);
+      } else if (currentCard.space !== 41) {
+        setCounterP1(currentCard.space);
       }
-      setCounterP1(currentCard.space);
       if (currentProp && !currentProp.ownedP1 && !currentProp.ownedP2) {
         setOnCard(false);
         setOnCard2(false);
         setPropertyModal1(true);
-        setOnProp2(currentProp);
+        setOnProp(currentProp);
         arrayRemovePre();
         setCardOption();
       } else if (currentProp && !currentProp.ownedP1 && currentProp.ownedP2) {
@@ -848,8 +848,9 @@ const InnerCard = ({
         let newMoney = p2Money + 200;
         setP2Money(newMoney);
         setCounterP2(currentCard.space);
+      } else if (currentCard.space !== 41) {
+        setCounterP2(currentCard.space);
       }
-      setCounterP2(currentCard.space);
 
       if (currentProp && !currentProp.ownedP1 && !currentProp.ownedP2) {
         setPropertyModal2(true);
@@ -1334,7 +1335,7 @@ const InnerCard = ({
             setOnCard2(false);
             setP2Money(newMoney);
             setPass2(true);
-            setDoubleProp(false);
+            setDoubleProp(true);
             setCounterP2(moveTo);
             setOnProp2(firstOwned);
             setPayProp(true);
@@ -1345,7 +1346,7 @@ const InnerCard = ({
           } else {
             setOnCard(false);
             setOnCard2(false);
-            setDoubleProp(false);
+            setDoubleProp(true);
             setCounterP2(moveTo);
             setOnProp2(firstOwned);
             setPayProp(true);
@@ -1617,8 +1618,6 @@ const InnerCard = ({
       }
     }
   };
-
-  console.log(currentCard);
 
   const arrayRemovePre = () => {
     if (cardOption === "GUANXI") {

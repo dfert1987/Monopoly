@@ -13,6 +13,7 @@ import VisaConfirm from "./Modals/Jail/VisaConfirm";
 import Jail from "./Modals/Jail/Jail";
 import Cards from "./Modals/Cards/Cards";
 import InJail from "./Modals/Jail/InJail";
+import ConfirmConcede from "./Modals/ConfirmConcede";
 import EndGame from "./Modals/EndGame";
 import OwnedProperties from "./Modals/OwnedProperties";
 import MortgageModal from "./Modals/Mortgage/MortgageModal";
@@ -34,6 +35,8 @@ import Morgan from "../Assets/Pieces/morgan.png";
 import Poodle from "../Assets/Pieces/poodle.png";
 import Taxi from "../Assets/Pieces/taxi.png";
 import Teapot from "../Assets/Pieces/teapot.png";
+import MoneyCat from "../Assets/Pieces/moneycat.png";
+import Paddle from "../Assets/Pieces/paddle.png";
 import Yanjing from "../Assets/Pieces/yanjing.png";
 import ditielogo from "../Assets/PropertyImages/ditielogo.png";
 import jug from "../Assets/PropertyImages/jug.png";
@@ -183,6 +186,12 @@ export const Board = ({
   setUnMortgage2,
   endGame,
   setEndGame,
+  setConfirmConcedeView,
+  confirmConcedeView,
+  playerOneConcede,
+  setPlayerOneConcede,
+  playerTwoConcede,
+  setPlayerTwoConcede,
 }) => {
   const [viewPurchase, setViewPurchase] = useState(false);
   const [viewPurchase2, setViewPurchase2] = useState(false);
@@ -240,7 +249,6 @@ export const Board = ({
   const [migasHotel, setMigasHotel] = useState(false);
   const [trbHouses, setTrbHouses] = useState(0);
   const [trbHotel, setTrbHotel] = useState(false);
-
   useEffect(() => {
     if (properties[0].hasFourHouses && properties[0].hasHotel === false) {
       setTrbHouses(4);
@@ -827,6 +835,14 @@ export const Board = ({
       setP1Image(Yanjing);
       setP1SRC("../../Assets/Pieces/yanjing.png");
     }
+    if (p1Pic === 15) {
+      setP1Image(MoneyCat);
+      setP1SRC("../../Assets/Pieces/moneycat.png");
+    }
+    if (p1Pic === 16) {
+      setP1Image(Paddle);
+      setP1SRC("../../Assets/Pieces/paddle.png");
+    }
     if (p2Pic === 0) {
       setP2Image(Piece1);
       setP2SRC("../../Assets/Pieces/Piece1.png");
@@ -884,9 +900,13 @@ export const Board = ({
       setP2Image(Teapot);
       setP1SRC("../../Assets/Pieces/teapot.png");
     }
-    if (p2Pic === 14) {
-      setP2Image(Yanjing);
-      setP1SRC("../../Assets/Pieces/yanjing.png");
+    if (p2Pic === 15) {
+      setP2Image(MoneyCat);
+      setP1SRC("../../Assets/Pieces/moneycat.png");
+    }
+    if (p1Pic === 16) {
+      setP1Image(Paddle);
+      setP1SRC("../../Assets/Pieces/paddle.png");
     }
   }, [p1Pic, p2Pic, properties]);
 
@@ -1364,7 +1384,6 @@ export const Board = ({
           </div>
         );
       } else if (dadaHouses && dadaHouses === 3) {
-        console.log("fart");
         return (
           <div className="house-container side">
             <img className="house" alt="house" src={hutong} />
@@ -1816,7 +1835,7 @@ export const Board = ({
               <img src={p1Image} className="piece" alt="p1 game piece" />
             ) : null}
             {counterP2 === 39 ? (
-              <img className="piece two" src={p1Image} alt="p2 game piece" />
+              <img className="piece two" src={p2Image} alt="p2 game piece" />
             ) : null}
             <div className="left-rr-container">
               <div>
@@ -2731,6 +2750,7 @@ export const Board = ({
           setViewPurchaseUtil={setViewPurchaseUtil}
           setViewPurchaseUtil2={setViewPurchaseUtil2}
         />
+
         <PropertyModal
           className="modal"
           setPropertyModal1={setPropertyModal1}
@@ -2828,6 +2848,16 @@ export const Board = ({
           setP2Money={setP2Money}
           p1Money={p1Money}
           p2Money={p2Money}
+        />
+        <ConfirmConcede
+          endGame={endGame}
+          setEndGame={setEndGame}
+          confirmConcedeView={confirmConcedeView}
+          setConfirmConcedeView={setConfirmConcedeView}
+          playerOneConcede={playerOneConcede}
+          setPlayerOneConcede={setPlayerOneConcede}
+          playerTwoConcede={playerTwoConcede}
+          setPlayerTwoConcede={setPlayerTwoConcede}
         />
         <AgentFee
           onAgentFee={onAgentFee}

@@ -20,7 +20,6 @@ const Visa = ({
   setP2Money,
   freeParking,
   setFreeParking,
-  setEndGame,
 }) => {
   const [disabled, setDisabled] = useState(false);
   const [disabledLeft, setDisabledLeft] = useState(false);
@@ -81,8 +80,9 @@ const Visa = ({
     setNotEnough(false);
     if (onVisa && !onVisa2 && p1Money > 10) {
       let fee = p1Money * 0.1;
+      let roundedFee = Math.floor(fee);
       let newMoney = p1Money - Math.floor(fee);
-      let newFP = freeParking + fee;
+      let newFP = freeParking + roundedFee;
       setFreeParking(newFP);
       setP1Money(newMoney);
       drum();
@@ -95,8 +95,9 @@ const Visa = ({
       }, 2000);
     } else if (onVisa2 && !onVisa && p2Money > 10) {
       let fee = p2Money * 0.1;
+      let roundedFee = Math.floor(fee);
       let newMoney = p2Money - Math.floor(fee);
-      let newFP = freeParking + fee;
+      let newFP = freeParking + roundedFee;
       setFreeParking(newFP);
       setP1Money(newMoney);
       handleClose();

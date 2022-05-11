@@ -118,8 +118,7 @@ const OwnedProperties = ({
     setUtilCard(true);
   };
 
-  const handleClose = (e) => {
-    e.preventDefault();
+  const handleClose = () => {
     click();
     setViewProperties(false);
     setViewProperties2(false);
@@ -317,12 +316,12 @@ const OwnedProperties = ({
       let allOwned = properties.filter((property) => property.ownedP1 === true);
       let yellows = allOwned.filter((property) => property.color === "yellow");
       let greens = allOwned.filter((property) => property.color === "green");
-      let blues = allOwned.filter((property) => property.color === "blue");
+      let blues = allOwned.filter((property) => property.color === "dark-blue");
       let browns = allOwned.filter((property) => property.color === "brown");
       let oranges = allOwned.filter((property) => property.color === "orange");
       let reds = allOwned.filter((property) => property.color === "red");
       let lightBlues = allOwned.filter(
-        (property) => property.color === "lightBlue"
+        (property) => property.color === "light-blue"
       );
       let violets = allOwned.filter((property) => property.color === "violet");
       checkYellowsP1(yellows);
@@ -337,12 +336,12 @@ const OwnedProperties = ({
       let allOwned = properties.filter((property) => property.ownedP2 === true);
       let yellows = allOwned.filter((property) => property.color === "yellow");
       let greens = allOwned.filter((property) => property.color === "green");
-      let blues = allOwned.filter((property) => property.color === "blue");
+      let blues = allOwned.filter((property) => property.color === "dark-blue");
       let browns = allOwned.filter((property) => property.color === "brown");
       let oranges = allOwned.filter((property) => property.color === "orange");
       let reds = allOwned.filter((property) => property.color === "red");
       let lightBlues = allOwned.filter(
-        (property) => property.color === "lightBlue"
+        (property) => property.color === "light-blue"
       );
       let violets = allOwned.filter((property) => property.color === "violet");
       checkYellowsP2(yellows);
@@ -999,7 +998,7 @@ const OwnedProperties = ({
                                 }`}
                                 onClick={
                                   showOutlines1 && canBuildP1 && buildBlueP1
-                                    ? () => buildModal("blue")
+                                    ? () => buildModal("dark-blue")
                                     : () => showProp(properties[1])
                                 }
                               >
@@ -1025,7 +1024,7 @@ const OwnedProperties = ({
                                 }`}
                                 onClick={
                                   showOutlines1 && canBuildP1 && buildBlueP1
-                                    ? () => buildModal("blue")
+                                    ? () => buildModal("dark-blue")
                                     : () => showProp(properties[0])
                                 }
                               >
@@ -1810,7 +1809,7 @@ const OwnedProperties = ({
                             className="cardSquare-blue"
                             onClick={
                               showOutlines2 && canBuildP2 && buildBlueP2
-                                ? () => buildModal2("blue")
+                                ? () => buildModal2("dark-blue")
                                 : () => showProp(properties[1])
                             }
                           >
@@ -1844,7 +1843,7 @@ const OwnedProperties = ({
                                 }`}
                                 onClick={
                                   showOutlines2 && canBuildP2 && buildBlueP2
-                                    ? () => buildModal2("blue")
+                                    ? () => buildModal2("dark-blue")
                                     : () => showProp(properties[0])
                                 }
                               >

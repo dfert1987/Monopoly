@@ -33,8 +33,7 @@ const BuildModal = ({
 
   const [click] = useSound(Click);
 
-  const handleClose = (e) => {
-    e.preventDefault();
+  const handleClose = () => {
     setHouseModal2(false);
     setHouseModal(false);
     setTooMuch(false);

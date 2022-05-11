@@ -89,50 +89,50 @@ const PropertyModal = ({
     setPropertyModal2,
   ]);
 
-  const setMonop = (e) => {
+  const setMonop = () => {
     if (onProp.color === "blue" || onProp.color === "brown") {
       let number = properties.filter(
         (property) =>
           property.color === onProp.color && property.ownedP1 === true
       );
       if (number.length === 2) {
-        onProp.isMonopoly = true;
+        onProp.inMonopoly = true;
       }
-      onProp.isMonopoly = false;
+      onProp.inMonopoly = false;
     } else {
       let number = properties.filter(
         (property) =>
           property.color === onProp.color && property.ownedP1 === true
       );
       if (number.length === 3) {
-        onProp.isMonopoly = true;
+        onProp.inMonopoly = true;
       }
-      onProp.isMonopoly = false;
+      onProp.inMonopoly = false;
     }
-    handleClose(e);
+    handleClose();
   };
 
-  const setMonop2 = (e) => {
+  const setMonop2 = () => {
     if (onProp2.color === "blue" || onProp2.color === "brown") {
       let number = properties.filter(
         (property) =>
           property.color === onProp2.color && property.ownedP2 === true
       );
       if (number.length === 2) {
-        onProp2.isMonopoly = true;
+        onProp2.inMonopoly = true;
       }
-      onProp2.isMonopoly = false;
+      onProp2.inMonopoly = false;
     } else {
       let number = properties.filter(
         (property) =>
           property.color === onProp2.color && property.ownedP2 === true
       );
       if (number.length === 3) {
-        onProp2.isMonopoly = true;
+        onProp2.inMonopoly = true;
       }
-      onProp2.isMonopoly = false;
+      onProp2.inMonopoly = false;
     }
-    handleClose(e);
+    handleClose();
   };
 
   const buyProperty = () => {
@@ -151,7 +151,7 @@ const PropertyModal = ({
           setMonop();
           money();
           return properties;
-        } else if (obj.Price > p1Money) {
+        } else if (obj && obj.Name === onProp.Name && obj.Price > p1Money) {
           setInsufficientFunds(true);
           alert();
         }
@@ -172,7 +172,7 @@ const PropertyModal = ({
           setMonop2();
           money();
           return properties;
-        } else if (obj.Price > p2Money) {
+        } else if (obj && obj.Name === onProp2.Name && obj.Price > p2Money) {
           setInsufficientFunds(true);
           alert();
         }
@@ -180,6 +180,7 @@ const PropertyModal = ({
       });
     }
   };
+  console.log(onProp);
 
   const frontCard = () => {
     if (onProp && propertyModal1 && !propertyModal2 && close === false) {
@@ -302,8 +303,8 @@ const PropertyModal = ({
 
   return (
     <AnimatePresence exitBeforeEnter>
-      {(propertyModal1 === true && !close) ||
-      (propertyModal2 === true && !close) ? (
+      {(propertyModal1 === true && onProp && !close) ||
+      (propertyModal2 === true && onProp2 && !close) ? (
         <motion.div
           className="outerModal flex centerFlex"
           variants={backdrop}

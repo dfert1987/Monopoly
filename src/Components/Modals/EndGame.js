@@ -5,7 +5,7 @@ import { useWindowSize } from "@react-hook/window-size";
 import logo from "../../Assets/Misc/chinesegrandmarich.gif";
 import "../Styles/EndGame.css";
 
-export const EndGame = ({ endGame, setEndGame }) => {
+export const EndGame = ({ endGame }) => {
   const [width, height] = useWindowSize();
   const backdrop = {
     visible: { opacity: 1 },

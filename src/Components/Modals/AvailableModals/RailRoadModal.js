@@ -56,6 +56,7 @@ const RailRoadModal = ({
     setRRModal(false);
     setRRModal2(false);
     setClose(false);
+    setInsufficientFunds(false);
   };
 
   useEffect(() => {
@@ -175,14 +176,13 @@ const RailRoadModal = ({
     return null;
   };
 
-  const buyRR = (e) => {
-    e.preventDefault();
+  const buyRR = () => {
     if (railRoads && onRR && rrModal && !rrModal2 && close === false) {
       railRoads.map((obj) => {
         if (obj && obj.Name === onRR.Name && obj.Price <= p1Money) {
           obj.ownedP1 = true;
           setP1Money(p1Money - obj.Price);
-          handleClose(e);
+          handleClose();
           setViewPurchaseRR(true);
           money();
           return railRoads;
@@ -197,7 +197,7 @@ const RailRoadModal = ({
         if (obj && obj.Name === onRR2.Name && obj.Price <= p2Money) {
           obj.ownedP2 = true;
           setP2Money(p2Money - obj.Price);
-          handleClose(e);
+          handleClose();
           setViewPurchaseRR2(true);
           money();
           return railRoads;

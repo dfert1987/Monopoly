@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Roll } from "./Roll";
 import { RollP2 } from "./RollP2";
 import Click from "../../Assets/Sounds/click.mp3";
+import Drum from "../../Assets/Sounds/drum.mp3";
 import useSound from "use-sound";
 import "../../Components/Styles/Controls.css";
 
@@ -103,11 +104,15 @@ export const Controls = ({
   setMortgage2,
   setUnMortgage,
   setUnMortgage2,
+  setConfirmConcedeView,
+  setPlayerOneConcede,
+  setPlayerTwoConcede,
 }) => {
   const [disableVisaRight, setDisableVisaRight] = useState(true);
   const [disableVisaLeft, setDisableVisaLeft] = useState(true);
 
   const [clickSound] = useSound(Click);
+  const [drum] = useSound(Drum);
 
   useEffect(() => {
     if (pass2) {
@@ -120,10 +125,13 @@ export const Controls = ({
         setPass(false);
       }, 2000);
     }
+    console.log(turn % 2);
+
     if (visa2 === false || turn % 2 === 0) {
+      console.log("ooo");
       setDisableVisaRight(true);
     }
-    if (visa2 === true && (turn !== 0 || turn % 2 === 0)) {
+    if (visa2 === true && turn % 2 !== 0) {
       setDisableVisaRight(false);
     }
     if (visa1 === false || turn !== 0 || turn % 2 !== 0) {
@@ -184,71 +192,86 @@ export const Controls = ({
     setViewProperties2(true);
   };
 
+  const concedeP1 = () => {
+    drum();
+    setConfirmConcedeView(true);
+    setPlayerOneConcede(true);
+  };
+
+  const concedeP2 = () => {
+    drum();
+    setConfirmConcedeView(true);
+    setPlayerTwoConcede(true);
+  };
+
   return (
     <div className="controls-container">
       <div className="p1">
         <h3 className="player">Player 1</h3>
         <div className="player-1-stats">
-          <div className="money player1">
-            {pass ? <p className="payday">Pay Day: Collect 200rmb</p> : null}
-            <h3 className="money-label">Money</h3>
-            <p className="money">¥{p1Money}</p>
+          <div className="roll-money">
+            <div className="money-player1">
+              {pass ? <p className="payday">Pay Day: Collect 200rmb</p> : null}
+              <p className="money-p1">
+                <b>MONEY:</b>¥{p1Money}
+              </p>
+            </div>
+            <Roll
+              counterP1={counterP1}
+              setCounterP1={setCounterP1}
+              turn={turn}
+              setTurn={setTurn}
+              disableLeft={disableLeft}
+              properties={properties}
+              setProperties={setProperties}
+              setPropertyModal1={setPropertyModal1}
+              setOnProp={setOnProp}
+              onRR={onRR}
+              setOnRR={setOnRR}
+              railRoads={railRoads}
+              setRailRoads={setRailRoads}
+              setRRModal={setRRModal}
+              onUtil={onUtil}
+              setOnUtil={setOnUtil}
+              utilities={utilities}
+              setUtilities={setUtilities}
+              setUtilModal={setUtilModal}
+              setPayProp={setPayProp}
+              setPayTo={setPayTo}
+              payRailTo={payRailTo}
+              setPayRailTo={setPayRailTo}
+              payRail={payRail}
+              setPayRail={setPayRail}
+              payUtil={payUtil}
+              setPayUtil={setPayUtil}
+              payUtilTo={payUtilTo}
+              setPayUtilTo={setPayUtilTo}
+              freeParking={freeParking}
+              setFreeParking={setFreeParking}
+              onFreeParking={onFreeParking}
+              setOnFreeParking={setOnFreeParking}
+              setOnAgentFee={setOnAgentFee}
+              onVisa={onVisa}
+              setOnVisa={setOnVisa}
+              onGoJail={onGoJail}
+              setOnGoJail={setOnGoJail}
+              setP1Jail={setP1Jail}
+              inJail={inJail}
+              setInJail={setInJail}
+              inJailModal={inJailModal}
+              setInJailModal={setInJailModal}
+              onCard={onCard}
+              setOnCard={setOnCard}
+              skip2={skip2}
+              setSkip2={setSkip2}
+              onGoP1={onGoP1}
+              setOnGoP1={setOnGoP1}
+              pass={pass}
+              setPass={setPass}
+              p1Money={p1Money}
+              setP1Money={setP1Money}
+            />
           </div>
-          <Roll
-            counterP1={counterP1}
-            setCounterP1={setCounterP1}
-            turn={turn}
-            setTurn={setTurn}
-            disableLeft={disableLeft}
-            properties={properties}
-            setProperties={setProperties}
-            setPropertyModal1={setPropertyModal1}
-            setOnProp={setOnProp}
-            onRR={onRR}
-            setOnRR={setOnRR}
-            railRoads={railRoads}
-            setRailRoads={setRailRoads}
-            setRRModal={setRRModal}
-            onUtil={onUtil}
-            setOnUtil={setOnUtil}
-            utilities={utilities}
-            setUtilities={setUtilities}
-            setUtilModal={setUtilModal}
-            setPayProp={setPayProp}
-            setPayTo={setPayTo}
-            payRailTo={payRailTo}
-            setPayRailTo={setPayRailTo}
-            payRail={payRail}
-            setPayRail={setPayRail}
-            payUtil={payUtil}
-            setPayUtil={setPayUtil}
-            payUtilTo={payUtilTo}
-            setPayUtilTo={setPayUtilTo}
-            freeParking={freeParking}
-            setFreeParking={setFreeParking}
-            onFreeParking={onFreeParking}
-            setOnFreeParking={setOnFreeParking}
-            setOnAgentFee={setOnAgentFee}
-            onVisa={onVisa}
-            setOnVisa={setOnVisa}
-            onGoJail={onGoJail}
-            setOnGoJail={setOnGoJail}
-            setP1Jail={setP1Jail}
-            inJail={inJail}
-            setInJail={setInJail}
-            inJailModal={inJailModal}
-            setInJailModal={setInJailModal}
-            onCard={onCard}
-            setOnCard={setOnCard}
-            skip2={skip2}
-            setSkip2={setSkip2}
-            onGoP1={onGoP1}
-            setOnGoP1={setOnGoP1}
-            pass={pass}
-            setPass={setPass}
-            p1Money={p1Money}
-            setP1Money={setP1Money}
-          />
           <div className="properties player1">
             <div className="button-row">
               <button
@@ -280,6 +303,15 @@ export const Controls = ({
                 onClick={unMortgageClick}
               >
                 UNMORTGAGE
+              </button>
+            </div>
+            <div className="button-row bottom">
+              <button
+                className="properties-view-button"
+                disabled={disableLeft}
+                onClick={concedeP1}
+              >
+                CONCEDE
               </button>
             </div>
           </div>
@@ -321,66 +353,78 @@ export const Controls = ({
                 UNMORTGAGE
               </button>
             </div>
+            <div className="button-row bottom">
+              <button
+                className="properties-view-button"
+                disabled={disableRight}
+                onClick={concedeP2}
+              >
+                CONCEDE
+              </button>
+            </div>
           </div>
-          <RollP2
-            counterP2={counterP2}
-            setCounterP2={setCounterP2}
-            turn={turn}
-            setTurn={setTurn}
-            disableRight={disableRight}
-            properties={properties}
-            setProperties={setProperties}
-            setPropertyModal2={setPropertyModal2}
-            setOnProp2={setOnProp2}
-            onRR2={onRR2}
-            setOnRR2={setOnRR2}
-            railRoads={railRoads}
-            setRailRoads={setRailRoads}
-            setRRModal2={setRRModal2}
-            onUtil2={onUtil2}
-            setOnUtil2={setOnUtil2}
-            utilities={utilities}
-            setUtilities={setUtilities}
-            setUtilModal2={setUtilModal2}
-            setPayTo={setPayTo}
-            setPayProp={setPayProp}
-            payRailTo={payRailTo}
-            setPayRailTo={setPayRailTo}
-            payRail={payRail}
-            setPayRail={setPayRail}
-            payUtil={payUtil}
-            setPayUtil={setPayUtil}
-            payUtilTo={payUtilTo}
-            setPayUtilTo={setPayUtilTo}
-            freeParking={freeParking}
-            setFreeParking={setFreeParking}
-            onFreeParking2={onFreeParking2}
-            setOnFreeParking2={setOnFreeParking2}
-            setOnAgentFee2={setOnAgentFee2}
-            onVisa2={onVisa2}
-            setOnVisa2={setOnVisa2}
-            setOnGoJail2={setOnGoJail2}
-            onGoJail2={onGoJail2}
-            setP2Jail={setP2Jail}
-            setInJail2={setInJail2}
-            inJail2={inJail2}
-            setInJailModal2={setInJailModal2}
-            inJailModal2={inJailModal2}
-            onCard2={onCard2}
-            setOnCard2={setOnCard2}
-            setSkip1={setSkip1}
-            skip1={skip1}
-            setOnGoP2={setOnGoP2}
-            onGoP2={onGoP2}
-            pass2={pass2}
-            setPass2={setPass2}
-            p2Money={p2Money}
-            setP2Money={setP2Money}
-          />
-          <div className="money player2">
-            <h3 className="money-label">Money</h3>
-            {pass2 ? <p className="payday">Pay Day: Collect 200rmb</p> : null}
-            <p className="money">¥{p2Money}</p>
+          <div className="roll-money">
+            <div className="money-player2">
+              {pass2 ? <p className="payday">Pay Day: Collect 200rmb</p> : null}
+              <p className="money-p2">
+                <b>MONEY:</b>¥{p2Money}
+              </p>
+            </div>
+            <RollP2
+              counterP2={counterP2}
+              setCounterP2={setCounterP2}
+              turn={turn}
+              setTurn={setTurn}
+              disableRight={disableRight}
+              properties={properties}
+              setProperties={setProperties}
+              setPropertyModal2={setPropertyModal2}
+              setOnProp2={setOnProp2}
+              onRR2={onRR2}
+              setOnRR2={setOnRR2}
+              railRoads={railRoads}
+              setRailRoads={setRailRoads}
+              setRRModal2={setRRModal2}
+              onUtil2={onUtil2}
+              setOnUtil2={setOnUtil2}
+              utilities={utilities}
+              setUtilities={setUtilities}
+              setUtilModal2={setUtilModal2}
+              setPayTo={setPayTo}
+              setPayProp={setPayProp}
+              payRailTo={payRailTo}
+              setPayRailTo={setPayRailTo}
+              payRail={payRail}
+              setPayRail={setPayRail}
+              payUtil={payUtil}
+              setPayUtil={setPayUtil}
+              payUtilTo={payUtilTo}
+              setPayUtilTo={setPayUtilTo}
+              freeParking={freeParking}
+              setFreeParking={setFreeParking}
+              onFreeParking2={onFreeParking2}
+              setOnFreeParking2={setOnFreeParking2}
+              setOnAgentFee2={setOnAgentFee2}
+              onVisa2={onVisa2}
+              setOnVisa2={setOnVisa2}
+              setOnGoJail2={setOnGoJail2}
+              onGoJail2={onGoJail2}
+              setP2Jail={setP2Jail}
+              setInJail2={setInJail2}
+              inJail2={inJail2}
+              setInJailModal2={setInJailModal2}
+              inJailModal2={inJailModal2}
+              onCard2={onCard2}
+              setOnCard2={setOnCard2}
+              setSkip1={setSkip1}
+              skip1={skip1}
+              setOnGoP2={setOnGoP2}
+              onGoP2={onGoP2}
+              pass2={pass2}
+              setPass2={setPass2}
+              p2Money={p2Money}
+              setP2Money={setP2Money}
+            />
           </div>
         </div>
       </div>

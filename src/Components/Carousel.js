@@ -58,6 +58,10 @@ const Carousel = ({
       return "TEAPOT";
     } else if (activeIndex === 14) {
       return "YANJING";
+    } else if (activeIndex === 15) {
+      return "MONEY CAT";
+    } else if (activeIndex === 16) {
+      return "PADDLE";
     }
   };
 
@@ -74,7 +78,7 @@ const Carousel = ({
   const disable = (buttonType) => {
     if (buttonType === "back" && activeIndex === 0) {
       return true;
-    } else if (buttonType === "next" && activeIndex === 14) {
+    } else if (buttonType === "next" && activeIndex === 16) {
       return true;
     } else if (chosenLeft || chosenRight) {
       return true;

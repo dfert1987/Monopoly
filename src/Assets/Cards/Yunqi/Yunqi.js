@@ -183,9 +183,9 @@ export const Yunqi = [
   {
     Number: 18,
     Text: "Land job as fake businessman at conference in Tianjin",
-    Instruction: "Earn $300 for your international expertise",
+    Instruction: "Earn 300RMB for your international expertise",
     Type: "collect",
-    amt: 0,
+    amt: 300,
     space: 0,
     image: require("./pics/yunqi-business.jpeg"),
     sound: "money",
@@ -278,7 +278,8 @@ export const Yunqi = [
   {
     Number: 27,
     Text: "Hire Chinese Tutor!",
-    Instruction: "Pay 80rmb, bettering yourself isn't free.",
+    Instruction:
+      "Pay 80rmb, to your laoshi because bettering yourself isn't free.",
     Type: "pay",
     amt: 80,
     space: null,

@@ -62,10 +62,11 @@ const PropertyCard = ({
   };
 
   const hotel = () => {
-    if (chosenProp.hasHotel) {
+    if (chosenProp.hasHotel === true) {
       return "Yes";
+    } else {
+      return "No";
     }
-    return "No";
   };
 
   const mortgage = () => {

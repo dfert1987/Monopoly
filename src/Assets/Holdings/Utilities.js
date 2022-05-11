@@ -6,7 +6,7 @@ export const Utilities = [
     rent: 4,
     rentTwo: 10,
     mortgage: 75,
-    ownedP1: true,
+    ownedP1: false,
     ownedP2: false,
     ownedBoth: false,
     mortgaged: false,

@@ -12,8 +12,8 @@ import Ten from "../../Assets/Sounds/Dice/ten.mp3";
 import Eleven from "../../Assets/Sounds/Dice/eleven.mp3";
 import Twelve from "../../Assets/Sounds/Dice/twelve.mp3";
 import Treasure from "../../Assets/Sounds/treasure.mp3";
-import Sad from "../../Assets/Sounds/sad.mp3";
 import Triumph from "../../Assets/Sounds/triumph.mp3";
+import PayUp from "../../Assets/Sounds/payup.mp3";
 import Police from "../../Assets/Sounds/police.mp3";
 import Alert from "../../Assets/Sounds/alert.mp3";
 import dice1 from "../../Assets/Dice/dice1.png";
@@ -76,7 +76,7 @@ export const RollP2 = ({
   const [eleven] = useSound(Eleven);
   const [twelve] = useSound(Twelve);
   const [treasure] = useSound(Treasure);
-  const [sad] = useSound(Sad);
+  const [payup] = useSound(PayUp);
   const [triumph] = useSound(Triumph);
   const [alert] = useSound(Alert);
   const [police] = useSound(Police);
@@ -127,14 +127,14 @@ export const RollP2 = ({
     }
   };
 
-  const rollDice2 = (e) => {
-    e.preventDefault();
+  const rollDice2 = () => {
     let min = 1;
     let max = 6;
     let first = Math.floor(Math.random() * (max - min + 1)) + min;
     let second = Math.floor(Math.random() * (max - min + 1)) + min;
     if (first === second) {
-      setTurn(turn + 2);
+      let newTurn = turn + 2;
+      setTurn(newTurn);
     }
     if (first + second === 2) {
       two();
@@ -169,7 +169,10 @@ export const RollP2 = ({
     if (first + second === 12) {
       twelve();
     }
-    if (skip1 === true) {
+    if (first === second) {
+      let newTurn = turn + 2;
+      setTurn(newTurn);
+    } else if (skip1 === true) {
       setTurn(turn + 2);
       setSkip1(false);
     } else setTurn(turn + 1);
@@ -194,8 +197,7 @@ export const RollP2 = ({
     }
   };
 
-  const jailRoll = (e) => {
-    e.preventDefault();
+  const jailRoll = () => {
     setInJailModal2(true);
   };
 
@@ -223,7 +225,7 @@ export const RollP2 = ({
     ) {
       setOnProp2(currentProp);
       setPayProp(true);
-      sad();
+      payup();
       setPayTo(1);
     } else if (
       currentRR &&
@@ -234,7 +236,7 @@ export const RollP2 = ({
       setOnRR2(currentRR);
       setPayRail(true);
       setPayRailTo(1);
-      sad();
+      payup();
     } else if (
       currentUtil &&
       !currentUtil.ownedP2 &&
@@ -244,7 +246,7 @@ export const RollP2 = ({
       setOnUtil2(currentUtil);
       setPayUtil(true);
       setPayUtilTo(1);
-      sad();
+      payup();
     } else if (space === 31) {
       setOnFreeParking2(true);
       triumph();
