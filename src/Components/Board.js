@@ -2198,6 +2198,8 @@ export const Board = ({
           <div className="title-cont">
             <h2 className="board-title">LAOWAI MONOPOLY</h2>
           </div>
+          <h4 className="pot-tracker">FREE PARKING POT: </h4>
+          <h4 className="pot-tracker">¥{freeParking}</h4>
           <div className="card-container">
             <img src={guanxiCard} alt="Guanxi Cards" className="card" />
             <div className="card">
