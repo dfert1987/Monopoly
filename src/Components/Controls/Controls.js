@@ -125,7 +125,6 @@ export const Controls = ({
         setPass(false);
       }, 2000);
     }
-    console.log(turn % 2);
 
     if (visa2 === false || turn % 2 === 0) {
       console.log("ooo");
@@ -307,6 +306,13 @@ export const Controls = ({
             </div>
             <div className="button-row bottom">
               <button
+                className="properties-view-button leftButton"
+                disabled={disableLeft}
+                onClick={concedeP2}
+              >
+                TRADE
+              </button>
+              <button
                 className="properties-view-button"
                 disabled={disableLeft}
                 onClick={concedeP1}
@@ -354,6 +360,13 @@ export const Controls = ({
               </button>
             </div>
             <div className="button-row bottom">
+              <button
+                className="properties-view-button leftButton"
+                disabled={disableRight}
+                onClick={concedeP2}
+              >
+                TRADE
+              </button>
               <button
                 className="properties-view-button"
                 disabled={disableRight}
