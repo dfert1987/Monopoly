@@ -321,7 +321,7 @@ const OwnedProperties = ({
       let oranges = allOwned.filter((property) => property.color === "orange");
       let reds = allOwned.filter((property) => property.color === "red");
       let lightBlues = allOwned.filter(
-        (property) => property.color === "lightBlue"
+        (property) => property.color === "light-blue"
       );
       let violets = allOwned.filter((property) => property.color === "violet");
       checkYellowsP1(yellows);
@@ -341,7 +341,7 @@ const OwnedProperties = ({
       let oranges = allOwned.filter((property) => property.color === "orange");
       let reds = allOwned.filter((property) => property.color === "red");
       let lightBlues = allOwned.filter(
-        (property) => property.color === "lightBlue"
+        (property) => property.color === "light-blue"
       );
       let violets = allOwned.filter((property) => property.color === "violet");
       checkYellowsP2(yellows);
