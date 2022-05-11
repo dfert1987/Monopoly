@@ -190,7 +190,6 @@ const PropertyModal = ({
       });
     }
   };
-  console.log(onProp);
 
   const frontCard = () => {
     if (onProp && propertyModal1 && !propertyModal2 && close === false) {

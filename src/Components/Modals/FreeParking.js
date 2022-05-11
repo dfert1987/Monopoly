@@ -41,8 +41,7 @@ const FreeParking = ({
     },
   };
 
-  const handleClose = (e) => {
-    e.preventDefault();
+  const handleClose = () => {
     if (setOnFreeParking) {
       let newMoney = p1Money + freeParking;
       setP1Money(newMoney);
