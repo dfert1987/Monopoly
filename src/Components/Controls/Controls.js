@@ -107,6 +107,7 @@ export const Controls = ({
   setConfirmConcedeView,
   setPlayerOneConcede,
   setPlayerTwoConcede,
+  setShowTrade,
 }) => {
   const [disableVisaRight, setDisableVisaRight] = useState(true);
   const [disableVisaLeft, setDisableVisaLeft] = useState(true);
@@ -201,6 +202,14 @@ export const Controls = ({
     drum();
     setConfirmConcedeView(true);
     setPlayerTwoConcede(true);
+  };
+
+  const trade1 = () => {
+    setShowTrade("p1");
+  };
+
+  const trade2 = () => {
+    setShowTrade("p2");
   };
 
   return (
@@ -308,7 +317,7 @@ export const Controls = ({
               <button
                 className="properties-view-button leftButton"
                 disabled={disableLeft}
-                onClick={concedeP2}
+                onClick={trade1}
               >
                 TRADE
               </button>
@@ -363,7 +372,7 @@ export const Controls = ({
               <button
                 className="properties-view-button leftButton"
                 disabled={disableRight}
-                onClick={concedeP2}
+                onClick={trade2}
               >
                 TRADE
               </button>
