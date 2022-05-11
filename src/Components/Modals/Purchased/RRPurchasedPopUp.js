@@ -49,7 +49,7 @@ const RRPurchasedPopUp = ({
       <AnimatePresence exitBeforeEnter>
         {viewPurchaseRR && onRR ? (
           <motion.div
-            className="outerModal flex centerFlex"
+            className="outerModal flex centerFlex purchased"
             variants={backdrop}
             initial="hidden"
             animate="visible"
@@ -63,7 +63,10 @@ const RRPurchasedPopUp = ({
               exit="hidden"
             >
               <div className="button-row">
-                <button className="close-button" onClick={handleClose}>
+                <button
+                  className="close-button-purchased"
+                  onClick={handleClose}
+                >
                   <FontAwesomeIcon className="x-icon" icon={faXmark} />
                 </button>
               </div>

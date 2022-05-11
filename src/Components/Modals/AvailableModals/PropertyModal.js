@@ -22,6 +22,8 @@ const PropertyModal = ({
   properties,
   setViewPurchase,
   setViewPurchase2,
+  setViewProperties,
+  setViewProperties2,
 }) => {
   const [close, setClose] = useState(false);
   const [inSufficientFunds, setInsufficientFunds] = useState(false);
@@ -110,6 +112,14 @@ const PropertyModal = ({
       onProp.inMonopoly = false;
     }
     handleClose();
+  };
+
+  const viewOwned = () => {
+    if (onProp2) {
+      setViewProperties2(true);
+    } else if (onProp) {
+      setViewProperties(true);
+    } else return null;
   };
 
   const setMonop2 = () => {
@@ -306,7 +316,7 @@ const PropertyModal = ({
       {(propertyModal1 === true && onProp && !close) ||
       (propertyModal2 === true && onProp2 && !close) ? (
         <motion.div
-          className="outerModal flex centerFlex"
+          className="outerModal flex centerFlex regular"
           variants={backdrop}
           initial="hidden"
           animate="visible"
@@ -341,6 +351,9 @@ const PropertyModal = ({
               </button>
               <button className="pass-button" onClick={justClose}>
                 PASS
+              </button>
+              <button className="view-button" onClick={viewOwned}>
+                View Assets
               </button>
             </div>
           </motion.div>

@@ -2778,6 +2778,8 @@ export const Board = ({
           setProperties={setProperties}
           setViewPurchase={setViewPurchase}
           setViewPurchase2={setViewPurchase2}
+          setViewProperties={setViewProperties}
+          setViewProperties2={setViewProperties2}
         />
         <RailRoadModal
           className="RailRoad"
@@ -2799,6 +2801,8 @@ export const Board = ({
           setViewPurchaseRR={setViewPurchaseRR}
           viewPurchaseRR2={setViewPurchaseRR2}
           setViewPurchaseRR2={setViewPurchaseRR2}
+          setViewProperties={setViewProperties}
+          setViewProperties2={setViewProperties2}
         />
         <UtilitiesModal
           className="Utilities"
@@ -2820,6 +2824,8 @@ export const Board = ({
           setViewPurchaseUtil={setViewPurchaseUtil}
           viewPurchaseUtil2={viewPurchaseUtil2}
           setViewPuruchaseUtil2={setViewPurchaseUtil2}
+          setViewProperties={setViewProperties}
+          setViewProperties2={setViewProperties2}
         />
         <FreeParking
           freeParking={freeParking}

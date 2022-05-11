@@ -7,11 +7,11 @@
   text-align: right;
 }
 
-.close-button {
+.close-button-purchased {
   background-color: transparent;
   border: none;
   cursor: pointer;
-  color: black;
+  color: white;
   margin: 1em;
   transition: 0.3s;
 }
@@ -37,8 +37,8 @@
   background-color: black 0.8;
 }
 
-.outerModal.flex.centerFlex {
-  background: rgba(0, 0, 0, 0.5);
+.outerModal.flex.centerFlex.purchased {
+  background: rgba(0, 0, 0, 0.75);
 }
 
 .innerModalPurhcase {
@@ -64,7 +64,7 @@
   color: white;
   text-shadow: black 2px 2px 2px;
   font-family: "Monopoly";
-  font-size: 2em;
+  font-size: 3.5em;
   margin-top: 0;
 }
 
@@ -79,12 +79,12 @@
   color: white;
   text-shadow: black 2px 2px 2px;
   font-family: "Monopoly";
-  font-size: 2em;
+  font-size: 3.5em;
 }
 
 .message {
   font-family: "Monopoly";
-  font-size: 1.5em;
+  font-size: 2.5em;
   color: white;
   text-shadow: black 2px 2px 2px;
 }

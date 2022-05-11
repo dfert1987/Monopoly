@@ -22,6 +22,8 @@ const UtilitiesModal = ({
   setP2Money,
   setViewPurchaseUtil,
   setViewPurchaseUtil2,
+  setViewProperties,
+  setViewProperties2,
 }) => {
   const [close, setClose] = useState(false);
   const [inSufficientFunds, setInsufficientFunds] = useState(false);
@@ -47,6 +49,14 @@ const UtilitiesModal = ({
   const justClose = () => {
     handleClose();
     click();
+  };
+
+  const viewOwned = () => {
+    if (onUtil2) {
+      setViewProperties2(true);
+    } else if (onUtil) {
+      setViewProperties(true);
+    } else return null;
   };
 
   const handleClose = () => {
@@ -267,6 +277,9 @@ const UtilitiesModal = ({
               </button>
               <button className="pass-button" onClick={justClose}>
                 PASS
+              </button>
+              <button className="view-button" onClick={viewOwned}>
+                View Assets
               </button>
             </div>
           </motion.div>

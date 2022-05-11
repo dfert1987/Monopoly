@@ -23,6 +23,8 @@ const RailRoadModal = ({
   setP2Money,
   setViewPurchaseRR,
   setViewPurchaseRR2,
+  setViewProperties,
+  setViewProperties2,
 }) => {
   const [close, setClose] = useState(false);
   const [inSufficientFunds, setInsufficientFunds] = useState(false);
@@ -49,6 +51,14 @@ const RailRoadModal = ({
   const justClose = () => {
     handleClose();
     click();
+  };
+
+  const viewOwned = () => {
+    if (onRR2) {
+      setViewProperties2(true);
+    } else if (onRR) {
+      setViewProperties(true);
+    } else return null;
   };
 
   const handleClose = () => {
@@ -214,7 +224,7 @@ const RailRoadModal = ({
     <AnimatePresence exitBeforeEnter>
       {(rrModal === true && !close) || (rrModal2 === true && !close) ? (
         <motion.div
-          className="outerModal flex centerFlex"
+          className="outerModal flex centerFlex regular"
           variants={backdrop}
           initial="hidden"
           animate="visible"
@@ -249,6 +259,9 @@ const RailRoadModal = ({
               </button>
               <button className="pass-button" onClick={justClose}>
                 PASS
+              </button>
+              <button className="view-button" onClick={viewOwned}>
+                View Assets
               </button>
             </div>
           </motion.div>
