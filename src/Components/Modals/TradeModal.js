@@ -40,6 +40,12 @@ const TradeModal = ({
   const [p2RRs, setP2RRs] = useState();
   const [p1Utils, setP1Utils] = useState();
   const [p2Utils, setP2Utils] = useState();
+  const [p1Offers, setP1Offers] = useState();
+  const [p2Offers, setP2Offers] = useState();
+  const [p1RROffers, setP1RROffers] = useState();
+  const [p2RROffers, setP2RROffers] = useState();
+  const [p1UtilOffers, setP1UtilOffers] = useState();
+  const [p2UtilOffers, setP2UtilOffers] = useState();
   const [click] = useSound(Click);
   const [choose] = useSound(Choose);
 
@@ -58,21 +64,34 @@ const TradeModal = ({
       (property) =>
         property.ownedP1 === true && !property.mortgaged && !property.trade
     );
+    let offeredP1Props = properties.filter(
+      (property) =>
+        property.ownedP1 === true && !property.mortgaged && property.trade
+    );
     setP1Props(availableP1Props);
+    setP1Offers(offeredP1Props);
   };
 
   const getFilteredP1Utils = () => {
     let availableP1Utils = utilities.filter(
       (util) => util.ownedP1 === true && !util.mortgaged && !util.trade
     );
+    let offeredP1Utils = properties.filter(
+      (util) => util.ownedP1 === true && !util.mortgaged && util.trade
+    );
     setP1Utils(availableP1Utils);
+    setP1UtilOffers(offeredP1Utils);
   };
 
   const getFilteredP1RRs = () => {
     let availableP1RRs = railRoads.filter(
       (rr) => rr.ownedP1 === true && !rr.mortgaged && !rr.trade
     );
+    let offeredP1RRs = railRoads.filter(
+      (rr) => rr.ownedP1 === true && !rr.mortgaged && rr.trade
+    );
     setP1RRs(availableP1RRs);
+    setP1RROffers(offeredP1RRs);
   };
 
   const getFilteredP2Props = () => {
@@ -80,21 +99,34 @@ const TradeModal = ({
       (property) =>
         property.ownedP2 === true && !property.mortgaged && !property.trade
     );
+    let offeredP2Props = properties.filter(
+      (property) =>
+        property.ownedP2 === true && !property.mortgaged && property.trade
+    );
     setP2Props(availableP2Props);
+    setP2Offers(offeredP2Props);
   };
 
   const getFilteredP2Utils = () => {
     let availableP2Utils = utilities.filter(
       (util) => util.ownedP2 === true && !util.mortgaged && !util.trade
     );
+    let offeredP2Utils = properties.filter(
+      (util) => util.ownedP2 === true && !util.mortgaged && util.trade
+    );
     setP2Utils(availableP2Utils);
+    setP2UtilOffers(offeredP2Utils);
   };
 
   const getFilteredP2RRs = () => {
     let availableP2RRs = railRoads.filter(
       (rr) => rr.ownedP2 === true && !rr.mortgaged && !rr.trade
     );
+    let offeredP2RRs = railRoads.filter(
+      (rr) => rr.ownedP2 === true && !rr.mortgaged && rr.trade
+    );
     setP2RRs(availableP2RRs);
+    setP2RROffers(offeredP2RRs);
   };
 
   const handleClose = () => {
@@ -318,9 +350,7 @@ const TradeModal = ({
                       <h3 className="player-title">Player 1</h3>
                       <div className="properties-container">
                         {showP1Props()}
-                      </div>
-                      <div className="properties-container">{showP1RRs()}</div>
-                      <div className="properties-container">
+                        {showP1RRs()}
                         {showP1Utils()}
                       </div>
                     </div>
@@ -329,9 +359,7 @@ const TradeModal = ({
                       <h3 className="player-title">Player 2</h3>
                       <div className="properties-container">
                         {showP2Props()}
-                      </div>
-                      <div className="properties-container">{showP2RRs()}</div>
-                      <div className="properties-container">
+                        {showP2RRs()}
                         {showP2Utils()}
                       </div>
                     </div>
@@ -340,9 +368,21 @@ const TradeModal = ({
                   <div className="offer-section">
                     <h3 className="offer">Offer</h3>
                     <div className="offer-columns">
-                      <div className="offer-column p1-offer"></div>
+                      <div className="offer-column p1-offer">
+                        <div className="properties-container to-trade">
+                          {showP1Props()}
+                          {showP1RRs()}
+                          {showP1Utils()}
+                        </div>
+                      </div>
                       <div className="divider-line"></div>
-                      <div className="offer-column p2-offer"></div>
+                      <div className="offer-column p2-offer">
+                        <div className="properties-container to-trade">
+                          {showP2Props()}
+                          {showP2RRs()}
+                          {showP2Utils()}
+                        </div>
+                      </div>
                     </div>
                   </div>
                 </div>

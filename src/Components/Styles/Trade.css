@@ -8,7 +8,7 @@
   background-color: #c0e2ca;
   margin-left: auto;
   margin-right: auto;
-  width: 60%;
+  width: 90%;
 }
 .innerModalPurchase.trade {
   width: 100%;
@@ -69,9 +69,18 @@
   margin-bottom: 0.5em;
 }
 
+.prop-card:hover {
+  box-shadow: 2px 2px 5px;
+}
+
 .rr-card {
   margin-left: auto;
   margin-right: auto;
+  margin-bottom: 0.5em;
+}
+
+.rr-card:hover {
+  box-shadow: 2px 2px 5px;
 }
 
 .dark-blue {
@@ -91,12 +100,14 @@
   font-family: "Monopoly";
   font-size: 2.5em;
   margin-top: 0;
+  margin-bottom: 0.235em;
   text-align: center;
 }
 
 .offer-column {
   display: flex;
   flex-direction: column;
+  width: 45%;
 }
 
 .offer-columns {
