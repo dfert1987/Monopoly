@@ -1,6 +1,7 @@
 export const Properties = [
   {
     order: 0,
+    trade: false,
     Number: 40,
     Name: "TRB",
     Price: 400,
@@ -31,6 +32,7 @@ export const Properties = [
   },
   {
     order: 1,
+    trade: false,
     Number: 38,
     Name: "Migas",
     Price: 350,
@@ -61,6 +63,7 @@ export const Properties = [
   },
   {
     order: 2,
+    trade: false,
     Number: 35,
     Name: "Great Leap",
     Price: 320,
@@ -91,6 +94,7 @@ export const Properties = [
   },
   {
     order: 3,
+    trade: false,
     Number: 33,
     Name: "Slow Boat",
     Price: 300,
@@ -120,6 +124,7 @@ export const Properties = [
   },
   {
     order: 4,
+    trade: false,
     Number: 32,
     Name: "Jing-A",
     Price: 300,
@@ -150,6 +155,7 @@ export const Properties = [
   },
   {
     order: 5,
+    trade: false,
     Number: 30,
     Name: "Dadong",
     Price: 280,
@@ -179,6 +185,7 @@ export const Properties = [
   },
   {
     order: 6,
+    trade: false,
     Number: 28,
     Name: "HaidiLao",
     Price: 260,
@@ -209,6 +216,7 @@ export const Properties = [
   },
   {
     order: 7,
+    trade: false,
     Number: 27,
     Name: "Jin Ding Xuan",
     Price: 260,
@@ -239,6 +247,7 @@ export const Properties = [
   },
   {
     order: 8,
+    trade: false,
     Number: 25,
     Name: "Lantern",
     Price: 240,
@@ -269,6 +278,7 @@ export const Properties = [
   },
   {
     order: 9,
+    trade: false,
     Number: 24,
     Name: "The Local",
     Price: 220,
@@ -298,6 +308,7 @@ export const Properties = [
   },
   {
     order: 10,
+    trade: false,
     Number: 22,
     Name: "Annie's",
     Price: 220,
@@ -327,6 +338,7 @@ export const Properties = [
   },
   {
     order: 11,
+    trade: false,
     Number: 20,
     Name: "Dada",
     Price: 200,
@@ -357,6 +369,7 @@ export const Properties = [
   },
   {
     order: 12,
+    trade: false,
     Number: 19,
     Name: "Temple Bar",
     Price: 180,
@@ -386,6 +399,7 @@ export const Properties = [
   },
   {
     order: 13,
+    trade: false,
     Number: 17,
     Name: "Modernista",
     Price: 180,
@@ -415,6 +429,7 @@ export const Properties = [
   },
   {
     order: 14,
+    trade: false,
     Number: 15,
     Name: "Zhang MaMa",
     Price: 160,
@@ -444,6 +459,7 @@ export const Properties = [
   },
   {
     order: 15,
+    trade: false,
     Number: 14,
     Name: "Dali Renjia",
     Price: 140,
@@ -456,7 +472,7 @@ export const Properties = [
     hotel: 750,
     mortgage: 70,
     buidlingCost: 100,
-    ownedP1: false,
+    ownedP1: true,
     ownedP2: false,
     hasOneHouse: false,
     hasTwoHouses: false,
@@ -473,6 +489,7 @@ export const Properties = [
   },
   {
     order: 16,
+    trade: false,
     Number: 12,
     Name: "Laoman",
     Price: 140,
@@ -485,7 +502,7 @@ export const Properties = [
     hotel: 750,
     mortgage: 70,
     buidlingCost: 100,
-    ownedP1: false,
+    ownedP1: true,
     ownedP2: false,
     hasOneHouse: false,
     hasTwoHouses: false,
@@ -502,6 +519,7 @@ export const Properties = [
   },
   {
     order: 17,
+    trade: false,
     Number: 10,
     Name: "4Corners",
     Price: 120,
@@ -514,7 +532,7 @@ export const Properties = [
     hotel: 600,
     mortgage: 60,
     buidlingCost: 50,
-    ownedP1: false,
+    ownedP1: true,
     ownedP2: false,
     hasOneHouse: false,
     hasTwoHouses: false,
@@ -532,6 +550,7 @@ export const Properties = [
   },
   {
     order: 18,
+    trade: false,
     Number: 9,
     Name: "Cafe De La Poste",
     Price: 100,
@@ -544,7 +563,7 @@ export const Properties = [
     hotel: 550,
     mortgage: 50,
     buidlingCost: 50,
-    ownedP1: false,
+    ownedP1: true,
     ownedP2: false,
     hasOneHouse: false,
     hasTwoHouses: false,
@@ -562,6 +581,7 @@ export const Properties = [
   },
   {
     order: 19,
+    trade: false,
     Number: 7,
     Name: "Hot Cat Club",
     Price: 100,
@@ -574,7 +594,7 @@ export const Properties = [
     hotel: 550,
     mortgage: 50,
     buidlingCost: 50,
-    ownedP1: false,
+    ownedP1: true,
     ownedP2: false,
     hasOneHouse: false,
     hasTwoHouses: false,
@@ -591,6 +611,7 @@ export const Properties = [
   },
   {
     order: 20,
+    trade: false,
     Number: 4,
     Name: "Propaganda",
     Price: 80,
@@ -621,6 +642,7 @@ export const Properties = [
   },
   {
     order: 21,
+    trade: false,
     Number: 2,
     Name: "Lush",
     Price: 60,

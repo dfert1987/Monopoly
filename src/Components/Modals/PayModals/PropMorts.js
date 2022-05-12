@@ -11,7 +11,6 @@ export const PropMorts = ({
   setMoney,
   rent,
   type,
-  player,
   setEnoughMoney,
   setNeeded,
   setUpdated,

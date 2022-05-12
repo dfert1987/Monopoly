@@ -4,6 +4,7 @@ import { faXmark } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import useSound from "use-sound";
 import Click from "../../Assets/Sounds/click.mp3";
+import DitieLogo from "../../Assets/PropertyImages/ditielogo.png";
 import "../Styles/Trade.css";
 
 const TradeModal = ({
@@ -49,45 +50,48 @@ const TradeModal = ({
 
   const getFilteredP1Props = () => {
     let availableP1Props = properties.filter(
-      (property) => property.ownedP1 === true && !property.mortgaged
+      (property) =>
+        property.ownedP1 === true && !property.mortgaged && !property.trade
     );
     setP1Props(availableP1Props);
   };
 
   const getFilteredP1Utils = () => {
     let availableP1Utils = utilities.filter(
-      (util) => util.ownedP1 === true && !util.mortgaged
+      (util) => util.ownedP1 === true && !util.mortgaged && !util.trade
     );
     setP1Utils(availableP1Utils);
   };
 
   const getFilteredP1RRs = () => {
     let availableP1RRs = railRoads.filter(
-      (rr) => rr.ownedP1 === true && !rr.mortgaged
+      (rr) => rr.ownedP1 === true && !rr.mortgaged && !rr.trade
     );
     setP1RRs(availableP1RRs);
   };
 
   const getFilteredP2Props = () => {
     let availableP2Props = properties.filter(
-      (property) => property.ownedP2 === true && !property.mortgaged
+      (property) =>
+        property.ownedP2 === true && !property.mortgaged && !property.trade
     );
     setP2Props(availableP2Props);
   };
 
   const getFilteredP2Utils = () => {
     let availableP2Utils = utilities.filter(
-      (util) => util.ownedP2 === true && !util.mortgaged
+      (util) => util.ownedP2 === true && !util.mortgaged && !util.trade
     );
     setP2Utils(availableP2Utils);
   };
 
   const getFilteredP2RRs = () => {
     let availableP2RRs = railRoads.filter(
-      (rr) => rr.ownedP2 === true && !rr.mortgaged
+      (rr) => rr.ownedP2 === true && !rr.mortgaged && !rr.trade
     );
-    setP1RRs(availableP2RRs);
+    setP2RRs(availableP2RRs);
   };
+
   const handleClose = () => {
     setShowTrade();
     click();
@@ -99,6 +103,10 @@ const TradeModal = ({
         return (
           <div className="container-prop" key={index}>
             <p className="propname">{property.Name}</p>
+            <div className="prop-card available">
+              <div className={`top-prop ${property.color}`}></div>
+              <div className="white-prop"></div>
+            </div>
           </div>
         );
       });
@@ -111,6 +119,16 @@ const TradeModal = ({
         return (
           <div className="container-prop" key={index}>
             <p className="propname">{rr.Name}</p>
+            <div className="rr-card">
+              <div className="top-rr-must"></div>
+              <div className="white-prop">
+                <img
+                  className="subway-logo"
+                  src={DitieLogo}
+                  alt="subway logo"
+                />
+              </div>
+            </div>
           </div>
         );
       });
@@ -123,6 +141,16 @@ const TradeModal = ({
         return (
           <div className="container-prop" key={index}>
             <p className="propname">{util.Name}</p>
+            <div className="rr-card">
+              <div className="top-rr-must"></div>
+              <div className="white-prop">
+                <img
+                  className="subway-logo-left"
+                  src={util.bannerImage}
+                  alt="utility logo"
+                />
+              </div>
+            </div>
           </div>
         );
       });
@@ -135,6 +163,10 @@ const TradeModal = ({
         return (
           <div className="container-prop" key={index}>
             <p className="propname">{property.Name}</p>
+            <div className="prop-card available">
+              <div className={`top-prop ${property.color}`}></div>
+              <div className="white-prop"></div>
+            </div>
           </div>
         );
       });
@@ -147,6 +179,16 @@ const TradeModal = ({
         return (
           <div className="container-prop" key={index}>
             <p className="propname">{rr.Name}</p>
+            <div className="rr-card">
+              <div className="top-rr-must"></div>
+              <div className="white-prop">
+                <img
+                  className="subway-logo"
+                  src={DitieLogo}
+                  alt="subway logo"
+                />
+              </div>
+            </div>
           </div>
         );
       });
@@ -159,6 +201,16 @@ const TradeModal = ({
         return (
           <div className="container-prop" key={index}>
             <p className="propname">{util.Name}</p>
+            <div className="rr-card">
+              <div className="top-rr-must"></div>
+              <div className="white-prop">
+                <img
+                  className="subway-logo-left"
+                  src={util.bannerImage}
+                  alt="utility logo"
+                />
+              </div>
+            </div>
           </div>
         );
       });
@@ -214,6 +266,7 @@ const TradeModal = ({
                       </div>
                     </div>
                   </div>
+                  <div className="horizontal-divider"></div>
                 </div>
               </div>
             </motion.div>
