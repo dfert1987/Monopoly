@@ -101,6 +101,32 @@ const TradeModal = ({
     setShowTrade();
     click();
   };
+
+  const addUtilToOffer = (UtilName) => {
+    if (utilities) {
+      let updatedUtils = utilities.map((util) => {
+        if (util.Name === UtilName) {
+          return { ...util, trade: true };
+        }
+        choose();
+        return util;
+      });
+      setUtilities(updatedUtils);
+    }
+  };
+  const addRRToOffer = (RRName) => {
+    if (railRoads) {
+      let updatedRRs = railRoads.map((rr) => {
+        if (rr.Name === RRName) {
+          return { ...rr, trade: true };
+        }
+        choose();
+        return rr;
+      });
+      setRailRoads(updatedRRs);
+    }
+  };
+
   const addToOffer = (PropName) => {
     if (properties) {
       let updatedProperties = properties.map((property) => {
@@ -108,7 +134,6 @@ const TradeModal = ({
           return { ...property, trade: true };
         }
         choose();
-
         return property;
       });
       setProperties(updatedProperties);
@@ -139,7 +164,11 @@ const TradeModal = ({
     if (p1RRs && p1RRs.length > 0) {
       return p1RRs.map((rr, index) => {
         return (
-          <div className="container-prop" key={index}>
+          <div
+            className="container-prop"
+            key={index}
+            onClick={() => addRRToOffer(rr.Name)}
+          >
             <p className="propname">{rr.Name}</p>
             <div className="rr-card">
               <div className="top-rr-must"></div>
@@ -161,7 +190,11 @@ const TradeModal = ({
     if (p1Utils && p1Utils.length > 0) {
       return p1Utils.map((util, index) => {
         return (
-          <div className="container-prop" key={index}>
+          <div
+            className="container-prop"
+            key={index}
+            onClick={() => addUtilToOffer(util.Name)}
+          >
             <p className="propname">{util.Name}</p>
             <div className="rr-card">
               <div className="top-rr-must"></div>
@@ -183,7 +216,11 @@ const TradeModal = ({
     if (p2Props && p2Props.length > 0) {
       return p2Props.map((property, index) => {
         return (
-          <div className="container-prop" key={index}>
+          <div
+            className="container-prop"
+            key={index}
+            onClick={() => addToOffer(property.Name)}
+          >
             <p className="propname">{property.Name}</p>
             <div className="prop-card available">
               <div className={`top-prop ${property.color}`}></div>
@@ -199,7 +236,11 @@ const TradeModal = ({
     if (p2RRs && p2RRs.length > 0) {
       return p2RRs.map((rr, index) => {
         return (
-          <div className="container-prop" key={index}>
+          <div
+            className="container-prop"
+            key={index}
+            onClick={() => addRRToOffer(rr.Name)}
+          >
             <p className="propname">{rr.Name}</p>
             <div className="rr-card">
               <div className="top-rr-must"></div>
@@ -221,7 +262,11 @@ const TradeModal = ({
     if (p2Utils && p2Utils.length > 0) {
       return p2Utils.map((util, index) => {
         return (
-          <div className="container-prop" key={index}>
+          <div
+            className="container-prop"
+            key={index}
+            onClick={() => addUtilToOffer(util.Name)}
+          >
             <p className="propname">{util.Name}</p>
             <div className="rr-card">
               <div className="top-rr-must"></div>
