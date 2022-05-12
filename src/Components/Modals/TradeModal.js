@@ -4,6 +4,7 @@ import { faXmark } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import useSound from "use-sound";
 import Click from "../../Assets/Sounds/click.mp3";
+import Choose from "../../Assets/Sounds/choose.mp3";
 import DitieLogo from "../../Assets/PropertyImages/ditielogo.png";
 import "../Styles/Trade.css";
 
@@ -40,6 +41,7 @@ const TradeModal = ({
   const [p1Utils, setP1Utils] = useState();
   const [p2Utils, setP2Utils] = useState();
   const [click] = useSound(Click);
+  const [choose] = useSound(Choose);
 
   useEffect(() => {
     getFilteredP1Props();
@@ -99,14 +101,14 @@ const TradeModal = ({
     setShowTrade();
     click();
   };
-  console.log(properties);
   const addToOffer = (PropName) => {
-    console.log(PropName);
     if (properties) {
       let updatedProperties = properties.map((property) => {
         if (property.Name === PropName) {
           return { ...property, trade: true };
         }
+        choose();
+
         return property;
       });
       setProperties(updatedProperties);
