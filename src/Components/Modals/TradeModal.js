@@ -11,6 +11,9 @@ const TradeModal = ({
   setShowTrade,
   showTrade,
   properties,
+  setProperties,
+  setUtilities,
+  setRailRoads,
   utilities,
   railRoads,
 }) => {
@@ -96,12 +99,29 @@ const TradeModal = ({
     setShowTrade();
     click();
   };
+  console.log(properties);
+  const addToOffer = (PropName) => {
+    console.log(PropName);
+    if (properties) {
+      let updatedProperties = properties.map((property) => {
+        if (property.Name === PropName) {
+          return { ...property, trade: true };
+        }
+        return property;
+      });
+      setProperties(updatedProperties);
+    }
+  };
 
   const showP1Props = () => {
     if (p1Props && p1Props.length > 0) {
       return p1Props.map((property, index) => {
         return (
-          <div className="container-prop" key={index}>
+          <div
+            className="container-prop"
+            key={index}
+            onClick={() => addToOffer(property.Name)}
+          >
             <p className="propname">{property.Name}</p>
             <div className="prop-card available">
               <div className={`top-prop ${property.color}`}></div>
@@ -243,6 +263,9 @@ const TradeModal = ({
                 </div>
                 <div className="trade-ui">
                   <h2 className="trade-title">MAKE A DEAL</h2>
+                  <p className="trade-instructions">
+                    Click Icon to add to offer
+                  </p>
                   <div className="trade-columns">
                     <div className="trade-column first-player">
                       <h3 className="player-title">Player 1</h3>
@@ -267,6 +290,14 @@ const TradeModal = ({
                     </div>
                   </div>
                   <div className="horizontal-divider"></div>
+                  <div className="offer-section">
+                    <h3 className="offer">Offer</h3>
+                    <div className="offer-columns">
+                      <div className="offer-column p1-offer"></div>
+                      <div className="divider-line"></div>
+                      <div className="offer-column p2-offer"></div>
+                    </div>
+                  </div>
                 </div>
               </div>
             </motion.div>
