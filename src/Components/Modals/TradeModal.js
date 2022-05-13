@@ -3,7 +3,6 @@ import { motion, AnimatePresence } from "framer-motion";
 import { faXmark } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import useSound from "use-sound";
-import InputNumber from "react-input-number";
 import Click from "../../Assets/Sounds/click.mp3";
 import Choose from "../../Assets/Sounds/choose.mp3";
 import DitieLogo from "../../Assets/PropertyImages/ditielogo.png";
@@ -54,7 +53,7 @@ const TradeModal = ({
   const [p1MoneyAvailable, setP1MoneyAvailable] = useState(p1Money);
   const [p1MoneyTrade, setP1MoneyTrade] = useState(0);
   const [p2MoneyAvailable, setP2MoneyAvailable] = useState(p2Money);
-  const [p2MoneyTrade, setP2MoneyTrade] = useState(false);
+  const [p2MoneyTrade, setP2MoneyTrade] = useState(0);
   const [click] = useSound(Click);
   const [choose] = useSound(Choose);
 
@@ -518,6 +517,65 @@ const TradeModal = ({
     setP1MoneyTrade(value);
   };
 
+  const handleChangeP2 = (e) => {
+    let { value, min, max } = e.target;
+    value = Math.max(Number(min), Math.min(Number(max), Number(value)));
+
+    setP2MoneyTrade(value);
+  };
+
+  const resetP2 = () => {
+    click();
+    setP2MoneyTrade(0);
+    let newRRs = railRoads.map((item) => {
+      if (item.ownedP2) {
+        return { ...item, trade: false };
+      }
+      return item;
+    });
+    let newProps = properties.map((item) => {
+      if (item.ownedP2) {
+        return { ...item, trade: false };
+      }
+      return item;
+    });
+    let newUtils = utilities.map((item) => {
+      if (item.ownedP2) {
+        return { ...item, trade: false };
+      }
+      return item;
+    });
+    setProperties(newProps);
+    setRailRoads(newRRs);
+    setUtilities(newUtils);
+  };
+
+  const resetP1 = () => {
+    click();
+    setP1MoneyTrade(0);
+    let newRRs = railRoads.map((item) => {
+      if (item.ownedP1) {
+        return { ...item, trade: false };
+      }
+      return item;
+    });
+    let newProps = properties.map((item) => {
+      if (item.ownedP1) {
+        return { ...item, trade: false };
+      }
+      return item;
+    });
+    let newUtils = utilities.map((item) => {
+      if (item.ownedP1) {
+        return { ...item, trade: false };
+      }
+      return item;
+    });
+    setProperties(newProps);
+    setRailRoads(newRRs);
+    setUtilities(newUtils);
+  };
+
   return (
     <>
       <AnimatePresence exitBeforeEnter>
@@ -558,7 +616,7 @@ const TradeModal = ({
                           Avaiable Money: {p1MoneyAvailable}RMB
                         </h4>
                         <div className="offerMoney p1MoneyOffer">
-                          <label className="mulah" for="money">
+                          <label className="mulah">
                             <b>Add Money to Offer</b>
                           </label>
                           <input
@@ -585,6 +643,20 @@ const TradeModal = ({
                         <h4 className="available-money">
                           Avaiable Money: {p2MoneyAvailable}RMB
                         </h4>
+                        <div className="offerMoney p1MoneyOffer">
+                          <label className="mulah">
+                            <b>Add Money to Offer</b>
+                          </label>
+                          <input
+                            min={0}
+                            max={p2Money}
+                            value={p2MoneyTrade}
+                            step={1}
+                            onChange={handleChangeP2}
+                            className="number-input"
+                            type="number"
+                          />
+                        </div>
                       </div>
                       <div className="properties-container">
                         {showP2Props()}
@@ -606,13 +678,28 @@ const TradeModal = ({
                         <h4 className="money-offered">
                           PLUS: {p1MoneyTrade} RMB
                         </h4>
+                        <div className="yes-no-container">
+                          <button className="yes">ACCEPT</button>
+                          <button className="yes reset" onClick={resetP1}>
+                            RESET
+                          </button>
+                        </div>
                       </div>
                       <div className="divider-line"></div>
                       <div className="offer-column p2-offer">
-                        <div className="properties-container to-trade">
+                        <div className="properties-container to-trade onRight">
                           {showP2Offers()}
                           {showP2OffersRR()}
                           {showP2OffersUtils()}
+                        </div>
+                        <h4 className="money-offered player2Money">
+                          PLUS: {p2MoneyTrade} RMB
+                        </h4>
+                        <div className="yes-no-container player2">
+                          <button className="yes">ACCEPT</button>
+                          <button className="yes reset" onClick={resetP2}>
+                            RESET
+                          </button>
                         </div>
                       </div>
                     </div>

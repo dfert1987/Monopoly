@@ -112,6 +112,10 @@
   margin-left: 0.5em;
 }
 
+.properties-container.to-trade.onRight {
+  margin-left: 2em;
+}
+
 .offer-column {
   display: flex;
   flex-direction: column;
@@ -163,4 +167,17 @@
 .money-container {
   display: flex;
   flex-direction: row;
+}
+
+.money-offered.player2Money {
+  padding-left: 2em;
+}
+
+.yes-no-container {
+  display: flex;
+  margin-left: 2em;
+}
+
+.reset {
+  margin-left: 1em;
 }
