@@ -76,7 +76,7 @@ const TradeModal = ({
     let availableP1Utils = utilities.filter(
       (util) => util.ownedP1 === true && !util.mortgaged && !util.trade
     );
-    let offeredP1Utils = properties.filter(
+    let offeredP1Utils = utilities.filter(
       (util) => util.ownedP1 === true && !util.mortgaged && util.trade
     );
     setP1Utils(availableP1Utils);
@@ -111,7 +111,7 @@ const TradeModal = ({
     let availableP2Utils = utilities.filter(
       (util) => util.ownedP2 === true && !util.mortgaged && !util.trade
     );
-    let offeredP2Utils = properties.filter(
+    let offeredP2Utils = utilities.filter(
       (util) => util.ownedP2 === true && !util.mortgaged && util.trade
     );
     setP2Utils(availableP2Utils);
@@ -185,6 +185,90 @@ const TradeModal = ({
             <div className="prop-card available">
               <div className={`top-prop ${property.color}`}></div>
               <div className="white-prop"></div>
+            </div>
+          </div>
+        );
+      });
+    }
+  };
+
+  const removeFromOffer = () => {
+    choose();
+  };
+
+  const removeRRFromOffer = () => {
+    choose();
+  };
+
+  const removerUtilFromOffer = () => {
+    choose();
+  };
+
+  const showP1Offers = () => {
+    if (p1Offers && p1Offers.length > 0) {
+      return p1Offers.map((property, index) => {
+        return (
+          <div
+            className="container-prop"
+            key={index}
+            onClick={() => removeFromOffer(property.Name)}
+          >
+            <p className="propname">{property.Name}</p>
+            <div className="prop-card available">
+              <div className={`top-prop ${property.color}`}></div>
+              <div className="white-prop"></div>
+            </div>
+          </div>
+        );
+      });
+    }
+  };
+
+  const showP1OffersRR = () => {
+    if (p1RROffers && p1RROffers.length > 0) {
+      return p1RROffers.map((rr, index) => {
+        return (
+          <div
+            className="container-prop"
+            key={index}
+            onClick={() => removeRRFromOffer(rr.Name)}
+          >
+            <p className="propname">{rr.Name}</p>
+            <div className="rr-card">
+              <div className="top-rr-must"></div>
+              <div className="white-prop">
+                <img
+                  className="subway-logo"
+                  src={DitieLogo}
+                  alt="subway logo"
+                />
+              </div>
+            </div>
+          </div>
+        );
+      });
+    }
+  };
+
+  const showP1OffersUtils = () => {
+    if (p1UtilOffers && p1UtilOffers.length > 0) {
+      return p1UtilOffers.map((util, index) => {
+        return (
+          <div
+            className="container-prop"
+            key={index}
+            onClick={() => removerUtilFromOffer(util.Name)}
+          >
+            <p className="propname">{util.Name}</p>
+            <div className="rr-card">
+              <div className="top-rr-must"></div>
+              <div className="white-prop">
+                <img
+                  className="subway-logo-left"
+                  src={util.bannerImage}
+                  alt="utility logo"
+                />
+              </div>
             </div>
           </div>
         );
@@ -370,9 +454,9 @@ const TradeModal = ({
                     <div className="offer-columns">
                       <div className="offer-column p1-offer">
                         <div className="properties-container to-trade">
-                          {showP1Props()}
-                          {showP1RRs()}
-                          {showP1Utils()}
+                          {showP1Offers()}
+                          {showP1OffersRR()}
+                          {showP1OffersUtils()}
                         </div>
                       </div>
                       <div className="divider-line"></div>
