@@ -115,6 +115,7 @@
 .offer-column {
   display: flex;
   flex-direction: column;
+  justify-content: left;
   width: 45%;
 }
 
@@ -122,4 +123,44 @@
   display: flex;
   flex-direction: row;
   justify-content: center;
+}
+
+.offerMoney {
+  display: flex;
+  flex-direction: column;
+}
+
+.number-input {
+  font-family: "Monopoly";
+  font-size: 1em;
+  height: 2em;
+  max-width: 10em;
+  margin-left: 1em;
+}
+
+.input-and-amount {
+  display: flex;
+  flex-direction: row;
+}
+
+.mulah {
+  padding-bottom: 0.25em;
+  padding-left: 1em;
+}
+
+.offerMoney {
+  position: relative;
+  bottom: 1em;
+  margin-left: 5em;
+}
+
+.money-offered {
+  margin-top: 0.25em;
+  font-family: "Monopoly";
+  font-size: 2em;
+}
+
+.money-container {
+  display: flex;
+  flex-direction: row;
 }

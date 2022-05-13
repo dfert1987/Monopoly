@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { faXmark } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import useSound from "use-sound";
+import InputNumber from "react-input-number";
 import Click from "../../Assets/Sounds/click.mp3";
 import Choose from "../../Assets/Sounds/choose.mp3";
 import DitieLogo from "../../Assets/PropertyImages/ditielogo.png";
@@ -56,6 +57,9 @@ const TradeModal = ({
   const [p2MoneyTrade, setP2MoneyTrade] = useState(false);
   const [click] = useSound(Click);
   const [choose] = useSound(Choose);
+
+  const min = 0;
+  const maxP1 = { p1Money };
 
   useEffect(() => {
     getFilteredP1Props();
@@ -507,6 +511,13 @@ const TradeModal = ({
     }
   };
 
+  const handleChangeP1 = (e) => {
+    let { value, min, max } = e.target;
+    value = Math.max(Number(min), Math.min(Number(max), Number(value)));
+
+    setP1MoneyTrade(value);
+  };
+
   return (
     <>
       <AnimatePresence exitBeforeEnter>
@@ -546,6 +557,20 @@ const TradeModal = ({
                         <h4 className="available-money">
                           Avaiable Money: {p1MoneyAvailable}RMB
                         </h4>
+                        <div className="offerMoney p1MoneyOffer">
+                          <label className="mulah" for="money">
+                            <b>Add Money to Offer</b>
+                          </label>
+                          <input
+                            min={0}
+                            max={p1Money}
+                            value={p1MoneyTrade}
+                            step={1}
+                            onChange={handleChangeP1}
+                            className="number-input"
+                            type="number"
+                          />
+                        </div>
                       </div>
                       <div className="properties-container">
                         {showP1Props()}
@@ -578,6 +603,9 @@ const TradeModal = ({
                           {showP1OffersRR()}
                           {showP1OffersUtils()}
                         </div>
+                        <h4 className="money-offered">
+                          PLUS: {p1MoneyTrade} RMB
+                        </h4>
                       </div>
                       <div className="divider-line"></div>
                       <div className="offer-column p2-offer">
