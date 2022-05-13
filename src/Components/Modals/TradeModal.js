@@ -200,7 +200,19 @@ const TradeModal = ({
     choose();
   };
 
-  const removerUtilFromOffer = () => {
+  const removeUtilFromOffer = () => {
+    choose();
+  };
+
+  const removeFromOfferP2 = () => {
+    choose();
+  };
+
+  const removeRRFromOffer2 = () => {
+    choose();
+  };
+
+  const removeUtilFromOffer2 = () => {
     choose();
   };
 
@@ -217,6 +229,52 @@ const TradeModal = ({
             <div className="prop-card available">
               <div className={`top-prop ${property.color}`}></div>
               <div className="white-prop"></div>
+            </div>
+          </div>
+        );
+      });
+    }
+  };
+
+  const showP2Offers = () => {
+    if (p2Offers && p2Offers.length > 0) {
+      return p2Offers.map((property, index) => {
+        return (
+          <div
+            className="container-prop"
+            key={index}
+            onClick={() => removeFromOfferP2(property.Name)}
+          >
+            <p className="propname">{property.Name}</p>
+            <div className="prop-card available">
+              <div className={`top-prop ${property.color}`}></div>
+              <div className="white-prop"></div>
+            </div>
+          </div>
+        );
+      });
+    }
+  };
+
+  const showP2OffersUtils = () => {
+    if (p2UtilOffers && p2UtilOffers.length > 0) {
+      return p2UtilOffers.map((util, index) => {
+        return (
+          <div
+            className="container-prop"
+            key={index}
+            onClick={() => removeUtilFromOffer(util.Name)}
+          >
+            <p className="propname">{util.Name}</p>
+            <div className="rr-card">
+              <div className="top-rr-must"></div>
+              <div className="white-prop">
+                <img
+                  className="subway-logo-left"
+                  src={util.bannerImage}
+                  alt="utility logo"
+                />
+              </div>
             </div>
           </div>
         );
@@ -257,7 +315,7 @@ const TradeModal = ({
           <div
             className="container-prop"
             key={index}
-            onClick={() => removerUtilFromOffer(util.Name)}
+            onClick={() => removeUtilFromOffer(util.Name)}
           >
             <p className="propname">{util.Name}</p>
             <div className="rr-card">
@@ -341,6 +399,32 @@ const TradeModal = ({
             <div className="prop-card available">
               <div className={`top-prop ${property.color}`}></div>
               <div className="white-prop"></div>
+            </div>
+          </div>
+        );
+      });
+    }
+  };
+
+  const showP2OffersRR = () => {
+    if (p2RROffers && p2RROffers.length > 0) {
+      return p2RROffers.map((rr, index) => {
+        return (
+          <div
+            className="container-prop"
+            key={index}
+            onClick={() => removeRRFromOffer2(rr.Name)}
+          >
+            <p className="propname">{rr.Name}</p>
+            <div className="rr-card">
+              <div className="top-rr-must"></div>
+              <div className="white-prop">
+                <img
+                  className="subway-logo"
+                  src={DitieLogo}
+                  alt="subway logo"
+                />
+              </div>
             </div>
           </div>
         );
@@ -462,9 +546,9 @@ const TradeModal = ({
                       <div className="divider-line"></div>
                       <div className="offer-column p2-offer">
                         <div className="properties-container to-trade">
-                          {showP2Props()}
-                          {showP2RRs()}
-                          {showP2Utils()}
+                          {showP2Offers()}
+                          {showP2OffersRR()}
+                          {showP2OffersUtils()}
                         </div>
                       </div>
                     </div>
