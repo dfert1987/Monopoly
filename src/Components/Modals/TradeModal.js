@@ -17,6 +17,10 @@ const TradeModal = ({
   setRailRoads,
   utilities,
   railRoads,
+  p1Money,
+  setP1Money,
+  p2Money,
+  setP2Money,
 }) => {
   const backdrop = {
     visible: { opacity: 1 },
@@ -46,6 +50,10 @@ const TradeModal = ({
   const [p2RROffers, setP2RROffers] = useState();
   const [p1UtilOffers, setP1UtilOffers] = useState();
   const [p2UtilOffers, setP2UtilOffers] = useState();
+  const [p1MoneyAvailable, setP1MoneyAvailable] = useState(p1Money);
+  const [p1MoneyTrade, setP1MoneyTrade] = useState(0);
+  const [p2MoneyAvailable, setP2MoneyAvailable] = useState(p2Money);
+  const [p2MoneyTrade, setP2MoneyTrade] = useState(false);
   const [click] = useSound(Click);
   const [choose] = useSound(Choose);
 
@@ -526,11 +534,19 @@ const TradeModal = ({
                 <div className="trade-ui">
                   <h2 className="trade-title">MAKE A DEAL</h2>
                   <p className="trade-instructions">
-                    Click Icon to add to offer
+                    Click Icon to add/remove items from your offer.
+                  </p>
+                  <p className="trade-instructions">
+                    Add or subtract money from your offer below.
                   </p>
                   <div className="trade-columns">
                     <div className="trade-column first-player">
                       <h3 className="player-title">Player 1</h3>
+                      <div className="money-container">
+                        <h4 className="available-money">
+                          Avaiable Money: {p1MoneyAvailable}RMB
+                        </h4>
+                      </div>
                       <div className="properties-container">
                         {showP1Props()}
                         {showP1RRs()}
@@ -540,6 +556,11 @@ const TradeModal = ({
                     <div className="divider-line"></div>
                     <div className="trade-column second-player">
                       <h3 className="player-title">Player 2</h3>
+                      <div className="money-container">
+                        <h4 className="available-money">
+                          Avaiable Money: {p2MoneyAvailable}RMB
+                        </h4>
+                      </div>
                       <div className="properties-container">
                         {showP2Props()}
                         {showP2RRs()}
