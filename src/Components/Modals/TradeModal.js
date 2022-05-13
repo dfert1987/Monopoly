@@ -192,28 +192,43 @@ const TradeModal = ({
     }
   };
 
-  const removeFromOffer = () => {
+  const removeFromOffer = (PropName) => {
     choose();
+    if (properties) {
+      let updateProperties = properties.map((property) => {
+        if (property.Name === PropName) {
+          return { ...property, trade: false };
+        }
+        return property;
+      });
+      setProperties(updateProperties);
+    }
   };
 
-  const removeRRFromOffer = () => {
+  const removeRRFromOffer = (Rail) => {
     choose();
+    if (railRoads) {
+      let updatedRRs = railRoads.map((rr) => {
+        if (rr.Name === Rail) {
+          return { ...rr, trade: false };
+        }
+        return rr;
+      });
+      setRailRoads(updatedRRs);
+    }
   };
 
-  const removeUtilFromOffer = () => {
+  const removeUtilFromOffer = (Utility) => {
     choose();
-  };
-
-  const removeFromOfferP2 = () => {
-    choose();
-  };
-
-  const removeRRFromOffer2 = () => {
-    choose();
-  };
-
-  const removeUtilFromOffer2 = () => {
-    choose();
+    if (utilities) {
+      let updatedUtils = utilities.map((util) => {
+        if (util.Name === Utility) {
+          return { ...util, trade: false };
+        }
+        return util;
+      });
+      setUtilities(updatedUtils);
+    }
   };
 
   const showP1Offers = () => {
@@ -243,7 +258,7 @@ const TradeModal = ({
           <div
             className="container-prop"
             key={index}
-            onClick={() => removeFromOfferP2(property.Name)}
+            onClick={() => removeFromOffer(property.Name)}
           >
             <p className="propname">{property.Name}</p>
             <div className="prop-card available">
@@ -413,7 +428,7 @@ const TradeModal = ({
           <div
             className="container-prop"
             key={index}
-            onClick={() => removeRRFromOffer2(rr.Name)}
+            onClick={() => removeRRFromOffer(rr.Name)}
           >
             <p className="propname">{rr.Name}</p>
             <div className="rr-card">
