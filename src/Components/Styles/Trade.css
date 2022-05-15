@@ -129,6 +129,10 @@
   justify-content: center;
 }
 
+.yes-no-container.player2 {
+  margin-left: 2.25em;
+}
+
 .offerMoney {
   display: flex;
   flex-direction: column;
@@ -171,11 +175,6 @@
 
 .money-offered.player2Money {
   padding-left: 2em;
-}
-
-.yes-no-container {
-  display: flex;
-  margin-left: 2em;
 }
 
 .reset {

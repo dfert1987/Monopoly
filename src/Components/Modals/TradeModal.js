@@ -54,11 +54,22 @@ const TradeModal = ({
   const [p1MoneyTrade, setP1MoneyTrade] = useState(0);
   const [p2MoneyAvailable, setP2MoneyAvailable] = useState(p2Money);
   const [p2MoneyTrade, setP2MoneyTrade] = useState(0);
+  const [acceptedP1, setAcceptedP1] = useState(false);
+  const [acceptedP2, setAcceptedP2] = useState(false);
   const [click] = useSound(Click);
   const [choose] = useSound(Choose);
 
-  const min = 0;
-  const maxP1 = { p1Money };
+  //   const showAsAccepted = () => {
+  //     if (setAcceptedP1 === true) {
+  //       return "accepted";
+  //     } else return null;
+  //   };
+
+  //   const showAsAcceptedP2 = () => {
+  //     if (setAcceptedP2 === true) {
+  //       return "accepted";
+  //     } else return null;
+  //   };
 
   useEffect(() => {
     getFilteredP1Props();
@@ -146,7 +157,7 @@ const TradeModal = ({
   };
 
   const addUtilToOffer = (UtilName) => {
-    if (utilities) {
+    if (utilities && !acceptedP1) {
       let updatedUtils = utilities.map((util) => {
         if (util.Name === UtilName) {
           return { ...util, trade: true };
@@ -157,8 +168,22 @@ const TradeModal = ({
       setUtilities(updatedUtils);
     }
   };
+
+  const addUtilToOffer2 = (UtilName) => {
+    if (utilities && !acceptedP2) {
+      let updatedUtuils = utilities.map((util) => {
+        if (util.Name === UtilName) {
+          return { ...util, trade: true };
+        }
+        choose();
+        return util;
+      });
+      setUtilities(updatedUtuils);
+    }
+  };
+
   const addRRToOffer = (RRName) => {
-    if (railRoads) {
+    if (railRoads && !acceptedP1) {
       let updatedRRs = railRoads.map((rr) => {
         if (rr.Name === RRName) {
           return { ...rr, trade: true };
@@ -170,8 +195,34 @@ const TradeModal = ({
     }
   };
 
-  const addToOffer = (PropName) => {
-    if (properties) {
+  const addRRToOffer2 = (RRName) => {
+    if (railRoads && !acceptedP2) {
+      let updatedRRs = railRoads.map((rr) => {
+        if (rr.Name === RRName) {
+          return { ...rr, trade: true };
+        }
+        choose();
+        return rr;
+      });
+      setRailRoads(updatedRRs);
+    }
+  };
+
+  const addToOffer = (PropName, player) => {
+    if (properties && !acceptedP1) {
+      let updatedProperties = properties.map((property) => {
+        if (property.Name === PropName) {
+          return { ...property, trade: true };
+        }
+        choose();
+        return property;
+      });
+      setProperties(updatedProperties);
+    }
+  };
+
+  const addToOffer2 = (PropName) => {
+    if (properties && !acceptedP2) {
       let updatedProperties = properties.map((property) => {
         if (property.Name === PropName) {
           return { ...property, trade: true };
@@ -190,7 +241,7 @@ const TradeModal = ({
           <div
             className="container-prop"
             key={index}
-            onClick={() => addToOffer(property.Name)}
+            onClick={() => addToOffer(property.Name, "p1")}
           >
             <p className="propname">{property.Name}</p>
             <div className="prop-card available">
@@ -204,38 +255,77 @@ const TradeModal = ({
   };
 
   const removeFromOffer = (PropName) => {
-    choose();
-    if (properties) {
+    if (properties && !acceptedP1) {
       let updateProperties = properties.map((property) => {
         if (property.Name === PropName) {
           return { ...property, trade: false };
         }
         return property;
       });
+      choose();
+      setProperties(updateProperties);
+    }
+  };
+
+  const removeFromOffer2 = (PropName) => {
+    if (properties && !acceptedP2) {
+      let updateProperties = properties.map((property) => {
+        if (property.Name === PropName) {
+          return { ...property, trade: false };
+        }
+        return property;
+      });
+      choose();
       setProperties(updateProperties);
     }
   };
 
   const removeRRFromOffer = (Rail) => {
-    choose();
-    if (railRoads) {
+    if (railRoads && !acceptedP1) {
       let updatedRRs = railRoads.map((rr) => {
         if (rr.Name === Rail) {
           return { ...rr, trade: false };
         }
         return rr;
       });
+      choose();
+      setRailRoads(updatedRRs);
+    }
+  };
+
+  const removeRRFromOffer2 = (Rail) => {
+    if (railRoads && !acceptedP2) {
+      let updatedRRs = railRoads.map((rr) => {
+        if (rr.Name === Rail) {
+          return { ...rr, trade: false };
+        }
+        return rr;
+      });
+      choose();
       setRailRoads(updatedRRs);
     }
   };
 
   const removeUtilFromOffer = (Utility) => {
-    choose();
-    if (utilities) {
+    if (utilities && !acceptedP1) {
       let updatedUtils = utilities.map((util) => {
         if (util.Name === Utility) {
           return { ...util, trade: false };
         }
+        choose();
+        return util;
+      });
+      setUtilities(updatedUtils);
+    }
+  };
+
+  const removeUtilFromOffer2 = (Utility) => {
+    if (utilities && !acceptedP2) {
+      let updatedUtils = utilities.map((util) => {
+        if (util.Name === Utility) {
+          return { ...util, trade: false };
+        }
+        choose();
         return util;
       });
       setUtilities(updatedUtils);
@@ -269,7 +359,7 @@ const TradeModal = ({
           <div
             className="container-prop"
             key={index}
-            onClick={() => removeFromOffer(property.Name)}
+            onClick={() => removeFromOffer2(property.Name)}
           >
             <p className="propname">{property.Name}</p>
             <div className="prop-card available">
@@ -289,7 +379,7 @@ const TradeModal = ({
           <div
             className="container-prop"
             key={index}
-            onClick={() => removeUtilFromOffer(util.Name)}
+            onClick={() => removeUtilFromOffer2(util.Name)}
           >
             <p className="propname">{util.Name}</p>
             <div className="rr-card">
@@ -315,7 +405,7 @@ const TradeModal = ({
           <div
             className="container-prop"
             key={index}
-            onClick={() => removeRRFromOffer(rr.Name)}
+            onClick={() => removeRRFromOffer(rr.Name, "p1")}
           >
             <p className="propname">{rr.Name}</p>
             <div className="rr-card">
@@ -341,7 +431,7 @@ const TradeModal = ({
           <div
             className="container-prop"
             key={index}
-            onClick={() => removeUtilFromOffer(util.Name)}
+            onClick={() => removeUtilFromOffer(util.className)}
           >
             <p className="propname">{util.Name}</p>
             <div className="rr-card">
@@ -393,7 +483,7 @@ const TradeModal = ({
           <div
             className="container-prop"
             key={index}
-            onClick={() => addUtilToOffer(util.Name)}
+            onClick={() => addUtilToOffer(util.Name, "p1")}
           >
             <p className="propname">{util.Name}</p>
             <div className="rr-card">
@@ -419,7 +509,7 @@ const TradeModal = ({
           <div
             className="container-prop"
             key={index}
-            onClick={() => addToOffer(property.Name)}
+            onClick={() => addToOffer2(property.Name)}
           >
             <p className="propname">{property.Name}</p>
             <div className="prop-card available">
@@ -439,7 +529,7 @@ const TradeModal = ({
           <div
             className="container-prop"
             key={index}
-            onClick={() => removeRRFromOffer(rr.Name)}
+            onClick={() => removeRRFromOffer2(rr.Name)}
           >
             <p className="propname">{rr.Name}</p>
             <div className="rr-card">
@@ -465,7 +555,7 @@ const TradeModal = ({
           <div
             className="container-prop"
             key={index}
-            onClick={() => addRRToOffer(rr.Name)}
+            onClick={() => addRRToOffer2(rr.Name)}
           >
             <p className="propname">{rr.Name}</p>
             <div className="rr-card">
@@ -491,7 +581,7 @@ const TradeModal = ({
           <div
             className="container-prop"
             key={index}
-            onClick={() => addUtilToOffer(util.Name)}
+            onClick={() => addUtilToOffer2(util.Name)}
           >
             <p className="propname">{util.Name}</p>
             <div className="rr-card">
@@ -527,6 +617,7 @@ const TradeModal = ({
   const resetP2 = () => {
     click();
     setP2MoneyTrade(0);
+    setAcceptedP2(false);
     let newRRs = railRoads.map((item) => {
       if (item.ownedP2) {
         return { ...item, trade: false };
@@ -553,6 +644,7 @@ const TradeModal = ({
   const resetP1 = () => {
     click();
     setP1MoneyTrade(0);
+    setAcceptedP1(false);
     let newRRs = railRoads.map((item) => {
       if (item.ownedP1) {
         return { ...item, trade: false };
@@ -574,6 +666,14 @@ const TradeModal = ({
     setProperties(newProps);
     setRailRoads(newRRs);
     setUtilities(newUtils);
+  };
+
+  const acceptP1 = () => {
+    setAcceptedP1(true);
+  };
+
+  const acceptP2 = () => {
+    setAcceptedP2(true);
   };
 
   return (
@@ -627,6 +727,7 @@ const TradeModal = ({
                             onChange={handleChangeP1}
                             className="number-input"
                             type="number"
+                            disabled={acceptedP1}
                           />
                         </div>
                       </div>
@@ -655,6 +756,7 @@ const TradeModal = ({
                             onChange={handleChangeP2}
                             className="number-input"
                             type="number"
+                            disabled={acceptedP2}
                           />
                         </div>
                       </div>
@@ -679,7 +781,13 @@ const TradeModal = ({
                           PLUS: {p1MoneyTrade} RMB
                         </h4>
                         <div className="yes-no-container">
-                          <button className="yes">ACCEPT</button>
+                          <button
+                            className="yes"
+                            disabled={acceptedP1}
+                            onClick={acceptP1}
+                          >
+                            ACCEPT
+                          </button>
                           <button className="yes reset" onClick={resetP1}>
                             RESET
                           </button>
@@ -696,7 +804,13 @@ const TradeModal = ({
                           PLUS: {p2MoneyTrade} RMB
                         </h4>
                         <div className="yes-no-container player2">
-                          <button className="yes">ACCEPT</button>
+                          <button
+                            className="yes"
+                            disabled={acceptedP2}
+                            onClick={acceptP2}
+                          >
+                            ACCEPT
+                          </button>
                           <button className="yes reset" onClick={resetP2}>
                             RESET
                           </button>
