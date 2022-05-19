@@ -4,6 +4,7 @@ import { faXmark } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import useSound from "use-sound";
 import Click from "../../Assets/Sounds/click.mp3";
+import Drum from "../../Assets/Sounds/drum.mp3";
 import Choose from "../../Assets/Sounds/choose.mp3";
 import DitieLogo from "../../Assets/PropertyImages/ditielogo.png";
 import "../Styles/Trade.css";
@@ -58,18 +59,7 @@ const TradeModal = ({
   const [acceptedP2, setAcceptedP2] = useState(false);
   const [click] = useSound(Click);
   const [choose] = useSound(Choose);
-
-  //   const showAsAccepted = () => {
-  //     if (setAcceptedP1 === true) {
-  //       return "accepted";
-  //     } else return null;
-  //   };
-
-  //   const showAsAcceptedP2 = () => {
-  //     if (setAcceptedP2 === true) {
-  //       return "accepted";
-  //     } else return null;
-  //   };
+  const [drum] = useSound(Drum);
 
   useEffect(() => {
     getFilteredP1Props();
@@ -153,6 +143,18 @@ const TradeModal = ({
 
   const handleClose = () => {
     setShowTrade();
+    setP1MoneyAvailable(p1Money);
+    setP2MoneyAvailable(p2Money);
+    setAcceptedP1(false);
+    setAcceptedP2(false);
+    setP1MoneyTrade(0);
+    setP2MoneyTrade(0);
+    setP1RROffers();
+    setP1Offers();
+    setP1UtilOffers();
+    setP2Offers();
+    setP2RROffers();
+    setP2UtilOffers();
     click();
   };
 
@@ -599,7 +601,7 @@ const TradeModal = ({
       });
     }
   };
-
+  console.log(properties);
   const handleChangeP1 = (e) => {
     let { value, min, max } = e.target;
     value = Math.max(Number(min), Math.min(Number(max), Number(value)));
@@ -670,10 +672,48 @@ const TradeModal = ({
 
   const acceptP1 = () => {
     setAcceptedP1(true);
+    drum();
   };
 
   const acceptP2 = () => {
     setAcceptedP2(true);
+    drum();
+  };
+
+  const complete = () => {
+    drum();
+    let newP1Money = p1Money + p2MoneyTrade - p1MoneyTrade;
+    let newP2Money = p2Money + p1MoneyTrade - p2MoneyTrade;
+    setP2Money(newP2Money);
+    setP1Money(newP1Money);
+    let newProps = properties.map((property) => {
+      if (property.ownedP1 && property.trade) {
+        return { ...property, trade: false, ownedP1: false, ownedP2: true };
+      } else if (property.ownedP2 && property.trade) {
+        return { ...property, trade: false, ownedP1: true, ownedP2: false };
+      }
+      return property;
+    });
+    let newRRs = railRoads.map((rr) => {
+      if (rr.ownedP1 && rr.trade) {
+        return { ...rr, trade: false, ownedP1: false, ownedP2: true };
+      } else if (rr.ownedP2 && rr.trade) {
+        return { ...rr, trade: false, ownedP1: true, ownedP2: false };
+      }
+      return rr;
+    });
+    let newUtils = utilities.map((util) => {
+      if (util.ownedP1 && util.trade) {
+        return { ...util, trade: false, ownedP2: true, ownedP1: false };
+      } else if (util.ownedP2 && util.trade) {
+        return { ...util, trade: true, ownedP1: true, ownedP2: false };
+      }
+      return util;
+    });
+    setProperties(newProps);
+    setRailRoads(newRRs);
+    setUtilities(newUtils);
+    handleClose();
   };
 
   return (
@@ -818,6 +858,13 @@ const TradeModal = ({
                       </div>
                     </div>
                   </div>
+                  {acceptedP1 && acceptedP2 ? (
+                    <div className="complete-container">
+                      <button className="complete-button" onClick={complete}>
+                        COMPLETE TRADE
+                      </button>
+                    </div>
+                  ) : null}
                 </div>
               </div>
             </motion.div>
