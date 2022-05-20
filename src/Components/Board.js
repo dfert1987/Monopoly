@@ -13,6 +13,7 @@ import VisaConfirm from "./Modals/Jail/VisaConfirm";
 import Jail from "./Modals/Jail/Jail";
 import Cards from "./Modals/Cards/Cards";
 import InJail from "./Modals/Jail/InJail";
+import TradeModal from "./Modals/TradeModal";
 import ConfirmConcede from "./Modals/ConfirmConcede";
 import EndGame from "./Modals/EndGame";
 import OwnedProperties from "./Modals/OwnedProperties";
@@ -192,6 +193,8 @@ export const Board = ({
   setPlayerOneConcede,
   playerTwoConcede,
   setPlayerTwoConcede,
+  setShowTrade,
+  showTrade,
 }) => {
   const [viewPurchase, setViewPurchase] = useState(false);
   const [viewPurchase2, setViewPurchase2] = useState(false);
@@ -865,7 +868,6 @@ export const Board = ({
     }
     if (p2Pic === 5) {
       setP2Image(Duck);
-
       setP1SRC("../../Assets/Pieces/duck.png");
     }
     if (p2Pic === 6) {
@@ -900,13 +902,17 @@ export const Board = ({
       setP2Image(Teapot);
       setP1SRC("../../Assets/Pieces/teapot.png");
     }
+    if (p2Pic === 14) {
+      setP2Image(Yanjing);
+      setP1SRC("../../Assets/Pieces/yanjing.png");
+    }
     if (p2Pic === 15) {
       setP2Image(MoneyCat);
-      setP1SRC("../../Assets/Pieces/moneycat.png");
+      setP2SRC("../../Assets/Pieces/moneycat.png");
     }
-    if (p1Pic === 16) {
-      setP1Image(Paddle);
-      setP1SRC("../../Assets/Pieces/paddle.png");
+    if (p2Pic === 16) {
+      setP2Image(Paddle);
+      setP2SRC("../../Assets/Pieces/paddle.png");
     }
   }, [p1Pic, p2Pic, properties]);
 
@@ -2977,6 +2983,20 @@ export const Board = ({
           counterP1={counterP1}
           setP1Jail={setP1Jail}
           setP2Jail={setP2Jail}
+        />
+        <TradeModal
+          properties={properties}
+          p1Money={p1Money}
+          setProperties={setProperties}
+          utilities={utilities}
+          setUtilities={setUtilities}
+          setRailRoads={setRailRoads}
+          railRoads={railRoads}
+          p2Money={p2Money}
+          setP1Money={setP1Money}
+          setP2Money={setP2Money}
+          setShowTrade={setShowTrade}
+          showTrade={showTrade}
         />
         <Cards
           onCard={onCard}

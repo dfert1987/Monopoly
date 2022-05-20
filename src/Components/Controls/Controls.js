@@ -5,6 +5,7 @@ import Click from "../../Assets/Sounds/click.mp3";
 import Drum from "../../Assets/Sounds/drum.mp3";
 import useSound from "use-sound";
 import "../../Components/Styles/Controls.css";
+import { click } from "@testing-library/user-event/dist/click";
 
 export const Controls = ({
   counterP1,
@@ -107,6 +108,7 @@ export const Controls = ({
   setConfirmConcedeView,
   setPlayerOneConcede,
   setPlayerTwoConcede,
+  setShowTrade,
 }) => {
   const [disableVisaRight, setDisableVisaRight] = useState(true);
   const [disableVisaLeft, setDisableVisaLeft] = useState(true);
@@ -125,7 +127,6 @@ export const Controls = ({
         setPass(false);
       }, 2000);
     }
-    console.log(turn % 2);
 
     if (visa2 === false || turn % 2 === 0) {
       console.log("ooo");
@@ -202,6 +203,16 @@ export const Controls = ({
     drum();
     setConfirmConcedeView(true);
     setPlayerTwoConcede(true);
+  };
+
+  const trade1 = () => {
+    setShowTrade("p1");
+    clickSound();
+  };
+
+  const trade2 = () => {
+    setShowTrade("p2");
+    clickSound();
   };
 
   return (
@@ -307,6 +318,13 @@ export const Controls = ({
             </div>
             <div className="button-row bottom">
               <button
+                className="properties-view-button leftButton"
+                disabled={disableLeft}
+                onClick={trade1}
+              >
+                TRADE
+              </button>
+              <button
                 className="properties-view-button"
                 disabled={disableLeft}
                 onClick={concedeP1}
@@ -354,6 +372,13 @@ export const Controls = ({
               </button>
             </div>
             <div className="button-row bottom">
+              <button
+                className="properties-view-button leftButton"
+                disabled={disableRight}
+                onClick={trade2}
+              >
+                TRADE
+              </button>
               <button
                 className="properties-view-button"
                 disabled={disableRight}

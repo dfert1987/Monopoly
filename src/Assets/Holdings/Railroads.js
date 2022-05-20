@@ -1,6 +1,7 @@
 export const RailRoads = [
   {
     Number: 6,
+    trade: false,
     Name: "Line 13",
     Price: 200,
     Color: "Yellow",
@@ -22,6 +23,7 @@ export const RailRoads = [
   },
   {
     Number: 16,
+    trade: false,
     Name: "Line 2",
     Price: 200,
     Color: "Blue",
@@ -43,6 +45,7 @@ export const RailRoads = [
   },
   {
     Number: 26,
+    trade: false,
     Name: "Line 6",
     Price: 200,
     Color: "Brown",
@@ -51,7 +54,7 @@ export const RailRoads = [
     threeRRs: 100,
     fourRRs: 200,
     mortgage: 100,
-    ownedP1: false,
+    ownedP1: true,
     ownedP2: false,
     owned2: false,
     owned3: false,
@@ -65,6 +68,7 @@ export const RailRoads = [
   },
   {
     Number: 36,
+    trade: false,
     Name: "Line 10",
     Color: "Capri",
     Price: 200,

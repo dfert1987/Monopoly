@@ -146,9 +146,9 @@ const ChoosePieces = () => {
       return "Selected: TEAPOT";
     } else if (piecePlayer2 === 14) {
       return "Selected: YANJING";
-    } else if (piecePlayer1 === 15) {
+    } else if (piecePlayer2 === 15) {
       return "Selected: MONEY CAT";
-    } else if (piecePlayer1 === 16) {
+    } else if (piecePlayer2 === 16) {
       return "Selected: PADDLE";
     } else return null;
   };

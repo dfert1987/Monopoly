@@ -1,0 +1,197 @@
+.main-trade {
+  display: flex;
+  flex-direction: column;
+  padding: 0.5em;
+  padding-left: 1em;
+  padding-right: 1em;
+  border-radius: 20px;
+  background-color: #c0e2ca;
+  margin-left: auto;
+  margin-right: auto;
+  width: 90%;
+}
+.innerModalPurchase.trade {
+  width: 100%;
+}
+
+.trade-pic {
+  border: black 2px solid;
+  border-radius: 6px;
+  box-shadow: 2px 2px 4px;
+}
+
+.close-button {
+  color: black;
+}
+
+.trade-title {
+  font-family: "Monopoly";
+  font-size: 4em;
+  margin-bottom: 0em;
+  margin-top: 0;
+  text-align: center;
+}
+
+.trade-columns {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.trade-column {
+  display: flex;
+  flex-direction: column;
+  margin-left: auto;
+  margin-right: auto;
+  width: 45%;
+  padding-bottom: 0.5em;
+}
+
+.divider-line {
+  border-left: 6px solid black;
+}
+
+.propname {
+  text-align: center;
+}
+
+.player-title {
+  font-family: "Monopoly";
+  font-size: 2.25em;
+  margin: 0.5em;
+  text-align: center;
+}
+
+.properties-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: left;
+}
+
+.prop-card {
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 0.5em;
+}
+
+.prop-card:hover {
+  box-shadow: 2px 2px 5px;
+}
+
+.rr-card {
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 0.5em;
+}
+
+.rr-card:hover {
+  box-shadow: 2px 2px 5px;
+}
+
+.dark-blue {
+  background-color: blue;
+}
+
+.trade-instructions {
+  text-align: center;
+  margin-top: 0;
+}
+
+.horizontal-divider {
+  border-top: 6px black solid;
+}
+
+.offer {
+  font-family: "Monopoly";
+  font-size: 2.5em;
+  margin-top: 0;
+  margin-bottom: 0.235em;
+  text-align: center;
+}
+
+.available-money {
+  font-family: "Monopoly";
+  font-size: 1.75em;
+  margin-top: 0;
+  margin-bottom: 0.5em;
+  margin-left: 0.5em;
+}
+
+.properties-container.to-trade.onRight {
+  margin-left: 2em;
+}
+
+.offer-column {
+  display: flex;
+  flex-direction: column;
+  justify-content: left;
+  width: 45%;
+}
+
+.offer-columns {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.yes-no-container.player2 {
+  margin-left: 2.25em;
+}
+
+.offerMoney {
+  display: flex;
+  flex-direction: column;
+}
+
+.number-input {
+  font-family: "Monopoly";
+  font-size: 1em;
+  height: 2em;
+  max-width: 10em;
+  margin-left: 1em;
+}
+
+.input-and-amount {
+  display: flex;
+  flex-direction: row;
+}
+
+.mulah {
+  padding-bottom: 0.25em;
+  padding-left: 1em;
+}
+
+.offerMoney {
+  position: relative;
+  bottom: 1em;
+  margin-left: 5em;
+}
+
+.money-offered {
+  margin-top: 0.25em;
+  font-family: "Monopoly";
+  font-size: 2em;
+}
+
+.money-container {
+  display: flex;
+  flex-direction: row;
+}
+
+.money-offered.player2Money {
+  padding-left: 2em;
+}
+
+.reset {
+  margin-left: 1em;
+}
+
+.complete-container {
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+.complete-button {
+}

@@ -85,6 +85,7 @@ const App = () => {
   const [confirmConcedeView, setConfirmConcedView] = useState(false);
   const [playerOneConcede, setPlayerOneConcede] = useState();
   const [playerTwoConcede, setPlayerTwoConcede] = useState();
+  const [showTrade, setShowTrade] = useState();
 
   const location = useLocation();
   const data = location.state;
@@ -245,6 +246,8 @@ const App = () => {
         playerTwoConcede={playerTwoConcede}
         setPlayerOneConcede={setPlayerOneConcede}
         setPlayerTwoConcede={setPlayerTwoConcede}
+        showTrade={showTrade}
+        setShowTrade={setShowTrade}
       />
       <Controls
         counterP1={counterP1}
@@ -370,6 +373,8 @@ const App = () => {
         setConfirmConcedeView={setConfirmConcedView}
         setPlayerOneConcede={setPlayerOneConcede}
         setPlayerTwoConcede={setPlayerTwoConcede}
+        showTrade={showTrade}
+        setShowTrade={setShowTrade}
       />
     </div>
   );
