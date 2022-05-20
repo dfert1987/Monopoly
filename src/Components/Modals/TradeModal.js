@@ -707,7 +707,7 @@ const TradeModal = ({
       if (util.ownedP1 && util.trade) {
         return { ...util, trade: false, ownedP2: true, ownedP1: false };
       } else if (util.ownedP2 && util.trade) {
-        return { ...util, trade: true, ownedP1: true, ownedP2: false };
+        return { ...util, trade: false, ownedP1: true, ownedP2: false };
       }
       return util;
     });
@@ -823,13 +823,16 @@ const TradeModal = ({
                         </h4>
                         <div className="yes-no-container">
                           <button
-                            className="yes"
+                            className="yes properties-view-button"
                             disabled={acceptedP1}
                             onClick={acceptP1}
                           >
                             ACCEPT
                           </button>
-                          <button className="yes reset" onClick={resetP1}>
+                          <button
+                            className="yes reset properties-view-button"
+                            onClick={resetP1}
+                          >
                             RESET
                           </button>
                         </div>
@@ -846,13 +849,16 @@ const TradeModal = ({
                         </h4>
                         <div className="yes-no-container player2">
                           <button
-                            className="yes"
+                            className="yes properties-view-button"
                             disabled={acceptedP2}
                             onClick={acceptP2}
                           >
                             ACCEPT
                           </button>
-                          <button className="yes reset" onClick={resetP2}>
+                          <button
+                            className="yes reset properties-view-button"
+                            onClick={resetP2}
+                          >
                             RESET
                           </button>
                         </div>
@@ -861,7 +867,7 @@ const TradeModal = ({
                   </div>
                   {acceptedP1 && acceptedP2 ? (
                     <div className="complete-container">
-                      <button className="complete-button" onClick={complete}>
+                      <button className="indicators-button" onClick={complete}>
                         COMPLETE TRADE
                       </button>
                     </div>
