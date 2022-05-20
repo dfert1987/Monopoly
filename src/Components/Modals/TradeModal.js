@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import ConfirmTrade from "./ConfirmTrade";
 import { motion, AnimatePresence } from "framer-motion";
 import { faXmark } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -57,6 +58,7 @@ const TradeModal = ({
   const [p2MoneyTrade, setP2MoneyTrade] = useState(0);
   const [acceptedP1, setAcceptedP1] = useState(false);
   const [acceptedP2, setAcceptedP2] = useState(false);
+  const [confirmTrade, setConfirmTrade] = useState(false);
   const [click] = useSound(Click);
   const [choose] = useSound(Choose);
   const [drum] = useSound(Drum);
@@ -601,7 +603,6 @@ const TradeModal = ({
       });
     }
   };
-  console.log(properties);
   const handleChangeP1 = (e) => {
     let { value, min, max } = e.target;
     value = Math.max(Number(min), Math.min(Number(max), Number(value)));
@@ -713,7 +714,7 @@ const TradeModal = ({
     setProperties(newProps);
     setRailRoads(newRRs);
     setUtilities(newUtils);
-    handleClose();
+    setConfirmTrade(true);
   };
 
   return (
@@ -871,6 +872,25 @@ const TradeModal = ({
           </motion.div>
         ) : null}
       </AnimatePresence>
+      <ConfirmTrade
+        confirmTrade={confirmTrade}
+        setConfirmTrade={setConfirmTrade}
+        setShowTrade={setShowTrade}
+        setP1MoneyAvailable={setP1MoneyAvailable}
+        p1Money={p1Money}
+        setP2MoneyAvailable={setP2MoneyAvailable}
+        p2Money={p2Money}
+        setAcceptedP1={setAcceptedP1}
+        setAcceptedP2={setAcceptedP2}
+        setP1MoneyTrade={setP1MoneyTrade}
+        setP2MoneyTrade={setP2MoneyTrade}
+        setP1RROffers={setP1RROffers}
+        setP2RROffers={setP2RROffers}
+        setP2Offers={setP2Offers}
+        setP1Offers={setP1Offers}
+        setP1UtilOffers={setP1UtilOffers}
+        setP2UtilOffers={setP2UtilOffers}
+      />
     </>
   );
 };
