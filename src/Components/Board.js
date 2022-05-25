@@ -916,6 +916,8 @@ export const Board = ({
     }
   }, [p1Pic, p2Pic, properties]);
 
+  console.log(properties);
+
   const showHouses = (property) => {
     if (property === 0) {
       if (trbHotel === true) {

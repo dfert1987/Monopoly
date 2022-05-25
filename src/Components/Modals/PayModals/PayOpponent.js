@@ -185,7 +185,7 @@ export const PayOpponent = ({
       payTo &&
       payTo === 1 &&
       !doubleProp &&
-      (onProp2.color === "blue" || onProp2.color === "brown")
+      (onProp2.color === "dark-blue" || onProp2.color === "brown")
     ) {
       let number = properties.filter(
         (property) =>
@@ -337,7 +337,7 @@ export const PayOpponent = ({
       payTo &&
       payTo === 1 &&
       doubleProp &&
-      (onProp2.color === "blue" || onProp2.color === "brown")
+      (onProp2.color === "dark-blue" || onProp2.color === "brown")
     ) {
       let number = properties.filter(
         (property) =>
@@ -500,7 +500,7 @@ export const PayOpponent = ({
       payTo &&
       payTo === 2 &&
       !doubleProp &&
-      (onProp.color === "blue" || onProp.color === "brown")
+      (onProp.color === "dark-blue" || onProp.color === "brown")
     ) {
       let number = properties.filter(
         (property) =>
@@ -656,7 +656,7 @@ export const PayOpponent = ({
       payTo &&
       payTo === 2 &&
       doubleProp &&
-      (onProp.color === "blue" || onProp.color === "brown")
+      (onProp.color === "dark-blue" || onProp.color === "brown")
     ) {
       let number = properties.filter(
         (property) =>
@@ -1019,7 +1019,7 @@ export const PayOpponent = ({
       ) {
         let p1New = p1Money - onProp.oneHouse;
         let p2New = p2Money + onProp.oneHouse;
-        setRent(onProp.hasOneHouse);
+        setRent(onProp.oneHouse);
         if (p1New < 0 && p1MoneyAvailable > -1 * p1New) {
           setMustMortgage(true);
         } else if (p1New < 0 && p1MoneyAvailable < -1 * p1New) {
@@ -1063,9 +1063,9 @@ export const PayOpponent = ({
         onProp.hasThreeHouse === true &&
         onProp.hasFourHouses === false
       ) {
-        let p1New = p1Money - onProp.oneThreeHouses;
-        let p2New = p2Money + onProp.oneThreeHouses;
-        setRent(onProp.hasThreeHouses);
+        let p1New = p1Money - onProp.threeHouses;
+        let p2New = p2Money + onProp.threeHouses;
+        setRent(onProp.threeHouses);
         if (p1New < 0 && p1MoneyAvailable > -1 * p1New) {
           setMustMortgage(true);
         } else if (p1New < 0 && p1MoneyAvailable < -1 * p1New) {
@@ -1088,7 +1088,7 @@ export const PayOpponent = ({
       ) {
         let p1New = p1Money + onProp.fourHouses;
         let p2New = p2Money - onProp.fourHouses;
-        setRent(onProp.hasFourHouses);
+        setRent(onProp.fourHouses);
         if (p1New < 0 && p1MoneyAvailable > -1 * p1New) {
           setMustMortgage(true);
         } else if (p1New < 0 && p1MoneyAvailable < -1 * p1New) {

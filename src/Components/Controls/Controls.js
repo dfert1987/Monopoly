@@ -129,7 +129,6 @@ export const Controls = ({
     }
 
     if (visa2 === false || turn % 2 === 0) {
-      console.log("ooo");
       setDisableVisaRight(true);
     }
     if (visa2 === true && turn % 2 !== 0) {

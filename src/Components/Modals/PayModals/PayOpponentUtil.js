@@ -363,7 +363,7 @@ export const PayOpponentUtil = ({
               <div className="main-content-container">
                 <h2 className="line-1">{`${player()} Owns ${propName()}`}</h2>
                 <img
-                  clasaName="money"
+                  className="money"
                   alt="large bills"
                   src={bigPay}
                   style={{ height: "4em" }}

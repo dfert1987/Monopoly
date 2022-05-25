@@ -92,7 +92,7 @@ const PropertyModal = ({
   ]);
 
   const setMonop = () => {
-    if (onProp.color === "blue" || onProp.color === "brown") {
+    if (onProp.color === "dark-blue" || onProp.color === "brown") {
       let number = properties.filter(
         (property) =>
           property.color === onProp.color && property.ownedP1 === true
@@ -123,7 +123,7 @@ const PropertyModal = ({
   };
 
   const setMonop2 = () => {
-    if (onProp2.color === "blue" || onProp2.color === "brown") {
+    if (onProp2.color === "dark-blue" || onProp2.color === "brown") {
       let number = properties.filter(
         (property) =>
           property.color === onProp2.color && property.ownedP2 === true
