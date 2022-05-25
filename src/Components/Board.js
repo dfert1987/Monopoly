@@ -2594,7 +2594,9 @@ export const Board = ({
           </div>
           <div id="20" className="right-space">
             <div className="right-main">
-              <div className="right-section-left orange">{showHouses(11)}</div>
+              <div className="right-section-left orange Dada">
+                {showHouses(11)}
+              </div>
               <div className="main-section-right">
                 {counterP1 === 20 ? (
                   <img src={p1Image} className="piece" alt="p1 game piece" />
@@ -2625,7 +2627,7 @@ export const Board = ({
           ) : null}
           <div className="go-to-jail-container">
             <img src={police} className="police-image" alt="police" />
-            <p className="go-to-jail">You're Deported!</p>
+            <p className="go-to-jail">Deported!</p>
           </div>
         </div>
         <OwnedProperties

@@ -91,7 +91,7 @@ export const PropMorts = ({
                 <img
                   className="subway-logo-left"
                   src={asset.bannerImage}
-                  alt="subway-logo"
+                  alt="utility logo"
                 />
               )}
             </div>

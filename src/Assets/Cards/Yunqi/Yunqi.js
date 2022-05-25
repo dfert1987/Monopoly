@@ -13,7 +13,7 @@ export const Yunqi = [
     Number: 2,
     Text: "Fly that Flag, it's National Day!",
     Instruction:
-      "Checkout a somewhate scary military parade, and enjoy the short work week. Advance to Pay Day",
+      "Checkout a somewhat scary military parade, and enjoy the short work week. Advance to Pay Day",
     Type: "advance",
     amt: 400,
     space: 1,

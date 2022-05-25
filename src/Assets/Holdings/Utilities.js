@@ -25,7 +25,7 @@ export const Utilities = [
     rentTwo: 10,
     mortgage: 75,
     ownedP1: false,
-    ownedP2: true,
+    ownedP2: false,
     ownedBoth: false,
     mortgaged: false,
     image: require("../PropertyImages/space-ayi.jpeg"),
