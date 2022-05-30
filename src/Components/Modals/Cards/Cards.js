@@ -83,6 +83,8 @@ export const Cards = ({
   setProperties,
   setRailRoads,
   setEndGame,
+  setP1Jail,
+  setP2Jail,
 }) => {
   const [guanxi, setGuanxi] = useState(Guanxi);
   const [yunqi, setYunqi] = useState(Yunqi);
@@ -325,6 +327,8 @@ export const Cards = ({
                   setOnAgentFee2={setOnAgentFee2}
                   onVisa={onVisa}
                   onVisa2={onVisa2}
+                  setP1Jail={setP1Jail}
+                  setP2Jail={setP2Jail}
                   setOnVisa={setOnVisa}
                   setOnVisa2={setOnVisa2}
                   setStayOn={setStayOn}

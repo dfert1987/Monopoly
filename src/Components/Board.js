@@ -3082,6 +3082,8 @@ export const Board = ({
           setProperties={setProperties}
           setUtilities={setUtilities}
           endGame={endGame}
+          setP1Jail={setP1Jail}
+          setP2Jail={setP2Jail}
           setEndGame={setEndGame}
         />
       </div>

@@ -111,6 +111,8 @@ const InnerCard = ({
   p2MoneyAvailable,
   setRent,
   setEndGame,
+  setP1Jail,
+  setP2Jail,
 }) => {
   const [currentCard, setCurrentCard] = useState();
   const [drum] = useSound(Drum);
@@ -808,7 +810,7 @@ const InnerCard = ({
         (util) => util.Number === currentCard.space
       );
       let currentRR = railRoads.find((rr) => rr.Number === currentCard.space);
-      if (currentCard.space < counterP1) {
+      if (currentCard.space !== 41 && currentCard.space < counterP1) {
         setPass(true);
         let newMoney = p1Money + 200;
         setP1Money(newMoney);
@@ -861,17 +863,17 @@ const InnerCard = ({
         setPayRailTo(2);
         arrayRemovePre();
         setCardOption();
-      } else {
-        setOnCard(false);
-        setOnCard2(false);
-        arrayRemovePre();
-        setCardOption();
-      }
-      if (currentCard.space === 41) {
+      } else if (currentCard.space === 41) {
         setOnCard(false);
         setOnCard2(false);
         setInJail(true);
+        setP1Jail(true);
         setCurrentCard();
+        arrayRemovePre();
+        setCardOption();
+      } else {
+        setOnCard(false);
+        setOnCard2(false);
         arrayRemovePre();
         setCardOption();
       }
@@ -888,7 +890,7 @@ const InnerCard = ({
         (util) => util.Number === currentCard.space
       );
       let currentRR = railRoads.find((rr) => rr.Number === currentCard.space);
-      if (currentCard.space < counterP2) {
+      if (currentCard.space !== 41 && currentCard.space < counterP2) {
         setPass2(true);
         let newMoney = p2Money + 200;
         setP2Money(newMoney);
@@ -942,17 +944,17 @@ const InnerCard = ({
         setPayRailTo(1);
         arrayRemovePre();
         setCardOption();
-      } else {
-        setOnCard(false);
-        setOnCard2(false);
-        arrayRemovePre();
-        setCardOption();
-      }
-      if (currentCard.space === 41) {
+      } else if (currentCard.space === 41) {
         setOnCard(false);
         setOnCard2(false);
         setInJail2(true);
         setCurrentCard();
+        setP2Jail(true);
+        arrayRemovePre();
+        setCardOption();
+      } else {
+        setOnCard(false);
+        setOnCard2(false);
         arrayRemovePre();
         setCardOption();
       }
