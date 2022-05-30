@@ -195,7 +195,7 @@ export const Yunqi = [
     Text: "Lose Debit Card",
     Instruction:
       "Pay $50 for replacement, and skip turn while stuck at Bank of China all Saturday afternoon.",
-    Type: "pay",
+    Type: "pay-skip",
     amt: 50,
     space: 0,
     image: require("./pics/yunqi-bank.jpeg"),
@@ -314,7 +314,7 @@ export const Yunqi = [
       "Turns out you dont actually know how to play this game. Pay opponent 80rmb!",
     Type: "pay-opponnent",
     amt: 80,
-    space: 2,
+    space: null,
     image: require("./pics/mahjong.jpeg"),
     sound: "sad",
   },

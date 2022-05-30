@@ -113,7 +113,6 @@ const InnerCard = ({
   setEndGame,
 }) => {
   const [currentCard, setCurrentCard] = useState();
-
   const [drum] = useSound(Drum);
   const [airplane] = useSound(Airplane);
   const [alert] = useSound(Alert);
@@ -285,6 +284,52 @@ const InnerCard = ({
     }
     if ((onCard || onCard2) && currentCard && currentCard.sound === "lush") {
       lush();
+    }
+    if (onCard && !onCard2 && currentCard.Type === "pay-skip") {
+      let newMoney = p1Money - currentCard.amt;
+      if (newMoney < 0 && p1MoneyAvailable > -1 * newMoney) {
+        setMustMortgage(true);
+        setRent(currentCard.amt);
+      } else if (newMoney < 0 && p1MoneyAvailable < -1 * newMoney) {
+        setP1Money(0);
+        setGameOver(true);
+        setEndGame(true);
+        setOnCard(false);
+        setOnCard2(false);
+        victory();
+      } else {
+        setP1Money(newMoney);
+        let newFP = freeParking + currentCard.amt;
+        setFreeParking(newFP);
+        setOnCard(false);
+        setOnCard2(false);
+        setCurrentCard();
+        arrayRemovePre();
+        setCardOption();
+      }
+    }
+    if (!onCard && onCard2 && currentCard.Type === "pay-skip") {
+      let newMoney = p2Money - currentCard.amt;
+      if (newMoney < 0 && p2MoneyAvailable > -1 * newMoney) {
+        setMustMortgage(true);
+        setRent(currentCard.amt);
+      } else if (newMoney < 0 && p2MoneyAvailable < -1 * newMoney) {
+        setP2Money(0);
+        setGameOver(true);
+        setEndGame(true);
+        setOnCard(false);
+        setOnCard2(false);
+        victory();
+      } else {
+        setP2Money(newMoney);
+        let newFP = freeParking + currentCard.amt;
+        setFreeParking(newFP);
+        setOnCard(false);
+        setOnCard2(false);
+        setCurrentCard();
+        arrayRemovePre();
+        setCardOption();
+      }
     }
     if (onCard && !onCard2 && currentCard.Type === "pay") {
       let newMoney = p1Money - currentCard.amt;
