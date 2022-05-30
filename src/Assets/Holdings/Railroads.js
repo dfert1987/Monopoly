@@ -54,7 +54,7 @@ export const RailRoads = [
     threeRRs: 100,
     fourRRs: 200,
     mortgage: 100,
-    ownedP1: true,
+    ownedP1: false,
     ownedP2: false,
     owned2: false,
     owned3: false,

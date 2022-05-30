@@ -218,7 +218,7 @@ export const Guanxi = [
     Number: 22,
     Text: "Office party!",
     Instruction:
-      "Collect 10rmb from opponent for mandarin oranges and warm Sprite",
+      "Collect 10rmb from opponent for mandarin oranges and warm Sprite.",
     Type: "collect-opponent",
     amt: 10,
     space: 0,

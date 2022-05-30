@@ -3,6 +3,7 @@ body {
   margin: 0;
   height: 100%;
   background-size: cover;
+  background-repeat: inherit;
   background-image: url("../../Assets/Landing/mainbackground.png");
   box-sizing: border-box;
 }

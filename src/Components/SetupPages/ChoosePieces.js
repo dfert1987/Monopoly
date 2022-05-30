@@ -155,7 +155,7 @@ const ChoosePieces = () => {
 
   return (
     <motion.div
-      className="page-container"
+      className="page-container-2"
       initial="out"
       animate="end"
       exit="out"

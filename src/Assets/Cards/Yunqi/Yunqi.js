@@ -13,7 +13,7 @@ export const Yunqi = [
     Number: 2,
     Text: "Fly that Flag, it's National Day!",
     Instruction:
-      "Checkout a somewhate scary military parade, and enjoy the short work week. Advance to Pay Day",
+      "Checkout a somewhat scary military parade, and enjoy the short work week. Advance to Pay Day",
     Type: "advance",
     amt: 400,
     space: 1,
@@ -55,7 +55,7 @@ export const Yunqi = [
     Number: 6,
     Text: "Black Cab rips you off!",
     Instruction:
-      "I think Chairman Mao is wearign sunglasses on this hundo. Lose 100rmb.",
+      "I think Chairman Mao is wearing sunglasses on this hundo. Lose 100rmb.",
     Type: "pay",
     amt: 100,
     space: 0,
@@ -142,8 +142,8 @@ export const Yunqi = [
     Text: "Spring cleaning -- Hire Ayi!",
     Instruction:
       "For each house, pay 25rmb, and each hotel pay 100rmb. God bless this lady for keeping your life in order.",
-    Type: "pay",
-    amt: 10,
+    Type: "pay-house",
+    amt: 0,
     space: 0,
     image: require("./pics/yunqi-spring.jpeg"),
     sound: "sad",
@@ -195,7 +195,7 @@ export const Yunqi = [
     Text: "Lose Debit Card",
     Instruction:
       "Pay $50 for replacement, and skip turn while stuck at Bank of China all Saturday afternoon.",
-    Type: "pay",
+    Type: "pay-skip",
     amt: 50,
     space: 0,
     image: require("./pics/yunqi-bank.jpeg"),
@@ -292,7 +292,7 @@ export const Yunqi = [
     Instruction:
       "Set off every car alarm in Dongcheng, and Pay 100rmb in hospital bills.  ",
     Type: "pay",
-    amt: 30,
+    amt: 100,
     space: null,
     image: require("./pics/yunqi-firework.png"),
     sound: "explosion",
@@ -312,9 +312,9 @@ export const Yunqi = [
     Text: "Lose game of MahJong!",
     Instruction:
       "Turns out you dont actually know how to play this game. Pay opponent 80rmb!",
-    Type: "pay-opponnent",
+    Type: "pay-opponent",
     amt: 80,
-    space: 2,
+    space: null,
     image: require("./pics/mahjong.jpeg"),
     sound: "sad",
   },

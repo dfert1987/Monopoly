@@ -111,9 +111,10 @@ const InnerCard = ({
   p2MoneyAvailable,
   setRent,
   setEndGame,
+  setP1Jail,
+  setP2Jail,
 }) => {
   const [currentCard, setCurrentCard] = useState();
-
   const [drum] = useSound(Drum);
   const [airplane] = useSound(Airplane);
   const [alert] = useSound(Alert);
@@ -285,6 +286,52 @@ const InnerCard = ({
     }
     if ((onCard || onCard2) && currentCard && currentCard.sound === "lush") {
       lush();
+    }
+    if (onCard && !onCard2 && currentCard.Type === "pay-skip") {
+      let newMoney = p1Money - currentCard.amt;
+      if (newMoney < 0 && p1MoneyAvailable > -1 * newMoney) {
+        setMustMortgage(true);
+        setRent(currentCard.amt);
+      } else if (newMoney < 0 && p1MoneyAvailable < -1 * newMoney) {
+        setP1Money(0);
+        setGameOver(true);
+        setEndGame(true);
+        setOnCard(false);
+        setOnCard2(false);
+        victory();
+      } else {
+        setP1Money(newMoney);
+        let newFP = freeParking + currentCard.amt;
+        setFreeParking(newFP);
+        setOnCard(false);
+        setOnCard2(false);
+        setCurrentCard();
+        arrayRemovePre();
+        setCardOption();
+      }
+    }
+    if (!onCard && onCard2 && currentCard.Type === "pay-skip") {
+      let newMoney = p2Money - currentCard.amt;
+      if (newMoney < 0 && p2MoneyAvailable > -1 * newMoney) {
+        setMustMortgage(true);
+        setRent(currentCard.amt);
+      } else if (newMoney < 0 && p2MoneyAvailable < -1 * newMoney) {
+        setP2Money(0);
+        setGameOver(true);
+        setEndGame(true);
+        setOnCard(false);
+        setOnCard2(false);
+        victory();
+      } else {
+        setP2Money(newMoney);
+        let newFP = freeParking + currentCard.amt;
+        setFreeParking(newFP);
+        setOnCard(false);
+        setOnCard2(false);
+        setCurrentCard();
+        arrayRemovePre();
+        setCardOption();
+      }
     }
     if (onCard && !onCard2 && currentCard.Type === "pay") {
       let newMoney = p1Money - currentCard.amt;
@@ -763,7 +810,7 @@ const InnerCard = ({
         (util) => util.Number === currentCard.space
       );
       let currentRR = railRoads.find((rr) => rr.Number === currentCard.space);
-      if (currentCard.space < counterP1) {
+      if (currentCard.space !== 41 && currentCard.space < counterP1) {
         setPass(true);
         let newMoney = p1Money + 200;
         setP1Money(newMoney);
@@ -816,17 +863,17 @@ const InnerCard = ({
         setPayRailTo(2);
         arrayRemovePre();
         setCardOption();
-      } else {
-        setOnCard(false);
-        setOnCard2(false);
-        arrayRemovePre();
-        setCardOption();
-      }
-      if (currentCard.space === 41) {
+      } else if (currentCard.space === 41) {
         setOnCard(false);
         setOnCard2(false);
         setInJail(true);
+        setP1Jail(true);
         setCurrentCard();
+        arrayRemovePre();
+        setCardOption();
+      } else {
+        setOnCard(false);
+        setOnCard2(false);
         arrayRemovePre();
         setCardOption();
       }
@@ -843,7 +890,7 @@ const InnerCard = ({
         (util) => util.Number === currentCard.space
       );
       let currentRR = railRoads.find((rr) => rr.Number === currentCard.space);
-      if (currentCard.space < counterP2) {
+      if (currentCard.space !== 41 && currentCard.space < counterP2) {
         setPass2(true);
         let newMoney = p2Money + 200;
         setP2Money(newMoney);
@@ -897,17 +944,17 @@ const InnerCard = ({
         setPayRailTo(1);
         arrayRemovePre();
         setCardOption();
-      } else {
-        setOnCard(false);
-        setOnCard2(false);
-        arrayRemovePre();
-        setCardOption();
-      }
-      if (currentCard.space === 41) {
+      } else if (currentCard.space === 41) {
         setOnCard(false);
         setOnCard2(false);
         setInJail2(true);
         setCurrentCard();
+        setP2Jail(true);
+        arrayRemovePre();
+        setCardOption();
+      } else {
+        setOnCard(false);
+        setOnCard2(false);
         arrayRemovePre();
         setCardOption();
       }

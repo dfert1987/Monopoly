@@ -193,9 +193,12 @@ export const PayOpponentUtil = ({
     e.preventDefault();
     setPayUtil(false);
     setPayUtilTo();
-    setMultiplier(4);
+    setMultiplier();
     setOnUtil2();
     setOnUtil();
+    setDie1(1);
+    setDie2(1);
+    setRent();
     click();
   };
 
@@ -246,8 +249,7 @@ export const PayOpponentUtil = ({
     }
   };
 
-  const rollDice = (e) => {
-    e.preventDefault();
+  const rollDice = () => {
     let min = 1;
     let max = 6;
     let first = Math.floor(Math.random() * (max - min + 1)) + min;
@@ -363,7 +365,7 @@ export const PayOpponentUtil = ({
               <div className="main-content-container">
                 <h2 className="line-1">{`${player()} Owns ${propName()}`}</h2>
                 <img
-                  clasaName="money"
+                  className="money"
                   alt="large bills"
                   src={bigPay}
                   style={{ height: "4em" }}

@@ -3,9 +3,9 @@
   border: 3px black solid;
   display: flex;
   flex-direction: row;
-  height: 800px;
+  height: 750px;
   margin: auto;
-  width: 800px;
+  width: 750px;
 }
 
 .modal {
@@ -34,7 +34,7 @@
 
 .middle {
   flex-direction: row;
-  height: 62.83%;
+  height: 62%;
 }
 
 .bottom-row {
@@ -59,7 +59,7 @@
 }
 
 .left-corner-bottom {
-  height: 12.5%;
+  height: 14%;
   width: 100%;
 }
 
@@ -88,6 +88,10 @@
 
 .just-visiting-right {
   width: 22%;
+}
+
+.house.dada-house {
+  width: 1em%;
 }
 
 .jail {
@@ -143,7 +147,7 @@
   color: white;
   font-family: "Monopoly";
   font-size: 60px;
-  padding: 0.5em;
+  padding: 0.1em;
   margin: 0;
   text-align: center;
 }
@@ -190,7 +194,7 @@
 .left-space {
   border-bottom: 3px black solid;
   display: flex;
-  height: 10.65%;
+  height: 10.6%;
   width: 100%;
 }
 
@@ -326,7 +330,7 @@
   -webkit-transform: rotate(-180deg); /* Safari 3.1+, Chrome */
   z-index: 1;
   font-size: 11px;
-  padding-bottom: 4em;
+  padding-bottom: 3.8em;
 }
 .prop-price-bottom {
   font-size: 11px;
@@ -335,7 +339,7 @@
 
 .prop-name-top-big {
   font-size: 9.5px;
-  padding-bottom: 4.75em;
+  padding-bottom: 4.55em;
   text-align: center;
   -moz-transform: rotate(-180deg); /* FF3.5+ */
   -o-transform: rotate(-180deg); /* Opera 10.5 */
@@ -373,7 +377,7 @@
   font-size: 14px;
   width: 100%;
   margin: 0;
-  padding-bottom: 0.5em;
+  padding-bottom: 0.3em;
 }
 
 .top-rr-price {
@@ -410,7 +414,7 @@
 .prop-price-left {
   font-size: 11px;
   text-align: center;
-  padding-top: 3.5em;
+  padding-top: 3.4em;
   margin-left: 0.75em;
   -moz-transform: rotate(90deg); /* FF3.5+ */
   -o-transform: rotate(90deg); /* Opera 10.5 */
@@ -445,14 +449,14 @@
 .prop-name-bottom {
   font-size: 11px;
   text-align: center;
-  padding-bottom: 3.75em;
+  padding-bottom: 3.5em;
   z-index: 1;
 }
 
 .prop-name-bottom-bigger {
   font-size: 10px;
   text-align: center;
-  padding-bottom: 4.1em;
+  padding-bottom: 4em;
   z-index: 1;
 }
 
@@ -473,8 +477,8 @@
   -o-transform: rotate(270deg); /* Opera 10.5 */
   -webkit-transform: rotate(270deg);
   font-size: 11px;
-  padding-top: 1.75em;
-  margin-left: 0.75em;
+  padding-top: 1.15em;
+  margin-left: 0.65em;
   z-index: 1;
 }
 
@@ -508,7 +512,11 @@
   font-size: 12px;
   z-index: 1;
   margin-right: 1em;
-  padding-top: 1.5em;
+  padding-top: 1.6em;
+}
+
+.right-section-left.orange.Dada {
+  width: 23%;
 }
 
 .prop-price-right-da {
@@ -520,6 +528,8 @@
   z-index: 1;
   padding-top: 3em;
   margin-left: 0.75em;
+  position: relative;
+  right: 0.3em;
 }
 
 .prop-price-right-tem {
@@ -547,7 +557,7 @@
   font-size: 14px;
   width: 100%;
   margin: 0;
-  padding-bottom: 0.5em;
+  padding-bottom: 0.25em;
 }
 
 .subway-logo-bottom {
@@ -562,7 +572,9 @@
   -o-transform: rotate(270deg); /* Opera 10.5 */
   -webkit-transform: rotate(270deg);
   font-size: 11px;
-  padding-top: 0.5em;
+  padding-top: 0em;
+  position: relative;
+  bottom: 0.5em;
   z-index: 1;
 }
 
@@ -579,6 +591,12 @@
 
 .dr {
   margin-top: 0;
+  font-size: 10px;
+}
+
+.zm {
+  margin-top: 0;
+  font-size: 9px;
 }
 
 .temp {
@@ -592,8 +610,10 @@
   -webkit-transform: rotate(270deg);
   font-size: 11px;
   padding-right: 0.25em;
-  padding-top: 0.5em;
+  padding-top: 0em;
   margin-left: 0.75em;
+  left: 0.25em;
+  position: relative;
   z-index: 1;
 }
 
@@ -605,17 +625,13 @@
   font-size: 11px;
   z-index: 1;
   margin-left: 0.75em;
+  padding-bottom: 0.5em;
+  position: relative;
+  right: 0.75em;
 }
 
 .text-container.right {
   padding-right: 0.25em;
-}
-
-.left-rr {
-  font-size: 14px;
-  width: 100%;
-  margin: 0;
-  padding-bottom: 0.5em;
 }
 
 .pot-tracker {
@@ -653,7 +669,7 @@
   font-size: 11px;
   height: 0.5em;
   text-align: center;
-  padding-bottom: 0.5em;
+  padding-bottom: 0.75em;
   padding-top: 0.8em;
   margin: 0;
 }
@@ -670,7 +686,7 @@
   height: 0.5em;
   text-align: center;
   padding-bottom: 0.5em;
-  padding-top: 0.8em;
+  padding-top: 0.25em;
   margin: 0;
 }
 
@@ -688,7 +704,7 @@
   font-size: 14px;
   width: 100%;
   margin: 0;
-  padding-bottom: 0.5em;
+  padding-bottom: 0.25em;
 }
 
 .bottom-rr-container {
@@ -701,7 +717,7 @@
 .bottom-rr-price {
   margin: 0;
   font-size: 11px;
-  padding-bottom: 0.5em;
+  padding-bottom: 0.25em;
 }
 
 .right-rr.water {
@@ -715,10 +731,12 @@
 .right-rr-price.water {
   padding-top: 0;
   padding-bottom: 0.5em;
+  position: relative;
+  bottom: 0.55em;
 }
 
 .top-rr.instructions {
-  font-size: 11px;
+  font-size: 10px;
   padding-bottom: 1em;
 }
 
@@ -726,12 +744,15 @@
   width: 4em;
   margin: auto;
   padding-bottom: 0;
+  padding-top: 1.5em;
 }
 
 .left-rr-price.agent {
   margin-top: 0;
-  padding-bottom: 5em;
+  padding-bottom: 6em;
   padding-top: 0;
+  position: relative;
+  bottom: 0.25em;
 }
 
 .subway-logo-left.agent {
@@ -761,7 +782,7 @@
   -o-transform: rotate(180deg); /* Opera 10.5 */
   -webkit-transform: rotate(180deg); /* Safari 3.1+, Chrome */
   position: relative;
-  bottom: 1.5em;
+  bottom: 1.7em;
 }
 
 .go-instructions {
@@ -771,6 +792,8 @@
 .go-arrow {
   width: 6em;
   height: 2em;
+  position: relative;
+  right: 0.2em;
 }
 
 .go {
@@ -813,10 +836,11 @@
 }
 
 .go-to-jail {
-  font-size: 12px;
+  font-size: 15px;
   font-weight: bold;
   margin-top: 0.15em;
   padding-left: 0.1em;
+  text-align: center;
 }
 
 .just {
@@ -840,15 +864,15 @@
 }
 
 .jail-text {
-  font-size: 12px;
+  font-size: 11px;
   font-weight: bold;
   text-align: center;
   -moz-transform: rotate(270deg); /* FF3.5+ */
   -o-transform: rotate(270deg); /* Opera 10.5 */
   -webkit-transform: rotate(270deg);
   position: relative;
-  top: 1.5em;
-  left: 3em;
+  top: 1.45em;
+  left: 2.75em;
 }
 
 .card.guanxi {
@@ -893,6 +917,9 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
+  width: 0.8em;
+  position: relative;
+  right: 0.25em;
 }
 
 .hotel-container.side {

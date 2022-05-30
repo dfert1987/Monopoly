@@ -134,7 +134,7 @@ const PropertyCard = ({
                       </div>
                       <div className="secondary-prop-info">
                         <h4 className="mortgage">{`Mortgage Value: ¥${chosenProp.mortgage}`}</h4>
-                        <p className="houses">{`Houses Cost ¥${chosenProp.buidlingCost}`}</p>
+                        <p className="houses">{`Houses Cost ¥${chosenProp.buildingCost}`}</p>
                       </div>
                     </div>
                   </div>

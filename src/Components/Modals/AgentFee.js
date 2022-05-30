@@ -162,14 +162,14 @@ const AgentFee = ({
     let newFP = freeParking + 75;
     let newMoney1 = p1Money - 75;
     let newMoney2 = p2Money - 75;
-    if (setOnAgentFee && p1Money > 75) {
+    if (onAgentFee && p1Money > 75) {
       let newMoney = p1Money - 75;
       setP1Money(newMoney);
       click();
       setOnAgentFee(false);
       setOnAgentFee2(false);
       setFreeParking(newFP);
-    } else if (setOnAgentFee2 && p2Money > 75) {
+    } else if (onAgentFee2 && p2Money > 75) {
       let newMoney = p2Money - 75;
       setP2Money(newMoney);
       setOnAgentFee(false);
@@ -177,21 +177,21 @@ const AgentFee = ({
       setOnAgentFee2(false);
       setFreeParking(newFP);
     } else if (
-      setOnAgentFee &&
+      onAgentFee &&
       newMoney1 < 0 &&
       p1MoneyAvailable > -1 * newMoney1
     ) {
       setMustMortgage(true);
       alert();
     } else if (
-      setOnAgentFee2 &&
+      onAgentFee2 &&
       newMoney2 < 0 &&
       p2MoneyAvailable > -1 * newMoney2
     ) {
       setMustMortgage2(true);
       alert();
     } else if (
-      setOnAgentFee &&
+      onAgentFee &&
       newMoney1 < 0 &&
       p1MoneyAvailable < -1 * newMoney1
     ) {
@@ -199,7 +199,7 @@ const AgentFee = ({
       setP1Money(0);
       victory();
     } else if (
-      setOnAgentFee2 &&
+      onAgentFee2 &&
       newMoney2 < 0 &&
       p2MoneyAvailable < -1 * newMoney2
     ) {

@@ -62,7 +62,7 @@ const PurchasedPopUp = ({
             >
               <div className="button-row">
                 <button
-                  className="close-button-purchased"
+                  className="close-button-purchased "
                   onClick={handleClose}
                 >
                   <FontAwesomeIcon className="x-icon" icon={faXmark} />

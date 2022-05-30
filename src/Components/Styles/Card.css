@@ -66,12 +66,16 @@
   margin-top: 0.25em;
   color: white;
   text-shadow: 2px 2px 5px black;
+  text-align: center;
+  padding-left: 0.75em;
 }
 
 .card-secondary-text {
   color: white;
   text-shadow: 2px 2px 5px black;
   font-size: 1.5em;
+  text-align: left;
+  padding-left: 1.5em;
 }
 
 .flex.flexColumn.innerModalPayRail.YUNQI {

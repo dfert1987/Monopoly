@@ -5,7 +5,6 @@ import Click from "../../Assets/Sounds/click.mp3";
 import Drum from "../../Assets/Sounds/drum.mp3";
 import useSound from "use-sound";
 import "../../Components/Styles/Controls.css";
-import { click } from "@testing-library/user-event/dist/click";
 
 export const Controls = ({
   counterP1,
@@ -129,7 +128,6 @@ export const Controls = ({
     }
 
     if (visa2 === false || turn % 2 === 0) {
-      console.log("ooo");
       setDisableVisaRight(true);
     }
     if (visa2 === true && turn % 2 !== 0) {

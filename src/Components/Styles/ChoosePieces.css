@@ -5,7 +5,7 @@
 
 .main-title {
   color: red;
-  font-size: 8em;
+  font-size: 4em;
   text-shadow: 2px 2px 3px black;
   text-align: center;
 }
@@ -122,4 +122,10 @@
   font-family: "Monopoly";
   font-size: 3em;
   margin: 0.25em;
+}
+
+@media (min-width: 1010px) {
+  .main-title {
+    font-size: 8em;
+  }
 }

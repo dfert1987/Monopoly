@@ -92,7 +92,7 @@ const PropertyModal = ({
   ]);
 
   const setMonop = () => {
-    if (onProp.color === "blue" || onProp.color === "brown") {
+    if (onProp.color === "dark-blue" || onProp.color === "brown") {
       let number = properties.filter(
         (property) =>
           property.color === onProp.color && property.ownedP1 === true
@@ -123,7 +123,7 @@ const PropertyModal = ({
   };
 
   const setMonop2 = () => {
-    if (onProp2.color === "blue" || onProp2.color === "brown") {
+    if (onProp2.color === "dark-blue" || onProp2.color === "brown") {
       let number = properties.filter(
         (property) =>
           property.color === onProp2.color && property.ownedP2 === true
@@ -204,29 +204,29 @@ const PropertyModal = ({
             <div className="main-prop-info">
               <h4 className="rent">{`RENT ¥${onProp.rent}`}</h4>
               <div className="house-container one">
-                <p className="left-side">With 1 House</p>
+                <p className="left-side">With 1 House </p>
                 <p className="right-side">{`¥${onProp.oneHouse}`}</p>
               </div>
               <div className="house-container two">
-                <p className="left-side">With 2 Houses</p>
+                <p className="left-side">With 2 Houses </p>
                 <p className="right-side">{`¥${onProp.twoHouses}`}</p>
               </div>
               <div className="house-container three">
-                <p className="left-side">With 3 Houses</p>
+                <p className="left-side">With 3 Houses </p>
                 <p className="right-side">{`¥${onProp.threeHouses}`}</p>
               </div>
               <div className="house-container four">
                 <p className="left-side">With 4 Houses</p>
-                <p className="right-side">{`¥${onProp.fourHouses}`}</p>
+                <p className="right-side"> {`¥${onProp.fourHouses}`}</p>
               </div>
               <div className="house-container hotel">
-                <p className="left-side">With Hotel</p>
+                <p className="left-side">With Hotel </p>
                 <p className="right-side">{`¥${onProp.hotel}`}</p>
               </div>
             </div>
             <div className="secondary-prop-info">
               <h4 className="mortgage">{`Mortgage Value: ¥${onProp.mortgage}`}</h4>
-              <p className="houses">{`Houses Cost ¥${onProp.buidlingCost}`}</p>
+              <p className="houses">{`Houses Cost ¥${onProp.buildingCost}`}</p>
             </div>
           </div>
         </div>
@@ -248,29 +248,29 @@ const PropertyModal = ({
             <div className="main-prop-info">
               <h4 className="rent">{`RENT ¥${onProp2.rent}`}</h4>
               <div className="house-container one">
-                <p className="left-side">With 1 House</p>
+                <p className="left-side">With 1 House - </p>
                 <p className="right-side">{`¥${onProp2.oneHouse}`}</p>
               </div>
               <div className="house-container two">
-                <p className="left-side">With 2 Houses</p>
+                <p className="left-side">With 2 Houses - </p>
                 <p className="right-side">{`¥${onProp2.twoHouses}`}</p>
               </div>
               <div className="house-container three">
-                <p className="left-side">With 3 Houses</p>
+                <p className="left-side">With 3 Houses - </p>
                 <p className="right-side">{`¥${onProp2.threeHouses}`}</p>
               </div>
               <div className="house-container four">
-                <p className="left-side">With 4 Houses</p>
+                <p className="left-side">With 4 Houses - </p>
                 <p className="right-side">{`¥${onProp2.fourHouses}`}</p>
               </div>
               <div className="house-container hotel">
-                <p className="left-side">With Hotel</p>
+                <p className="left-side">With Hotel - </p>
                 <p className="right-side">{`¥${onProp2.hotel}`}</p>
               </div>
             </div>
             <div className="secondary-prop-info">
               <h4 className="mortgage">{`Mortgage Value: ¥${onProp2.mortgage}`}</h4>
-              <p className="houses">{`Houses Cost ¥${onProp2.buidlingCost}`}</p>
+              <p className="houses">{`Houses Cost ¥${onProp2.buildingCost}`}</p>
             </div>
           </div>
         </div>
@@ -286,6 +286,19 @@ const PropertyModal = ({
       return <h3 className="saying">{onProp2.saying}</h3>;
     }
     return null;
+  };
+
+  const amtCost = () => {
+    if (onProp && propertyModal1 && !propertyModal2 && close === false) {
+      return <h4 className="prop-price">{`COST: ¥${onProp.Price}`}</h4>;
+    } else if (
+      onProp2 &&
+      propertyModal2 &&
+      !propertyModal1 &&
+      close === false
+    ) {
+      return <h4 className="prop-price">{`COST: ¥${onProp2.Price}`}</h4>;
+    }
   };
 
   const propertyImage = () => {
@@ -333,7 +346,8 @@ const PropertyModal = ({
                 <FontAwesomeIcon className="x-icon" icon={faXmark} />
               </button>
             </div>
-            <h2 className="title">FOR SALE</h2>
+            <h2 className="title sale">FOR SALE</h2>
+            <div className="cost">{amtCost()}</div>
             <div className="main-row">
               <div>{frontCard()}</div>
               <div>{propertyImage()}</div>

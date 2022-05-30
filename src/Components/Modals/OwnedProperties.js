@@ -302,6 +302,7 @@ const OwnedProperties = ({
   };
 
   const checkVioletsP2 = (violets) => {
+    console.log(violets);
     let mortgagedProp = violets.find((property) => {
       return property.mortgaged === true;
     });
@@ -323,7 +324,7 @@ const OwnedProperties = ({
       let lightBlues = allOwned.filter(
         (property) => property.color === "light-blue"
       );
-      let violets = allOwned.filter((property) => property.color === "violet");
+      let violets = allOwned.filter((property) => property.color === "purple");
       checkYellowsP1(yellows);
       checkGreensP1(greens);
       checkBluesP1(blues);
@@ -343,7 +344,7 @@ const OwnedProperties = ({
       let lightBlues = allOwned.filter(
         (property) => property.color === "light-blue"
       );
-      let violets = allOwned.filter((property) => property.color === "violet");
+      let violets = allOwned.filter((property) => property.color === "purple");
       checkYellowsP2(yellows);
       checkGreensP2(greens);
       checkBluesP2(blues);
@@ -378,7 +379,7 @@ const OwnedProperties = ({
                   <FontAwesomeIcon className="x-icon" icon={faXmark} />
                 </button>
               </div>
-              <h1 className="title">ASSETS</h1>
+              <h1 className="title assets">ASSETS</h1>
               <div className="main-part">
                 <div className="square-columns">
                   <div className="property-squares">
@@ -566,7 +567,7 @@ const OwnedProperties = ({
                                 }`}
                                 onClick={
                                   showOutlines1 && canBuildP1 && buildVioletP1
-                                    ? () => buildModal("violet")
+                                    ? () => buildModal("purple")
                                     : () => showProp(properties[16])
                                 }
                               >
@@ -592,7 +593,7 @@ const OwnedProperties = ({
                                 }`}
                                 onClick={
                                   showOutlines1 && canBuildP1 && buildVioletP1
-                                    ? () => buildModal("violet")
+                                    ? () => buildModal("purple")
                                     : () => showProp(properties[15])
                                 }
                               >
@@ -618,7 +619,7 @@ const OwnedProperties = ({
                                 }`}
                                 onClick={
                                   showOutlines1 && canBuildP1 && buildVioletP1
-                                    ? () => buildModal("violet")
+                                    ? () => buildModal("purple")
                                     : () => showProp(properties[14])
                                 }
                               >
@@ -1381,7 +1382,7 @@ const OwnedProperties = ({
                                 }`}
                                 onClick={
                                   showOutlines2 && canBuildP2 && buildVioletP2
-                                    ? () => buildModal2("violet")
+                                    ? () => buildModal2("purple")
                                     : () => showProp(properties[16])
                                 }
                               >
@@ -1407,7 +1408,7 @@ const OwnedProperties = ({
                                 }`}
                                 onClick={
                                   showOutlines2 && canBuildP2 && buildVioletP2
-                                    ? () => buildModal2("violet")
+                                    ? () => buildModal2("purple")
                                     : () => showProp(properties[15])
                                 }
                               >
@@ -1433,7 +1434,7 @@ const OwnedProperties = ({
                                 }`}
                                 onClick={
                                   showOutlines2 && canBuildP2 && buildVioletP2
-                                    ? () => buildModal2("violet")
+                                    ? () => buildModal2("purple")
                                     : () => showProp(properties[14])
                                 }
                               >
