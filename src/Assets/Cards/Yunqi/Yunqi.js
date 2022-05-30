@@ -292,7 +292,7 @@ export const Yunqi = [
     Instruction:
       "Set off every car alarm in Dongcheng, and Pay 100rmb in hospital bills.  ",
     Type: "pay",
-    amt: 30,
+    amt: 100,
     space: null,
     image: require("./pics/yunqi-firework.png"),
     sound: "explosion",
@@ -312,7 +312,7 @@ export const Yunqi = [
     Text: "Lose game of MahJong!",
     Instruction:
       "Turns out you dont actually know how to play this game. Pay opponent 80rmb!",
-    Type: "pay-opponnent",
+    Type: "pay-opponent",
     amt: 80,
     space: null,
     image: require("./pics/mahjong.jpeg"),

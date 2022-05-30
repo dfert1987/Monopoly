@@ -2,8 +2,12 @@
   display: flex;
 }
 
-.title {
+.title.assets {
   padding-bottom: 0.5em;
+  text-align: center;
+  margin: 0;
+  font-family: "Monopoly";
+  font-size: 3em;
 }
 
 .centerFlex {

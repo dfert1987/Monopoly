@@ -261,6 +261,9 @@ const UtilitiesModal = ({
               </button>
             </div>
             <h2 className="title">FOR SALE</h2>
+            <div className="cost">
+              <h4 className="prop-price">COST: ¥150</h4>
+            </div>
             <div className="main-row">
               <div>{frontCard()}</div>
               <div>{utilImage()}</div>

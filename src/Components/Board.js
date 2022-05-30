@@ -1383,31 +1383,31 @@ export const Board = ({
       } else if (dadaHouses && dadaHouses === 4) {
         return (
           <div className="house-container side">
-            <img className="house" alt="house" src={hutong} />
-            <img className="house" alt="house" src={hutong} />
-            <img className="house" alt="house" src={hutong} />
-            <img className="house" alt="house" src={hutong} />
+            <img className="house " alt="house" src={hutong} />
+            <img className="house dada-house" alt="house" src={hutong} />
+            <img className="house dada-house" alt="house" src={hutong} />
+            <img className="house dada-house" alt="house" src={hutong} />
           </div>
         );
       } else if (dadaHouses && dadaHouses === 3) {
         return (
           <div className="house-container side">
-            <img className="house" alt="house" src={hutong} />
-            <img className="house" alt="house" src={hutong} />
-            <img className="house" alt="house" src={hutong} />
+            <img className="house dada-house" alt="house" src={hutong} />
+            <img className="house dada-house" alt="house" src={hutong} />
+            <img className="house dada-house" alt="house" src={hutong} />
           </div>
         );
       } else if (dadaHouses && dadaHouses === 2) {
         return (
           <div className="house-container side">
-            <img className="house" alt="house" src={hutong} />
-            <img className="house" alt="house" src={hutong} />
+            <img className="house dada-house" alt="house" src={hutong} />
+            <img className="house dada-house" alt="house" src={hutong} />
           </div>
         );
       } else if (dadaHouses && dadaHouses === 1) {
         return (
           <div className="house-container">
-            <img className="house yellow-house" alt="house" src={hutong} />
+            <img className="house dada-house" alt="house" src={hutong} />
           </div>
         );
       }
@@ -1421,31 +1421,31 @@ export const Board = ({
       } else if (templeHouses && templeHouses === 4) {
         return (
           <div className="house-container side">
-            <img className="house" alt="house" src={hutong} />
-            <img className="house" alt="house" src={hutong} />
-            <img className="house" alt="house" src={hutong} />
-            <img className="house" alt="house" src={hutong} />
+            <img className="house dada-house" alt="house" src={hutong} />
+            <img className="house dada-house" alt="house" src={hutong} />
+            <img className="house dada-house" alt="house" src={hutong} />
+            <img className="house dada-house" alt="house" src={hutong} />
           </div>
         );
       } else if (templeHouses && templeHouses === 3) {
         return (
           <div className="house-container side">
-            <img className="house" alt="house" src={hutong} />
-            <img className="house" alt="house" src={hutong} />
-            <img className="house" alt="house" src={hutong} />
+            <img className="house dada-house" alt="house" src={hutong} />
+            <img className="house dada-house" alt="house" src={hutong} />
+            <img className="house dada-house" alt="house" src={hutong} />
           </div>
         );
       } else if (templeHouses && templeHouses === 2) {
         return (
           <div className="house-container side">
-            <img className="house" alt="house" src={hutong} />
-            <img className="house" alt="house" src={hutong} />
+            <img className="house dada-house" alt="house" src={hutong} />
+            <img className="house dada-house" alt="house" src={hutong} />
           </div>
         );
       } else if (templeHouses && templeHouses === 1) {
         return (
-          <div className="house-containe sider">
-            <img className="house yellow-house" alt="house" src={hutong} />
+          <div className="house-container side">
+            <img className="house dada-house" alt="house" src={hutong} />
           </div>
         );
       }
@@ -1459,31 +1459,31 @@ export const Board = ({
       } else if (modernistaHouses && modernistaHouses === 4) {
         return (
           <div className="house-container side">
-            <img className="house" alt="house" src={hutong} />
-            <img className="house" alt="house" src={hutong} />
-            <img className="house" alt="house" src={hutong} />
-            <img className="house" alt="house" src={hutong} />
+            <img className="house dada-house" alt="house" src={hutong} />
+            <img className="house dada-house" alt="house" src={hutong} />
+            <img className="house dada-house" alt="house" src={hutong} />
+            <img className="house dada-house" alt="house" src={hutong} />
           </div>
         );
       } else if (modernistaHouses && modernistaHouses === 3) {
         return (
           <div className="house-container side">
-            <img className="house" alt="house" src={hutong} />
-            <img className="house" alt="house" src={hutong} />
-            <img className="house" alt="house" src={hutong} />
+            <img className="house dada-house" alt="house" src={hutong} />
+            <img className="house dada-house" alt="house" src={hutong} />
+            <img className="house dada-house" alt="house" src={hutong} />
           </div>
         );
       } else if (modernistaHouses && modernistaHouses === 2) {
         return (
           <div className="house-container side">
-            <img className="house" alt="house" src={hutong} />
-            <img className="house" alt="house" src={hutong} />
+            <img className="house dada-house" alt="house" src={hutong} />
+            <img className="house dada-house" alt="house" src={hutong} />
           </div>
         );
       } else if (modernistaHouses && modernistaHouses === 1) {
         return (
           <div className="house-container side">
-            <img className="house yellow-house" alt="house" src={hutong} />
+            <img className="house dada-house" alt="house" src={hutong} />
           </div>
         );
       }

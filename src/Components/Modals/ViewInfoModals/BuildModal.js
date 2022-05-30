@@ -143,7 +143,7 @@ const BuildModal = ({
                   <FontAwesomeIcon className="x-icon" icon={faXmark} />
                 </button>
               </div>
-              <h1 className="title">Build Hutongs/Apartments</h1>
+              <h1 className="title build-hoots">Build Hutongs/Apartments</h1>
               {tooMuch ? (
                 <div className="insufficient-warning-container">
                   <p className="insufficient-warning">Insufficient Funds</p>

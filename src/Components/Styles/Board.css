@@ -90,6 +90,10 @@
   width: 22%;
 }
 
+.house.dada-house {
+  width: 1em%;
+}
+
 .jail {
   background-image: url("../../Assets/PropertyImages/deported.png");
   background-size: cover;
@@ -788,6 +792,8 @@
 .go-arrow {
   width: 6em;
   height: 2em;
+  position: relative;
+  right: 0.2em;
 }
 
 .go {
@@ -911,6 +917,9 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
+  width: 0.8em;
+  position: relative;
+  right: 0.25em;
 }
 
 .hotel-container.side {
