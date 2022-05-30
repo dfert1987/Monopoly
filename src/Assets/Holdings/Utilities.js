@@ -15,6 +15,7 @@ export const Utilities = [
     bannerImage: require("../PropertyImages/jug.png"),
     saying: "Hydration at your doorstep.",
     paySaying: "Those jugs are heavy. Pay the man.",
+    message: "Jugs on Jugs",
   },
   {
     Number: 29,
@@ -32,5 +33,6 @@ export const Utilities = [
     bannerImage: require("../PropertyImages/mopAyi.png"),
     saying: "Has iron, will travel.",
     paySaing: "Pay your ayi well. She's an angel.",
+    message: "Wrinkle-free clothes, and mopped floors await!",
   },
 ];

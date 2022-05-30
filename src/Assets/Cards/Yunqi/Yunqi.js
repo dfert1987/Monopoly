@@ -55,7 +55,7 @@ export const Yunqi = [
     Number: 6,
     Text: "Black Cab rips you off!",
     Instruction:
-      "I think Chairman Mao is wearign sunglasses on this hundo. Lose 100rmb.",
+      "I think Chairman Mao is wearing sunglasses on this hundo. Lose 100rmb.",
     Type: "pay",
     amt: 100,
     space: 0,
@@ -142,8 +142,8 @@ export const Yunqi = [
     Text: "Spring cleaning -- Hire Ayi!",
     Instruction:
       "For each house, pay 25rmb, and each hotel pay 100rmb. God bless this lady for keeping your life in order.",
-    Type: "pay",
-    amt: 10,
+    Type: "pay-house",
+    amt: 0,
     space: 0,
     image: require("./pics/yunqi-spring.jpeg"),
     sound: "sad",

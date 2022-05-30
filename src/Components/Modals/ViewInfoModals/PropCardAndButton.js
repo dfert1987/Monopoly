@@ -59,11 +59,15 @@ const PropCardAndButton = ({
   ]);
 
   const buyHutong = () => {
-    if (houseModal && card.buidlingCost > p1Money) {
+    console.log(houseCount, houseModal, card.buildingCost, p1Money);
+    console.log(card);
+    if (houseModal && card.buildingCost > p1Money) {
+      console.log("stoopid");
       alert();
       setTooMuch(true);
       return null;
-    } else if (houseCount === 0 && houseModal && card.buidlingCost < p1Money) {
+    } else if (houseModal && houseCount === 0 && card.buidlingCost < p1Money) {
+      console.log("working");
       setHouseCount(1);
       choose();
       let newHouses = totalHousesP1 + 1;
@@ -77,12 +81,12 @@ const PropCardAndButton = ({
         return property;
       });
       setProperties(updatedProperties);
-    } else if (houseCount === 1 && houseModal && card.buidlingCost < p1Money) {
+    } else if (houseCount === 1 && houseModal && card.buildingCost < p1Money) {
       setHouseCount(2);
       choose();
       let newHouses = totalHousesP1 + 1;
       setTotalHousesP1(newHouses);
-      let newMoney = p1Money - card.buidlingCost;
+      let newMoney = p1Money - card.buildingCost;
       setP1Money(newMoney);
       let updatedProperties = properties.map((property) => {
         if (property.Name === card.Name) {
@@ -96,7 +100,7 @@ const PropCardAndButton = ({
       choose();
       let newHouses = totalHousesP1 + 1;
       setTotalHousesP1(newHouses);
-      let newMoney = p1Money - card.buidlingCost;
+      let newMoney = p1Money - card.buildingCost;
       setP1Money(newMoney);
       let updatedProperties = properties.map((property) => {
         if (property.Name === card.Name) {
@@ -110,7 +114,7 @@ const PropCardAndButton = ({
       choose();
       let newHouses = totalHousesP1 + 1;
       setTotalHousesP1(newHouses);
-      let newMoney = p1Money - card.buidlingCost;
+      let newMoney = p1Money - card.buildingCost;
       setP1Money(newMoney);
       let updatedProperties = properties.map((property) => {
         if (property.Name === card.Name) {
@@ -131,7 +135,7 @@ const PropCardAndButton = ({
       let newHotels = hotelsP1 + 1;
       setTotalHousesP1(newHouses);
       setHotelsP1(newHotels);
-      let newMoney = p1Money - card.buidlingCost;
+      let newMoney = p1Money - card.buildingCost;
       setP1Money(newMoney);
       let updatedProperties = properties.map((property) => {
         if (property.Name === card.Name) {
@@ -149,7 +153,7 @@ const PropCardAndButton = ({
     ) {
       setHotel(true);
     }
-    if (houseModal2 && card.buidlingCost > p2Money) {
+    if (houseModal2 && card.buildingCost > p2Money) {
       setTooMuch(true);
       alert();
       return null;
@@ -158,7 +162,7 @@ const PropCardAndButton = ({
       choose();
       let newHouses = totalHousesP2 + 1;
       setTotalHousesP2(newHouses);
-      let newMoney = p2Money - card.buidlingCost;
+      let newMoney = p2Money - card.buildingCost;
       setP2Money(newMoney);
       let updatedProperties = properties.map((property) => {
         if (property.Name === card.Name) {
@@ -172,7 +176,7 @@ const PropCardAndButton = ({
       choose();
       let newHouses = totalHousesP2 + 1;
       setTotalHousesP2(newHouses);
-      let newMoney = p2Money - card.buidlingCost;
+      let newMoney = p2Money - card.buildingCost;
       setP2Money(newMoney);
       let updatedProperties = properties.map((property) => {
         if (property.Name === card.Name) {
@@ -181,12 +185,12 @@ const PropCardAndButton = ({
         return property;
       });
       setProperties(updatedProperties);
-    } else if (houseCount === 2 && houseModal2 && card.buidlingCost < p2Money) {
+    } else if (houseCount === 2 && houseModal2 && card.buildingCost < p2Money) {
       setHouseCount(3);
       choose();
       let newHouses = totalHousesP2 + 1;
       setTotalHousesP2(newHouses);
-      let newMoney = p2Money - card.buidlingCost;
+      let newMoney = p2Money - card.buildingCost;
       setP1Money(newMoney);
       let updatedProperties = properties.map((property) => {
         if (property.Name === card.Name) {
@@ -195,12 +199,12 @@ const PropCardAndButton = ({
         return property;
       });
       setProperties(updatedProperties);
-    } else if (houseCount === 3 && houseModal2 && card.buidlingCost < p2Money) {
+    } else if (houseCount === 3 && houseModal2 && card.buildingCost < p2Money) {
       setHouseCount(4);
       choose();
       let newHouses = totalHousesP2 + 1;
       setTotalHousesP2(newHouses);
-      let newMoney = p2Money - card.buidlingCost;
+      let newMoney = p2Money - card.buildingCost;
       setP2Money(newMoney);
       let updatedProperties = properties.map((property) => {
         if (property.Name === card.Name) {
@@ -221,7 +225,7 @@ const PropCardAndButton = ({
       let newHotels = hotelsP2 + 1;
       setTotalHousesP2(newHouses);
       setHotelsP2(newHotels);
-      let newMoney = p2Money - card.buidlingCost;
+      let newMoney = p2Money - card.buildingCost;
       setP2Money(newMoney);
       let updatedProperties = properties.map((property) => {
         if (property.Name === card.Name) {
