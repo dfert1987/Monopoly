@@ -2498,7 +2498,7 @@ export const Board = ({
                 ) : null}
                 <div className="text-container">
                   <div className="prop-name-right-bigger">
-                    <p className="dr">Zhang Mama</p>
+                    <p className="dr zm">Zhang Mama</p>
                   </div>
                   <div className="prop-price-right-dr">¥160</div>
                 </div>
