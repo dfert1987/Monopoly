@@ -339,7 +339,7 @@ export const Guanxi = [
     Type: "skip",
     amt: 0,
     space: 0,
-    image: require("./Pics/taobao.jpeg"),
+    image: require("./Pics/hawhtorne.jpeg"),
     sound: "sad",
   },
   {
