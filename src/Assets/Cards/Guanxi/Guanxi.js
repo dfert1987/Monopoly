@@ -216,7 +216,7 @@ export const Guanxi = [
   },
   {
     Number: 22,
-    Text: "Office party!",
+    Text: "Office Party!",
     Instruction:
       "Collect 10rmb from opponent for mandarin oranges and warm Sprite.",
     Type: "collect-opponent",
@@ -319,5 +319,49 @@ export const Guanxi = [
     space: 0,
     image: require("./Pics/damn.jpeg"),
     sound: "sad",
+  },
+  {
+    Number: 32,
+    Text: "TAOBAO shopping spree!",
+    Instruction:
+      "Pay Jack Ma 100rmb for all the stuff you definitely couldn't live without.",
+    Type: "pay",
+    amt: 100,
+    space: 0,
+    image: require("./Pics/taobao.jpeg"),
+    sound: "sad",
+  },
+  {
+    Number: 33,
+    Text: "Chip tooth on Hawthorne Pit",
+    Instruction:
+      "Skip your turn trying to figure out how to go to the dentist in China.",
+    Type: "skip",
+    amt: 0,
+    space: 0,
+    image: require("./Pics/taobao.jpeg"),
+    sound: "sad",
+  },
+  {
+    Number: 34,
+    Text: "HouHai Polar Bear Club",
+    Instruction:
+      "Feel invigorated by the cleansing waters of Lake HouHai and go forward 3 spaces.",
+    Type: "forward",
+    amt: 3,
+    space: 0,
+    image: require("./Pics/houhai.jpeg"),
+    sound: "splash",
+  },
+  {
+    Number: 35,
+    Text: "DJ Gig!",
+    Instruction:
+      "Make 200rmb for DJing at Dada. Don't spend it all on party favors!",
+    Type: "collect",
+    amt: 200,
+    space: 0,
+    image: require("./Pics/dadadj.jpeg"),
+    sound: "techno",
   },
 ];

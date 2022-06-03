@@ -37,6 +37,9 @@ import Triumph from "../../../Assets/Sounds/triumph.mp3";
 import Vomit from "../../../Assets/Sounds/vomit.mp3";
 import XinNian from "../../../Assets/Sounds/xinnian.mp3";
 import Zhege from "../../../Assets/Sounds/zhege.mp3";
+import Splash from "../../../Assets/Sounds/splash.mp3";
+import SoftLaugh from "../../../Assets/Sounds/softLaugh.mp3";
+
 import "../../Styles/Card.css";
 
 const InnerCard = ({
@@ -116,6 +119,7 @@ const InnerCard = ({
 }) => {
   const [currentCard, setCurrentCard] = useState();
   const [drum] = useSound(Drum);
+  const [splash] = useSound(Splash);
   const [airplane] = useSound(Airplane);
   const [alert] = useSound(Alert);
   const [bar] = useSound(Bar);
@@ -150,10 +154,21 @@ const InnerCard = ({
   const [xinNian] = useSound(XinNian);
   const [zhege] = useSound(Zhege);
   const [victory] = useSound(Victory);
+  const [softLaugh] = useSound(SoftLaugh);
 
   const cardFunctionSorter = () => {
     if ((onCard || onCard2) && currentCard && currentCard.sound === "plane") {
       airplane();
+    }
+    if ((onCard || onCard2) && currentCard && currentCard.sound === "splash") {
+      splash();
+    }
+    if (
+      (onCard || onCard2) &&
+      currentCard &&
+      currentCard.sound === "soft-laugh"
+    ) {
+      softLaugh();
     }
     if (
       (onCard || onCard2) &&

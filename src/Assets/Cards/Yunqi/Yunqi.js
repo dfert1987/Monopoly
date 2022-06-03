@@ -328,4 +328,48 @@ export const Yunqi = [
     image: require("./pics/ktv.jpeg"),
     sound: "backstreet",
   },
+  {
+    Number: 32,
+    Text: "Air Purifier Upgrade.",
+    Instruction:
+      "Your apartment's AQI will be back in the green. But at a cost. Pay 100rmb.",
+    Type: "pay",
+    amt: 100,
+    space: null,
+    image: require("./pics/blueair.jpg"),
+    sound: "cough",
+  },
+  {
+    Number: 33,
+    Text: "Badaling on a Holiday",
+    Instruction:
+      "Skip your next turn trying to get out of there. And never make this mistake again.",
+    Type: "skip",
+    amt: 0,
+    space: 0,
+    image: require("./pics/badaling.jpeg"),
+    sound: "sad",
+  },
+  {
+    Number: 34,
+    Text: "Beijing Improv Workshop",
+    Instruction:
+      "Head to Hot Cat Club for some organized improvised silliness with friends.",
+    Type: "advance",
+    amt: 0,
+    space: 7,
+    image: require("./pics/improv.jpeg"),
+    sound: "soft-laugh",
+  },
+  {
+    Number: 35,
+    Text: "Teach at Summer Camp",
+    Instruction:
+      "Give up your precious summer chasing around xiaopengyou. Earn 100rmb",
+    Type: "collect",
+    amt: 100,
+    space: 0,
+    image: require("./pics/summer.jpeg"),
+    sound: "money",
+  },
 ];
