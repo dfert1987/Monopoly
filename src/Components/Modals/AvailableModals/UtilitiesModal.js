@@ -260,7 +260,7 @@ const UtilitiesModal = ({
                 <FontAwesomeIcon className="x-icon" icon={faXmark} />
               </button>
             </div>
-            <h2 className="title">FOR SALE</h2>
+            <h2 className="title sale">FOR SALE</h2>
             <div className="cost">
               <h4 className="prop-price">COST: ¥150</h4>
             </div>

@@ -488,6 +488,14 @@ const InnerCard = ({
         setOnCard2(false);
         arrayRemovePre();
         setCardOption();
+      } else if (newSpace === 21) {
+        setCounterP1(newSpace);
+        setOnCard(false);
+        setOnCard2(false);
+        setInJail(true);
+        setP1Jail(true);
+        arrayRemovePre();
+        setCardOption();
       }
       if (currentRR) {
         if (!currentRR.ownedP1 && !currentRR.ownedP2) {
@@ -553,6 +561,14 @@ const InnerCard = ({
         setOnCard2(false);
         arrayRemovePre();
         setCardOption();
+      } else if (newSpace === 21) {
+        setCounterP2(newSpace);
+        setOnCard(false);
+        setOnCard2(false);
+        arrayRemovePre();
+        setCardOption();
+        setInJail2(true);
+        setP2Jail(true);
       } else if (currentRR) {
         if (!currentRR.ownedP1 && !currentRR.ownedP2) {
           setRRModal2(true);

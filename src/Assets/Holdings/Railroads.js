@@ -18,7 +18,7 @@ export const RailRoads = [
     mortgaged: false,
     image: require("../PropertyImages/space-line13.jpeg"),
     saying: "To Wudaokou, Wangjing and beyond!",
-    message: "You're subway king of the North!",
+    message: "You're the subway king of the North!",
     paySaying: "Enjoy the Korean food up there!",
   },
   {
