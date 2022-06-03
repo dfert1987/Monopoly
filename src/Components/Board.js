@@ -2373,7 +2373,9 @@ export const Board = ({
           </div>
           <div id="22" className="right">
             <div className="bottom-main">
-              <div className="bottom-section-top red">{showHouses(10)}</div>
+              <div className="bottom-section-top red annies">
+                {showHouses(10)}
+              </div>
               <div className="main-section-bottom">
                 {counterP1 === 22 ? (
                   <img src={p1Image} className="piece" alt="p1 game piece" />

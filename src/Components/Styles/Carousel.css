@@ -15,7 +15,7 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  height: 20em;
+  height: 16em;
   background-color: #fff;
   color: black;
 }
@@ -99,4 +99,12 @@
 
 .selected {
   opacity: 50%;
+}
+
+
+
+@media (min-width: 1441px) {
+  .carousel-item {
+    height: 20em;
+  }
 }

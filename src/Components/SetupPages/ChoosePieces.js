@@ -243,7 +243,7 @@ const ChoosePieces = () => {
       {chosenRight && chosenLeft ? (
         <div className="button-container">
           <Link to="/app" state={myData}>
-            <button className="play-button" onClick={gong}>
+            <button className="play-button choose" onClick={gong}>
               PLAY
             </button>
           </Link>

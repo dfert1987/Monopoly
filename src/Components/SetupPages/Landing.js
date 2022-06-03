@@ -25,7 +25,7 @@ const Landing = () => {
       exit="out"
       variants={pageAnimation}
     >
-      <div className="page-container">
+      <div className="page-container-landing">
         <div className="logo-with-man">
           <div className="logo-and-button">
             <div className="logo-container">

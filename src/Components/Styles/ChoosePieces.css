@@ -25,7 +25,6 @@
   display: flex;
   flex-direction: row;
   justify-content: center;
-  margin-bottom: 0.5em;
 }
 
 .button-container {
@@ -37,7 +36,7 @@
   margin: 0;
   margin-bottom: 0.25em;
   font-family: "Monopoly";
-  font-size: 4em;
+  font-size: 2.5em;
   text-decoration: underline;
 }
 
@@ -52,6 +51,7 @@
 .carousel-container {
   margin: 1em;
   width: 30%;
+  margin-top: 0;
 }
 
 .select-piece {
@@ -120,12 +120,30 @@
 
 .chosen-text {
   font-family: "Monopoly";
-  font-size: 3em;
+  font-size: 2em;
   margin: 0.25em;
 }
 
-@media (min-width: 1010px) {
+.play-button.choose {
+  font-size: 2.25em;
+}
+
+@media (min-width: 1441px) {
   .main-title {
     font-size: 8em;
+  }
+
+  .player-choice {
+    font-size: 4em;
+  }
+
+  .chosen-text {
+    font-family: "Monopoly";
+    font-size: 3em;
+    margin: 0.25em;
+  }
+
+  .play-button.choose {
+    font-size: 3em;
   }
 }
