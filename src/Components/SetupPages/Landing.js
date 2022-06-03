@@ -5,7 +5,7 @@ import { pageAnimation } from "../../Transitions/Index";
 import logomon from "../../Assets/Landing/logomon.png";
 import monoplaoren from "../../Assets/Landing/monoplaoren.png";
 import Gong from "../../Assets/Sounds/GONG.mp3";
-import Erhu from "../../Assets/Sounds/erhu.mp3";
+import Erhu from "../../Assets/Sounds/Erhu.mp3";
 import "../Styles/Landing.css";
 import useSound from "use-sound";
 
