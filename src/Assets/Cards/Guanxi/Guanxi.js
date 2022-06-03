@@ -357,9 +357,9 @@ export const Guanxi = [
     Number: 35,
     Text: "DJ Gig!",
     Instruction:
-      "Make 200rmb for DJing at Dada. Don't spend it all on party favors!",
+      "Make 100rmb for DJing at Dada. Don't spend it all on party favors!",
     Type: "collect",
-    amt: 200,
+    amt: 100,
     space: 0,
     image: require("./Pics/dadadj.jpeg"),
     sound: "techno",
