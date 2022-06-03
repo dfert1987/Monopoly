@@ -930,9 +930,3 @@
   flex-direction: column;
   justify-content: center;
 }
-
-@media (min-width: 1441px) {
-  .main-board {
-    width: 650px;
-  }
-}
