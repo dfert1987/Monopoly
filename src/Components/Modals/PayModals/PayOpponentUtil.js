@@ -35,7 +35,7 @@ export const PayOpponentUtil = ({
   endGame,
   setEndGame,
 }) => {
-  const [rent, setRent] = useState();
+  const [rent, setRent] = useState(null);
   const [die1, setDie1] = useState(1);
   const [die2, setDie2] = useState(1);
   const [die1Img, setDie1Img] = useState(dice1);
@@ -189,8 +189,7 @@ export const PayOpponentUtil = ({
     }
   }, [onUtil2, payUtilTo, onUtil, utilities, properties, railRoads]);
 
-  const handleClose = (e) => {
-    e.preventDefault();
+  const handleClose = () => {
     setPayUtil(false);
     setPayUtilTo();
     setMultiplier();
@@ -198,7 +197,7 @@ export const PayOpponentUtil = ({
     setOnUtil();
     setDie1(1);
     setDie2(1);
-    setRent();
+    setRent(null);
     click();
   };
 

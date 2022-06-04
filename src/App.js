@@ -90,12 +90,11 @@ const App = () => {
   const location = useLocation();
   const data = location.state;
 
-  console.log(counterP1, counterP2, p1Jail, p2Jail);
-
   useEffect(() => {
     setP1Pic(data.p1Piece);
     setP2Pic(data.p2Piece);
   }, [data.p1Piece, data.p2Piece]);
+  console.log(onFreeParking, onFreeParking2);
 
   return (
     <div className="App">
