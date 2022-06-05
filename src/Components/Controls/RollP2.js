@@ -301,7 +301,7 @@ export const RollP2 = ({
         {!inJail2 ? (
           <button
             onClick={rollDice2}
-            className="roll-button"
+            className="roll-button controls"
             disabled={disableRight}
           >
             ROLL DICE
@@ -309,7 +309,7 @@ export const RollP2 = ({
         ) : (
           <button
             onClick={jailRoll}
-            className="roll-button"
+            className="roll-button controls"
             disabled={disableRight}
           >
             RETURN TO CHINA

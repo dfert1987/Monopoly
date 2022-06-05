@@ -289,7 +289,7 @@ export const Roll = ({
         {!inJail ? (
           <button
             onClick={rollDice}
-            className="roll-button"
+            className="roll-button controls"
             disabled={disableLeft}
           >
             ROLL DICE
@@ -297,7 +297,7 @@ export const Roll = ({
         ) : (
           <button
             onClick={jailRoll}
-            className="roll-button"
+            className="roll-button controls"
             disabled={disableLeft}
           >
             RETURN TO CHINA
