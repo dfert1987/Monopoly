@@ -488,7 +488,8 @@ const InnerCard = ({
         setOnCard2(false);
         arrayRemovePre();
         setCardOption();
-      } else if (newSpace === 21) {
+      }
+      if (newSpace === 21) {
         setCounterP1(newSpace);
         setOnCard(false);
         setOnCard2(false);
@@ -561,7 +562,8 @@ const InnerCard = ({
         setOnCard2(false);
         arrayRemovePre();
         setCardOption();
-      } else if (newSpace === 21) {
+      }
+      if (newSpace === 21) {
         setCounterP2(newSpace);
         setOnCard(false);
         setOnCard2(false);
@@ -654,6 +656,7 @@ const InnerCard = ({
         setOnVisa(true);
         setOnCard(false);
         setOnCard2(false);
+        setCounterP1(newSpace);
         setCurrentCard();
         arrayRemovePre();
         setCardOption();
@@ -760,6 +763,7 @@ const InnerCard = ({
         setOnCard(false);
         setOnCard2(false);
         setOnVisa2(true);
+        setCounterP2(newSpace);
         setCurrentCard();
         arrayRemovePre();
         setCardOption();
