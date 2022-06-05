@@ -23,7 +23,6 @@ const TradeModal = ({
   setP1Money,
   p2Money,
   setP2Money,
-  turn,
 }) => {
   const backdrop = {
     visible: { opacity: 1 },
@@ -71,6 +70,7 @@ const TradeModal = ({
     getFilteredP2Props();
     getFilteredP2Utils();
     getFilteredP2RRs();
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [showTrade, properties, utilities, railRoads]);
 
   const getFilteredP1Props = () => {
