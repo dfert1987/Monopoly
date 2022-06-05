@@ -475,7 +475,7 @@ const OwnedProperties = ({
                                     : () => showProp(properties[19])
                                 }
                               >
-                                <div className="top-square lightBlue"></div>
+                                <div className="top-square light-blue"></div>
                                 <div className="white-part">
                                   {properties[19].mortgaged ? (
                                     <p className="m">M</p>
@@ -505,7 +505,7 @@ const OwnedProperties = ({
                                     : () => showProp(properties[18])
                                 }
                               >
-                                <div className="top-square lightBlue"></div>
+                                <div className="top-square light-blue"></div>
                                 <div className="white-part">
                                   {properties[18].mortgaged ? (
                                     <p className="m">M</p>
@@ -535,7 +535,7 @@ const OwnedProperties = ({
                                     : () => showProp(properties[17])
                                 }
                               >
-                                <div className="top-square lightBlue"></div>
+                                <div className="top-square light-blue"></div>
                                 <div className="white-part">
                                   {properties[17].mortgaged ? (
                                     <p className="m">M</p>
@@ -1290,7 +1290,7 @@ const OwnedProperties = ({
                                     : () => showProp(properties[19])
                                 }
                               >
-                                <div className="top-square lightBlue"></div>
+                                <div className="top-square light-blue"></div>
                                 <div className="white-part">
                                   {properties[19].mortgaged ? (
                                     <p className="m">M</p>
@@ -1320,7 +1320,7 @@ const OwnedProperties = ({
                                     : () => showProp(properties[18])
                                 }
                               >
-                                <div className="top-square lightBlue"></div>
+                                <div className="top-square light-blue"></div>
                                 <div className="white-part">
                                   {properties[18].mortgaged ? (
                                     <p className="m">M</p>
@@ -1350,7 +1350,7 @@ const OwnedProperties = ({
                                     : () => showProp(properties[17])
                                 }
                               >
-                                <div className="top-square lightBlue"></div>
+                                <div className="top-square light-blue"></div>
                                 <div className="white-part">
                                   {properties[17].mortgaged ? (
                                     <p className="m">M</p>

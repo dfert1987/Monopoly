@@ -119,6 +119,10 @@
   background-color: yellow;
 }
 
+.top-square.purple {
+  background-color: violet;
+}
+
 .top-square.violet {
   background-color: violet;
 }
@@ -127,7 +131,7 @@
   background-color: orange;
 }
 
-.top-square.lightBlue {
+.top-square.light-blue {
   background-color: rgb(137, 174, 245);
 }
 

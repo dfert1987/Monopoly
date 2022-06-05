@@ -850,6 +850,15 @@ const InnerCard = ({
       if (currentCard.space === 1) {
         setOnGoP1(true);
         setCounterP1(currentCard.space);
+      } else if (currentCard.space === 41) {
+        setOnCard(false);
+        setOnCard2(false);
+        setInJail(true);
+        setP1Jail(true);
+        setCounterP1(41);
+        setCurrentCard();
+        arrayRemovePre();
+        setCardOption();
       }
       if (currentCard.space !== 41 && currentCard.space < counterP1) {
         setPass(true);
@@ -904,14 +913,6 @@ const InnerCard = ({
         setPayRailTo(2);
         arrayRemovePre();
         setCardOption();
-      } else if (currentCard.space === 41) {
-        setOnCard(false);
-        setOnCard2(false);
-        setInJail(true);
-        setP1Jail(true);
-        setCurrentCard();
-        arrayRemovePre();
-        setCardOption();
       } else {
         setOnCard(false);
         setOnCard2(false);
@@ -934,6 +935,15 @@ const InnerCard = ({
       if (currentCard.space === 1) {
         setOnGoP2(true);
         setCounterP2(currentCard.space);
+      } else if (currentCard.space === 41) {
+        setOnCard(false);
+        setOnCard2(false);
+        setInJail2(true);
+        setCounterP2(41);
+        setCurrentCard();
+        setP2Jail(true);
+        arrayRemovePre();
+        setCardOption();
       } else if (currentCard.space !== 41 && currentCard.space < counterP2) {
         setPass2(true);
         let newMoney = p2Money + 200;
@@ -986,14 +996,6 @@ const InnerCard = ({
         setOnRR2(currentRR);
         setPayRail(true);
         setPayRailTo(1);
-        arrayRemovePre();
-        setCardOption();
-      } else if (currentCard.space === 41) {
-        setOnCard(false);
-        setOnCard2(false);
-        setInJail2(true);
-        setCurrentCard();
-        setP2Jail(true);
         arrayRemovePre();
         setCardOption();
       } else {

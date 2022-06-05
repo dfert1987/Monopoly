@@ -87,6 +87,10 @@ const UnMortgageModal = ({
     mortUtils,
   ]);
 
+  console.log(unMortgage, unMortgage2);
+
+  console.log(allMortgaged2);
+
   const backdrop = {
     visible: { opacity: 1 },
     hidden: { opacity: 0 },
@@ -129,7 +133,7 @@ const UnMortgageModal = ({
   };
 
   const setCarouselItems = () => {
-    if (allMortgaged) {
+    if (allMortgaged && allMortgaged.length >= 1) {
       return allMortgaged.map((property, index) => {
         return (
           <MortgageItem
@@ -153,7 +157,7 @@ const UnMortgageModal = ({
           </MortgageItem>
         );
       });
-    } else if (allMortgaged2) {
+    } else if (allMortgaged2 && allMortgaged2.length >= 1) {
       return allMortgaged2.map((property, index) => {
         return (
           <MortgageItem
@@ -177,7 +181,7 @@ const UnMortgageModal = ({
           </MortgageItem>
         );
       });
-    } else if (allMortgagedRRs) {
+    } else if (allMortgagedRRs && allMortgagedRRs.length >= 1) {
       return allMortgagedRRs.map((rr, index) => {
         return (
           <MortgageItem property={rr} className="mortgage-card" key={index}>
@@ -197,7 +201,7 @@ const UnMortgageModal = ({
           </MortgageItem>
         );
       });
-    } else if (allMortgagedRRs2) {
+    } else if (allMortgagedRRs2 && allMortgagedRRs2.length >= 1) {
       return allMortgagedRRs2.map((rr, index) => {
         return (
           <MortgageItem property={rr} className="mortgage-card" key={index}>
@@ -217,7 +221,7 @@ const UnMortgageModal = ({
           </MortgageItem>
         );
       });
-    } else if (allMortgagedUtils) {
+    } else if (allMortgagedUtils && allMortgagedUtils.length >= 1) {
       return allMortgagedUtils.map((util, index) => {
         return (
           <MortgageItem property={util} className="mortgage-card" key={index}>
@@ -237,7 +241,7 @@ const UnMortgageModal = ({
           </MortgageItem>
         );
       });
-    } else if (allMortgagedUtils2) {
+    } else if (allMortgagedUtils2 && allMortgagedUtils2.length >= 1) {
       return allMortgagedUtils2.map((util, index) => {
         return (
           <MortgageItem property={util} className="mortgage-card" key={index}>
@@ -258,6 +262,10 @@ const UnMortgageModal = ({
         );
       });
     }
+  };
+
+  const showConifrm = () => {
+    setConfirmModalView(true);
   };
 
   return (
@@ -327,7 +335,10 @@ const UnMortgageModal = ({
                             {setCarouselItems()}
                           </MortgageCarousel>
                         </div>
-                        <button className="select-piece mortgage-select">
+                        <button
+                          className="select-piece mortgage-select"
+                          onClick={showConifrm}
+                        >
                           SELECT
                         </button>
                       </>
@@ -347,7 +358,10 @@ const UnMortgageModal = ({
                             {setCarouselItems()}
                           </MortgageCarousel>
                         </div>
-                        <button className="select-piece mortgage-select">
+                        <button
+                          className="select-piece mortgage-select"
+                          onClick={showConifrm}
+                        >
                           SELECT
                         </button>
                       </>
@@ -367,7 +381,7 @@ const UnMortgageModal = ({
                         </div>
                         <button
                           className="select-piece mortgage-select"
-                          onClick={() => setConfirmModalView(true)}
+                          onClick={showConifrm}
                         >
                           SELECT
                         </button>
@@ -386,7 +400,10 @@ const UnMortgageModal = ({
                             {setCarouselItems()}
                           </MortgageCarousel>
                         </div>
-                        <button className="select-piece mortgage-select">
+                        <button
+                          className="select-piece mortgage-select"
+                          onClick={showConifrm}
+                        >
                           SELECT
                         </button>
                       </>
@@ -406,7 +423,7 @@ const UnMortgageModal = ({
                         </div>
                         <button
                           className="select-piece mortgage-select"
-                          onClick={() => setConfirmModalView(true)}
+                          onClick={showConifrm}
                         >
                           SELECT
                         </button>
@@ -425,7 +442,10 @@ const UnMortgageModal = ({
                             {setCarouselItems()}
                           </MortgageCarousel>
                         </div>
-                        <button className="select-piece mortgage-select">
+                        <button
+                          className="select-piece mortgage-select"
+                          onClick={showConifrm}
+                        >
                           SELECT
                         </button>
                       </>
@@ -479,7 +499,7 @@ const UnMortgageModal = ({
         setUtilities={setUtilities}
         allMortgaged={allMortgaged}
         setAllMortgaged={setAllMortgaged}
-        allMortgaged2={setAllMortgaged2}
+        allMortgaged2={allMortgaged2}
         setAllMortgaged2={setAllMortgaged2}
         allMortgagedRRs={allMortgagedRRs}
         allMortgagedRRs2={allMortgagedRRs2}

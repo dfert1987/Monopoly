@@ -69,22 +69,23 @@ const ConfirmUnMort = ({
   };
 
   const getName = () => {
-    if (allMortgaged !== undefined) {
+    console.log(allMortgaged2);
+    if (allMortgaged && allMortgaged !== undefined) {
       let changedProperty = allMortgaged[activeIndex];
       return changedProperty.Name;
-    } else if (allMortgaged2) {
+    } else if (allMortgaged2 && allMortgaged2 !== undefined) {
       let changedProperty = allMortgaged2[activeIndex];
       return changedProperty.Name;
-    } else if (allMortgagedRRs) {
+    } else if (allMortgagedRRs && allMortgagedRRs !== undefined) {
       let changedRR = allMortgagedRRs[activeIndex];
       return changedRR.Name;
-    } else if (allMortgagedRRs2) {
+    } else if (allMortgagedRRs2 && allMortgagedRRs2 !== undefined) {
       let changedRR = allMortgagedRRs2[activeIndex];
       return changedRR.Name;
-    } else if (allMortgagedUtils) {
+    } else if (allMortgagedUtils && allMortgagedUtils !== undefined) {
       let changedUtil = allMortgagedUtils[activeIndex];
       return changedUtil.Name;
-    } else if (allMortgagedUtils2) {
+    } else if (allMortgagedUtils2 && allMortgagedUtils2 !== undefined) {
       let changedUtil = allMortgagedUtils2[activeIndex];
       return changedUtil.Name;
     }
@@ -219,7 +220,6 @@ const ConfirmUnMort = ({
       }, 2000);
     }
   };
-
   return (
     <AnimatePresence exitBeforeEnter>
       {confirmModalView ? (
