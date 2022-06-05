@@ -49,7 +49,7 @@ const FreeParking = ({
       click();
       setOnFreeParking2(false);
       setFreeParking(500);
-    } else if (onFreeParking2 === false) {
+    } else if (onFreeParking2 === true) {
       let newMoney = p2Money + freeParking;
       setP2Money(newMoney);
       setOnFreeParking(false);
