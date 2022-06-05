@@ -95,6 +95,8 @@ const InnerCard = ({
   setOnAgentFee,
   setOnAgentFee2,
   setOnVisa,
+  setOnGoP1,
+  setOnGoP2,
   setOnVisa2,
   setOnFreeParking,
   setOnFreeParking2,
@@ -845,12 +847,16 @@ const InnerCard = ({
         (util) => util.Number === currentCard.space
       );
       let currentRR = railRoads.find((rr) => rr.Number === currentCard.space);
+      if (currentCard.space === 1) {
+        setOnGoP1(true);
+        setCounterP1(currentCard.space);
+      }
       if (currentCard.space !== 41 && currentCard.space < counterP1) {
         setPass(true);
         let newMoney = p1Money + 200;
         setP1Money(newMoney);
         setCounterP1(currentCard.space);
-      } else if (currentCard.space !== 41) {
+      } else if (currentCard.space !== 41 && currentCard.space !== 1) {
         setCounterP1(currentCard.space);
       }
       if (currentProp && !currentProp.ownedP1 && !currentProp.ownedP2) {
@@ -925,7 +931,10 @@ const InnerCard = ({
         (util) => util.Number === currentCard.space
       );
       let currentRR = railRoads.find((rr) => rr.Number === currentCard.space);
-      if (currentCard.space !== 41 && currentCard.space < counterP2) {
+      if (currentCard.space === 1) {
+        setOnGoP2(true);
+        setCounterP2(currentCard.space);
+      } else if (currentCard.space !== 41 && currentCard.space < counterP2) {
         setPass2(true);
         let newMoney = p2Money + 200;
         setP2Money(newMoney);

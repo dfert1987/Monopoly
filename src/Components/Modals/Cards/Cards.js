@@ -41,6 +41,8 @@ export const Cards = ({
   hotelsP2,
   utilities,
   setOnUtil,
+  setOnGoP1,
+  setOnGoP2,
   setOnUtil2,
   onUtil,
   onUtil2,
@@ -309,6 +311,8 @@ export const Cards = ({
                   setPayUtilTo={setPayUtilTo}
                   onUtil={onUtil}
                   onUtil2={onUtil2}
+                  setOnGoP1={setOnGoP1}
+                  setOnGoP2={setOnGoP2}
                   setOnUtil={setOnUtil}
                   setOnUtil2={setOnUtil2}
                   utilModal={utilModal}
