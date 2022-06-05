@@ -579,7 +579,7 @@ export const Properties = [
     inMonopoly: false,
     image: require("../PropertyImages/image-cdlp.jpeg"),
     color: "light-blue",
-    purchased: " shots to celebrate!",
+    purchased: "Coffee shots to celebrate!",
     saying:
       "Respectable French restaurant by day. The drunkest place on earth by night.",
     paySaying: "Was that you dancing on the tables? Get it together...",
