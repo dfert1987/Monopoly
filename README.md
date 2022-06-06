@@ -56,6 +56,7 @@ Your controls are on the bottom of the screen. Here you can:
 - Use your visa (get out of jail free card) if you have one.
 ![mortgage](./src/Assets/ReadMePics/mortgage-carousel.png)
 - Mortgage and Buy Back Properties.
+- Trade properties and money
 - After rolling you will be prompted by modals based on where you landed.
 ![buy property](./src/Assets/ReadMePics/buy-prop.png)
 ![buy ayi](./src/Assets/ReadMePics/buy-ayi.png)
