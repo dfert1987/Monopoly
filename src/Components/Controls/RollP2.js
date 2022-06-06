@@ -186,6 +186,7 @@ export const RollP2 = ({
       showPropertyModal(highTotal - 40);
       if (highTotal > 41) {
         let newMoney = p2Money + 200;
+        showPropertyModal(highTotal - 40);
         setP2Money(newMoney);
         setPass2(true);
       }
