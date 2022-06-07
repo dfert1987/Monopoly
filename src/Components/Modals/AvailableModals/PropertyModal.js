@@ -204,23 +204,23 @@ const PropertyModal = ({
             <div className="main-prop-info">
               <h4 className="rent">{`RENT ¥${onProp.rent}`}</h4>
               <div className="house-container one">
-                <p className="left-side">With 1 House </p>
+                <p className="left-side">With 1 House - </p>
                 <p className="right-side">{`¥${onProp.oneHouse}`}</p>
               </div>
               <div className="house-container two">
-                <p className="left-side">With 2 Houses </p>
+                <p className="left-side">With 2 Houses - </p>
                 <p className="right-side">{`¥${onProp.twoHouses}`}</p>
               </div>
               <div className="house-container three">
-                <p className="left-side">With 3 Houses </p>
+                <p className="left-side">With 3 Houses - </p>
                 <p className="right-side">{`¥${onProp.threeHouses}`}</p>
               </div>
               <div className="house-container four">
-                <p className="left-side">With 4 Houses</p>
+                <p className="left-side">With 4 Houses - </p>
                 <p className="right-side"> {`¥${onProp.fourHouses}`}</p>
               </div>
               <div className="house-container hotel">
-                <p className="left-side">With Hotel </p>
+                <p className="left-side">With Hotel - </p>
                 <p className="right-side">{`¥${onProp.hotel}`}</p>
               </div>
             </div>
