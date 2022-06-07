@@ -45,8 +45,12 @@ Check out a quick video demo here!
 [https://youtu.be/iHZ5OoFbCAo](https://www.youtube.com/watch?v=aNkeUeRjCVk)
 
 ## Play
-Play a demo version live right now hosted on Netlify. 
-** NOTE ** Only really designed for large laptops and external monitors at the moment. I'm sure there are still plenty of bugs/typos, so if you find any let me know!
+Play a demo version live right now hosted on Netlify.
+
+** NOTE ** 
+
+Only really designed for large laptops and external monitors at the moment. I'm sure there are still plenty of bugs/typos, so if you find any let me know!
+
 https://629e6987c542c80008f9b913--dapper-tulumba-d1ade2.netlify.app/
 
 ## Features
