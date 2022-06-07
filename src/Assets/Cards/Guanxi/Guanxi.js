@@ -72,17 +72,27 @@ export const Guanxi = [
     image: require("./Pics/guanxi-Jumble.jpeg"),
     sound: "money",
   },
-
+  // {
+  //   Number: 9,
+  //   Text: "Ill advised late night meet up with Nigerian homie.",
+  //   Instruction:
+  //     "Pay 500rmb now, and look forward to a week of sneezing at your desk.",
+  //   Type: "pay",
+  //   amt: 500,
+  //   space: 0,
+  //   image: require("./Pics/guanxi-dealer.jpeg"),
+  //   sound: "snort",
+  // },
   {
     Number: 9,
-    Text: "Ill advised late night meet up with Nigerian homie.",
+    Text: "Receive Mooncakes from students for Mid Autumn Festival.",
     Instruction:
-      "Pay 500rmb now, and look forward to a week of sneezing at your desk.",
-    Type: "pay",
-    amt: 500,
+      "Skip next turn trying to figure out if you actually like mooncakes.",
+    Type: "skip",
+    amt: 0,
     space: 0,
-    image: require("./Pics/guanxi-dealer.jpeg"),
-    sound: "snort",
+    image: require("./Pics/mooncake.jpeg"),
+    sound: "sad",
   },
   {
     Number: 10,
