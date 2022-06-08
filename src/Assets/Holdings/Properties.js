@@ -181,7 +181,7 @@ export const Properties = [
     image: require("../PropertyImages/image-dadong.jpeg"),
     color: "yellow",
     purchased: "Duck isn't just for when your family visits anymore!",
-    saying: "Nothing says Beijing, like duck and all the fixins!",
+    saying: "Nothing says Beijing like duck and all the fixins!",
     paySaying: "Save the neck for me, Clark!",
   },
   {
