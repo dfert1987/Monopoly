@@ -219,7 +219,7 @@ const PropertyModal = ({
                 <p className="left-side">With 4 Houses - </p>
                 <p className="right-side"> {`¥${onProp.fourHouses}`}</p>
               </div>
-              <div className="house-container hotel">
+              <div className="house-container one">
                 <p className="left-side">With Hotel - </p>
                 <p className="right-side">{`¥${onProp.hotel}`}</p>
               </div>
@@ -263,7 +263,7 @@ const PropertyModal = ({
                 <p className="left-side">With 4 Houses - </p>
                 <p className="right-side">{`¥${onProp2.fourHouses}`}</p>
               </div>
-              <div className="house-container hotel">
+              <div className="house-container one">
                 <p className="left-side">With Hotel - </p>
                 <p className="right-side">{`¥${onProp2.hotel}`}</p>
               </div>
