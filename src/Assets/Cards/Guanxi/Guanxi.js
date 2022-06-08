@@ -206,7 +206,7 @@ export const Guanxi = [
     Number: 12,
     Text: "Teacher's day!",
     Instruction:
-      "Collect 40rmb and some fake flowers from opposing player for your services.",
+      "Collect 40rmb and some fake flowers from the opposing player for your services.",
     Type: "collect-opponent",
     amt: 40,
     space: 0,
