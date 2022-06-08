@@ -86,7 +86,7 @@ const PurchasedUtilPopUp = ({
       <AnimatePresence exitBeforeEnter>
         {viewPurchaseUtil2 && onUtil2 ? (
           <motion.div
-            className="outerModal flex centerFlex"
+            className="outerModal flex centerFlex puchased"
             variants={backdrop}
             initial="hidden"
             animate="visible"
@@ -100,7 +100,10 @@ const PurchasedUtilPopUp = ({
               exit="hidden"
             >
               <div className="button-row">
-                <button className="close-button" onClick={handleClose}>
+                <button
+                  className="close-button-purchased"
+                  onClick={handleClose}
+                >
                   <FontAwesomeIcon className="x-icon" icon={faXmark} />
                 </button>
               </div>
