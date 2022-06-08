@@ -455,7 +455,7 @@ const OwnedProperties = ({
                         }`}
                       >
                         <div className="card-plus-name">
-                          <p className="name">{properties[19].Name}</p>
+                          <p className="name">Hot Cat</p>
                           <div className="cardSquare-light-blue">
                             {properties[19].ownedP1 ? (
                               <div
@@ -607,7 +607,7 @@ const OwnedProperties = ({
                           </div>
                         </div>
                         <div className="card-plus-name">
-                          <p className="name">{properties[14].Name}</p>
+                          <p className="name">ZMM</p>
                           <div className="cardSquare-violet">
                             {properties[14].ownedP1 ? (
                               <div
@@ -667,7 +667,7 @@ const OwnedProperties = ({
                           </div>
                         </div>
                         <div className="card-plus-name">
-                          <p className="name">{properties[12].Name}</p>
+                          <p className="name">Temple</p>
                           <div className="cardSquare-orange">
                             {properties[12].ownedP1 ? (
                               <div
@@ -1396,7 +1396,7 @@ const OwnedProperties = ({
                           </div>
                         </div>
                         <div className="card-plus-name">
-                          <p className="name">{properties[15].Name}</p>
+                          <p className="name">Dali</p>
                           <div className="cardSquare-violet">
                             {properties[15].ownedP2 ? (
                               <div
