@@ -69,7 +69,6 @@ const ConfirmUnMort = ({
   };
 
   const getName = () => {
-    console.log(allMortgaged2);
     if (allMortgaged && allMortgaged !== undefined) {
       let changedProperty = allMortgaged[activeIndex];
       return changedProperty.Name;

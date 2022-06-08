@@ -87,9 +87,6 @@ const UnMortgageModal = ({
     mortUtils,
   ]);
 
-  console.log(unMortgage, unMortgage2);
-
-  console.log(allMortgaged2);
 
   const backdrop = {
     visible: { opacity: 1 },

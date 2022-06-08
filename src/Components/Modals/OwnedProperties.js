@@ -302,7 +302,6 @@ const OwnedProperties = ({
   };
 
   const checkVioletsP2 = (violets) => {
-    console.log(violets);
     let mortgagedProp = violets.find((property) => {
       return property.mortgaged === true;
     });

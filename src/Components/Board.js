@@ -289,7 +289,7 @@ export const Board = ({
       properties[1].hasThreeHouses === false
     ) {
       setMigasHouses(2);
-    } else if (properties[1].hasOneHouse && properties.hasTwoHouses === false) {
+    } else if (properties[1].hasOneHouse && properties[1].hasTwoHouses === false) {
       setMigasHouses(1);
     } else if (properties[1].hasHotel) {
       setMigasHotel(true);
