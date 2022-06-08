@@ -163,6 +163,7 @@ export const PayOpponent = ({
       }
       return 0;
     };
+
     const rrSum2 = () => {
       if (mortMoneyArrayRRs2.length > 0) {
         let totalRRMoney = mortMoneyArrayRRs2.reduce((x, y) => x + y);
@@ -170,6 +171,7 @@ export const PayOpponent = ({
       }
       return 0;
     };
+
     const utilSum2 = () => {
       if (mortMoneyArrayUtils2.length > 0) {
         let totalUtilMoney = mortMoneyArrayUtils2.reduce((x, y) => x + y);
@@ -568,7 +570,7 @@ export const PayOpponent = ({
         }
       } else if (
         number.length === 2 &&
-        onProp.hasTwoHouse === true &&
+        onProp.hasTwoHouses === true &&
         onProp.hasThreeHouses === false
       ) {
         let p1New = p1Money - onProp.twoHouses;
